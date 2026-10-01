@@ -26,4 +26,6 @@ aliases: ["Ampère–Maxwell law", "displacement current density", "Maxwell's co
 
 **Where it appears.** Lecture 16 (statement, verification, examples, the completed Maxwell equations); the Lecture 13 slides (capacitor paradox and the flux-area example); Units 3–4 (every wave).
 
+**Practice.** [[practice/topics#continuity-relaxation-and-displacement-current|Continuity, relaxation and displacement current]] (8 problems) — for example [[practice/04-divergence-and-curl#45-draining-a-cube|4.5 Draining a cube]] (easy), [[practice/04-divergence-and-curl#411-an-expanding-ion-cloud|4.11 An expanding ion cloud]] (hard).
+
 Related: [[concepts/amperes-law]] · [[concepts/continuity-equation]] · [[concepts/maxwells-equations]] · [[concepts/electric-flux-density]] · [[concepts/polarization]].

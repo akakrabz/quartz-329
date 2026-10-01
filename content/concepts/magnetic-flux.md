@@ -23,4 +23,6 @@ aliases: ["flux linkage", "weber", "linked flux"]
 
 **Where it appears.** [[1-electrostatics/03-gauss-law-at-work#6-the-magnetic-counterpart--bds--0|Lecture 3 §6]] (closed-surface flux is zero), Lecture 14 (linked flux, flux rule, six examples), Lecture 15 (inductance, flux of the coax and solenoid), [[problems/emf-of-a-loop-moving-near-a-line-current]], [[problems/coax-inductance-and-the-lc-product]].
 
+**Practice.** [[practice/topics#magnetic-flux-faradays-law-and-lenz|Magnetic flux, Faraday's law and Lenz]] (10 problems) — for example [[practice/14-faradays-law-and-induced-emf#141-flux-through-a-tilted-loop|14.1 Flux through a tilted loop]] (easy), [[practice/04-divergence-and-curl#48-circulation-from-a-given-curl|4.8 Circulation from a given curl]] (medium), [[practice/14-faradays-law-and-induced-emf#149-loop-crossing-a-field-strip|14.9 Loop crossing a field strip]] (hard).
+
 Related: [[concepts/flux]] · [[concepts/faradays-law]] · [[concepts/inductance]] · [[concepts/vector-potential]].

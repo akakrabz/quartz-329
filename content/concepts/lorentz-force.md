@@ -21,4 +21,6 @@ aliases: ["Lorentz force law"]
 
 **Where it appears.** [[1-electrostatics/01-fields-forces-and-the-maxwell-roadmap|Lecture 1]] (definition), [[1-electrostatics/02-coulombs-law-superposition-and-gauss|Lecture 2]] (velocity and mass selectors), [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]] (magnetic force on currents, and where $\mathbf{B}$ comes from), [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]] (motional emf, and the unchanged definitions of $\mathbf{E}$ and $\mathbf{B}$ in time-varying fields).
 
+**Practice.** [[practice/topics#magnetic-force-and-charged-particles|Magnetic force and charged particles]] (7 problems) — for example [[practice/12-magnetic-force-biot-savart-and-ampere#121-a-charge-passing-a-wire|12.1 A charge passing a wire]] (easy), [[practice/12-magnetic-force-biot-savart-and-ampere#129-a-rectangular-loop-beside-a-wire|12.9 A rectangular loop beside a wire]] (hard).
+
 Related: [[concepts/electric-field]] · [[concepts/coulombs-law]].

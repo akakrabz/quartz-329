@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 5
 ---
 
-*Lecture 5 · course notes §5 · slides "Potential Functions for Static Fields" · prev: [[1-electrostatics/04-divergence-and-curl|Lecture 4]] · next: [[1-electrostatics/06-circulation-and-boundary-conditions|Lecture 6]]*
+*Lecture 5 · course notes §5 · slides "Potential Functions for Static Fields" · prev: [[1-electrostatics/04-divergence-and-curl|Lecture 4]] · next: [[1-electrostatics/06-circulation-and-boundary-conditions|Lecture 6]] · practice: [[practice/05-electrostatic-potential|12 problems]]*
 
 > [!abstract] In one breath
 > Lecture 4 ended with $\nabla\times\mathbf{E} = 0$. That one fact buys a whole new tool: a static electric field can be written as the **gradient of a scalar**, $\mathbf{E} = -\nabla V$, and the scalar $V$ is the familiar **voltage** — the work you must do, per unit charge, to move a test charge from one point to another. Because the field is curl-free, that work does not depend on the route, so $V$ is a well-defined function of position. From $V$ to $\mathbf{E}$ is a derivative; from $\mathbf{E}$ to $V$ is a line integral along any convenient path; from charge to $V$ is scalar superposition, with no vectors to add. Much of the rest of electrostatics — Poisson's equation, conductors as equipotentials, capacitance — is easier in terms of $V$ than in terms of $\mathbf{E}$.
@@ -150,6 +150,9 @@ Concept pages: [[concepts/electrostatic-potential]] · [[concepts/conservative-f
 
 > [!exam] On Exam 1
 > FA26 problem 1(b) asks for $V(x,y,z)$ from a polynomial field with $V(0,0,0)=0$ — the staircase recipe, or the exact differential if you see it — and 1(d) asks for $\int_A^B\mathbf{E}\cdot d\mathbf{l}$ between two named points, which is just $V(A) - V(B)$ once you have $V$ (no path needed, because you checked the curl in 1(a)). Problem 2(c) asks for $V(b)$ outside a charged slab with $V(0)=0$: integrate $-E_x\,dx$ from 0 to $b$, splitting the integral where the field changes form. Worked with new numbers in [[problems/curl-potential-and-charge-from-a-field]] and [[problems/charged-slab-with-a-power-law-profile]]. The sign of the answer is the first thing the grader checks.
+
+> [!tip] Practice this lecture
+> [[practice/05-electrostatic-potential|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/05-electrostatic-potential#51-uniform-field-between-two-points|5.1 Uniform field between two points]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 5 (gradient and $\nabla\times\nabla V = 0$; exact and inexact differentials with the $\pm$ example; path integral definition; Examples 1–3, 5, 6; ideal voltmeter; potential energy and the Bohr factoid). Shao, Lecture 5 slides (work against the field; Mount Electron and the contour map; equipotential spacing; two-path example; point-charge potential with the $dr<0$ warning; $V$ from $\mathbf{E}$ by exact differential and by three segments; curvilinear gradients).

@@ -1,0 +1,165 @@
+constants: mu0 = 1.2566370614e-06 H/m, mu0/(2 pi) = 2.000e-07, e = 1.602176634e-19 C, me = 9.1093837e-31 kg
+
+=== 12.1 A charge passing a wire (MC)
+distance r = 3.0  rhat = (+0, +0, -1)  phihat = (-y) x rhat = (+1, -0, +0)
+B (Biot-Savart quadrature) = (+1.33333e-07, +0, +0) T ; closed form mu0 I/(2 pi r) phihat = (+1.33333e-07, -0, +0) OK
+|B| = 1.333333e-07 T  (= 2e-7*2/3 = 1.333333e-07)
+F/Q = v x B = (+0, +6.66667e-07, +0) N/C  -> direction +y, magnitude 6.6667e-07 N per coulomb
+F.v = 0.0  F.B = 0.0
+distractor (d): B x v = (+0, -6.66667e-07, +0)  (reversed order gives -y)
+distractor (a)/(b): B itself is along (+1, +0, +0)
+watch-out: v = 5 x^ gives v x B = (+0, +0, +0)  (zero: v parallel to B)
+radial velocity component v.rhat = -5.0  (negative: the charge is heading toward the wire)
+page 12.1: r = 3 m, |B| = 1.33e-07 T along +x, |F|/Q = 6.67e-07 N/C along +y
+
+=== 12.2 Two antiparallel wires
+B1 at wire 2 = (+0, +0, +5e-05) T  closed form (+0, +0, +5e-05) OK
+force per metre on wire 2 = I2 (-x^) x B1 = (+0, +0.0003, +0) N/m  (away from wire 1 -> repel)
+mu0 I1 I2/(2 pi d) = 3.000000e-04 N/m
+B2 at wire 1 = (+0, +0, +3e-05)  force per metre on wire 1 = (+0, -0.0003, +0)  (Newton 3: OK )
+midway: B1 = (+0, +0, +0.0001)  B2 = (+0, +0, +6e-05)  total = (+0, +0, +0.00016) T
+   phi^ for wire 2 at midpoint: (-x) x (-y) = (+0, +0, +1)
+page 12.2: B1 at wire 2 = 5.0e-05 T (+z); F2/l = 3.0e-04 N/m (+y, repel); midpoint 1.0e-04 + 6.0e-05 = 1.6e-04 T (+z); B2 at wire 1 = 3.0e-05 T (+z); F1/l = -3.0e-04 N/m (y)
+
+=== 12.3 An electron in Earth's field (calculator)
+R = me v/(e B) = 2.274252e-02 m = 2.2743 cm
+T = 2 pi me/(e B) = 7.144774e-07 s = 0.7145 us ; f = 1.399624e+06 Hz = 1.3996 MHz
+2 pi R / v = 7.144773504579922e-07  (same T)
+force on electron moving +x in B z^: (-e) v x B = (-0, +1.60218e-18, -0) N -> pushed toward +y (turns left)
+simulated: centre = (+3.53325e-14, +0.0227425, +0)  radius mean 2.274252e-02 (min 2.274252e-02, max 2.274252e-02)
+simulated: |r(T)-r(0)| = 2.126e-13 m ; speed drift = 9.341e-12
+simulated: sign of (r - c) x v . z^ : positive -> counter-clockwise seen from +z
+work per revolution: integral F.v dt = -1.0656828707653447e-36 J
+proton would go: clockwise (force on +q moving +x is (+0, -1, +0) )
+page 12.3: F = 1.60e-18 N (+y); R = 2.27 cm; T = 7.14e-07 s = 0.714 us; f = 1.40 MHz; centre (0, 2.27 cm, 0), counter-clockwise seen from +z
+
+=== 12.4 Could this be a magnetic field (MC)
+(a) (B0/a)(x,y,0)  div at pts: ['3.714286', '3.714286']
+(b) (B0/a)(x,-y,z)  div at pts: ['1.857143', '1.857143']
+(c) (B0/a)(y,-x,0)  div at pts: ['0.000000', '0.000000']
+(d) B0 r^ (spherical)  div at pts: ['3.676955', '1.971055']
+expected: (a) 2B0/a = 3.714286, (b) B0/a = 1.857143, (c) 0, (d) 2B0/r = ['3.676955', '1.971055']
+curl of (c) = (+0, +0, -3.71429)  expected (0,0,-2B0/a) = (+0, +0, -3.71429)
+(c) vs -(B0 r/a) phi^ : (-0.742857, -0.557143, +0) (-0.742857, -0.557143, -0) OK
+(c) at (1,0,0): (+0, -1.85714, +0)  at (0,1,0): (+1.85714, +0, +0)  -> clockwise seen from +z
+J for (c) = curl B/mu0 = -(2B0/(mu0 a)) z^ ; uniform-wire check |B| = mu0|J|r/2 : OK
+
+=== 12.5 Counting current in delta functions
+strip total current integral_0^1 6y(1-y) dy = 1.000000000000 A (flows in -z)
+max J_s at y=0.5: 1.5 A/m
+delta-sequence weights: 1.000000000 1.000000000 1.000000000
+narrow-Gaussian sifting over 0<x<3, 0<y<3: line +4.000000000 A, strip -1.000000000 A, net +3.000000000 A
+same over 1.5<x<3 (line excluded): line +0.000000000 A, strip -1.000000000 A, net -1.000000000 A
+page 12.5: line 4 A (+z), strip -1 A (peak J_s 1.5 A/m), (b) +3 A, (c) -1 A, (b)-(c) = 4 A
+
+=== 12.6 The centre of a square loop (find the error)
+side 0 (from (-0.05, -0.05, +0.00) to (+0.05, -0.05, +0.00)): B = (+0, +0, +1.41421e-05) T
+side 1 (from (+0.05, -0.05, +0.00) to (+0.05, +0.05, +0.00)): B = (+0, +0, +1.41421e-05) T
+side 2 (from (+0.05, +0.05, +0.00) to (-0.05, +0.05, +0.00)): B = (+0, +0, +1.41421e-05) T
+side 3 (from (-0.05, +0.05, +0.00) to (-0.05, -0.05, +0.00)): B = (+0, +0, +1.41421e-05) T
+one side closed form sqrt2 mu0 I/(2 pi a) = 1.414214e-05 T
+finite-segment formula mu0 I/(4 pi d)(sin a2 - sin a1), d=a/2, a=+-45deg: 1.414214e-05 T
+integral_{-d}^{d} dx/(x^2+d^2)^{3/2} (d=a/2) = 565.685425 ; sqrt2/d^2 = 565.685425
+total B (quadrature) = (+0, +0, +5.65685e-05) T ; closed form 2 sqrt2 mu0 I/(pi a) = 5.656854e-05 OK
+direction check: bottom side dl = +x, R^ from (0,-a/2) to centre = +y: x cross y = (+0, +0, +1)
+circle radius a/2 (quadrature) = (+0, +0, +6.28319e-05)  closed form mu0 I/(2R) = mu0 I/a = 6.283185e-05
+ratio square/circle = 0.900316 ; 2 sqrt2/pi = 0.900316
+student's circle r=a/4: max |H_x|,|H_y| = 0.000e+00 A/m ; H_z ranges 53.0070 .. 54.7162 A/m
+circulation of H around it (quadrature) = 0.000e+00 A  (zero, but H is not)
+H at the centre = 45.0158 A/m
+page 12.6: per side 1.41e-05 T; total 5.66e-05 T (+z); H = 45.0 A/m (+z); circle radius a/2: 6.28e-05 T; ratio 0.900; student's circle H_z 53.0..54.7 A/m
+
+=== 12.7 A wire with a nonuniform current (exemplar)
+I = integral J dA = 6.283185307 A ; 2 pi J0 a^2/3 = 6.283185307 ; 2 pi = 6.283185307
+r = 0.5 mm: H = I_enc/(2 pi r) = 250.000000 A/m ; formula 250.000000 OK
+r = 1.0 mm: H = I_enc/(2 pi r) = 1000.000000 A/m ; formula 1000.000000 OK
+r = 2.0 mm: H = I_enc/(2 pi r) = 500.000000 A/m ; formula 500.000000 OK
+J0 a/12 = 250.000, J0 a/6 = 500.000, J0 a/3 = 1000.000 A/m
+curl check r=0.3 mm: (1/r)d(rH)/dr = 9.000000e+05 ; J = 9.000000e+05 OK
+curl check r=0.7 mm: (1/r)d(rH)/dr = 2.100000e+06 ; J = 2.100000e+06 OK
+page 12.7: I = 2 pi = 6.28 A; H(0.5 mm) = 250 A/m; H(2 mm) = 500 A/m; at r = a: J0 a/3 = 1000 A/m
+
+=== 12.8 A hairpin of current
+arc direction at (a,0,0): dl = (+6.12323e-17, -1, +0)  dl x R^ = (-y) x (-x) = (+0, +0, -1)
+integral_{-inf}^0 dx/(x^2+a^2)^{3/2} = 2500.000000 ; 1/a^2 = 2500.000000
+upper leg  B = (-0, -0, -1.5e-05)  closed form -mu0 I/(4 pi a) z^ = -1.500000e-05
+semicircle B = (+0, +0, -4.71239e-05)  closed form -mu0 I/(4a) z^ = -4.712389e-05
+lower leg  B = (+0, +0, -1.5e-05)
+total B = (+0, +0, -7.71239e-05)  closed form -(mu0 I/(4a))(1+2/pi) = -7.712389e-05 OK
+full circle (clockwise) check: (+0, +0, -9.42478e-05)  mu0 I/(2a) = 9.424778e-05
+1 + 2/pi = 1.636620 ; infinite pair of legs would give 2 mu0 I/(2 pi a) = 6.000000e-05 (legs give half: 3.000000e-05)
+page 12.8: each leg -1.5e-05 T (z); semicircle -4.71e-05 T (z); total -7.71e-05 T (z); full clockwise circle -9.42e-05 T (z); legs together -3e-05 T (z) vs two infinite wires 6e-05 T
+
+=== 12.9 A rectangular loop beside a wire
+B of wire at (x=0.01 m, y=0): (+0, +0.0004, +0) T ; mu0 I1/(2 pi x) = 4.000000e-04 OK
+B of wire at (x=0.03 m, y=0): (+0, +0.000133333, +0) T ; mu0 I1/(2 pi x) = 1.333333e-04 OK
+phi^ at (x>0, y=0) = z x x = (+0, +1, +0)
+shorthand mu0 I1 I2/(2 pi) = 2.000000e-05 N
+mu0 I1 I2 L/(2 pi) = 2.000000e-06 N m ; mu0 I1 I2/(2 pi) ln3 = 2.197225e-05 N ; ln 3 = 1.098612
+F_near = (-0.0002, +0, +0)  closed -mu0I1I2L/(2pi d) = -2.000000e-04
+F_far  = (+6.66667e-05, +0, +0)  closed +mu0I1I2L/(2pi(d+b)) = 6.666667e-05
+F_top  = (+0, +0, +2.19722e-05)  closed +(mu0I1I2/2pi) ln((d+b)/d) = 2.197225e-05
+F_bot  = (+0, +0, -2.19722e-05)
+net F on loop = (-0.000133333, +0, -3.38813e-21)  closed -mu0 I1 I2 L b/(2 pi d (d+b)) = -1.333333e-04 OK
+1/d - 1/(d+b) = 66.6667 1/m
+force of the loop on the wire (double quadrature) = (+0.000133333, +0, +0)  Newton 3: OK
+limits: b->0 net=-2.000e-11 ; b->inf net=-2.000000e-04 (near side alone)
+page 12.9: B near 4e-04 T, far 1.33e-04 T (+y); mu0 I1 I2/2pi = 2e-05 N; F_near -2e-04 N (x); F_far 6.67e-05 N (x); F_top 2.20e-05 N (z), F_bot -2.20e-05 N (z); mu0 I1 I2 L/2pi = 2e-06 N m; 1/d-1/(d+b) = 66.7 1/m; net -1.33e-04 N (x); on wire +1.33e-04 N (x)
+
+=== 12.10 Two crossing line currents (Summer 2020 HE2 #2a style)
+at P=(2,0,1): z-wire r=2, r^=x, phi^ = z x x = (+0, +1, +0) ; x-wire r=1, r^=z, phi^ = (-x) x z = (+0, +1, +0)
+B(z-wire) = (+0, +4e-07, +0)  B(x-wire) = (+0, +4e-07, +0)  total = (+0, +8e-07, +0) T ; 2 mu0/pi = 8.000000e-07
+mu0/pi = 4.000000e-07
+closed-form general B vs quadrature at (+0.7, -1.3, +0.4) : OK
+candidate null (+2.0, +0.0, -1.0)  |B| = 1.059e-22 T (scale mu0/pi = 4.0e-07)
+candidate null (-2.0, +0.0, +1.0)  |B| = 1.059e-22 T (scale mu0/pi = 4.0e-07)
+candidate null (+4.0, +0.0, -2.0)  |B| = 2.647e-23 T (scale mu0/pi = 4.0e-07)
+candidate null (-1.0, +0.0, +0.5)  |B| = 1.059e-22 T (scale mu0/pi = 4.0e-07)
+non-null check (+2.0, +0.1, -1.0)  B = (-1.99501e-08, +2.96289e-09, -3.9604e-08)
+non-null check (+2.0, +0.0, -1.1)  B = (+0, +3.63636e-08, +0)
+non-null check (+2.0, +0.0, +1.0)  B = (+0, +8e-07, +0)
+on x=2, y=0: B_y=0 at z = -1.000000000 (expected -1); for z>0 B_y > 0 everywhere: True
+proton F = e v x B = (+0, +0, +1.28174e-20) N ; v x B = (+0, +0, +0.08) V/m
+E for zero force = -v x B = (-0, -0, -0.08) V/m ; |E|/|B| = 1.000000e+05 m/s
+page 12.10: z wire 4e-07 T (+y), x wire 4e-07 T (+y), total 8e-07 T (+y); F = 1.28e-20 N (+z); v x B = 0.08 V/m (+z); E = -0.08 V/m (z); |B| at (2,0,-1) and (-2,0,1): 1e-22, 1e-22 T
+
+=== 12.11 A coax with unequal currents
+J1 = 9.549297e+05 A/m^2 (+z) ; J2 = -7.957747e+04 A/m^2 (z-component)
+r =  0.5 mm: I_enc = +0.750000 A, H_phi =  +238.7324 A/m ; formula  +238.7324 OK
+r =  1.0 mm: I_enc = +3.000000 A, H_phi =  +477.4648 A/m ; formula  +477.4648 OK
+r =  1.5 mm: I_enc = +3.000000 A, H_phi =  +318.3099 A/m ; formula  +318.3099 OK
+r =  2.0 mm: I_enc = +3.000000 A, H_phi =  +238.7324 A/m ; formula  +238.7324 OK
+r =  3.0 mm: I_enc = +1.750000 A, H_phi =   +92.8404 A/m ; formula   +92.8404 OK
+r =  4.0 mm: I_enc = +0.000000 A, H_phi =    +0.0000 A/m ; formula    +0.0000 OK
+r =  5.0 mm: I_enc = -2.250000 A, H_phi =   -71.6197 A/m ; formula   -71.6197 OK
+r =  6.0 mm: I_enc = -5.000000 A, H_phi =  -132.6291 A/m ; formula  -132.6291 OK
+r = 10.0 mm: I_enc = -5.000000 A, H_phi =   -79.5775 A/m ; formula   -79.5775 OK
+zero of I_enc in the outer conductor: r0 = 4.000000000 mm ; sqrt(b^2 + (I1/I2)(c^2-b^2)) = 4.000000000 mm
+(r0^2-b^2)/(c^2-b^2) = 0.375000 = I1/I2 = 0.375000
+continuity at r = 1 mm: left 477.464829 right 477.464829
+continuity at r = 2 mm: left 238.732415 right 238.732415
+continuity at r = 6 mm: left -132.629119 right -132.629119
+curl check r=3 mm: (1/r)d(r H)/dr = -7.957747e+04 ; J2 = -7.957747e+04 OK
+curl check r=5 mm: (1/r)d(r H)/dr = -7.957747e+04 ; J2 = -7.957747e+04 OK
+outside: I1 - I2 = -5.0 A -> H along -phi^ ; values 1500/pi=477.4648 750/pi=238.7324 1250/(3pi)=132.6291 250/pi=79.5775
+H at (10 mm,0,0) by 2-D superposition of line currents = (-1.97685e-15, -79.5775, +0) A/m ; -phi^ there = -y
+page 12.11: J1 = 9.55e+05, J2 = -7.96e+04 A/m^2; (r mm: I_enc A / H_phi A/m) 0.5: 0.75 / 238.7, 1.5: 3.00 / 318.3, 3: 1.75 / 92.8, 5: -2.25 / -71.6, 10: -5.00 / -79.6; H at r=a,b,c: 477.5, 238.7, -132.6 A/m; r0^2 = 16 mm^2, r0 = 4 mm; outside I_enc = -5 A; b^2 = 4, c^2 = 36, c^2-b^2 = 32, (3 mm)^2 = 9 mm^2; I1/I2 = 3/8 = 0.375
+
+=== 12.12 A wire with an off-axis hole
+J = I/(pi(a^2-b^2)) = 15915.494309 A/m^2 ; 5e4/pi = 15915.494309
+currents of the superposed cylinders: J pi a^2 = 45.000000 A, J pi b^2 = 5.000000 A
+vector form (1/2) J z^ x d = (+0, +119.366, +0) A/m ; magnitude J d/2 = 119.366207 = 375/pi = 119.366207
+B in hole = mu0 H = 1.500000e-04 T
+hole point (+0.015, +0.000, +0.000) : H (2-D brute force) = (+1.61899e-14, +119.366, +0) OK
+hole point (+0.015, +0.006, +0.000) : H (2-D brute force) = (+1.77636e-14, +119.366, +0) OK
+hole point (+0.021, -0.003, +0.000) : H (2-D brute force) = (+1.58762e-14, +119.366, +0) OK
+hole point (+0.008, +0.004, +0.000) : H (2-D brute force) = (+2.55351e-14, +119.366, +0) OK
+concentric hole (d=0): H at (4 mm, 3 mm) = (+5.32907e-15, +1.95399e-14, +0) A/m (expected 0)
+concentric, metal r=2 cm: I_enc = 15.000000 A ; J pi (r^2-b^2) = 15.000000 ; H = 119.366207 ; J(r^2-b^2)/(2r) = 119.366207
+concentric, at r = a: J(a^2-b^2)/(2a) = 212.206591 = I/(2 pi a) = 212.206591
+at (6 cm, 0): brute force H = (+4.91198e-15, +101.682, +0)  ; big (+0, +119.366, +0) + hole (-0, -17.6839, -0) = (+0, +101.682, +0) OK
+centred 40 A line at 6 cm: I/(2 pi r) = 106.103295 A/m ; ratio 0.958333
+circulation around r = 6 cm = 40.000000 A (= I) while |H| on it varies 101.682 .. 108.756 A/m
+page 12.12: a^2-b^2 = 8e-04 m^2; J = 1.59e+04 A/m^2; pieces 45 A and 5 A; hole H = 119.4 A/m (+y), B = 1.5e-04 T (+y); concentric: I_enc(2 cm) = 15 A, H = 119.4 A/m, at r=a 212.2 A/m; at (6 cm,0,0): 119.4 - 17.7 = 101.7 A/m (+y), centred line 106.1 A/m, ratio 0.958; |H| on r = 6 cm 101.7..108.8 A/m; circulation 40 A; hole axis to (6 cm,0,0) = 0.045 m
+
+All checks printed.

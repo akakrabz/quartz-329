@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 8
 ---
 
-*Lecture 8 · course notes §8 · slides "Conductors" and "Dielectrics" · prev: [[1-electrostatics/07-poisson-and-laplace|Lecture 7]] · next: [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]]*
+*Lecture 8 · course notes §8 · slides "Conductors" and "Dielectrics" · prev: [[1-electrostatics/07-poisson-and-laplace|Lecture 7]] · next: [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] · practice: [[practice/08-conductors-dielectrics-and-polarization|12 problems]]*
 
 > [!abstract] In one breath
 > So far every charge sat in empty space. Real problems have *stuff* in them, and stuff is made of charges that respond to the field. If the charges are **free** to move (a conductor), they move until there is nothing left to push them: the interior field is zero, the body is an equipotential, and all the charge ends up on the surface. If the charges are **bound** (a dielectric), they can only shift a little, turning each atom into a tiny dipole; the sum of those dipoles is the **polarization** $\mathbf{P}$, whose own field opposes the applied one and *weakens* the field inside without cancelling it. The bookkeeping trick $\mathbf{D} \equiv \epsilon_0\mathbf{E} + \mathbf{P}$ hides the bound charge inside $\mathbf{D}$, so that Gauss's law $\nabla\cdot\mathbf{D} = \rho$ needs only the charge you put there yourself. For ordinary materials $\mathbf{P}\propto\mathbf{E}$ and the whole story collapses into one number: $\mathbf{D} = \epsilon\mathbf{E}$.
@@ -143,6 +143,9 @@ Concept pages: [[concepts/conductors]] · [[concepts/polarization]] · [[concept
 
 > [!exam] On Exam 1
 > FA26 problem 3(c) asks for $\mathbf{P}$ on both sides of a dielectric interface — $\mathbf{P} = \mathbf{D} - \epsilon_0\mathbf{E}$, or equivalently $(\epsilon_r-1)\epsilon_0\mathbf{E}$. Two traps in that one line: $\mathbf{P} = \mathbf{D} - \epsilon\mathbf{E}$ is identically zero, and $\mathbf{P} = \chi_e\mathbf{E}$ is missing an $\epsilon_0$. Problem 4(c) tests the conductor rule: the outer conductor of a coax carries $-\lambda$ on its inner surface because the field inside the metal must vanish — "conductors are neutral, so 0" is the wrong reflex. Worked in [[problems/fields-across-a-dielectric-interface]] and [[problems/two-layer-coaxial-capacitor]].
+
+> [!tip] Practice this lecture
+> [[practice/08-conductors-dielectrics-and-polarization|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/08-conductors-dielectrics-and-polarization#81-resistance-of-a-copper-wire|8.1 Resistance of a copper wire]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 8 (conductivity and the two ideal limits; the conducting slab; relaxation time from the continuity equation; dipole-lattice derivation of $\mathbf{E}_p = -\mathbf{P}/\epsilon_0$; $\mathbf{D} = \epsilon_0\mathbf{E}+\mathbf{P}$ and Gauss's law for free charge; $\chi_e$, $\epsilon_r$ table; boundary conditions in media; the dielectric-sphere footnote). Shao, Lecture 8 slides (resistor → resistivity → conductivity; conductivity table; PEC build-up; conductor facts; slab between sheets; point charge over a plane) and Lecture 9 slides (polarized lattice; "reduced but not zero"; total-field correction; slab example with $E_a/(1+\chi_e)$; $\epsilon = \epsilon_0\epsilon_r$). FA26 HW4 #5.

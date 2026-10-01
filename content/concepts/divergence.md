@@ -29,3 +29,5 @@ aliases: ["div", "∇·"]
 **Theorem.** [[concepts/divergence-theorem]]: $\int_V\nabla\cdot\mathbf{A}\,dV = \oint_S\mathbf{A}\cdot d\mathbf{S}$.
 
 **Where it appears.** [[1-electrostatics/04-divergence-and-curl#2-divergence-flux-per-unit-volume|Lecture 4 §2]], [[problems/curl-potential-and-charge-from-a-field]], [[1-electrostatics/07-poisson-and-laplace|Lecture 7]] (Poisson: $\nabla\cdot\nabla V = \nabla^2V = -\rho/\epsilon$).
+
+**Practice.** [[practice/topics#divergence-curl-and-the-integral-theorems|Divergence, curl and the integral theorems]] (17 problems) — for example [[practice/04-divergence-and-curl#41-faucet-or-whirlpool|4.1 Faucet or whirlpool]] (easy), [[practice/04-divergence-and-curl#46-three-fields-in-curved-coordinates|4.6 Three fields in curved coordinates]] (medium), [[practice/04-divergence-and-curl#49-electrostatic-or-not|4.9 Electrostatic or not]] (hard).

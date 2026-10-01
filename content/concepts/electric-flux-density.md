@@ -25,4 +25,6 @@ So a Gauss's-law calculation gives $\mathbf{D}$ from the free charge *regardless
 
 **Where it appears.** [[1-electrostatics/02-coulombs-law-superposition-and-gauss#5-from-coulomb-to-gauss|Lecture 2 §5]] (introduced), [[1-electrostatics/03-gauss-law-at-work|Lecture 3]] (every Gauss's-law example), [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]], [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]], [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] (materials, capacitance), [[problems/two-layer-coaxial-capacitor]].
 
+**Practice.** [[practice/topics#fields-in-dielectric-media|Fields in dielectric media]] (15 problems) — for example [[practice/09-static-fields-in-dielectric-media#91-three-layers-between-charged-plates|9.1 Three layers between charged plates]] (easy), [[practice/09-static-fields-in-dielectric-media#96-graded-dielectric-at-fixed-voltage|9.6 Graded dielectric at fixed voltage]] (medium), [[practice/09-static-fields-in-dielectric-media#99-glass-slab-in-an-oblique-field|9.9 Glass slab in an oblique field]] (hard).
+
 Related: [[concepts/gauss-law]] · [[concepts/electric-field]] · [[concepts/flux]] · [[concepts/polarization]] · [[concepts/permittivity]].

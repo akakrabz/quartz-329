@@ -1,0 +1,197 @@
+
+=== 5.1  uniform E = 50 x V/m, a = (1,2,0), b = (4,-2,0)
+  PASS  V(b)-V(a), straight path [V]: computed -150 | page -150
+  PASS  V(b)-V(a), staircase via (1,-2,0) [V]: computed -150 | page -150
+  PASS  V(b)-V(a), wiggly 3-D path [V]: computed -150 | page -150
+  PASS  staircase first leg (along -y) contributes [V]: computed -0 | page 0
+  PASS  int_a^b E.dl = drop V(a)-V(b), distractor (a) [V]: computed 150 | page 150
+  PASS  |r_b - r_a| [m]: computed 5 | page 5
+  PASS  -E|r_b - r_a|, distractor (c) [V]: computed -250 | page -250
+  keyed answer (b) -150 V is the computed value; V(b) < V(a) since b is 3 m further along E
+
+=== 5.2  Q1 = 2 nC at O, Q2 = -4 nC at (0.6,0,0), Q3 = 3 nC at (0,0.8,0); P = (0.6,0.8,0)
+  PASS  R1, R2, R3 [m]: computed [1. , 0.8, 0.6] | page [1. , 0.8, 0.6]
+  PASS  (a) V(P), k = 9e9 [V]: computed 18 | page 18
+  PASS  (a) V(P), exact k [V]: computed 17.9751 | page 17.98
+  PASS  (a) V(P) = -int E.dl in from infinity along ray [0.6, 0.8, 0] [V]: computed 18 | page 18
+  PASS  (a) V(P) = -int E.dl in from infinity along ray [0, 0, 1] [V]: computed 18 | page 18
+  PASS  (a) V(P) = -int E.dl in from infinity along ray [1, -1, 0.5] [V]: computed 18 | page 18
+  PASS  (b) agent work q[V(P)-V(inf)] [eV]: computed -18 | page -18
+  PASS  (b) agent work [J]: computed -2.88392e-18 | page -2.88e-18
+  claim 'agent holds it back the whole way': on the radial ray V is monotonic: True
+  but V(0.7,0.05,0) = -270.0 V < 0: a route past Q2 raises U = -eV to 270 eV, so there the agent must PUSH -> 'the whole way' is path-dependent (only the total -18 eV is not)
+
+=== 5.3  true / false
+  PASS  (b) V at origin of the +-1 nC pair [V]: computed 0 | page 0
+  PASS  (b) E at origin (vector) [V/m]: computed [1797.510358,    0.      ,    0.      ] | page [1798.,    0.,    0.]
+  PASS  (b) 2kq/d^2 with q = 1 nC, d = 0.1 m [V/m]: computed 1797.51 | page 1798
+  PASS  (c) V inside shell, 0.0 m from centre (ring sum) [V]: computed 44.9378 | page 44.94
+  PASS  (c) V inside shell, 0.07 m from centre (ring sum) [V]: computed 44.9378 | page 44.94
+  PASS  (c) V inside shell, 0.15 m from centre (ring sum) [V]: computed 44.9378 | page 44.94
+  PASS  (c) V inside shell, 0.19 m from centre (ring sum) [V]: computed 44.9378 | page 44.94
+  PASS  (d) curl_z at (0.3,0.7,0), finite difference [V/m^2]: computed -1.06036 | page -1.06
+  PASS  (d) page formula -sin x - cos y vs FD: computed -1.06036 | page -1.06036
+  PASS  (d) circulation / area of a 1 mm CCW square [V/m^2]: computed -1.06052 | page -1.06
+  PASS  (e) dV, proton 1 mm along +x [V]: computed -0.01 | page -0.01
+  PASS  (e) dV, electron 1 mm along -x [V]: computed 0.01 | page 0.01
+  PASS  (e) dU proton = e dV [J]: computed -1.60218e-21 | page -1.6e-21
+  PASS  (e) dU electron = -e dV [J]: computed -1.60218e-21 | page -1.6e-21
+  verdicts recomputed: (a) T, (b) F, (c) F, (d) F, (e) T -> two true, as the hint says
+
+=== 5.4  V = 2x^2 y - 3yz + 5, P = (1,2,-1)
+  PASS  grad V(P) [V/m]: computed [ 8.,  5., -6.] | page [ 8.,  5., -6.]
+  PASS  (a) E(P) = -grad V [V/m]: computed [-8., -5.,  6.] | page [-8., -5.,  6.]
+  PASS  (a) |E|^2: computed 125 | page 125
+  PASS  (a) |E| [V/m]: computed 11.1803 | page 11.18
+  PASS  (b) grad V / |grad V|: computed [ 0.715542,  0.447214, -0.536656] | page [ 0.716,  0.447, -0.537]
+  PASS  (b) best of 4e5 random directions (brute-force steepest ascent): computed [ 0.715724,  0.447349, -0.5363  ] | page [ 0.716,  0.447, -0.537]
+  PASS  (b) its rate [V/m]: computed 11.1803 | page 11.18
+  PASS  (b) dV along a tangent of the equipotential [V/m]: computed 8.88178e-10 | page 0
+  PASS  check: dV/dz at P [V/m]: computed -6 | page -6
+
+=== 5.5  find the error: Q = 1 nC, r = 0.3 m
+  PASS  V(0.3 m), inward walk with dl = actual step [V]: computed 30 | page 30
+  PASS  V(0.3 m), -int_inf^r E dr' as int_r^inf [V]: computed 30 | page 30
+  PASS  V(0.3 m), exact k [V]: computed 29.9585 | page 29.96
+  PASS  student's result (direction counted twice) [V]: computed -30 | page -30
+  PASS  check: -dV/dr at 0.3 m [V/m]: computed 100 | page 100
+
+=== 5.6  E+- = 3x^2 y x +- x^3 y, O -> P = (1,2,0)
+  PASS  (a) curl E+ at [0.3, 0.5, 0.2]: computed [0.000000e+00, 0.000000e+00, 1.009609e-10] | page [0., 0., 0.]
+  PASS  (a) curl E- at [0.3, 0.5, 0.2] vs -6x^2 z: computed [ 0.  ,  0.  , -0.54] | page [ 0.  ,  0.  , -0.54]
+  PASS  (a) curl E+ at [1.1, -0.4, 0.7]: computed [0.000000e+00, 0.000000e+00, 1.221245e-10] | page [0., 0., 0.]
+  PASS  (a) curl E- at [1.1, -0.4, 0.7] vs -6x^2 z: computed [ 0.  ,  0.  , -7.26] | page [ 0.  ,  0.  , -7.26]
+  PASS  (b) E+ on C1, C2, C3 [V]: computed [2., 2., 2.] | page [2., 2., 2.]
+  PASS  (b) E- on C1, C2, C3 [V]: computed [-2.,  2.,  1.] | page [-2.,  2.,  1.]
+  PASS  (b) E+ C1 legs [V]: computed [0., 2.] | page [0., 2.]
+  PASS  (c) -grad(-x^3 y) = E+ at (0.7,1.3,0.2): computed [ 1.911,  0.343, -0.   ] | page [1.911, 0.343, 0.   ]
+  PASS  (c) V(P)-V(O) from page V [V]: computed -2 | page -2
+  PASS  (c) V(P)-V(O) = -int E+ on a curved 3-D path [V]: computed -2 | page -2
+  signed area O->(1,0)->P: +1.0 (>0: CCW seen from +z)
+  PASS  (d) closed loop C1 out, C3 back [V]: computed -3 | page -3
+  PASS  (d) flux of curl E- through lower triangle, +z [V]: computed -3 | page -3
+  signed area O->(0,2)->P: -1.0 (<0: clockwise)
+  PASS  check: loop C2 out, C3 back [V]: computed 1 | page 1
+  PASS  check: curl flux through upper triangle with +z [V]: computed -1 | page -1
+  PASS  check: ... with -z [V]: computed 1 | page 1
+
+=== 5.7  uniform ball, a = 9 cm, Q = 1 nC
+  PASS  (c) V(a) [V]: computed 100 | page 100
+  PASS  (c) V(a/2) [V]: computed 137.5 | page 137.5
+  PASS  (c) V(0) [V]: computed 150 | page 150
+  PASS  (c) V(a), exact k [V]: computed 99.8617 | page 99.86
+  PASS  (c) V(0), exact k [V]: computed 149.793 | page 149.79
+  PASS  (a) E_r(0.03 m): -dV/dr of brute-force V vs page formula [V/m]: computed 370.37 | page 370.37
+  PASS  (a) E_r(0.06 m): -dV/dr of brute-force V vs page formula [V/m]: computed 740.741 | page 740.741
+  PASS  (a) E_r(0.12 m): -dV/dr of brute-force V vs page formula [V/m]: computed 625.011 | page 625
+  PASS  (a) E_r(0.2 m): -dV/dr of brute-force V vs page formula [V/m]: computed 225.001 | page 225
+  PASS  (b) page V(0.0 m) vs brute force [V]: computed 150 | page 150
+  PASS  (b) page V(0.02 m) vs brute force [V]: computed 147.531 | page 147.531
+  PASS  (b) page V(0.07 m) vs brute force [V]: computed 119.753 | page 119.753
+  PASS  (b) page V(0.15 m) vs brute force [V]: computed 60 | page 60
+  PASS  (d) proton work e[V(0)-0] [eV]: computed 150 | page 150
+  PASS  (d) ... [J]: computed 2.40326e-17 | page 2.4e-17
+
+=== 5.8  uniform cylinder, a = 2 cm, rho_l = 200 pi eps0
+  PASS  rho_l [nC/m]: computed 5.56325 | page 5.56
+  PASS  rho_l/(2 pi eps0) [V]: computed 100 | page 100
+  PASS  (c) V(0), ref V(a) = 0 [V]: computed 50 | page 50
+  PASS  (c) V(2a), ref V(a) = 0 [V]: computed -69.3147 | page -69.31
+  PASS  (c) V(0) - V(2a) [V]: computed 119.315 | page 119.31
+  PASS  (d) V(1000 m) - V(a) [V]: computed -1081.98 | page -1082
+  PASS  (d) V(1e+06 m) - V(a) [V]: computed -1772.75 | page -1773
+  PASS  (d) V(1e+09 m) - V(a) [V]: computed -2463.53 | page -2464
+  PASS  (d) V(a), ref V(0) = 0 [V]: computed -50 | page -50
+  PASS  (d) V(2a), ref V(0) = 0 [V]: computed -119.315 | page -119.31
+  PASS  (b) page V(0.005 m) vs filament sum [V]: computed 46.875 | page 46.875
+  PASS  (b) page V(0.013 m) vs filament sum [V]: computed 28.875 | page 28.875
+  PASS  (b) page V(0.03 m) vs filament sum [V]: computed -40.5465 | page -40.5465
+  PASS  (a) E_r(0.01 m): -dV/dr of filament sum vs page [V/m]: computed 2500 | page 2500
+  PASS  (a) E_r(0.05 m): -dV/dr of filament sum vs page [V/m]: computed 2000 | page 2000
+
+=== 5.9  rectangle -1<=x<=2, 0<=y<=2; loop a -> c1 -> b -> c2 -> a
+  PASS  oriented vector area [m^2] (clockwise from +z -> dS = -z dA): computed [ 0.,  0., -6.] | page [ 0.,  0., -6.]
+  PASS  (a) legs a->c1, c1->b, b->c2, c2->a [V]: computed [-8., -9.,  8.,  9.] | page [-8., -9.,  8.,  9.]
+  PASS  (a) circulation [V]: computed 0 | page 0
+  PASS  (a) V(b)-V(a) via C_R and via C_L [V]: computed [17., 17.] | page [17., 17.]
+  PASS  (b) curl . oriented vector area [V]: computed -30 | page -30
+  PASS  (c) FD curl E at [0.3, -0.7, 1.1] [V/m^2]: computed [ 2., -3.,  5.] | page [ 2., -3.,  5.]
+  PASS  check: E = (1/2) c x r at [0.3, -0.7, 1.1]: computed [ 0.1 , -0.35, -0.25] | page [ 0.1 , -0.35, -0.25]
+  PASS  (c) FD curl E at [2.0, 1.0, -0.5] [V/m^2]: computed [ 2., -3.,  5.] | page [ 2., -3.,  5.]
+  PASS  check: E = (1/2) c x r at [2.0, 1.0, -0.5]: computed [-1.75,  5.5 ,  4.  ] | page [-1.75,  5.5 ,  4.  ]
+  PASS  (b) flux of FD curl through rectangle, dS = -z dA [V]: computed -30 | page -30
+  PASS  (c) C_R legs a->c1, c1->b [V]: computed [-10.,   0.] | page [-10.,   0.]
+  PASS  (c) C_L legs a->c2, c2->b [V]: computed [15.,  5.] | page [15.,  5.]
+  PASS  (c) int_a^b along C_R, along C_L [V]: computed [-10.,  20.] | page [-10.,  20.]
+  PASS  (c) C_R - C_L and direct closed loop [V]: computed [-30., -30.] | page [-30., -30.]
+  PASS  (d) readings int_b^a along C_R, C_L [V]: computed [ 10., -20.] | page [ 10., -20.]
+  PASS  (d) difference = |circulation| [V]: computed 30 | page 30
+  PASS  (d) in the field of (a) both meters read [V]: computed [17., 17.] | page [17., 17.]
+
+=== 5.10  slab 0<x<2 m with rho0 = 6 eps0, sheet rho_s = -rho0 d at x = 0
+  PASS  rho0 [pC/m^3]: computed 53.1251 | page 53.1
+  PASS  rho_s [pC/m^2]: computed -106.25 | page -106
+  PASS  (a) E_x at x = -3, -0.5, 2.5, 7 m [V/m]: computed [0., 0., 0., 0.] | page [0., 0., 0., 0.]
+  PASS  (a) E_x(x) at 0.3, 1, 1.7 vs 6(x-2) [V/m]: computed [-10.2,  -6. ,  -1.8] | page [-10.2,  -6. ,  -1.8]
+  PASS  (a) E_x(0+) [V/m]: computed -12 | page -12
+  PASS  (b) V at 0.5, 1, 2, 3 m [V]: computed [ 5.25,  9.  , 12.  , 12.  ] | page [ 5.25,  9.  , 12.  , 12.  ]
+  PASS  (b) V(-1.5 m) [V]: computed 0 | page 0
+  PASS  (b) page 12x - 3x^2 vs numeric at 0.8, 1.6 [V]: computed [ 7.68, 11.52] | page [ 7.68, 11.52]
+  PASS  (b) rho0 d^2/(2 eps0) [V]: computed 12 | page 12
+  PASS  check: pillbox eps0[E(0+)-E(0-)] = rho_s [C/m^2]: computed -1.0625e-10 | page -1.0625e-10
+  PASS  (c) force on electron at 0+ (x comp) [N]: computed 1.92261e-18 | page 1.92e-18
+  PASS  (c) K = int F dx over the slab [eV]: computed 12 | page 12
+  PASS  (c) K [J]: computed 1.92261e-18 | page 1.92e-18
+  PASS  (c) speed at x = d from the equation of motion [m/s]: computed 2.05448e+06 | page 2.05e+06
+  E_x < 0 on the whole slab interior: True -> pushed along +x all the way
+  PASS  (d) FD curl at [0.4, -1.3, 0.8]: computed [ 0.00000e+00,  0.00000e+00, -1.94289e-11] | page [0., 0., 0.]
+  PASS  (d) FD curl at [2.2, 0.5, -1.0]: computed [0., 0., 0.] | page [0., 0., 0.]
+  PASS  (d) int_O^B E.dl, straight line [V]: computed 1 | page 1
+  PASS  (d) staircase legs [V]: computed [ 0.,  2., -1.] | page [ 0.,  2., -1.]
+  PASS  (d) V(B) = 5 - int [V]: computed 4 | page 4
+  PASS  (d) -grad(page V) = E at (0.4,-1.3,0.8): computed [-1.197379,  0.389418, -1.6     ] | page [-1.197379,  0.389418, -1.6     ]
+  PASS  (d) page V(B) [V]: computed 4 | page 4
+  PASS  (d) agent work q[V(B)-V(O)] [J]: computed -2e-06 | page -2e-06
+
+=== 5.11  annulus a = 5 cm, b = 9 cm, rho_s = 1000 eps0, on the z axis
+  PASS  rho_s [nC/m^2]: computed 8.85419 | page 8.85
+  PASS  (b) V(0) [V]: computed 20 | page 20
+  PASS  (b) V(12 cm) [V]: computed 10 | page 10
+  PASS  (a) page formula vs brute force at z = 0.07 m [V]: computed 13.9971 | page 13.9971
+  PASS  (b) E at z = 12 cm, Coulomb vector sum [V/m]: computed [-1.594850e-15, -9.607137e-16,  6.153846e+01] | page [ 0.  ,  0.  , 61.54]
+  PASS  (b) -dV/dz at 12 cm from brute-force V [V/m]: computed 61.5385 | page 61.54
+  PASS  (b) E at the centre [V/m]: computed [-1.324332e-14, -4.020035e-15,  0.000000e+00] | page [0., 0., 0.]
+  PASS  (b) E_x on axis from -dV/dx [V/m]: computed -8.88178e-10 | page 0
+  PASS  (b,d) V on the axis peaks at z = 0 with V = 20 V: computed [5.551115e-17, 2.000000e+01] | page [ 0., 20.]
+  PASS  (c) full disk at z = 3 cm: Coulomb sum vs page formula [V/m]: computed 341.886 | page 341.886
+  PASS  (c) full disk near the sheet, z = 0.1 mm [V/m]: computed 499.444 | page 500
+  PASS  (c) full disk far away, z = 20 m, vs point charge [V/m]: computed 0.00506242 | page 0.0050625
+  PASS  (c) annulus charge Q [C]: computed 1.55771e-10 | page 1.56e-10
+  PASS  (c) point-charge estimate at 1 m [V]: computed 1.4 | page 1.4
+  PASS  (c) brute-force V at 1 m [V]: computed 1.39631 | page 1.396
+  PASS  hint: int r' dr'/sqrt(r'^2+z^2) at z = 0.12: computed 0.02 | page 0.02
+  PASS  (d) proton minimum K = e V(0) [eV]: computed 20 | page 20
+  PASS  (d) ... [J]: computed 3.20435e-18 | page 3.2e-18
+  PASS  (d) electron K at the centre from int F.dl of the Coulomb field [eV]: computed 10 | page 10
+  PASS  (d) ... [J]: computed 1.60218e-18 | page 1.6e-18
+  PASS  (d) electron speed [m/s]: computed 1.87547e+06 | page 1.88e+06
+
+=== 5.12  four 2 nC charges on a 30 cm square, centred at O
+  PASS  (a) W4 over all 24 orders, min and max [J]: computed [6.497056e-07, 6.497056e-07] | page [6.5e-07, 6.5e-07]
+  PASS  kq^2/s [J]: computed 1.2e-07 | page 1.2e-07
+  PASS  (a) step costs going round the square / (kq^2/s): computed [0.      , 1.      , 1.707107, 2.707107] | page [0.      , 1.      , 1.707107, 2.707107]
+  PASS  (a) W4/(kq^2/s) = 4 + sqrt 2: computed 5.41421 | page 5.414
+  PASS  (b) corner-to-centre distance [m]: computed 0.212132 | page 0.2121
+  PASS  (b) V at centre [V]: computed 339.411 | page 339.4
+  PASS  (c) Q giving zero total energy [nC]: computed -1.91421 | page -1.91
+  PASS  (c) Q/q = -(1/sqrt2 + 1/4): computed -0.957107 | page -0.957
+  PASS  (d) net forces on the 4 corners and Q, max |F| [N]: computed 0 | page 0
+  PASS  (d) other corners on corner (s/2,s/2): |F| [N]: computed 7.65685e-07 | page 7.66e-07
+  PASS  (d) ... its x, y components [N]: computed [5.414214e-07, 5.414214e-07] | page [5.414e-07, 5.414e-07]
+  PASS  (d) ... direction (outward diagonal): computed [0.707107, 0.707107, 0.      ] | page [0.707107, 0.707107, 0.      ]
+  PASS  (d) pull of Q on that corner: |F| [N]: computed 7.65685e-07 | page 7.66e-07
+  PASS  (d) ... x, y components [N]: computed [-5.414214e-07, -5.414214e-07] | page [-5.414e-07, -5.414e-07]
+  PASS  kq^2/s^2 [N]: computed 4e-07 | page 4e-07
+  PASS  (d) scaling: total energy at lambda = 0.5, 2, 3.7 [J]: computed [-1.058791e-22, -2.646978e-23,  1.323489e-23] | page [0., 0., 0.]
+
+164 checks, 0 FAIL

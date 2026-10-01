@@ -1,0 +1,241 @@
+eps0 = 8.8541878128e-12 F/m, mu0 = 1.2566370614e-06 H/m
+
+==============================================================================
+6.1  What is always continuous (MC)
+==============================================================================
+   E1 = [ 1.3  -0.7   7.25]  E2 = [ 1.3 -0.7  2.1]
+   [OK] (c) n x (E1-E2) = 0 (tangential E continuous)
+   (a) E1n - E2n = 5.150000 V/m  (nonzero -> E_n jumps)
+   (b) n.(D1-D2)/eps0 = 4.000000  (= rho_s/eps0 = 4, nonzero)
+   (d) D1t/D2t = 0.400000 = eps1/eps2 = 0.400000 = 2/5
+   (e) |E1| = 7.398817, |E2| = 2.567100 (differ)
+   [OK] follow-up: rho_s=0 -> D_n continuous
+   follow-up: E1n/E2n = 2.500000 = eps2/eps1 = 2.5 (E_n still jumps)
+
+==============================================================================
+6.2  Kirchhoff around a triangle (uniform E)
+==============================================================================
+   legs P1->P2, P2->P3, P3->P1: 6.000000, 12.000000, -18.000000 V
+   circulation = 0.000e+00 V
+   [OK] legs = 6, 12, -18
+   [OK] circulation 0
+   V(P3)-V(P1) = -18.000000 V (via P2), -18.000000 V (via slant side)
+   [OK] V(P3)-V(P1) = -18 V
+   slant leg integrand E.(-2,-3,0) = -18.0 per unit t
+
+==============================================================================
+6.3  A field at a metal surface (MC)
+==============================================================================
+   n = [0.6 0.8 0. ]
+   (a) E = [4. 3. 0.]:  n x E = [ 0.   0.  -1.4],  n.E = 4.800000  -> tangential part, NOT allowed
+   (b) E = [-6. -8.  0.]:  n x E = [ 0. -0.  0.],  n.E = -10.000000  -> allowed
+   (c) E = [3. 4. 5.]:  n x E = [ 4. -3. -0.],  n.E = 5.000000  -> tangential part, NOT allowed
+   (d) E = [ 8. -6.  0.]:  n x E = [  0.   0. -10.],  n.E = -0.000000  -> tangential part, NOT allowed
+   [OK] (a) n x E = -7/5 z
+   [OK] (b) only allowed option
+   [OK] (b) E = -10 n
+   [OK] (c) z-hat is tangential: n.z = 0
+   [OK] (d) purely tangential: n.E = 0
+   rho_s = n.D = -10.000000 eps0 = -8.8542e-11 C/m^2
+   [OK] rho_s = -10 eps0 = -8.85e-11
+
+==============================================================================
+6.4  Crossing a current sheet (x = 0, Js = 4 z)
+==============================================================================
+   Js x n = [0. 4. 0.]  H1 = [3. 2. 0.] A/m
+   [OK] H1 = 3x + 2y
+   [OK] n x (H1-H2) = Js
+   [OK] n.(B1-B2) = 0
+   B1 = [3.769911 2.513274 0.      ] uT,  B2 = [ 3.769911 -2.513274  0.      ] uT
+   [OK] B1 ~ (3.77, 2.51, 0) uT
+   [OK] B2 ~ (3.77, -2.51, 0) uT
+   [OK] x x (a y + b z) = a z - b y with a=4, b=0 gives Js
+   Ampere loop: circulation = 8.000000 A, enclosed J_s L = 8.000000 A
+   [OK] Ampere thin loop
+
+==============================================================================
+6.5  The flipped normal (find the error)
+==============================================================================
+   student: +5.0 nC/m^2;  corrected: -5.0 (n=-z), -5.0 (relabelled)
+   [OK] correct rho_s = -5 nC/m^2
+   [OK] tangential D_x equal (2 = 2)
+
+==============================================================================
+6.6  Circulation of two fields (triangle O-A-B)
+==============================================================================
+   E1 legs OA, AB, BO: 4.000000, 4.000000, -8.000000; circulation 0.00e+00 V
+   E2 legs OA, AB, BO: 0.000000, 4.000000, -2.666667; circulation 1.333333 V (4/3 = 1.333333)
+   [OK] E1 legs 4, 4, -8; circ 0
+   [OK] E2 legs 0, 4, -8/3; circ 4/3
+   at r=[ 0.228986 -0.940375 -0.785597]: curl E1 = [0. 0. 0.], curl E2 = [ 0.        0.       -0.940375] (expect (0,0,y)=(0,0,-0.9404))
+   [OK] curl E1 = 0
+   [OK] curl E2 = y z
+   at r=[-0.753019  2.92467   0.796538]: curl E1 = [ 0.  0. -0.], curl E2 = [0.      0.      2.92467] (expect (0,0,y)=(0,0,2.9247))
+   [OK] curl E1 = 0
+   [OK] curl E2 = y z
+   at r=[ 1.045944 -1.020219  1.079506]: curl E1 = [0. 0. 0.], curl E2 = [ 0.        0.       -1.020219] (expect (0,0,y)=(0,0,-1.0202))
+   [OK] curl E1 = 0
+   [OK] curl E2 = y z
+   Stokes: flux of curl E2 through triangle (dS = +z) = 1.333333 V
+   [OK] Stokes 4/3
+   [OK] -grad V = E1 at [-2.262 -2.69   2.101]
+   [OK] -grad V = E1 at [-2.947  2.873  1.962]
+   V(B)-V(O) = -8.000000 V; -(OA+AB legs) = -8.000000 V
+   [OK] V(B)-V(O) = -8 V
+   E2: O->A->B gives 4.000000 V, straight O->B gives 2.666667 V, difference 1.333333 V
+   [OK] E2 path dependence 4 vs 8/3
+
+==============================================================================
+6.7  A charged tilted interface (x + 2y + 2z = 0)
+==============================================================================
+   n = [0.333333 0.666667 0.666667] (= (1,2,2)/3)
+   [OK] n = (1,2,2)/3
+   E2n = 3.000000 V/m, E2n*n = [1. 2. 2.], E2t = [ 2. -1.  0.] V/m, E2t.n = 0.0e+00
+   [OK] E2n = 3, E2t = 2x - y
+   D2n = 6.000000 eps0, D1n = 9.000000 eps0, E1n = 9.000000 V/m
+   E1 = [5. 5. 6.] V/m
+   [OK] E1 = 5x + 5y + 6z
+   D1/eps0 = [5. 5. 6.]  D2/eps0 = [6. 2. 4.]
+   [OK] D1 = eps0(5,5,6), D2 = eps0(6,2,4)
+   n.(D1-D2) = 3.000000 eps0 (rho_s = 3 eps0); (D1-D2)/eps0 = [-1.  3.  2.] -> (-1 + 2*3 + 2*2)/3
+   [OK] n.(D1-D2) = rho_s
+   n x (E1-E2) = [0. 0. 0.] ; E1-E2 = [2. 4. 4.] ; (1,2,2)x(2,4,4) = [0 0 0]
+   [OK] n x (E1-E2) = 0
+   total surface charge = 6.000000 eps0, rho_sb = 3.000000 eps0 = 2.6563e-11 C/m^2
+   [OK] total 6 eps0, bound 3 eps0 = 2.66e-11
+   cross-check P2 = [3. 1. 2.] eps0, P2.n_out (n_out = +n) = 3.000000 eps0
+   [OK] P2.n = 3 eps0
+   tangential D: D2t = [ 4. -2.  0.] eps0, D1t = [ 2. -1.  0.] eps0 (halves)
+   [OK] D2t = eps0(4,-2,0), D1t = eps0(2,-1,0)
+
+==============================================================================
+6.8  Refraction of field lines (air over glass, y = 0)
+==============================================================================
+   E1 = [100.       173.205081   0.      ] (E1t = 100.0000, E1n = 173.2051 = 100 sqrt3 = 173.2051)
+   E2 = [100.        57.735027   0.      ] |E2| = 115.4701 (200/sqrt3 = 115.4701), theta2 = 60.0000 deg
+   [OK] E2 = 100x + 57.7y, |E2| = 115.5, theta2 = 60
+   tan(th1)/tan(th2) = 0.333333 = eps1/eps2 = 0.333333
+   [OK] refraction law 1/3
+   D1/eps0 = [100.       173.205081   0.      ], D2/eps0 = [300.       173.205081   0.      ]
+   D1 = [0.885419 1.53359  0.      ] nC/m^2, D2 = [2.656256 1.53359  0.      ] nC/m^2
+   [OK] D_y continuous, D_x triples
+   [OK] D1 ~ (0.885, 1.53), D2 ~ (2.66, 1.53) nC/m^2
+   [OK] D2/eps0 = (300, 173.2)
+   rho_sb = eps0 (E1n - E2n) = 115.4701 eps0 = 1.0224e-09 C/m^2 (200/sqrt3 eps0)
+   [OK] rho_sb = 1.02e-9 C/m^2
+   [OK] bound charge = P2.n (outward from glass = +y)
+   water (81) at 45 deg -> air at 0.7073 deg
+   [OK] 0.71 deg
+
+==============================================================================
+6.9  Two tilted charged planes (P: 3x+4z = 0, Q: 3x+4z = 10)
+==============================================================================
+   n = [0.6 0.  0.8]  distance between planes = 2.0 m
+   D_Mn = 5.000000 eps0, D_Mt = [ 4.  2. -3.] eps0, D_Mt.n = -5.7e-27
+   [OK] D_Mn = 5 eps0, D_Mt = eps0(4,2,-3)
+   D_Ln = 0.000000 eps0, D_L = [ 4.  2. -3.] eps0, E_L = [ 4.  2. -3.] V/m
+   [OK] D_L = eps0(4,2,-3)
+   D_Rn = -5.000000 eps0, D_R = [ 1.  2. -7.] eps0, rho_sQ = -10.000000 eps0 = -8.8542e-11 C/m^2
+   [OK] D_Rn = -5 eps0, D_R = eps0(1,2,-7), rho_sQ = -10 eps0
+   [OK] plane P: n.(D_M-D_L) = rho_sP
+   [OK] plane P: n x (E_M-E_L) = 0
+   [OK] plane Q: n.(D_R-D_M) = rho_sQ
+   [OK] plane Q: n x (E_R-E_M) = 0
+   E_M - E_L = [3. 0. 4.] = 5 n -> [3. 0. 4.]
+   superposition: background D0 = [ 2.5  2.  -5. ] eps0; D_L = [ 4.  2. -3.] ; D_R = [ 1.  2. -7.]
+   [OK] superposition reproduces D_L and D_R
+   combined jump D_Rn - D_Ln = -5.000000 eps0 = rho_sP + rho_sQ = -5.000000 eps0
+   B on plane Q (3x+4z): 10.0 ; B' = [1.2 0.  1.6] on plane Q: 10.0 ; C side: -2.0
+   V(B)-V(A) = -15.000000 V, V(B')-V(A) = -10.000000 V, V(B)-V(B') = -5.000000 V (= -E_Mt.(B-B') = -5.000000)
+   [OK] V(B)-V(A) = -15, V(B')-V(A) = -10, V(B)-V(B') = -5
+   side B->C (x=2, y=0) meets plane P where 3*2 + 4z = 0: z = -1.50 m (t = 0.833333)
+   A->B 15.000000, B->C -1.000000 (M part -2.500000, L part 1.500000), C->A -14.000000; circulation 1.78e-15 V
+   [OK] legs 15, -1 (-2.5 + 1.5), -14; circulation 0
+   counter-test (tangential jump of 1 V/m along y): straddling-loop circulation = 2.000000 V (nonzero)
+
+==============================================================================
+6.10  Plates around a charged sheet (x = 0, 2, 3 m)
+==============================================================================
+   E_A = +1.000000 V/m (x-hat), E_B = -8.000000 V/m (x-hat)
+   [OK] E_A = +1, E_B = -8
+   rho_s0 = +1.000000 eps0 = 8.8542e-12; rho_s3 = +8.000000 eps0 = 7.0834e-11; rho_s2 = -9.000000 eps0 = -7.9688e-11 C/m^2; total = 0.00e+00 eps0
+   [OK] rho_s0 = eps0 = 8.85e-12
+   [OK] rho_s3 = 8 eps0 = 7.08e-11
+   [OK] rho_s2 = -9 eps0 = -7.97e-11
+   [OK] total zero
+   watch-out: wrong normal +x at x=3 gives -8.000000 eps0; total would be -16.000000 eps0 (nonzero)
+   [OK] wrong normal gives -8 eps0 and a nonzero total
+   brute force: E_x(-1.0) = +0.000000 V/m
+   brute force: E_x(+1.0) = +1.000000 V/m
+   brute force: E_x(+2.5) = -8.000000 V/m
+   brute force: E_x(+4.0) = +0.000000 V/m
+   [OK] superposition: 0 in metal, 1 and -8 in gaps
+   brute force V(2) = -2.000000 V, V(3) = +6.000000 V
+   [OK] V(2) = -2, V(3) = 6
+   KVL: -(E_A*2 + E_B*1) = 6.000000 V = V(3)-V(0)
+   (d) E_A' = +3.000000, E_B' = -6.000000 V/m; rho_s0' = +3.000000 eps0 = 2.6563e-11, rho_s3' = +6.000000 eps0 = 5.3125e-11 C/m^2; V(2) = -6.000000 V; plates total 9.0000 eps0
+   [OK] (d) 3, -6 V/m; 3 eps0, 6 eps0; V(2) = -6 V
+   [OK] (d) brute force: zero field in metal; V(3)=V(0)
+   general: a=2.0, d=3.0, rho=-9.0 eps0 -> rho0'=+3.000000 (formula +3.000000), rho_d'=+6.000000 (formula +6.000000) [eps0]
+   [OK] general split formula
+   general: a=0.7, d=2.5, rho=4.0 eps0 -> rho0'=-2.880000 (formula -2.880000), rho_d'=-1.120000 (formula -1.120000) [eps0]
+   [OK] general split formula
+   general: a=1.3, d=1.6, rho=-2.2 eps0 -> rho0'=+0.412500 (formula +0.412500), rho_d'=+1.787500 (formula +1.787500) [eps0]
+   [OK] general split formula
+   general: a=5.0, d=8.0, rho=1.0 eps0 -> rho0'=-0.375000 (formula -0.375000), rho_d'=-0.625000 (formula -0.625000) [eps0]
+   [OK] general split formula
+   share of the induced charge on the nearer plate (x=3 m): 0.666667 = 2/3
+
+==============================================================================
+6.11  Charged shell in a dielectric (r = 2 m)
+==============================================================================
+   E1 = [1. 0. 3.] V/m (r, phi, z);  D1/eps0 = [ 4.  0. 12.]
+   [OK] E1 = r + 3z, D1 = eps0(4r + 12z)
+   [OK] n x (E1-E2) = 0
+   rho_s = -2.000000 eps0 = -1.7708e-11 C/m^2
+   [OK] rho_s = -2 eps0 = -1.77e-11
+   total = -5.000000 eps0, rho_sb = -3.000000 eps0 = -2.6563e-11 C/m^2
+   [OK] total -5 eps0, rho_sb = -3 eps0 = -2.66e-11
+   P1/eps0 = [3. 0. 9.] (r, phi, z)
+   [OK] cross-check: bound charge on dielectric inner face = P1.(-r) = -3 eps0
+   rho_l = 2 pi (2)(6) eps0 = 24.000000 pi eps0 = 6.6759e-10 C/m
+   numerical Gauss: side 75.398224, caps +37.699112 -37.699112 -> Q_enc/L = 6.6759e-10 C/m
+   [OK] numerical Gauss gives rho_l = 24 pi eps0 = 6.68e-10
+   [OK] field from rho_l at 2-: E_r = 6
+   theta2 (core) = 26.5651 deg, theta1 (dielectric) = 71.5651 deg, tan ratio = 6.0000, eps1/eps2 = 4.0
+   [OK] 26.6 and 71.6 deg, ratio 6
+   with rho_s = 0: E1r = 1.5000 V/m, tan theta1 = 2.0000, ratio = 4.0000
+   [OK] rho_s=0 -> E1r = 1.5, tan = 2, ratio 4
+   check: free charge per m inside r=2+ = 16.0000 pi eps0; D1r * 2 pi (2) = 16.0000 pi eps0; shell per m = -8.0000 pi eps0
+   [OK] Gauss for D outside: 16 pi eps0
+
+==============================================================================
+6.12  A tilted current sheet (3y + 4z = 0, Js = 5x)
+==============================================================================
+   n = [0.  0.6 0.8]  Js.n = 0.0
+   [OK] Js tangential
+   H2n = 5.000000 A/m, H2n n = [0. 3. 4.], H2t = [2. 0. 0.] A/m
+   [OK] H2n = 5, H2t = 2x
+   Js x n = [ 0. -4.  3.] (= 3z - 4y)
+   [OK] Js x n = -4y + 3z
+   H1t = [ 2. -4.  3.]  H1 = [ 2. -1.  7.] A/m;  B1 = [ 2.513274 -1.256637  8.796459] uT
+   [OK] H1 = 2x - y + 7z
+   [OK] B1 ~ (2.51, -1.26, 8.80) uT
+   watch-out: n x Js instead of Js x n gives H1 = [2. 7. 1.] A/m; n x (H1_wrong - H2) = [-5.  0.  0.]
+   [OK] wrong order gives 2x + 7y + z, which violates the H_t condition
+   H1-H2 = [ 0. -4.  3.];  n.(B1-B2) = 5.91e-22;  n x (H1-H2) = [ 5.  0. -0.]
+   [OK] n.(B1-B2) = 0
+   [OK] n x (H1-H2) = Js
+   segment length 5.0000 m, t = [ 0.   0.8 -0.6], in-plane normal t x n = [ 1. -0.  0.], I = 25.000000 A
+   [OK] 3*0 + 4*... segment lies in plane
+   [OK] I = 25 A along +x
+   report: n.Hbad = 6.600000 A/m vs H2n = 5.000000; B_n jump = 1.6000 mu0
+   [OK] report has H1n = 6.6 != 5
+   report: (-3 + 36)/5 = 6.600000; jump in B_n would be 1.6 mu0 = 2.0106e-06 T
+   t_hat x n = [ 1. -0.  0.] (loop normal +x)
+   H1.t = -5.000000, H2.t = 0.000000, H1_x = 2.0, H2_x = 2.0 A/m
+   [OK] H.t jumps from 0 to -5; H_x continuous
+   Ampere loop: circulation = 15.000000 A, enclosed (Js.x) L = 15.000000 A
+   [OK] Ampere thin loop
+
+ALL CHECKS PASSED

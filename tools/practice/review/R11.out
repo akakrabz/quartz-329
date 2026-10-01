@@ -1,0 +1,205 @@
+=== 11.1 Drift speed in a house wire ===
+PASS  J_z [A/m^2]: computed 6.66667e+06   page 6.67e6
+PASS  v_z [m/s]: computed -0.000489584   page -4.9e-4
+PASS  |v| [mm/s]: computed 0.489584   page 0.49
+PASS  v antiparallel to J (electrons drift along -z): 
+PASS  time to drift 1 m [s]: computed 2042.55   page 2.0e3
+PASS    in minutes: computed 34.0425   page 34
+PASS  Ne [C/m^3]: computed 1.3617e+10   page 1.36e10
+PASS  Ne|v| [A/m^2]: computed 6.66667e+06   page 6.67e6
+
+=== 11.2 Conductivity of aluminum ===
+PASS  sigma = J/E from ODE steady state [S/m]: computed 3.80354e+07   page 3.8e7
+PASS  mobility |v|/E [m^2/Vs]: computed 0.00131903   page 1.32e-3
+PASS  v_x [m/s] (E = 0.1 x V/m): computed -0.000131903   page -1.32e-4
+PASS  v(tau)/v_final [%]: computed 63.2121   page 63
+PASS  check N e x 1.32e-3 [S/m]: computed 3.80635e+07   page 3.8e7
+PASS  copper mobility [m^2/Vs]: computed 0.00437688   page 4.4e-3
+PASS  N_Al/N_Cu: computed 2.11765   page 2.1
+PASS  mob_Cu/mob_Al: computed 3.31827   page 3.3
+PASS  units: e tau/m == m^2/(V s): 
+
+=== 11.3 Which change doubles sigma ===
+PASS  sigma_0 copper [S/m]: computed 5.84103e+07   page 5.84e7
+PASS  drift at 1 V/m [mm/s]: computed 4.28951   page 4.29
+PASS  drift at 2 V/m [mm/s]: computed 8.57903   page 8.58
+PASS  J at 1 V/m [A/m^2]: computed 5.84103e+07   page 5.84e7
+PASS  J at 2 V/m [A/m^2]: computed 1.16821e+08   page 1.17e8
+PASS  (a) J/E at 2 V/m [S/m]: computed 5.84103e+07   page 5.84e7
+   sigma/sigma0 by option: {'a': np.float64(1.0), 'b': np.float64(4.0), 'c': np.float64(2.0), 'd': np.float64(0.5), 'e': np.float64(1.0)}
+PASS  (b) ratio: computed 4   page 4
+PASS  (c) ratio: computed 2   page 2
+PASS  (d) ratio: computed 0.5   page 0.5
+PASS  (e) ratio: computed 1   page 1
+PASS  only (c) doubles sigma (key = c): 
+PASS  (e) positive carriers drift along E and J still along E: 
+
+=== 11.4 True or false ===
+PASS  (i) FALSE: electron pulled against E and p = -e r along E: (r_x = -4.397e-22 m, p_x = 7.044e-41 C m)
+PASS  (ii) |J_p| amplitude by finite differences [A/m^2]: computed 5.56313e-07   page 5.56e-7
+PASS  e^2/(m_e eps0) [m^3/s^2]: computed 3182.11   page 3.18e3
+PASS  (iii) chi_e: computed 0.397763   page 0.40
+PASS  (iii) eps_r: computed 1.39776   page 1.40
+PASS  (iv) Drude tau [s]: computed 2.42189e-14   page 2.4e-14
+PASS  (iv) eps0/sigma [s]: computed 1.52655e-19   page 1.5e-19
+PASS  (iv) ratio: computed 158651   page 1.6e5
+PASS  (v) omega/nu: computed 0.0015708   page 1.6e-3
+PASS  (v) |sigma/sigma_DC - 1| by convolution [%]: computed 0.157079   page 0.16
+PASS  (v) closed form x/sqrt(1+x^2) [%]: computed 0.157079   page 0.16
+
+=== 11.5 Sea water's two ions ===
+PASS  0.5 mol/L in m^-3: computed 3.011e+26   page 3.0e26
+PASS  student's sigma [S/m]: computed -0.9612   page -0.96
+PASS  sigma [S/m]: computed 4.806   page 4.8
+PASS  both species' J along E: 
+PASS  Na+ part [S/m]: computed 1.9224   page 1.92
+PASS  Cl- part [S/m]: computed 2.8836   page 2.88
+PASS  Na+ share [%]: computed 40   page 40
+PASS  Cl- share [%]: computed 60   page 60
+PASS  tau+ [s]: computed 9.48814e-15   page 9.5e-15
+PASS  tau- [s]: computed 2.20974e-14   page 2.2e-14
+PASS  nu+ [1/s]: computed 1.05395e+14   page 1.05e14
+PASS  nu- [1/s]: computed 4.52542e+13   page 4.5e13
+PASS  omega/nu+ at 10 GHz: computed 0.000596157   page 5.96e-4
+PASS  omega/nu- at 10 GHz: computed 0.00138842   page 1.39e-3
+PASS  species sum from two ODE steady states [S/m]: computed 4.806   page 4.8
+PASS  Na+ N e^2/(m+ nu+) [S/m]: computed 1.9224   page 1.92
+PASS  |sigma(10 GHz)| [S/m]: computed 4.806   page 4.8
+PASS  J.E = sigma E^2 > 0 for the corrected sigma, < 0 for the student's: 
+
+=== 11.6 A conductor as a low-pass filter ===
+PASS  m* [kg]: computed 2.36834e-31   page 2.37e-31
+PASS  mobility [m^2/Vs]: computed 0.121756   page 0.122
+PASS  mobility [cm^2/Vs]: computed 1217.56   page 1220
+PASS  sigma_DC [S/m]: computed 195.053   page 195
+PASS  check N e^2 tau/m* [S/m]: computed 195.053   page 195
+PASS  v_final for E0 = 1 V/m [m/s] (ODE): computed -0.121756   page -0.122
+PASS  1% settling time / tau (ODE): computed 4.60517   page 4.6
+PASS  1% settling time [s]: computed 8.28931e-13   page 8.3e-13
+PASS  nu [rad/s]: computed 5.55556e+12   page 5.56e12
+PASS  f = nu/2pi [THz]: computed 0.884194   page 0.88
+PASS  Re sigma(omega = nu) by convolution [S/m]: computed 97.5267   page 97.5
+PASS  -Im sigma(omega = nu) [S/m]: computed 97.5267   page 97.5
+PASS  |sigma| [S/m]: computed 137.924   page 138
+PASS  angle [deg]: computed -45   page -45
+PASS  current peak after field peak (brute force) [s]: computed 1.41372e-13   page 1.41e-13
+PASS  (pi/4) tau [s]: computed 1.41372e-13   page 1.41e-13
+PASS  peak J / E0 [S/m]: computed 137.924   page 138
+PASS  x = omega/nu at 1%: computed 0.0100005   page 0.0100005
+PASS  f_max silicon [GHz]: computed 8.84238   page 8.8
+PASS  f_max copper [GHz]: computed 65.2568   page 65
+PASS  |sigma|/sigma_DC at f_max: computed 0.99995   page 0.99995
+PASS  phase at f_max [deg]: computed -0.572967   page -0.57
+
+=== 11.7 Conductor-like or dielectric-like ===
+PASS  N_d e^2/(m eps0) [1/s^2]: computed 1.27284e+32   page 1.273e32
+PASS  chi_e glass: computed 1.27284   page 1.27
+PASS  eps_r glass: computed 2.27284   page 2.27
+PASS  f_x glass [Hz]: computed 0.0141223   page 0.0141
+PASS  |J_p|/|J_c| at 60 Hz: computed 4248.6   page 4.2e3
+PASS  omega0/2pi [Hz]: computed 1.59155e+15   page 1.59e15
+   Lorentz response at 0.01 omega0 vs static: +0.010001 % (page now says 'by only 0.01%')
+PASS  Lorentz deviation at 0.01 omega0 [%]: computed 0.010001   page 0.01
+PASS  resonance wavelength 2 pi c/omega0 [nm]: computed 188.37   page 188
+PASS  J_p peak time / T for E peak at t = 0 (-0.25 = leads by 90 deg): computed -0.25   page -0.25
+PASS  amplitude ratio from FD amplitudes at 60 Hz: computed 4248.6   page 4.2e3
+PASS  f_x sea water [GHz]: computed 0.898774   page 0.90
+PASS  f_x sea water (Check line) [GHz]: computed 0.898774   page 0.899
+PASS  ratio at 20 kHz: computed 2.22525e-05   page 2.2e-5
+PASS  conduction wins by: computed 44938.7   page 4.5e4
+PASS  ratio at 10 GHz: computed 11.1263   page 11
+PASS  f/f_x at 1 GHz: computed 1.11263   page 1.11
+PASS  tau_r sea [s]: computed 1.79293e-10   page 1.79e-10
+PASS  f_r sea [GHz]: computed 0.887678   page 0.888
+PASS  tau_r glass [s]: computed 20.1238   page 20.1
+PASS  f_r glass [Hz]: computed 0.00790881   page 0.00791
+PASS  f_x/f_r sea: computed 1.0125   page 1.0125
+PASS  f_x/f_r glass: computed 1.78564   page 1.79
+PASS  vacuum share of dD/dt, sea [%]: computed 1.23457   page 1.2
+PASS  vacuum share of dD/dt, glass [%]: computed 43.9978   page 44
+PASS  f where omega C = G for a 1 cm^2... plate cap (sea) [Hz]: computed 8.87678e+08   page 0.888e9
+PASS  f where omega C = G for a 1 cm^2... plate cap (glass) [Hz]: computed 0.00790881   page 0.00791
+PASS  sqrt(eps_r) glass: computed 1.5076   page 1.51
+
+=== 11.8 Relaxation time versus collision time (reworked (a)-(b)) ===
+PASS  (b) Si mobility [m^2/Vs]: computed 0.121756   page 0.122
+PASS  (b) Si sigma = N e^2 tau/m* [S/m]: computed 1.95053   page 1.95
+PASS  (b) sigma via N e x 0.122 [S/m]: computed 1.95444   page 1.95
+PASS  (b) tau_r = eps/sigma [s]: computed 5.31095e-11   page 5.31e-11
+PASS  (b) tau_r [ps]: computed 53.1095   page 53
+PASS  (b) E_x amplitude rho0/(beta eps) [V/m]: computed 2   page 2
+PASS  units: rho0/(beta eps) is V/m: 
+   x = +0.0000 m: E by sheets = -2.000000 V/m, closed form = -2.000000 V/m
+   x = +0.3000 m: E by sheets = -1.650671 V/m, closed form = -1.650671 V/m
+   x = +0.7854 m: E by sheets = +0.000000 V/m, closed form = -0.000000 V/m
+   x = -0.7854 m: E by sheets = -0.000000 V/m, closed form = -0.000000 V/m
+   x = +1.0000 m: E by sheets = +0.832294 V/m, closed form = +0.832294 V/m
+   x = +1.5708 m: E by sheets = +2.000000 V/m, closed form = +2.000000 V/m
+   (trap: a window centred on the node x = 0 (10 periods each side) gives E(0) = -0.0000 V/m instead of -2; the truncated slab's dipole layer adds a uniform field -- hence the symmetry argument)
+PASS  (b) E_x(0,0) by sheet superposition [V/m]: computed -2   page -2
+PASS  (a) E_x on the crest plane by sheets [V/m]: computed 2.01557e-15   page 0
+PASS  (a) E_x on the trough plane by sheets [V/m]: computed -7.39146e-16   page 0
+PASS  (a) |E_x| at the node x = pi/beta by sheets [V/m]: computed 2   page 2
+PASS  (a) closed forms satisfy Gauss (FD, rel. residual < 1e-6): 
+PASS  (a) closed forms satisfy continuity with J = sigma E (FD): 
+   max |E_matrix - closed form| at t = 0: 4.02e-04 V/m
+   PDE at t = 1 tau_r: max |rho_num - rho_closed|/rho0 = 2.22e-04
+   PDE at t = 2 tau_r: max |rho_num - rho_closed|/rho0 = 1.63e-04
+PASS  (a) decay time from PDE amplitude at t = tau_r [s]: computed 5.31415e-11   page 5.31e-11
+PASS  (b) E_x(0,0) [V/m]: computed -2   page -2
+PASS  (b) J_x(0,0) [A/m^2]: computed -3.90107   page -3.90
+PASS  (b) v_x(0,0) = J/(N(-e)) [m/s]: computed 0.243512   page 0.244
+PASS  (b) v_x via -(e tau/m*) E [m/s]: computed 0.243512   page 0.244
+PASS  (b) crest at pi/(2 beta) [m]: computed 0.785398   page 0.785
+PASS  (b) J at x = 0 along -x, from the crest (x = +pi/4, rho > 0) to the trough (x = -pi/4, rho < 0): 
+PASS  (b) electrons at x = 0 drift along +x (toward the crest): 
+PASS  (b) rho0/e [m^-3]: computed 2.58656e+09   page 2.6e9
+   CODATA: sigma = 1.9509 S/m, tau_r = 5.3101e-11 s, v = 0.24353 m/s, J = 3.9018 A/m^2
+--- (c) ---
+PASS  (c) copper tau_r = eps0/sigma [s]: computed 1.52655e-19   page 1.5e-19
+PASS  (c) copper tau_r, 3 s.f. [s]: computed 1.52655e-19   page 1.53e-19
+PASS  (c) copper tau [s]: computed 2.42189e-14   page 2.4e-14
+PASS  (c) tau/tau_r copper: computed 158651   page 1.6e5
+PASS  (c) tau_r/tau silicon: computed 295.053   page 295
+--- (d) eigenvalues of the modal state matrix (rho_hat, J_hat) ---
+   copper: s = [-2.06450176e+13-1.64462362e+16j -2.06450176e+13+1.64462362e+16j] (beta = 2); beta = 7 gives the same: True
+PASS     copper: roots independent of beta: 
+   sea water: s = [-6.66610888e+13+0.j -5.57791373e+09+0.j] (beta = 2); beta = 7 gives the same: True
+PASS     sea water: roots independent of beta: 
+   silicon: s = [-5.53666227e+12+0.j -1.88932887e+10+0.j] (beta = 2); beta = 7 gives the same: True
+PASS     silicon: roots independent of beta: 
+PASS  copper sigma/(eps0 tau) = omega_p^2 [1/s^2]: computed 2.70479e+32   page 2.705e32
+PASS  copper N e^2/(m eps0) [1/s^2]: computed 2.70479e+32   page 2.705e32
+   (page had 2.71e32; with CODATA constants it is 2.7052e+32, so 2.705e32 is safe either way)
+PASS  copper omega_p [rad/s]: computed 1.64462e+16   page 1.64e16
+PASS  copper 4 sigma tau/eps0: computed 634605   page 6.3e5
+PASS  copper Re s [1/s]: computed -2.0645e+13   page -2.06e13
+PASS  copper |Im s| [rad/s]: computed 1.64462e+16   page 1.64e16
+PASS  copper f_p [Hz]: computed 2.6175e+15   page 2.6e15
+PASS  copper 2 tau [s]: computed 4.84378e-14   page 4.8e-14
+PASS  copper oscillations per 2 tau: computed 126.786   page 127
+PASS  copper omega_p tau: computed 398.31   page 398
+PASS  sea sigma/eps [1/s]: computed 5.57745e+09   page 5.58e9
+PASS  sea 1/tau [1/s]: computed 6.66667e+13   page 6.67e13
+PASS  sea 4 sigma tau/eps: computed 0.000334647   page 3.3e-4
+PASS  sea s1 [1/s]: computed -6.66611e+13   page -6.67e13
+PASS  sea s2 [1/s]: computed -5.57791e+09   page -5.58e9
+PASS  sea 1/|s2| [s]: computed 1.79278e-10   page 1.79e-10
+PASS  sea eps/sigma [ns]: computed 0.179293   page 0.18
+PASS  sea |1/|s2| - eps/sigma|/(eps/sigma) (1/|s2| is the shorter): computed 8.36687e-05   page 8.4e-5
+PASS  sea 4 tau [s]: computed 6e-14   page 6e-14
+PASS  copper 4 tau [s]: computed 9.68757e-14   page 9.69e-14
+PASS  silicon 4 tau [s]: computed 7.2e-13   page 7.2e-13
+   silicon 4 tau/tau_r = 0.01356 (< 1: overdamped)
+PASS  silicon overdamped (real roots): 
+PASS  silicon slow-root time constant [s]: computed 5.29288e-11   page 5.29e-11
+PASS  silicon: below tau_r by [%]: computed 0.340079   page 0.34
+--- (d) time-domain simulation of the Drude relaxation (t' = t/tau, u = rho/rho0) ---
+PASS  copper: simulated oscillation [rad/s]: computed 1.64462e+16   page 1.64e16
+PASS  copper: simulated envelope time constant [s]: computed 4.84378e-14   page 4.8e-14
+PASS  sea water: simulated late-time decay constant [s]: computed 1.79278e-10   page 1.79e-10
+   sea water: simulated tau_slow / (eps/sigma) - 1 = -8.367e-05
+PASS  silicon: simulated late-time decay constant [s]: computed 5.29288e-11   page 5.29e-11
+   silicon: simulated tau_slow / (eps/sigma) - 1 = -3.401e-03
+
+TOTAL: 165 PASS, 0 FAIL

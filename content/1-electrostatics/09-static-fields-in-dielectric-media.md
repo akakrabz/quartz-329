@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 9
 ---
 
-*Lecture 9 · course notes §9 · slides "Dielectrics" (examples) · prev: [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] · next: [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]]*
+*Lecture 9 · course notes §9 · slides "Dielectrics" (examples) · prev: [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] · next: [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] · practice: [[practice/09-static-fields-in-dielectric-media|12 problems]]*
 
 > [!abstract] In one breath
 > Lecture 8 produced the machinery; this lecture is about *using* it. Every dielectric problem in the course reduces to a short chain: the **free** charge fixes $\mathbf{D}$ (through Gauss's law and the continuity of normal $\mathbf{D}$), the permittivity of each region converts it to $\mathbf{E} = \mathbf{D}/\epsilon$, a line integral of $\mathbf{E}$ gives the potential, and $\mathbf{P} = \mathbf{D}-\epsilon_0\mathbf{E}$ falls out at the end if anyone asks. The one thing to unlearn is the reflex to reach for Laplace's equation: it is valid only where $\epsilon$ is constant, so layered media are solved layer by layer and stitched with boundary conditions, and continuously varying media must be solved with Gauss's law itself.
@@ -116,6 +116,9 @@ Concept pages: [[concepts/boundary-conditions]] · [[concepts/permittivity]] · 
 
 > [!exam] On Exam 1
 > Problems 3 and 4 of FA26 are both this lecture. Problem 3 is §2 verbatim (find $\mathbf{E}_2$, then $\mathbf{D}_{1,2}$, then $\mathbf{P}_{1,2}$); problem 4(a)–(b) is the planar chain in cylindrical dress (one expression for $\mathbf{D}$ across both dielectric layers of a coax, then $\mathbf{E} = \mathbf{D}/\epsilon$ layer by layer). Worked in [[problems/fields-across-a-dielectric-interface]] and [[problems/two-layer-coaxial-capacitor]]. The single most common error across both: writing $\mathbf{D}$ with an $\epsilon$ in it, i.e. confusing $\mathbf{D}$ with $\mathbf{E}$.
+
+> [!tip] Practice this lecture
+> [[practice/09-static-fields-in-dielectric-media|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/09-static-fields-in-dielectric-media#91-three-layers-between-charged-plates|9.1 Three layers between charged plates]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 9 (summary rules; Example 1 slab; homogeneous vs inhomogeneous and the "don't use Laplace" rule; Example 2 two layers; Example 3 sheet between grounded plates with the quasi-static remark; Example 4 graded $\epsilon(z)$). Shao, Lecture 9 slides (slab example; partially filled plates solved both ways; spherical-shell challenge). FA26 HW3 #7, HW4 #1–#3.

@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 10
 ---
 
-*Lecture 10 · course notes §10 · slides "Capacitance and Conductance" · prev: [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] · next: [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]] (not on Exam 1)*
+*Lecture 10 · course notes §10 · slides "Capacitance and Conductance" · prev: [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] · next: [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]] (not on Exam 1) · practice: [[practice/10-capacitance-and-conductance|12 problems]]*
 
 > [!abstract] In one breath
 > Put charge $+Q$ on one conductor and $-Q$ on another and a potential difference $V$ appears between them. Because electrostatics is linear, doubling $Q$ doubles $V$: the ratio $C = Q/V$ is a constant of the *geometry and the dielectric* — the **capacitance**, in farads. You never look it up; you compute it by running the chain of the last five lectures in whichever direction the problem allows: from a given $V$ through Laplace's equation to the charge, or from a given $Q$ through Gauss's law to the voltage. Three geometries cover the course. Fill the gap with a slightly conducting material and the same field pattern also carries a leakage current $I = GV$, with $G = (\sigma/\epsilon)C$; the stored energy is $\tfrac12CV^2$, spread through the field at $\tfrac12\epsilon E^2$ per cubic metre; and a diode's depletion layer is a capacitor whose $C$ shrinks as the voltage grows.
@@ -167,6 +167,9 @@ Concept pages: [[concepts/capacitance]] · [[concepts/conductance]] · [[concept
 
 > [!exam] On Exam 1
 > FA26 problem 4 is this lecture's coax, with two dielectric layers: $\mathbf{D}$ from Gauss (one expression for both layers), $\mathbf{E} = \mathbf{D}/\epsilon$ per layer, $-\lambda$ on the outer conductor, $V(b) - V(a)$ by integrating through both layers (negative — the inner conductor is positive), and finally $\mathcal{C} = \lambda/[V(a) - V(b)]$ in F/m. The series-capacitor formula gives (e) in one line and checks (d). The gradable errors: a negative $\mathcal{C}$ (wrong sign convention), F instead of F/m, a single $\epsilon$ over $\ln(b/a)$, or adding the layers in parallel. Worked with new numbers in [[problems/two-layer-coaxial-capacitor]]. The review session's formula sheet lists $Q = CV$, $G = (\sigma/\epsilon)C$ and $R = 1/G$ together — know why the middle one is true.
+
+> [!tip] Practice this lecture
+> [[practice/10-capacitance-and-conductance|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/10-capacitance-and-conductance#101-four-capacitances-by-formula|10.1 Four capacitances by formula]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 10 (parallel plate from $\pm Q$; $I = C\,dV/dt$ and the lossy capacitor $I = C\,dV/dt + GV$; quasi-static condition; energy and energy density; conductance, $G = (\sigma/\epsilon)C$, resistance; frequency criterion; coax $C$, $\mathcal{C}$, $\mathcal{G}$; diode junction $Q\propto\sqrt V$ and small-signal $C$). Shao, Lecture 10 slides (recipes given $V$ and given $Q$ with the flowcharts; coax by Laplace and by Gauss; the two fixed-$Q$/fixed-$V$ challenges; energy; conductance and the "geometric factor"; $V\to E\to J\to I\to G$). FA26 HW4 #4 (spheres, RC discharge) and Exam 1 problem 4.

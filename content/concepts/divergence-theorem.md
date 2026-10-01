@@ -21,3 +21,5 @@ aliases: ["Gauss's theorem", "Gauss–Ostrogradsky theorem"]
 > For the slab field $E_x = \rho x/\epsilon_0$, a pillbox of caps at $\pm x$ has flux $2\epsilon_0E_xA = 2\rho xA$ = enclosed charge. Differentiating instead: $\epsilon_0\,dE_x/dx = \rho$. Same content, two languages.
 
 **Where it appears.** [[1-electrostatics/04-divergence-and-curl#2-divergence-flux-per-unit-volume|Lecture 4 §2]]. Its curl-side twin is [[concepts/stokes-theorem]].
+
+**Practice.** [[practice/topics#divergence-curl-and-the-integral-theorems|Divergence, curl and the integral theorems]] (17 problems) — for example [[practice/04-divergence-and-curl#41-faucet-or-whirlpool|4.1 Faucet or whirlpool]] (easy), [[practice/04-divergence-and-curl#46-three-fields-in-curved-coordinates|4.6 Three fields in curved coordinates]] (medium), [[practice/04-divergence-and-curl#49-electrostatic-or-not|4.9 Electrostatic or not]] (hard).

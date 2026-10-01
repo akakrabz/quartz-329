@@ -1,0 +1,272 @@
+=== 7.1 Two plates, two potentials ===
+PASS  V(1 mm) [V]: page 6, computed 6
+PASS  A = dV/dx [V/m]: page -3000, computed -3000
+PASS  E_x in gap [V/m] (+x: 9 V plate -> grounded plate): page 3000, computed 3000
+PASS  page V = 9 - 3000x satisfies V'' = 0: max |FD Laplacian - expected| = 1.78e-05 (scale 1.00e+06)
+PASS  rho_s(0) [C/m^2]: page 2.66e-8 (x1), computed 2.65626e-08
+PASS  rho_s(0) [nC/m^2]: page 26.6 (x1e-09), computed 26.5626
+PASS  rho_s(d) [nC/m^2]: page -26.6 (x1e-09), computed -26.5626
+PASS  check: rho_s/eps0 [V/m]: page 3000, computed 3000
+
+=== 7.2 Which potential needs charge ===
+      (a) FD Laplacian over 25 random points in its region: mean -0.000000, spread 2.8e-08 V/m^2
+      (b) FD Laplacian over 25 random points in its region: mean +0.000000, spread 2.1e-08 V/m^2
+      (c) FD Laplacian over 25 random points in its region: mean +2.000000, spread 1.4e-08 V/m^2
+      (d) FD Laplacian over 25 random points in its region: mean -0.000000, spread 4.1e-06 V/m^2
+      (e) FD Laplacian over 25 random points in its region: mean -0.000000, spread 1.7e-06 V/m^2
+PASS  exactly one option needs charge, and it is (c): nonzero Laplacian in ['c']
+PASS  (c) Laplacian [V/m^2]: page 2, computed 2
+PASS  (c) rho = -eps0*lap [C/m^3]: page -1.77e-11 (x1), computed -1.77084e-11
+PASS  (a) d2V/dx2: page 6, computed 6
+PASS  (a) d2V/dy2: page -4, computed -4
+PASS  (a) d2V/dz2: page -2, computed -2
+      note (b): mixed derivative d2V/dxdy of 5xyz at z=1.1 is 5.5000 (= 5z), only the pure ones vanish
+PASS  (d) d2V/dr2 at r=1.2 vs -4/r^2: page -2.77778, computed -2.7777787
+PASS  (e) d2V/dr2 at r=1.2 vs +4/r^3: page 2.31481, computed 2.3148164
+PASS  (d) d2V/dr2 at r=1.5 vs -4/r^2: page -1.77778, computed -1.7777782
+PASS  (e) d2V/dr2 at r=1.5 vs +4/r^3: page 1.18519, computed 1.1851857
+PASS  (d) d2V/dr2 at r=1.9 vs -4/r^2: page -1.10803, computed -1.1080334
+PASS  (e) d2V/dr2 at r=1.9 vs +4/r^3: page 0.583175, computed 0.58317555
+PASS  (d) cylindrical Laplacian of 4 ln r = 0: max |FD Laplacian - expected| = 5.65e-08 (scale 4.00e+00)
+PASS  (e) spherical Laplacian of 2/r = 0: max |FD Laplacian - expected| = 2.52e-08 (scale 2.00e+00)
+
+=== 7.3 Concentric spheres, find the error ===
+PASS  V(1.5 cm) [V]: page 33.3 (x1), computed 33.3333
+PASS  E(a) [V/m] (outward): page 20000, computed 20000
+PASS  E(b) [V/m] (outward): page 5000, computed 5000
+PASS  A = r^2 E_r, constant across gap [V m]: page 2, computed 2
+PASS  r^2 E_r constant: spread 1.0e-12
+PASS  B = V - A/r [V]: page -100, computed -100
+PASS  page V = 2/r - 100 satisfies spherical Laplace: max |FD Laplacian - expected| = 5.69e-02 (scale 1.00e+06)
+PASS  student's own arithmetic: E = -dV/dr [V/m]: page 10000, computed 10000
+PASS  student's own arithmetic: V(1.5 cm) [V]: page 50, computed 50
+PASS  average field (V(a)-V(b))/(b-a) [V/m]: page 10000, computed 10000
+PASS  spherical Laplacian of student V at 1.5 cm [V/m^2]: page -1.33e+06, computed -1333333.3
+PASS  ... equals -2e4/r: page -1.33333e+06, computed -1333333.3
+
+=== 7.4 Wedge between two plates ===
+PASS  A = dV/dphi [V/rad] = 200/pi: page 63.662, computed 63.661977
+PASS  V on bisector [V]: page 50, computed 50
+PASS  page V = (200/pi) phi harmonic (3-D Cartesian FD, 10 pts): max |lap| = 5.7e-04 V/m^2 (scale ~ 1e4)
+PASS  |E| at r=10 cm [V/m]: page 637 (x1), computed 636.62
+PASS  E_x on bisector [V/m]: page 450 (x1), computed 450.158
+PASS  E_y on bisector [V/m]: page -450 (x1), computed -450.158
+PASS  E_phi = -200/(pi r) [V/m]: page -636.62, computed -636.61977
+PASS  E clockwise seen from +z: (r x E)_z < 0: (r x E)_z = -63.7
+PASS  rho_s grounded plate (phi=0) [nC/m^2]: page -5.64 (x1e-09), computed -5.63675
+PASS  rho_s 100 V plate (phi=pi/2) [nC/m^2]: page 5.64 (x1e-09), computed 5.63675
+PASS  check: V(pi/2) - V(0) = -int E.dl along arc, phi 0 -> pi/2 [V]: page 100, computed 100
+      uniqueness note: V + 7xy is also harmonic (FD lap 0.0e+00) and equals 0 on phi=0 (0.0) and 100 on phi=pi/2 (100.0); only boundedness at large r excludes it
+
+=== 7.5 Laplace's equation, true or false ===
+PASS  (a) TRUE: lap(3V1 - 2V2 + 7) = 0: max |lap| = 7.1e-09
+PASS  (b) FALSE: lap(x^2) with V = x harmonic: page 2, computed 2
+PASS  (b) lap(V^2) = 2|grad V|^2 for V = x^2-y^2: page 5.2, computed 5.2
+PASS  (c) FALSE: harmonic V equals its sphere average (no pits): avg - centre = 2.2e-16
+PASS  (c) lap is PROPORTIONAL to (avg - centre): (avg-centre)/lap = R^2/6: page 0.0104167, computed 0.010416667
+PASS  (c)/(d) max principle: interior within boundary [min,max]: interior [0.031,0.995] boundary [0.000,1.040]
+PASS  (d) TRUE: zero boundary data -> V = 0 inside: max |V| = 0.0
+
+=== 7.6 Coaxial cable by Laplace ===
+PASS  C = r E_r [V]: page 72.1 (x1), computed 72.1348
+PASS  C = 100/ln 4: page 72.1348, computed 72.134752
+PASS  E(a) [kV/m]: page 72.1 (x1000), computed 72.1348
+PASS  E(b) [kV/m]: page 18.0 (x1000), computed 18.0337
+PASS  r where V = 50 V [m] = sqrt(ab): page 0.002, computed 0.002
+PASS  V(2.5 mm) [V]: page 33.9 (x1), computed 33.9036
+PASS  rho_s(a) [nC/m^2]: page 639 (x1e-09), computed 638.695
+PASS  rho_s(b) [nC/m^2]: page -160 (x1e-09), computed -159.674
+PASS  rho_l inner = 2 pi a rho_s(a) [nC/m]: page 4.01 (x1e-09), computed 4.01304
+PASS  rho_l inner = 2 pi eps0 100/ln4 [nC/m]: page 4.01 (x1e-09), computed 4.01304
+PASS  rho_l outer = 2 pi b rho_s(b) [nC/m]: page -4.01 (x1e-09), computed -4.01304
+PASS  Gauss check E(3 mm) = rho_l/(2 pi eps0 r) [kV/m]: page 24.0 (x1000), computed 24.0449
+PASS  BVP E(3 mm) [kV/m]: page 24.0 (x1000), computed 24.0449
+PASS  page V = (100/ln4) ln(b/r) satisfies cylindrical Laplace: max |FD Laplacian - expected| = 1.48e+00 (scale 1.00e+08)
+
+=== 7.7 Space charge between grounded plates ===
+PASS  rho0/eps0 [V/m^2]: page 1.13e5 (x1), computed 112941
+PASS  (a) uniform: x of V_max [cm]: page 1.5 (x0.01), computed 1.5
+PASS  (a) uniform: V_max [V]: page 12.7 (x1), computed 12.7059
+PASS  (a) uniform: E_x(0) [kV/m]: page -1.69 (x1000), computed -1.69411
+PASS  (a) uniform: E_x(d) [kV/m]: page 1.69 (x1000), computed 1.69411
+PASS  (a) uniform: rho_s(0) = eps0 E_x(0) [C/m^2]: page -1.5e-08, computed -1.5e-08
+PASS  (a) uniform: rho_s(d) = -eps0 E_x(d) [C/m^2]: page -1.5e-08, computed -1.5e-08
+PASS  (a) uniform: page V(x) formula equals BVP solution: max diff 1.6e-14 V
+PASS  (a) uniform: page V satisfies V'' = -rho/eps0: max |FD Laplacian - expected| = 5.84e-05 (scale 1.13e+05)
+PASS  (a) uniform: V'' <= 0 in gap (dome): max V'' = -1.13e+05
+PASS  (a) total space charge rho0 d [C/m^2] (same as (b)): page 3e-08, computed 3e-08
+PASS  (b) graded: x of V_max [cm]: page 1.73 (x0.01), computed 1.73205
+PASS  (b) graded: V_max [V]: page 13.0 (x1), computed 13.0413
+PASS  (b) graded: E_x(0) [kV/m]: page -1.13 (x1000), computed -1.12941
+PASS  (b) graded: E_x(d) [kV/m]: page 2.26 (x1000), computed 2.25882
+PASS  (b) graded: rho_s(0) = eps0 E_x(0) [C/m^2]: page -1e-08, computed -1e-08
+PASS  (b) graded: rho_s(d) = -eps0 E_x(d) [C/m^2]: page -2e-08, computed -2e-08
+PASS  (b) graded: page V(x) formula equals BVP solution: max diff 1.6e-14 V
+PASS  (b) graded: page V satisfies V'' = -rho/eps0: max |FD Laplacian - expected| = 3.77e-05 (scale 1.13e+05)
+PASS  (b) graded: V'' <= 0 in gap (dome): max V'' = -753
+PASS  (b) x of V_max = d/sqrt3 [m]: page 0.0173205, computed 0.017320508
+PASS  (b) V_max = 2 rho0 d^2/(9 sqrt3 eps0): page 13.0413, computed 13.041293
+PASS  (b) page E_x formula equals BVP: max diff 1.4e-12 V/m
+PASS  (c) space charge per area [C/m^2]: page 3e-08, computed 3e-08
+PASS  (c) plates total [C/m^2]: page -3e-08, computed -3e-08
+PASS  (c) charge between x=0 and E=0 plane [C/m^2]: page 1e-08, computed 1e-08
+PASS  (c) charge between E=0 plane and x=d [C/m^2]: page 2e-08, computed 2e-08
+
+=== 7.8 Plates and a charged sheet ===
+PASS  rho_s = 9 eps0: sheet potential V_s [V] (smeared-sheet FD): page 9, computed 9.0000337
+PASS  rho_s = 9 eps0: same from region above: page 9, computed 8.9999887
+PASS  rho_s = 9 eps0: E_z below [V/m]: page -3, computed -3.0000112
+PASS  rho_s = 9 eps0: E_z above [V/m]: page 6, computed 5.9999887
+PASS  rho_s = 9 eps0: plate z=0, rho_s/eps0 = +E_z(0+): page -3, computed -3.0000112
+PASS  rho_s = 9 eps0: plate z=4, rho_s/eps0 = -E_z(4-): page -6, computed -5.9999887
+PASS  rho_s = 9 eps0: total charge / eps0: page 0, computed 6.9615277e-08
+PASS  page V = 3z below (slope): page 3, computed 3.0000112
+PASS  page V = 3z below (intercept): page 0, computed 2.1907259e-10
+PASS  page V = 27 - 6z above (slope): page -6, computed -5.9999887
+PASS  page V = 27 - 6z above (intercept): page 27, computed 26.999955
+PASS  rho_s(0) [C/m^2]: page -2.66e-11 (x1), computed -2.65627e-11
+PASS  rho_s(4) [C/m^2]: page -5.31e-11 (x1), computed -5.3125e-11
+PASS  sheet is the maximum of V: max V = 8.9980 at z = 2.9997
+PASS  rho_s = 13 eps0: sheet potential V_s [V] (smeared-sheet FD): page 12, computed 12.000049
+PASS  rho_s = 13 eps0: same from region above: page 12, computed 11.999984
+PASS  rho_s = 13 eps0: E_z below [V/m]: page -4, computed -4.0000162
+PASS  rho_s = 13 eps0: E_z above [V/m]: page 9, computed 8.9999837
+PASS  rho_s = 13 eps0: plate z=0, rho_s/eps0 = +E_z(0+): page -4, computed -4.0000162
+PASS  rho_s = 13 eps0: plate z=4, rho_s/eps0 = -E_z(4-): page -9, computed -8.9999837
+PASS  rho_s = 13 eps0: total charge / eps0: page 0, computed 9.2763415e-08
+PASS  boxed formula V_s = 3/4 (rho_s/eps0 + 3) at rho_s/eps0 = -5: page -1.5, computed -1.5000187
+PASS  boxed formula V_s = 3/4 (rho_s/eps0 + 3) at rho_s/eps0 = 0: page 2.25, computed 2.25
+PASS  boxed formula V_s = 3/4 (rho_s/eps0 + 3) at rho_s/eps0 = 9: page 9, computed 9.0000337
+PASS  boxed formula V_s = 3/4 (rho_s/eps0 + 3) at rho_s/eps0 = 13: page 12, computed 12.000049
+PASS  boxed formula V_s = 3/4 (rho_s/eps0 + 3) at rho_s/eps0 = 20: page 17.25, computed 17.250075
+PASS  two-region solve_bvp V_s [V]: page 9, computed 9
+PASS  wrong-order jump gives V_s [V]: page -4.5, computed -4.5
+PASS  wrong-order V_s is a minimum (below both plates' 0 V and 3 V): V_s = -4.5
+PASS  3-sheet superposition E_z at z=-1.0 [V/m]: page 0, computed 0
+PASS  3-sheet superposition E_z at z=1.5 [V/m]: page -3, computed -3
+PASS  3-sheet superposition E_z at z=3.5 [V/m]: page 6, computed 6
+PASS  3-sheet superposition E_z at z=5.0 [V/m]: page 0, computed 0
+
+=== 7.9 Junction with an intrinsic layer ===
+-- 7.9 (a)-(c) re-parameterized (CITATIONS-WAVE1): rho = -3 / 0 / +6 C/m^3 on (-3,-1) / (-1,1) / (1,2) m
+PASS  (a) net charge per area [C/m^2]: page 0, computed 0
+PASS  (a) eps0 E_z: page piecewise formula == IVP: max diff 4.9e-15
+PASS  (a) eps0 E_z for z > 2 (field zero): page 0, computed -8.8817842e-16
+PASS  (b) eps0 V: page piecewise formula == IVP: max diff 7.1e-15
+PASS  (b) eps0 V(-1): page 6, computed 6
+PASS  (b) eps0 V(0): page 12, computed 12
+PASS  (b) eps0 V(1): page 18, computed 18
+PASS  (b) eps0 V(2): page 21, computed 21
+PASS  (b) FD curvature of page eps0 V in p slab = -rho: page 3, computed 3
+PASS  (b) FD curvature of page eps0 V in i layer = -rho: page 0, computed 0
+PASS  (b) FD curvature of page eps0 V in n slab = -rho: page -6, computed -6
+PASS  (b) V(0) = 12/eps0 [V]: page 1.36e12 (x1), computed 1.35529e+12
+PASS  (c) V(2) - V(-3) = 21/eps0 [V]: page 2.37e12 (x1), computed 2.37176e+12
+PASS  (c) largest eps0 |E_z|: page 6, computed 6
+PASS  (c) largest field 6/eps0 [V/m]: page 6.78e11 (x1), computed 6.77645e+11
+PASS  (c) field in i layer points along -z: eps0 E_z(0) = -6.000
+PASS  (c) no i layer: eps0 (V2 - V1): page 9, computed 9
+PASS  (c) lecture formula rho2 W2 (W1+W2)/2: page 9, computed 9
+PASS  (c) no i layer: 9/eps0 [V]: page 1.02e12 (x1), computed 1.01647e+12
+PASS  (c) no i layer: peak eps0|E| unchanged: page 6, computed 6
+PASS  (c) difference = E_max g: page 12, computed 12
+PASS  (c) area rule 6 (1 + 2 + 0.5): page 21, computed 21
+PASS  (a) no carry-over: eps0 E_z at z = -1.5, 0, 1.5 m differs from the Summer 2019 HE1 #1a key: key [2.0, 4.0, 2.0], page [-4.5, -6.0, -3.0]
+PASS  (a) no carry-over: eps0 E_z at z = -1.5, 0, 1.5 m differs from the Summer 2019 HE1 (conflict) #1a key: key [-2.0, -4.0, -2.0], page [-4.5, -6.0, -3.0]
+PASS  (d) e N_A [C/m^3]: page 1.60e3 (x1), computed 1602
+PASS  (d) e N_D [C/m^3]: page 3.20e3 (x1), computed 3204
+PASS  (d) N_A W1 [m^-2]: page 2e+15, computed 2e+15
+PASS  (d) N_D W2 [m^-2]: page 2e+15, computed 2e+15
+PASS  (d) E_max [MV/m]: page 3.09 (x1e+06), computed 3.09284
+PASS  (d) E_max = e N_D W2 / eps (n side): page 3.09284e+06, computed 3092843.3
+PASS  (d) built-in potential [V]: page 1.08 (x1), computed 1.0825
+PASS  (d) field back to zero at the n edge (relative): page 0, computed 3.0112181e-16
+
+=== 7.10 Space-charge-limited vacuum diode ===
+PASS  (a) V(0): page 0, computed 0
+PASS  (a) V(d): page 16, computed 16
+PASS  (a) V(1 mm) [V]: page 1, computed 1
+PASS  (b) coefficient 4 eps0 Va/(9 d^2) [C/m^3]: page 9.84e-7 (x1), computed 9.83799e-07
+PASS  (b) rho(1 mm) [uC/m^3]: page -3.94 (x1e-06), computed -3.93519
+PASS  (b) rho(d) [uC/m^3]: page -0.984 (x1e-06), computed -0.983799
+PASS  (b) rho < 0 and V'' > 0 everywhere: sign OK
+PASS  (b) page rho(x) formula == FD of V: 
+PASS  (c) E_x(d) [kV/m]: page -2.67 (x1000), computed -2.66667
+PASS  (c) E_x near cathode (x = 1e-12 d) / E_x(d) -> 0: page 0, computed 0.0001
+PASS  (c) rho_s(d) [nC/m^2]: page 23.6 (x1e-09), computed 23.6112
+PASS  (c) space charge per area [nC/m^2]: page -23.6 (x1e-09), computed -23.6112
+PASS  (c) neutrality: rho_s(0) + rho_s(d) + space: page 0, computed -6.7711247e-12
+PASS  (c) empty diode anode eps0 Va/d [nC/m^2]: page 17.7 (x1e-09), computed 17.7084
+PASS  (c) ratio = 4/3: page 1.33333, computed 1.3333333
+PASS  (d) v(d) [m/s]: page 2.37e6 (x1), computed 2.37231e+06
+PASS  (d) J = rho v independent of x: relative spread 6.6e-06
+PASS  (d) J_x [A/m^2] (-x): page -2.33 (x1), computed -2.33387
+PASS  (d) page closed form -(4 eps0/9) sqrt(2e/m) Va^1.5/d^2: page -2.33387, computed -2.3338722
+PASS  (d) transit time [ns]: page 10.1 (x1e-09), computed 10.1167
+PASS  (d) check: (charge in transit)/T = |J|: page 2.33387, computed 2.3338724
+PASS  (d) shooting |J| [A/m^2]: page 2.33 (x1), computed 2.33387
+PASS  (d) shooting transit time [ns]: page 10.1 (x1e-09), computed 10.1167
+PASS  (d) shooting v(d) [m/s]: page 2.37e6 (x1), computed 2.37231e+06
+PASS  (a) shooting V(1 mm) = m v^2/(2e) [V]: page 1, computed 1
+PASS  (b) shooting rho(1 mm) = -|J|/v [uC/m^3]: page -3.94 (x1e-06), computed -3.93519
+PASS  (c) shooting anode charge |J| T [nC/m^2]: page 23.6 (x1e-09), computed 23.6112
+PASS  (c) shooting |E(d)| = |J| T/eps0 [kV/m]: page 2.67 (x1000), computed 2.66667
+PASS  statement consistent: trajectory potential == Va (x/d)^(4/3): 
+      Child-Langmuir solve_bvp, xi = s^6: status 1 (The maximum number of mesh nodes is exceeded.), 109836 nodes
+PASS  kappa = 4/9 (xi = s^6): page 0.444444, computed 0.44444444
+PASS  (d) BVP |J| = kappa eps0 Va^1.5 sqrt(2e/m)/d^2 [A/m^2] (xi = s^6): page 2.33 (x1), computed 2.33387
+PASS  (a) BVP V(1 mm) [V] (xi = s^6): page 1, computed 1
+PASS  BVP w(xi) == xi^(4/3): statement's V(x) is the SCL solution (xi = s^6): max diff 8.8e-10
+      Child-Langmuir solve_bvp, xi = s^9: status 1 (The maximum number of mesh nodes is exceeded.), 187382 nodes
+PASS  kappa = 4/9 (xi = s^9): page 0.444444, computed 0.44444444
+PASS  (d) BVP |J| = kappa eps0 Va^1.5 sqrt(2e/m)/d^2 [A/m^2] (xi = s^9): page 2.33 (x1), computed 2.33387
+PASS  (a) BVP V(1 mm) [V] (xi = s^9): page 1, computed 1
+PASS  BVP w(xi) == xi^(4/3): statement's V(x) is the SCL solution (xi = s^9): max diff 1.7e-09
+PASS  kappa agrees between the two transformations: diff 2.1e-09
+
+=== 7.11 Charged ball, two ways ===
+PASS  two-region spherical solve_bvp converged: The algorithm converged to the desired accuracy.
+PASS  (c) V(0) [V] solve_bvp: page 565 (x1), computed 564.705
+PASS  (c) V(0) [V] Coulomb quadrature: page 565 (x1), computed 564.705
+PASS  (c) V(0) page formula == BVP: page 564.705, computed 564.70453
+PASS  (c) V(5 cm) [V] solve_bvp: page 518 (x1), computed 517.646
+PASS  (c) V(5 cm) [V] Coulomb quadrature: page 518 (x1), computed 517.646
+PASS  (c) V(5 cm) page formula == BVP: page 517.646, computed 517.64582
+PASS  (c) V(a) [V] solve_bvp: page 376 (x1), computed 376.47
+PASS  (c) V(a) [V] Coulomb quadrature: page 376 (x1), computed 376.47
+PASS  (c) V(a) page formula == BVP: page 376.47, computed 376.46969
+PASS  (c) V(20 cm) [V] solve_bvp: page 188 (x1), computed 188.235
+PASS  (c) V(20 cm) [V] Coulomb quadrature: page 188 (x1), computed 188.235
+PASS  (c) V(20 cm) page formula == BVP: page 188.235, computed 188.23484
+PASS  (c) V(0)/V(a) = 3/2: page 1.5, computed 1.5
+PASS  (d) shell integral V(0) [V]: page 564.705, computed 564.70453
+PASS  (b) C3 = rho0 a^3/(3 eps0) = Q/(4 pi eps0) [V m]: page 37.647, computed 37.646969
+PASS  (b) C2 = rho0 a^2/(2 eps0) [V]: page 564.705, computed 564.70453
+PASS  page V inside satisfies spherical Poisson: max |FD Laplacian - expected| = 8.21e-03 (scale 1.13e+05)
+PASS  page V outside satisfies spherical Laplace: max |FD Laplacian - expected| = 9.47e-04 (scale 1.13e+05)
+PASS  check: Q_enc(5 cm) = 4 pi r^2 eps0 E_r [nC]: page 0.524 (x1e-09), computed 0.523599
+PASS  check: Q = 4 pi r^2 eps0 E_r outside [nC]: page 4.19 (x1e-09), computed 4.18879
+
+=== 7.12 Grounded sphere in a uniform field ===
+PASS  (a) candidate harmonic for r > a (3-D Cartesian FD, 15 pts): max |lap| = 6.8e-03 (scale E0/a = 1e+04)
+PASS  (a) radial part = -2E0 cos(th)(1/r - a^3/r^4): page -6692.37, computed -6692.3687
+PASS  (a) angular part = +2E0 cos(th)(1/r - a^3/r^4): page 6692.37, computed 6692.3648
+PASS  (b) 2-D FD Laplace solution == candidate for a <= r <= 5a: max |diff| = 9.12e-04 V (E0 a = 100 V)
+PASS  (c) surface E_r = C cos(th): C = 3 E0 [V/m] (max at poles): page 3000, computed 2999.6498
+PASS  (c) surface E_r is C cos(th) (shape): 
+PASS  (c) page E_r(a, th=0.3) = 3 E0 cos th: page 2866.01, computed 2866.0095
+PASS  (c) page E_theta(a) = 0: page 0, computed -0
+PASS  watch-out: E_theta just off the sphere = -E0(1-a^3/r^3) sin th: page -302.219, computed -302.21946
+PASS  watch-out: E_theta on the z axis (th=0) at r = 1.2a is 0 too: page 0, computed -0
+PASS  (c) page E_r formula at r=0.15, th=0.4: page 1466.87, computed 1466.8749
+PASS  (c) page E_r formula at r=0.3, th=2.0: page -446.973, computed -446.97253
+PASS  (d) rho_s north pole = 3 eps0 E0 [nC/m^2]: page 26.6 (x1e-09), computed 26.5626
+PASS  (d) rho_s north pole, 2-D FD [C/m^2]: page 2.66e-08, computed 2.6559463e-08
+PASS  (d) rho_s south pole, 2-D FD [C/m^2]: page -2.66e-08, computed -2.6559463e-08
+PASS  (d) 3 pi eps0 E0 a^2 [C]: page 8.34e-10 (x1), computed 8.34488e-10
+PASS  (d) upper-hemisphere charge, 2-D FD + quadrature [C] (page 8.34e-10): page 8.34e-10, computed 8.3443251e-10
+PASS  (d) total induced charge / Q_up: page 0, computed 6.0717688e-15
+PASS  (b) dipole p/(4 pi eps0) = E0 a^3 from 2-D FD induced potential at r=1.5a [V m^2]: page 1, computed 1.0000202
+PASS  check: far-field E_r -> E0 cos th: page 877.583, computed 877.58432
+
+TOTAL: 237 PASS, 0 FAIL

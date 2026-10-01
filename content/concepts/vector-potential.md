@@ -33,4 +33,6 @@ The $-\partial\mathbf{A}/\partial t$ term is the induced, circulating part of $\
 
 **Where it appears.** [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Lecture 13]] (definition, gauge, Poisson form, the loop), [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15 §6]] (time-varying potentials and gauge transformation), [[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations|Lecture 16]] ("$\nabla\times\mathbf{H}$ is divergence-free, like $\nabla\times\mathbf{A}$").
 
+**Practice.** [[practice/topics#vector-potential-potentials-and-gauge|Vector potential, potentials and gauge]] (6 problems) — for example [[practice/13-current-sheets-solenoids-and-vector-potential#135-five-true-or-false-statements|13.5 Five true or false statements]] (easy), [[practice/13-current-sheets-solenoids-and-vector-potential#139-two-opposite-slabs-and-a-sheet|13.9 Two opposite slabs and a sheet]] (hard).
+
 Related: [[concepts/electrostatic-potential]] · [[concepts/poissons-equation]] · [[concepts/magnetic-flux]] · [[concepts/curl]].

@@ -1,0 +1,318 @@
+
+==============================================================================
+Constants used on the page
+==============================================================================
+  eps0                                                       = 8.85419e-12 F/m
+  1/(4 pi eps0)                                              = 8.98755e+09 m/F
+  e                                                          = 1.60218e-19 C
+  u (atomic mass unit, as stated in 2.11)                    = 1.6605e-27 kg
+
+==============================================================================
+2.1  Coulomb force as a vector
+==============================================================================
+  R = r2 - r1 (from Q1 to Q2)                                = [2, 2, -1] m
+  |R|                                                        = 3 m
+  |R|^2                                                      = 9 m^2
+  R-hat * 3                                                  = [2, 2, -1] 
+  Q1 Q2 /(4 pi eps0 R^2)                                     = -5.9917 mN
+  [OK ] F2 closed form vs q*E(other): [-0.0039945 -0.0039945  0.0019972]  vs  [-0.0039945 -0.0039945  0.0019972]
+  F2 (force on Q2)                                           = [-3.99447, -3.99447, 1.99723] mN
+  |F2|                                                       = 5.9917 mN
+  F1 (force on Q1)                                           = [3.99447, 3.99447, -1.99723] mN
+  [OK ] F1 + F2 = 0 (Newton 3): [0. 0. 0.]  vs  [0. 0. 0.]
+  F2 . R-hat  (<0 means toward Q1: attractive)               = -5.9917 mN
+  |Q1 Q2|                                                    = 6e-12 C^2
+  estimate with 1/(4 pi eps0) ~ 9e9: |F|                     = 6 mN
+
+==============================================================================
+2.2  Null point of +q at x=0 and -4q at x=3 m (units: k q = 1)
+==============================================================================
+  region (-200, -1e-06): sign changes found = 1
+  region (1e-06, 3): sign changes found = 0
+  region (3, 200): sign changes found = 0
+  all zeros of E_x on the x axis                             = [-3] m
+  [OK ] unique null point: [-3.]  vs  [-3.]
+  field of +q at x=-3 (units kq)                             = -0.111111 
+  field of -4q at x=-3 (units kq)                            = 0.111111 
+  E_x at distractor x = 1 m (units kq/m^2)                   = 2 
+  E_x at distractor x = 2 m (units kq/m^2)                   = 4.25 
+  E_x at distractor x = 6 m (units kq/m^2)                   = -0.416667 
+  roots of (3-x)^2 = 4x^2                                    = [-3, 1] 
+
+==============================================================================
+2.3  Point charge at a cube corner
+==============================================================================
+  corner charge: flux through face x=0                       = -0 nC
+  corner charge: flux through face x=2                       = 0.5 nC
+  corner charge: flux through face y=0                       = -0 nC
+  corner charge: flux through face y=2                       = 0.5 nC
+  corner charge: flux through face z=0                       = -0 nC
+  corner charge: flux through face z=2                       = 0.5 nC
+  [OK ] total outward flux = Q/8: [1.5e-09]  vs  [1.5e-09]
+  [OK ] far face x=2 = Q/24: [5.e-10]  vs  [5.e-10]
+  Q/8                                                        = 1.5 nC
+  Q/24                                                       = 0.5 nC
+  centred charge: flux through face x=0                      = 2 nC
+  centred charge: flux through face x=2                      = 2 nC
+  centred charge: flux through face y=0                      = 2 nC
+  centred charge: flux through face y=2                      = 2 nC
+  centred charge: flux through face z=0                      = 2 nC
+  centred charge: flux through face z=2                      = 2 nC
+  [OK ] centred: each face = Q/6: [2.e-09 2.e-09 2.e-09 2.e-09 2.e-09 2.e-09]  vs  [2.e-09 2.e-09 2.e-09 2.e-09 2.e-09 2.e-09]
+  Q/6                                                        = 2 nC
+  [OK ] 2nd set (Q=-5 C, side 0.3 m): far face = Q/24: [-0.2083333]  vs  [-0.2083333]
+
+==============================================================================
+2.4  Velocity selector
+==============================================================================
+  v x B                                                      = [0, 0, 50000] V/m
+  E = -v x B                                                 = [-0, -0, -50000] V/m
+  |E| = vB                                                   = 50000 V/m
+  [OK ] force on proton at the selected speed: [0. 0. 0.]  vs  [0. 0. 0.]
+  [OK ] force on electron at the selected speed: [-0. -0. -0.]  vs  [0. 0. 0.]
+  force on proton at 4e5 m/s                                 = [0, 0, 8.01088e-15] N
+    electric part qE                                         = [-0, -0, -8.01088e-15] N
+    magnetic part q v x B                                    = [0, 0, 1.60218e-14] N
+
+==============================================================================
+2.5  Sphere (R=3 m, centre (0,0,1)) cutting the charged plane z=0, rho_s=-3 C/m^2
+==============================================================================
+  radius of the circle cut from the plane                    = 2.82843 m
+  r_cut^2                                                    = 8 m^2
+  Q_enc = rho_s * pi * 8                                     = -75.3982 C
+  Q_enc / pi                                                 = -24 C
+  [OK ] flux of the (infinite) sheet's D through the sphere = rho_s*8*pi: [-75.3982237]  vs  [-75.3982237]
+  flux of the +10 C charge at (0,0,5) (outside)              = -2.22045e-16 C
+  distance of +10 C charge from the centre                   = 4 m
+  answer (b) -24 pi                                          = -75.3982 C
+  distractor (a) -27 pi                                      = -84.823 C
+  distractor (c) 10 - 24 pi                                  = -65.3982 C
+  distractor (d) -12 pi                                      = -37.6991 C
+
+==============================================================================
+2.6  Ring of charge on its axis
+==============================================================================
+  Q = 2 pi a rho_l                                           = 3.14159 nC
+  Q/(4 pi eps0)                                              = 28.2352 V m
+  [OK ] ring rho_l=5e-09, a=0.1: E at z=0.1 (closed form vs integral): [  0.          0.        998.2660128]  vs  [-2.2322358e-14  3.0679015e-15  9.9826601e+02]
+  [OK ] ring rho_l=5e-09, a=0.1: E at z=1 (closed form vs integral): [ 0.         0.        27.8169313]  vs  [-8.7196712e-17 -6.9924361e-17  2.7816931e+01]
+  [OK ] ring rho_l=5e-09, a=0.1: E at z=-0.05 (closed form vs integral): [    0.            0.        -1010.1741796]  vs  [-2.2322358e-14 -6.2550519e-14 -1.0101742e+03]
+  [OK ] ring rho_l=5e-09, a=0.1: E at z=0 (closed form vs integral): [0. 0. 0.]  vs  [-4.4644717e-14 -9.0539420e-14  0.0000000e+00]
+  [OK ] ring rho_l=-3e-09, a=0.25: E at z=0.07 (closed form vs integral): [   0.           0.        -169.4301647]  vs  [ 6.6967075e-14  1.7925946e-14 -1.6943016e+02]
+  [OK ] ring rho_l=-3e-09, a=0.25: E at z=-0.4 (closed form vs integral): [  0.          0.        161.4163439]  vs  [2.7902948e-15 2.1790673e-15 1.6141634e+02]
+  [OK ] ring rho_l=-3e-09, a=0.25: E at z=2 (closed form vs integral): [  0.          0.        -10.3448089]  vs  [ 6.5397534e-17  5.0774334e-17 -1.0344809e+01]
+  E_z at z = 10 cm                                           = 998.266 V/m
+  E_z at z = 1 m                                             = 27.8169 V/m
+  point-charge estimate at z = 1 m                           = 28.2352 V/m
+  relative error of point estimate at 1 m (%)                = 1.50374 
+  z of maximum (numerical)                                   = 0.0707107 m
+  [OK ] z_max = a/sqrt(2): [0.0707107]  vs  [0.0707107]
+  [OK ] E_max = rho_l/(3 sqrt3 eps0 a): [1086.7743818]  vs  [1086.7743818]
+  E_max                                                      = 1086.77 V/m
+  2/(3 sqrt 3)                                               = 0.3849 
+  finite-difference dE/dz at a/sqrt2 (should be ~0)          = -1.13687e-06 V/m^2
+
+==============================================================================
+2.7  Semicircular arc at its centre (find the error)
+==============================================================================
+  [OK ] arc rho_l=2e-09, a=0.05: E = -(rho_l/(2 pi eps0 a)) y-hat: [-1.6415663e-14 -7.1900414e+02]  vs  [   0.        -719.0041434]
+  [OK ]   infinite line at distance a gives the same magnitude: [719.0041434]  vs  [719.0041434]
+  [OK ] arc rho_l=7e-09, a=0.2: E = -(rho_l/(2 pi eps0 a)) y-hat: [-1.0256454e-14 -6.2912863e+02]  vs  [   0.        -629.1286255]
+  [OK ]   infinite line at distance a gives the same magnitude: [629.1286255]  vs  [629.1286255]
+  correct |E| = rho_l/(2 pi eps0 a)                          = 719.004 V/m
+  student's |E| = rho_l/(4 eps0 a)                           = 1129.41 V/m
+  ratio student/correct (= pi/2)                             = 1.5708 
+  pi/2                                                       = 1.5708 
+  int_0^pi cos(phi) dphi                                     = 4.92255e-17 
+  int_0^pi sin(phi) dphi                                     = 2 
+
+==============================================================================
+2.8  Dipole on axis and bisector: -Q at (0,0,d/2), +Q at (0,0,-d/2)
+==============================================================================
+  p = Q (r+ - r-)                                            = [0, 0, -1.2e-11] C m
+  [OK ] axis D=0.02: closed form vs superposition: [     0.             0.        -27510.1064961]  vs  [     0.             0.        -27510.1064961]
+  [OK ] bisector D=0.02: closed form vs superposition: [    0.            0.        13281.6063598]  vs  [    0.            0.        13281.6063598]
+  [OK ] axis D=0.005: closed form vs superposition: [       0.               0.        -2445592.3244248]  vs  [       0.               0.        -2445592.3244248]
+  [OK ] bisector D=0.005: closed form vs superposition: [     0.             0.        690598.5390818]  vs  [     0.             0.        690598.5390818]
+  [OK ] axis D=0.3: closed form vs superposition: [ 0.         0.        -7.9896451]  vs  [ 0.         0.        -7.9896451]
+  [OK ] bisector D=0.3: closed form vs superposition: [0.        0.        3.9942012]  vs  [0.        0.        3.9942012]
+  Q/(4 pi eps0)                                              = 26.9627 V m
+  p magnitude Qd                                             = 1.2e-11 C m
+  P1: distances to -Q and to +Q                              = [1.8, 2.2] cm
+  P1: field of -Q at (0,0,d/2)                               = [-0, -0, -83218.1] V/m
+  P1: field of +Q at (0,0,-d/2)                              = [0, 0, 55708] V/m
+  exact E at P1=(0,0,2cm)                                    = [0, 0, -27510.1] V/m
+  exact E at P2=(2cm,0,0)                                    = [0, 0, 13281.6] V/m
+  far-field 2p/(4 pi eps0 D^3) at P1                         = [0, 0, -26962.7] V/m
+  far-field -p/(4 pi eps0 D^3) at P2                         = [-0, -0, 13481.3] V/m
+  axis: far/exact - 1 (%)                                    = -1.99 
+  bisector: far/exact - 1 (%)                                = 1.50374 
+  ratio exact axis/bisector magnitudes at 2 cm               = 2.07129 
+  ratio |E_axis|/|E_bis| at D=0.5 m                          = 2.00011 
+  ratio |E_axis|/|E_bis| at D=5 m                            = 2 
+  E_axis(1 m)/E_axis(2 m) (-> 8 for 1/D^3)                   = 8.00005 
+  axis: D where |far-exact|/exact = 1% (exact root), in units of d = 7.0622 
+    binomial estimate 1/sqrt(0.02)                           = 7.07107 
+    D in cm                                                  = 2.82488 cm
+
+==============================================================================
+2.9  Finite line charge 0<=z<=4 m, rho_l = 60 pi eps0 C/m
+==============================================================================
+  rho_l = 60 pi eps0                                         = 1.66898 nC/m
+  rho_l/(4 pi eps0)                                          = 15 V
+  rho_l/(4 pi eps0 r) at r = 3 m                             = 5 V/m
+  [OK ] E at (3,0,0): closed form vs numerical integral: [ 4.  0. -2.]  vs  [ 4.  0. -2.]
+  E at P=(3,0,0)                                             = [4, 0, -2] V/m
+  |E|                                                        = 4.47214 V/m
+  angle below +x (deg)                                       = 26.5651 deg
+  distance from P=(3,0,0) to the far end (0,0,4)             = 5 m
+  sin(alpha2), cos(alpha2)                                   = [0.8, 0.6] 
+  sum of unit vectors from P to the two ends                 = [-1.6, 0, 0.8] 
+  cross(E, bisector) (zero => parallel)                      = [0, 0, 0] 
+  dot(E, bisector) (<0 => E points away from the segment)    = -8 
+  [OK ] general point (2,1,1.5), rho=-2 nC/m, segment -0.5..2.5: [-7.7286831 -3.8643415 -1.3466041]  vs  [-7.7286831 -3.8643415 -1.3466041]
+  [OK ] symmetric segment: E_r = rho_l/(4 pi eps0 r) 2a/sqrt(a^2+r^2), E_z = 0: [37.7344757  0.       ]  vs  [37.7344757  0.       ]
+  [OK ] infinite line at r=3: rho_l/(2 pi eps0 r) x-hat: [10.  0.  0.]  vs  [10.  0.  0.]
+  infinite line E_r at r=3 m                                 = 10 V/m
+  [OK ] semi-infinite line at (3,0,0): (rho/(4 pi eps0 r))(1, 0, -1): [ 5.  0. -5.]  vs  [ 5.  0. -5.]
+  semi-infinite line E at (3,0,0)                            = [5, 0, -5] V/m
+  semi-infinite line: angle of E below +x (deg)              = 45 deg
+  contribution of 4<=z<inf at P                              = [1, 0, -3] V/m
+  [OK ] infinite line: flux through cylinder r=3, h=2 = rho_l h: [3.3379502e-09]  vs  [3.3379502e-09]
+  [OK ] infinite line: flux through cylinder r=0.4, h=7 = rho_l h: [1.1682826e-08]  vs  [1.1682826e-08]
+  [OK ] cap-point field check (1.2, 0, 5): [6.6856041]  vs  [6.6856041]
+  finite segment: flux through side                          = 4.45395 nC
+  finite segment: flux through top cap z=5                   = 1.11097 nC
+  finite segment: flux through bottom cap z=-1               = 1.11097 nC
+  [OK ] total = Q_enc = 4 rho_l: [6.6759003e-09]  vs  [6.6759003e-09]
+  Q_enc = 4 m * 60 pi eps0 = 240 pi eps0                     = 6.6759 nC
+  segment field on the side r=3 at z=-1: (E_r, E_z)          = [2.70633, -2.17094] V/m
+  segment field on the side r=3 at z=2: (E_r, E_z)           = [5.547, 0] V/m
+  segment field on the side r=3 at z=5: (E_r, E_z)           = [2.70633, 2.17094] V/m
+
+==============================================================================
+2.10  Disk a=30 cm, rho_s=-5 uC/m^2, on its axis; annulus with b=10 cm
+==============================================================================
+  [OK ] disk rho_s=-5e-06, a=0.3: E at z=0.01: [      0.              0.        -272945.7490076]  vs  [ 4.6252511e-11  3.9100389e-12 -2.7294575e+05]
+  [OK ] disk rho_s=-5e-06, a=0.3: E at z=3: [    0.            0.        -1401.2605941]  vs  [ 3.1087495e-15  3.4020544e-15 -1.4012606e+03]
+  [OK ] disk rho_s=-5e-06, a=0.3: E at z=-0.2: [     0.             0.        125731.4090207]  vs  [4.7808829e-12 2.0683466e-12 1.2573141e+05]
+  [OK ] disk rho_s=2e-06, a=0.5: E at z=0.2: [    0.            0.        70995.7069961]  vs  [-4.0205619e-12 -1.7516228e-12  7.0995707e+04]
+  [OK ] disk rho_s=2e-06, a=0.5: E at z=-0.7: [     0.             0.        -21037.1106567]  vs  [-3.8434182e-13 -3.2554206e-13 -2.1037111e+04]
+  rho_s/(2 eps0)                                             = -282352 V/m
+  z/sqrt(z^2+a^2) at z=0.01                                  = 0.0333148 
+  1 - z/sqrt(z^2+a^2) at z=0.01                              = 0.966685 
+  z/sqrt(z^2+a^2) at z=3                                     = 0.995037 
+  1 - z/sqrt(z^2+a^2) at z=3                                 = 0.00496281 
+  E_z at z = 1 cm                                            = -272946 V/m
+  sheet approximation rho_s/(2 eps0)                         = -282352 V/m
+  sheet/exact - 1 (%)                                        = 3.4463 
+  Q = pi a^2 rho_s                                           = -1.41372 uC
+  E_z at z = 3 m                                             = -1401.26 V/m
+  point-charge approximation at 3 m                          = -1411.76 V/m
+  point/exact - 1 (%)                                        = 0.749378 
+  exact / (point approx) at z=3                              = 0.992562 
+  exact / (point approx) at z=10                             = 0.999326 
+  [OK ] half of the sheet value at z = a/sqrt(3): [0.1732051]  vs  [0.1732051]
+  a/sqrt(3)                                                  = 17.3205 cm
+  jump E_z(0+) - E_z(0-)                                     = -564705 V/m
+  rho_s/eps0                                                 = -564705 V/m
+  [OK ] annulus at z=10 cm: closed form vs numerical integral: [      0.              0.        -110365.5759946]  vs  [ 1.1697469e-11  3.8140095e-12 -1.1036558e+05]
+  z/sqrt(z^2+b^2) at z=0.1                                   = 0.707107 
+  z/sqrt(z^2+a^2) at z=0.1                                   = 0.316228 
+  annulus factor                                             = 0.390879 
+  annulus E_z at z = 10 cm                                   = -110366 V/m
+  full disk E_z at z = 10 cm                                 = -193065 V/m
+  hole (disk b) E_z at z = 10 cm                             = -82699.1 V/m
+  [OK ] annulus = disk(a) - disk(b): [-110365.5759946]  vs  [-110365.5759946]
+  annulus E_z at z -> 0+ (1e-9 m)                            = -0.00188235 V/m
+  [OK ] annulus 2nd set (rho=2e-6, a=0.5, b=0.2, z=-0.3): [     0.             0.        -35864.8975631]  vs  [-2.0371685e-12 -5.4637931e-13 -3.5864898e+04]
+
+==============================================================================
+2.11  Boron mass spectrometer: selector E0 x-hat, B1 along -z; analyzer B2 = 0.5 z-hat T
+==============================================================================
+  selected speed E0/B1                                       = 400000 m/s
+  B1 along +z: v x B1                                        = [40000, 0, 0] V/m
+  B1 along +z: force on B+ at selected speed                 = [1.28174e-14, 0, 0] N
+  B1 along -z: v x B1                                        = [-40000, 0, 0] V/m
+  B1 along -z: force on B+ at selected speed                 = [0, 0, 0] N
+  initial analyzer force direction q v x B2 / |.|            = [1, 0, 0] 
+  [OK ] 10B+: zero force in selector: [0. 0. 0.]  vs  [0. 0. 0.]
+  [OK ] 10B+: landing x = 2R (ODE): [0.1658244]  vs  [0.1658244]
+  [OK ] 10B+: time in analyzer = pi m/(qB2) (ODE): [6.5119095e-07]  vs  [6.5119095e-07]
+  10B+: R                                                    = 8.29122 cm
+  10B+: landing point x = 2R                                 = 16.5824 cm
+  10B+: time pi m/(q B2)                                     = 0.651191 us
+  10B+: Lz about centre (<0 = clockwise seen from +z)        = -33164.9 
+  10B+: speed at landing (unchanged)                         = 400000 m/s
+  [OK ] 11B+: zero force in selector: [0. 0. 0.]  vs  [0. 0. 0.]
+  [OK ] 11B+: landing x = 2R (ODE): [0.1824069]  vs  [0.1824069]
+  [OK ] 11B+: time in analyzer = pi m/(qB2) (ODE): [7.1631004e-07]  vs  [7.1631004e-07]
+  11B+: R                                                    = 9.12034 cm
+  11B+: landing point x = 2R                                 = 18.2407 cm
+  11B+: time pi m/(q B2)                                     = 0.71631 us
+  11B+: Lz about centre (<0 = clockwise seen from +z)        = -36481.4 
+  11B+: speed at landing (unchanged)                         = 400000 m/s
+  [OK ] 11B2+: zero force in selector: [0. 0. 0.]  vs  [0. 0. 0.]
+  [OK ] 11B2+: landing x = 2R (ODE): [0.0912034]  vs  [0.0912034]
+  [OK ] 11B2+: time in analyzer = pi m/(qB2) (ODE): [3.5815502e-07]  vs  [3.5815502e-07]
+  11B2+: R                                                   = 4.56017 cm
+  11B2+: landing point x = 2R                                = 9.12034 cm
+  11B2+: time pi m/(q B2)                                    = 0.358155 us
+  11B2+: Lz about centre (<0 = clockwise seen from +z)       = -18240.7 
+  11B2+: speed at landing (unchanged)                        = 400000 m/s
+  separation of 10B+ and 11B+ spots 2(R11-R10)               = 1.65824 cm
+  mass of singly charged ion landing with 11B2+ (u)          = 5.5 
+  10% fast: speed                                            = 440000 m/s
+  10% fast: force on 11B+ in selector                        = [-6.40871e-16, 0, 0] N
+    electric part                                            = [6.40871e-15, 0, 0] N
+    magnetic part                                            = [-7.04958e-15, 0, 0] N
+  kinetic energy of 11B+ at 4e5 m/s                          = 9.12034 keV
+
+==============================================================================
+2.12  Two charges that make a given field (Summer 2017 HE1 #1a style)
+==============================================================================
+  Q1 / (pi eps0)                                             = 48 
+  Q1                                                         = 1.33518 nC
+  [OK ] E of Q1 at origin: [ 0.  0. -3.]  vs  [ 0.  0. -3.]
+  |Q2|                                                       = 0.44506 nC
+  required E2 = E - E1                                       = [-4, 0, 0] V/m
+  Q2 = +16 pi eps0 at x = +1 m -> E(0) = [-4.  0. -3.]  MATCH
+  Q2 = +16 pi eps0 at x = -1 m -> E(0) = [ 4.  0. -3.]  
+  Q2 = +16 pi eps0 at x = +2 m -> E(0) = [-1.  0. -3.]  
+  Q2 = +16 pi eps0 at x = -0.5 m -> E(0) = [16.  0. -3.]  
+  Q2 = -16 pi eps0 at x = +1 m -> E(0) = [ 4.  0. -3.]  
+  Q2 = -16 pi eps0 at x = -1 m -> E(0) = [-4.  0. -3.]  MATCH
+  Q2 = -16 pi eps0 at x = +2 m -> E(0) = [ 1.  0. -3.]  
+  Q2 = -16 pi eps0 at x = -0.5 m -> E(0) = [-16.   0.  -3.]  
+  number of (sign, position) solutions among candidates      = 2 
+  root-finding solution: sign +1, X                          = 1 m
+  root-finding solution: sign -1, X                          = -1 m
+  [OK ] exactly two solutions: (+, X=+1) and (-, X=-1): [1. 1.]  vs  [1. 1.]
+  |E| at origin                                              = 5 V/m
+  null point closed form ((3-sqrt3)/2, 0, sqrt3-1)           = [0.633975, 0, 0.732051] m
+  distinct null points found from 400 random starts          = 1 
+    null point                                               = [0.633975, -5.15052e-19, 0.732051] m
+  [OK ] null point matches closed form: [ 6.3397460e-01 -5.1505244e-19  7.3205081e-01]  vs  [0.6339746 0.        0.7320508]
+  d1 (to Q1), d2 (to Q2)                                     = [1.41761, 0.818458] m
+  d1/d2 (should be sqrt 3)                                   = 1.73205 
+  segment length sqrt5                                       = 2.23607 m
+  d2 = sqrt5/(1+sqrt3)                                       = 0.818458 m
+  1/(1+sqrt3)                                                = 0.366025 
+  on the line, t=-0.5: E1.E2/(|E1||E2|)                      = 1 
+  on the line, t=1.5: E1.E2/(|E1||E2|)                       = 1 
+  on the line, t=3: E1.E2/(|E1||E2|)                         = 1 
+  sphere R=1.5: flux of Q1 (outside)                         = 2.00067e-12 nC
+  sphere R=1.5: flux of Q2 (inside)                          = 0.44506 nC
+  [OK ] sphere total = Q2 = 16 pi eps0: [4.4506002e-10]  vs  [4.4506002e-10]
+  16 pi eps0                                                 = 0.44506 nC
+  cube: flux of Q1 (outside) total                           = 6.46235e-15 pC
+  cube: flux of Q2 (corner) through face x=0                 = 18.5442 pC
+  cube: flux of Q2 (corner) through face x=1                 = 0 pC
+  cube: flux of Q2 (corner) through face y=0                 = -0 pC
+  cube: flux of Q2 (corner) through face y=1                 = 18.5442 pC
+  cube: flux of Q2 (corner) through face z=0                 = -0 pC
+  cube: flux of Q2 (corner) through face z=1                 = 18.5442 pC
+  [OK ] cube total = Q2/8 = 2 pi eps0: [5.5632503e-11]  vs  [5.5632503e-11]
+  2 pi eps0                                                  = 55.6325 pC
+
+ALL CHECKS PASSED

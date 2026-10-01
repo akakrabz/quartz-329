@@ -1,0 +1,162 @@
+== 9.1 three layers between charged plates: FD solve of d/dz(eps dV/dz) = 0 ==
+PASS  9.1 D_z in the three layers [C/m^2]: computed [-5.31251e-11, -5.31251e-11, -5.31251e-11]  page [-5.31251e-11, -5.31251e-11, -5.31251e-11]
+PASS  9.1 D_z numeric ~ -5.31e-11 C/m^2: computed [-5.31251e-11]  page [-5.31e-11]
+PASS  9.1 E_z in the three layers [V/m]: computed [-6, -3, -2]  page [-6, -3, -2]
+PASS  9.1 P_z / eps0 in the three layers: computed [0, -3, -4]  page [0, -3, -4]
+PASS  9.1 V(1), V(2), V(3) [V]: computed [6, 9, 11]  page [6, 9, 11]
+PASS  9.1 top plate rho_s = -z.D(3-) [eps0 C/m^2]: computed [6]  page [6]
+      S20 HE2 #1a key: D=-2, E1=-2.259e+11, E2=-1.129e+11, P2=-1, V1=2.259e+11, V2=3.388e+11
+PASS  9.1 no answer (same quantity) carries over from Summer 2020 HE2 #1a (common: none)
+== 9.2 side-by-side dielectrics: 2-D finite-volume Laplace, no-flux side walls ==
+PASS  9.2 E_z uniform in both halves (min,max) [V/m]: computed [-5000, -5000]  page [-5000, -5000]
+PASS  9.2 E_x = 0 everywhere (field parallel to the interface)
+PASS  9.2 D_z x<0, x>0 [eps0 units]: computed [-10000, -25000]  page [-10000, -25000]
+PASS  9.2 D_z x<0, x>0 [nC/m^2]: computed [-88.5419, -221.355]  page [-88.5, -221]
+PASS  9.2 top-plate rho_s = -z.D above each half [nC/m^2]: computed [88.5419, 221.355]  page [88.5, 221]
+PASS  9.2 P_z x<0, x>0 [eps0 units]: computed [-5000, -20000]  page [-5000, -20000]
+PASS  9.2 P_z x<0, x>0 [nC/m^2]: computed [-44.2709, -177.084]  page [-44.3, -177]
+PASS  9.2 free+bound at top = eps0|E| in both halves [nC/m^2]: computed [44.2709, 44.2709]  page [44.3, 44.3]
+== 9.3 MC: graded example eps = 4 eps0/(4-z), D_z = 2 eps0 (finite differences) ==
+PASS  9.3 (c) div(eps grad V) = 0 [eps0 V/m^2]: computed [2.42903e-09]  page [0]
+PASS  9.3 (a) lap V = +1/2 V/m^2 (not 0): computed [0.5]  page [0.5]
+PASS  9.3 (b) div E = -1/2 V/m^2, rho_b = -eps0/2 (eps0 units): computed [-0.5]  page [-0.5]
+PASS  9.3 (d) div P = +eps0/2 (eps0 units): computed [0.5]  page [0.5]
+PASS  9.3 SP18 E1 #1(i) options (grad V, div E, lap V, lap(eps V)) all fail -> exam key 'none'; page key is (c), so the exam key does not carry over
+== 9.4 MC: refraction at an air/glass face (eps_r = 4), 45 deg incidence ==
+PASS  9.4 n x (E1 - E2) = 0 and n.(D1 - D2) = 0: computed [0, 0, 0, 0]  page [0, 0, 0, 0]
+PASS  9.4 theta_2 [deg]: computed [75.9638]  page [76]
+PASS  9.4 |E2| / E0: computed [0.728869]  page [0.729]
+PASS  9.4 |D2| / (eps0 E0): computed [2.91548]  page [2.92]
+PASS  9.4 key (b): bends away (theta_2 > 45) and |E2| < E0; (c) false; (e) false (|D2| > |D1|)
+PASS  9.4 (d) E0/4 violates tangential continuity
+PASS  9.4 tan(th1)/tan(th2) = eps1/eps2: computed [0.25]  page [0.25]
+== 9.5 coated wire: self-consistent bound charge + direct 2-D Coulomb integrals ==
+      self-consistent bound charges: beta_a = -6e-09 C/m (= -0.6 rho_l), beta_b = 6e-09 C/m
+PASS  9.5 D(b) = rho_l/(2 pi b) [uC/m^2]: computed [0.795775]  page [0.796]
+PASS  9.5 E(b-) [kV/m] (also the student's number): computed [35.9502]  page [36]
+PASS  9.5 E(b+) [kV/m]: computed [89.8755]  page [89.9]
+PASS  9.5 rho_sb(b) [uC/m^2]: computed [0.477465]  page [0.477]
+PASS  9.5 eps0 (E(b+) - E(b-)) = rho_sb(b): computed [4.77465e-07]  page [4.77465e-07]
+PASS  9.5 both fields along +r
+== 9.6 graded dielectric eps_r = (1+z)^2 at fixed voltage: FD solve ==
+PASS  9.6 D_z constant across the gap (max-min) [eps0]: computed [1.81713e-09]  page [0]
+PASS  9.6 D_z [eps0 C/m^2]: computed [12]  page [12]
+PASS  9.6 D_z numeric ~ 1.06e-10 C/m^2: computed [1.0625e-10]  page [1.06e-10]
+PASS  9.6 plate rho_s bottom (+z.D), top (-z.D) [eps0]: computed [12, -12]  page [12, -12]
+PASS  9.6 E_z(0), E_z(1) [V/m]: computed [12, 3]  page [12, 3]
+PASS  9.6 V(0.5) [V]: computed [2]  page [2]
+PASS  9.6 V(z) = 6 - 12z/(1+z) at z = 0.2, 0.7: computed [4, 1.05882]  page [4, 1.05882]
+PASS  9.6 P_z(0), P_z(1) [eps0]: computed [0, 9]  page [0, 9]
+PASS  9.6 rho_b(0), rho_b(1) [eps0 C/m^3]: computed [-23.9964, -3.00023]  page [-24, -3]
+PASS  9.6 rho_b(z) = -24/(1+z)^3 at z = 0.5: computed [-7.11111]  page [-7.11111]
+PASS  9.6 faces top +P(1), bottom -P(0); bulk; total [eps0]: computed [9, -0, -9, 1.42109e-14]  page [9, 0, -9, 0]
+PASS  9.6 Gauss with all charge: eps0 E_z(z) = free + bound below z: computed [7.10059, 4.15225]  page [7.10059, 4.15225]
+== 9.7 sheet on a dielectric interface between grounded plates: FD with a sheet source ==
+PASS  9.7 V(1) [V]: computed [4]  page [4]
+PASS  9.7 below: E_z [V/m], D_z [eps0]: computed [-4, -8]  page [-4, -8]
+PASS  9.7 above: E_z [V/m], D_z [eps0]: computed [2, 2]  page [2, 2]
+PASS  9.7 plate rho_s bottom, top [eps0]: computed [-8, -2]  page [-8, -2]
+PASS  9.7 bottom plate share of -rho_s: computed [0.8]  page [0.8]
+PASS  9.7 P_z in dielectric; rho_sb top face (+z), bottom face (-z) [eps0]: computed [-4, -4, 4]  page [-4, -4, 4]
+PASS  9.7 jump of eps0 E_z at z=1 = free + bound there [eps0]: computed [6, 6]  page [6, 6]
+PASS  9.7 (d) top-plate potential V(3) [V]: computed [5]  page [5]
+PASS  9.7 (d) V(1), E_z below [V, V/m]: computed [5, -5]  page [5, -5]
+PASS  9.7 (d) plate charges bottom, top [eps0]: computed [-10, 0]  page [-10, 0]
+PASS  9.7 watch-out: eps0-only jump gives V0 = 20/3: computed [6.66667]  page [6.66667]
+== 9.8 dielectric rod with charged surface: self-consistent solve with 2-D Coulomb rings ==
+PASS  9.8 rho_s [eps0 C/m^2], numeric: computed [-4, -3.54168e-11]  page [-4, -3.54e-11]
+PASS  9.8 rho_s exact: computed [-4]  page [-4]
+PASS  9.8 rho_l [pi eps0 C/m], numeric: computed [48, 1.33518e-09]  page [48, 1.34e-09]
+PASS  9.8 rho_l exact: computed [48]  page [48]
+PASS  9.8 surface bound rho_sb [eps0], per metre [pi eps0]: computed [9, 36]  page [9, 36]
+PASS  9.8 axis bound line [pi eps0 C/m], total bound: computed [-36, -1.76148e-09]  page [-36, 0]
+PASS  9.8 E inside = 6/r at r = 1, 1.5: computed [6, 4]  page [6, 4]
+PASS  9.8 E outside = 16/r at r = 3, 4: computed [5.33333, 4]  page [5.33333, 4]
+PASS  9.8 P inside = 18 eps0/r at r = 1: computed [18]  page [18]
+PASS  9.8 free + bound at surface = eps0 (8 - 3) [eps0]: computed [5]  page [5]
+PASS  9.8 V(1) - V(4) [V] = 22 ln 2: computed [15.2492, 15.2492]  page [15.2492, 15.2]
+PASS  9.8 V(1) - V(4) exact: computed [15.2492]  page [15.2492]
+PASS  9.8 differs from SP18 E1 #4 key (rho_s = eps0*4 - 5 eps0*2 = -6 eps0; radius 3 m)
+== 9.9 glass slab (eps_r = 3, 0 < z < 3 cm) in an oblique field ==
+PASS  9.9 BCs at z=0: n x (E_in - E0) = 0, n.(3 E_in - E0) = 0: computed [-0, 0, 0, 0]  page [0, 0, 0, 0]
+PASS  9.9 E inside [V/m]: computed [40, 0, 10]  page [40, 0, 10]
+PASS  9.9 D, P inside [eps0 C/m^2]: computed [120, 0, 30, 80, 0, 20]  page [120, 0, 30, 80, 0, 20]
+PASS  9.9 D numeric (x, z) [1e-9 C/m^2]: computed [1.0625, 0.265626]  page [1.06, 0.266]
+PASS  9.9 P numeric (x, z) [1e-10 C/m^2]: computed [7.08335, 1.77084]  page [7.08, 1.77]
+PASS  9.9 angles from normal: air, glass [deg]: computed [53.1301, 75.9638]  page [53.1, 76]
+PASS  9.9 tan ratio: computed [0.333333]  page [0.333333]
+PASS  9.9 E above the slab = E0 [V/m]: computed [40, 0, 30]  page [40, 0, 30]
+PASS  9.9 rho_sb top, bottom [eps0]; top numeric: computed [20, -20, 1.77084e-10]  page [20, -20, 1.77e-10]
+PASS  9.9 field of the two bound sheets at z = -1, 1.5, 4 cm [V/m]: computed [0, -20, 0]  page [0, -20, 0]
+PASS  9.9 exit point B [m]: computed [0.12, 0, 0.03]  page [0.12, 0, 0.03]
+PASS  9.9 V(B)-V(A); path 2 legs; |E| x length [V]: computed [-5.1, -0.3, -4.8, -5.1, 5.1]  page [-5.1, -0.3, -4.8, -5.1, 5.1]
+PASS  9.9 without slab: x at z = 3 cm; sideways drag [cm]: computed [4, 8]  page [4, 8]
+== 9.10 sphere, shell, two layers (NEW: core +5 C, eps_r 5; shell -6 C; coating eps_r 2) ==
+PASS  9.10 E = 0 inside both metals from the all-charge sum (r = 0.5, 2.5)
+PASS  9.10 (a) r=1.5: r^2 D, eps0 r^2 E, r^2 P: computed [0.397887, 0.0795775, 0.31831]  page [0.397887, 0.0795775, 0.31831]
+PASS  9.10 (a) r=3.5: r^2 D, eps0 r^2 E, r^2 P: computed [-0.0795775, -0.0397887, -0.0397887]  page [-0.0795775, -0.0397887, -0.0397887]
+PASS  9.10 (a) r=5.0: r^2 D, eps0 r^2 E, r^2 P: computed [-0.0795775, -0.0795775, -0]  page [-0.0795775, -0.0795775, 0]
+PASS  9.10 (a) D = Q_free_enc/(4 pi r^2) at r = 1.5, 3.5, 5 (Gauss for free charge): computed [0.176839, -0.00649612, -0.0031831]  page [0.176839, -0.00649612, -0.0031831]
+PASS  9.10 (b) free charge at r = 1, 2, 3, 4 [C]: computed [5, -5, -1, 0]  page [5, -5, -1, 0]
+PASS  9.10 (b) rho_s exact [C/m^2]: computed [0.397887, -0.0994718, -0.00884194, 0]  page [0.397887, -0.0994718, -0.00884194, 0]
+PASS  9.10 (b) rho_s numeric [C/m^2]: computed [0.397887, -0.0994718, -0.00884194]  page [0.398, -0.0995, -0.00884]
+PASS  9.10 (c) bound totals at r = 1, 2, 3, 4 [C]: computed [-4, 4, 0.5, -0.5]  page [-4, 4, 0.5, -0.5]
+PASS  9.10 (c) rho_sb exact [C/m^2]: computed [-0.31831, 0.0795775, 0.00442097, -0.0024868]  page [-0.31831, 0.0795775, 0.00442097, -0.0024868]
+PASS  9.10 (c) rho_sb numeric [C/m^2]: computed [-0.31831, 0.0795775, 0.00442097, -0.0024868]  page [-0.318, 0.0796, 0.00442, -0.00249]
+PASS  9.10 (c) rho_sb from P.n with the table's P: -P(1), +P(2), -P(3), +P(4): computed [-0.31831, 0.0795775, 0.00442097, -0.0024868]  page [-0.31831, 0.0795775, 0.00442097, -0.0024868]
+PASS  9.10 (c) face totals -/+(1 - 1/eps_r) Q_enc: computed [-4, -0.5]  page [-4, -0.5]
+PASS  9.10 (c) r^2 P_r constant in each layer -> rho_b = 0
+PASS  9.10 (d) V_shell: shell superposition vs line integral, exact -7/(96 pi eps0): computed [-2.62137e+09, -2.62137e+09]  page [-2.62137e+09, -2.62137e+09]
+PASS  9.10 (d) V(0): shell superposition vs line integral, exact 5/(96 pi eps0): computed [1.87241e+09, 1.87241e+09]  page [1.87241e+09, 1.87241e+09]
+PASS  9.10 (d) numeric V_shell, V(0), V(0)-V_shell [V]: computed [-2.62137e+09, 1.87241e+09, 4.49378e+09]  page [-2.62e+09, 1.87e+09, 4.49e+09]
+PASS  9.10 (d) V(0) - V_shell = 1/(8 pi eps0): computed [4.49378e+09]  page [4.49378e+09]
+PASS  9.10 (d) the core is at the higher potential
+PASS  9.10 check: eps0[E(4+) - E(4-)] = rho_sb(4) = -1/(128 pi): computed [-0.0024868]  page [-0.0024868]
+PASS  9.10 check terms: eps0 E(4+) = -1/(64 pi), -eps0 E(4-) = +1/(128 pi): computed [-0.00497359, 0.0024868]  page [-0.00497359, 0.0024868]
+      S18 HE1 #3a: old 9.10 (+2 C, 4 eps0) coincided in nothing
+PASS  9.10 new numbers coincide with no S18 HE1 #3a key value (none)
+      S19 HE1 #3a: old 9.10 (+2 C, 4 eps0) coincided in ['rs3', 'outD', 'outE']
+PASS  9.10 new numbers coincide with no S19 HE1 #3a key value (none)
+      S19c HE1 #3a: old 9.10 (+2 C, 4 eps0) coincided in ['inD', 'inE', 'inP', 'rs1', 'rs2']
+PASS  9.10 new numbers coincide with no S19c HE1 #3a key value (none)
+== 9.11 graded coax eps = eps_a a/r ==
+PASS  9.11 (a) E independent of r and = V0/(b-a) (a=0.001, b=0.003): computed [100000, 100000, 100000, 100000, 100000, 100000, 100000]  page [100000, 100000, 100000, 100000, 100000, 100000, 100000]
+PASS  9.11 (a) E independent of r and = V0/(b-a) (a=0.002, b=0.007): computed [10000, 10000, 10000, 10000, 10000, 10000, 10000]  page [10000, 10000, 10000, 10000, 10000, 10000, 10000]
+PASS  9.11 (b) E [V/m], rho_l [C/m], rho_l [nC/m]: computed [100000, 3.33795e-08, 33.3795]  page [100000, 3.34e-08, 33.4]
+PASS  9.11 (b) D(r) r = const [C/m]; D(a), D(b) [uC/m^2]: computed [5.31251e-09, 5.31251, 1.77084]  page [5.31e-09, 5.31, 1.77]
+PASS  9.11 (c) P(a), P(b) [uC/m^2]: computed [4.42709, 0.885419]  page [4.43, 0.885]
+PASS  9.11 (c) rho_b(a), rho_b(b) [mC/m^3]: computed [0.885419, 0.29514]  page [0.885, 0.295]
+PASS  9.11 (c) rho_b = eps0 E / r at mid: computed [0.000442709]  page [0.000442709]
+PASS  9.11 (c) rho_sb(a) = -P(a), rho_sb(b) = +P(b) [uC/m^2]: computed [-4.42709, 0.885419]  page [-4.43, 0.885]
+PASS  9.11 (c) per length: inner, outer, bulk [nC/m]: computed [-27.8163, 16.6898, 11.1265]  page [-27.8, 16.7, 11.1]
+PASS  9.11 (c) fractions of rho_l and total: computed [-0.833333, 0.5, 0.333333, 1.78424e-15]  page [-0.833333, 0.5, 0.333333, 0]
+PASS  9.11 (d) homogeneous E_max [V/m]; ratio to graded (= 2/ln 3): computed [182048, 1.82048, 1.82048]  page [182000, 1.82, 1.82]
+PASS  9.11 check: Gauss with all charge at r = 2 mm equals 2 pi eps0 E r: computed [1.11265e-08]  page [1.11265e-08]
+== 9.12 sphere half in oil: numerical flux and surface integrals ==
+PASS  9.12 (a) A = Q/(2 pi (eps0 + eps)) for eps_r = 2.0: computed [179.751]  page [179.751]
+PASS  9.12 (a) A = Q/(2 pi (eps0 + eps)) for eps_r = 5.0: computed [89.8755]  page [89.8755]
+PASS  9.12 (a) A [V m], E(a) [V/m]: computed [179.751, 17975.1]  page [180, 18000]
+PASS  9.12 (a) A = Q/(6 pi eps0): computed [179.751]  page [179.751]
+PASS  9.12 (a) on z=0 at phi=0.3: E tangential (E_z = 0) so D_z = 0 both sides; E_t equal
+PASS  9.12 (a) on z=0 at phi=2.0: E tangential (E_z = 0) so D_z = 0 both sides; E_t equal
+PASS  9.12 (b) rho_s upper, lower [nC/m^2]: computed [159.155, 318.31]  page [159, 318]
+PASS  9.12 (b) charge upper, lower hemisphere [nC]: computed [10, 20]  page [10, 20]
+PASS  9.12 (c) rho_sb at sphere [nC/m^2], total [nC]: computed [-159.155, -10]  page [-159, -10]
+PASS  9.12 (c) net surface charge lower = upper [nC/m^2]: computed [159.155, 159.155]  page [159, 159]
+PASS  9.12 (c) uniform 20 nC sphere in vacuum gives A: computed [179.751]  page [179.751]
+PASS  9.12 (d) V(a), all air, all oil [kV]: computed [1.79751, 2.69627, 1.34813]  page [1.8, 2.7, 1.35]
+PASS  9.12 (d) V(a)/V_air = 2/3: computed [0.666667]  page [0.666667]
+== Sources: Source lines vs the closing 'Sources for this page' paragraph ==
+PASS  9.10 Source line is exactly the requested text
+PASS  Sources paragraph mentions 'HW4 #2'
+PASS  Sources paragraph mentions 'HW4 #6'
+PASS  Sources paragraph mentions 'SP18 Exam 1 #1(i)'
+PASS  Sources paragraph mentions 'SP18 Exam 1 #4'
+PASS  Sources paragraph mentions 'Summer 2018 HE1 #3a'
+PASS  Sources paragraph mentions 'Summer 2019 HE1 #3a'
+PASS  Sources paragraph mentions 'Summer 2019 HE1 (conflict) #3a'
+PASS  Sources paragraph mentions 'Summer 2020 HE2 #1a'
+PASS  Sources paragraph cites no HW/exam that no Source line cites (HW3 #7)
+PASS  Sources paragraph lists the original problems ['9.2', '9.4', '9.5', '9.9']
+
+142 PASS, 0 FAIL

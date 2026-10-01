@@ -1,0 +1,183 @@
+
+=== 3.1 Two sheets of charge ===
+  PASS  E_z at z = -0.5 m (z<0) [V/m]                                  computed -169.411                         page -169
+  PASS  E_z at z = -6.0 m (z<0) [V/m]                                  computed -169.411                         page -169
+  PASS  E_z at z = +0.3 m (0<z<2) [V/m]                                computed 282.352                          page 282
+  PASS  E_z at z = +1.7 m (0<z<2) [V/m]                                computed 282.352                          page 282
+  PASS  E_z at z = +2.5 m (z>2) [V/m]                                  computed 169.411                          page 169
+  PASS  E_z at z = +9.0 m (z>2) [V/m]                                  computed 169.411                          page 169
+  PASS  Check: eps0 * jump of E_z at z = 0 [nC/m^2] (= rho_s1)         computed 4                                page 4
+  PASS  Check: eps0 * jump of E_z at z = 2 [nC/m^2] (= rho_s2)         computed -1                               page -1
+
+=== 3.2 Flux through a tilted window ===
+  PASS  corners close: C0 + u + v = C2                                 computed (3, 2, 4)                        page (3, 2, 4)
+  PASS  u . v (edges perpendicular)                                    computed 0                                page 0
+  PASS  u x v [m^2]                                                    computed (8, 0, -6)                       page (8, 0, -6)
+  PASS  area |u x v| [m^2]                                             computed 10                               page 10
+  PASS  |u| x |v| (2 m x 5 m rectangle)                                computed 10                               page 10
+  PASS  n_hat with positive z component                                computed (-0.8, -0, 0.6)                  page (-0.8, 0, 0.6)
+  PASS  (a) E.n_hat [V/m]                                              computed 300                              page 300
+  PASS  (a) flux of E [V m]                                            computed 3000                             page 3000
+  PASS  (a) psi_E = eps0 * flux [nC]                                   computed 26.5626                          page 26.56
+  PASS  (b) |E| [V/m] (same strength)                                  computed 500                              page 500
+  PASS  (b) flux of E [V m]                                            computed 0                                page 0
+  PASS  (b) E x v = 0 (E parallel to edge v)                           computed (0, 0, 0)                        page (0, 0, 0)
+  PASS  Check: shadow on xy plane = |(u x v)_z| [m^2]                  computed 6                                page 6
+
+=== 3.3 Finite line in a closed cylinder (MC, key b) ===
+  PASS  curved-side flux [nC]                                          computed 5.24419                          page 5.244
+  PASS  curved-side flux = rho_l (sqrt10 - sqrt2) [nC]                 computed 5.24419                          page 5.24419
+  PASS  top-cap flux [nC]                                              computed 0.377904                         page 0.378
+  PASS  bottom-cap flux [nC]                                           computed 0.377904                         page 0.378
+  PASS  both caps [nC]                                                 computed 0.755808                         page 0.756
+  PASS  total outward flux [nC] (key b)                                computed 6                                page 6
+  PASS  distractor (d): rho_l x 4 m [nC]                               computed 12                               page 12
+
+=== 3.4 Charges written with delta functions (deltas as Gaussians, sigma = 0.1 mm) ===
+  PASS  (b) point 4 nC at (1,-1,0): charge inside cube [nC]            computed 4                                page 4
+  PASS  (b) line -2 nC/m along z through (-1,0): charge inside cube [nC] computed -8                               page -8
+  PASS  (b) sheet 0.5 nC/m^2 on z = 1: charge inside cube [nC]         computed 8                                page 8
+  PASS  (b) point 2 nC at (0,3,0): charge inside cube [nC]             computed 0                                page 0
+  PASS  (b) psi_E out of the cube [nC]                                 computed 4                                page 4
+
+=== 3.5 Magnetic flux through a dome (MC, key b) ===
+  PASS  dome flux by surface integral [Wb] vs 0.1 pi                   computed 0.314159                         page 0.314159
+  PASS  dome flux [Wb] (key b, 0.314)                                  computed 0.314159                         page 0.314
+  PASS  base flux, outward -z [Wb]                                     computed -0.314159                        page -0.314159
+  PASS  x component alone through the dome [Wb]                        computed 1.63494e-17                      page 0
+  PASS  distractor (c) = B_z * 2 pi a^2 [Wb] (0.2 pi)                  computed 0.628319                         page 0.628
+  PASS  distractor (d) = |B| * 2 pi a^2 [Wb] (0.25 pi)                 computed 0.785398                         page 0.785
+  PASS  distractor (e) = |B| * pi a^2 [Wb] (0.125 pi)                  computed 0.392699                         page 0.393
+
+=== 3.6 Sphere with a graded density (direct Coulomb by rays) ===
+  PASS  (a) Q = Int rho dV [nC]                                        computed 1.52681                          page 1.527
+  PASS  (a) Q vs pi rho0 a^3 / 3 [nC]                                  computed 1.52681                          page 1.52681
+  PASS  (b) E_r at r = 2 cm vs page inside formula [V/m]               computed 1254.9                           page 1254.9
+  PASS  (b) E_r at r = 4.5 cm vs page inside formula [V/m]             computed 2117.64                          page 2117.64
+  PASS  (b) E_r at r = 7.5 cm vs page inside formula [V/m]             computed 2117.64                          page 2117.64
+  PASS  (b) E_r at r = 8.5 cm vs page inside formula [V/m]             computed 1866.66                          page 1866.66
+  PASS  (b) E_r at r = 12 cm vs page outside formula [V/m]             computed 952.939                          page 952.939
+  PASS  (b) E_r at r = 30 cm vs page outside formula [V/m]             computed 152.471                          page 152.47
+  PASS  Check: E at the centre [V/m]                                   computed 0.00752939                       page 0
+  PASS  (c) location of max |E| [cm]                                   computed 6                                page 6
+  PASS  (c) E_max [V/m]                                                computed 2258.82                          page 2259
+  PASS  (c) E at the surface r = a [V/m]                               computed 1694.11                          page 1694
+  PASS  (c) E(a) / E_max                                               computed 0.75                             page 0.75
+  PASS  (d) rho_s = -Q/(4 pi b^2) [nC/m^2]                             computed -3.75                            page -3.75
+  PASS  (d) -rho0 a^3/(12 b^2) [nC/m^2]                                computed -3.75                            page -3.75
+  PASS  (d) -rho0 a/48 (b = 2a) [nC/m^2]                               computed -3.75                            page -3.75
+  PASS  (d) ball + shell: E at r = 25 cm [V/m]                         computed 0.00127881                       page 0
+  PASS  (d) shell alone at r = 12 cm (inside it) [V/m]                 computed 2.84217e-14                      page 0
+
+=== 3.7 Point-charge flux through a disk ===
+  PASS  (a) direct integral vs page formula, a = 1 cm [nC]             computed 0.179145                         page 0.179145
+  PASS  (a) direct integral vs page formula, a = 3 cm [nC]             computed 1.2                              page 1.2
+  PASS  (a) direct integral vs page formula, a = 10 cm [nC]            computed 3.77166                          page 3.77166
+  PASS  (b) psi at a = 3 cm [nC]                                       computed 1.2                              page 1.2
+  PASS  (b) psi / Q at a = 3 cm                                        computed 0.1                              page 0.1
+  PASS  (c) radius that catches Q/4 [cm]                               computed 6.9282                           page 6.93
+  PASS  (c) a / h                                                      computed 1.73205                          page 1.73205
+  PASS  (c) a < 2h                                                     computed 1                                page 1
+  PASS  (d) psi as a -> infinity [nC]                                  computed 6                                page 6
+  PASS  second route: spherical-cap flux = disk flux (a = 3 cm) [nC]   computed 1.2                              page 1.2
+
+=== 3.8 Find the error, odd slab (stack of thin sheets) ===
+  PASS  (b) E_x at x = -1.6 m vs page formula [V/m]                    computed 0                                page 0
+  PASS  (b) E_x at x = -0.75 m vs page formula [V/m]                   computed -24705.8                         page -24705.8
+  PASS  (b) E_x at x = -0.2 m vs page formula [V/m]                    computed -54211.6                         page -54211.6
+  PASS  (b) E_x at x = +0.0 m vs page formula [V/m]                    computed -56470.5                         page -56470.5
+  PASS  (b) E_x at x = +0.2 m vs page formula [V/m]                    computed -54211.6                         page -54211.6
+  PASS  (b) E_x at x = +0.75 m vs page formula [V/m]                   computed -24705.8                         page -24705.8
+  PASS  (b) E_x at x = +1.6 m vs page formula [V/m]                    computed 0                                page 0
+  PASS  (a) E_x is even: E_x(0.6) - E_x(-0.6) [V/m]                    computed 0                                page 0
+  PASS  (a) student's symmetric pillbox: cap fluxes E_x(x) - E_x(-x) = 0 for any E computed 0                                page 0
+  PASS  (a) yet E_x(0.6) is not zero: value [V/m] vs page formula      computed -36141.1                         page -36141.1
+  PASS  (c) |E(0)| [V/m]                                               computed 56470.5                          page 56500
+  PASS  (c) sign of E_x(0) (page: along -x)                            computed -1                               page -1
+  PASS  (c) eps0 |E(0)| = charge/area of the positive half [uC/m^2]    computed 0.5                              page 0.5
+  PASS  Check: slope dE_x/dx at x = 0.4 = rho/eps0 [V/m^2]             computed 45176.4                          page 45176.4
+
+=== 3.9 Two slabs and a sheet (densities / eps0, E in V/m; stack of thin sheets) ===
+  PASS  (a) slab 1 charge per area / eps0 [V/m]                        computed 6                                page 6
+  PASS  (a) slab 2 charge per area / eps0 [V/m]                        computed -6                               page -6
+  PASS  (b) E_z at z = -5 m [V/m]                                      computed 0                                page 0
+  PASS  (b) E_z at z = -2.5 m [V/m]                                    computed 1.5                              page 1.5
+  PASS  (b) E_z at z = -1.5 m [V/m]                                    computed 4.5                              page 4.5
+  PASS  (b) E_z at z = -0.5 m [V/m]                                    computed 6                                page 6
+  PASS  (b) E_z at z = +0.5 m [V/m]                                    computed 5                                page 5
+  PASS  (b) E_z at z = +2.0 m [V/m]                                    computed 2                                page 2
+  PASS  (b) E_z at z = +2.9 m [V/m]                                    computed 0.2                              page 0.2
+  PASS  (b) E_z at z = +5 m [V/m]                                      computed 0                                page 0
+  PASS  (c) E_z at z = -5 m [V/m]                                      computed -2                               page -2
+  PASS  (c) E_z at z = -2.5 m [V/m]                                    computed -0.5                             page -0.5
+  PASS  (c) E_z at z = -1.5 m [V/m]                                    computed 2.5                              page 2.5
+  PASS  (c) E_z at z = -0.5 m [V/m]                                    computed 8                                page 8
+  PASS  (c) E_z at z = +0.5 m [V/m]                                    computed 7                                page 7
+  PASS  (c) E_z at z = +2.0 m [V/m]                                    computed 4                                page 4
+  PASS  (c) E_z at z = +2.9 m [V/m]                                    computed 2.2                              page 2.2
+  PASS  (c) E_z at z = +5 m [V/m]                                      computed 2                                page 2
+  PASS  (d) number of planes with E = 0 (scan -8..8 m)                 computed 1                                page 1
+  PASS  (d) location of E = 0 [m]                                      computed -2.33333                         page -2.33333
+  PASS  (d) E_z just below the sheet [V/m]                             computed 4                                page 4
+  PASS  (d) E_z just above the sheet [V/m]                             computed 8                                page 8
+  PASS  Check: E_z continuous at z = -3 (case c) [V/m]                 computed 3e-09                            page 0
+  PASS  Check: E_z continuous at z = 0 (case c) [V/m]                  computed -2e-09                           page 0
+  PASS  Check: E_z continuous at z = 3 (case c) [V/m]                  computed -2e-09                           page 0
+  PASS  Check: slope inside slab 1 [V/m^2]                             computed 3                                page 3
+  PASS  Check: slope inside slab 2 [V/m^2]                             computed -2                               page -2
+
+=== 3.10 Sphere with an off-centre cavity (direct Coulomb by rays, no superposition of fields) ===
+  PASS  (a) full ball, Coulomb at (0.3,0.2,-0.4) vs rho r/(3 eps0) [V/m] computed (3, 2, -4)                       page (3, 2, -4)
+  PASS  (b) cavity field at (0.5, 0, 0) [V/m]                          computed (5, 2.45675e-16, 5.13004e-17)    page (5, 0, 0)
+  PASS  (b) cavity field at (0.3, 0.1, -0.1) [V/m]                     computed (5, 9.96188e-16, 5.43087e-14)    page (5, 0, 0)
+  PASS  (b) cavity field at (0.7, -0.2, 0.15) [V/m]                    computed (5, 2.58151e-15, -1.01749e-13)   page (5, 0, 0)
+  PASS  (c) |r_P| [m]                                                  computed 0.707107                         page 0.707
+  PASS  (c) |r_P - d| [m] (> b: in the material)                       computed 0.5                              page 0.5
+  PASS  (c) E(P) [V/m]                                                 computed (5, 2.43998, -6.74102e-15)       page (5, 2.44, 0)
+  PASS  (c) |E(P)| [V/m]                                               computed 5.56359                          page 5.56
+  PASS  (d) E(S) [V/m]                                                 computed (1.43993, -3.12138e-17, -5.0781e-18) page (1.44, 0, 0)
+  PASS  (d) E(S) with the cavity filled [V/m]                          computed (1.59992, -2.57782e-17, -5.0781e-18) page (1.6, 0, 0)
+  PASS  Check: E at the cavity-wall point (0.5,0.4,0) [V/m]            computed (5, 5.9188e-16, 2.56236e-14)     page (5, 0, 0)
+
+=== 3.11 Coaxial cable with a graded core (2-D Coulomb sum of line elements, by rays) ===
+  PASS  (a) core charge per length [nC/m]                              computed 0.628319                         page 0.628
+  PASS  (a) rho_1 for neutrality [uC/m^3]                              computed 0.4                              page 0.4
+  PASS  (b) E_r at r = 0.4 cm vs page formula [V/m]                    computed 180.705                          page 180.705
+  PASS  (b) E_r at r = 0.8 cm vs page formula [V/m]                    computed 722.822                          page 722.822
+  PASS  (b) E_r at r = 1.5 cm vs page formula [V/m]                    computed 752.941                          page 752.939
+  PASS  (b) E_r at r = 2.2 cm vs page formula [V/m]                    computed 427.123                          page 427.122
+  PASS  (b) E_r at r = 2.8 cm vs page formula [V/m]                    computed 93.5738                          page 93.5796
+  PASS  (b) E_r at r = 3.5 cm vs page formula [V/m]                    computed -0.00243866                      page 0
+  PASS  (c) E(r = a) [V/m]                                             computed 1129.41                          page 1129
+  PASS  (c) E(r = b) [V/m]                                             computed 564.706                          page 565
+  PASS  (c) core alone at 2.5 cm (= 'gap formula') [V/m]               computed 451.766                          page 451.8
+  PASS  (c) shell factor E/E_core at 2.5 cm                            computed 0.550002                         page 0.55
+  PASS  (c) E(r = 2.5 cm) [V/m]                                        computed 248.472                          page 248.5
+  PASS  (c) E_y at 2.5 cm (radial field) [V/m]                         computed -8.26621e-14                     page 0
+  PASS  (c) r of max |E| on a 0.5 mm scan [cm]                         computed 1                                page 1
+  PASS  (d) rho_s on r = b [nC/m^2]                                    computed -5                               page -5
+  PASS  (d) core + sheet at r = 2.5 cm [V/m]                           computed 0.00200112                       page 0
+  PASS  (d) sheet alone at r = 1.5 cm (inside it) [V/m]                computed -5.32907e-15                     page 0
+
+=== 3.12 Flux bookkeeping, line and sheet (D in nC/m^2, flux in nC; midpoint surface integrals) ===
+  PASS  (a) line, Coulomb: D_r at r = 0.7 m vs 6/(2 pi r) [nC/m^2]     computed 1.36419                          page 1.36419
+  PASS  (a) sheet, Coulomb: D_z above the sheet vs +2 [nC/m^2]         computed 2                                page 2
+  PASS  (b) top cap [nC] (2 pi)                                        computed 6.28319                          page 6.28
+  PASS  (b) bottom cap [nC] (2 pi)                                     computed 6.28319                          page 6.28
+  PASS  (b) curved side [nC]                                           computed 18                               page 18
+  PASS  (b) total [nC]                                                 computed 30.5664                          page 30.57
+  PASS  (b) total vs Q_enc = 6*3 + 4*pi*1^2 [nC]                       computed 30.5664                          page 30.5664
+  PASS  (c) cube face top z=3 [nC]                                     computed 8                                page 8
+  PASS  (c) cube face bottom z=1 [nC]                                  computed -8                               page -8
+  PASS  (c) cube face +x [nC]                                          computed 3                                page 3
+  PASS  (c) cube face -x [nC]                                          computed 3                                page 3
+  PASS  (c) cube face +y [nC]                                          computed 3                                page 3
+  PASS  (c) cube face -y [nC]                                          computed 3                                page 3
+  PASS  (c) cube total [nC]                                            computed 12                               page 12
+  PASS  (d) dome flux, direct surface integral [nC]                    computed 12.2832                          page 12.28
+  PASS  (d) dome flux vs 6 + 2 pi [nC]                                 computed 12.2832                          page 12.2832
+  PASS  (d) closing disk z = 1 (outward -z) [nC]                       computed -6.28319                         page -6.28319
+  PASS  (d) dome + disk = Q_enc (line, 1 m) [nC]                       computed 6.00002                          page 6
+  PASS  Check: line's D.n on the dome is 6/(2 pi) everywhere [nC/m^2]  computed (0.95493, 0.95493)               page 0.95493
+
+SUMMARY: 157 PASS, 0 FAIL

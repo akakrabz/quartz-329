@@ -1,6 +1,6 @@
 ---
 title: "ECE 329 · Fields and Waves"
-description: "Teaching notes for ECE 329 (Fields and Waves I): lectures rewritten as narratives, a concept glossary that links everything, worked exam-style problems, and interactive demos."
+description: "Teaching notes for ECE 329 (Fields and Waves I): lectures rewritten as narratives, a concept glossary that links everything, worked exam-style problems, a bank of practice problems tagged easy, medium and hard, and interactive demos."
 ---
 
 Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written to *teach* the material rather than to summarize it. The source material is the course itself — Prof. Kudeki's lecture notes, the lecture slides with their in-class annotations, the homework and exams — digested and rewritten in one consistent notation, with the connections made explicit.
@@ -9,6 +9,7 @@ Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written t
 > - **Lectures** (the spine, in course order) tell the story: motivation → definition → derivation → worked example → what goes wrong → what the exam does with it.
 > - **Concepts** are the glossary: one short page per idea (Gauss's law, curl, flux, …) with the key equation, when it applies, the traps, and links to every lecture and problem that uses it.
 > - **Problems** and **demos** are where the ideas get exercised — exam-style problems worked in full (with the numbers changed), and interactive pages you can drag things around in.
+> - **Practice** is where you do the exercising yourself: 164 problems for Lectures 2–15, tagged easy, medium or hard, each with a folded hint and a worked solution.
 >
 > Every page links to its neighbours; hover a link for a preview, and use the **graph view** at the top right of any page to see what connects to what. Fields and Waves is a web of ideas, not a list — the site is built the same way.
 
@@ -46,8 +47,11 @@ Then: plane TEM waves · Poynting · phasors · lossy media · polarization · r
 ### [[4-transmission-lines/index|Unit 4 · Transmission lines]] — Lectures 27–38
 Guided TEM waves · bounce diagrams · sinusoidal steady state and input impedance · quarter-wave transformers · the Smith chart · impedance matching — *planned*
 
+### [[practice/index|Practice problems]] — Lectures 2–15
+Twelve problems per lecture (eight for Lecture 11), from two-minute checks to exam length, each with a folded hint and a worked solution: by difficulty — [[practice/easy|easy]] · [[practice/medium|medium]] · [[practice/hard|hard]] — or [[practice/topics|by topic]] across lectures. Every lecture page links to its own set.
+
 ### Cross-cutting
-[[concepts/index|Concept glossary]] · [[problems/index|Worked problems]] · [[demos/index|Interactive demos]]
+[[concepts/index|Concept glossary]] · [[problems/index|Worked problems]] · [[practice/index|Practice problems]] · [[demos/index|Interactive demos]]
 
 ## Conventions used throughout
 
@@ -86,4 +90,6 @@ The notes use a few recurring boxes, so you can skim for what you need:
 > [!derivation]- Derivation (click to expand)
 > Longer derivations are folded so the narrative stays readable. Expand when you want the details.
 
-*Status: Lectures 1–16 are written (Toolkit, all of Unit 1, all of Unit 2, the first lecture of Unit 3), with 37 concept pages and ten worked problems; Lectures 17–38 are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*
+The [[practice/index|practice pages]] add their own five: the problem statement sits in an **easy**, **medium** or **hard** box (the difficulty tag, followed by topic tags), and the **hint** and **solution** below it are folded until you click them.
+
+*Status: Lectures 1–16 are written (Toolkit, all of Unit 1, all of Unit 2, the first lecture of Unit 3), with 37 concept pages, ten worked problems and 164 practice problems; Lectures 17–38 are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*

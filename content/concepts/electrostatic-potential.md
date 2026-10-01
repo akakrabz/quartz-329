@@ -30,4 +30,6 @@ aliases: ["potential", "voltage", "electric potential", "equipotential", "gradie
 
 **Where it appears.** [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] (everything above), [[1-electrostatics/07-poisson-and-laplace|Lecture 7]] (Poisson's equation for $V$), [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] (conductors are equipotentials), [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] ($C = Q/V$), [[problems/curl-potential-and-charge-from-a-field]], [[problems/charged-slab-with-a-power-law-profile]], [[problems/two-layer-coaxial-capacitor]].
 
+**Practice.** [[practice/topics#potential-work-and-the-energy-of-charges|Potential, work and the energy of charges]] (14 problems) — for example [[practice/05-electrostatic-potential#51-uniform-field-between-two-points|5.1 Uniform field between two points]] (easy), [[practice/05-electrostatic-potential#56-two-fields-three-paths|5.6 Two fields, three paths]] (medium), [[practice/05-electrostatic-potential#510-charged-slab-sheet-and-staircase|5.10 Charged slab, sheet and staircase]] (hard).
+
 Related: [[concepts/conservative-field]] · [[concepts/electric-field]] · [[concepts/poissons-equation]] · [[concepts/vector-potential]] (the magnetic twin) · [[concepts/electromotive-force]] (what replaces path-independent voltage when fields vary).

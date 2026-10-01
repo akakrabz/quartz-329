@@ -38,4 +38,6 @@ Beside $\mathcal{C} = 2\pi\epsilon/\ln(b/a)$ and $\mathcal{C} = \epsilon W/d$: t
 
 **Where it appears.** [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15]] (all of the above), [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]] (the self-emf that $I = \mathcal{E}/R$ neglects), [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] (the twin), [[problems/coax-inductance-and-the-lc-product]]; the telegrapher's equations of Unit 4 are built from $\mathcal{L}$ and $\mathcal{C}$.
 
+**Practice.** [[practice/topics#inductance|Inductance]] (8 problems) — for example [[practice/15-inductance-and-magnetic-energy#151-a-long-solenoid-by-the-numbers|15.1 A long solenoid by the numbers]] (easy), [[practice/15-inductance-and-magnetic-energy#157-internal-inductance-of-a-wire|15.7 Internal inductance of a wire]] (medium), [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core|15.9 Toroid with a two-layer core]] (hard).
+
 Related: [[concepts/capacitance]] · [[concepts/magnetic-flux]] · [[concepts/faradays-law]] · [[concepts/magnetic-energy]] · [[concepts/conductance]].

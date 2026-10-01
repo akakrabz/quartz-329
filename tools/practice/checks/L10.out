@@ -1,0 +1,401 @@
+
+==============================================================================
+10.1  Four capacitances by formula
+==============================================================================
+   (a) C = 80 eps0 = 708 pF   (raw 7.083350e-10)
+   [OK ] (a) 80 eps0: 7.08335e-10 vs 7.08335e-10
+   [OK ] (a) plates given-V route: 7.08335e-10 vs 7.08335e-10
+   (a) without eps_r (watch-out): 177 pF
+   ln(b/a) = ln 4 = 1.3863
+   (b) script C per metre = 90.3 pF/m   (raw 9.029333e-11)
+   [OK ] (b) coax Laplace (solve_bvp) route: 9.02933e-11 vs 9.02933e-11
+   [OK ] (b) coax Gauss route: 9.02933e-11 vs 9.02933e-11
+   (b) with log10 instead of ln (watch-out): 208 pF/m
+   (c) ab/(b-a) = 0.2 m
+   (c) C spheres = 22.3 pF   (raw 2.225300e-11)
+   [OK ] (c) spheres Laplace route: 2.2253e-11 vs 2.2253e-11
+   [OK ] (c) spheres Gauss route: 2.2253e-11 vs 2.2253e-11
+   (d) C isolated sphere = 10 pF   (raw 1.001385e-11)
+   (d) with 1/(4 pi eps0) = 9e9: C = 10 pF
+   [OK ] (d) isolated sphere, integrate E to infinity: 1.00139e-11 vs 1.00139e-11
+   Earth (a = 6.37e6 m) C = 709 uF   (raw 7.087581e-04)
+   scaling x2: plates C ratio 2.0 ; spheres ratio 2.0000000000000004 ; coax script-C ratio 1.0
+
+==============================================================================
+10.2  Slide in a slab (fixed Q vs fixed V)
+==============================================================================
+  parameter set C0=1e-09, V0=10.0, eps_r=4.0
+   [OK ] (i) V/V0 = 1/4: 0.25 vs 0.25
+   [OK ] (i) W/W0 = 1/4 (falls, statement (c) false): 0.25 vs 0.25
+   (i) D/D0 = 1 (Q fixed); E/E0 = 0.25
+   [OK ] (i) mechanical work = (3/8) C0 V0^2: 3.75e-08 vs 3.75e-08
+   [OK ] (ii) Q/Q0 = 4: 4 vs 4
+   [OK ] (ii) W/W0 = 4: 4 vs 4
+   [OK ] (ii) battery work = 3 C0 V0^2: 3e-07 vs 3e-07
+   [OK ] (ii) stored increase = 1.5 C0 V0^2: 1.5e-07 vs 1.5e-07
+   [OK ] (ii) battery work / stored increase = 2: 2 vs 2
+   [OK ] (ii) work by field on slab = 1.5 C0 V0^2: 1.5e-07 vs 1.5e-07
+   Q0 = 10 nC, W0 = 50 nJ; (i) V = 2.5 V, W = 12.5 nJ, W0 - W = 37.5 nJ
+   (ii) Q = 40 nC, dQ = 30 nC, W = 200 nJ, battery work = 300 nJ, stored increase = 150 nJ, work on slab = 150 nJ
+   s=0.02: F (fixed Q) = 5.8594e-07 N  (>0: pulled IN) ; F (fixed V) = 1.5000e-06 N (>0: pulled IN)
+   [OK ]    same force at same instantaneous charge: 1.5e-06 vs 1.5e-06
+   s=0.05: F (fixed Q) = 2.4000e-07 N  (>0: pulled IN) ; F (fixed V) = 1.5000e-06 N (>0: pulled IN)
+   [OK ]    same force at same instantaneous charge: 1.5e-06 vs 1.5e-06
+   s=0.08: F (fixed Q) = 1.2976e-07 N  (>0: pulled IN) ; F (fixed V) = 1.5000e-06 N (>0: pulled IN)
+   [OK ]    same force at same instantaneous charge: 1.5e-06 vs 1.5e-06
+   [OK ] (i) integral of F ds = (3/8) C0 V0^2: 3.75e-08 vs 3.75e-08
+   [OK ] (ii) integral of F ds = 1.5 C0 V0^2: 1.5e-07 vs 1.5e-07
+  parameter set C0=3.3e-10, V0=250.0, eps_r=4.0
+   [OK ] (i) V/V0 = 1/4: 0.25 vs 0.25
+   [OK ] (i) W/W0 = 1/4 (falls, statement (c) false): 0.25 vs 0.25
+   (i) D/D0 = 1 (Q fixed); E/E0 = 0.25
+   [OK ] (i) mechanical work = (3/8) C0 V0^2: 7.73437e-06 vs 7.73437e-06
+   [OK ] (ii) Q/Q0 = 4: 4 vs 4
+   [OK ] (ii) W/W0 = 4: 4 vs 4
+   [OK ] (ii) battery work = 3 C0 V0^2: 6.1875e-05 vs 6.1875e-05
+   [OK ] (ii) stored increase = 1.5 C0 V0^2: 3.09375e-05 vs 3.09375e-05
+   [OK ] (ii) battery work / stored increase = 2: 2 vs 2
+   [OK ] (ii) work by field on slab = 1.5 C0 V0^2: 3.09375e-05 vs 3.09375e-05
+   Q0 = 82.5 nC, W0 = 1.031e+04 nJ; (i) V = 62.5 V, W = 2578 nJ, W0 - W = 7734 nJ
+   (ii) Q = 330 nC, dQ = 247.5 nC, W = 4.125e+04 nJ, battery work = 6.187e+04 nJ, stored increase = 3.094e+04 nJ, work on slab = 3.094e+04 nJ
+   s=0.02: F (fixed Q) = 1.2085e-04 N  (>0: pulled IN) ; F (fixed V) = 3.0937e-04 N (>0: pulled IN)
+   [OK ]    same force at same instantaneous charge: 0.000309375 vs 0.000309375
+   s=0.05: F (fixed Q) = 4.9500e-05 N  (>0: pulled IN) ; F (fixed V) = 3.0938e-04 N (>0: pulled IN)
+   [OK ]    same force at same instantaneous charge: 0.000309375 vs 0.000309375
+   s=0.08: F (fixed Q) = 2.6763e-05 N  (>0: pulled IN) ; F (fixed V) = 3.0938e-04 N (>0: pulled IN)
+   [OK ]    same force at same instantaneous charge: 0.000309375 vs 0.000309375
+   [OK ] (i) integral of F ds = (3/8) C0 V0^2: 7.73438e-06 vs 7.73437e-06
+   [OK ] (ii) integral of F ds = 1.5 C0 V0^2: 3.09375e-05 vs 3.09375e-05
+   ANSWERS: (i) false = (c); (ii) false = (d); (iii) FALSE: slab pulled in, both cases
+
+==============================================================================
+10.3  Leakage of a long cable
+==============================================================================
+   sigma/eps = 0.000502 1/s   (raw 5.019596e-04)
+   script G = (sigma/eps) script C = 5.02e-14 S/m   (raw 5.019596e-14)
+   implied ln(b/a) = 1.2517, b/a = 3.4964
+   [OK ] J-integral script G at r=1.1a: 5.0196e-14 vs 5.0196e-14
+   [OK ] J-integral script G at r=2.0a: 5.0196e-14 vs 5.0196e-14
+   [OK ] J-integral script G at r=3.0a: 5.0196e-14 vs 5.0196e-14
+   G(1000 m) = 5.02e-11 S   (raw 5.019596e-11)
+   R(1000 m) = 19.92 GOhm   (raw 1.992192e+10)
+   C(1000 m) = 100 nF   (raw 1.000000e-07)
+   [OK ] R C (1000 m) = eps/sigma: 1992.19 vs 1992.19
+   G(2000 m) = 1.004e-10 S   (raw 1.003919e-10)
+   R(2000 m) = 9.961 GOhm   (raw 9.960961e+09)
+   C(2000 m) = 200 nF   (raw 2.000000e-07)
+   [OK ] R C (2000 m) = eps/sigma: 1992.19 vs 1992.19
+   tau = eps/sigma (length independent) = 1992 s   (raw 1.992192e+03)
+   tau in minutes = 33.2 min   (raw 3.320320e+01)
+
+==============================================================================
+10.4  Energy density in a dielectric (find the error)
+==============================================================================
+   E = V/d = 5e+04 V/m   (raw 5.000000e+04)
+   volume A d = 4e-05 m^3   (raw 4.000000e-05)
+   student w = 1/2 eps0 E^2 = 0.0111 J/m^3   (raw 1.106773e-02)
+   student W = 0.443 uJ   (raw 4.427094e-07)
+   correct w = 1/2 eps E^2 = 0.0553 J/m^3   (raw 5.533867e-02)
+   correct W = 2.21 uJ   (raw 2.213547e-06)
+   C = 200 eps0 = 1.771 nF
+   1/2 C V^2 = 2.21 uJ   (raw 2.213547e-06)
+   [OK ] numerical volume integral of 1/2 eps E^2 = 1/2 C V^2: 2.21355e-06 vs 2.21355e-06
+   [OK ] student / correct = 1/eps_r: 0.2 vs 0.2
+
+==============================================================================
+10.5  Which capacitor leaks first
+==============================================================================
+   tau = eps/sigma = 177.1 s   (raw 1.770838e+02)
+   t_half = tau ln2 = 122.7 s   (raw 1.227451e+02)
+   (1) plates R = 1.771e+11 Ohm   (raw 1.770838e+11)
+   (2) coax C = 10 nF   (raw 1.000000e-08)
+   (2) coax R (shell integral) = 1.771e+10 Ohm   (raw 1.770838e+10)
+   (3) sphere C = 8 pi eps0 = 222.5 pF   (raw 2.225300e-10)
+   (3) sphere G = 4 pi sigma a = 1.257e-12 S   (raw 1.256637e-12)
+   (3) sphere R = 7.958e+11 Ohm   (raw 7.957747e+11)
+   [OK ] RC plates = eps/sigma: 177.084 vs 177.084
+   [OK ] half-time from ODE (plates): 122.745 vs 122.745
+   [OK ] RC coax = eps/sigma: 177.084 vs 177.084
+   [OK ] half-time from ODE (coax): 122.745 vs 122.745
+   [OK ] RC sphere = eps/sigma: 177.084 vs 177.084
+   [OK ] half-time from ODE (sphere): 122.745 vs 122.745
+   ANSWER (d): all three at the same moment
+
+==============================================================================
+10.6  Two layers between charged plates (Sum20 HE2 #1a re-parameterized)
+==============================================================================
+   rho_s = 4e4 eps0 = 0.354 uC/m^2   (raw 3.541675e-07)
+   D (both layers, +z) = 3.54e-07 C/m^2   (raw 3.541675e-07)
+   E1 (dielectric, +z) = 1e+04 V/m   (raw 1.000000e+04)
+   E2 (air, +z) = 4e+04 V/m   (raw 4.000000e+04)
+   P1 = 3e4 eps0 (+z) = 0.266 uC/m^2   (raw 2.656256e-07)
+   P1/eps0 = 30000 ; P2 = 0
+   V(1 mm) = 80 V   (raw 8.000000e+01)
+   V(0) = 90 V   (raw 9.000000e+01)
+   d1/eps1 + d2/eps2 = (0.25 + 2) mm/eps0 = 0.00225 m/eps0
+   drop across dielectric V(0)-V(1mm) = 10 V ; across air = 80 V
+   C/A from Q/V = 3.935 nF/m^2   (raw 3.935195e-09)
+   C/A in eps0 units = 444.444  (4000/9 = 444.444)
+   [OK ] C/A series formula: 3.93519e-09 vs 3.93519e-09
+   W/A = 1/2 (C/A) V^2 = 15.94 uJ/m^2   (raw 1.593754e-05)
+   W/A in eps0 units = 1.8e+06
+   [OK ] W/A field integral: 1.59375e-05 vs 1.59375e-05
+   dielectric layer: 200000 eps0 = 1.771 uJ/m^2 ; air layer: 1.6e+06 eps0 = 14.17 uJ/m^2
+   fraction in air = 0.8889    (raw 8.888889e-01)
+   [OK ] fraction in air = 8/9: 0.888889 vs 0.888889
+   top plate rho_s = (-z).D = -3.5417e-07 C/m^2 (= -rho_s)
+   bound: bottom face of dielectric P.(-z) = -3e+04 eps0 ; top face P.(+z) = 3e+04 eps0
+   [OK ] eps0*(E2-E1) at interface = bound sheet: 2.65626e-07 vs 2.65626e-07
+   [OK ] 2nd set: C/A series: 5.08412e-09 vs 5.08412e-09
+   [OK ] 2nd set: energy two ways: 3.93382e+08 vs 3.93382e+08
+
+==============================================================================
+10.7  One slab, two placements
+==============================================================================
+   C0 = 5 eps0 = 44.27 pF   (raw 4.427094e-11)
+   C_S (stacked, series) = 66.41 pF   (raw 6.640641e-11)
+   C_P (side by side, parallel) = 88.54 pF   (raw 8.854188e-11)
+   [OK ] C_S = 1.5 C0: 1.5 vs 1.5
+   [OK ] C_P = 2 C0: 2 vs 2
+   [OK ]    eps_r=1.0: C_P - C_S = C0 (er-1)^2/(2(1+er)): 0 vs 0
+   [OK ]    eps_r=1.0: series C via D-common: 1 vs 1
+   [OK ]    eps_r=1.0: parallel C via E-common: 1 vs 1
+   [OK ]    eps_r=1.5: C_P - C_S = C0 (er-1)^2/(2(1+er)): 0.05 vs 0.05
+   [OK ]    eps_r=1.5: series C via D-common: 1.2 vs 1.2
+   [OK ]    eps_r=1.5: parallel C via E-common: 1.25 vs 1.25
+   [OK ]    eps_r=3.0: C_P - C_S = C0 (er-1)^2/(2(1+er)): 0.5 vs 0.5
+   [OK ]    eps_r=3.0: series C via D-common: 1.5 vs 1.5
+   [OK ]    eps_r=3.0: parallel C via E-common: 2 vs 2
+   [OK ]    eps_r=10.0: C_P - C_S = C0 (er-1)^2/(2(1+er)): 3.68182 vs 3.68182
+   [OK ]    eps_r=10.0: series C via D-common: 1.81818 vs 1.81818
+   [OK ]    eps_r=10.0: parallel C via E-common: 5.5 vs 5.5
+   [OK ]    eps_r=81.0: C_P - C_S = C0 (er-1)^2/(2(1+er)): 39.0244 vs 39.0244
+   [OK ]    eps_r=81.0: series C via D-common: 1.97561 vs 1.97561
+   [OK ]    eps_r=81.0: parallel C via E-common: 41 vs 41
+   S: Q = 6.64 nC   (raw 6.640641e-09)
+   S: D = 6.641e-07 C/m^2   (raw 6.640641e-07)
+   S: E in dielectric = 25 kV/m   (raw 2.500000e+04)
+   S: E in air = 75 kV/m   (raw 7.500000e+04)
+   [OK ] S: drops add to V: 100 vs 100
+   S: drop across dielectric = 25 V, across air = 75 V
+   P: E both halves = 50 kV/m   (raw 5.000000e+04)
+   P: rho_s under dielectric = 1.33 uC/m^2   (raw 1.328128e-06)
+   P: rho_s under air = 0.443 uC/m^2   (raw 4.427094e-07)
+   empty capacitor E = 50 kV/m   (raw 5.000000e+04)
+   [OK ] coax half-angle C (a=0.001,b=0.004): 8.02607e-11 vs 8.02607e-11
+   [OK ]    = average of the two single-filled cables: 8.02607e-11 vs 8.02607e-11
+   [OK ] coax half-angle C (a=0.0007,b=0.0053): 8.65659e-11 vs 8.65659e-11
+   [OK ]    = average of the two single-filled cables: 8.65659e-11 vs 8.65659e-11
+   coax half-angle C (3 eps0 | eps0, b/a = 4) = 4 pi eps0/ln4 = 80.3 pF/m   (raw 8.026074e-11)
+   rho_s ratio on inner conductor (dielectric half : air half) = 3 : 1
+
+==============================================================================
+10.8  Diode junction capacitance
+==============================================================================
+   rho1 = e N_A = 1.602e+04 C/m^3   (raw 1.602177e+04)
+   rho2 = e N_D = 1602 C/m^3   (raw 1.602177e+03)
+   1/rho1 + 1/rho2 = 0.000687 m^3/C   (raw 6.865660e-04)
+   eps = 11.7 eps0 = 1.036e-10 F/m   (raw 1.035940e-10)
+   W1/W2 = rho2/rho1 = 0.1 ; fraction of width on n side = W2/(W1+W2) = 0.9091 = 10/11
+  V = 1.0 V:
+      W1+W2 = 0.3772 um   (raw 3.771581e-07)
+      W1 = 0.0343 um   (raw 3.428710e-08)
+      W2 = 0.343 um   (raw 3.428710e-07)
+      Q = 0.549 nC   (raw 5.493399e-10)
+      C = eps A/(W1+W2) = 274.7 pF   (raw 2.746700e-10)
+   [OK ]    Q from Poisson brute force: 5.4934e-10 vs 5.4934e-10
+   [OK ]    C = dQ/dV (finite difference of brute-force Q): 2.7467e-10 vs 2.7467e-10
+   [OK ]    Lecture-10 formula A sqrt(eps r1 r2/(2V(r1+r2))): 2.7467e-10 vs 2.7467e-10
+      secant Q/V = 549.3 pF   (raw 5.493399e-10)
+   [OK ]    secant/slope = 2: 2 vs 2
+  V = 4.0 V:
+      W1+W2 = 0.7543 um   (raw 7.543162e-07)
+      W1 = 0.0686 um   (raw 6.857420e-08)
+      W2 = 0.686 um   (raw 6.857420e-07)
+      Q = 1.1 nC   (raw 1.098680e-09)
+      C = eps A/(W1+W2) = 137.3 pF   (raw 1.373350e-10)
+   [OK ]    Q from Poisson brute force: 1.09868e-09 vs 1.09868e-09
+   [OK ]    C = dQ/dV (finite difference of brute-force Q): 1.37335e-10 vs 1.37335e-10
+   [OK ]    Lecture-10 formula A sqrt(eps r1 r2/(2V(r1+r2))): 1.37335e-10 vs 1.37335e-10
+      secant Q/V = 274.7 pF   (raw 2.746700e-10)
+   [OK ]    secant/slope = 2: 2 vs 2
+   [OK ] C(1V)/C(4V) = 2: 2 vs 2
+
+==============================================================================
+10.9  Leaky spheres, one lossy half (SP18 Exam 1 #5 re-parameterized)
+==============================================================================
+   [OK ] finite differences: E = -dV/dr and (1/r^2)(r^2 V')' = 0 at 4 radii
+   [OK ] V(b)-V(a) from -int E dr = V0: 100 vs 100
+   [OK ] Gauss flux = -Q (inner sphere negative): -6.6759e-10 vs -6.6759e-10
+   [OK ] outward current through lower hemisphere = -sigma Q/(2 eps): -1.25664e-07 vs -1.25664e-07
+   [OK ] outward current through lower hemisphere = -sigma Q/(2 eps): -1.25664e-07 vs -1.25664e-07
+   [OK ] outward current through lower hemisphere = -sigma Q/(2 eps): -1.25664e-07 vs -1.25664e-07
+   [OK ] G = 2 pi sigma ab/(b-a): 1.25664e-09 vs 1.25664e-09
+   [OK ] G = (1/2)(sigma/eps) C: 1.25664e-09 vs 1.25664e-09
+   [OK ] tau = 2 eps/sigma: 0.00531251 vs 0.00531251
+   [OK ] half-time from ODE = tau ln 2: 0.00368235 vs 0.00368235
+   ab/(b-a) = 0.02 m ; V(r) = 200 - 2/r V (r in m)
+   [OK ] V(r) formula at a and b: 100 vs 100
+   C = 6.676 pF   (raw 6.675900e-12)
+   Q (outer shell +, inner -) = 667.6 pC   (raw 6.675900e-10)
+   E_r = -V0 ab/((b-a) r^2) = -(2/r^2) V/m  -> inward (-r_hat)
+   E_r(a) = -2e+04 V/m   (raw -2.000000e+04)
+   E_r(b) = -5e+03 V/m   (raw -5.000000e+03)
+   I outward (any r0) = -125.7 nA   (raw -1.256637e-07)
+   G = 1.257 nS   (raw 1.256637e-09)
+   R = 795.8 MOhm   (raw 7.957747e+08)
+   (sigma/eps) C = 2.513 nS   (raw 2.513274e-09)
+   tau = 2 eps/sigma = 5.313 ms   (raw 5.312513e-03)
+   t_half = 3.682 ms   (raw 3.682353e-03)
+   power G V0^2 = 12.57 uW   (raw 1.256637e-05)
+   for comparison eps/sigma = 2.656 ms   (raw 2.656256e-03)
+  second parameter set:
+   [OK ] finite differences: E = -dV/dr and (1/r^2)(r^2 V')' = 0 at 4 radii
+   [OK ] V(b)-V(a) from -int E dr = V0: 37 vs 37
+   [OK ] Gauss flux = -Q (inner sphere negative): -5.06939e-10 vs -5.06939e-10
+   [OK ] outward current through lower hemisphere = -sigma Q/(2 eps): -1.71762e-06 vs -1.71762e-06
+   [OK ] outward current through lower hemisphere = -sigma Q/(2 eps): -1.71762e-06 vs -1.71762e-06
+   [OK ] outward current through lower hemisphere = -sigma Q/(2 eps): -1.71762e-06 vs -1.71762e-06
+   [OK ] G = 2 pi sigma ab/(b-a): 4.64223e-08 vs 4.64223e-08
+   [OK ] G = (1/2)(sigma/eps) C: 4.64223e-08 vs 4.64223e-08
+   [OK ] tau = 2 eps/sigma: 0.00029514 vs 0.00029514
+   [OK ] half-time from ODE = tau ln 2: 0.000204575 vs 0.000204575
+   at theta=pi/2: E = E_r r_hat is tangential to the plane z=0 -> D_n = J_n = 0 on both sides (no interface charge)
+   (a)(i) FALSE: inner sphere carries -Q ; (a)(ii) FALSE: E=0 inside because conductor in equilibrium
+
+==============================================================================
+10.10  Pulling capacitor plates apart
+==============================================================================
+   [OK ] F (fixed Q) = -dW/dx = Q * field of bottom plate: -0.0221355 vs -0.0221355
+   [OK ] your work (fixed Q) = int F_you dx: 4.42709e-05 vs 4.42709e-05
+   using the full gap field Q/(eps0 A) would give 0.04427 N (twice)
+   [OK ] F (fixed V) = +dW/dx = same as fixed Q at x1: -0.0221355 vs -0.0221355
+   [OK ] your work (fixed V) = int eps0 A V^2/(2x^2) dx: 1.4757e-05 vs 1.4757e-05
+   [OK ] battery absorbs twice the drop in stored energy: 2.9514e-05 vs 2.9514e-05
+   (a) C = 177.1 pF   (raw 1.770838e-10)
+   (a) Q = 88.54 nC   (raw 8.854188e-08)
+   (a) W = 22.14 uJ   (raw 2.213547e-05)
+   (a) in eps0 units: C = 20 eps0, Q = 1e+04 eps0, W = 2.5e+06 eps0
+   (b) V at x2 = 1500 V   (raw 1.500000e+03)
+   (b) W at x2 = 66.41 uJ   (raw 6.640641e-05)
+   (b) your work = 44.27 uJ   (raw 4.427094e-05)
+   (b) F_z (attractive, -z) = -22.14 mN   (raw -2.213547e-02)
+   (b) F = W/x1 = 22.14 mN ; F * (x2-x1) = 44.27 uJ
+   (c) C at x2 = 59.03 pF   (raw 5.902792e-11)
+   (c) Q2 = 29.51 nC   (raw 2.951396e-08)
+   (c) W2 = 7.378 uJ   (raw 7.378490e-06)
+   (c) dW = -14.76 uJ   (raw -1.475698e-05)
+   (c) dQ = -59.03 nC   (raw -5.902792e-08)
+   (c) battery work V0 dQ (negative: energy INTO battery) = -29.51 uJ   (raw -2.951396e-05)
+   (c) your work = 14.76 uJ   (raw 1.475698e-05)
+   (c) force at x2 (fixed V) = -2.459 mN   (raw -2.459497e-03)
+   (d) F_z at x1 (fixed V) = -22.14 mN   (raw -2.213547e-02)
+  second parameter set:
+   [OK ] F (fixed Q) = -dW/dx = Q * field of bottom plate: -0.00202006 vs -0.00202006
+   [OK ] your work (fixed Q) = int F_you dx: 5.05016e-06 vs 5.05016e-06
+   using the full gap field Q/(eps0 A) would give 0.00404 N (twice)
+   [OK ] F (fixed V) = +dW/dx = same as fixed Q at x1: -0.00202006 vs -0.00202006
+   [OK ] your work (fixed V) = int eps0 A V^2/(2x^2) dx: 6.96574e-07 vs 6.96574e-07
+   [OK ] battery absorbs twice the drop in stored energy: 1.39315e-06 vs 1.39315e-06
+
+==============================================================================
+10.11  Two lossy layers in series
+==============================================================================
+   [OK ] steady state: E1 d1 + E2 d2 = V0: 10 vs 10
+   [OK ] interface charge = J (e2/s2 - e1/s1): 2.47917e-07 vs 2.47917e-07
+   [OK ] total free charge (plates + interface) = 0: 0 vs 0
+   [OK ] continuity ODE reproduces V1(t) = V1inf + (V1(0+) - V1inf) exp(-t/tau) at 13 times
+   [OK ] ODE end state interface charge: 2.47917e-07 vs 2.47917e-07
+   [OK ] tau = (C1+C2)/(G1+G2): 0.10625 vs 0.10625
+   [OK ] V1inf = G2 V0/(G1+G2): 2 vs 2
+   [OK ] V1(0+) = C2 V0/(C1+C2): 6.66667 vs 6.66667
+   J (+z) = 8e-07 A/m^2   (raw 8.000000e-07)
+   E1 (+z) = 2000 V/m   (raw 2.000000e+03)
+   E2 (+z) = 8000 V/m   (raw 8.000000e+03)
+   V1inf (across layer 1) = 2 V   (raw 2.000000e+00)
+   V2inf (across layer 2) = 8 V   (raw 8.000000e+00)
+   I = 8 nA   (raw 8.000000e-09)
+   G = 0.8 nS   (raw 8.000000e-10)
+   R = 1.25 GOhm   (raw 1.250000e+09)
+   R1 = d1/(s1 A) = 0.25 GOhm   (raw 2.500000e+08)
+   R2 = d2/(s2 A) = 1 GOhm   (raw 1.000000e+09)
+   D1 = 4000 eps0 = 3.5417e-08 C/m^2 ; D2 = 32000 eps0 = 2.8333e-07 C/m^2 (+z)
+   interface rho_s = 28000 eps0 = 2.4792e-07 C/m^2
+   bottom plate rho_s = 4000 eps0 = 3.5417e-08 ; top plate = -32000 eps0 = -2.8333e-07
+   E1(0+) = 6667 V/m   (raw 6.666667e+03)
+   E2(0+) = 3333 V/m   (raw 3.333333e+03)
+   V1(0+) = 6.667 V   (raw 6.666667e+00)
+   V1(0+) - V1inf = 4.67 V   (raw 4.666667e+00)
+   J1(0+) = s1 E1(0+) arriving at interface = 2.667 uA/m^2   (raw 2.666667e-06)
+   J2(0+) = s2 E2(0+) leaving interface = 0.3333 uA/m^2   (raw 3.333333e-07)
+   tau = 0.1063 s   (raw 1.062503e-01)
+   layer relaxation e1/s1 = 44.27 ms   (raw 4.427094e-02)
+   layer relaxation e2/s2 = 354.2 ms   (raw 3.541675e-01)
+   series C at t=0+ (whole plate) = 118.1 pF   (raw 1.180558e-10)
+   (sigma1/eps1) C = 2.667e-09 S, (sigma2/eps2) C = 3.333e-10 S, actual G = 8e-10 S
+  second parameter set (unequal thicknesses):
+   [OK ] steady state: E1 d1 + E2 d2 = V0: 37 vs 37
+   [OK ] interface charge = J (e2/s2 - e1/s1): -1.54204e-06 vs -1.54204e-06
+   [OK ] total free charge (plates + interface) = 0: 6.61744e-24 vs 0
+   [OK ] continuity ODE reproduces V1(t) = V1inf + (V1(0+) - V1inf) exp(-t/tau) at 13 times
+   [OK ] ODE end state interface charge: -1.54204e-06 vs -1.54204e-06
+   [OK ] tau = (C1+C2)/(G1+G2): 0.110995 vs 0.110995
+   [OK ] V1inf = G2 V0/(G1+G2): 34.1609 vs 34.1609
+   [OK ] V1(0+) = C2 V0/(C1+C2): 5.08674 vs 5.08674
+  matched eps/sigma (no interface charge):
+   [OK ] steady state: E1 d1 + E2 d2 = V0: 10 vs 10
+   [OK ] interface charge = J (e2/s2 - e1/s1): 0 vs 0
+   [OK ] total free charge (plates + interface) = 0: 0 vs 0
+   [OK ] continuity ODE reproduces V1(t) = V1inf + (V1(0+) - V1inf) exp(-t/tau) at 13 times
+   [OK ] ODE end state interface charge: -2.83256e-23 vs 0
+   [OK ] tau = (C1+C2)/(G1+G2): 0.0885419 vs 0.0885419
+   [OK ] V1inf = G2 V0/(G1+G2): 6.66667 vs 6.66667
+   [OK ] V1(0+) = C2 V0/(C1+C2): 6.66667 vs 6.66667
+
+==============================================================================
+10.12  Lossy coax driven through a resistor (Sum19 HE2 #1 re-parameterized)
+==============================================================================
+   [OK ] script C via solve_bvp Laplace: 1.00326e-10 vs 1.00326e-10
+   [OK ] script G via J integral at r=0.0013: 4.53236e-09 vs 4.53236e-09
+   [OK ] script G via J integral at r=0.0036: 4.53236e-09 vs 4.53236e-09
+   [OK ] G/C = sigma/eps: 45.1764 vs 45.1764
+   [OK ] charging tau from ODE (63.2% point): 0.00690362 vs 0.00690362
+   [OK ] steady-state V from ODE: 8.25743 vs 8.25743
+   [OK ] energy per metre: field integral = 1/2 C' V^2: 3.42037e-09 vs 3.42037e-09
+   [OK ] half-energy radius = sqrt(ab): 0.002 vs 0.002
+   [OK ] discharge tau = eps/sigma: 0.0221355 vs 0.0221355
+   [OK ] time to Vend from ODE: 0.0467305 vs 0.0467305
+   ln(b/a) = 1.3863
+   (a) script C = 100.3 pF/m   (raw 1.003259e-10)
+   (a) script G = 4.532 nS/m   (raw 4.532360e-09)
+   (a) C = 1.003 nF   (raw 1.003259e-09)
+   (a) G = 45.32 nS   (raw 4.532360e-08)
+   (a) R = 22.06 MOhm   (raw 2.206356e+07)
+   (a) sigma/eps = 45.18 1/s   (raw 4.517636e+01)
+   (b) R || Rs = 6.881 MOhm   (raw 6.881195e+06)
+   (b) tau charging = 6.904 ms   (raw 6.903622e-03)
+   (b) V_inf = 8.257 V   (raw 8.257434e+00)
+   (b) steady leakage current G V_inf = 0.3743 uA   (raw 3.742566e-07)
+   [OK ] (b) source current (Vs - Vinf)/Rs = G Vinf: 3.74257e-07 vs 3.74257e-07
+   (c) W' = 1/2 C' Vinf^2 = 3.42 nJ/m   (raw 3.420372e-09)
+   (c) W total = 34.2 nJ   (raw 3.420372e-08)
+   (c) half-energy radius sqrt(ab) = 2 mm   (raw 2.000000e-03)
+   (c) area fraction of a<r<sqrt(ab): 0.2
+   (d) tau discharge = eps/sigma = 22.14 ms   (raw 2.213547e-02)
+   (d) ln(Vinf/1V) = 2.111    (raw 2.111114e+00)
+   (d) time to 1 V = 46.73 ms   (raw 4.673050e-02)
+   steady leakage power V^2 G = 3.09 uW   (raw 3.090399e-06)
+  second parameter set:
+   [OK ] script C via solve_bvp Laplace: 1.11792e-10 vs 1.11792e-10
+   [OK ] script G via J integral at r=0.00078: 1.68345e-07 vs 1.68345e-07
+   [OK ] script G via J integral at r=0.00279: 1.68345e-07 vs 1.68345e-07
+   [OK ] G/C = sigma/eps: 1505.88 vs 1505.88
+   [OK ] charging tau from ODE (63.2% point): 0.000383907 vs 0.000383907
+   [OK ] steady-state V from ODE: 2.95318 vs 2.95318
+   [OK ] energy per metre: field integral = 1/2 C' V^2: 4.87483e-10 vs 4.87483e-10
+   [OK ] half-energy radius = sqrt(ab): 0.00136382 vs 0.00136382
+   [OK ] discharge tau = eps/sigma: 0.000664064 vs 0.000664064
+   [OK ] time to Vend from ODE: 0.0011794 vs 0.0011794
+
+==============================================================================
+ALL CHECKS PASSED

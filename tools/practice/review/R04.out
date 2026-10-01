@@ -1,0 +1,200 @@
+== 4.1 Faucet or whirlpool
+  PASS  (a) div E1 [V/m^2] (mean of 6 random points): computed 4 | page 4
+  PASS  (a) spread of div E1 over the points: computed 9.436940118e-11 | page 0
+  PASS  (a) max |curl E1|: computed 0 | page 0
+  PASS  (a) max |div E2|: computed 0 | page 0
+  PASS  (a) curl E2 . z-hat [V/m^2]: computed -5 | page -5
+  PASS  (a) max |x,y components of curl E2|: computed 0 | page 0
+  PASS  (b) rho = eps0 div E1 [C/m^3]: computed 3.541675125e-11 | page 3.54e-11
+  PASS  (c) paddlewheel in E2 turns clockwise seen from +z (ring sum -1.800e-03 < 0)
+  PASS  (c) E2(0,1,0) = +2 x-hat, E2(1,0,0) = -3 y-hat 
+  PASS  watch-out: reversed order dEx/dy - dEy/dx: computed 5 | page 5
+== 4.2 Curl-free but not charge-free
+  PASS  max |curl E| over 8 random points: computed 8.881784197e-11 | page 0
+  PASS  max |div E - 2x| over 8 random points: computed 5.994138519e-11 | page 0
+  PASS  (c) rho at x = 1 m [C/m^3]: computed 1.770837563e-11 | page 1.77e-11
+  PASS  (b) max |circulation| over 6 random triangles [V]: computed 8.881784197e-16 | page 0
+  PASS  (e) integral (0,0,0)->(1,2,3) along straight [V]: computed 7 | page 7
+  PASS  (e) integral (0,0,0)->(1,2,3) along staircase x,y,z [V]: computed 7 | page 7
+  PASS  (e) integral (0,0,0)->(1,2,3) along staircase z,y,x [V]: computed 7 | page 7
+  PASS  (e) integral (0,0,0)->(1,2,3) along curve (t, 2t^2, 3 sin(pi t/2)) [V]: computed 7 | page 7
+  PASS  (e) staircase leg 1 [V]: computed 0 | page 0
+  PASS  (e) staircase leg 2 [V]: computed -2 | page -2
+  PASS  (e) staircase leg 3 [V]: computed 9 | page 9
+  PASS  check: max |-grad f - E|: computed 1.88727256e-10 | page 0
+  PASS  check: f(0,0,0) - f(1,2,3) [V]: computed 7 | page 7
+  PASS  keyed answer: the only false statement is (d) (false set = ['d'])
+== 4.3 Along or across the flow  (arbitrary positive E0, a, k, Q)
+  PASS  (a) max |div F|  -> (a) True: computed 0 | page 0
+  PASS  (b) max |curl_z F - (E0/a) e^(-y/a)|: computed 1.081204459e-09 | page 0
+  PASS  (b) True: paddlewheel turns counter-clockwise seen from +z (ring sum 1.682e-03 > 0)
+  PASS  (c) max |div E_Coulomb| at r > 0  -> (c) False: computed 8.881784197e-10 | page 0
+  PASS  (d) max |curl (k/r) phi-hat| at r > 0  -> (d) False: computed 2.220446049e-10 | page 0
+  PASS  (d) circulation on circle r = 0.1  vs 2 pi k: computed 5.654866776 | page 5.654866776
+  PASS  (d) circulation on circle r = 1.0  vs 2 pi k: computed 5.654866776 | page 5.654866776
+  PASS  (d) circulation on circle r = 5.0  vs 2 pi k: computed 5.654866776 | page 5.654866776
+== 4.4 The missing metric factor
+  PASS  rho(a/2) = div D (Cartesian FD) [uC/m^3]: computed 300 | page 300
+  PASS  student's dDr/dr at a/2 [uC/m^3]: computed 200 | page 200
+  PASS  Gauss r = 1.0 cm: charge(correct rho)/flux: computed 1 | page 1
+  PASS  Gauss r = 1.0 cm: charge(student rho)/flux: computed 0.6666666667 | page 0.6666666667
+  PASS  Gauss r = 1.5 cm: charge(correct rho)/flux: computed 1 | page 1
+  PASS  Gauss r = 1.5 cm: charge(student rho)/flux: computed 0.6666666667 | page 0.6666666667
+  PASS  Gauss r = 3.0 cm: charge(correct rho)/flux: computed 0.9999999993 | page 1
+  PASS  Gauss r = 3.0 cm: charge(student rho)/flux: computed 0.6666666667 | page 0.6666666667
+== 4.5 Draining a cube
+  PASS  (a) d(rho)/dt = -div J [A/m^3]: computed -5 | page -5
+  PASS  (b) outward current through x = 0.5 [A]: computed 0.5 | page 0.5
+  PASS  (b) outward current through y = 0.5 [A]: computed 0.25 | page 0.25
+  PASS  (b) outward current through z = 0.5 [A]: computed -0.125 | page -0.125
+  PASS  (b) faces x=0, y=0, z=0 together [A]: computed -0 | page 0
+  PASS  (b) net outward current [A]: computed 0.625 | page 0.625
+  PASS  (b) dQ/dt = integral of d(rho)/dt [A]: computed -0.625 | page -0.625
+  PASS  (b) dQ/dt = -(net outward current) [A]: computed -0.625 | page -0.625
+== 4.6 Three fields in curved coordinates
+  PASS  (a) max |div E1|: computed 4.440892099e-10 | page 0
+  PASS  (a) curl E1 . z-hat [V/m^2]: computed 100 | page 100
+  PASS  (a) max |x,y components of curl E1|: computed 0 | page 0
+  PASS  (b) max |div E2|: computed 4.96269621e-08 | page 0
+  PASS  (b) curl E2 vs phi-hat E0 a^2 sin(theta)/r^3: max rel. dev (all 3 comps): computed 4.816949201e-10 | page 0
+  PASS  (b) numeric coefficient E0 a^2 [V m]: computed 0.05 | page 0.05
+  PASS  (c) div E3 [V/m^2]: computed 149.9999999 | page 150
+  PASS  (c) spread of div E3: computed 5.564436663e-07 | page 0
+  PASS  (c) max |curl E3|: computed 7.736034604e-07 | page 0
+  PASS  (d) rho = eps0 div E3 [C/m^3]: computed 1.328128171e-09 | page 1.33e-09
+  PASS  (d) rho / eps0: computed 149.9999999 | page 150
+  PASS  check: flux of E3 out of r = 0.05 m / (3E0/a)(4/3 pi r^3): computed 1 | page 1
+  PASS  check: flux of E3 out of r = 0.2 m / (3E0/a)(4/3 pi r^3): computed 1 | page 1
+== 4.7 Divergence theorem on a hemisphere  (D0 in uC/m^2 -> charge/flux in uC)
+  PASS  (a) rho = div D [uC/m^3]: computed 12 | page 12
+  PASS  (a) hemisphere volume [m^3]: computed 0.2617993878 | page 0.2618
+  PASS  (a) Q = integral of rho dV [uC]  vs pi: computed 3.141592654 | page 3.141592654
+  PASS  (a) Q [uC]: computed 3.141592654 | page 3.1416
+  PASS  (b) base flux, outward normal -z [uC]: computed -4.71238898 | page -4.712
+  PASS  (b) dome flux [uC]: computed 7.853981634 | page 7.854
+  PASS  (b) dome flux / (pi a^2 D0): computed 1.666666667 | page 1.666666667
+  PASS  (c) base + dome vs Q [uC]: computed 3.141592654 | page 3.141592654
+  PASS  check: x-part dome flux = Q [uC]: computed 3.141592654 | page 3.141592654
+  PASS  check: z-part dome flux = +pi a^2 D0 [uC]: computed 4.71238898 | page 4.71238898
+  PASS  hint: integral sin^3 over [0, pi/2]: computed 0.6666666667 | page 0.6666666667
+  PASS  hint: integral cos^2 over [0, 2 pi]: computed 3.141592654 | page 3.141592654
+== 4.8 Circulation from a given curl
+  PASS  (a) P1->P2 [V]: computed -8 | page -8
+  PASS  (a) P2->P3 [V]: computed 6 | page 6
+  PASS  (a) P1->P2->P3 [V]: computed -2 | page -2
+  PASS  (a) P1->P4->P3 [V]: computed -2 | page -2
+  PASS  (a) closed loop [V]: computed 0 | page 0
+  PASS  (b) vector area of C = -6 x-hat m^2 (n-hat = -x-hat, area 6) S = [-6.  0.  0.]
+  PASS  (b) leg1 x leg2 points along -x-hat 
+  PASS  (b) C is clockwise seen from +x (signed area -6.0)
+  PASS  (b) circulation = (curl E).S [V]: computed -18 | page -18
+  PASS  (b) dB/dt = -curl E = (-3,-2,4) T/s 
+  PASS  (d) curl of 2z x - 4x y + 3y z = (3,2,-4) [ 3.  2. -4.]
+  PASS  (d) segment 1 [V]: computed 0 | page 0
+  PASS  (d) segment 2 [V]: computed 0 | page 0
+  PASS  (d) segment 3 [V]: computed -18 | page -18
+  PASS  (d) segment 4 [V]: computed 0 | page 0
+  PASS  (d) loop [V]: computed -18 | page -18
+  PASS  (d) route via P2 [V]: computed 0 | page 0
+  PASS  (d) route via P4 [V]: computed 18 | page 18
+  PASS  (c) via P2 minus via P4 [V]: computed -18 | page -18
+  PASS  (b) Stokes by dblquad of (curl Ed).(-x-hat) over the rectangle [V]: computed -18 | page -18
+== 4.9 Electrostatic or not
+  PASS  (a) max |curl E1|: computed 0 | page 0
+  PASS  (a) max |curl E2 - (-pi sin(pi x/2)) z-hat|: computed 1.414330875e-10 | page 0
+  PASS  (b) max |div E/1 - (-(3 pi/2) sin(pi y/2))|: computed 2.101803176e-10 | page 0
+  PASS  (b) max |rho| on y in [-4,4] [C/m^3]: computed 4.172437708e-11 | page 4.17e-11
+  PASS  (b) max |rho| / eps0  vs 3 pi/2: computed 4.71238898 | page 4.71238898
+  PASS  (b) |rho| peaks at y = 1, -1, 3, -3 m [ 1. -1.  3. -3.]
+  PASS  (b) rho < 0 at y = 1, > 0 at y = -1 and y = 3 
+  PASS  (c) max |curl E| [V/m^2]  vs pi: computed 3.141592654 | page 3.141592654
+  PASS  (c) max |curl E| [V/m^2]: computed 3.141592654 | page 3.14
+  PASS  (c) |curl E| peaks at x = 1, -1, 3, -3 m [ 1. -1.  3. -3.]
+  -- 4.9 (d)-(e) re-parameterized (CITATIONS-WAVE1): P = (2,1,0) m, route A via (2,0,0), staircase target -1 V
+  PASS  (d) route A O->(2,0,0)->P, E2 [V]: computed -2 | page -2
+  PASS  (d) route B O->(0,1,0)->P, E2 [V]: computed 2 | page 2
+  PASS  (d) loop A then reversed B is counter-clockwise seen from +z (dS = z-hat) 
+  PASS  (d) flux of curl E2 through 0<=x<=2, 0<=y<=1 m, dS = z-hat [V]: computed -4 | page -4
+  PASS  (d) route A - route B vs flux of curl: computed -4 | page -4
+  PASS  (e) straight segment O->P [V]: computed 3.133794338e-17 | page 0
+  PASS  (e) E2y(2 - x) = -E2y(x): odd about x = 1 m, so the straight segment cancels 
+  PASS  (e) x0 in [0, 2] m giving -1 V  vs 4/3: computed 1.333333333 | page 1.333333333
+  PASS  (e) stair(x0) = -1 V has exactly one root on [0, 2] m 
+  PASS  (e) staircase range ends: x0 = 0 [V]: computed 2 | page 2
+  PASS  (e) staircase range ends: x0 = 2 [V]: computed -2 | page -2
+  PASS  (e) staircase values fill [-2, 2] V min -2.000000, max 2.000000
+  NOTE  without a range, x0 = -1.3333333333 m (= -4/3) also gives -1.0000000000 V -> statement needs 0 <= x0 <= 2
+  PASS  (e) E1 route A [V]  vs 6/pi: computed 1.909859317 | page 1.909859317
+  PASS  (e) E1 route B [V]  vs 6/pi: computed 1.909859317 | page 1.909859317
+  PASS  (e) E1 routes [V]: computed 1.909859317 | page 1.91
+  PASS  (d)-(e) no carry-over from the S18 HE1 #2b key (x-first path 0 V, y-first path 1 V, target 1 V) key 0 / 1 V; page route A -2, route B 2, target -1 V
+== 4.10 Charge layers from a piecewise D  (D0 in uC/m^2 -> charge in uC)
+  PASS  (a) rho(a/2) [uC/m^3]: computed 39.99999987 | page 40
+  PASS  (a) rho just inside r = a (r = a(1-1e-7)) [uC/m^3]: computed 79.99999195 | page 80
+  PASS  (a) rho in a<r<2a (r = 1.5a): computed 3.885780604e-07 | page 0
+  PASS  (a) rho for r > 2a (r = 2.5a): computed 0 | page 0
+  PASS  (b) rho_s(a) from Gauss shell, delta = 0.001 m [uC/m^2]: computed -6 | page -6
+  PASS  (b) rho_s(2a) from Gauss shell, delta = 0.001 m [uC/m^2]: computed 1 | page 1
+  PASS  (b) rho_s(a) from Gauss shell, delta = 1e-05 m [uC/m^2]: computed -6 | page -6
+  PASS  (b) rho_s(2a) from Gauss shell, delta = 1e-05 m [uC/m^2]: computed 1 | page 1
+  PASS  (c) Q_core [uC]: computed 0.2513274123 | page 0.2513
+  PASS  (c) Q on r = a [uC]: computed -0.7539822369 | page -0.754
+  PASS  (c) Q on r = 2a [uC]: computed 0.5026548246 | page 0.5027
+  PASS  (c) total [uC]: computed -5.471179065e-12 | page 0
+  PASS  (d) flux of D through r = 1.5a [uC]: computed -0.5026548246 | page -0.5027
+  PASS  (d) flux through r = 1.5a vs Q_core + Q_a: computed -0.5026548246 | page -0.5026548246
+  PASS  (d) flux through r = 2.5a [uC]: computed 0 | page 0
+  PASS  check: flux just inside r = a / (4 pi a^2 D0): computed 0.999999996 | page 1
+== 4.11 An expanding ion cloud
+  PASS  (a) (div J + d rho/dt)/(d rho/dt) at t = 0.3 ms: computed 5.688704093e-11 | page 0
+  PASS  (a) div J / (3 rho/tau) at t = 0.3 ms: computed 1 | page 1
+  PASS  (a) (div J + d rho/dt)/(d rho/dt) at t = 1.7 ms: computed 2.594364904e-11 | page 0
+  PASS  (a) div J / (3 rho/tau) at t = 1.7 ms: computed 1 | page 1
+  PASS  (a) Q(t = 0 ms) [pC]: computed 12.56637061 | page 12.566
+  PASS  (a) Q(t = 1 ms) [pC]: computed 12.56637061 | page 12.566
+  PASS  (a) Q(t = 4 ms) [pC]: computed 12.56637061 | page 12.566
+  PASS  (a) Q / (4 pi pC): computed 1 | page 1
+  PASS  (a) edge ion (ODE dr/dt = r/tau) at 3 ms vs R(t) = a e^(t/tau): computed 0.0448168907 | page 0.0448168907
+  PASS  (b) J_r(a) at t = 0+ [uA/m^2]: computed 14.99999998 | page 15
+  PASS  (b) I(0+) [nA]: computed 18.84955589 | page 18.85
+  PASS  (b) I(0+) / (6 pi nA): computed 0.9999999985 | page 1
+  PASS  (b) (dQa/dt + I)/I at t = 0.5 ms: computed -3.74656465e-11 | page 0
+  PASS  (b) I(t) vs (3Q/tau) e^(-3t/tau) at t = 0.5 ms: computed 8.903899751e-09 | page 8.903899751e-09
+  PASS  (b) (dQa/dt + I)/I at t = 2.0 ms: computed -2.829378729e-11 | page 0
+  PASS  (b) I(t) vs (3Q/tau) e^(-3t/tau) at t = 2.0 ms: computed 9.384641294e-10 | page 9.384641294e-10
+  PASS  (c) t_1/2 by ion tracking [ms]: computed 0.4620981204 | page 0.4621
+  PASS  (c) cloud radius at t_1/2 (edge ion ODE) [cm]: computed 1.25992105 | page 1.2599
+  PASS  (d) D_r / (rho r/3) at r = 0.7a, t = 0.4 ms: computed 1 | page 1
+  PASS  (d) (dD_r/dt + J_r)/J_r at r = 0.7a: computed -3.162694935e-11 | page 0
+  PASS  (d) D_r / (rho r/3) at r = 1.5a, t = 1.5 ms: computed 1 | page 1
+  PASS  (d) (dD_r/dt + J_r)/J_r at r = 1.5a: computed -4.640517447e-11 | page 0
+  PASS  (d) outside the cloud (r = 3a, t = 0.5 ms): dD_r/dt / (rho0 a/tau): computed -1.378634354e-12 | page 0
+== 4.12 Inside a current-carrying rod
+  PASS  (a) J_z inside / (4 H0 r^2/a^3): computed 1 | page 1
+  PASS  (a) |J_x|,|J_y| inside / J_z: computed 0 | page 0
+  PASS  (a) J_z inside / (4 H0 r^2/a^3): computed 1 | page 1
+  PASS  (a) |J_x|,|J_y| inside / J_z: computed 0 | page 0
+  PASS  (a) |J| outside / (4 H0/a): computed 4.440892099e-11 | page 0
+  PASS  (a) J just inside r = a [A/m^2]: computed 79999.84007 | page 80000
+  PASS  (a) div J / (J(a)/a): computed 0 | page 0
+  PASS  (b) I = flux of J through the cross-section [A]: computed 50.26548244 | page 50.27
+  PASS  (b) I / (16 pi): computed 0.9999999996 | page 1
+  PASS  (b) J_z > 0 (along +z) and H at (r,0,0) along +y (counter-clockwise seen from +z) 
+  PASS  (c) radial legs contribute: computed 0 | page 0
+  PASS  (c) MMF around quarter-disk [A]: computed 0.7853981634 | page 0.7854
+  PASS  (c) MMF / (pi/4): computed 1 | page 1
+  PASS  (c) current through quarter-disk vs MMF: computed 0.7853981634 | page 0.7853981634
+  PASS  (c) quarter-disk of radius a [A]: computed 12.56637061 | page 12.57
+  PASS  (c) quarter-disk of radius a / (I/4): computed 1 | page 1
+  PASS  (d) MMF on r = 2a [A]: computed 50.26548246 | page 50.27
+  PASS  (d) MMF on r = 2a vs I: computed 50.26548246 | page 50.26548244
+  PASS  check: Ampere on r = 0.5 cm: MMF vs enclosed current: computed 0.1963495408 | page 0.1963495409
+  PASS  check: Ampere on r = 1.5 cm: MMF vs enclosed current: computed 15.90431281 | page 15.9043128
+  PASS  check: |H| just inside r = a [A/m]: computed 400 | page 400
+  PASS  check: |H| just outside r = a [A/m]: computed 400 | page 400
+  PASS  (e) div of (C/r) r-hat: computed 3.552713679e-07 | page 0
+  PASS  (e) div of (cos(phi)/r) r-hat: computed 0 | page 0
+  PASS  (e) flux of (C/r) r-hat out of a coaxial cylinder / (2 pi C L): computed 1 | page 1
+  NOTE  |cos(phi)/r| at r = 1e-6 a along phi = 0: 5.000e+07 (diverges on the axis)
+
+TOTAL: 183 PASS, 0 FAIL

@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 2
 ---
 
-*Lecture 2 · course notes §2 · slides "Lorentz force, Coulomb's law" · prev: [[1-electrostatics/01-fields-forces-and-the-maxwell-roadmap|Lecture 1]] · next: [[1-electrostatics/03-gauss-law-at-work|Lecture 3]]*
+*Lecture 2 · course notes §2 · slides "Lorentz force, Coulomb's law" · prev: [[1-electrostatics/01-fields-forces-and-the-maxwell-roadmap|Lecture 1]] · next: [[1-electrostatics/03-gauss-law-at-work|Lecture 3]] · practice: [[practice/02-coulombs-law-superposition-and-gauss|12 problems]]*
 
 > [!abstract] In one breath
 > A stationary charge $Q$ surrounds itself with a radial field that falls off as $1/r^2$ (Coulomb). Fields of many charges simply **add** (superposition), which lets us integrate over continuous distributions — the "5-step program". Because the field falls off *exactly* as $1/r^2$ while the area of a sphere grows *exactly* as $r^2$, the flux of $\epsilon_0\mathbf{E}$ through **any** closed surface equals the charge inside: **Gauss's law**, the first Maxwell equation. Lecture 3 turns that into a shortcut.
@@ -177,6 +177,9 @@ Concept pages: [[concepts/flux]] · [[concepts/electric-flux-density]] · [[conc
 
 > [!exam] On Exam 1
 > Coulomb-integration problems (the 5-step program) appear on homework; the exam prefers the Gauss's-law shortcut where symmetry allows it (FA26 problems 2 and 4) and tests the *ideas* from this lecture: which way $\hat{R}$ points, that only the enclosed charge sets the flux, and the $1/r^2$ vs $1/r$ vs "no distance" pattern of point, line and sheet.
+
+> [!tip] Practice this lecture
+> [[practice/02-coulombs-law-superposition-and-gauss|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/02-coulombs-law-superposition-and-gauss#21-coulomb-force-as-a-vector|2.1 Coulomb force as a vector]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 2 (Coulomb field; Example 1 field map; the line of charges summed with δ-functions, then by Gauss). Shao, Lecture 2 slides (velocity/mass selector, field-line rules and poll, 5-step program, ring/rod/finite-line examples). Lecture 3 slides §8–10 (Gauss from Coulomb).

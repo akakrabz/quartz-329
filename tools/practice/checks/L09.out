@@ -1,0 +1,212 @@
+========================================================================================
+9.1  Three layers between charged plates  (plates z=0 [-6 eps0, V=0] and z=3 m [+6 eps0])
+  [ok] D_z / eps0 (all three layers): computed -6.0  vs  expected -6.0
+  D_z numeric [C/m^2]: -5.313e-11
+   layer 0<z<1, eps_r=1:  E_z = -6.0000 V/m,  P_z/eps0 = +0.0000
+   layer 1<z<2, eps_r=2:  E_z = -3.0000 V/m,  P_z/eps0 = -3.0000
+   layer 2<z<3, eps_r=3:  E_z = -2.0000 V/m,  P_z/eps0 = -4.0000
+  [ok] E_z in the three layers [V/m]: computed [-6. -3. -2.]  vs  expected [-6. -3. -2.]
+  [ok] P_z/eps0 in the three layers: computed [ 0. -3. -4.]  vs  expected [ 0. -3. -4.]
+  [ok] V(1), V(2), V(3) [V] by quad through every layer: computed [ 6.  9. 11.]  vs  expected [ 6.  9. 11.]
+  [ok] top-plate rho_s/eps0 = (-z).D(3^-): computed 6.0  vs  expected 6.0
+  [ok] z=1: n.(D1-D2) = 0 (no free charge): computed 0.0  vs  expected 0.0
+  [ok] z=2: n.(D1-D2) = 0 (no free charge): computed 0.0  vs  expected 0.0
+========================================================================================
+9.2  Two dielectrics side by side  (z=0 grounded, z=2 mm at +10 V; eps_r=2 for x<0, 5 for x>0)
+  [ok] E_z [V/m] (both halves): computed -5000.0  vs  expected -5000.0
+  [ok] V(d)-V(0) = -int E_z dz [V]: computed 10.0  vs  expected 10.0
+  [ok] x=0: n x (E1-E2) = 0: computed [0. 0. 0.]  vs  expected [0. 0. 0.]
+  [ok] x=0: n.(D1-D2) = 0 (D is tangential to the interface): computed 0.0  vs  expected 0.0
+  [ok] D_z left / eps0 , right / eps0: computed [-10000. -25000.]  vs  expected [-10000. -25000.]
+  D_z left, right [nC/m^2]: -88.54, -221.35
+  top-plate free rho_s left, right [nC/m^2]: 88.54, 221.35
+  [ok] top-plate rho_s left, right [nC/m^2]: computed [ 88.54187813 221.35469532]  vs  expected [ 88.54187813 221.35469532]
+  P_z left, right [nC/m^2]: -44.27, -177.08  (= -5000 eps0, -20000 eps0)
+  [ok] P_z/eps0 left, right: computed [ -5000. -20000.]  vs  expected [ -5000. -20000.]
+  bound rho_sb on top faces left, right [nC/m^2]: -44.27, -177.08
+  [ok] net (free+bound) at top, left = right = eps0*|E| [nC/m^2]: computed [44.27093906 44.27093906]  vs  expected [44.27093906 44.27093906]
+  eps0*|E| [nC/m^2]: 44.27
+========================================================================================
+9.3  MC: graded dielectric, no free charge -- test each option on Lecture 9 Example 4
+   z=0.5:  (a) lap V = +0.5000 V/m^2   (b) div E = -0.5000 V/m^2   (d) div P/eps0 = +0.5000   (c) div(eps grad V)/eps0 = +6.51e-10
+   z=1.0:  (a) lap V = +0.5000 V/m^2   (b) div E = -0.5000 V/m^2   (d) div P/eps0 = +0.5000   (c) div(eps grad V)/eps0 = +4.09e-09
+   z=1.5:  (a) lap V = +0.5000 V/m^2   (b) div E = -0.5000 V/m^2   (d) div P/eps0 = +0.5000   (c) div(eps grad V)/eps0 = +4.68e-10
+  [ok] (a) lap V = +1/2 V/m^2: computed 0.4999999998  vs  expected 0.5
+  [ok] (b) div E = -1/2 V/m^2: computed -0.5  vs  expected -0.5
+  [ok] (d) div P = +eps0/2  ->  rho_b = -eps0/2: computed 0.5  vs  expected 0.5
+  [ok] (c) div(eps grad V) = 0: computed 4.1e-09  vs  expected 0.0
+========================================================================================
+9.4  MC: refraction into glass eps_r = 4, incidence 45 deg from the normal
+  [ok] n x (E1-E2) = 0: computed [-0.  0.  0.]  vs  expected [0. 0. 0.]
+  [ok] n.(D1-D2) = 0: computed 0.0  vs  expected 0.0
+  [ok] tan(theta2) = 4: computed 4.0  vs  expected 4.0
+  theta2 [deg]: 75.96
+  [ok] |E2|/E0 = sqrt(17/32): computed 0.7288689869  vs  expected 0.7288689869
+  |E2|/E0: 0.7289
+  [ok] |D2|/(eps0 E0) = sqrt(8.5): computed 2.9154759474  vs  expected 2.9154759474
+  |D2|/(eps0 E0): 2.9155
+  E2 tangential, normal (units of E0): 0.7071 (= 1/sqrt2), -0.1768 (= -1/(4 sqrt2))
+  option (d) violates tangential continuity: |n x (E1-E2d)|: 0.5303 (should be 0)
+========================================================================================
+9.5  Find the error: coated wire  (rho_l = 10 nC/m, a = 1 mm, b = 2 mm, eps_r = 2.5)
+  [ok] flux of D through cylinder r=b, L=1 m [nC]: computed 10.0  vs  expected 10.0
+  E(b-) [kV/m] (student's number, valid INSIDE the coating): 35.95
+  E(b+) [kV/m] (correct outside value): 89.88
+  [ok] E(b-), E(b+) [V/m] vs 2k rho_l/(eps_r b), 2k rho_l/b: computed [35950.20716904 89875.51792261]  vs  expected [35950.20714947 89875.51787368]
+  D(b) [uC/m^2]: 0.796
+  bound rho_sb on outer face = P(b) [uC/m^2]: 0.477
+  [ok] eps0 [E(b+) - E(b-)] = rho_sb(b): computed 4.775e-07  vs  expected 4.775e-07
+========================================================================================
+9.6  Graded dielectric at fixed voltage  (eps_r = (1+z)^2, V(0)=6 V, V(1)=0)
+  [ok] int_0^1 dz/eps_r = 1/2 [m]: computed 0.5  vs  expected 0.5
+  [ok] D_z/eps0: computed 12.0  vs  expected 12.0
+  D_z numeric [C/m^2]: 1.063e-10
+  [ok] bottom plate rho_s/eps0 = (+z).D ; top plate = (-z).D: computed [ 12. -12.]  vs  expected [ 12. -12.]
+  [ok] E_z(0), E_z(1) [V/m]: computed [12.  3.]  vs  expected [12.  3.]
+  [ok] V(0.5) [V]  (homogeneous fill would give 3 V): computed 2.0  vs  expected 2.0
+  [ok] V(1) [V]: computed -0.0  vs  expected 0.0
+  [ok] V(z) = 6 - 12 z/(1+z) at z=0.25,0.75: computed [3.6        0.85714286]  vs  expected [3.6        0.85714286]
+  [ok] P_z(0)/eps0, P_z(1)/eps0: computed [0. 9.]  vs  expected [0. 9.]
+  [ok] rho_b(0.0)/eps0 = -24/(1+z)^3: computed -24.0000000049  vs  expected -24.0
+  [ok] rho_b(0.5)/eps0 = -24/(1+z)^3: computed -7.1111111118  vs  expected -7.1111111111
+  [ok] rho_b(1.0)/eps0 = -24/(1+z)^3: computed -3.0000000001  vs  expected -3.0
+  [ok] bound: bulk/eps0, top face/eps0, bottom face/eps0: computed [-9.  9.  0.]  vs  expected [-9.  9.  0.]
+  [ok] total bound charge per m^2 = 0: computed 0.0  vs  expected 0.0
+  [ok] eps0 E_z(0.3) = enclosed free+bound  (in units of eps0): computed 7.100591716  vs  expected 7.100591716
+  [ok] eps0 E_z(0.8) = enclosed free+bound  (in units of eps0): computed 3.7037037037  vs  expected 3.7037037037
+========================================================================================
+9.7  Charged sheet on a dielectric interface (plates z=0,3 m grounded; eps_r=2 below z=1; sheet 10 eps0)
+  [ok] V(1) [V]: computed 4.0  vs  expected 4.0
+  [ok] E_z below, above [V/m]: computed [-4.  2.]  vs  expected [-4.  2.]
+  [ok] D_z/eps0 below, above: computed [-8.  2.]  vs  expected [-8.  2.]
+  [ok] n.(D1-D2)/eps0 at z=1 (n=+z, 1=above) = 10: computed 10.0  vs  expected 10.0
+  [ok] plate charges/eps0 at z=0, z=3: computed [-8. -2.]  vs  expected [-8. -2.]
+  [ok] sum of plate charges = -rho_s: computed -10.0  vs  expected -10.0
+  [ok] P_z/eps0 below: computed -4.0  vs  expected -4.0
+  [ok] bound faces/eps0: top (z=1-, n=+z), bottom (z=0+, n=-z): computed [-4.  4.]  vs  expected [-4.  4.]
+  [ok] eps0(E_above - E_below) = rho_s + rho_sb  (/eps0): computed 6.0  vs  expected 6.0
+  [ok] potential via quad: V(3)-V(0) = 0: computed -0.0  vs  expected 0.0
+  [ok] (d) V(3) needed [V]: computed 5.0  vs  expected 5.0
+  [ok] (d) E_z below [V/m], D_z below/eps0: computed [ -5. -10.]  vs  expected [ -5. -10.]
+  [ok] (d) plate charges/eps0 z=0, z=3: computed [-10.   0.]  vs  expected [-10.   0.]
+  [ok] (d) V(3)-V(0) by quad: computed 5.0  vs  expected 5.0
+========================================================================================
+9.8  Charged surface of a dielectric rod (R = 2 m, eps_r = 4; E(2-) = 3, E(2+) = 8 V/m)
+  [ok] rho_s/eps0 = n.(D1 - D2): computed -4.0  vs  expected -4.0
+  rho_s numeric [C/m^2]: -3.542e-11
+  [ok] rho_l/(pi eps0): computed 48.0  vs  expected 48.0
+  rho_l numeric [C/m]: 1.335e-09
+  [ok] E inside = 6/r : E(1), E(2-): computed [6. 3.]  vs  expected [6. 3.]
+  [ok] E outside = 16/r : E(2+), E(4): computed [8. 4.]  vs  expected [8. 4.]
+  [ok] flux of D through r=3 m cylinder (per m) / (pi eps0): computed 32.0  vs  expected 32.0
+  [ok] P_r(2-)/eps0 = rho_sb on the surface: computed 9.0  vs  expected 9.0
+  [ok] bound surface charge per length /(pi eps0): computed 36.0  vs  expected 36.0
+  [ok] bound line charge (r0=0.001) /(pi eps0) = -(chi/eps_r) rho_l: computed -36.0  vs  expected -36.0
+  [ok] bound line charge (r0=0.5) /(pi eps0) = -(chi/eps_r) rho_l: computed -36.0  vs  expected -36.0
+  [ok] total charge at r=2 (free + bound)/eps0 = eps0 (E+ - E-)/eps0: computed 5.0  vs  expected 5.0
+  [ok] V(1) - V(4) = 22 ln 2 [V]: computed 15.2492379723  vs  expected 15.2492379723
+  V(1) - V(4) [V]: 15.249
+========================================================================================
+9.9  Glass slab (eps_r = 3, 0<z<3 cm) in E0 = 40 x + 30 z V/m
+  [ok] glass E [V/m]: computed [40.  0. 10.]  vs  expected [40.  0. 10.]
+  [ok] z=0: n x (E1-E2) = 0: computed [-0.  0.  0.]  vs  expected [0. 0. 0.]
+  [ok] z=0: n.(D1-D2) = 0: computed 0.0  vs  expected 0.0
+  [ok] D_glass/eps0: computed [120.   0.  30.]  vs  expected [120.   0.  30.]
+  [ok] P_glass/eps0: computed [80.  0. 20.]  vs  expected [80.  0. 20.]
+  D_glass numeric [C/m^2]: (1.063e-09, 0, 2.656e-10)
+  P_glass numeric [C/m^2]: (7.083e-10, 0, 1.771e-10)
+  angle from normal: air, glass [deg]: 53.13, 75.96
+  [ok] tan(th_air)/tan(th_glass) = eps_air/eps_glass: computed 0.3333333333  vs  expected 0.3333333333
+  [ok] E above the slab [V/m] = E0: computed [40.  0. 30.]  vs  expected [40.  0. 30.]
+  [ok] z=t: n x (E1-E2) = 0 ; n.(D1-D2) = 0: computed [0. 0.]  vs  expected [0. 0.]
+  [ok] rho_sb top, bottom /eps0: computed [ 20. -20.]  vs  expected [ 20. -20.]
+  rho_sb numeric [C/m^2]: 1.771e-10
+  [ok] bound sheets' E_z below / inside / above [V/m]: computed [  0. -20.   0.]  vs  expected [  0. -20.   0.]
+  [ok] E0 + sheets inside = glass field: computed [40.  0. 10.]  vs  expected [40.  0. 10.]
+  [ok] exit point B [m]: computed [0.12 0.   0.03]  vs  expected [0.12 0.   0.03]
+  [ok] V(B)-V(A): along the field line, staircase, via air below [V]: computed [-5.09999998 -5.09999998 -5.10000002]  vs  expected [-5.1 -5.1 -5.1]
+  [ok] pieces: up the z axis, then along x [V]: computed [-0.3 -4.8]  vs  expected [-0.3 -4.8]
+  [ok] |E_glass| * length along line = 5.1 V: computed 5.1  vs  expected 5.1
+  [ok] x where the line would reach z=3 cm without slab [m]; lateral shift [m]: computed [0.04 0.08]  vs  expected [0.04 0.08]
+========================================================================================
+9.10 Sphere, shell and two dielectric layers (Q1=+2 C at r<=1; eps_r=4 in 1<r<2; shell 2..3 with -6 C;
+     eps_r=2 coating 3<r<4; free space r>4)
+  [ok] flux of D over sphere r=1.5 [C]: computed 2.0  vs  expected 2.0
+  [ok] flux of D over sphere r=3.5 [C]: computed -4.0  vs  expected -4.0
+  [ok] flux of D over sphere r=5.0 [C]: computed -4.0  vs  expected -4.0
+  [ok] D_r * 2 pi r^2 in 1<r<2 (= 1): computed 1.0  vs  expected 1.0
+  [ok] D_r * pi r^2 in 3<r<4 and r>4 (= -1): computed [-1. -1.]  vs  expected [-1. -1.]
+  [ok] E_r * 8 pi eps0 r^2 in 1<r<2 (= 1): computed 1.0  vs  expected 1.0
+  [ok] E_r * 2 pi eps0 r^2 in 3<r<4 (= -1): computed -1.0  vs  expected -1.0
+  [ok] E_r * pi eps0 r^2 in r>4 (= -1): computed -1.0  vs  expected -1.0
+  [ok] P_r * 8 pi r^2/3 in 1<r<2 (= 1): computed 1.0  vs  expected 1.0
+  [ok] P_r * 2 pi r^2 in 3<r<4 (= -1); P in air = 0: computed [-1.  0.]  vs  expected [-1.  0.]
+  [ok] free rho_s at r=1,2,3,4 [C/m^2]: computed [ 0.15915494 -0.03978874 -0.03536777  0.        ]  vs  expected [ 0.15915494 -0.03978874 -0.03536777  0.        ]
+  free rho_s numeric r=1,2,3: 0.1592, -0.0398, -0.0354 C/m^2
+  [ok] shell: inner + outer surface charge = -6 C: computed -6.0  vs  expected -6.0
+  [ok] shell inner, outer surface totals [C]: computed [-2. -4.]  vs  expected [-2. -4.]
+  [ok] rho_sb at r=1,2,3,4 [C/m^2]: computed [-0.11936621  0.02984155  0.01768388 -0.00994718]  vs  expected [-0.11936621  0.02984155  0.01768388 -0.00994718]
+  rho_sb numeric r=1,2,3,4: -0.1194, 0.0298, 0.0177, -0.0099 C/m^2
+  [ok] bound totals [C] at r=1,2,3,4: computed [-1.5  1.5  2.  -2. ]  vs  expected [-1.5  1.5  2.  -2. ]
+  [ok] rho_b at r=1.5 (= 0): computed -0.0  vs  expected 0.0
+  [ok] rho_b at r=3.5 (= 0): computed -0.0  vs  expected 0.0
+  [ok] each layer neutral: (r=1)+(r=2), (r=3)+(r=4): computed [ 0. -0.]  vs  expected [0. 0.]
+  [ok] at r=4: eps0(E+ - E-) = free + bound: computed -0.0099471839  vs  expected -0.0099471839
+  [ok] V(shell) * pi eps0 = -7/24: computed -0.2916666667  vs  expected -0.2916666667
+  [ok] V(centre) * pi eps0 = -11/48: computed -0.2291666667  vs  expected -0.2291666667
+  [ok] V(centre) - V(shell) = 1/(16 pi eps0): computed 1.0  vs  expected 1.0
+  V(shell), V(centre), V(centre)-V(shell) [V]: -1.049e+10, -8.239e+09, 2.247e+09
+  1/(pi eps0) [V m/C]: 3.5950e+10
+========================================================================================
+9.11 Graded coax with uniform field (a = 1 mm, b = 3 mm, eps = 6 eps0 a/r, V0 = 200 V)
+  [ok] rho_l [nC/m] = 2 pi eps_a a V0/(b-a): computed 33.3795016634  vs  expected 33.3795016634
+  rho_l [nC/m]: 33.38
+  [ok] E at r = a, 2a, b [V/m] (uniform): computed [100000. 100000. 100000.]  vs  expected [100000. 100000. 100000.]
+  [ok] V(a) - V(b) by quad [V]: computed 200.0  vs  expected 200.0
+  D(a), D(b) [uC/m^2]: 5.313, 1.771
+  [ok] r*D(r) [nC/m] = 6 eps0 a E: computed 5.3125126877  vs  expected 5.3125126877
+  6 eps0 a E [C/m]: 5.313e-09
+  [ok] P(a)/(eps0 E), P(b)/(eps0 E): computed [5. 1.]  vs  expected [5. 1.]
+  P(a), P(b) [uC/m^2]: 4.427, 0.8854
+  [ok] rho_b(1.000 mm) = eps0 E / r: computed 0.0008853302  vs  expected 0.0008853302
+  [ok] rho_b(2.000 mm) = eps0 E / r: computed 0.0004427094  vs  expected 0.0004427094
+  [ok] rho_b(3.000 mm) = eps0 E / r: computed 0.0002951691  vs  expected 0.0002951691
+  [ok] Cartesian -div P at (1.2,0.9) mm = eps0 E/r: computed 0.0005902792  vs  expected 0.0005902792
+  [ok] Cartesian -div P at (-2.0,1.1) mm = eps0 E/r: computed 0.000387909  vs  expected 0.000387909
+  rho_b(a), rho_b(b) [mC/m^3]: 0.885, 0.295
+  rho_sb(a), rho_sb(b) [uC/m^2]: -4.427, 0.8854
+  [ok] bound per length / rho_l: inner face, outer face, volume: computed [-0.83333333  0.5         0.33333333]  vs  expected [-0.83333333  0.5         0.33333333]
+  bound per length [nC/m]: inner, outer, volume: -27.82, 16.69, 11.13
+  [ok] total bound per length = 0: computed -0.0  vs  expected 0.0
+  [ok] 2 pi r eps0 E = free+bound enclosed at r=1.5 mm  [nC/m]: computed 8.3448754159  vs  expected 8.3448754159
+  [ok] 2 pi r eps0 E = free+bound enclosed at r=2.5 mm  [nC/m]: computed 13.9081256931  vs  expected 13.9081256931
+  [ok] homogeneous coax E(a) = V0/(a ln(b/a)) [V/m]: computed 182047.8453253675  vs  expected 182047.8
+  [ok] homogeneous: E(a) from Gauss + quad: computed 182047.8453253674  vs  expected 182047.8453253675
+  ratio of peak fields homogeneous/graded = 2/ln 3: 1.820
+  [ok] epsr at a, b: computed [6. 2.]  vs  expected [6. 2.]
+========================================================================================
+9.12 Charged sphere floating in oil (a = 10 cm, Q = 30 nC, oil eps_r = 2 in z<0, air z>0)
+  A = Q/(2 pi (eps0+eps)) [V m]: 179.75
+  [ok] flux of D over r=0.3 m sphere [nC]: computed 30.0  vs  expected 30.0
+  [ok] flux of D over r=1.0 m sphere [nC]: computed 30.0  vs  expected 30.0
+  [ok] oil surface at (0.15,0.0): n.(D1-D2) = 0 and P.n = 0: computed [0. 0.]  vs  expected [0. 0.]
+  [ok] oil surface at (0.3,-0.2): n.(D1-D2) = 0 and P.n = 0: computed [0. 0.]  vs  expected [0. 0.]
+  [ok] oil surface at (-0.12,0.5): n.(D1-D2) = 0 and P.n = 0: computed [0. 0.]  vs  expected [0. 0.]
+  E(a) [kV/m]: 17.98
+  [ok] Laplacian of A/r at an oil point, relative to A/r^3 (should be 0): computed 3.2e-08  vs  expected 0.0
+  free rho_s top, bottom [nC/m^2]: 159.2, 318.3
+  [ok] free charge on upper, lower hemisphere [nC]: computed [10. 20.]  vs  expected [10. 20.]
+  bound rho_sb on oil at the sphere [nC/m^2]: -159.2
+  [ok] bound total on the lower hemisphere [nC]: computed -10.0  vs  expected -10.0
+  [ok] net (free+bound) top = bottom [nC/m^2]: computed [159.15494309 159.15494309]  vs  expected [159.15494309 159.15494309]
+  [ok] P_r in oil: r^2 P_r constant -> rho_b = 0: computed 0.0  vs  expected 0.0
+  [ok] flux of P out through any far oil hemisphere (= +10 nC on the bath's far walls): computed 10.0  vs  expected 10.0
+  [ok] Coulomb sum of net surface charge at (0.0, 0.0, 0.25) = A/r^2 r-hat: computed [  -0.           -0.         2876.01657352]  vs  expected [   0.            0.         2876.01657352]
+  [ok] Coulomb sum of net surface charge at (0.2, 0.05, -0.15) = A/r^2 r-hat: computed [ 2169.35867305   542.33966826 -1627.01900479]  vs  expected [ 2169.35867305   542.33966826 -1627.01900479]
+  [ok] Coulomb sum of net surface charge at (0.3, 0.1, 0.0) = A/r^2 r-hat: computed [1705.26805514  568.42268505    0.        ]  vs  expected [1705.26805514  568.42268505    0.        ]
+  [ok] V(sphere) [V] by quad: computed 1797.5103584522  vs  expected 1797.5103584522
+  V(sphere), all-air, all-oil [kV]: 1.798, 2.696, 1.348
+  [ok] V(sphere) = 2/3 of the all-air value: computed 0.6666666667  vs  expected 0.6666666667
+  [ok] A = (20 nC)/(4 pi eps0): field of the net 20 nC in vacuum: computed 179.7510358452  vs  expected 179.7510358452
+========================================================================================
+139 checks, 0 failed

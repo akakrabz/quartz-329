@@ -20,3 +20,5 @@ Each problem page states the problem, works it the way a strong student would on
 | [[problems/mmf-around-a-draining-charge\|MMF around a draining point charge]] | Lecture 16 slides | 12, 16 |
 
 All four FA26 Exam 1 problems have a worked counterpart, and each Unit 2–3 lecture through Lecture 16 has one problem built on its central calculation — in every case the magnetic or dynamic twin of something already done in Unit 1, which is the point. A PrairieLearn version of these problems, with randomized parameters and auto-grading, lives in the `prairielearn/` folder of this repository.
+
+For many shorter problems to do yourself — twelve per lecture from Lecture 2 to Lecture 15, tagged easy, medium or hard, with folded hints and solutions — see the [[practice/index|practice bank]].

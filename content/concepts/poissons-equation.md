@@ -35,4 +35,6 @@ Then $\mathbf{E} = -\nabla V$, $\mathbf{D} = \epsilon\mathbf{E}$, and $\rho_s = 
 
 **Where it appears.** [[1-electrostatics/07-poisson-and-laplace|Lecture 7]], [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] (piecewise, and where it fails), [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] (the given-$V$ route to capacitance), [[problems/curl-potential-and-charge-from-a-field]] (the backwards use).
 
+**Practice.** [[practice/topics#poissons-and-laplaces-equations|Poisson's and Laplace's equations]] (14 problems) — for example [[practice/07-poisson-and-laplace#71-two-plates-two-potentials|7.1 Two plates, two potentials]] (easy), [[practice/07-poisson-and-laplace#76-coaxial-cable-by-laplace|7.6 Coaxial cable by Laplace]] (medium), [[practice/07-poisson-and-laplace#79-junction-with-an-intrinsic-layer|7.9 Junction with an intrinsic layer]] (hard).
+
 Related: [[concepts/electrostatic-potential]] · [[concepts/gauss-law]] · [[concepts/divergence]] · [[concepts/boundary-conditions]].

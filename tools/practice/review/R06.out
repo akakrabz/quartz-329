@@ -1,0 +1,193 @@
+
+=== 6.1 What is always continuous ===
+[6.1] n-hat (2 -> 1) in the worked example             computed=[0, 0, 1]                            page=[0, 0, 1]                    PASS
+[6.1] E1 tangential part [V/m]                         computed=[1.3, -0.7, 0]                       page=[1.3, -0.7, 0]               PASS
+[6.1] E1z [V/m]                                        computed=7.25                                 page=7.25                         PASS
+[6.1] (a) E1z - E2z [V/m]                              computed=5.15                                 page=5.15                         PASS
+[6.1] (b) n.(D1-D2) [eps0]                             computed=4                                    page=4                            PASS
+[6.1] (d) D1t/D2t                                      computed=0.4                                  page=0.4                          PASS
+[6.1] (e) |E1| [V/m]                                   computed=7.39882                              page=7.4                          PASS
+[6.1] (e) |E2| [V/m]                                   computed=2.5671                               page=2.57                         PASS
+[6.1] follow-up rho_s=0: E1n/E2n                       computed=2.5                                  page=2.5                          PASS
+[6.1] key (always equal, rho_s != 0)                   computed=['c']                                page=['c']                        PASS
+[6.1] key (always equal, rho_s = 0)                    computed=['b', 'c']                           page=['b', 'c']                   PASS
+[6.1] note: rho_s=4eps0: E2n=-1.3333 gives E1n=-1.3333 -> normal E continuous for this one field (so 'normal E jumps at ANY charged surface' is an over-statement)
+[6.1] note: rho_s=4eps0: E2n=-0.5714 gives E1n=0.5714 -> |E1|=|E2| for this field (so 'one component jumps, so the magnitudes differ' is not automatic)
+
+=== 6.2 Kirchhoff around a triangle ===
+[6.2] sides P1P2, P2P3, P3P1 [V]                       computed=[6, 12, -18]                         page=[6, 12, -18]                 PASS
+[6.2] circulation [V]                                  computed=0                                    page=0                            PASS
+[6.2] V(P3)-V(P1) via P2 [V]                           computed=-18                                  page=-18                          PASS
+[6.2] V(P3)-V(P1) along slanted side [V]               computed=-18                                  page=-18                          PASS
+[6.2] -grad V == E (finite differences)                computed=[3, 4, -2]                           page=[3, 4, -2]                   PASS
+[6.2] V(P3)-V(P1) from V function [V]                  computed=-18                                  page=-18                          PASS
+
+=== 6.3 A field at a metal surface ===
+[6.3] n-hat out of the metal                           computed=[0.6, 0.8, 0]                        page=[0.6, 0.8, 0]                PASS
+[6.3] (a) n x E [V/m]                                  computed=[0, 0, -1.4]                         page=[0, 0, -1.4]                 PASS
+[6.3] (a) n . E [V/m]                                  computed=4.8                                  page=4.8                          PASS
+[6.3] (b) n x E [V/m]                                  computed=[0, -0, 8.88178e-16]                 page=[0, 0, 0]                    PASS
+[6.3] (b) n . E [V/m]                                  computed=-10                                  page=-10                          PASS
+[6.3] (c) n x E [V/m]                                  computed=[4, -3, -4.44089e-16]                page=[4, -3, 0]                   PASS
+[6.3] (c) n . E [V/m]                                  computed=5                                    page=5                            PASS
+[6.3] (d) n x E [V/m]                                  computed=[0, 0, -10]                          page=[0, 0, -10]                  PASS
+[6.3] (d) n . E [V/m]                                  computed=-4.44089e-16                         page=0                            PASS
+[6.3] key (no tangential E outside metal)              computed=['b']                                page=['b']                        PASS
+[6.3] (b) E = -10 n-hat: coefficient                   computed=-10                                  page=-10                          PASS
+[6.3] rho_s [C/m^2] = -10 eps0                         computed=-8.85419e-11                         page=-8.85e-11                    PASS
+
+=== 6.4 Crossing a current sheet ===
+[6.4] n-hat (2 -> 1)                                   computed=[1, 0, 0]                            page=[1, 0, 0]                    PASS
+[6.4] H1x = H2x [A/m]                                  computed=3                                    page=3                            PASS
+[6.4] jump a (y), b (z) [A/m]                          computed=[4, 0]                               page=[4, 0]                       PASS
+[6.4] H1 [A/m]                                         computed=[3, 2, 0]                            page=[3, 2, 0]                    PASS
+[6.4] B1 [uT]                                          computed=[3.76991, 2.51327, 0]                page=[3.77, 2.51, 0]              PASS
+[6.4] B2 [uT]                                          computed=[3.76991, -2.51327, 0]               page=[3.77, -2.51, 0]             PASS
+[6.4] H1 by wire superposition [A/m]                   computed=[3, 2, 0]                            page=[3, 2, 0]                    PASS
+[6.4] loop normal (ccw seen from +z)                   computed=[0, 0, 1]                            page=[0, 0, 1]                    PASS
+[6.4] loop circulation [A]                             computed=8                                    page=8                            PASS
+[6.4] enclosed current Js.n_loop * 2 m [A]             computed=8                                    page=8                            PASS
+
+=== 6.5 The flipped normal ===
+[6.5] correct n-hat (above=2 -> below=1)               computed=[-0, -0, -1]                         page=[0, 0, -1]                   PASS
+[6.5] student's value z.(D1-D2) [nC/m^2]               computed=5                                    page=5                            PASS
+[6.5] rho_s, medium 1 below, n=-z [nC/m^2]             computed=-5                                   page=-5                           PASS
+[6.5] rho_s, relabelled (1 above), n=+z [nC/m^2]       computed=-5                                   page=-5                           PASS
+[6.5] pillbox flux / area [nC/m^2]                     computed=-5                                   page=-5                           PASS
+[6.5] tangential D_x both sides [nC/m^2]               computed=[2, 2]                               page=[2, 2]                       PASS
+
+=== 6.6 Circulation of two fields ===
+[6.6] triangle O,A,B normal (ccw from +z)              computed=[0, 0, 1]                            page=[0, 0, 1]                    PASS
+[6.6] E_a sides OA, AB, BO [V]                         computed=[4, 4, -8]                           page=[4, 4, -8]                   PASS
+[6.6] E_a circulation [V]                              computed=0                                    page=0                            PASS
+[6.6] E_b sides OA, AB, BO [V]                         computed=[0, 4, -2.66667]                     page=[0, 4, -2.66667]             PASS
+[6.6] E_b circulation [V]                              computed=1.33333                              page=1.33333                      PASS
+[6.6] curl E_a at 5 random points                      computed=4.4409e-11                           page=0                            PASS
+[6.6] curl E_b - y z-hat at 5 random points            computed=2.31632e-11                          page=0                            PASS
+[6.6] Stokes: flux of curl E_b through triangle [V]    computed=1.33333                              page=1.33333                      PASS
+[6.6] V(B)-V(O) along O->A->B [V]                      computed=-8                                   page=-8                           PASS
+[6.6] V(B)-V(O) along straight O->B [V]                computed=-8                                   page=-8                           PASS
+[6.6] -grad V == E_a at a point                        computed=[5.55112e-17, 0, 0]                  page=[0, 0, 0]                    PASS
+[6.6] V(B)-V(O) from V=-(x^2+xy) [V]                   computed=-8                                   page=-8                           PASS
+[6.6] E_b: O->A->B, straight O->B [V]                  computed=[4, 2.66667]                         page=[4, 2.66667]                 PASS
+
+=== 6.7 A charged tilted interface ===
+[6.7] n-hat (dielectric -> vacuum)                     computed=[0.333333, 0.666667, 0.666667]       page=[0.333333, 0.666667, 0.666667] PASS
+[6.7] E2n [V/m]                                        computed=3                                    page=3                            PASS
+[6.7] E2 normal part [V/m]                             computed=[1, 2, 2]                            page=[1, 2, 2]                    PASS
+[6.7] E2t [V/m]                                        computed=[2, -1, 0]                           page=[2, -1, 0]                   PASS
+[6.7] E2t . n                                          computed=0                                    page=0                            PASS
+[6.7] D2n, D1n [eps0]                                  computed=[6, 9]                               page=[6, 9]                       PASS
+[6.7] E1n [V/m]                                        computed=9                                    page=9                            PASS
+[6.7] E1 [V/m]                                         computed=[5, 5, 6]                            page=[5, 5, 6]                    PASS
+[6.7] D1 [eps0 C/m^2]                                  computed=[5, 5, 6]                            page=[5, 5, 6]                    PASS
+[6.7] D2 [eps0 C/m^2]                                  computed=[6, 2, 4]                            page=[6, 2, 4]                    PASS
+[6.7] D1 - D2 [eps0]                                   computed=[-1, 3, 2]                           page=[-1, 3, 2]                   PASS
+[6.7] n.(D1-D2) [eps0]                                 computed=3                                    page=3                            PASS
+[6.7] E1 - E2 [V/m]                                    computed=[2, 4, 4]                            page=[2, 4, 4]                    PASS
+[6.7] n x (E1-E2)                                      computed=[-1.33227e-15, -6.66134e-16, 1.33227e-15] page=[0, 0, 0]                    PASS
+[6.7] total surface charge [eps0]                      computed=6                                    page=6                            PASS
+[6.7] bound rho_sb [eps0]                              computed=3                                    page=3                            PASS
+[6.7] bound rho_sb [C/m^2]                             computed=2.65626e-11                          page=2.66e-11                     PASS
+[6.7] P2 [eps0]                                        computed=[3, 1, 2]                            page=[3, 1, 2]                    PASS
+[6.7] P2 . n (n = outward from dielectric) [eps0]      computed=3                                    page=3                            PASS
+[6.7] D2t, D1t [eps0]                                  computed=[4, -2, 0, 2, -1, 0]                 page=[4, -2, 0, 2, -1, 0]         PASS
+
+=== 6.8 Refraction of field lines ===
+[6.8] n-hat (glass -> air)                             computed=[0, 1, 0]                            page=[0, 1, 0]                    PASS
+[6.8] E1 [V/m]                                         computed=[100, 173.205, 0]                    page=[100, 173.2, 0]              PASS
+[6.8] E2 [V/m]                                         computed=[100, 57.735, 0]                     page=[100, 57.7, 0]               PASS
+[6.8] |E2| [V/m] (=200/sqrt3)                          computed=115.47                               page=115.5                        PASS
+[6.8] |E2| exact                                       computed=115.47                               page=115.47                       PASS
+[6.8] theta2 [deg]                                     computed=60                                   page=60                           PASS
+[6.8] tan th1 / tan th2 (= eps1/eps2)                  computed=0.333333                             page=0.333333                     PASS
+[6.8] D1 [nC/m^2]                                      computed=[0.885419, 1.53359]                  page=[0.885, 1.53]                PASS
+[6.8] D2 [nC/m^2]                                      computed=[2.65626, 1.53359]                   page=[2.66, 1.53]                 PASS
+[6.8] rho_sb [eps0] (=200/sqrt3)                       computed=115.47                               page=115.47                       PASS
+[6.8] rho_sb [C/m^2]                                   computed=1.02239e-09                          page=1.02e-09                     PASS
+[6.8] P2 . n (glass outward normal +y) [eps0]          computed=115.47                               page=115.5                        PASS
+[6.8] (e) angle in air [deg]                           computed=0.707319                             page=0.71                         PASS
+
+=== 6.9 Two tilted charged planes ===
+[6.9] n-hat at P (L -> M)                              computed=[0.6, 0, 0.8]                        page=[0.6, 0, 0.8]                PASS
+[6.9] n-hat at Q (M -> R)                              computed=[0.6, 0, 0.8]                        page=[0.6, 0, 0.8]                PASS
+[6.9] distance between planes [m]                      computed=2                                    page=2                            PASS
+[6.9] D_Mn [eps0]                                      computed=5                                    page=5                            PASS
+[6.9] D_Mt [eps0]                                      computed=[4, 2, -3]                           page=[4, 2, -3]                   PASS
+[6.9] D_Ln [eps0]                                      computed=-4.88498e-16                         page=0                            PASS
+[6.9] D_L [eps0] (= E_L in V/m)                        computed=[4, 2, -3]                           page=[4, 2, -3]                   PASS
+[6.9] D_Rn [eps0]                                      computed=-5                                   page=-5                           PASS
+[6.9] D_R [eps0]                                       computed=[1, 2, -7]                           page=[1, 2, -7]                   PASS
+[6.9] rho_sQ [eps0]                                    computed=-10                                  page=-10                          PASS
+[6.9] rho_sQ [C/m^2]                                   computed=-8.85419e-11                         page=-8.85e-11                    PASS
+[6.9] A on P, B on Q, C in L: f(A), f(B), f(C)         computed=[0, 10, -2]                          page=[0, 10, -2]                  PASS
+[6.9] V(B)-V(A) [V]                                    computed=-15                                  page=-15                          PASS
+[6.9] B->C crossing point of P [m]                     computed=[2, 0, -1.5]                         page=[2, 0, -1.5]                 PASS
+[6.9] B->C pieces in M, in L [V]                       computed=[-2.5, 1.5]                          page=[-2.5, 1.5]                  PASS
+[6.9] sides AB, BC, CA [V]                             computed=[15, -1, -14]                        page=[15, -1, -14]                PASS
+[6.9] circulation [V]                                  computed=0                                    page=0                            PASS
+[6.9] Check 1: D_Rn - D_Ln vs rho_P + rho_Q [eps0]     computed=[-5, -5]                             page=[-5, -5]                     PASS
+[6.9] Check 2: B' [m]                                  computed=[1.2, 0, 1.6]                        page=[1.2, 0, 1.6]                PASS
+[6.9] Check 2: V(B')-V(A), V(B)-V(B') [V]              computed=[-10, -5]                            page=[-10, -5]                    PASS
+[6.9] Watch out: 1 V/m jump x 2 m [V]                  computed=2                                    page=2                            PASS
+
+=== 6.10 Plates around a charged sheet ===
+[6.10] (a) E_A, E_B [V/m] (superposition solve)         computed=[1, -8]                              page=[1, -8]                      PASS
+[6.10] n-hats at x=0, x=3, sheet                        computed=[1, 0, 0, -1, -0, -0, 1, 0, 0]       page=[1, 0, 0, -1, 0, 0, 1, 0, 0] PASS
+[6.10] (b) rho_s0, rho_s3, rho_s2 [eps0]                computed=[1, 8, -9]                           page=[1, 8, -9]                   PASS
+[6.10] (b) same from superposition solve [eps0]         computed=[1, -9, 8]                           page=[1, -9, 8]                   PASS
+[6.10] (b) in C/m^2                                     computed=[8.85419e-12, 7.08335e-11, -7.96877e-11] page=[8.85e-12, 7.08e-11, -7.97e-11] PASS
+[6.10] (c) sum [eps0]                                   computed=0                                    page=0                            PASS
+[6.10] (c) superposed E: x<0, gapA, gapB, x>3           computed=[4.44089e-16, 1, -8, -4.44089e-16]   page=[0, 1, -8, 0]                PASS
+[6.10] (c) KVL V(3)-V(0) [V]                            computed=6                                    page=6                            PASS
+[6.10] (a) FD Poisson with battery: V(2), E_A, E_B      computed=[-2, 1, -8]                          page=[-2, 1, -8]                  PASS
+[6.10] (d) FD Poisson: E_A', E_B' [V/m]                 computed=[3, -6]                              page=[3, -6]                      PASS
+[6.10] (d) FD Poisson: V(2) [V]                         computed=-6                                   page=-6                           PASS
+[6.10] (d) rho_s0', rho_s3' [eps0]                      computed=[3, 6]                               page=[3, 6]                       PASS
+[6.10] (d) in C/m^2                                     computed=[2.65626e-11, 5.31251e-11]           page=[2.66e-11, 5.31e-11]         PASS
+[6.10] (d) plates total [eps0]                          computed=9                                    page=9                            PASS
+[6.10] (d) fraction on nearer plate (x=3)               computed=0.666667                             page=0.666667                     PASS
+[6.10] (d) general formula -rho(d-a)/d, -rho a/d        computed=[3, 6]                               page=[3, 6]                       PASS
+[6.10] (d) Check: superposed E for x<0, x>3             computed=[-7.95808e-12, 7.95808e-12]          page=[0, 0]                       PASS
+[6.10] (d) Check: V(3)-V(0) [V]                         computed=1.59162e-12                          page=0                            PASS
+[6.10] Watch out: wrong normal face charge, sum         computed=[-8, -16]                            page=[-8, -16]                    PASS
+
+=== 6.11 Charged shell in a dielectric ===
+[6.11] n-hat == r-hat                                   computed=[0.764842, 0.644218, 0]              page=[0.764842, 0.644218, 0]      PASS
+[6.11] (a) E1 (r, phi, z) [V/m]                         computed=[1, 9.34681e-17, 3]                  page=[1, 0, 3]                    PASS
+[6.11] (a) D1 (r, phi, z) [eps0]                        computed=[4, 3.73872e-16, 12]                 page=[4, 0, 12]                   PASS
+[6.11] (b) rho_s [eps0]                                 computed=-2                                   page=-2                           PASS
+[6.11] (b) rho_s [C/m^2]                                computed=-1.77084e-11                         page=-1.77e-11                    PASS
+[6.11] (c) total, bound [eps0]                          computed=[-5, -3]                             page=[-5, -3]                     PASS
+[6.11] (c) bound [C/m^2]                                computed=-2.65626e-11                         page=-2.66e-11                    PASS
+[6.11] (c) P1 (r, phi, z) [eps0]                        computed=[3, 2.80404e-16, 9]                  page=[3, 0, 9]                    PASS
+[6.11] (c) P1 . (-r-hat) [eps0]                         computed=-3                                   page=-3                           PASS
+[6.11] (d) rho_l = eps0 * flux [eps0 C/m]               computed=75.3982                              page=75.3982                      PASS
+[6.11] (d) rho_l from Coulomb sum [C/m]                 computed=6.6759e-10                           page=6.68e-10                     PASS
+[6.11] (e) theta2, theta1 [deg]                         computed=[26.5651, 71.5651]                   page=[26.6, 71.6]                 PASS
+[6.11] (e) tan ratio                                    computed=6                                    page=6                            PASS
+[6.11] (e) rho_s=0: E_r(2+), tan th1, ratio             computed=[1.5, 2, 4]                          page=[1.5, 2, 4]                  PASS
+[6.11] Check: free charge per m inside 2+, D_r*2pi*2 [eps0] computed=[50.2655, 50.2655]                   page=[50.2655, 50.2655]           PASS
+
+=== 6.12 A tilted current sheet ===
+[6.12] (a) n-hat (2 -> 1)                               computed=[0, 0.6, 0.8]                        page=[0, 0.6, 0.8]                PASS
+[6.12] (a) Js . n                                       computed=0                                    page=0                            PASS
+[6.12] (b) H2n [A/m]                                    computed=5                                    page=5                            PASS
+[6.12] (b) normal part, H2t [A/m]                       computed=[0, 3, 4, 2, 0, 0]                   page=[0, 3, 4, 2, 0, 0]           PASS
+[6.12] (c) Delta H_t [A/m]                              computed=[0, -4, 3]                           page=[0, -4, 3]                   PASS
+[6.12] (c) H1t [A/m]                                    computed=[2, -4, 3]                           page=[2, -4, 3]                   PASS
+[6.12] (c) H1 [A/m]                                     computed=[2, -1, 7]                           page=[2, -1, 7]                   PASS
+[6.12] (c) B1 [uT]                                      computed=[2.51327, -1.25664, 8.79646]         page=[2.51, -1.26, 8.8]           PASS
+[6.12] (c) n.(H1-H2), n x (H1-H2)                       computed=[4.88498e-16, 5, 0, -0]              page=[0, 5, 0, 0]                 PASS
+[6.12] (c) H1 by wire superposition [A/m]               computed=[2, -1, 7]                           page=[2, -1, 7]                   PASS
+[6.12] (d) segment in sheet: f(end)                     computed=0                                    page=0                            PASS
+[6.12] (d) length, t-hat, m-hat                         computed=[5, 0, 0.8, -0.6, 1, -0, 0]          page=[5, 0, 0.8, -0.6, 1, 0, 0]   PASS
+[6.12] (d) current through segment [A] (along +m = +x)  computed=25                                   page=25                           PASS
+[6.12] (e) partner's n.H1 [A/m]                         computed=6.6                                  page=6.6                          PASS
+[6.12] (e) B_n jump [T]                                 computed=2.01062e-06                          page=2.01e-06                     PASS
+[6.12] Check: loop normal (t x n)                       computed=[1, 0, 0]                            page=[1, -0, 0]                   PASS
+[6.12] Check: H2.t, H1.t [A/m]                          computed=[4.44089e-16, -5]                    page=[0, -5]                      PASS
+[6.12] Check: circulation, enclosed [A]                 computed=[15, 15]                             page=[15, 15]                     PASS
+[6.12] Watch out: H1 with n x Js [A/m]                  computed=[2, 7, 1]                            page=[2, 7, 1]                    PASS
+
+TOTAL: 165 PASS, 0 FAIL

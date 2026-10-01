@@ -1,0 +1,344 @@
+
+===== 10.1 Four capacitances by formula =====
+PASS  (a) C/eps0: computed 80  page 80
+PASS  (a) C [pF]: computed 708.335  page 708
+PASS  (b) ln(b/a): computed 1.38629  page 1.3863
+PASS  (b) C' [pF/m]: computed 90.2933  page 90.3
+PASS  (c) ab/(b-a) [m]: computed 0.2  page 0.2
+PASS  (c) C [pF]: computed 22.253  page 22.3
+PASS  (d) C [pF]: computed 10.0139  page 10.0
+PASS  (d) 0.09/9e9 [pF]: computed 10  page 10.0
+PASS  (d) Earth C [uF]: computed 708.758  page 709
+PASS  check: plates, all dims x2 -> ratio: computed 2  page 2
+PASS  check: spheres, all dims x2 -> ratio: computed 2  page 2.00
+PASS  check: coax C', all dims x2 -> ratio: computed 1  page 1.00
+PASS  watch: plates without eps_r [pF]: computed 177.084  page 177
+PASS  watch: coax with log10 [pF/m]: computed 207.908  page 208
+
+===== 10.2 Slide in a slab =====
+PASS  C [nF]: computed 4  page 4
+PASS  Q0 [nC]: computed 10  page 10
+PASS  W0 [nJ]: computed 50  page 50
+PASS  (i) false statement(s): computed ['c']  page ['c']
+PASS  (i) V [V]: computed 2.5  page 2.5
+PASS  (i) W [nJ]: computed 12.5  page 12.5
+PASS  (i) energy lost to the slab [nJ]: computed 37.5  page 37.5
+PASS  (ii) false statement(s): computed ['d']  page ['d']
+PASS  (ii) Q [nC]: computed 40  page 40
+PASS  (ii) W [nJ]: computed 200  page 200
+PASS  (ii) dQ [nC]: computed 30  page 30
+PASS  (ii) battery work V0 dQ [nJ]: computed 300  page 300
+PASS  (ii) rise of stored W [nJ]: computed 150  page 150
+PASS  (ii) work done on the slab [nJ]: computed 150  page 150
+      s = 0.01 m: F(fixed Q) = 8.8757e-07 N, F(fixed V) = 1.5000e-06 N, (1/2)V^2 dC/ds at the fixed-Q state = 8.8757e-07 N
+      s = 0.05 m: F(fixed Q) = 2.4000e-07 N, F(fixed V) = 1.5000e-06 N, (1/2)V^2 dC/ds at the fixed-Q state = 2.4000e-07 N
+      s = 0.09 m: F(fixed Q) = 1.0957e-07 N, F(fixed V) = 1.5000e-06 N, (1/2)V^2 dC/ds at the fixed-Q state = 1.0957e-07 N
+PASS  (iii) force pulls the slab in (F > 0) in both cases, same formula -> statement is false: computed True  page True
+
+===== 10.3 Leakage of a long cable =====
+PASS  (a) sigma/eps [1/s]: computed 0.00050196  page 5.02e-4
+PASS  (a) G' = (sigma/eps)C' [S/m]: computed 5.0196e-14  page 5.02e-14
+PASS  check: ln(b/a): computed 1.25173  page 1.2517
+PASS  check: b/a: computed 3.49639  page 3.496
+PASS  check: G' from shells in series [S/m]: computed 5.0196e-14  page 5.02e-14
+PASS  (b) 1000 m: G [S]: computed 5.0196e-11  page 5.02e-11
+PASS  (b) 1000 m: R [Gohm]: computed 19.9219  page 19.92
+PASS  (b) 2000 m: G [S]: computed 1.00392e-10  page 1.004e-10
+PASS  (b) 2000 m: R [Gohm]: computed 9.96096  page 9.961
+PASS  (c) 1000 m: 1/e time from C dV/dt = -GV [s]: computed 1992.19  page 1992
+PASS  (c) 2000 m: 1/e time from C dV/dt = -GV [s]: computed 1992.19  page 1992
+PASS  (c) tau [min]: computed 33.2032  page 33.2
+PASS  check: C of 1 km [nF]: computed 100  page 100
+PASS  check: R C for 1 km [s]: computed 1992.19  page 1992
+
+===== 10.4 Energy density in a dielectric =====
+PASS  E [V/m]: computed 50000  page 5e4
+PASS  student's w [J/m^3]: computed 0.0110677  page 0.0111
+PASS  volume [m^3]: computed 4e-05  page 4e-5
+PASS  student's W [uJ]: computed 0.442709  page 0.443
+PASS  corrected w [J/m^3]: computed 0.0553387  page 0.0553
+PASS  corrected W = int w dV [uJ]: computed 2.21355  page 2.21
+PASS  C/eps0: computed 200  page 200
+PASS  C [nF]: computed 1.77084  page 1.771
+PASS  1/2 C V^2 [uJ]: computed 2.21355  page 2.21
+PASS  student's / true: computed 0.2  page 0.2
+
+===== 10.5 Which capacitor leaks first =====
+PASS  tau = eps/sigma [s]: computed 177.084  page 177.1
+PASS  t_half [s]: computed 122.745  page 122.7
+PASS  plates R [ohm]: computed 1.77084e+11  page 1.771e11
+PASS  cable C [nF]: computed 10  page 10
+PASS  cable R [ohm]: computed 1.77084e+10  page 1.771e10
+PASS  sphere C [pF]: computed 222.53  page 222.5
+PASS  sphere C/(8 pi eps0): computed 1  page 1
+PASS  sphere G [S]: computed 1.25664e-12  page 1.257e-12
+PASS  sphere R [ohm]: computed 7.95775e+11  page 7.958e11
+PASS  plates: RC [s]: computed 177.084  page 177.1
+PASS  plates: half-charge time from ODE [s]: computed 122.745  page 122.7
+PASS  cable: RC [s]: computed 177.084  page 177.1
+PASS  cable: half-charge time from ODE [s]: computed 122.745  page 122.7
+PASS  sphere: RC [s]: computed 177.084  page 177.1
+PASS  sphere: half-charge time from ODE [s]: computed 122.745  page 122.7
+PASS  MC key: computed d  page d
+PASS  (a) smallest C: computed sphere  page sphere
+PASS  (a) largest R: computed sphere  page sphere
+PASS  (b) smallest R: computed cable  page cable
+PASS  (b) largest C: computed cable  page cable
+
+===== 10.6 Two layers between charged plates =====
+PASS  (b) V(1 mm) [V], 1-D finite volume: computed 80  page 80
+PASS  (b) V(0) [V], 1-D finite volume: computed 90  page 90
+PASS  (a) D_z [C/m^2]: computed 3.54168e-07  page 3.54e-7
+PASS  (a) D_z/eps0: computed 40000  page 4e4
+PASS  (a) E1_z [V/m]: computed 10000  page 1e4
+PASS  (a) E2_z [V/m]: computed 40000  page 4e4
+PASS  (a) P1_z/eps0: computed 30000  page 3e4
+PASS  (a) P1_z [uC/m^2]: computed 0.265626  page 0.266
+PASS  (a) P2_z: computed 0  page 0
+PASS  (a) direction of D, E1, E2, P1: computed +z  page +z
+PASS  (b) V(1 mm) [V], line integral: computed 80  page 80
+PASS  (b) V(0) [V], line integral: computed 90  page 90
+PASS  (c) C/A [nF/m^2]: computed 3.93519  page 3.935
+PASS  (c) (C/A)/eps0: computed 444.444  page 444.4
+PASS  (c) 4000/9: computed 444.444  page 444.4
+PASS  (c) d1/eps_r1 + d2/eps_r2 [mm]: computed 2.25  page 2.25
+PASS  (c) series formula (C/A)/eps0: computed 444.444  page 444.4
+      (empty 3 mm gap would give 333.3 eps0: the layer raises C/A by a factor 1.333)
+PASS  (d) 1/2 (C/A) V^2 / eps0: computed 1.8e+06  page 1.8e6
+PASS  (d) 1/2 (C/A) V^2 [uJ/m^2]: computed 15.9375  page 15.94
+PASS  (d) int 1/2 eps E^2 dz [uJ/m^2]: computed 15.9375  page 15.94
+PASS  (d) dielectric layer / eps0: computed 200000  page 2e5
+PASS  (d) dielectric layer [uJ/m^2]: computed 1.77084  page 1.771
+PASS  (d) air layer / eps0: computed 1.6e+06  page 1.6e6
+PASS  (d) air layer [uJ/m^2]: computed 14.1667  page 14.17
+PASS  (d) fraction of energy in the air: computed 0.888889  page 0.889
+PASS  (d) fraction of voltage across the air: computed 0.888889  page 0.889
+PASS  check: top plate rho_s = -z.D, /eps0: computed -40000  page -4e4
+PASS  check: bound charge at z = 0+ (P1.(-z)) /eps0: computed -30000  page -3e4
+PASS  check: bound charge at z = 1 mm (P1.z) /eps0: computed 30000  page 3e4
+PASS  check: jump of eps0 E_z at 1 mm /eps0: computed 30000  page 3e4
+PASS  watch: volts across the dielectric: computed 10  page 10
+
+===== 10.7 One slab, two placements =====
+PASS  C0/eps0: computed 5  page 5
+PASS  C0 [pF]: computed 44.2709  page 44.27
+PASS  (a) C_S/C0: computed 1.5  page 1.5
+PASS  (a) C_S [pF]: computed 66.4064  page 66.41
+PASS  (a) C_P/C0: computed 2  page 2
+PASS  (a) C_P [pF]: computed 88.5419  page 88.54
+PASS  (b) C_P - C_S = C0 (er-1)^2/[2(1+er)] >= 0, zero only at er = 1 (5 values): computed True  page True
+PASS  (b) difference here / C0: computed 0.5  page 0.5
+PASS  (b) er = 81: C_S/C0: computed 1.97561  page 1.976
+PASS  (b) er = 81: C_P/C0: computed 41  page 41
+PASS  (c) stacked Q [nC]: computed 6.64064  page 6.64
+PASS  (c) stacked D [C/m^2]: computed 6.64064e-07  page 6.64e-7
+PASS  (c) stacked E in dielectric [kV/m]: computed 25  page 25
+PASS  (c) stacked E in air [kV/m]: computed 75  page 75
+PASS  (c) stacked V across dielectric [V]: computed 25  page 25
+PASS  (c) stacked V across air [V]: computed 75  page 75
+PASS  (c) side by side E [kV/m]: computed 50  page 50
+PASS  (c) rho_s against dielectric [uC/m^2]: computed 1.32813  page 1.33
+PASS  (c) rho_s against air [uC/m^2]: computed 0.442709  page 0.443
+PASS  (c) empty capacitor E [kV/m]: computed 50  page 50
+PASS  (d) C' [pF/m], 2-D finite volume: computed 80.2607  page 80.3
+PASS  (d) C' = 4 pi eps0/ln 4 [pF/m]: computed 80.2607  page 80.3
+PASS  (d) rho_s ratio, dielectric : air: computed 3  page 3
+PASS  (d) FD potential independent of phi (field radial, E common): computed True  page True
+
+===== 10.8 Diode junction capacitance =====
+PASS  (a) rho1 [C/m^3]: computed 16021.8  page 1.602e4
+PASS  (a) rho2 [C/m^3]: computed 1602.18  page 1602
+PASS  (a) 1/rho1 + 1/rho2 [m^3/C]: computed 0.000686566  page 6.87e-4
+PASS  (a) eps [F/m]: computed 1.03594e-10  page 1.036e-10
+PASS  (a) W1+W2 at 1 V [um]: computed 0.377158  page 0.3772
+PASS  (a) W1 [um]: computed 0.0342871  page 0.0343
+PASS  (a) W2 [um]: computed 0.342871  page 0.343
+PASS  (a) W1/W2: computed 0.1  page 0.1
+PASS  (a) n-side share W2/(W1+W2): computed 0.909091  page 0.909
+PASS  (a) most of the depletion region on: computed n side  page n side
+PASS  (setup) field at x = 0 points from n to p: computed -x  page -x
+PASS  (setup) closed form sqrt(2 eps V (1/rho1+1/rho2)) [um]: computed 0.377158  page 0.3772
+PASS  (b) Q at 1 V [nC]: computed 0.54934  page 0.549
+PASS  (b) C = dQ/dV, central difference [pF]: computed 274.67  page 274.7
+PASS  (b) eps A/(W1+W2) [pF]: computed 274.67  page 274.7
+PASS  (b) A sqrt(eps rho1 rho2/(2V(rho1+rho2))) [pF]: computed 274.67  page 274.7
+PASS  (b) Q/(2V) [pF]: computed 274.67  page 274.7
+PASS  (c) W1+W2 at 4 V [um]: computed 0.754316  page 0.7543
+PASS  (c) W1 [um]: computed 0.0685742  page 0.0686
+PASS  (c) W2 [um]: computed 0.685742  page 0.686
+PASS  (c) Q at 4 V [nC]: computed 1.09868  page 1.10
+PASS  (c) C at 4 V [pF]: computed 137.335  page 137.3
+PASS  (c) d ln C / d ln V: computed -0.5  page -0.5
+PASS  (d) Q/V at 1 V [pF]: computed 549.34  page 549.3
+PASS  (d) (Q/V) / (dQ/dV): computed 2  page 2
+
+===== 10.9 Leaky spheres, one lossy half   [re-parameterized: V(a) = 0, V(b) = -V0 = -100 V] =====
+PASS  (b) FD V(r) matches the page formula -200 + 2/r V (max dev < 1 mV): computed True  page True
+PASS  (b) V = A + B/r: A [V]: computed -200  page -200
+PASS  (b) V = A + B/r: B [V m]: computed 2  page 2
+PASS  (b) V0 ab/(b-a) [V m]: computed 2  page 2
+PASS  (b) E_r(a) [V/m]: computed 20000  page 2e4
+PASS  (b) E_r(b) [V/m]: computed 5000  page 5e3
+PASS  (b) E direction: computed outward (+r)  page outward (+r)
+PASS  (b) on z = 0: r_hat . z_hat = cos(pi/2) = 0 -> E tangential, D_z = J_z = 0: computed True  page True
+PASS  (b) C [pF]: computed 6.6759  page 6.676
+PASS  (b) 4 pi eps ab/(b-a) [pF]: computed 6.6759  page 6.676
+PASS  (b) charge on the inner sphere [pC]: computed 667.59  page 667.6
+PASS  (b) charge on the outer shell [pC]: computed -667.59  page -667.6
+PASS  (a)(ii) rho_s on the inner sphere / eps0: computed 60000  page 6e4
+PASS  (a)(ii) rho_s on the inner sphere [uC/m^2]: computed 0.531251  page 0.531
+PASS  (a)(i) inner sphere carries positive charge: computed True  page True
+PASS  (a)(ii) charge sits on the lower hemisphere: computed False  page False
+PASS  (c) outward current through r = 1.2 cm [nA]: computed 125.664  page 125.7
+PASS  (c)   of which through the upper half [nA]: computed 0  page 0
+PASS  (c) outward current through r = 1.8 cm [nA]: computed 125.664  page 125.7
+PASS  (c)   of which through the upper half [nA]: computed 0  page 0
+PASS  (c) current direction: computed outward: inner sphere -> shell  page outward: inner sphere -> shell
+PASS  (c) G [nS]: computed 1.25664  page 1.257
+PASS  (c) 2 pi sigma ab/(b-a) [nS]: computed 1.25664  page 1.257
+PASS  (c) R [Mohm]: computed 795.775  page 795.8
+PASS  (c) P = I (V(a)-V(b)) [uW]: computed 12.5664  page 12.57
+PASS  (c) P = int sigma E^2 dV [uW]: computed 12.5664  page 12.57
+PASS  (c) (sigma/eps) C [nS]: computed 2.51327  page 2.513
+PASS  (c) G / [(sigma/eps) C]: computed 0.5  page 0.5
+PASS  (d) time for V(b) to reach -50 V, ODE [ms]: computed 3.68235  page 3.682
+PASS  (d) 1/e time, ODE [ms]: computed 5.31251  page 5.313
+PASS  (d) tau = C/G [ms]: computed 5.31251  page 5.313
+PASS  (d) 2 eps/sigma [ms]: computed 5.31251  page 5.313
+PASS  (d) eps/sigma [ms]: computed 2.65626  page 2.656
+PASS  check: R C [ms]: computed 5.31251  page 5.313
+PASS  check: (795.8 Mohm)(6.676 pF) [ms]: computed 5.31276  page 5.313
+PASS  check: I V0 [uW]: computed 12.5664  page 12.57
+
+===== 10.10 Pulling capacitor plates apart =====
+PASS  (a) C/eps0: computed 20  page 20
+PASS  (a) C [pF]: computed 177.084  page 177.1
+PASS  (a) Q/eps0: computed 10000  page 1e4
+PASS  (a) Q [nC]: computed 88.5419  page 88.54
+PASS  (a) W/eps0: computed 2.5e+06  page 2.5e6
+PASS  (a) W [uJ]: computed 22.1355  page 22.14
+PASS  (b) V at x2 [V]: computed 1500  page 1500
+PASS  (b) W at x2 [uJ]: computed 66.4064  page 66.41
+PASS  (b) your work [uJ]: computed 44.2709  page 44.27
+PASS  (b) F_z = -dW/dx|Q at x = 1 mm [mN]: computed -22.1355  page -22.14
+PASS  (b) F_z = -dW/dx|Q at x = 2 mm [mN]: computed -22.1355  page -22.14
+PASS  (b) F_z = -dW/dx|Q at x = 3 mm [mN]: computed -22.1355  page -22.14
+PASS  (b) W(x1)/x1 [mN]: computed 22.1355  page 22.14
+PASS  (b) int (-F_z) dx [uJ]: computed 44.2709  page 44.27
+PASS  (b) second way: Q E_sheet [mN]: computed -22.1355  page -22.14
+PASS  (b) direction: computed down (attractive)  page down (attractive)
+PASS  watch: full gap field Q/(eps0 A) gives [mN]: computed 44.2709  page 44.27
+PASS  (c) C [pF]: computed 59.0279  page 59.03
+PASS  (c) Q [nC]: computed 29.514  page 29.51
+PASS  (c) W [uJ]: computed 7.37849  page 7.378
+PASS  (c) dW [uJ]: computed -14.757  page -14.76
+PASS  (c) dQ [nC]: computed -59.0279  page -59.03
+PASS  (c) battery work V0 dQ [uJ]: computed -29.514  page -29.51
+PASS  (c) V0 dQ / dW: computed 2  page 2
+PASS  (c) your work = dW - V0 dQ [uJ]: computed 14.757  page 14.76
+PASS  (d) F_z(x1) = +dW/dx|V [mN]: computed -22.1355  page -22.14
+PASS  (d) F_z(x2) [mN]: computed -2.4595  page -2.459
+PASS  (d) F_z(x2) from the charge, -Q^2/(2 eps0 A) [mN]: computed -2.4595  page -2.459
+PASS  check: int eps0 A V^2/(2 x^2) dx [uJ]: computed 14.757  page 14.76
+
+===== 10.11 Two lossy layers in series =====
+PASS  (a) R1 [Gohm]: computed 0.25  page 0.25
+PASS  (a) R2 [Gohm]: computed 1  page 1
+PASS  (a) I [nA]: computed 8  page 8
+PASS  (a) J_z [A/m^2]: computed 8e-07  page 8e-7
+PASS  (a) E1_z [V/m]: computed 2000  page 2000
+PASS  (a) E2_z [V/m]: computed 8000  page 8000
+PASS  (a) V1 [V]: computed 2  page 2
+PASS  (a) V2 [V]: computed 8  page 8
+PASS  (a) direction of J and E: computed +z  page +z
+PASS  (b) D1/eps0: computed 4000  page 4000
+PASS  (b) D1 [C/m^2]: computed 3.54168e-08  page 3.54e-8
+PASS  (b) D2/eps0: computed 32000  page 32000
+PASS  (b) D2 [C/m^2]: computed 2.83334e-07  page 2.83e-7
+PASS  (b) interface rho_s / eps0: computed 28000  page 28000
+PASS  (b) interface rho_s [C/m^2]: computed 2.47917e-07  page 2.48e-7
+PASS  (b) J (eps2/sig2 - eps1/sig1) / eps0: computed 28000  page 28000
+PASS  (b) lower plate rho_s / eps0: computed 4000  page 4000
+PASS  (b) upper plate rho_s / eps0: computed -32000  page -32000
+PASS  (b) total / eps0: computed 0  page 0
+PASS  (c) E1(0+) [V/m]: computed 6666.67  page 6667
+PASS  (c) E2(0+) [V/m]: computed 3333.33  page 3333
+PASS  (c) V1(0+) [V]: computed 6.66667  page 6.667
+PASS  (c) C2/(C1+C2) V0 [V]: computed 6.66667  page 6.667
+PASS  (c) J1(0+) [uA/m^2]: computed 2.66667  page 2.667
+PASS  (c) J2(0+) [uA/m^2]: computed 0.333333  page 0.3333
+PASS  (c) sign of the interface charge that builds up: computed positive  page positive
+PASS  (c) tau [s]: computed 0.10625  page 0.1063
+PASS  (c) (C1+C2)/(G1+G2) [s]: computed 0.10625  page 0.1063
+PASS  (c) 1/e time of V1 from the charge-conservation ODE [s]: computed 0.10625  page 0.1063
+PASS  (c) V1(t -> inf) from ODE [V]: computed 2  page 2
+PASS  (c) amplitude V1(0+) - V1(inf) [V]: computed 4.66667  page 4.67
+PASS  (c) eps1/sig1 [ms]: computed 44.2709  page 44.27
+PASS  (c) eps2/sig2 [ms]: computed 354.168  page 354.2
+PASS  (c) tau between the two relaxation times: computed True  page True
+PASS  check: rho_s(t -> inf) from ODE / eps0: computed 28000  page 28000
+PASS  (d) series C [pF]: computed 118.056  page 118.1
+PASS  (d) (sig1/eps1) C [nS]: computed 2.66667  page 2.667
+PASS  (d) (sig2/eps2) C [nS]: computed 0.333333  page 0.3333
+PASS  (d) steady G [nS]: computed 0.8  page 0.8
+PASS  (d) example: eps1/sig1 = eps2/sig2: computed True  page True
+PASS  (d) example: V1 at t = 0+ [V]: computed 6.66667  page 6.667
+PASS  (d) example: max |V1(t) - V1(0+)| [V]: computed 0  page 0.000
+PASS  (d) example: G [nS]: computed 1.33333  page 1.333
+PASS  (d) example: (sigma/eps) C [nS]: computed 1.33333  page 1.333
+
+===== 10.12 Lossy coax driven through a resistor =====
+PASS  (a) ln(b/a): computed 1.38629  page 1.3863
+PASS  (a) C' [pF/m]: computed 100.326  page 100.3
+PASS  (a) G' [nS/m]: computed 4.53236  page 4.532
+PASS  (a) C [nF]: computed 1.00326  page 1.003
+PASS  (a) G [nS]: computed 45.3236  page 45.32
+PASS  (a) R [Mohm]: computed 22.0636  page 22.06
+PASS  (a) G/C [1/s]: computed 45.1764  page 45.18
+PASS  (b) V_inf from the KCL ODE [V]: computed 8.25743  page 8.257
+PASS  (b) V_s R/(R+R_s) [V]: computed 8.25743  page 8.257
+PASS  (b) tau1 from the ODE [ms]: computed 6.90362  page 6.904
+PASS  (b) C/(G + 1/R_s) [ms]: computed 6.90362  page 6.904
+PASS  (b) R || R_s [Mohm]: computed 6.88119  page 6.881
+PASS  (b) leakage G V_inf [uA]: computed 0.374257  page 0.3743
+PASS  (b) (V_s - V_inf)/R_s [uA]: computed 0.374257  page 0.3743
+PASS  (b) G V_inf^2 [uW]: computed 3.0904  page 3.09
+PASS  (b) V_inf < 12 V: computed True  page True
+PASS  (c) W' = int 1/2 eps E^2 dA [nJ/m]: computed 3.42037  page 3.42
+PASS  (c) 1/2 C' V_inf^2 [nJ/m]: computed 3.42037  page 3.42
+PASS  (c) W total [nJ]: computed 34.2037  page 34.2
+PASS  (c) half-energy radius [mm]: computed 2  page 2
+PASS  (c) sqrt(ab) [mm]: computed 2  page 2
+PASS  (c) area share of a < r < 2 mm: computed 0.2  page 0.2
+PASS  (d) tau2 = C/G [ms]: computed 22.1355  page 22.14
+PASS  (d) eps/sigma [ms]: computed 22.1355  page 22.14
+PASS  (d) ln(V_inf / 1 V): computed 2.11111  page 2.111
+PASS  (d) time to 1 V from the ODE [ms]: computed 46.7305  page 46.73
+PASS  check: tau1 < tau2: computed True  page True
+
+===== Exam re-parameterization: the official keys must not carry over =====
+  10.6 vs Summer 2020 HE2 #1a: plates z = 0 (-2 C/m^2) and z = 2 m (+2 C/m^2); free space 0<z<1 m, eps = 2 eps0 for 1<z<2 m; V(0) = 0
+      exam key: D_z = -2.0 C/m^2, E_z = -2.26e+11 / -1.13e+11 V/m, P_z = -1 C/m^2, V(1) = 2.26e+11 V, V(2) = 3.39e+11 V, C/A = 0.6667 eps0
+PASS  [exam key differs] 10.6 D_z [C/m^2]: practice 3.542e-07  exam key -2
+PASS  [exam key differs] 10.6 P_z in the dielectric [C/m^2]: practice 2.656e-07  exam key -1
+PASS  [exam key differs] 10.6 E_z in free space [V/m]: practice 4e+04  exam key -2.259e+11
+PASS  [exam key differs] 10.6 E_z in the dielectric [V/m]: practice 1e+04  exam key -1.129e+11
+PASS  [exam key differs] 10.6 voltage between the plates [V]: practice 90  exam key 3.388e+11
+PASS  [exam key differs] 10.6 C/A [F/m^2]: practice 3.935e-09  exam key 5.903e-12
+PASS  10.6 geometry differs: dielectric layer (exam top, practice bottom), positive plate (exam top, practice bottom): computed True  page True
+  10.9 vs SP18 Exam 1 #5: inner shell grounded, outer at +V0 > 0, whole a<r<b lossy, eps = eps0 (symbolic key, evaluated at a, b, |V0| of 10.9)
+PASS  [exam key differs] 10.9 (a)(i) "inner sphere is positive": practice True  exam key False
+PASS  [exam key differs] 10.9 (a)(ii) statement: practice charge on lower hemisphere? -> False (uniform rho_s)  exam key E = 0 for r<a because grounded? -> False (reason wrong)
+PASS  [exam key differs] 10.9 E direction: practice outward  exam key inward
+PASS  [exam key differs] 10.9 charge on the inner sphere [C]: practice 6.676e-10  exam key -2.225e-10
+PASS  [exam key differs] 10.9 |Q| [C]: practice 6.676e-10  exam key 2.225e-10
+PASS  [exam key differs] 10.9 current direction: practice outward  exam key inward
+PASS  [exam key differs] 10.9 |I| [A]: practice 1.257e-07  exam key 2.513e-07
+PASS  [exam key differs] 10.9 G [S]: practice 1.257e-09  exam key 2.513e-09
+  10.12 vs Summer 2019 HE2 #1: G' = 2 uS/m, sigma = 1e-6 S/m, eps = 2 eps0; 0.5 m across 10 V with R_s = 1e6 ohm; source then removed
+PASS  [exam key differs] 10.12 C' [F/m]: practice 1.003e-10  exam key 3.542e-11
+PASS  [exam key differs] 10.12 steady cable voltage [V]: practice 8.257  exam key 5
+PASS  [exam key differs] 10.12 discharge time constant [s]: practice 0.02214  exam key 1.771e-05
+PASS  [exam key differs] 10.12 cable length [m]: practice 10  exam key 0.5
+
+TOTAL: 308 PASS, 0 FAIL

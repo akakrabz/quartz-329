@@ -23,4 +23,6 @@ aliases: ["stored energy", "energy density", "field energy"]
 
 **Where it appears.** [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]], [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] ($U = qV$, the electron-volt); [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15]] (the magnetic twin, $\tfrac12LI^2$ and $\tfrac12\mu H^2$ — [[concepts/magnetic-energy]]); Unit 3 (Poynting's theorem adds the flow of energy).
 
+**Practice.** [[practice/topics#capacitance-stored-energy-and-force|Capacitance, stored energy and force]] (8 problems) — for example [[practice/10-capacitance-and-conductance#101-four-capacitances-by-formula|10.1 Four capacitances by formula]] (easy), [[practice/10-capacitance-and-conductance#106-two-layers-between-charged-plates|10.6 Two layers between charged plates]] (medium), [[practice/10-capacitance-and-conductance#1010-pulling-capacitor-plates-apart|10.10 Pulling capacitor plates apart]] (hard).
+
 Related: [[concepts/capacitance]] · [[concepts/electrostatic-potential]].

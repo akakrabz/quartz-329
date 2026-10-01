@@ -1,0 +1,320 @@
+==========================================================================================
+14.1 Flux through a tilted loop
+==========================================================================================
+   edges a = [0.2 0.  0. ], b = [0.         0.1        0.17320508];  a x b = [ 0.         -0.03464102  0.02      ] m^2,  |a x b| = 0.040000 m^2
+   n-hat = [ 0.        -0.8660254  0.5      ]   (expect (0, -sqrt3/2, 1/2) = (0, -0.866025, 0.5))
+   angle between n-hat and z = 60.0000 deg (= tilt of the plane from xy)
+   [ok] Psi(0.0) numeric vs 0.016-0.04t: computed 0.016  expected 0.016
+   [ok] Psi(0.1) numeric vs 0.016-0.04t: computed 0.012  expected 0.012
+   [ok] Psi(0.2) numeric vs 0.016-0.04t: computed 0.008  expected 0.008
+   [ok] emf along C = -dPsi/dt [V]: computed 0.04  expected 0.04
+   [ok] I = emf/0.5 Ohm [A]: computed 0.08  expected 0.08
+   [ok] tent-surface flux at t=0.1 equals flat-square flux: computed 0.012  expected 0.012
+   field at centre of a +1 A current along C: [-1.70865465e-24 -4.89897952e-06  2.82842715e-06] T; B_ind.n = 5.657e-06 (>0), B_ind.z = 2.828e-06 (>0)
+   applied B_z decreasing (dB_z/dt = -2 T/s) and the induced field has +z component -> props it up: Lenz OK
+   ANSWER 14.1: n = (0,-sqrt3/2,1/2); Psi = (0.8-2t)(0.02) = 0.016-0.04t Wb; emf = +0.04 V = 40 mV along C; I = 80 mA along C
+   given: corners (0,0,0), (0.2,0,0), (0.2,0.1,0.1sqrt3), (0,0.1,0.1sqrt3) m; B = (0.8-2t) z T; R = 0.5 Ohm
+   |a| = 0.2000 m, |b| = 0.2000 m, a.b = 0.0e+00: a 0.2 m x 0.2 m square
+   0.02 sqrt3 = 0.03464102 = -(a x b)_y; shadow on xy: 0.2 m x 0.1 m rectangle, area 0.0200 m^2 = (a x b)_z
+==========================================================================================
+14.2 Current from a ramping field (MC)
+==========================================================================================
+   B(0) = +0.7 z T: Psi(0) = +0.042000 Wb, emf (CCW) = +0.300000 V -> counter-clockwise seen from +z
+   B(0) = -0.7 z T: Psi(0) = -0.042000 Wb, emf (CCW) = +0.300000 V -> counter-clockwise seen from +z
+   [ok] area [m^2]: computed 0.06  expected 0.06
+   [ok] |emf| [V]: computed 0.3  expected 0.3
+   [ok] |I| = |emf|/3 Ohm [A]: computed 0.1  expected 0.1
+   CCW current -> field at centre [0.00000000e+00 0.00000000e+00 4.80740173e-06] (along +z): opposes the decrease of B_z  -> option (b) 100 mA CCW
+   [ok] distractor: 600 cm^2 read as 0.6 m^2 -> I [A]: computed 1  expected 1
+   [ok] distractor: 600 cm^2 read as 0.006 m^2 -> I [A]: computed 0.01  expected 0.01
+   curl E check: for E_phi = -(r/2) dB/dt (symmetric about the z axis), (curl E)_z = -dB/dt = +5 /s != 0
+   given: 0.2 m x 0.3 m rectangle (600 cm^2) in z = 0, R = 3 Ohm, B = (0.7 - 5t) z T
+   [ok] time at which B_z passes through zero [s] (the current does not reverse there): computed 0.14  expected 0.14
+==========================================================================================
+14.3 Magnet pulled up through a ring (MC)
+==========================================================================================
+   case: north UP, pulled up   (this problem)
+   [ok]   approaching: flux numeric vs closed form mu0 m R^2/2(R^2+h^2)^1.5 at h=-0.1: computed 1.123970357e-06  expected 1.123970357e-06
+   [ok]   approaching: motional emf in the magnet's frame = -dPsi/dt: computed -1.348764428e-05  expected -1.348764434e-05
+     approaching: emf(CCW) = -1.3488e-05 V -> current clockwise seen from +z; induced B at centre z-comp -1.257e-05; force on ring F_z = +2.698e-05 N per A (magnet moving +z)
+   [ok]   receding: flux numeric vs closed form mu0 m R^2/2(R^2+h^2)^1.5 at h=0.1: computed 1.123970357e-06  expected 1.123970357e-06
+   [ok]   receding: motional emf in the magnet's frame = -dPsi/dt: computed 1.348764428e-05  expected 1.348764434e-05
+     receding: emf(CCW) = +1.3488e-05 V -> current counter-clockwise seen from +z; induced B at centre z-comp +1.257e-05; force on ring F_z = +2.698e-05 N per A (magnet moving +z)
+   case: north DOWN, dropped   (SP18 original)
+   [ok]   approaching: flux numeric vs closed form mu0 m R^2/2(R^2+h^2)^1.5 at h=0.1: computed -1.123970357e-06  expected -1.123970357e-06
+   [ok]   approaching: motional emf in the magnet's frame = -dPsi/dt: computed 1.348764428e-05  expected 1.348764434e-05
+     approaching: emf(CCW) = +1.3488e-05 V -> current counter-clockwise seen from +z; induced B at centre z-comp +1.257e-05; force on ring F_z = -2.698e-05 N per A (magnet moving -z)
+   [ok]   receding: flux numeric vs closed form mu0 m R^2/2(R^2+h^2)^1.5 at h=-0.1: computed -1.123970357e-06  expected -1.123970357e-06
+   [ok]   receding: motional emf in the magnet's frame = -dPsi/dt: computed -1.348764428e-05  expected -1.348764434e-05
+     receding: emf(CCW) = -1.3488e-05 V -> current clockwise seen from +z; induced B at centre z-comp -1.257e-05; force on ring F_z = -2.698e-05 N per A (magnet moving -z)
+   -> north up, pulled up: clockwise while approaching, counter-clockwise while receding = option (b)
+   -> SP18 version (north down, dropped): counter-clockwise then clockwise = distractor (a)
+   force on ring is along the magnet's velocity in both phases: the magnet feels the reaction against its motion
+   model: dipole moment 1.0 A m^2, ring radius 0.05 m (5 cm), magnet speed 0.5 m/s
+==========================================================================================
+14.4 Lenz's rule true or false
+==========================================================================================
+   [ok] (a) shrinking loop: motional emf = -dPsi/dt: computed 0.005654866776  expected 0.005654866776
+   (a) emf(CCW) = +5.6549e-03 V -> counter-clockwise seen from +z: TRUE; induced field z-comp +6.98e-06 (parallel to applied +z)
+   (b) translating loop: v x B = [ 0. -1.  0.] V/m (nonzero), -dPsi/dt = -0.00e+00 V, loop integral of v x B = 0.00e+00 V: FALSE
+   (c) B = -B0 exp(-t/tau) z: Psi(1) = -9.5274e-03 Wb, emf(CCW) = -4.7637e-03 V -> clockwise seen from +z: TRUE; induced field z-comp -6.28e-06 (parallel to applied -z)
+   (d) cut ring: emf of the closed path through the gap is unchanged = -4.7637e-03 V (not zero), current 0: FALSE
+   (e) induced field parallel to the applied field in (a) [+1] and (c) [+1]: FALSE
+   given: B = 0.5 z T; (a) radius 0.1 m shrinking at 0.02 m/s; (b) 0.3 m square, v = 2 x m/s; (c) radius 0.1 m, B = -0.5 exp(-t/2) z T (tau = 2 s)
+   [ok] (a) emf at t = 0 (r = 0.1 m) = 2 pi r |dr/dt| B [V]: computed 0.006283185307  expected 0.006283185307
+   (a) emf at the start = 6.2832 mV (counter-clockwise)
+   (a) v x B on the ring at (0.1,0,0) = [0.   0.01 0.  ] V/m: +0.01 V/m along +y = +phi there -> counter-clockwise
+   (b) flux of the square = 0.0450 Wb (constant); edge integrals of v x B (bottom, right, top, left) = [0.0, -0.3, 0.0, 0.3] V
+   (c) Psi(1 s) = -9.527 mWb, emf(1 s) = -4.764 mV
+==========================================================================================
+14.5 Find the error, double-counted emf
+==========================================================================================
+   [ok] Psi(t=0.2) = B l v t [Wb]: computed 0.12  expected 0.12
+   [ok] flux route: emf(CCW) = -dPsi/dt [V]: computed -0.6  expected -0.6
+   v x B = [ 0.  -1.5  0. ] V/m (along -y: pushes + charge to the y=0 end of the bar)
+   [ok] motional route: integral of v x B up the bar (CCW direction +y) [V]: computed -0.6  expected -0.6
+   transformer part: dB/dt = 0 everywhere -> loop integral of E = 0; the two routes are the SAME emf
+   student: -0.60 + (-0.60) = -1.20 V, I = 2.00 A  (wrong, doubled)
+   [ok] correct |emf| [V]: computed 0.6  expected 0.6
+   [ok] correct I [A]: computed 1  expected 1
+   emf(CCW) < 0 -> current clockwise seen from +z, i.e. down the bar (-y); force on bar I l x B = [-0.12  0.    0.  ] N (drag)
+   Lenz: +z flux growing, clockwise current makes -z field inside: OK
+   given: rails on y = 0 and y = 0.4 m, R = 0.6 Ohm at x = 0, bar at x = 5.0 t m, B = 0.3 z T; Psi = 0.60 t Wb
+==========================================================================================
+14.6 Rotating rod on a circular rail
+==========================================================================================
+   [ok] emf along the rod pivot->rim = integral of (v x B).dl [V]: computed 1  expected 1
+   [ok] closed form B w L^2/2 [V]: computed 1  expected 1
+   [ok] flux route -dPsi/dt around C (sector, dS=-z) [V]: computed 1  expected 1
+   (v x B).u_rod at the tip = +4.000 V/m > 0: points outward -> rim end is the + terminal
+   [ok] I [A]: computed 4  expected 4
+   [ok] magnetic torque about z [N m] (current outward): computed -0.1  expected -0.1
+   [ok] applied torque [N m]: computed 0.1  expected 0.1
+   [ok] mechanical power tau*omega [W]: computed 4  expected 4
+   [ok] I^2 R [W]: computed 4  expected 4
+   [ok] emf * I [W]: computed 4  expected 4
+   [ok] 2nd parameter set (B=0.7,L=0.3,w=25): rod integral vs BwL^2/2: computed 0.7875  expected 0.7875
+   [ok] 2nd parameter set: flux route vs BwL^2/2: computed 0.7875  expected 0.7875
+   Lenz: the sector's +z flux grows; current along C (clockwise) makes -z field in the sector: OK
+   given: L = 0.5 m, omega = 40 rad/s (CCW from +z), B = 0.2 z T, R = 0.25 Ohm, rail radius 0.5 m, lead along the x axis to (0.5,0,0)
+   L^2 = 0.2500 m^2; torque I B L^2/2 = 0.1000 N m
+==========================================================================================
+14.7 Generator coil in a uniform field
+==========================================================================================
+   [ok] omega = 1800 rpm [rad/s] = 60 pi: computed 188.4955592  expected 188.4955592
+   n(0) = [-0.  1.  0.]; (c2-c1)x(c3-c2) at t=0 = [-0.     0.002  0.   ] (along +y: corner order matches n)
+   [ok] peak emf N B A w [V] = 1.5 pi: computed 4.71238898  expected 4.71238898
+   [ok] Psi per turn at t=0.00000 vs -5e-4 sin(wt): computed 0  expected -0
+   [ok] emf flux route at t=0.00000 vs 1.5pi cos(wt): computed 4.71238898  expected 4.71238898
+   [ok] emf motional route at t=0.00000 vs 1.5pi cos(wt): computed 4.71238898  expected 4.71238898
+   [ok] Psi per turn at t=0.00208 vs -5e-4 sin(wt): computed -0.0001913417162  expected -0.0001913417162
+   [ok] emf flux route at t=0.00208 vs 1.5pi cos(wt): computed 4.353679728  expected 4.353679728
+   [ok] emf motional route at t=0.00208 vs 1.5pi cos(wt): computed 4.353679728  expected 4.353679728
+   [ok] Psi per turn at t=0.00556 vs -5e-4 sin(wt): computed -0.0004330127019  expected -0.0004330127019
+   [ok] emf flux route at t=0.00556 vs 1.5pi cos(wt): computed 2.35619449  expected 2.35619449
+   [ok] emf motional route at t=0.00556 vs 1.5pi cos(wt): computed 2.35619449  expected 2.35619449
+   [ok] Psi per turn at t=0.01230 vs -5e-4 sin(wt): computed -0.0003666276731  expected -0.0003666276731
+   [ok] emf flux route at t=0.01230 vs 1.5pi cos(wt): computed -3.204204809  expected -3.204204809
+   [ok] emf motional route at t=0.01230 vs 1.5pi cos(wt): computed -3.204204809  expected -3.204204809
+   t=0 per-turn edge contributions (top, right, bottom, left) = [0.       0.047124 0.       0.047124] V
+   [ok] speed of a 5 cm side, w*w/2 [m/s] = 1.2 pi: computed 3.769911184  expected 3.769911184
+   [ok] per side |v x B| h [V] = 0.015 pi: computed 0.0471238898  expected 0.0471238898
+   v at right side (t=0) = [0.         3.76991118 0.        ]; v x B = [ 0.         0.        -0.9424778] (along -z, the path runs -z there)
+   [ok] current amplitude [A] = 0.15 pi: computed 0.471238898  expected 0.471238898
+   [ok] average power [W] (numerical time average): computed 1.110330495  expected 1.110330495
+   average power = 1.1103 W
+   Lenz just after t=0: per-turn flux becomes negative (along -y); positive emf -> current along C makes +y field: opposes OK
+   [ok] 2nd set (N=20,B_y=0.4,w=100pi) flux route at t=0.001: computed 1.630953272  expected 1.630953273
+   [ok] 2nd set motional route at t=0.001: computed 1.630953273  expected 1.630953273
+   [ok] 2nd set (N=20,B_y=0.4,w=100pi) flux route at t=0.0047: computed 5.254452258  expected 5.254452259
+   [ok] 2nd set motional route at t=0.0047: computed 5.254452259  expected 5.254452259
+   given: N = 50, 0.04 m wide x 0.05 m tall, 1800 rpm about z, B = 0.25 x T, R = 10 Ohm
+   area per turn = 0.0020 m^2; sides at x = +-0.02 m at t = 0
+   [ok] omega t at t = 1/180 s = pi/3: computed 1.047197551  expected 1.047197551
+   [ok] emf at t = 1/180 s [V] = 0.75 pi: computed 2.35619449  expected 2.35619449
+   [ok] v x B on the x = +2 cm side at t = 0, z-comp [V/m] = -0.3 pi: computed -0.9424777961  expected -0.9424777961
+   [ok] motional emf of one turn at t = 0 [V] = 0.03 pi: computed 0.09424777961  expected 0.09424777961
+   emf(1/180 s) = 2.3562 V; current amplitude = 0.4712 A
+==========================================================================================
+14.8 Square loop in a graded field
+==========================================================================================
+   [ok] Psi(0.0) vs 0.004 + 0.06 t [Wb]: computed 0.004  expected 0.004
+   [ok] Psi(0.1) vs 0.004 + 0.06 t [Wb]: computed 0.01  expected 0.01
+   [ok] emf(CCW) flux route [V]: computed -0.06  expected -0.06
+   [ok] emf(CCW) motional route [V]: computed -0.06  expected -0.06
+   edge contributions (bottom, right, top, left) at t=0.0123 = [ 0.      -0.10107  0.       0.04107] V
+   [ok] right edge = -v B(x2) s at t=0 [V]: computed -0.09  expected -0.09
+   [ok] left edge = +v B(x1) s at t=0 [V]: computed 0.03  expected 0.03
+   [ok] I [A]: computed 1.2  expected 1.2
+   emf(CCW) < 0 -> current clockwise seen from +z
+   magnetic force on the loop = [-0.024  0.     0.   ] N
+   [ok] F_x [N]: computed -0.024  expected -0.024
+   [ok] applied force [N]: computed 0.024  expected 0.024
+   [ok] power F v [W]: computed 0.072  expected 0.072
+   [ok] I^2 R [W]: computed 0.072  expected 0.072
+   [ok] circle of equal area: flux route [V]: computed -0.06  expected -0.06
+   [ok] circle of equal area: motional route [V]: computed -0.06  expected -0.06
+   div B = 0.00e+00, curl B = [np.float64(0.0), np.float64(-5.204725539442734e-13), np.float64(0.0)]
+   [ok] 2nd set (B0=0.8,a=2,s=0.3,v=1.5): flux route vs -B0 s^2 v/a: computed -0.054  expected -0.054
+   [ok] 2nd set: motional route vs -B0 s^2 v/a: computed -0.054  expected -0.054
+   given: B = 0.5 (z x + x z) T, square of side 0.2 m, R = 0.05 Ohm, v = 3 x m/s; at t = 0: 0.1 <= x <= 0.3 m, 0 <= y <= 0.2 m
+   B_z at x1 = 0.1 m: 0.0500 T; at x2 = 0.3 m: 0.1500 T; at the centre 0.2 m: 0.1000 T; B(x2)-B(x1) = 0.1000 T
+   v x B at (1,0,0) = [ 0.  -1.5  0. ] V/m  -> v x B = -1.5 x y-hat V/m; area = 0.0400 m^2
+   [ok] Psi(0) = B_z(centre) x area [Wb]: computed 0.004  expected 0.004
+   [ok] emf for any shape = -0.5 v A [V]: computed -0.06  expected -0.06
+   per-edge forces at t = 0, clockwise current (top, right, bottom, left) [N]: [[0.0, -0.024, 0.0], [-0.036, 0.0, 0.0], [0.0, 0.024, -0.0], [0.012, 0.0, 0.0]]
+   [ok] force on right edge [N]: computed -0.036  expected -0.036
+   [ok] force on left edge [N]: computed 0.012  expected 0.012
+==========================================================================================
+14.9 Loop crossing a field strip
+==========================================================================================
+   phase boundaries: entry 0 -> s/v = 0.04 s; fully inside 0.04 -> w/v = 0.10 s; exit 0.10 -> (w+s)/v = 0.14 s
+   [ok] Psi(0.02) [Wb]: computed -0.008  expected -0.008
+   [ok] Psi(0.04) [Wb]: computed -0.016  expected -0.016
+   [ok] Psi(0.07) [Wb]: computed -0.016  expected -0.016
+   [ok] Psi(0.12) [Wb]: computed -0.008  expected -0.008
+   [ok] Psi(0.15) [Wb]: computed 0  expected 0
+   [ok] emf(CCW) at t=0.02 flux route [V]: computed 0.4  expected 0.4
+   [ok] emf(CCW) at t=0.02 motional route [V]: computed 0.4  expected 0.4
+     t=0.02: I(CCW) = +4.0000 A (counter-clockwise seen from +z), magnetic force on loop = [-0.32  0.    0.  ] N
+   [ok] emf(CCW) at t=0.07 flux route [V]: computed -0  expected 0
+   [ok] emf(CCW) at t=0.07 motional route [V]: computed 0  expected 0
+     t=0.07: I(CCW) = -0.0000 A (no current), magnetic force on loop = [0. 0. 0.] N
+   [ok] emf(CCW) at t=0.12 flux route [V]: computed -0.4  expected -0.4
+   [ok] emf(CCW) at t=0.12 motional route [V]: computed -0.4  expected -0.4
+     t=0.12: I(CCW) = -4.0000 A (clockwise seen from +z), magnetic force on loop = [-0.32  0.    0.  ] N
+   [ok] emf(CCW) at t=0.15 flux route [V]: computed -0  expected 0
+   [ok] emf(CCW) at t=0.15 motional route [V]: computed 0  expected 0
+     t=0.15: I(CCW) = -0.0000 A (no current), magnetic force on loop = [0. 0. 0.] N
+   [ok] |I| entering [A]: computed 4  expected 4
+   [ok] force needed while entering/leaving [N]: computed 0.32  expected 0.32
+   [ok] force needed while leaving [N]: computed 0.32  expected 0.32
+   CCW current -> field at loop centre z-comp +5.66e-06 (+z): opposes the growing -z flux while entering
+   [ok] work done by the applied force [J]: computed 0.128  expected 0.128
+   [ok] heat in R [J]: computed 0.128  expected 0.128
+   (e) w = 0.1 m: phases 0-0.02 s (leading edge in strip), 0.02-0.04 s (strip inside loop), 0.04-0.06 s (trailing edge in strip)
+   [ok]    narrow strip emf at t=0.01 flux route: computed 0.4  expected 0.4
+   [ok]    narrow strip emf at t=0.01 motional route: computed 0.4  expected 0.4
+   [ok]    narrow strip emf at t=0.03 flux route: computed -0  expected 0
+   [ok]    narrow strip emf at t=0.03 motional route: computed 0  expected 0
+   [ok]    narrow strip emf at t=0.05 flux route: computed -0.4  expected -0.4
+   [ok]    narrow strip emf at t=0.05 motional route: computed -0.4  expected -0.4
+   [ok]    narrow strip emf at t=0.07 flux route: computed -0  expected 0
+   [ok]    narrow strip emf at t=0.07 motional route: computed 0  expected 0
+   [ok]    narrow strip flux on the plateau [Wb]: computed -0.008  expected -0.008
+   [ok]    narrow strip total heat [J]: computed 0.064  expected 0.064
+   given: B = -0.4 z T for 0 < x < 0.5 m (0 outside), loop side 0.2 m, R = 0.1 Ohm, v = 5 x m/s, leading edge at x = 0 at t = 0
+   leading edge leaves at w/v = 0.10 s; trailing edge leaves at (w+s)/v = 0.14 s with w+s = 0.7 m
+   v x B inside the strip = [-0.  2.  0.] V/m
+   I^2 R = 1.60 W for 0.08 s -> 0.1280 J; work = 0.32 N x 0.4 m = 0.1280 J
+   narrow strip: 1.60 W x 0.04 s = 0.0640 J
+==========================================================================================
+14.10 Voltmeters around a ramping solenoid
+==========================================================================================
+   [ok] emf(CCW) of the square = -dPsi/dt [V]: computed 1.2  expected 1.2
+   [ok] emf(CCW) = loop integral of induced E around the square [V]: computed 1.2  expected 1.2
+   [ok] I (CCW) [A]: computed 0.2  expected 0.2
+   current counter-clockwise seen from +z: up through R1 (x=+1), left through R2 (top), down through R3 (x=-1), right along the bottom wire
+   [ok] walking the circuit returns to V_c(P1) = 0: computed -5.551115123e-17  expected 0
+   Coulomb (charge) potentials of the nodes, V_c(P1) = 0: {'P1': 0.0, 'P2': 0.1, 'P3': -0.0, 'P4': -0.3}
+   [ok] meter 1 (+P1, -P2, leads just right of R1) [V]: computed 0.2  expected 0.2
+   [ok] meter 2 (+P1, -P2, leads round the left of the solenoid) [V]: computed -1  expected -1
+   [ok] meter 3 (+P4, -P1, leads inside the square above the solenoid) [V]: computed -1.2  expected -1.2
+   [ok] meter 3' (+P4, -P1, leads just below the bottom wire) [V]: computed -1.110223025e-16  expected 0
+   [ok] meter1 - meter2 = emf linked by the two lead routes [V]: computed 1.2  expected 1.2
+   [ok] drop I R1 [V]: computed 0.2  expected 0.2
+   [ok] drop I R2 [V]: computed 0.4  expected 0.4
+   [ok] drop I R3 [V]: computed 0.6  expected 0.6
+   readings: meter1 = +0.2000 V, meter2 = -1.0000 V, meter3 = -1.2000 V, meter3' (below) = -1.11e-16 V
+   E_ind at (0.5,0,0) = [-0.          0.38197186  0.        ] V/m  (E_phi = 0.3820 V/m, counter-clockwise)
+   E_ind at (1.0,0,0) = [-0.          0.19098593  0.        ] V/m  (E_phi = 0.1910 V/m, counter-clockwise)
+   CCW loop current makes field [0.00000000e+00 0.00000000e+00 5.65685429e-07] at the centre (+z): props up the decreasing +z flux, Lenz OK
+   given: solenoid radius 0.2 m, dPsi_s/dt = -1.2 Wb/s; corners P1(1,-1) P2(1,1) P3(-1,1) P4(-1,-1) m; R1 = 1, R2 = 2, R3 = 3 Ohm; P4P1 plain wire
+   total resistance = 6 Ohm; E_phi = 1.2/(2 pi r) V/m
+   lead routes: meter 1 along x = 1.1 m; meter 2 along y = -1.1, x = -1.1, y = 1.1 m; meter 3 inside the square along x = -0.9, y = 0.5, x = 0.9 m; meter 3' along y = -1.1 m
+==========================================================================================
+14.11 Magnetic braking
+==========================================================================================
+   [ok] k = B^2 l^2 / R [kg/s]: computed 0.2  expected 0.2
+   [ok] tau = m R/(B^2 l^2) [s]: computed 0.5  expected 0.5
+   [ok] v(0.25) solve_ivp vs 3 e^(-2t): computed 1.819591979  expected 1.819591979
+   [ok] v(0.5) solve_ivp vs 3 e^(-2t): computed 1.103638324  expected 1.103638324
+   [ok] v(1.0) solve_ivp vs 3 e^(-2t): computed 0.4060058497  expected 0.4060058497
+   [ok] distance travelled [m] (x at t=20 s): computed 1.5  expected 1.5
+   [ok] heat = integral I^2 R dt [J]: computed 0.45  expected 0.45
+   [ok] initial KE [J]: computed 0.45  expected 0.45
+   [ok] emf(CCW) at v=3 m/s, flux route [V]: computed -0.6  expected -0.6
+   [ok] emf(CCW) at v=3 m/s, motional route [V]: computed -0.6  expected -0.6
+   [ok] I at t=0 [A]: computed 3  expected 3
+   current clockwise seen from +z -> down the bar (-y); force on bar = [-0.6  0.   0. ] N (against +x velocity)
+   [ok] |F| at t=0 [N]: computed 0.6  expected 0.6
+   [ok] 2nd set (m=.2,R=.5,B=.3,l=.4,v0=2): distance vs v0 m R/(B^2 l^2): computed 13.88888889  expected 13.88888889
+   [ok] (d) terminal speed [m/s] = F R/(B l)^2: computed 3  expected 3
+   [ok] (d) v(0.5) vs 3(1-e^(-2t)): computed 1.896361676  expected 1.896361676
+   [ok] (d) v(1.0) vs 3(1-e^(-2t)): computed 2.59399415  expected 2.59399415
+   [ok] (d) v(0.5) value [m/s]: computed 1.896361676  expected 1.896361676
+   [ok] (d) power at terminal speed F v [W]: computed 1.8  expected 1.8
+   [ok] (d) I^2 R at terminal speed [W]: computed 1.8  expected 1.8
+   given: m = 0.1 kg, R = 0.2 Ohm, B = 0.4 z T, rails y = 0 and y = l = 0.5 m, v0 = 3 x m/s; (d) F = 0.6 N from rest
+   B^2 = 0.16 T^2, l^2 = 0.25 m^2; 1/tau = 2 1/s; terminal current v B l / R = 3.0 A
+==========================================================================================
+14.12 Shrinking ring in a ramping solenoid
+==========================================================================================
+   [ok] E_phi(r=0.030) from -dPsi/dt/(2 pi r) vs formula: computed -0.03  expected -0.03
+   [ok] E_phi(r=0.070) from -dPsi/dt/(2 pi r) vs formula: computed -0.07  expected -0.07
+   [ok] E_phi(r=0.100) from -dPsi/dt/(2 pi r) vs formula: computed -0.099999999  expected -0.099999999
+   [ok] E_phi(r=0.150) from -dPsi/dt/(2 pi r) vs formula: computed -0.06666666667  expected -0.06666666667
+   [ok] E_phi(r=0.200) from -dPsi/dt/(2 pi r) vs formula: computed -0.05  expected -0.05
+   [ok] E_phi(r=0.300) from -dPsi/dt/(2 pi r) vs formula: computed -0.03333333333  expected -0.03333333333
+   E_phi inside = -r (V/m, r in m), outside = -0.01/r: at r=a -0.1000, at r=2a -0.0500 V/m -> negative = clockwise seen from +z
+   (curl E)_z at [0.04 0.03] (rho = 0.050) = -2.000000  (expect -2.0)
+   (curl E)_z at [ 0.25 -0.1 ] (rho = 0.269) = -0.000000  (expect 0.0)
+   [ok] 2nd set (a=0.05, dB/dt=-3) E_phi(r=0.02): computed 0.03  expected 0.03
+   [ok] 2nd set (a=0.05, dB/dt=-3) E_phi(r=0.09): computed 0.04166666667  expected 0.04166666667
+   [ok] t=0.0: flux numeric vs pi r^2 B: computed 0.002010619298  expected 0.002010619298
+   [ok] t=0.0: -dPsi/dt vs 3pi(0.08-0.5t)(t-0.02): computed -0.01507964474  expected -0.01507964474
+   [ok] t=0.0: transformer part (loop int of E) vs -pi r^2 dB/dt: computed -0.04021238597  expected -0.04021238597
+   [ok] t=0.0: motional part (loop int of v x B) vs 2 pi r u B: computed 0.02513274123  expected 0.02513274123
+   [ok] t=0.0: transformer + motional = -dPsi/dt: computed -0.01507964474  expected -0.01507964474
+     t=0.0: r=0.080 m, B=0.100 T, Psi=2.01062e-03 Wb, transformer=-40.212 mV, motional=+25.133 mV, emf=-15.080 mV -> clockwise seen from +z
+   [ok] t=0.01: flux numeric vs pi r^2 B: computed 0.002120575041  expected 0.002120575041
+   [ok] t=0.01: -dPsi/dt vs 3pi(0.08-0.5t)(t-0.02): computed -0.007068583472  expected -0.007068583471
+   [ok] t=0.01: transformer part (loop int of E) vs -pi r^2 dB/dt: computed -0.03534291735  expected -0.03534291735
+   [ok] t=0.01: motional part (loop int of v x B) vs 2 pi r u B: computed 0.02827433388  expected 0.02827433388
+   [ok] t=0.01: transformer + motional = -dPsi/dt: computed -0.007068583471  expected -0.007068583472
+     t=0.01: r=0.075 m, B=0.120 T, Psi=2.12058e-03 Wb, transformer=-35.343 mV, motional=+28.274 mV, emf=-7.069 mV -> clockwise seen from +z
+   [ok] t=0.02: flux numeric vs pi r^2 B: computed 0.00215513256  expected 0.00215513256
+   [ok] t=0.02: -dPsi/dt vs 3pi(0.08-0.5t)(t-0.02): computed -1.517883041e-12  expected 0
+   [ok] t=0.02: transformer part (loop int of E) vs -pi r^2 dB/dt: computed -0.03078760801  expected -0.03078760801
+   [ok] t=0.02: motional part (loop int of v x B) vs 2 pi r u B: computed 0.03078760801  expected 0.03078760801
+   [ok] t=0.02: transformer + motional = -dPsi/dt: computed 0  expected -1.517883041e-12
+     t=0.02: r=0.070 m, B=0.140 T, Psi=2.15513e-03 Wb, transformer=-30.788 mV, motional=+30.788 mV, emf=-0.000 mV -> zero
+   [ok] t=0.05: flux numeric vs pi r^2 B: computed 0.001900663555  expected 0.001900663555
+   [ok] t=0.05: -dPsi/dt vs 3pi(0.08-0.5t)(t-0.02): computed 0.01555088363  expected 0.01555088364
+   [ok] t=0.05: transformer part (loop int of E) vs -pi r^2 dB/dt: computed -0.01900663555  expected -0.01900663555
+   [ok] t=0.05: motional part (loop int of v x B) vs 2 pi r u B: computed 0.03455751919  expected 0.03455751919
+   [ok] t=0.05: transformer + motional = -dPsi/dt: computed 0.01555088364  expected 0.01555088363
+     t=0.05: r=0.055 m, B=0.200 T, Psi=1.90066e-03 Wb, transformer=-19.007 mV, motional=+34.558 mV, emf=+15.551 mV -> counter-clockwise seen from +z
+   [ok] t=0.1: flux numeric vs pi r^2 B: computed 0.0008482300165  expected 0.0008482300165
+   [ok] t=0.1: -dPsi/dt vs 3pi(0.08-0.5t)(t-0.02): computed 0.0226194671  expected 0.02261946711
+   [ok] t=0.1: transformer part (loop int of E) vs -pi r^2 dB/dt: computed -0.005654866776  expected -0.005654866776
+   [ok] t=0.1: motional part (loop int of v x B) vs 2 pi r u B: computed 0.02827433388  expected 0.02827433388
+   [ok] t=0.1: transformer + motional = -dPsi/dt: computed 0.02261946711  expected 0.0226194671
+     t=0.1: r=0.030 m, B=0.300 T, Psi=8.48230e-04 Wb, transformer=-5.655 mV, motional=+28.274 mV, emf=+22.619 mV -> counter-clockwise seen from +z
+   [ok] time the emf (and current) reverses [s]: computed 0.02  expected 0.02
+   [ok] flux at t1 is the maximum, pi r^2 B [Wb]: computed 0.00215513256  expected 0.00215513256
+   Psi(t1) = 2.1551e-03 Wb; Psi(0) = 2.0106e-03; Psi(0.04) = 2.0358e-03 (both smaller)
+   t=0.0: induced current clockwise -> its field at centre z-comp -7.85e-06
+   t=0.05: induced current counter-clockwise -> its field at centre z-comp +1.14e-05
+   [ok] emf at t=0 [mV]: computed -15.07964474  expected -15.07964
+   [ok] emf at t=0.1 [mV]: computed 22.61946711  expected 22.61947
+   [ok] transformer part at t=0 [mV] = -12.8 pi: computed -40.21238597  expected -40.21239
+   [ok] motional part at t=0 [mV] = 8 pi: computed 25.13274123  expected 25.13274
+   given: a = 0.1 m, B = (0.1 + 2t) z T inside, 0 outside; ring r(t) = 0.08 - 0.5t m for 0 <= t <= 0.1 s
+   r(0)^2 = 0.0064 m^2
+   [ok] bracket 2B dr/dt + r dB/dt at t=0.0 vs 0.06 - 3t: computed 0.06  expected 0.06
+   [ok] bracket 2B dr/dt + r dB/dt at t=0.05 vs 0.06 - 3t: computed -0.09  expected -0.09
+   [ok] emf at t=0 [mV] = -4.8 pi: computed -15.07964474  expected -15.07964474
+   [ok] emf at t=0.1 [mV] = 7.2 pi: computed 22.61946711  expected 22.61946711
+==========================================================================================
+FAILED CHECKS: none

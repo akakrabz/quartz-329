@@ -1,0 +1,238 @@
+======================================================================
+5.1  Uniform field E = 50 x V/m, a = (1,2,0), b = (4,-2,0)
+  int_a^b E.dl: straight 150.000000, staircase 150.000000, wiggly 150.000000 V
+  [OK] V(b)-V(a) = -int (all paths): computed [-150. -150. -150.]  expected [-150. -150. -150.]
+  distractor: |b-a| = 5.0 m, 50*|b-a| = 250.0 V  (option c = -250 V)
+  [OK] curl of uniform field: computed [0. 0. 0.]  expected [0. 0. 0.]
+  [page] displacement b-a = [ 3 -4  0] m; staircase via (1,-2,0): legs 0.000000 V and 150.000000 V
+======================================================================
+5.2  Point charges, V(P) and work on an electron
+  distances to P: [1.  0.8 0.6] m
+  V(P) with 9e9: 18.000000 V ; with exact 1/(4 pi eps0): 17.975104 V
+  [page] Q_i/R_i = [ 2. -5.  5.] nC/m, sum = 2.000000 nC/m; e = 1.602176634e-19 C
+  [OK] V(P) (9e9): computed 18.0  expected 18.0
+  brute-force V(P) = -int_inf^P E.dl along a ray (9e9) = 18.000000 V
+  [OK] V(P) brute force: computed 18.000000000000007  expected 18.0
+  work on electron: -18.0000 eV = -2.883918e-18 J (exact-k value -2.879929e-18 J)
+  [OK] W (J): computed -2.8839179411999997e-18  expected -2.88e-18
+======================================================================
+5.3  True/false support computations
+  (b) V(mid) = 0.0 V, E(mid) = 1797.510 V/m along +x (= 2q/(4 pi eps0 d^2))
+  [OK] (b) E_mid formula: computed 1797.510358452234  expected 1797.510358452234
+  [OK] (b) E_mid by vector sum: computed [1797.510358    0.          0.      ]  expected [1797.510358    0.          0.      ]
+  (c) V inside shell at z=0,0.05,0.1,0.15 m: [44.937759 44.937759 44.937759 44.937759] V; Q/(4 pi eps0 a) = 44.937759 V
+  [OK] (c) V constant inside shell: computed [44.937759 44.937759 44.937759 44.937759]  expected [44.937759 44.937759 44.937759 44.937759]
+  [OK] (d) curl at (0.3, 0.7, 0) = -(sin x + cos y) z: computed [ 0.        0.       -1.060362]  expected [ 0.        0.       -1.060362]
+  [OK] (d) curl at (1.2, -0.4, 2.0) = -(sin x + cos y) z: computed [ 0.      0.     -1.8531]  expected [ 0.      0.     -1.8531]
+  [OK] (d) curl at (2.0, 1.0, 0) = -(sin x + cos y) z: computed [ 0.      0.     -1.4496]  expected [ 0.      0.     -1.4496]
+  [page] inputs: (b) q = 1e-09 C, d = 0.1 m; (c) Q = 1e-09 C, a = 0.2 m; (e) E = [10.  0.  0.] V/m, step 1e-3 m along F
+  (e) proton: moves along +1 x, dV = -0.0100 V (toward lower V), dU = -1.602e-21 J (<0)
+  (e) electron: moves along -1 x, dV = +0.0100 V (toward higher V), dU = -1.602e-21 J (<0)
+======================================================================
+5.4  E = -grad V for V = 2x^2 y - 3yz + 5 at P = (1,2,-1)
+  [OK] grad V at P: computed [ 8.  5. -6.]  expected [ 8.  5. -6.]
+  E(P) = [-8. -5.  6.] V/m, |E| = 11.180340 V/m (sqrt(125) = 11.180340)
+  [page] squares of components: [64. 25. 36.], sum = 125.000000
+  [OK] |E|: computed 11.180339887472892  expected 11.180339887498949
+  dV/dz at P = -6.000000 V/m (V decreases 6 V/m along +z; E_z = +6.000)
+  steepest ascent direction grad/|grad| = [ 0.715542  0.447214 -0.536656], rate 11.1803 V/m
+  [OK] grad V closed form at a second point: computed [-3.64 -5.62 -3.9 ]  expected [-3.64 -5.62 -3.9 ]
+======================================================================
+5.5  Point-charge potential, Q = 1 nC at r = 0.3 m
+  correct V(r) numeric: 30.000000 V (9e9), 29.958506 V (exact k); closed form kQ/r = 30.000000
+  [OK] correct V(0.3 m): computed 30.000000000000004  expected 30.0
+  student's (double-counted direction): -30.000000 V
+  [OK] student's value: computed -30.000000000000004  expected -30.0
+  -dV/dr (correct) at r: 100.0000 V/m, E_r = 100.0000 V/m
+======================================================================
+5.6  E = 3x^2 y x +/- x^3 y from O=(0,0,0) to P=(1,2,0)
+  [OK] curl E+ at (0.4, 1.1, 0): computed [0. 0. 0.]  expected [0. 0. 0.]
+  [OK] curl E- at (0.4, 1.1, 0) = -6x^2 z: computed [ 0.    0.   -0.96]  expected [ 0.    0.   -0.96]
+  [OK] curl E+ at (0.9, -0.3, 0.5): computed [0. 0. 0.]  expected [0. 0. 0.]
+  [OK] curl E- at (0.9, -0.3, 0.5) = -6x^2 z: computed [ 0.    0.   -4.86]  expected [ 0.    0.   -4.86]
+  [OK] curl E+ at (1.5, 2.0, -1.0): computed [0. 0. 0.]  expected [0. 0. 0.]
+  [OK] curl E- at (1.5, 2.0, -1.0) = -6x^2 z: computed [  0.    0.  -13.5]  expected [  0.    0.  -13.5]
+  E+: C1 = 2.000000, C2 = 2.000000, C3 (straight) = 2.000000 V
+  [page] E+ legs: C1 [0.000000, 2.000000], C2 [0.000000, 2.000000]; C3 integrand (6 + 2) x^3 dx = 8 x^3 dx -> 2.0
+  E-: C1 = -2.000000, C2 = 2.000000, C3 (straight) = 1.000000 V
+  [page] E- legs: C1 [0.000000, -2.000000], C2 [0.000000, 2.000000]; C3 integrand (6 - 2) x^3 dx = 4 x^3 dx -> 1.0
+  [OK] E+ integrals: computed [2. 2. 2.]  expected [2. 2. 2.]
+  [OK] E- integrals: computed [-2.  2.  1.]  expected [-2.  2.  1.]
+  [OK] -grad(-x^3 y) = E+ at (0.4, 1.1, 0): computed [ 0.528  0.064 -0.   ]  expected [0.528 0.064 0.   ]
+  [OK] -grad(-x^3 y) = E+ at (1.3, -0.6, 0.2): computed [-3.042  2.197 -0.   ]  expected [-3.042  2.197  0.   ]
+  V(P)-V(O) = -2 V
+  flux of curl through lower triangle (+z normal) = -3.000000; C1 - C3 = -3.000000
+  [page] inner y-integral gives -12 x^3: int_0^1 -12 x^3 dx = -3.000000
+  [OK] Stokes lower triangle: computed -3.0  expected -3.0
+  flux through upper triangle (+z normal) = -1.000000; C2 - C3 = 1.000000 (= -flux_up: loop is clockwise)
+  [OK] Stokes upper triangle: computed 1.0  expected 1.0
+======================================================================
+5.7  Uniformly charged ball, V(inf) = 0
+  [OK] ball Q=1e-09, a=0.09, r=0.0000: brute vs closed: computed 149.79252987101952  expected 149.79252987101952
+  [OK] ball Q=1e-09, a=0.09, r=0.0270: brute vs closed: computed 145.29875397488428  expected 145.29875397488897
+  [OK] ball Q=1e-09, a=0.09, r=0.0450: brute vs closed: computed 137.30981904854704  expected 137.30981904843458
+  [OK] ball Q=1e-09, a=0.09, r=0.0900: brute vs closed: computed 99.86168658068677  expected 99.86168658067969
+  [OK] ball Q=1e-09, a=0.09, r=0.1800: brute vs closed: computed 49.93084329033744  expected 49.930843290339844
+  [OK] ball Q=2.5e-09, a=0.2, r=0.0000: brute vs closed: computed 168.51659610489693  expected 168.51659610489696
+  [OK] ball Q=2.5e-09, a=0.2, r=0.0600: brute vs closed: computed 163.46109822174182  expected 163.46109822175006
+  [OK] ball Q=2.5e-09, a=0.2, r=0.1000: brute vs closed: computed 154.47354642961264  expected 154.4735464294889
+  [OK] ball Q=2.5e-09, a=0.2, r=0.2000: brute vs closed: computed 112.34439740327171  expected 112.34439740326465
+  [OK] ball Q=2.5e-09, a=0.2, r=0.4000: brute vs closed: computed 56.17219870162961  expected 56.172198701632325
+  [OK] V from -int E dr at r=0.0: computed 149.79252987101952  expected 149.79252987101952
+  [OK] V from -int E dr at r=0.045: computed 137.30981904843458  expected 137.30981904843458
+  [OK] V from -int E dr at r=0.09: computed 99.86168658067969  expected 99.86168658067969
+  [OK] V from -int E dr at r=0.2: computed 44.93775896130586  expected 44.93775896130586
+  stated numbers (9e9): V(a) = 100.000000 V, V(0) = 150.000000 V, V(a/2) = 137.5000 V
+  exact k: V(a) = 99.8617 V, V(0) = 149.7925 V
+  [OK] V(a), V(0): computed [100. 150.]  expected [100. 150.]
+  [page] kQ/(2a) = 50.000000 V; 3 - 1/4 = 2.75; V(a/2) = 137.5000 V; (3/2) V(a) = 150.0000 V
+  proton to centre: W = 150 eV = 2.403265e-17 J
+  [OK] -dV/dr = E inside at r=5 cm: computed 616.4301640865233  expected 616.4301640782697
+======================================================================
+5.8  Long uniformly charged cylinder, rho_l = 200 pi eps0 C/m, a = 2 cm, V(a) = 0
+  [OK] cyl E rl=5.563e-09, a=0.02, r=0.0060: brute vs Gauss: computed 1499.9999999998824  expected 1500.0
+  [OK] cyl E rl=5.563e-09, a=0.02, r=0.0140: brute vs Gauss: computed 3500.000000000459  expected 3499.9999999999995
+  [OK] cyl E rl=5.563e-09, a=0.02, r=0.0300: brute vs Gauss: computed 3333.3333333333335  expected 3333.3333333333335
+  [OK] cyl E rl=5.563e-09, a=0.02, r=0.0600: brute vs Gauss: computed 1666.6666666666667  expected 1666.6666666666667
+  [OK] cyl E rl=3.000e-09, a=0.05, r=0.0150: brute vs Gauss: computed 323.551864521423  expected 323.55186452140214
+  [OK] cyl E rl=3.000e-09, a=0.05, r=0.0350: brute vs Gauss: computed 754.9543505502736  expected 754.9543505499382
+  [OK] cyl E rl=3.000e-09, a=0.05, r=0.0750: brute vs Gauss: computed 719.0041433808937  expected 719.0041433808935
+  [OK] cyl E rl=3.000e-09, a=0.05, r=0.1500: brute vs Gauss: computed 359.50207169044694  expected 359.50207169044677
+  rho_l = 5.563250e-09 C/m ; rho_l/(2 pi eps0) = 100.000000 V
+  V(0) = 50.000000 V, V(2a) = -69.314718 V, V(0)-V(2a) = 119.314718 V
+  [OK] V(0), V(2a) with V(a)=0: computed [ 50.       -69.314718]  expected [ 50.       -69.314718]
+  reference on axis: V(a) = -50.000000 V, V(2a) = -119.314718 V
+  [OK] re-referenced: computed [ -50.       -119.314718]  expected [ -50.       -119.314718]
+  [OK] V closed form, set 2, r=0.0: computed 26.962655376783513  expected 26.962655376783516
+  [OK] V closed form, set 2, r=0.02: computed 22.64863051649815  expected 22.648630516498155
+  [OK] V closed form, set 2, r=0.05: computed -0.0  expected 0.0
+  [OK] V closed form, set 2, r=0.11: computed -42.51780817358045  expected -42.51780817358045
+  divergence of the log: V(r)-V(a) at r = 1e3, 1e6, 1e9 m: [-1081.98, -1772.75, -2463.53] V
+======================================================================
+5.9  Rectangle (-1..2) x (0..2), a=(2,2,0), b=(-1,0,0), clockwise from +z
+  (a) uniform field legs: [-8. -9.  8.  9.], circulation = 0.000000 V
+  [OK] (a)(i) circulation: computed 0.0  expected 0.0
+  [OK] (a)(ii) V(b)-V(a) = -int_a^b: computed 17.0  expected 17.0
+  [OK] (a)(ii) via C_R: computed 17.0  expected 17.0
+  [OK] (c) curl of given field at (0.1, 0.2, 0.3): computed [ 2. -3.  5.]  expected [ 2. -3.  5.]
+  [OK] (c) curl of given field at (1.7, -2.0, 0.9): computed [ 2. -3.  5.]  expected [ 2. -3.  5.]
+  [page] b - a = [-3 -2  0] m; E.(b-a) = -17.0 V
+  [page] partials: dyEz = 1.0000, dzEy = -1.0000, dzEx = -1.5000, dxEz = 1.5000, dxEy = 2.5000, dyEx = -2.5000
+  [OK] (c) given field = 1/2 c x r with c = (2,-3,5) at (0.4, -0.3, 0.2): computed [0.45 0.8  0.3 ]  expected [0.45 0.8  0.3 ]
+  [OK] (c) given field = 1/2 c x r with c = (2,-3,5) at (-1.2, 2.5, 0.7): computed [-7.3 -3.7  0.7]  expected [-7.3 -3.7  0.7]
+  (b) area = 6 m^2, flux of curl with dS = -z dA: -30.000000 V
+  [OK] (b)(i) circulation by Stokes: computed -30.000000000030603  expected -30.0
+  [OK] (c) circulation by direct line integral: computed -30.0  expected -30.0
+  (c) C_R legs [-10.   0.] total -10.000000 V ; C_L legs [15.  5.] total 20.000000 V
+  [OK] (c) C_R, C_L: computed [-10.  20.]  expected [-10.  20.]
+  [OK] (c) C_R - C_L = circulation: computed -30.0  expected -30.0
+  -int_a^b along C_R = 10.0000 V, along C_L = -20.0000 V
+  [page] integrands on the legs: E_y(x=2) = 5.0, E_x(y=0) = -0.0, E_x(y=2) = -5.0, E_y(x=-1) = -2.5 V/m
+  (d) voltmeter + at b, - at a reads int_b^a = -int_a^b: C_R 10.0000 V, C_L -20.0000 V, difference 30.0000 V
+  [OK] 1/2 c x r has curl c (second c): computed [-1.   4.   2.5]  expected [-1.   4.   2.5]
+  [OK] its circulation on C (clockwise) = -c_z * area: computed -15.0  expected -15.0
+======================================================================
+5.10  Slab 0<x<d (rho0 = 6 eps0) + sheet -rho0 d at x = 0; V(0) = 0
+  [OK] E brute vs closed, rho0=5.313e-11, d=2.0, x=-1.000: computed 0.0  expected 0.0
+  [OK] E brute vs closed, rho0=5.313e-11, d=2.0, x=0.600: computed -8.399999999999999  expected -8.399999999999999
+  [OK] E brute vs closed, rho0=5.313e-11, d=2.0, x=1.600: computed -2.399999999999999  expected -2.3999999999999995
+  [OK] E brute vs closed, rho0=5.313e-11, d=2.0, x=3.000: computed 0.0  expected 0.0
+  [OK] E brute vs closed, rho0=2.500e-09, d=0.7, x=-1.000: computed -2.842170943040401e-14  expected 0.0
+  [OK] E brute vs closed, rho0=2.500e-09, d=0.7, x=0.210: computed -138.35261075319482  expected -138.35261075319482
+  [OK] E brute vs closed, rho0=2.500e-09, d=0.7, x=0.560: computed -39.52931735805566  expected -39.52931735805567
+  [OK] E brute vs closed, rho0=2.500e-09, d=0.7, x=1.050: computed 2.842170943040401e-14  expected 0.0
+  rho0 = 5.3125e-11 C/m^3 (53.13 pC/m^3), rho_s = -1.0625e-10 C/m^2 (-106.3 pC/m^2)
+  E(0+) = -12.000000 V/m ; E inside = 6(x-2)
+  [OK] jump eps0[E(0+)-E(0-)] = rho_s: computed -1.0625025370047488e-10  expected -1.0625025375360001e-10
+  [OK] V(-1.5): computed 0.0  expected 0.0
+  [OK] V(0.5): computed 5.25  expected 5.25
+  [OK] V(1.0): computed 9.0  expected 9.0
+  [OK] V(2.0): computed 12.0  expected 12.0
+  [OK] V(3.0): computed 12.0  expected 12.0
+  [OK] V(d) = rho0 d^2/(2 eps0) (set 2): computed 69.17630537659741  expected 69.17630537659741
+  electron KE beyond x = d: 12.0 eV = 1.922612e-18 J, speed 2.054548e+06 m/s
+  force on electron at x = 0+: -e*E = +1.923e-18 N along x (pushes +x)
+  [OK] (d) curl trig field at (0.3, 1.2, -0.4): computed [ 0.  0. -0.]  expected [0. 0. 0.]
+  [OK] (d) curl trig field at (2.0, -1.0, 0.7): computed [0. 0. 0.]  expected [0. 0. 0.]
+  [OK] (d) -grad V = E at (0.3, 1.2, -0.4): computed [1.146404 0.29552  0.8     ]  expected [1.146404 0.29552  0.8     ]
+  [OK] (d) -grad V = E at (2.0, -1.0, 0.7): computed [ 0.416147  0.909297 -1.4     ]  expected [ 0.416147  0.909297 -1.4     ]
+  (d) int_O^B E.dl: staircase 1.000000, straight 1.000000 V
+  [page] staircase legs: [0.0, 2.0, -1.0] V; m_e = 9.1093837e-31 kg; field E(0+) = -12.0 V/m -> F = -eE = 12.0 e
+  [OK] (d) V(B) = 5 - int_O^B: computed [4. 4.]  expected [4. 4.]
+  [OK] (d) V(B) closed: computed 4.0  expected 4.0
+  (d) work by agent on q = 2 uC: -2.000000e-06 J
+  [OK] (d) work: computed -2e-06  expected -2e-06
+======================================================================
+5.11  Annulus a=5 cm, b=9 cm, rho_s = 1000 eps0 C/m^2: axis potential
+  [OK] V brute vs closed rs=8.854e-09, z=0.0: computed 19.99999999999999  expected 19.999999999999996
+  [OK] E_z brute vs -dV/dz closed, z=0.0: computed 0.0  expected 0.0
+  [OK] E_z closed = -dV/dz (FD), z=0.0: computed -0.0  expected 0.0
+  [OK] V brute vs closed rs=8.854e-09, z=0.03: computed 18.27940542829919  expected 18.27940542829918
+  [OK] E_z brute vs -dV/dz closed, z=0.03: computed 99.13399470534426  expected 99.13399470534426
+  [OK] E_z closed = -dV/dz (FD), z=0.03: computed 99.1339946878611  expected 99.13399470534426
+  [OK] V brute vs closed rs=8.854e-09, z=0.12: computed 9.999999999999998  expected 9.999999999999995
+  [OK] E_z brute vs -dV/dz closed, z=0.12: computed 61.53846153846152  expected 61.538461538461476
+  [OK] E_z closed = -dV/dz (FD), z=0.12: computed 61.538461548771295  expected 61.538461538461476
+  [OK] V brute vs closed rs=8.854e-09, z=-0.2: computed 6.580920356865028  expected 6.580920356865014
+  [OK] E_z brute vs -dV/dz closed, z=-0.2: computed -29.110497485112745  expected -29.110497485112674
+  [OK] E_z closed = -dV/dz (FD), z=-0.2: computed -29.11049748455241  expected -29.110497485112674
+  [OK] V brute vs closed rs=8.854e-09, z=1.0: computed 1.396306036409811  expected 1.3963060364098334
+  [OK] E_z brute vs -dV/dz closed, z=1.0: computed 1.3889500173079594  expected 1.3889500173079883
+  [OK] E_z closed = -dV/dz (FD), z=1.0: computed 1.388950010561274  expected 1.3889500173079883
+  [OK] V brute vs closed rs=3.000e-09, z=0.0: computed 13.552908808476232  expected 13.55290880847623
+  [OK] E_z brute vs -dV/dz closed, z=0.0: computed 0.0  expected 0.0
+  [OK] E_z closed = -dV/dz (FD), z=0.0: computed -0.0  expected 0.0
+  [OK] V brute vs closed rs=3.000e-09, z=0.03: computed 11.578851800894611  expected 11.578851800894613
+  [OK] E_z brute vs -dV/dz closed, z=0.03: computed 92.27877592296821  expected 92.27877592296826
+  [OK] E_z closed = -dV/dz (FD), z=0.03: computed 92.27877590856082  expected 92.27877592296826
+  [OK] V brute vs closed rs=3.000e-09, z=0.12: computed 5.853118938061503  expected 5.853118938061506
+  [OK] E_z brute vs -dV/dz closed, z=0.12: computed 36.960924397724206  expected 36.9609243977242
+  [OK] E_z closed = -dV/dz (FD), z=0.12: computed 36.96092439930965  expected 36.9609243977242
+  [OK] V brute vs closed rs=3.000e-09, z=-0.2: computed 3.8302697783657  expected 3.8302697783657034
+  [OK] E_z brute vs -dV/dz closed, z=-0.2: computed -17.04447680643735  expected -17.04447680643736
+  [OK] E_z closed = -dV/dz (FD), z=-0.2: computed -17.044476805727626  expected -17.04447680643736
+  [OK] V brute vs closed rs=3.000e-09, z=1.0: computed 0.8110707965504566  expected 0.8110707965504603
+  [OK] E_z brute vs -dV/dz closed, z=1.0: computed 0.806884245746253  expected 0.8068842457462475
+  [OK] E_z closed = -dV/dz (FD), z=1.0: computed 0.8068842449193703  expected 0.8068842457462475
+  rho_s = 8.854188e-09 C/m^2 ; rho_s/(2 eps0) = 500.000 V/m
+  V(0) = 20.000000 V, V(12 cm) = 10.000000 V, E_z(12 cm) = 61.538462 V/m
+  [page] b - a = 0.04 m; sqrt(b^2+0.12^2) = 0.150000 m, sqrt(a^2+0.12^2) = 0.130000 m; (rho_s/2eps0)*0.12 = 60.000000 V
+  [OK] disk (b=0.09) E_z(z->0+) -> rho_s/(2 eps0): computed 499.99999444444444  expected 500.0
+  [OK] disk (b=0.09) E_z(z=27.0) -> pi b^2 rho_s/(4 pi eps0 z^2): computed 0.0027777546298436706  expected 0.0027777777777777775
+  [OK] disk (b=0.2) E_z(z->0+) -> rho_s/(2 eps0): computed 499.9999975  expected 500.0
+  [OK] disk (b=0.2) E_z(z=60.0) -> pi b^2 rho_s/(4 pi eps0 z^2): computed 0.002777754629854079  expected 0.0027777777777777783
+  [OK] V(0), V(0.12): computed [20. 10.]  expected [20. 10.]
+  [OK] E_z(0.12): computed 61.538461538461476  expected 61.538461538461476
+  [OK] E_z(0) = 0: computed 0.0  expected 0.0
+  max of V on axis at z = 0.0000 m (monotone decrease with |z|: True)
+  total charge Q = 1.557710e-10 C ; far field Q/(4 pi eps0 z) at z = 1 m: 1.400000 V vs exact 1.396306 V
+  coefficient rho_s (b^2-a^2)/(4 eps0) = 1.400000 V m
+  [OK] a->0 gives disk E_z at z=0.01: computed 444.7842369625767  expected 444.78423696257676
+  [OK] a->0 gives disk E_z at z=0.1: computed 128.3529268764169  expected 128.35292687641686
+  [OK] a->0 gives disk E_z at z=0.5: computed 7.908338013152328  expected 7.908338013152328
+  proton minimum KE = 20.0 eV = 3.204353e-18 J
+  electron from rest at 12 cm: KE at centre = 10.000000 eV = 1.602177e-18 J, speed = 1.875537e+06 m/s
+======================================================================
+5.12  Square of four q = 2 nC, side 30 cm, plus a centre charge
+  kq^2/s (9e9) = 1.200000e-07 J ; (4+sqrt2) = 5.414214
+  W4 = 6.497056e-07 J (9e9) ; exact-k 6.488070e-07 J
+  [OK] W4 = (4+sqrt2) kq^2/s: computed 6.497056274847714e-07  expected 6.497056274847714e-07
+  [OK] incremental qV, order [0, 1, 2, 3]: computed 6.497056274847714e-07  expected 6.497056274847714e-07
+  [OK] incremental qV, order [2, 0, 3, 1]: computed 6.497056274847714e-07  expected 6.497056274847714e-07
+  [OK] incremental qV, order [3, 2, 1, 0]: computed 6.497056274847714e-07  expected 6.497056274847714e-07
+  [page] steps of order [0,1,2,3] in units of kq^2/s: [0.       1.       1.707107 2.707107] (1 + 1/sqrt2 = 1.707107)
+  V(centre) = 339.411255 V (9e9), exact-k 338.941804 V; s/sqrt2 = 0.212132 m
+  [OK] V(centre) = 4 sqrt2 kq/s: computed 339.4112549695428  expected 339.4112549695429
+  Q for zero total energy = -1.914214e-09 C = -0.957107 q ; -(1/sqrt2 + 1/4) = -0.957107
+  [OK] Q/q: computed -0.9571067811865475  expected -0.9571067811865475
+  [OK] total 5-charge energy = 0: computed 5.293955920339377e-23  expected 0.0
+  kq^2/s^2 = 4.000000e-07 N
+  force on corner (s/2,s/2) from other corners: [+5.414214e-07, +5.414214e-07, +0.000000e+00] N, |F| = 7.656854e-07 N  ((sqrt2 + 1/2) kq^2/s^2 = 7.656854e-07)
+  force on it from the centre charge: [-5.414214e-07, -5.414214e-07, +0.000000e+00] N, |F| = 7.656854e-07 N
+  [OK] net force on a corner = 0: computed [0. 0. 0.]  expected [0. 0. 0.]
+  [OK] net force on centre = 0: computed [0. 0. 0.]  expected [0. 0. 0.]
+  [OK] scaled square x0.5: energy still 0: computed 1.0587911840678754e-22  expected 0.0
+  [OK] scaled square x2.0: energy still 0: computed 2.6469779601696886e-23  expected 0.0
+  [OK] with Q=-q, energy scales as 1/lambda: computed -1.4558441227157113e-08  expected -1.4558441227157113e-08
+======================================================================
+ALL CHECKS PASSED: True  (145/145)

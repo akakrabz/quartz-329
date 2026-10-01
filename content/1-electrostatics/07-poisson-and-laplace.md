@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 7
 ---
 
-*Lecture 7 · course notes §7 · slides "Boundary Conditions; Poisson's and Laplace's Equation" (second half) · prev: [[1-electrostatics/06-circulation-and-boundary-conditions|Lecture 6]] · next: [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]]*
+*Lecture 7 · course notes §7 · slides "Boundary Conditions; Poisson's and Laplace's Equation" (second half) · prev: [[1-electrostatics/06-circulation-and-boundary-conditions|Lecture 6]] · next: [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] · practice: [[practice/07-poisson-and-laplace|12 problems]]*
 
 > [!abstract] In one breath
 > Electrostatics has two field equations, $\nabla\times\mathbf{E} = 0$ and $\nabla\cdot\mathbf{D} = \rho$. The first is solved once and for all by $\mathbf{E} = -\nabla V$; putting that into the second leaves a single **scalar** equation for $V$: **Poisson's equation** $\nabla^2V = -\rho/\epsilon$, or **Laplace's equation** $\nabla^2V = 0$ wherever there is no charge. In one dimension it is solved by integrating twice and using the boundary values to fix two constants — the workhorse of the capacitance calculations to come. Its general solution is the superposition of point-charge potentials you already know, which also proves the Helmholtz theorem promised in Lecture 4.
@@ -137,6 +137,9 @@ Concept page: [[concepts/poissons-equation]].
 
 > [!exam] On Exam 1
 > Poisson's equation appears on the exam mostly *backwards*: given a field, produce the charge density with $\rho = \epsilon_0\nabla\cdot\mathbf{E}$ (FA26 1(c)), or given a potential, with $\rho = -\epsilon_0\nabla^2V$. The forward direction — integrate twice, fix constants from plate potentials — is how the layered-dielectric problems of Lecture 9 and the capacitance problems of Lecture 10 begin, and how HW3 #1 (a vacuum diode with $V\propto x^{4/3}$) is built. Know the three 1-D solutions in the table cold; deriving $V = A\ln r + B$ under time pressure is where minutes go to die.
+
+> [!tip] Practice this lecture
+> [[practice/07-poisson-and-laplace|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/07-poisson-and-laplace#71-two-plates-two-potentials|7.1 Two plates, two potentials]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 7 (Poisson and Laplace; Examples 1–4 with the "Notice" on zero field inside conductors; the general solution as an LSI impulse response and Green's function; Helmholtz decomposition and gauge). Shao, Lectures 6–7 slides (Laplacian; "just Gauss's law in terms of potentials"; derivation with the "$\epsilon$ = const" and "static" conditions; parallel-plate example with surface charges and the $\mathbf{E}\to\mathbf{D}\to\rho_s$ chain; layered-dielectric sketch).

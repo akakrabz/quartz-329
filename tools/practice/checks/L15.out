@@ -1,0 +1,343 @@
+
+==============================================================================
+15.1  Long solenoid: L, N^2 scaling, energy two ways
+==============================================================================
+  n = N/l = 2000 turns/m
+  B inside at I = 2 A = 0.00502655 T
+  [OK] L from flux = mu0 N^2 A / l: 0.0003947842  vs  0.0003947842
+  [OK] L = 4 pi^2 x 1e-5 H: 0.0003947842  vs  0.0003947842
+  L (a) = 0.394784 mH  -> 0.395 mH
+  L with 1000 turns over 25 cm (b) = 1.57914 mH  -> 1.58 mH
+  [OK] (b) factor 4: 4  vs  4
+  L with 500 turns over 50 cm (c) = 0.197392 mH  -> 0.197 mH
+  [OK] (c) factor 1/2: 0.5  vs  0.5
+  H = nI = 4000 A/m
+  w = 1/2 mu0 H^2 = 10.0531 J/m^3  (= 3.2 pi)
+  [OK] w = 3.2 pi: 10.0531  vs  10.0531
+  volume pi a^2 l = 7.85398e-05 m^3
+  W = 1/2 L I^2 = 0.789568 mJ  (= 8 pi^2 x 1e-5 J)
+  [OK] W = 8 pi^2 x 1e-5: 0.0007895684  vs  0.0007895684
+  [OK] W from int 1/2 mu0 H^2 dV = 1/2 L I^2: 0.0007895684  vs  0.0007895684
+  info: B_centre/B_inf for l/a = 25: 0.996815278536125
+
+==============================================================================
+15.2  RL decay of a shorted coil
+==============================================================================
+  tau = L/R = 5 ms
+  1/tau = 200 1/s  -> I(t) = 2 exp(-200 t) A
+  energy time constant tau/2 = 2.5 ms
+  [OK] I(tau) ODE vs 2/e: 0.7357589  vs  0.7357589
+  I(tau) = 0.735759 A
+  [OK] V_L = L dI/dt at tau (finite diff) vs -R I: -5.886071  vs  -5.886071
+  V_L(tau) = -5.88607 V  -> -5.89 V
+  rise -L dI/dt = drop R I = 5.88607 V
+  W0 = 80 mJ
+  W(tau) = 10.8268 mJ  -> 10.8 mJ
+  [OK] W(tau) = W0 e^-2: 0.01082682  vs  0.01082682
+  W(tau)/W0 = e^-2 = 0.135335  -> 0.135
+  time at which W = W0/2 = 1.73287 ms  -> 1.73 ms
+  [OK] t_halfW = (tau/2) ln 2: 0.001732868  vs  0.001732868
+  I at that time = 1.41421 A  (= 2/sqrt2 = 1.41 A)
+  [OK] heat int I^2 R dt = W0: 0.08  vs  0.08
+
+==============================================================================
+15.3  Fields from Phi = 2y^2, A = -4yt y + 3x z (SP18 MC(v) style)
+==============================================================================
+  [OK] E = 0 at [ 0.77  1.26 -0.62  0.13]: [-0.0000000e+00 -1.6653345e-12 -0.0000000e+00]  vs  [0. 0. 0.]
+  [OK] B = -3 y at [ 0.77  1.26 -0.62  0.13]: [ 0. -3.  0.]  vs  [ 0. -3.  0.]
+  [OK]   curl E = -dB/dt: [0. 0. 0.]  vs  [-0. -0. -0.]
+  [OK] E = 0 at [ 0.29 -1.42  0.88  1.04]: [-0.0000000e+00  4.4408921e-12 -0.0000000e+00]  vs  [0. 0. 0.]
+  [OK] B = -3 y at [ 0.29 -1.42  0.88  1.04]: [ 0. -3.  0.]  vs  [ 0. -3.  0.]
+  [OK]   curl E = -dB/dt: [0. 0. 0.]  vs  [-0. -0. -0.]
+  [OK] E = 0 at [-0.17  1.9   1.13  2.53]: [-0.0000000e+00  3.1086245e-11 -0.0000000e+00]  vs  [0. 0. 0.]
+  [OK] B = -3 y at [-0.17  1.9   1.13  2.53]: [ 0. -3.  0.]  vs  [ 0. -3.  0.]
+  [OK]   curl E = -dB/dt: [0. 0. 0.]  vs  [-0. -0. -0.]
+  [OK] E = 0 at [ 0.22  1.77 -1.93  2.67]: [-0.0000000e+00  1.7763568e-11 -0.0000000e+00]  vs  [0. 0. 0.]
+  [OK] B = -3 y at [ 0.22  1.77 -1.93  2.67]: [ 0. -3.  0.]  vs  [ 0. -3.  0.]
+  [OK]   curl E = -dB/dt: [0. 0. 0.]  vs  [-0. -0. -0.]
+  [OK] E = 0 at [-0.44 -1.07  0.14  2.83]: [-0.0000000e+00 -4.4408921e-12 -0.0000000e+00]  vs  [0. 0. 0.]
+  [OK] B = -3 y at [-0.44 -1.07  0.14  2.83]: [ 0. -3.  0.]  vs  [ 0. -3.  0.]
+  [OK]   curl E = -dB/dt: [0. 0. 0.]  vs  [-0. -0. -0.]
+  slip: -grad Phi only (E without -dA/dt) = [-0.       -5.053074 -0.      ] V/m at y = 1.263 (= -4y yhat)
+  [OK] slip value -4y: -5.053074  vs  -5.053074
+  [OK] distractor (d): -grad Phi + dA/dt = -8y yhat at y=1.263: [  0.        -10.1061476   0.       ]  vs  [  0.        -10.1061476   0.       ]
+  [OK] distractor (c): y-component with the order reversed, dAz/dx - dAx/dz = +3: 3  vs  3
+  [OK] distractor (d): -grad Phi + dA/dt = -8y yhat at y=-1.415: [ 0.        11.3201463  0.       ]  vs  [ 0.        11.3201463  0.       ]
+  [OK] distractor (c): y-component with the order reversed, dAz/dx - dAx/dz = +3: 3  vs  3
+  -> answer (a): E = 0, B = -3 yhat T; (b) = -4y yhat, (c) B = +3 yhat, (d) E = -8y yhat are the slips
+  [OK] A3 = 3x z + grad(-2y^2 t): [ 0.        -0.6797118  2.3129204]  vs  [ 0.        -0.6797118  2.3129204]
+  [OK] Phi3 = 0 - d(-2y^2 t)/dt: 3.191694  vs  3.191694
+  [OK] A3 = 3x z + grad(-2y^2 t): [0.        5.8642293 0.8591671]  vs  [0.        5.8642293 0.8591671]
+  [OK] Phi3 = 0 - d(-2y^2 t)/dt: 4.004554  vs  4.004554
+
+==============================================================================
+15.4  Gauge T/F: reference Phi = 0, A = B0 x y  (E = 0, B = B0 z)
+==============================================================================
+  -- B0 = 1.7
+  (a) Phi'=0, A'=-B0 y x: E' = [-0. -0. -0.], B' = [0.  0.  1.7]  -> same fields: True
+  (b) Phi'=0, A'=B0 x y + 2t z: E' = [-0. -0. -2.], B' = [0.  0.  1.7]  -> same fields: False
+  (c) Phi'=-2z, A'=B0 x y + 2t z: E' = [-0. -0.  0.], B' = [0.  0.  1.7]  -> same fields: True
+  (d) Phi'=0, A'=B0 y x: E' = [-0. -0. -0.], B' = [ 0.   0.  -1.7]  -> same fields: False
+  [OK] (d) curl(A' - A) = -2 B0 z: [ 0.   0.  -3.4]  vs  [ 0.   0.  -3.4]
+  [OK] (a) lambda=-B0 x y: A + grad lambda = A': [2.4055311e+00 1.0019763e-13 0.0000000e+00]  vs  [2.4055311 0.        0.       ]
+  [OK] (a) lambda=-B0 x y: 0 - dlambda/dt = Phi': 0  vs  0
+  [OK] (c) lambda=2zt: A + grad lambda = A': [0.        0.4868613 2.072139 ]  vs  [0.        0.4868613 2.072139 ]
+  [OK] (c) lambda=2zt: 0 - dlambda/dt = Phi': -1.750171  vs  -1.750171
+  -- B0 = -0.6
+  (a) Phi'=0, A'=-B0 y x: E' = [-0. -0. -0.], B' = [ 0.   0.  -0.6]  -> same fields: True
+  (b) Phi'=0, A'=B0 x y + 2t z: E' = [-0. -0. -2.], B' = [ 0.   0.  -0.6]  -> same fields: False
+  (c) Phi'=-2z, A'=B0 x y + 2t z: E' = [-0. -0.  0.], B' = [ 0.   0.  -0.6]  -> same fields: True
+  (d) Phi'=0, A'=B0 y x: E' = [-0. -0. -0.], B' = [0.  0.  0.6]  -> same fields: False
+  [OK] (d) curl(A' - A) = -2 B0 z: [0.  0.  1.2]  vs  [0.  0.  1.2]
+  [OK] (a) lambda=-B0 x y: A + grad lambda = A': [-8.4901098e-01  2.9948266e-14  0.0000000e+00]  vs  [-0.849011  0.        0.      ]
+  [OK] (a) lambda=-B0 x y: 0 - dlambda/dt = Phi': 0  vs  0
+  [OK] (c) lambda=2zt: A + grad lambda = A': [ 0.        -0.1718334  2.072139 ]  vs  [ 0.        -0.1718334  2.072139 ]
+  [OK] (c) lambda=2zt: 0 - dlambda/dt = Phi': -1.750171  vs  -1.750171
+  -- general test: arbitrary (Phi, A) and lambda = x^2 y t^2 + sin(z t) + exp(0.3x) y z
+  [OK]   analytic grad(lambda) vs finite difference: [-0.2620008 -0.7735762  1.7260487]  vs  [-0.2620008 -0.7735762  1.7260487]
+  [OK]   analytic dlambda/dt vs finite difference: -0.4181828  vs  -0.4181828
+  [OK]   E unchanged under A+grad(l), Phi-dl/dt: [ 0.6168082 -0.2633056  1.033812 ]  vs  [ 0.6168082 -0.2633056  1.033812 ]
+  [OK]   B unchanged: [-0.0893367  0.1407237  0.1116184]  vs  [-0.0893367  0.1407237  0.1116184]
+    (wrong sign Phi + dl/dt changes E by [-1.0481 -0.3198 -1.979 ])
+  [OK]   analytic grad(lambda) vs finite difference: [-1.27482    1.0416364 -0.9033471]  vs  [-1.27482    1.0416364 -0.9033471]
+  [OK]   analytic dlambda/dt vs finite difference: 0.2989037  vs  0.2989037
+  [OK]   E unchanged under A+grad(l), Phi-dl/dt: [ 2.4557549 -0.4163655 -1.793999 ]  vs  [ 2.4557549 -0.4163655 -1.793999 ]
+  [OK]   B unchanged: [ 0.2891354 -1.6202551 -0.2918065]  vs  [ 0.2891354 -1.6202551 -0.2918065]
+    (wrong sign Phi + dl/dt changes E by [ 3.3589 -0.3399  0.1951])
+  [OK]   analytic grad(lambda) vs finite difference: [-3.5848071  1.2587394 -0.6164682]  vs  [-3.5848071  1.2587394 -0.6164682]
+  [OK]   analytic dlambda/dt vs finite difference: -0.7933232  vs  -0.7933232
+  [OK]   E unchanged under A+grad(l), Phi-dl/dt: [-3.2343101 -0.0511663 -2.307655 ]  vs  [-3.2343101 -0.0511663 -2.307655 ]
+  [OK]   B unchanged: [ 0.4093669  5.6342437 -5.0537779]  vs  [ 0.4093669  5.6342437 -5.0537779]
+    (wrong sign Phi + dl/dt changes E by [ 6.6296 -0.2994  3.5543])
+
+==============================================================================
+15.5  Two-wire line (find the error)
+==============================================================================
+  direction of B1, B2 between the wires: [0. 1. 0.] [0. 1. 0.] (both +y)
+  student's L' (one wire) = 0.439445 uH/m -> 0.44 uH/m
+  correct L' (both wires) = 0.87889 uH/m -> 0.879 uH/m
+  [OK] L' = (mu0/pi) ln 9: 8.788898e-07  vs  8.788898e-07
+  ln 9 = 2.19722 
+  [OK] C' from line-charge potentials = pi eps0 / ln 9: 1.265972e-11  vs  1.265972e-11
+  C' = 12.6597 pF/m -> 12.7 pF/m
+  L'C' (correct) = 1.11265e-17 s^2/m^2
+  [OK] L'C' = mu0 eps0: 1.11265e-17  vs  1.11265e-17
+  mu0 eps0 = 1.11265e-17 s^2/m^2 -> 1.11e-17
+  student L'C' / (mu0 eps0) = 0.5 
+  student 1/sqrt(L'C') = 4.23971e+08 m/s -> 4.24e8 = sqrt2 c
+  [OK] student speed = sqrt(2) c: 4.239706e+08  vs  4.239706e+08
+
+==============================================================================
+15.6  Switching on an RL circuit
+==============================================================================
+  tau = 20 ms
+  1/tau = 50 1/s  -> I(t) = 1.2 (1 - exp(-50 t)) A
+  I_inf = 1.2 A
+  [OK] I(t) ODE vs 1.2(1-e^-t/tau) at t=7 ms: 0.3543743  vs  0.3543743
+  I(tau) = 0.758545 A -> 0.759 A
+  V_L(tau) = 4.41455 V -> 4.41 V
+  [OK] V_L(tau) = 12/e: 4.414553  vs  4.414553
+  V_R(tau) = 7.58545 V -> 7.59 V
+  [OK] V_L + V_R = V0: 12  vs  12
+  W(tau) = 57.539 mJ -> 57.5 mJ
+  P_battery = 9.10254 W -> 9.10 W
+  P_R = 5.7539 W -> 5.75 W
+  P_L = V_L I = 3.34864 W -> 3.35 W
+  [OK] P_b = P_R + P_L: 9.102536  vs  9.102536
+  [OK] P_L = dW/dt (finite difference): 3.348636  vs  3.348636
+  W_inf = 144 mJ
+  t when W = W_inf/2 = 24.5589 ms -> 24.6 ms
+  [OK] = tau ln(1/(1-1/sqrt2)): 0.02455894  vs  0.02455894
+  ln(1/(1-1/sqrt2)) = 1.22795 
+  t when I = I_inf/2 (for comparison) = 13.8629 ms -> 13.9 ms = tau ln 2
+  [OK] = tau ln 2: 0.01386294  vs  0.01386294
+  V_L(0+) = L dI/dt at t = 0 = 12 V
+
+==============================================================================
+15.7  Internal inductance of a round wire
+==============================================================================
+  [OK] a=0.5 mm: H(r) 2 pi r = I r^2/a^2 at r=a/2: 0.25  vs  0.25
+  [OK]   W' = mu0 I^2/(16 pi): 2.5e-08  vs  2.5e-08
+  [OK]   L'_int = mu0/(8 pi) from energy: 5e-08  vs  5e-08
+  [OK]   naive strip flux / I = mu0/(4 pi): 1e-07  vs  1e-07
+  [OK]   linkage-weighted flux / I = mu0/(8 pi): 5e-08  vs  5e-08
+  [OK] a=1.0 mm: H(r) 2 pi r = I r^2/a^2 at r=a/2: 0.25  vs  0.25
+  [OK]   W' = mu0 I^2/(16 pi): 2.5e-08  vs  2.5e-08
+  [OK]   L'_int = mu0/(8 pi) from energy: 5e-08  vs  5e-08
+  [OK]   naive strip flux / I = mu0/(4 pi): 1e-07  vs  1e-07
+  [OK]   linkage-weighted flux / I = mu0/(8 pi): 5e-08  vs  5e-08
+  [OK] a=3.0 mm: H(r) 2 pi r = I r^2/a^2 at r=a/2: 0.25  vs  0.25
+  [OK]   W' = mu0 I^2/(16 pi): 2.5e-08  vs  2.5e-08
+  [OK]   L'_int = mu0/(8 pi) from energy: 5e-08  vs  5e-08
+  [OK]   naive strip flux / I = mu0/(4 pi): 1e-07  vs  1e-07
+  [OK]   linkage-weighted flux / I = mu0/(8 pi): 5e-08  vs  5e-08
+  mu0/(8 pi) = 50 nH/m -> 50 nH/m
+  two-wire external = 0.87889 uH/m
+  two-wire total (low f) = 0.97889 uH/m -> 0.979 uH/m
+  increase = 11.378 % -> 11%
+
+==============================================================================
+15.8  Coaxial solenoids: L1, L2, M both ways, emf, series connection
+==============================================================================
+  N1, N2 = [1000.  500.] 
+  L1 = 0.789568 mH -> 0.790 mH
+  L2 = 0.789568 mH -> 0.790 mH
+  [OK] L1 = 0.8 pi^2 1e-4: 0.0007895684  vs  0.0007895684
+  [OK] L2 = L1: 0.0007895684  vs  0.0007895684
+  M21 = 0.394784 mH -> 0.395 mH
+  M12 = 0.394784 mH
+  [OK] M12 = M21 = mu0 n1 n2 pi a^2 l: [0.0003948 0.0003948]  vs  [0.0003948 0.0003948]
+  [OK] M = 0.4 pi^2 1e-4 H: 0.0003947842  vs  0.0003947842
+  emf in outer coil for dI1/dt = 100 A/s = 39.4784 mV -> 39.5 mV
+  [OK] coupling k = a/b: 0.5  vs  0.5
+  series aiding: L from energy = 2.36871 mH
+  [OK]   = L1 + L2 + 2M: 0.002368705  vs  0.002368705
+  series opposing: L from energy = 0.789568 mH
+  [OK]   = L1 + L2 - 2M: 0.0007895684  vs  0.0007895684
+  bracket (n1+n2)^2 a^2 + n2^2 (b^2 - a^2) = 1200 (900 + 300)
+    pieces = [900. 300.] 
+  bracket opposing (n1-n2)^2 a^2 + n2^2 (b^2 - a^2) = 400 (100 + 300)
+    pieces = [100. 300.] 
+  [OK] mu0 pi l x 1200 = L aiding: 0.002368705  vs  0.002368705
+  [OK] mu0 pi l x 400 = L opposing: 0.0007895684  vs  0.0007895684
+  [OK] n1^2 a^2 = n2^2 b^2 (why L1 = L2): 400  vs  400
+
+==============================================================================
+15.9  Toroid with a two-layer core (SP18 Exam 2 #2 re-parameterized)
+==============================================================================
+  Biot-Savart at r=0.070, z=0.005: H_phi = 2273.6420 A/m (per A), |H_other| = 2.27e-13; expected 2273.6420
+  [OK]     H_phi = N I/(2 pi r): 2273.642  vs  2273.642
+  Biot-Savart at r=0.060, z=0.015: H_phi = 2652.5824 A/m (per A), |H_other| = 3.86e-13; expected 2652.5824
+  [OK]     H_phi = N I/(2 pi r): 2652.582  vs  2652.582
+  Biot-Savart at r=0.090, z=0.010: H_phi = 1768.3883 A/m (per A), |H_other| = 4.88e-13; expected 1768.3883
+  [OK]     H_phi = N I/(2 pi r): 1768.388  vs  1768.388
+  Biot-Savart at r=0.030, z=0.010: H_phi =    0.0000 A/m (per A), |H_other| = 2.69e-14; expected    0.0000
+  [OK]     H ~ 0 outside the core: 1.028333e-13  vs  0
+  Biot-Savart at r=0.130, z=0.010: H_phi =    0.0000 A/m (per A), |H_other| = 7.42e-15; expected    0.0000
+  [OK]     H ~ 0 outside the core: 7.942181e-14  vs  0
+  Biot-Savart at r=0.070, z=0.040: H_phi =    0.0000 A/m (per A), |H_other| = 2.39e-14; expected    0.0000
+  [OK]     H ~ 0 outside the core: 1.768792e-13  vs  0
+  H(r=a) at I=2 A = 6366.2 A/m
+  H(r=b) at I=2 A = 3183.1 A/m
+  area vector of the turn (up inner, out top, down outer, in bottom) = [0. 1. 0.] 
+  [OK] normal = +phi-hat (= +y at phi=0): [0. 1. 0.]  vs  [0. 1. 0.]
+  [OK] up x out = phi-hat (z x x = y): [0. 1. 0.]  vs  [0. 1. 0.]
+  [OK] flux per turn (dblquad, split layers): 1.386294e-05  vs  1.386294e-05
+  [OK] Psi per turn per A = 5 mu0 N h ln2/(2 pi): 1.386294e-05  vs  1.386294e-05
+  Psi per turn per ampere = 1.38629e-05 Wb/A -> 1.39e-5
+  Psi per turn at I = 2 A = 2.77259e-05 Wb -> 2.77e-5
+  N Psi per ampere = 0.0138629 Wb/A
+  N Psi at I = 2 A = 0.0277259 Wb -> 2.77e-2
+  L from flux = 13.8629 mH -> 13.9 mH
+  air-core L (SP18 form) = 2.77259 mH -> 2.77 mH
+  L / L_air = mean mu_r over the cross-section (9 + 1)/2 = 5 
+  [OK] L / L_air = 5: 5  vs  5
+  mu0 N h/(2 pi) = 4e-06 Wb/A per turn
+  self-emf -L dI/dt (relative to current's circulation) = -0.693147 V -> -0.693 V: acts DOWN along inner face
+  terminal drop V = L dI/dt = 0.693147 V
+  [OK] W total = W ferrite + W air: 0.02772589  vs  0.02772589
+  [OK] W from field = 1/2 L I^2 (L from flux): 0.02772589  vs  0.02772589
+  W = 27.7259 mJ -> 27.7 mJ
+  W ferrite = 24.9533 mJ
+  W air = 2.77259 mJ
+  ferrite fraction = 0.9 
+  factor |B| (prop. to N) = 0.5 
+  factor Psi per turn = 0.5 
+  factor N Psi = 0.25 
+  factor L = 0.25 
+  [OK] N^2 scaling of L: 0.25  vs  0.25
+
+==============================================================================
+15.10  Shorted parallel-plate line (SP18 Exam 2 #3 re-parameterized)
+==============================================================================
+  J_s top (y=d) = [200.   0.   0.] A/m
+  J_s bottom (y=0) = [-200.    0.    0.] A/m
+  H between = [   0.    0. -200.] A/m
+  H above = [0. 0. 0.] A/m
+  H below = [0. 0. 0.] A/m
+  contribution of top sheet between = [   0.    0. -100.] 
+  contribution of bottom sheet between = [   0.    0. -100.] 
+  [OK] H between = -200 z: [   0.    0. -200.]  vs  [   0.    0. -200.]
+  [OK] H outside = 0: [0. 0. 0. 0. 0. 0.]  vs  [0. 0. 0. 0. 0. 0.]
+  B between = [ 0.        0.       -0.000251] T -> -2.51e-4 z T
+  [OK] n x (H1 - H2) = Js_top: [200.   0.   0.]  vs  [200.   0.   0.]
+  [OK] n x (H1 - H2) = Js_bot (n=+y from below into between): [-200.    0.    0.]  vs  [-200.    0.    0.]
+  area vector of current path = [ 0.  0. -1.] 
+  [OK] dS = -z (clockwise seen from +z): [ 0.  0. -1.]  vs  [ 0.  0. -1.]
+  Psi = 5.02655e-07 Wb -> 5.03e-7
+  L = 50.2655 nH -> 50.3 nH
+  [OK] L = mu0 d l / W: 5.026548e-08  vs  5.026548e-08
+  L' = mu0 d / W = 50.2655 nH/m
+  W from field = 2.51327 uJ -> 2.51 uJ
+  [OK] W field = 1/2 L I^2: 2.513274e-06  vs  2.513274e-06
+  C' = 221.355 pF/m -> 221 pF/m
+  [OK] L'C' = mu0 eps0: 1.11265e-17  vs  1.11265e-17
+  1/sqrt(L'C') = 2.99792e+08 m/s
+  factor |B| = 1.5 -> 1.5
+  factor Psi = 0.75 -> 0.75
+  factor L = 0.25 -> 0.25
+  factor C' = 4 -> 4
+  [OK] scaling factors: [1.5  0.75 0.25 4.  ]  vs  [1.5  0.75 0.25 4.  ]
+  info: finite-width strips, H at centre / (I/W) = 0.9745487773040165
+
+==============================================================================
+15.11  Wire and rectangular loop: M, emf, A-route, RL response
+==============================================================================
+  [OK] phi-hat at (x>0, y=0) = z x x-hat = +y: [0. 1. 0.]  vs  [0. 1. 0.]
+  [OK] reference circulation -> dS = +y: [0. 1. 0.]  vs  [0. 1. 0.]
+  [OK] M = (mu0 h/2 pi) ln(d2/d1): 1.386294e-07  vs  1.386294e-07
+  M = 0.138629 uH -> 0.139 uH
+  ln 4 = 1.38629 
+  emf (reference direction) = -1.38629 mV -> -1.39 mV (down the near side)
+  force direction on near side for current -z in B +y = [ 1. -0.  0.] (+x: pushed away from wire)
+  net force on loop per (A wire x A loop) = [3.75e-06 0.00e+00 0.00e+00] N -> along +x: repelled
+  [OK] top and bottom forces cancel: [0. 0. 0.]  vs  [0. 0. 0.]
+  [OK] net force = mu0 h/(2 pi) (1/d1 - 1/d2) xhat: [3.75e-06 0.00e+00 0.00e+00]  vs  [3.75e-06 0.00e+00 0.00e+00]
+  [OK] r0=1.0: oint A.dl = Psi (per A): 1.386294e-07  vs  1.386294e-07
+  [OK] r0=0.003: oint A.dl = Psi (per A): 1.386294e-07  vs  1.386294e-07
+  [OK] r0=7.5: oint A.dl = Psi (per A): 1.386294e-07  vs  1.386294e-07
+  [OK] curl of wire A = mu0 I/(2 pi r) phi-hat: [-1.7647059e-06  2.9411765e-06  0.0000000e+00]  vs  [-1.7647059e-06  2.9411765e-06  0.0000000e+00]
+  E_z(near) - E_z(far) = -2.77259 mV/m -> -2.77 mV/m
+  [OK] h [E_z(d1) - E_z(d2)] = emf: -0.001386294  vs  -0.001386294
+  tau = L_loop/R = 0.2 ms
+  i_inf = -M k / R = -0.277259 A -> -0.277 A
+  [OK] ODE i(1 ms) vs closed form: -0.2753907  vs  -0.2753907
+  time to reach 99% of emf/R = 0.921034 ms -> 0.921 ms
+  [OK] = tau ln 100: 0.000921034  vs  0.000921034
+  [OK] int kern du over all u = 2 ln(d2/d1): 2.772589  vs  2.772589
+  [OK] reciprocity: Neumann double integral (wire closed at infinity) = M: 1.386294e-07  vs  1.386294e-07
+
+==============================================================================
+15.12  Coax: solid inner conductor, magnetic sleeve, air; energy route and LC
+==============================================================================
+  [OK] H_phi continuous at r=a: 159.1549  vs  159.1549
+  B jump at r=c (sleeve/air) = 4 
+  W' per region at I = 1 A = [2.500000e-08 2.772589e-07 6.931472e-08] J/m
+  [OK] W'1 = mu0 I^2/16 pi: 2.5e-08  vs  2.5e-08
+  [OK] W'2 = (mu0 I^2/pi) ln 2: 2.772589e-07  vs  2.772589e-07
+  [OK] W'3 = (mu0 I^2/4 pi) ln 2: 6.931472e-08  vs  6.931472e-08
+  L' per region (energy) = [ 50.       554.517744 138.629436] nH/m -> 50, 554.5, 138.6
+  L' total = 743.147 nH/m -> 743 nH/m
+  fractions = [0.067281 0.746175 0.186544] 
+  [OK] external L' by flux = energy (a<r<b): 6.931472e-07  vs  6.931472e-07
+  [OK] external L' = 1e-6 ln 2: 6.931472e-07  vs  6.931472e-07
+  external L' = 0.693147 uH/m -> 0.693 uH/m
+  [OK] naive internal flux/I = mu0/4pi (twice too big): 1e-07  vs  1e-07
+  [OK] weighted internal flux/I = mu0/8pi = energy: 5e-08  vs  5e-08
+  [OK] C' = 2 pi eps0/(1.25 ln 2): 6.420859e-11  vs  6.420859e-11
+  C' = 64.2086 pF/m -> 64.2 pF/m
+  L'_ext C' = 4.4506e-17 s^2/m^2
+  L'_ext C' / (mu0 eps0) = 4 -> 4
+  [OK] L'C' = 4 mu0 eps0: 4.4506e-17  vs  4.4506e-17
+  sleeve mu eps / (mu0 eps0) = 16 
+  1/sqrt(L'C') = 1.49896e+08 m/s -> c/2
+  sleeve speed 1/sqrt(mu eps) = 7.49481e+07 m/s -> c/4
+  4 mu0 eps0 = 4.4506e-17 
+  factors: L_ext/((mu0/2pi) ln2) and (2 pi eps0 / C')/ln2 = [5.   1.25] -> 5, 1.25
+  [OK] uniform fill mu_r = eps_r = 1: L'C' = mu eps: 1.11265e-17  vs  1.11265e-17
+  [OK] uniform fill mu_r = eps_r = 4: L'C' = mu eps: 1.78024e-16  vs  1.78024e-16
+
+==============================================================================
+SUMMARY
+==============================================================================
+All checks passed.

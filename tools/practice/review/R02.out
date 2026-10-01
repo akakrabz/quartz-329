@@ -1,0 +1,212 @@
+2.1 Coulomb force as a vector
+  PASS  R [m]: computed 3, page 3
+  PASS  F2_x [mN]: computed -3.99447, page -3.99
+  PASS  F2_y [mN]: computed -3.99447, page -3.99
+  PASS  F2_z [mN]: computed 1.99723, page 2.00
+  PASS  |F2| [mN]: computed 5.9917, page 5.99
+  PASS  scalar Q1Q2/(4 pi eps0 R^2) [mN]: computed -5.9917, page -5.99
+  PASS  F1_x [mN]: computed 3.99447, page 3.99
+  PASS  F1_y [mN]: computed 3.99447, page 3.99
+  PASS  F1_z [mN]: computed -1.99723, page -2.00
+  PASS  F1 = -F2 (independent computation)
+  PASS  F2 x Rhat = 0 (along the line)
+  PASS  F2 . Rhat [mN] (negative: attractive): computed -5.9917, page -5.99
+  PASS  quick estimate [mN]: computed 6, page 6
+  ORIG-FAIL  F2_x with the page's quoted 1/(4 pi eps0) = 8.99e9: computed -3.99556, ORIGINAL page -3.99
+  PASS  F2_x with the fixed quoted constant 8.988e9: computed -3.99467, page -3.99
+  PASS  F2_z with 8.988e9: computed 1.99733, page 2.00
+  PASS  scalar with 8.988e9: computed -5.992, page -5.99
+2.2 null point (units q/(4 pi eps0) per m^2)
+  PASS  axis scan [-200,200]: exactly one zero, at [-3.0]
+  PASS  contribution of +q at x=-3: computed -0.111111, page -0.1111111111111111
+  PASS  contribution of -4q at x=-3 (computed): computed 0.111111, page 0.1111111111111111
+  PASS  E_x(1): computed 2, page 2
+  PASS  E_x(2): computed 4.25, page 4.25
+  PASS  E_x(6): computed -0.416667, page -0.417
+  PASS  E_x(6) exact -5/12: computed -0.416667, page -0.4166666666666667
+  PASS  3-D root search: null points [[-3.0, 0.0, 0.0]]
+2.3 charge at a cube corner (Q = 12 nC)
+  PASS  face x=0 [nC]: computed -0, page 0
+  PASS  face y=0 [nC]: computed -0, page 0
+  PASS  face z=0 [nC]: computed -0, page 0
+  PASS  face x=2 [nC]: computed 0.5, page 0.5
+  PASS  face y=2 [nC]: computed 0.5, page 0.5
+  PASS  face z=2 [nC]: computed 0.5, page 0.5
+  PASS  whole cube [nC]: computed 1.5, page 1.5
+  PASS  centred charge, face x=0 [nC]: computed 2, page 2
+  PASS  centred charge, face x=2 [nC]: computed 2, page 2
+  PASS  centred charge, face y=0 [nC]: computed 2, page 2
+  PASS  centred charge, face y=2 [nC]: computed 2, page 2
+  PASS  centred charge, face z=0 [nC]: computed 2, page 2
+  PASS  centred charge, face z=2 [nC]: computed 2, page 2
+2.4 velocity selector
+  PASS  (v x B)_z [V/m]: computed 50000, page 5e4
+  PASS  E_z [V/m]: computed -50000, page -5e4
+  PASS  E has no x, y components
+  PASS  |E| [kV/m]: computed 50, page 50
+  PASS  electron at same v: force e(E+vxB) = 0
+  PASS  proton F_E,z [N]: computed -8.01e-15, page -8.01e-15
+  PASS  proton F_B,z [N]: computed 1.602e-14, page 1.60e-14
+  PASS  proton net F_z [N]: computed 8.01e-15, page 8.01e-15
+  PASS  net force along +z only
+  PASS  F_B / F_B(selected speed): computed 2, page 2
+2.5 sphere cutting a charged plane
+  PASS  distance centre -> point charge [m]: computed 4, page 4
+  PASS  flux of the +10 C point charge [C]: computed 1.55772e-16, page 0
+  PASS  flux of the sheet field over the sphere [C]: computed -75.3982, page -75.4
+  PASS  same, in units of pi C: computed -24, page -24
+  PASS  area of plane inside sphere / pi [m^2]: computed 8, page 8
+  PASS  disk radius [m]: computed 2.82843, page 2.83
+  info: distractors (a) -84.8 C, (c) -65.4 C, (d) -37.7 C
+2.6 ring on its axis
+  PASS  Q [nC]: computed 3.14159, page 3.14
+  PASS  Q/(4 pi eps0) [V m]: computed 28.2352, page 28.2
+  PASS  E_z(10 cm) [V/m]: computed 998.266, page 998
+  PASS  E_z(1 m) [V/m]: computed 27.8169, page 27.8
+  PASS  E_x, E_y = 0 on axis
+  PASS  point charge at 1 m [V/m]: computed 28.2352, page 28.2
+  PASS  point/ring - 1 at 1 m [%]: computed 1.50374, page 1.5
+  PASS  z of max (numerical) [cm]: computed 7.07107, page 7.07
+  PASS  E_max (numerical) [V/m]: computed 1086.77, page 1087
+  PASS  E_max = rho_l/(3 sqrt3 eps0 a) [V/m]: computed 1086.77, page 1087
+  PASS  2/(3 sqrt3): computed 0.3849, page 0.385
+  PASS  E_z(-10 cm) [V/m] (odd): computed -998.266, page -998
+  PASS  E_z(0) [V/m]: computed 0, page 0
+2.7 semicircular arc
+  PASS  E_x at origin [V/m]: computed -6.41754e-14, page 0
+  PASS  E_y at origin [V/m]: computed -719.004, page -719
+  PASS  student's rho_l/(4 eps0 a) [V/m]: computed 1129.41, page 1129
+  PASS  ratio student/true: computed 1.5708, page 1.57
+  PASS  infinite line at distance a (quad) [V/m]: computed 719.004, page 719
+  PASS  sum of |dE| (1129) exceeds |E|
+2.8 dipole
+  PASS  p_z [C m]: computed -1.2e-11, page -1.2e-11
+  PASS  Q/(4 pi eps0) [V m]: computed 26.9627, page 27.0
+  PASS  |E from -Q| at P1 [V/m]: computed -83218.1, page -8.32e4
+  PASS  E from +Q at P1 [V/m]: computed 55708, page 5.57e4
+  PASS  E_z(P1) [V/m]: computed -27510.1, page -2.75e4
+  PASS  E_z(P2) [V/m]: computed 13281.6, page 1.33e4
+  PASS  E(P1), E(P2) have no x, y parts
+  PASS  far-field axis [V/m]: computed -26962.7, page -2.70e4
+  PASS  far-field bisector [V/m]: computed 13481.3, page 1.35e4
+  PASS  axis: (|exact|-|far|)/|exact| [%]: computed 1.99, page 2.0
+  PASS  bisector: (|far|-|exact|)/|exact| [%]: computed 1.50374, page 1.5
+  PASS  ratio axis/bisector at 2 cm: computed -2.07129, page -2.07
+  PASS  ratio at D = 0.5 m: computed 2.00011, page 2.0001
+  info: E_axis(4 cm)/E_axis(2 cm) = 0.1231 (1/8 = 0.125)
+  PASS  1% distance (exact) [d]: computed 7.0622, page 7.06
+  PASS  1% distance (exact) [cm]: computed 2.82488, page 2.82
+  PASS  first-order estimate 1/sqrt(0.02) [d]: computed 7.07107, page 7.07
+  PASS  E(P1) parallel to p, E(P2) antiparallel
+2.9 finite line charge
+  PASS  rho_l [nC/m]: computed 1.66898, page 1.67
+  PASS  rho_l/(4 pi eps0) [V]: computed 15, page 15
+  PASS  E_x(P) brute force [V/m]: computed 4, page 4
+  PASS  E_z(P) brute force [V/m]: computed -2, page -2
+  PASS  |E| [V/m]: computed 4.47214, page 4.47
+  PASS  angle below +x [deg]: computed 26.5651, page 26.6
+  PASS  formula (a) vs brute force, segment [-1.5,2.5], (r,phi,z)=(2.0,40,0.7)
+  PASS  formula (a) vs brute force, segment [-1.5,2.5], (r,phi,z)=(2.0,40,4.0)
+  PASS  formula (a) vs brute force, segment [0,4], (r,phi,z)=(3,0,0)
+  PASS  bisector direction [-1.6, 0.0, 0.8] = (-1.6, 0, 0.8)
+  PASS  bisector x E = 0
+  PASS  bisector . E: computed -8, page -8
+  PASS  semi-infinite E_x [V/m]: computed 5, page 5
+  PASS  semi-infinite E_z [V/m]: computed -5, page -5
+  PASS  added piece E_x [V/m]: computed 1, page 1
+  PASS  added piece E_z [V/m]: computed -3, page -3
+  PASS  infinite E_x [V/m]: computed 10, page 10
+  PASS  infinite E_z [V/m]: computed 0, page 0
+  PASS  rho_l/(2 pi eps0 r) [V/m]: computed 10, page 10
+  PASS  semi-infinite line: |E_r| = |E_z| opposite its end (r = 7 m)
+  PASS  Q_enc = 4 rho_l [nC]: computed 6.6759, page 6.68
+  PASS  side z=-1: E_r [V/m]: computed 2.70633, page 2.71
+  PASS  side z=-1: E_z [V/m]: computed -2.17094, page -2.17
+  PASS  side z=2: E_r [V/m]: computed 5.547, page 5.55
+  PASS  side z=2: E_z [V/m]: computed -1.92589e-17, page 0
+  PASS  side z=5: E_r [V/m]: computed 2.70633, page 2.71
+  PASS  side z=5: E_z [V/m]: computed 2.17094, page 2.17
+  PASS  flux through side [nC]: computed 4.45395, page 4.45
+  PASS  flux through top cap [nC]: computed 1.11097, page 1.11
+  PASS  flux through bottom cap [nC]: computed 1.11097, page 1.11
+  PASS  total flux [nC]: computed 6.6759, page 6.68
+2.10 disk and annulus on axis
+  PASS  rho_s/(2 eps0) [V/m]: computed -282352, page -2.82e5
+  PASS  z/sqrt(z^2+a^2) at 1 cm: computed 0.0333148, page 0.0333
+  PASS  E_z(1 cm) [V/m]: computed -272946, page -2.73e5
+  PASS  E_z(-1 cm) [V/m] (toward disk from below): computed 272946, page 2.73e5
+  PASS  sheet/disk - 1 at 1 cm [%]: computed 3.4463, page 3.4
+  PASS  1 - z/sqrt(z^2+a^2) at 3 m: computed 0.00496281, page 0.00496
+  PASS  E_z(3 m) [V/m]: computed -1401.26, page -1401
+  PASS  Q [uC]: computed -1.41372, page -1.41
+  PASS  point charge at 3 m [V/m]: computed -1411.76, page -1412
+  PASS  point/disk - 1 at 3 m [%]: computed 0.749378, page 0.75
+  PASS  half-field height (brute force) [cm]: computed 17.3205, page 17.3
+  PASS  a/sqrt3 [cm]: computed 17.3205, page 17.3
+  info: brute-force E_z(1e-4 m)/(rho_s/2eps0) = 0.99967
+  PASS  annulus E_z(10 cm) [V/m]: computed -110366, page -1.10e5
+  PASS  z/sqrt(z^2+b^2) at 10 cm: computed 0.707107, page 0.707
+  PASS  z/sqrt(z^2+a^2) at 10 cm: computed 0.316228, page 0.316
+  PASS  full disk E_z(10 cm) [V/m]: computed -193065, page -1.93e5
+  PASS  removed disk (radius b, +rho_s) E_z(10 cm) [V/m]: computed -82699.1, page -8.27e4
+  PASS  annulus E_z(0.1 mm) [V/m] (-> 0): computed -188.235, page 0
+  PASS  jump rho_s/eps0 [V/m]: computed -564705, page -5.65e5
+2.11 boron mass spectrometer
+  PASS  selected speed [m/s]: computed 400000, page 4e5
+  PASS  B1 = +z: force on a +e ion at 4e5 m/s, F_x [N]: computed 1.2816e-14, page 1.28e-14
+  PASS  B1 = -z: force zero at 4e5 m/s
+  PASS  fast ion F_E,x [N]: computed 6.408e-15, page 6.41e-15
+  PASS  fast ion F_B,x [N]: computed -7.0488e-15, page -7.05e-15
+  PASS  fast ion net F_x [N]: computed -6.408e-16, page -6.41e-16
+  PASS  slow ion (0.9 v) net F_x > 0
+  PASS  initial analyzer force along +x
+  PASS  10B+ R = mv/(qB) [cm]: computed 8.29213, page 8.29
+  PASS  10B+ R from ODE (max x / 2) [cm]: computed 8.29213, page 8.29
+  PASS  10B+ landing x (ODE) [cm]: computed 16.5843, page 16.58
+  PASS  10B+ time (ODE) [us]: computed 0.651263, page 0.651
+  PASS  10B+ speed at landing [m/s]: computed 400000, page 4e5
+  PASS  11B+ R = mv/(qB) [cm]: computed 9.12135, page 9.12
+  PASS  11B+ R from ODE (max x / 2) [cm]: computed 9.12135, page 9.12
+  PASS  11B+ landing x (ODE) [cm]: computed 18.2427, page 18.24
+  PASS  11B+ time (ODE) [us]: computed 0.716389, page 0.716
+  PASS  11B+ speed at landing [m/s]: computed 400000, page 4e5
+  PASS  11B2+ R = mv/(qB) [cm]: computed 4.56067, page 4.56
+  PASS  11B2+ R from ODE (max x / 2) [cm]: computed 4.56067, page 4.56
+  PASS  11B2+ landing x (ODE) [cm]: computed 9.12135, page 9.12
+  PASS  11B2+ time (ODE) [us]: computed 0.358195, page 0.358
+  PASS  11B2+ speed at landing [m/s]: computed 400000, page 4e5
+  PASS  clockwise seen from +z (L_z about centre < 0)
+  PASS  10B+/11B+ spot separation (ODE) [cm]: computed 1.65843, page 1.66
+  PASS  m/q of 11B2+ [u/e]: computed 5.5, page 5.5
+  PASS  11B+ kinetic energy [keV]: computed 9.12135, page 9.12
+  PASS  negative 11B- would curve to -x and land at x = -2R = -18.24 cm (min x -18.24)
+2.12 two charges, one given field
+  PASS  Q1 [pi eps0]: computed 48, page 48
+  PASS  Q1 [nC]: computed 1.33518, page 1.34
+  PASS  field of Q1 at origin = -3 z
+  PASS  all (sign, X) solutions: [(-1, -1.0), (1, 1.0)]
+  PASS  |E| total [V/m]: computed 5, page 5
+  PASS  +16 pi eps0 at x=-1 gives E_x [V/m]: computed 4, page 4
+  PASS  null points from 400 starts: [[0.6339746, 0.0, 0.7320508]]
+  PASS  x0 [m]: computed 0.633975, page 0.634
+  PASS  y0 [m]: computed 0, page 0
+  PASS  z0 [m]: computed 0.732051, page 0.732
+  PASS  x0 vs (3-sqrt3)/2: computed 0.633975, page 0.6339745962155614
+  PASS  z0 vs sqrt3-1: computed 0.732051, page 0.7320508075688772
+  PASS  segment length [m]: computed 2.23607, page 2.24
+  PASS  d2 [m]: computed 0.818458, page 0.818
+  PASS  d1 [m]: computed 1.41761, page 1.42
+  PASS  d1/d2: computed 1.73205, page 1.73
+  PASS  sphere: flux of Q2 [nC]: computed 0.44506, page 0.445
+  PASS  sphere: flux of Q1 [nC]: computed 1.7342e-17, page 0
+  PASS  cube face x=0: flux of Q2 [pC]: computed 18.5442, page 18.5
+  PASS  cube face y=1: flux of Q2 [pC]: computed 18.5442, page 18.5
+  PASS  cube face z=1: flux of Q2 [pC]: computed 18.5442, page 18.5
+  PASS  cube face x=1: flux of Q2 [pC]: computed 0, page 0
+  PASS  cube face y=0: flux of Q2 [pC]: computed -0, page 0
+  PASS  cube face z=0: flux of Q2 [pC]: computed -0, page 0
+  PASS  cube total, Q2 [pC]: computed 55.6325, page 55.6
+  PASS  cube total, Q2 [pi eps0]: computed 2, page 2
+  PASS  cube total, Q1 (outside) [pC]: computed 9.26467e-15, page 0
+
+ALL PASS

@@ -22,4 +22,6 @@ aliases: ["charge conservation", "conservation of charge", "continuity"]
 
 **Where it appears.** Lecture 16 (derived and used), Lecture 8 (relaxation), [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Lecture 13]] (Coulomb gauge consistency), [[concepts/maxwells-equations]] ("built in: charge conservation"), [[problems/mmf-around-a-draining-charge]].
 
+**Practice.** [[practice/topics#continuity-relaxation-and-displacement-current|Continuity, relaxation and displacement current]] (8 problems) — for example [[practice/04-divergence-and-curl#45-draining-a-cube|4.5 Draining a cube]] (easy), [[practice/04-divergence-and-curl#411-an-expanding-ion-cloud|4.11 An expanding ion cloud]] (hard).
+
 Related: [[concepts/divergence]] · [[concepts/divergence-theorem]] · [[concepts/displacement-current]] · [[concepts/charge-density]].

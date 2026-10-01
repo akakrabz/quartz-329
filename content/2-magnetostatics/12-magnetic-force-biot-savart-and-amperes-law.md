@@ -5,7 +5,7 @@ tags: [lecture, magnetostatics]
 lecture: 12
 ---
 
-*Lecture 12 · course notes §12 · slides "Magnetic Flux and Magnetic Fields / Biot–Savart Law / Ampère's Law" · prev: [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]] · next: [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Lecture 13]]*
+*Lecture 12 · course notes §12 · slides "Magnetic Flux and Magnetic Fields / Biot–Savart Law / Ampère's Law" · prev: [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]] · next: [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Lecture 13]] · practice: [[practice/12-magnetic-force-biot-savart-and-ampere|12 problems]]*
 
 > [!abstract] In one breath
 > Two parallel wires carrying currents in the same direction pull on each other, even though neither carries net charge. The explanation is relativistic: in the frame of the drifting electrons of one wire, the other wire's ion and electron spacings are Lorentz-contracted by different amounts, so that wire *is* charged there, and its ordinary Coulomb field pushes on the electrons. Back in the lab we package the same force as $\mathbf{F} = q\mathbf{v}\times\mathbf{B}$ with a new field, $\mathbf{B} = \dfrac{\mu_0I}{2\pi r}\hat\phi$, circling the wire. Two laws then let you find $\mathbf{B}$ for any steady current: **Biot–Savart** (add up $1/R^2$ contributions of current elements — Coulomb's law with a cross product) and **Ampère** (the circulation of $\mathbf{H} = \mathbf{B}/\mu_0$ around any loop equals the current through it — Gauss's law with a loop instead of a surface). In differential form, $\nabla\times\mathbf{H} = \mathbf{J}$ and $\nabla\cdot\mathbf{B} = 0$: the mirror image of electrostatics.
@@ -140,6 +140,9 @@ Concept pages: [[concepts/magnetic-field]] · [[concepts/biot-savart-law]] · [[
 
 > [!exam] On exams
 > The magnetic twin of Exam 1 problem 2: "a current distribution with planar/cylindrical symmetry — find $\mathbf{H}$ everywhere". Expect to state the symmetry ($\mathbf{H} = H_\phi(r)\hat\phi$ or $H_y(x)\hat y$), draw the loop, count $I_{\text{enc}}$ region by region, and give units (A/m for $\mathbf{H}$, T for $\mathbf{B}$). Direction questions — which way does $\mathbf{B}$ point, which way is the force on a charge or a wire — are the cheap points; use the right-hand rule and $q\mathbf{v}\times\mathbf{B}$ explicitly rather than by instinct.
+
+> [!tip] Practice this lecture
+> [[practice/12-magnetic-force-biot-savart-and-ampere|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/12-magnetic-force-biot-savart-and-ampere#121-a-charge-passing-a-wire|12.1 A charge passing a wire]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 12 (two-wire attraction; special-relativity footnote; neutral wire in the lab; electron-frame line charge $\lambda' = \gamma\lambda_+v^2/c^2$ and the Lorentz-contraction bookkeeping; $\mathbf{F} = \mathbf{F}'/\gamma$; definition of $\mathbf{B}$ and the right-hand rule; Biot–Savart with its validity statement; Ampère's law and $I_C$; $\mathbf{H} = \mathbf{B}/\mu_0$; $\nabla\times\mathbf{H} = \mathbf{J}$, $\nabla\cdot\mathbf{B} = 0$; δ-function currents and Example 1; the MQS margin note). Shao, "Lectures 11–12" slides (Ampère's experiment; force law and $I\,d\mathbf{l} = q\mathbf{v}$; the five-step Biot–Savart solution for the straight wire; circulation on a circle; $\mathbf{H}$ and the differential laws side by side with electrostatics; current-distribution units; the coax challenge question and the signed-current sketch). The copper numbers are extensions.

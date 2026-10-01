@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 6
 ---
 
-*Lecture 6 · course notes §6 · slides "Boundary Conditions; Poisson's and Laplace's Equation" (first half) · prev: [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] · next: [[1-electrostatics/07-poisson-and-laplace|Lecture 7]]*
+*Lecture 6 · course notes §6 · slides "Boundary Conditions; Poisson's and Laplace's Equation" (first half) · prev: [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] · next: [[1-electrostatics/07-poisson-and-laplace|Lecture 7]] · practice: [[practice/06-circulation-and-boundary-conditions|12 problems]]*
 
 > [!abstract] In one breath
 > Close the path of Lecture 5 on itself and the line integral of a static field is zero: the **circulation** vanishes, which is Kirchhoff's voltage law and, through Stokes' theorem, the same statement as $\nabla\times\mathbf{E} = 0$. The differential laws, though, assume the fields are differentiable — and at the surface of a conductor or a dielectric they are not. Fields *jump* there. The integral laws still hold for a loop or a pillbox that straddles the surface, and letting the loop or pillbox shrink onto the surface turns each Maxwell equation into a **boundary condition**: a rule for how much each field component may jump. Four rules, one drawing, and a normal vector whose direction you must never lose track of.
@@ -134,6 +134,9 @@ Concept page: [[concepts/boundary-conditions]].
 
 > [!exam] On Exam 1
 > FA26 problem 3 is this lecture applied to a dielectric interface: given $\mathbf{E}_1$ above the plane $z=0$ and two permittivities, find $\mathbf{E}_2$ below (tangential part copied, normal part scaled by $\epsilon_1/\epsilon_2$), then $\mathbf{D}$ and $\mathbf{P}$ on both sides. Worked with different numbers in [[problems/fields-across-a-dielectric-interface]]. The two-plane examples above are the pattern of several homework problems (HW3 #6), where a sheet is written as $\rho = \rho_s\,\delta(y)$ and you must read off the jump.
+
+> [!tip] Practice this lecture
+> [[practice/06-circulation-and-boundary-conditions|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/06-circulation-and-boundary-conditions#61-what-is-always-continuous|6.1 What is always continuous]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 6 (circulation; Example 1; Stokes and curl as circulation per unit area; laws of electrostatics with the quasi-static note; sheet field plus continuous background; general conditions with the $\pm$ notation and the thin loop/pillbox justification; Examples 2–3). Shao, Lectures 6–7 slides (integral vs differential forms across a boundary; pillbox and loop derivations for all four conditions; "Points INTO medium 1"; two-plane example; the challenge question; "Remember this drawing!!" and the memorization rule).

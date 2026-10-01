@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 3
 ---
 
-*Lecture 3 · course notes §3 · slides "Surface integrals, connecting Coulomb's and Gauss's law" · prev: [[1-electrostatics/02-coulombs-law-superposition-and-gauss|Lecture 2]] · next: [[1-electrostatics/04-divergence-and-curl|Lecture 4]]*
+*Lecture 3 · course notes §3 · slides "Surface integrals, connecting Coulomb's and Gauss's law" · prev: [[1-electrostatics/02-coulombs-law-superposition-and-gauss|Lecture 2]] · next: [[1-electrostatics/04-divergence-and-curl|Lecture 4]] · practice: [[practice/03-gauss-law-at-work|12 problems]]*
 
 > [!abstract] In one breath
 > Flux counts field lines through a surface. Gauss's law says the flux of $\mathbf{D}$ out of a closed surface equals the charge inside — always. When the charge distribution has enough symmetry that $|\mathbf{D}|$ is *constant* and *normal* on a cleverly chosen surface, the integral collapses to "$D\times$area", and $\mathbf{E}$ falls out in two lines. Three symmetries do this: spherical, cylindrical, planar. Everything else in this lecture is either building the tool (flux, densities, δ-functions) or combining these three by superposition.
@@ -190,6 +190,9 @@ Magnetic field lines have no beginnings or ends: they close on themselves or run
 
 > [!exam] On Exam 1
 > FA26 problem 2 is a slab with $\rho\propto|x|$: pillbox, both caps, $Q_{\text{enc}}$ as an integral, sgn on the direction, then a potential (Lecture 5). Problem 4 is the coaxial cylinder with two dielectric layers: the *same* Gaussian cylinder as §3a, with $\mathbf{D}$ independent of the material and $\mathbf{E} = \mathbf{D}/\epsilon$ layer by layer (Lecture 9). Expect to write "top + bottom + side" explicitly and to state units.
+
+> [!tip] Practice this lecture
+> [[practice/03-gauss-law-at-work|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/03-gauss-law-at-work#31-two-sheets-of-charge|3.1 Two sheets of charge]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 3 (sheet, slab, two sheets, two slabs = pn junction, δ-function formalism, dipole flux example). Shao, Lecture 3 slides (flux intuition, "trick that works sometimes", symmetry ladder, challenge questions, line/sheet/slab derivations, Yadaraf bugs) and Lecture 4 whiteboard page (pn junction by superposition).

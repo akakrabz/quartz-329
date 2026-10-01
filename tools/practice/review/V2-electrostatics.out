@@ -1,0 +1,160 @@
+
+======== 4.9 Electrostatic or not ========
+PASS  (a) max |curl E1| over 300 random points [V/m^2]               computed  0   page  0
+PASS  (a) max |curl E2 - (-pi sin(pi x/2)) z_hat|                    computed  1.64066e-10   page  0
+PASS  (b) max |div E2| (E2 carries no charge)                        computed  0   page  0
+PASS  (b) max |rho - (-(3pi/2) eps0 sin(pi y/2))| [C/m^3]            computed  2.17583e-21   page  0
+PASS  (b) max |rho| on grid y in [-4,4] [C/m^3]                      computed  4.17244e-11   page  4.17e-11
+      |rho| local maxima at y = [-3. -1.  1.  3.]
+PASS  (b) sign of rho on y = 1 m                                     computed -1   page -1
+PASS  (b) sign of rho on y = -1 m                                    computed  1   page  1
+PASS  (b) sign of rho on y = 3 m                                     computed  1   page  1
+PASS  (c) max |curl E| on grid x in [-4,4] [V/m^2]                   computed  3.14159   page  3.14
+      |curl E| local maxima at x = [-3. -1.  1.  3.]
+PASS  (d) route A  int E2.dl [V]                                     computed -2   page -2
+PASS  (d) route B  int E2.dl [V]                                     computed  2   page  2
+PASS  (d) flux of numerical curl E2 over rectangle, dS = +z dxdy [V] computed -4   page -4
+PASS  (d) closed loop (A then B reversed) [V]                        computed -4   page -4
+PASS  (d) that loop is CCW seen from +z (signed area sign)           computed  1   page  1
+PASS  (e) straight segment O->P  int E2.dl [V]                       computed  3.13379e-17   page  0
+PASS  (e) E2y odd about x = 1: max|E2y(1+s)+E2y(1-s)|                computed  2.44929e-16   page  0
+PASS  (e) staircase climb x0 giving -1 V [m]                         computed  1.33333   page  1.33333
+PASS  (e) staircase values: minimum over x0 in [0,2] [V]             computed -2   page -2
+PASS  (e) staircase values: maximum over x0 in [0,2] [V]             computed  2   page  2
+PASS  (e) number of x0 in [0,2] giving -1 V                          computed  1   page  1
+PASS  (e) int E1.dl route A [V] (6/pi)                               computed  1.90986   page  1.90986
+PASS  (e) int E1.dl route B [V] (~1.91)                              computed  1.90986   page  1.91
+PASS  (e) int E1.dl straight O->P equals route A (curl-free)         computed  1.90986   page  1.90986
+
+======== 7.9 Junction with an intrinsic layer ========
+PASS  (a) net charge per unit area [C/m^2]                           computed -3e-05   page  0
+PASS  (a) max |eps0 Ez(sheets) - page piecewise| [C/m^2]             computed  4.5e-05   page  0
+PASS  (a) max |eps0 Ez| for z < -3 (sheet sum, no BC imposed)        computed  1.5e-05   page  0
+PASS  (a) max |eps0 Ez| for z > 2                                    computed  1.5e-05   page  0
+PASS  (a) sign of Ez inside (field along -z)                         computed -1   page -1
+PASS  (b) eps0 V(-1)  [V*eps0]                                       computed  5.99994   page  6
+PASS  (b) eps0 V(0)  [V*eps0]                                        computed  11.9999   page  12
+PASS  (b) eps0 V(1)  [V*eps0]                                        computed  17.9999   page  18
+PASS  (b) eps0 V(2)  [V*eps0]                                        computed  20.9998   page  21
+PASS  (b) max |eps0 V - page piecewise| on [-3,3]                    computed  0.000165   page  0
+PASS  (b) sign of V'' at z = -2 (bowl/line/dome)                     computed  1   page  1
+PASS  (b) sign of V'' at z = 0 (bowl/line/dome)                      computed  0   page  0
+PASS  (b) sign of V'' at z = 1.5 (bowl/line/dome)                    computed -1   page -1
+PASS  (b) V(0) [V]                                                   computed  1.35528e+12   page  1.36e+12
+PASS  (c) V(2)-V(-3) [V]                                             computed  2.37174e+12   page  2.37e+12
+PASS  (c) max |Ez| [V/m]                                             computed  6.7764e+11   page  6.78e+11
+PASS  (c) |Ez| constant across intrinsic layer (spread) [eps0 units] computed  0   page  0
+PASS  (c) no-layer junction V(right)-V(left) [eps0 units]            computed  8.99993   page  9
+PASS  (c) no-layer junction [V]                                      computed  1.01646e+12   page  1.02e+12
+PASS  (c) no-layer peak field unchanged [eps0 units]                 computed  5.99997   page  6
+PASS  (c) lecture formula rho2 W2 (W1+W2)/2                          computed  9   page  9
+PASS  (c) difference 21-9 = Emax*g                                   computed  12.0001   page  12
+PASS  (d) e N_A [C/m^3]                                              computed  1602   page  1600
+PASS  (d) e N_D [C/m^3]                                              computed  3204   page  3200
+PASS  (d) N_A W1 [m^-2]                                              computed  2e+15   page  2e+15
+PASS  (d) N_D W2 [m^-2]                                              computed  2e+15   page  2e+15
+PASS  (d) E_max [V/m]                                                computed  3.09282e+06   page  3.09e+06
+PASS  (d) built-in potential V(n side) - V(p side) [V]               computed  1.08249   page  1.08
+PASS  (d) area rule 6(1+2+0.5) for part (c)                          computed  21   page  21
+
+======== 8.11 Electret rod in a grounded tube ========
+PASS  P0 [uC/m^2]                                                    computed  0.885419   page  0.885
+PASS  (a) rho_b by FD of -(1/r)d(rP)/dr [units of eps0]              computed -1e+07   page -1e+07
+PASS  (a) rho_b uniform (spread of FD values) [C/m^3]                computed  5.83884e-16   page  0
+PASS  (a) rho_b [uC/m^3]                                             computed -88.5419   page -88.5
+PASS  (a) rho_sb = P.n at r = a [units of eps0]                      computed  100000   page  100000
+PASS  (a) volume bound charge per length [units of pi eps0]          computed -4000   page -4000
+PASS  (a) volume bound charge per length [nC/m]                      computed -111.265   page -111
+PASS  (a) surface bound charge per length [nC/m]                     computed  111.265   page  111
+PASS  (a) total bound charge per length [C/m]                        computed -1.32349e-22   page  0
+PASS  (b) D_r = free charge enclosed/(2 pi r) for r < b [C/m^2]      computed  0   page  0
+PASS  (b) E_r at r = 1 cm (Gauss, total charge) [V/m]                computed -50000   page -50000
+PASS  (b) E_r just inside r = a [V/m]                                computed -100000   page -100000
+PASS  (b) E_r in the gap, r = 3.5 cm [V/m]                           computed -6.7971e-11   page  0
+PASS  (b) D_r = eps0 E_r + P_r at 1 cm (should be 0) [C/m^2]         computed  0   page  0
+PASS  (b) brute-force sum: E_x at (1 cm, 0) [V/m]                    computed -50000.4   page -50000
+PASS  (b) brute-force sum: E_y at (1 cm, 0) [V/m]                    computed  1.13281e-11   page  0
+PASS  (b) brute-force sum: E_y at (0, 1.9 cm) vs -5e6 r [V/m]        computed -95000.7   page -95000
+PASS  (b) brute-force sum: |E| in the gap at r = 3.2 cm [V/m]        computed  7.50011e-11   page  0
+PASS  (c) V(0)-V(b) = int_0^b E_r dr [V]                             computed -1000   page -1000
+PASS  (c) brute-force log-potential V(0)-V(b) [V]                    computed -1000.01   page -1000
+PASS  (c) charge on tube inner surface = -(free enclosed) [C/m]      computed -0   page  0
+PASS  (d) rho_l [nC/m]                                               computed  27.8163   page  27.8
+PASS  (d) rho_l/(2 pi) [units of eps0]                               computed  500   page  500
+PASS  (d) radius of E = 0 inside the electret [m]                    computed  0.01   page  0.01
+PASS  (d) E_r at 0.5 cm is outward (sign)                            computed  1   page  1
+PASS  (d) E_r at 1.5 cm is inward (sign)                             computed -1   page -1
+PASS  (d) E_r just inside a [V/m]                                    computed -75000   page -75000
+PASS  (d) E_r just outside a [V/m]                                   computed  25000   page  25000
+PASS  (d) E_r at the tube [V/m]                                      computed  10000   page  10000
+PASS  (d) brute-force E_x at (1.5 cm, 0) vs 500/r - 5e6 r [V/m]      computed -41667.2   page -41666.7
+PASS  (d) D_r(b) [units of eps0]                                     computed  10000   page  10000
+PASS  (d) rho_s on tube inner surface = n.D, n = -r_hat [nC/m^2]     computed -88.5419   page -88.5
+PASS  (d) tube inner surface per length [nC/m]                       computed -27.8163   page -27.8
+PASS  (d) tube inner surface per length = -rho_l                     computed -1   page -1
+PASS  check: eps0[E(a+)-E(a-)] in (b) [units of eps0]                computed  100000   page  100000
+PASS  check: eps0[E(a+)-E(a-)] in (d) [units of eps0]                computed  100000   page  100000
+PASS  check: null from rho_l + rho_b pi r0^2 = 0, r0^2 [m^2]         computed  0.0001   page  0.0001
+
+======== 9.10 Sphere, shell and two dielectric layers ========
+PASS  (a) D_r at r = 1.5 m [C/m^2]                                   computed  0.176839   page  0.176839
+PASS  (a) E_r at r = 1.5 m [V/m]                                     computed  3.99447e+09   page  3.99447e+09
+PASS  (a) P_r at r = 1.5 m [C/m^2]                                   computed  0.141471   page  0.141471
+PASS  (a) D_r at r = 3.5 m [C/m^2]                                   computed -0.00649612   page -0.00649612
+PASS  (a) E_r at r = 3.5 m [V/m]                                     computed -3.66839e+08   page -3.66839e+08
+PASS  (a) P_r at r = 3.5 m [C/m^2]                                   computed -0.00324806   page -0.00324806
+PASS  (a) D_r at r = 5.0 m [C/m^2]                                   computed -0.0031831   page -0.0031831
+PASS  (a) E_r at r = 5.0 m [V/m]                                     computed -3.59502e+08   page -3.59502e+08
+PASS  (a) P_r at r = 5.0 m [C/m^2]                                   computed  0   page  0
+PASS  (a) metal regions: E at r = 0.5 and 2.5 m                      computed  0   page  0
+PASS  (b) free rho_s = r.(D_out - D_in) at r = 1 m [C/m^2]           computed  0.397887   page  0.398
+PASS  (b) free rho_s = r.(D_out - D_in) at r = 2 m [C/m^2]           computed -0.0994718   page -0.0995
+PASS  (b) free rho_s = r.(D_out - D_in) at r = 3 m [C/m^2]           computed -0.00884194   page -0.00884
+PASS  (b) free rho_s = r.(D_out - D_in) at r = 4 m [C/m^2]           computed  4.97359e-12   page  0
+PASS  (b) charge on shell inner surface [C]                          computed -5   page -5
+PASS  (b) charge on shell outer surface [C]                          computed -1   page -1
+PASS  (c) bound rho_sb at r = 1 m [C/m^2]                            computed -0.31831   page -0.318
+PASS  (c) bound rho_sb at r = 2 m [C/m^2]                            computed  0.0795775   page  0.0796
+PASS  (c) bound rho_sb at r = 3 m [C/m^2]                            computed  0.00442097   page  0.00442
+PASS  (c) bound rho_sb at r = 4 m [C/m^2]                            computed -0.0024868   page -0.00249
+PASS  (c) bound charge total at r = 1 m [C]                          computed -4   page -4
+PASS  (c) bound charge total at r = 2 m [C]                          computed  4   page  4
+PASS  (c) bound charge total at r = 3 m [C]                          computed  0.5   page  0.5
+PASS  (c) bound charge total at r = 4 m [C]                          computed -0.5   page -0.5
+PASS  (c) rho_sb(r=3) exact = 1/(72 pi)                              computed  0.00442097   page  0.00442097
+PASS  (c) rho_sb(r=4) exact = -1/(128 pi)                            computed -0.0024868   page -0.0024868
+PASS  (d) V_shell by quad from infinity [V]                          computed -2.62137e+09   page -2.62e+09
+PASS  (d) V_shell by shell superposition = -7/(96 pi eps0)           computed -2.62137e+09   page -2.62137e+09
+PASS  (d) V(0) by quad [V]                                           computed  1.87241e+09   page  1.87e+09
+PASS  (d) V(0) by shell superposition = 5/(96 pi eps0)               computed  1.87241e+09   page  1.87241e+09
+PASS  (d) V(core) - V(shell) [V]                                     computed  4.49378e+09   page  4.49e+09
+PASS  (d) V(core) - V(shell) = 1/(8 pi eps0)                         computed  4.49378e+09   page  4.49378e+09
+PASS  check: eps0[E(4+)-E(4-)] = -1/(128 pi) [C/m^2]                 computed -0.0024868   page -0.0024868
+
+======== 10.9 Leaky spheres, one lossy half ========
+PASS  (b) max |V_FD - (-200 + 2/r)| [V]                              computed  3.79866e-09   page  0
+PASS  (b) E_r(a) [V/m]                                               computed  20000   page  20000
+PASS  (b) E_r(b) [V/m]                                               computed  5000   page  5000
+PASS  (a)(i) sign of charge on inner sphere: n.D = eps E_r(a), n = +r computed  1   page  1
+PASS  (a)(ii) rho_s on inner sphere, same in both halves [uC/m^2]    computed  0.531251   page  0.531
+PASS  (a)(ii) rho_s = 6e4 eps0                                       computed  60000   page  60000
+PASS  (b) E.z_hat on z = 0 for radial E                              computed  0   page  0
+PASS  (b) C = Q/V0 with Q = flux of D [pF]                           computed  6.6759   page  6.676
+PASS  (b) charge on inner sphere [pC]                                computed  667.59   page  667.6
+PASS  (c) current through lower hemisphere at three radii: spread [A] computed  1.57891e-16   page  0
+PASS  (c) leakage current, outward [nA]                              computed  125.664   page  125.7
+PASS  (c) G [nS]                                                     computed  1.25664   page  1.257
+PASS  (c) R [MOhm]                                                   computed  795.775   page  795.8
+PASS  (c) power = int sigma E^2 dV over the lossy half [uW]          computed  12.5664   page  12.57
+PASS  (c) (sigma/eps) C [nS]                                         computed  2.51327   page  2.513
+PASS  (c) G / ((sigma/eps) C)                                        computed  0.5   page  0.5
+PASS  (d) time for V(b) to reach -50 V [ms]                          computed  3.68235   page  3.682
+PASS  (d) tau = t_half/ln2 [ms]                                      computed  5.31251   page  5.313
+PASS  (d) tau = 2 eps/sigma                                          computed  0.00531251   page  0.00531251
+PASS  (d) eps/sigma [ms]                                             computed  2.65626   page  2.656
+PASS  check: R C [ms]                                                computed  5.31251   page  5.313
+      [info] shell-to-infinity capacitance 4 pi eps0 b = 2.225 pF; extra charge at -100 V = -222.5 pC; shell total would be -890.1 pC
+PASS  (d) note: 4 pi eps0 b [pF]                                     computed  2.2253   page  2.225
+PASS  (d) note: tau with that capacitance added, (C + 4 pi eps0 b)/G [ms] computed  7.08335   page  7.08
+
+TOTAL: 145 PASS, 0 FAIL

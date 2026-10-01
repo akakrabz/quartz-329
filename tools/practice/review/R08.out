@@ -1,0 +1,236 @@
+=== 8.1 Resistance of a copper wire ===
+PASS  8.1a R [ohm]: computed 1, page 1
+PASS  8.1b J [A/m^2]: computed 2000000, page 2000000
+PASS  8.1b E [mV/m]: computed 34.4828, page 34.5 (3 s.f.)
+PASS  8.1b V = int E dl [V]: computed 2, page 2
+PASS  8.1b IR [V]: computed 2, page 2
+PASS  8.1b E and J along the current: True
+PASS  8.1b electron drift (force qE, q<0) against the current: True
+PASS  8.1c A' [m^2]: computed 5e-07, page 5e-07
+PASS  8.1c R' [ohm]: computed 4, page 4
+
+=== 8.2 Four relaxation times ===
+PASS  8.2a tau copper [s]: computed 1.52658e-19, page 1.53e-19 (3 s.f.)
+PASS  8.2a tau sea water [s]: computed 1.79297e-10, page 1.79e-10 (3 s.f.)
+PASS  8.2a tau sea water [ns]: computed 0.179297, page 0.179 (3 s.f.)
+PASS  8.2a tau distilled [us]: computed 7.17189, page 7.17 (3 s.f.)
+PASS  8.2a tau glass [s]: computed 53.1251, page 53.1 (3 s.f.)
+PASS  8.2b t(1%)/tau = ln 100: computed 4.60517, page 4.61 (3 s.f.)
+PASS  8.2b t(1%) [ns]: computed 0.825695, page 0.826 (3 s.f.)
+PASS  8.2c 1 ms / tau_distilled: computed 139.433, page 139 (3 s.f.)
+PASS  8.2c conductors at 1 ms: copper, sea water, distilled; glass not: ['copper', 'distilled', 'sea water']
+
+=== 8.3 Field from a known polarization (MC) ===
+PASS  8.3 key is (b) only: ['b']
+PASS  8.3 (a) <- P = eps E: True
+PASS  8.3 (c) <- P = eps0 E/chi: True
+PASS  8.3 (d) <- P = eps0 E: True
+PASS  8.3 (e) = D/eps0: True
+PASS  8.3 check eps E = eps0 E + P = 3P/2: True
+PASS  8.3 (e) slab: D/eps0 = rho_s0/eps0 = field of the plates alone: True
+
+=== 8.4 Conducting slab in a field (T/F) ===
+PASS  8.4a E inside = 0 (True): computed 0, page 0
+PASS  8.4b rho_s(z=0) [nC/m^2] (statement +88.5 is False): computed -88.5419, page -88.5 (3 s.f.)
+PASS  8.4b same from n.D, n=-z, D=eps0 E0 below: computed -88.5419, page -88.5 (3 s.f.)
+PASS  8.4c rho_s(z=2cm) [nC/m^2]: computed 88.5419, page 88.5 (3 s.f.)
+PASS  8.4c equal and opposite (True): True
+PASS  8.4d E below slab [kV/m] (statement False): computed 10, page 10
+PASS  8.4d E above slab [kV/m]: computed 10, page 10
+PASS  8.4e V(2cm)-V(0) [V] (statement -200 is False): computed -0, page 0
+PASS  8.4e value without slab [V]: computed -200, page -200
+
+=== 8.5 Graded slab, find the error ===
+PASS  8.5 rho_b [C/m^3]: computed -0.005, page -0.005 (3 s.f.)
+PASS  8.5 rho_sb(0) [uC/m^2]: computed -5, page -5 (3 s.f.)
+PASS  8.5 rho_sb(d) [uC/m^2]: computed 10, page 10 (3 s.f.)
+PASS  8.5 total bound per area: computed -3.4977548e-16, page 0
+PASS  8.5 student's total with n=+z on bottom [uC/m^2]: computed 10, page 10 (3 s.f.)
+PASS  8.5 student's rho_b and rho_sb(d) are right (single slip): True
+PASS  8.5 check: eps0 E = -P inside (D = 0): computed -6.5e-06, page -6.5e-06
+PASS  8.5 check: E = 0 below: computed 1.975198e-05, page 0
+PASS  8.5 check: E = 0 above: computed -1.975198e-05, page 0
+PASS  8.5 jump of eps0 Ez at 0 = rho_sb(0): computed -5e-06, page -5e-06
+PASS  8.5 jump of eps0 Ez at d = rho_sb(d): computed 1e-05, page 1e-05
+
+=== 8.6 Coaxial radial resistor ===
+PASS  8.6a J(a) [A/m^2]: computed 477.465, page 477 (3 s.f.)
+PASS  8.6a J(b) [A/m^2]: computed 238.732, page 239 (3 s.f.)
+PASS  8.6a E(a) [V/m]: computed 238.732, page 239 (3 s.f.)
+PASS  8.6a E(b) [V/m]: computed 119.366, page 119 (3 s.f.)
+PASS  8.6 FD: same current through every shell (div J = 0): True
+PASS  8.6b R by finite-difference Laplace [ohm]: computed 0.551589, page 0.552 (3 s.f.)
+PASS  8.6b R by series shells [ohm]: computed 0.551589, page 0.552 (3 s.f.)
+PASS  8.6b V(a)-V(b) = -int_b^a E dr [V]: computed 1.65477, page 1.65 (3 s.f.)
+PASS  8.6c R axial [ohm]: computed 53.0516, page 53.1 (3 s.f.)
+PASS  8.6c ratio axial/radial: computed 96.1797, page 96 (2 s.f.)
+PASS  8.6 check thin-wall limit ratio: computed 0.99950033, page 1
+
+=== 8.7 Radially polarized ball ===
+PASS  8.7a profile1 rho_b(R) [C/m^3]: computed -8e-05, page -8e-05 (3 s.f.)
+PASS  8.7a profile1 rho_b(R/2) [C/m^3]: computed -0.00016, page -0.00016 (3 s.f.)
+PASS  8.7a profile2 rho_b [C/m^3] (uniform): computed -0.00012, page -0.00012 (3 s.f.)
+PASS  8.7a profile2 rho_b uniform: computed -0.00012, page -0.00012
+PASS  8.7a rho_sb = P_r(R) [uC/m^2]: computed 2, page 2
+PASS  8.7a rho_sb profile2 [uC/m^2]: computed 2, page 2
+PASS  8.7a surface charge [nC]: computed 62.8319, page 62.8 (3 s.f.)
+PASS  8.7a profile1 volume charge [nC]: computed -62.8319, page -62.8 (3 s.f.)
+PASS  8.7a profile1 total bound: computed 6.1225924e-19, page 0
+PASS  8.7a profile2 volume charge [nC]: computed -62.8319, page -62.8 (3 s.f.)
+PASS  8.7a profile2 total bound: computed 8.0364898e-19, page 0
+PASS  8.7b profile1 E_r inside [V/m]: computed -225882, page -226000 (3 s.f.)
+PASS  8.7b profile1 E uniform: computed -225881.81, page -225881.81
+PASS  8.7b profile2 E_r(R/2) [V/m]: computed -112941, page -113000 (3 s.f.)
+PASS  8.7b profile2 E_r(R-) [V/m]: computed -225882, page -226000 (3 s.f.)
+PASS  8.7b E outside = 0: computed 8.5979869e-07, page 0
+PASS  8.7b D = eps0 E + P = 0 inside: computed 5.4358339e-18, page 0
+PASS  8.7c V(0)-V(inf) [kV]: computed -5.64705, page -5.65 (3 s.f.)
+PASS  8.7c centre lower than infinity: True
+
+=== 8.8 Point charge in a dielectric sphere ===
+PASS  8.8a D(R) [C/m^2]: computed 7.07355e-07, page 7.07e-07 (3 s.f.)
+PASS  8.8a E(R-) [V/m]: computed 19972.3, page 20000 (3 s.f.)
+PASS  8.8a E(R+) [V/m]: computed 79889.3, page 79900 (3 s.f.)
+PASS  8.8a P = (3/4) q/(4 pi r^2): computed 0.75, page 0.75
+PASS  8.8a P = eps0 chi_e E: computed 3.9459903e-06, page 3.9459903e-06
+PASS  8.8b rho_b = 0 (FD divergence): computed -0, page 0
+PASS  8.8b rho_sb [nC/m^2]: computed 530.516, page 531 (3 s.f.)
+PASS  8.8b surface bound total [nC]: computed 6, page 6
+PASS  8.8c eps0 flux of E through r=1e-05 [nC]: computed 2, page 2
+PASS  8.8c eps0 flux of E through r=0.001 [nC]: computed 2, page 2
+PASS  8.8c eps0 flux of E through r=0.02 [nC]: computed 2, page 2
+PASS  8.8c bound point charge [nC]: computed -6, page -6
+PASS  8.8c bound point charge = -(chi_e/eps_r) q: computed -6e-09, page -6e-09
+PASS  8.8d E jump [V/m]: computed 59917, page 59900 (3 s.f.)
+PASS  8.8d eps0*jump [C/m^2]: computed 5.30516e-07, page 5.31e-07 (3 s.f.)
+PASS  8.8d eps0*jump = rho_sb: computed 5.3051648e-07, page 5.3051648e-07
+PASS  8.8 check: outside field = q alone (net bound zero): computed 0, page 0
+
+=== 8.9 Charge in a conducting shell's cavity ===
+PASS  8.9a Q_inner [nC]: computed -3, page -3
+PASS  8.9a Q_outer [nC]: computed -2, page -2
+PASS  8.9a rho_s(b) [nC/m^2]: computed -596.831, page -597 (3 s.f.)
+PASS  8.9a rho_s(c) [nC/m^2]: computed -99.4718, page -99.5 (3 s.f.)
+PASS  8.9b q/(4 pi eps0) [V m]: computed 26.9627, page 27 (3 s.f.)
+PASS  8.9b (q+Qs)/(4 pi eps0) [V m]: computed -17.9751, page -18 (3 s.f.)
+PASS  8.9b E_r(1cm) [V/m] (outward): computed 269627, page 270000 (3 s.f.)
+PASS  8.9b E_r(3cm): computed 0, page 0
+PASS  8.9b E_r(5cm) [V/m] (inward): computed -7190.04, page -7190 (3 s.f.)
+PASS  8.9c V_shell [V]: computed -449.378, page -449 (3 s.f.)
+PASS  8.9c V(1cm) [V]: computed 898.755, page 899 (3 s.f.)
+PASS  8.9c cavity term [V]: computed 1348.13, page 1348 (4 s.f.)
+PASS  8.9d inner surface total still -q [nC]: computed -3, page -3
+PASS  8.9d inner charge densest nearest q: |sigma(0)|/|sigma(pi)| = 27
+PASS  8.9d q + wall charge give V = 0 (so E = 0) beyond r=b at (0.012, 0.009, 0.025): computed -2.3789852e-13, page 0
+PASS  8.9d q + wall charge give V = 0 (so E = 0) beyond r=b at (0.0, 0.0, -0.035): computed 0, page 0
+PASS  8.9d q + wall charge give V = 0 (so E = 0) beyond r=b at (0.03, -0.02, 0.01): computed 6.4232599e-12, page 0
+PASS  8.9e outer surface [nC]: computed 0, page 0
+PASS  8.9e flow onto shell from ground [nC]: computed 2, page 2
+PASS  8.9e V(1cm) grounded [V]: computed 1348.13, page 1348 (4 s.f.)
+PASS  8.9 check V(1cm)-V_shell same in (c),(e): computed 1348.1328, page 1348.1328
+
+=== 8.10 Relaxation of a charge wave (FFT time-stepping of continuity + Gauss) ===
+PASS  8.10a tau [s]: computed 0.01, page 0.01
+PASS  8.10d rho(0, 10 ms) [eps0 C/m^3]: computed 6.62183, page 6.62 (3 s.f.)
+PASS  8.10d E_x(pi/6, 10 ms) [V/m]: computed 0.245253, page 0.245 (3 s.f.)
+PASS  8.10b E profile = (2/3) sin(3x) e^{-100t}: True
+PASS  8.10a shape frozen: rho = 18 cos(3x) e^{-t/tau}: True
+PASS  8.10a 1% time [ms]: computed 46.0517, page 46.1 (3 s.f.)
+PASS  8.10b J amplitude 600 eps0 [A/m^2]: computed 5.31251e-09, page 5.31e-09 (3 s.f.)
+PASS  8.10b J amplitude = sigma*(2/3) [eps0 units]: computed 600, page 600
+PASS  8.10b sigma [S/m]: computed 7.96877e-09, page 7.97e-09 (3 s.f.)
+PASS  8.10c continuity residual at x=0.3, t=0.002: computed -1.532996e-06, page 0
+PASS  8.10c continuity residual at x=1.7, t=0.013: computed -3.4139359e-07, page 0
+PASS  8.10c d rho/dt coefficient: computed -1800, page -1800
+PASS  8.10c J away from x=0 on both sides: True
+PASS  8.10c lump charge [eps0 C/m^2]: computed 12, page 12
+PASS  8.10c one period neutral: computed -3.2553439e-15, page 0
+PASS  8.10e field amplitude for cos(30x) [V/m]: computed 0.0666667, page 0.0667 (3 s.f.)
+PASS  8.10e same decay: rho ratio at 10 ms: computed 0.36787944, page 0.36787944
+
+=== 8.11 (NEW) Electret rod in a grounded tube ===
+PASS  8.11 P0 [uC/m^2]: computed 0.885419, page 0.885 (3 s.f.)
+PASS  8.11 rho_l [nC/m]: computed 27.8163, page 27.8 (3 s.f.)
+PASS  8.11a rho_b / eps0 [C/m^3]: computed -10000000, page -10000000
+PASS  8.11a rho_b uniform: computed -8.8541878e-05, page -8.8541878e-05
+PASS  8.11a rho_b [uC/m^3]: computed -88.5419, page -88.5 (3 s.f.)
+PASS  8.11a rho_sb / eps0 [C/m^2]: computed 100000, page 100000
+PASS  8.11a rho_sb [uC/m^2]: computed 0.885419, page 0.885 (3 s.f.)
+PASS  8.11a volume bound per length / (pi eps0): computed -4000, page -4000
+PASS  8.11a surface bound per length / (pi eps0): computed 4000, page 4000
+PASS  8.11a volume bound per length [nC/m]: computed -111.265, page -111 (3 s.f.)
+PASS  8.11a surface bound per length [nC/m]: computed 111.265, page 111 (3 s.f.)
+PASS  8.11a total bound per length: computed -1.2403474e-18, page 0
+PASS  8.11b E_r(1 cm) [V/m] brute force: computed -50000, page -50000 (3 s.f.)
+PASS  8.11b E_r(1 cm) [V/m] Gauss total charge: computed -50000, page -50000 (3 s.f.)
+PASS  8.11b E_r(a-) [V/m] brute force (extrapolated): computed -99999.9, page -100000 (3 s.f.)
+PASS  8.11b E_r(a-) = -P0/eps0 [V/m]: computed -100000, page -100000 (3 s.f.)
+PASS  8.11b E inward (against P) inside: True
+PASS  8.11b E_r = -5e6 r (r=0.017) brute force: computed -85000, page -85000
+PASS  8.11b E in gap r=0.025 [V/m] brute force: computed -8.9183395e-07, page 0
+PASS  8.11b E in gap r=0.04 [V/m] brute force: computed -5.573829e-07, page 0
+PASS  8.11b E in gap r=0.049 [V/m] brute force: computed -4.550066e-07, page 0
+PASS  8.11b D = eps0 E + P = 0 at r=0.006: computed 5.5355721e-18, page 0
+PASS  8.11b D = eps0 E + P = 0 at r=0.015: computed -5.2272521e-19, page 0
+PASS  8.11b surface layer makes no field inside it: computed 7.1054274e-15, page 0
+PASS  8.11b ... and the volume charge alone gives -5e6 r: computed -60000, page -60000
+PASS  8.11c inner-surface charge per length: computed 1.2428091e-18, page 0
+PASS  8.11c a net 1e-12 C/m would make V(b)-V(R) grow with R: 0.137, 0.302, 0.551 V
+PASS  8.11c a net -1e-12 C/m would make V(b)-V(R) grow with R: -0.137, -0.302, -0.551 V
+PASS  8.11c => outer surface charge = -(charge inside) = 0: computed 1.2403474e-18, page 0
+PASS  8.11c E outside tube (r=6cm) brute force [V/m]: computed -3.7158606e-07, page 0
+PASS  8.11c V(0)-V(b) [V] brute-force E: computed -1000, page -1000 (3 s.f.)
+PASS  8.11c V(0)-V(b) = -P0 a/(2 eps0) [V]: computed -1000, page -1000
+PASS  8.11c axis below the tube: True
+PASS  8.11d rho_l/(2 pi) / eps0: computed 500, page 500
+PASS  8.11d D_r(r=0.005) = 500 eps0/r: computed 8.8541878e-07, page 8.8541878e-07
+PASS  8.11d D_r(r=0.015) = 500 eps0/r: computed 2.9513959e-07, page 2.9513959e-07
+PASS  8.11d D_r(r=0.03) = 500 eps0/r: computed 1.475698e-07, page 1.475698e-07
+PASS  8.11d null radius [cm] (brute force): computed 1, page 1 (3 s.f.)
+PASS  8.11d null radius (Gauss total charge) [m]: computed 0.01, page 0.01
+PASS  8.11d null: rho_l + rho_b pi r0^2 = 0: computed 1.5880412e-18, page 0
+PASS  8.11d E outward for r<r0, inward for r0<r<a: True
+PASS  8.11d E inside formula 500/r - 5e6 r (r=0.006): computed 53333.333, page 53333.333
+PASS  8.11d E(a-) [V/m]: computed -74999.9, page -75000 (3 s.f.)
+PASS  8.11d E(a-) closed form [V/m]: computed -75000, page -75000 (3 s.f.)
+PASS  8.11d E(a+) [V/m]: computed 25000, page 25000 (3 s.f.)
+PASS  8.11d E(b-) [V/m]: computed 10000, page 10000 (3 s.f.)
+PASS  8.11d E in gap r=3cm vs 500/r [V/m]: computed 16666.7, page 16666.7 (3 s.f.)
+PASS  8.11d inner-surface rho_s / eps0 [C/m^2]: computed -10000, page -10000
+PASS  8.11d inner-surface rho_s [nC/m^2]: computed -88.5419, page -88.5 (3 s.f.)
+PASS  8.11d inner-surface per length = -rho_l: computed -2.7816251e-08, page -2.7816251e-08
+PASS  8.11d inner-surface per length / (pi eps0): computed -1000, page -1000
+PASS  8.11d inner-surface per length [nC/m]: computed -27.8163, page -27.8 (3 s.f.)
+PASS  8.11d charge inside outer surface (=> outer surface 0): computed -1.2403474e-18, page 0
+PASS  8.11d E outside tube = 0 (all charge incl. tube sums to 0): computed -3.7158955e-07, page 0
+PASS  8.11 check: eps0*(E(a+)-E(a-)) in (b) = rho_sb: computed 8.8541878e-07, page 8.8541878e-07
+PASS  8.11 check: eps0*(E(a+)-E(a-)) in (d) = rho_sb: computed 8.8541878e-07, page 8.8541878e-07
+PASS  8.11 check: D_r continuous at a in (d): computed 2.213547e-07, page 2.213547e-07
+PASS  8.11 check: P0 -> 0 gives coax field: computed 16666.667, page 16666.667
+
+=== 8.12 Rod polarized across its axis (direct 2-D Coulomb sum over rho_sb) ===
+PASS  8.12a rho_b = 0 (uniform P): computed 0, page 0
+PASS  8.12a net bound per length: computed -6.4966613e-25, page 0
+PASS  8.12b E_x inside [V/m]: computed -56470.5, page -56500 (3 s.f.)
+PASS  8.12b E_y inside: computed -3.615648e-10, page 0
+PASS  8.12b interior field uniform: computed -56470.453, page -56470.453
+PASS  8.12b D = eps0 E + P [C/m^2]: computed 5e-07, page 5e-07
+PASS  8.12c E_x at (3cm,0) [V/m]: computed 6274.49, page 6270 (3 s.f.)
+PASS  8.12c E_x at (0,3cm) [V/m]: computed -6274.49, page -6270 (3 s.f.)
+PASS  8.12c E_y at (0,3cm): computed -6.817018e-12, page 0
+PASS  8.12c V outside = P0 a^2 cos(phi)/(2 eps0 r): computed 180.70545, page 180.70545
+PASS  8.12c E_r outside formula: computed 7228.218, page 7228.218
+PASS  8.12c E_phi outside formula: computed 5421.1635, page 5421.1635
+PASS  8.12d tangential E continuous: computed 36371.99, page 36379.265
+PASS  8.12d E_phi = P0 sin(phi)/(2 eps0): computed 36371.99, page 36379.265
+PASS  8.12d eps0 jump of E_r = P0 cos(phi): computed 7.6476571e-07, page 7.6484219e-07
+PASS  8.12d D_r continuous: computed 3.8234462e-07, page 3.8242109e-07
+PASS  8.12d D_r = P0 cos(phi)/2: computed 3.8234462e-07, page 3.8242109e-07
+PASS  8.12d phi=0 just outside E_x [V/m]: computed 56459.2, page 56500 (3 s.f.)
+PASS  8.12d phi=90 just outside E_x [V/m]: computed -56459.2, page -56500 (3 s.f.)
+PASS  8.12e slab: sheets +-P give -P/eps0: computed -112940.91, page -112940.91
+PASS  8.12e sphere centre field = -P/(3 eps0): computed -37646.969, page -37646.969
+PASS  8.12e rod factor 1/2: computed 0.5, page 0.5
+PASS  8.12 check: V continuous at r=a: computed 520.12732, page 520.12732
+
+TOTAL: 211 PASS, 0 FAIL

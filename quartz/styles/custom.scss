@@ -144,3 +144,53 @@ table.ece-ref {
   margin-left: 0.3rem;
 }
 .ece-chip.done { color: var(--tertiary); border-color: var(--tertiary); }
+
+
+// ---- Practice problems: difficulty "tags" + folded hint / solution ------------------
+//   > [!easy] Easy · topic · topic      (one bar)
+//   > [!medium] Medium · topic          (two bars)
+//   > [!hard] Hard · topic              (three bars)
+//   > [!hint]- Hint                     (folded)
+//   > [!solution]- Solution             (folded)
+.callout {
+  --callout-icon-easy: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 20v-4"></path><path d="M12 20v-9" stroke-opacity="0.28"></path><path d="M18 20V5" stroke-opacity="0.28"></path></svg>');
+  --callout-icon-medium: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 20v-4"></path><path d="M12 20v-9"></path><path d="M18 20V5" stroke-opacity="0.28"></path></svg>');
+  --callout-icon-hard: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 20v-4"></path><path d="M12 20v-9"></path><path d="M18 20V5"></path></svg>');
+  --callout-icon-hint: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>');
+  --callout-icon-solution: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+
+  &[data-callout="easy"] { --color: #2f855a; --border: #2f855a55; --bg: #2f855a10; --callout-icon: var(--callout-icon-easy); }
+  &[data-callout="medium"] { --color: #b7791f; --border: #b7791f55; --bg: #b7791f10; --callout-icon: var(--callout-icon-medium); }
+  &[data-callout="hard"] { --color: #c53030; --border: #c5303055; --bg: #c5303010; --callout-icon: var(--callout-icon-hard); }
+  &[data-callout="hint"] { --color: #0e7490; --border: #0e749055; --bg: #0e74900c; --callout-icon: var(--callout-icon-hint); }
+  &[data-callout="solution"] { --color: #4a5568; --border: #4a556855; --bg: #4a55680c; --callout-icon: var(--callout-icon-solution); }
+}
+
+:root[saved-theme="dark"] .callout {
+  &[data-callout="easy"] { --color: #68d391; --border: #68d39155; --bg: #68d39112; }
+  &[data-callout="medium"] { --color: #f2c063; --border: #f2c06355; --bg: #f2c06312; }
+  &[data-callout="hard"] { --color: #fc8181; --border: #fc818155; --bg: #fc818112; }
+  &[data-callout="hint"] { --color: #67c6dd; --border: #67c6dd55; --bg: #67c6dd10; }
+  &[data-callout="solution"] { --color: #b8c2cf; --border: #b8c2cf55; --bg: #b8c2cf0e; }
+}
+
+// Difficulty chips used in the practice index tables ( <span class="diff easy">easy</span> )
+.diff {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  vertical-align: middle;
+  &.easy { color: #2f855a; }
+  &.medium { color: #b7791f; }
+  &.hard { color: #c53030; }
+}
+:root[saved-theme="dark"] .diff {
+  &.easy { color: #68d391; }
+  &.medium { color: #f2c063; }
+  &.hard { color: #fc8181; }
+}

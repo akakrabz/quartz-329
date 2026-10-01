@@ -1,0 +1,185 @@
+
+==============================================================================
+Constants
+==============================================================================
+eps0 = 8.854e-12 F/m, e = 1.602e-19 C, m_e = 9.109e-31 kg, c = 2.998e+08 m/s   (page values)
+e^2/(m_e eps0) = 3182.61 m^3/s^2   (page: about 3.18e3)
+N e for copper (N = 8.5e28): 1.36185e+10 C/m^3
+
+==============================================================================
+11.1 Drift speed in a house wire
+==============================================================================
+A = 1.5 mm^2 = 1.5e-06 m^2
+J = I/A = 6.66667e+06 A/m^2   (page 6.67e6 A/m^2)
+|v| = J/(N e) = 0.00048953 m/s = 0.4895 mm/s   (page 4.9e-4 m/s, 0.49 mm/s)
+electron velocity direction: v = J/(N q) with q = -e  ->  sign(v.J) = -1.0  (opposite to I)
+time to drift 1 m: 2042.78 s = 34.05 min   (page 2.0e3 s, about 34 min)
+  Monte Carlo J = -7.9079e-08, N q v = -7.8431e-08, rel. diff 0.83% (statistical)
+  Monte Carlo J = -3.9203e-07, N q v = -3.9216e-07, rel. diff 0.03% (statistical)
+
+==============================================================================
+11.2 Conductivity of aluminum from collisions
+==============================================================================
+sigma = N e^2 tau / m_e = 3.80422e+07 S/m   (page 3.8e7 S/m)
+mobility = e tau / m_e = 0.00131912 m^2/(V s)   (page 1.32e-3)
+drift at E = 0.1 V/m: 0.000131912 m/s   (page 1.32e-4 m/s, against E)
+  [ok] sigma = N e mu: got 38042194.38931987  expected 38042194.38931986
+copper mobility (lecture example, sigma = 5.96e7): 0.004376 m^2/(V s)   (page 4.4e-3)
+N_Al/N_Cu = 2.118 (page 'twice'),  mu_Cu/mu_Al = 3.318 (page 'a third')
+ODE: final drift = -0.000131912 m/s (negative: against E); formula -mu E = -0.000131912
+  [ok] 11.2 ODE steady drift: got np.float64(-0.00013191150082949926)  expected -0.0001319115008296335
+  [ok] 11.2 ODE 63% time equals tau: got np.float64(7.499999999979265e-15)  expected 7.5e-15
+
+==============================================================================
+11.3 Which change doubles the conductivity (multiple choice)
+==============================================================================
+  (a) double E (sigma does not contain E): sigma/sigma0 = 1
+  (b) double |q|: sigma/sigma0 = 4
+  (c) halve nu: sigma/sigma0 = 2
+  (d) double m: sigma/sigma0 = 0.5
+  (e) q -> -q: sigma/sigma0 = 1
+  E = 1.0: v = -0.00429 m/s, J = 5.842e+07 A/m^2, J/E = 5.84207e+07 S/m
+  E = 2.0: v = -0.00858 m/s, J = 1.168e+08 A/m^2, J/E = 5.84207e+07 S/m
+  q = +1.6e-19: v_x = +0.00429, J_x = N q v_x = +5.842e+07 (always +)
+  q = -1.6e-19: v_x = -0.00429, J_x = N q v_x = +5.842e+07 (always +)
+
+==============================================================================
+11.4 True or false
+==============================================================================
+  (i) w0=1.0, alpha=0.05, E=1.0: r_ss = -1, -eE/(m w0^2) = -1, sign(r*E) = -1 (antiparallel), p = -e r has sign(p*E) = +1
+  [ok] 11.4(i) Lorentz static r: got np.float64(-1.0000000000015474)  expected -1.0
+  (i) w0=2.0, alpha=0.2, E=-3.0: r_ss = 0.75, -eE/(m w0^2) = 0.75, sign(r*E) = -1 (antiparallel), p = -e r has sign(p*E) = +1
+  [ok] 11.4(i) Lorentz static r: got np.float64(0.7499999999996607)  expected 0.75
+  (ii) max |dP/dt| for E0 cos(wt): 5.5633e-07 A/m^2 vs w eps0 chi E0 = 5.5633e-07
+  [ok] 11.4(ii) J_p amplitude: got np.float64(5.56325018573108e-07)  expected 5.563250277239353e-07
+  (ii) constant E: max |dP/dt| = 1.08e-19
+  (iii) chi_e = 0.397826 (page 0.40), eps_r = 1 + chi_e = 1.39783 (page 1.40)
+  (iv) copper (sigma=5.8e7, N=8.5e28): Drude tau = 2.42146e-14 s (page 2.4e-14), eps0/sigma = 1.52658e-19 s (page 1.5e-19), ratio = 1.586e+05 (page 'about 10^5')
+  (v) w/nu at 10 GHz = 0.0015708 (page 1.6e-3); |sigma(w)/sigma_DC - 1| = 0.00157079 (page 0.16%)
+
+==============================================================================
+11.5 Sea water's two ions (find the error)
+==============================================================================
+N = 3.0e26 m^-3 is 0.4982 mol/L
+mu+ + mu- = 1e-07 m^2/(V s); mu+ - mu- = -2e-08 m^2/(V s)
+student: sigma = N e (mu+ - mu-) = -0.961306 S/m   (page -0.96 S/m)
+correct: sigma = N e (mu+ + mu-) = 4.80653 S/m   (page 4.8 S/m)
+fractions: Na+ 0.4, Cl- 0.6   (page 40%, 60%)
+species conductivities: Na+ 1.9226 S/m, Cl- 2.8839 S/m
+  q = +1.602e-19: v = [4.e-08 0.e+00 0.e+00] m/s, J_s = [1.92261196 0.         0.        ] A/m^2
+  q = -1.602e-19: v = [-6.e-08 -0.e+00 -0.e+00] m/s, J_s = [2.88391794 0.         0.        ] A/m^2
+  [ok] 11.5 J_x/E_x = N e (mu+ + mu-): got np.float64(4.806529901999999)  expected 4.806529901999999
+tau(Na+) = mu m / e = 9.48709e-15 s (page 9.5e-15), nu = 1.05406e+14 s^-1 (page 1.05e14)
+tau(Cl-) = mu m / e = 2.20949e-14 s (page 2.2e-14), nu = 4.52592e+13 s^-1 (page 4.5e13)
+  [ok] sigma_+ via N q^2/(m nu): got 1.9226119607999999  expected 1.9226119607999999
+  [ok] sigma_- via N q^2/(m nu): got 2.8839179411999996  expected 2.8839179411999996
+  Na+: w/nu at 10 GHz = 0.0005961 (page: below 1.4e-3)
+  Cl-: w/nu at 10 GHz = 0.001388 (page: below 1.4e-3)
+J.E per (V/m)^2: student -0.961 (negative -> would generate power), correct 4.81
+
+==============================================================================
+11.6 A conductor as a low-pass filter (n-type silicon)
+==============================================================================
+m* = 2.36844e-31 kg
+mobility = e tau/m* = 0.121764 m^2/(V s)   (page 0.122 = 1220 cm^2/(V s))
+sigma_DC = N e^2 tau/m* = 195.088 S/m   (page 195 S/m)
+  [ok] sigma_DC = N e mu: got 195.0881763554865  expected 195.08817635548647
+(a) 99% time = tau ln 100 = 4.60517 tau = 8.28931e-13 s   (page 4.6 tau = 8.3e-13 s)
+  ODE (tau=1.8e-13): max rel err vs analytic 8.48e-12; final v = -0.121764; t99 = 8.28931e-13 s = 4.60517 tau
+  [ok] 11.6 t99/tau = ln 100: got np.float64(4.605170187027766)  expected np.float64(4.605170185988092)
+  ODE (tau=2.4e-14): max rel err vs analytic 8.48e-12; final v = -0.211058; t99 = 1.10524e-13 s = 4.60517 tau
+  [ok] 11.6 t99/tau = ln 100: got np.float64(4.6051701870277615)  expected np.float64(4.605170185988092)
+(c) w = nu = 5.55556e+12 rad/s, f = 8.84194e+11 Hz   (page 5.56e12 rad/s, 0.88 THz)
+    sigma(w) = 97.5441 -97.5441 j S/m   (page 97.5(1 - j))
+    |sigma| = 137.948 S/m (page 138), phase = -45 deg (page -45)
+    period T = 1.13097e-12 s, lag T/8 = 1.41372e-13 s = (pi/4) tau = 1.41372e-13 s   (page 1.4e-13 s)
+  [ok] |sigma| = sigma_DC/sqrt2: got 137.94817243028157  expected np.float64(137.94817243028155)
+  ODE w/nu = 1.0: J amp = 137.948 (pred 137.948), phase = -45 deg (pred -45)
+  [ok] 11.6 AC amplitude w/nu=1.0: got np.float64(137.94817243034242)  expected 137.94817243028157
+  [ok] 11.6 AC phase w/nu=1.0: got np.float64(-44.999999999912944)  expected np.float64(-45.0)
+  ODE w/nu = 0.3: J amp = 186.861 (pred 186.861), phase = -16.699 deg (pred -16.699)
+  [ok] 11.6 AC amplitude w/nu=0.3: got np.float64(186.86058324900804)  expected 186.86058324914444
+  [ok] 11.6 AC phase w/nu=0.3: got np.float64(-16.699244233955373)  expected np.float64(-16.69924423399362)
+  ODE w/nu = 2.0: J amp = 11.6328 (pred 11.6328), phase = -63.435 deg (pred -63.435)
+  [ok] 11.6 AC amplitude w/nu=2.0: got np.float64(11.63281130504943)  expected 11.632811304995597
+  [ok] 11.6 AC phase w/nu=2.0: got np.float64(-63.43494882230027)  expected np.float64(-63.43494882292201)
+(d) x = w/nu at 1%: 0.0100005
+    silicon: f_max = 8.84238e+09 Hz   (page 8.8 GHz)
+    copper (nu = 4.1e13): f_max = 6.52568e+10 Hz   (page 65 GHz)
+    at that point |sigma|/sigma_DC = 0.99995 (page within 0.005%), phase = -0.573 deg (page -0.57)
+    |sigma(f_max) - sigma_DC|/sigma_DC = 0.01
+    copper nu from sigma=5.8e7, N=8.5e28: 4.12974e+13 s^-1 (page 4.1e13)
+
+==============================================================================
+11.7 Conductor-like or dielectric-like
+==============================================================================
+  sigma=4.0, chi=80.0, f=1e+09: |Jp| = 8.9012 (w eps0 chi E0 = 8.9012), phase of Jp = 90.0000 deg (+90 = leads), |Jp|/|Jc| = 1.11265 vs w eps0 chi/sigma = 1.11265
+  [ok] 11.7(a) J_p amplitude: got np.float64(8.901200406978242)  expected 8.901200443582963
+  [ok] 11.7(a) J_p phase +90: got np.float64(89.99999999999997)  expected 90.0
+  sigma=1e-12, chi=1.27, f=0.05: |Jp| = 7.06533e-12 (w eps0 chi E0 = 7.06533e-12), phase of Jp = 90.0000 deg (+90 = leads), |Jp|/|Jc| = 3.53266 vs w eps0 chi/sigma = 3.53266
+  [ok] 11.7(a) J_p amplitude: got np.float64(7.065327823038983e-12)  expected 7.065327852093977e-12
+  [ok] 11.7(a) J_p phase +90: got np.float64(90.00000000000006)  expected 90.0
+  sigma=0.002, chi=9.0, f=3e+06: |Jp| = 0.00300416 (w eps0 chi E0 = 0.00300416), phase of Jp = 90.0000 deg (+90 = leads), |Jp|/|Jc| = 0.751039 vs w eps0 chi/sigma = 0.751039
+  [ok] 11.7(a) J_p amplitude: got np.float64(0.0030041551373551573)  expected 0.00300415514970925
+  [ok] 11.7(a) J_p phase +90: got np.float64(90.00000000000003)  expected 90.0
+(b) Nd e^2/(m eps0) = 1.27304e+32 s^-2 (page 1.273e32)
+    glass chi_e = 1.27304 (page 1.27), eps_r = 2.27304 (page 2.27), sqrt(eps_r) = 1.508 (page 1.51)
+    lambda_0 = 2 pi c / w0 = 188.4 nm (page about 190 nm, ultraviolet)
+    f_x = sigma/(2 pi eps0 chi) = 0.0141198 Hz (page 0.014 Hz)
+    ratio at 60 Hz = 4249.35 (page 4.2e3)
+    w0/(2 pi) = 1.592e+15 Hz  >> 60 Hz (DC chi valid)
+  Lorentz ODE w/w0=0.01: r amp (units eE0/(m w0^2)) = 1.0001, in-phase coeff -1.0001 (DC model: -1, AC model: -1.0001)
+  [ok] 11.7 Lorentz r tracks -eE/(m w0^2) at w/w0=0.01: got np.float64(-1.0000999689855752)  expected -1.0000999699889992
+  Lorentz ODE w/w0=0.003: r amp (units eE0/(m w0^2)) = 1.00001, in-phase coeff -1.00001 (DC model: -1, AC model: -1.00001)
+  [ok] 11.7 Lorentz r tracks -eE/(m w0^2) at w/w0=0.003: got np.float64(-1.000008910078581)  expected -1.0000089100785787
+(c) sea water chi_e = eps_r - 1 = 80
+(c) sea water f_x = 8.98755e+08 Hz (page 0.90 GHz)
+    f = 20000 Hz: |Jp|/|Jc| = 2.2253e-05, |Jc|/|Jp| = 44937.8   (page 2.2e-5 / 4.5e4 at 20 kHz, 11 at 10 GHz)
+    f = 1e+10 Hz: |Jp|/|Jc| = 11.1265, |Jc|/|Jp| = 0.0898755   (page 2.2e-5 / 4.5e4 at 20 kHz, 11 at 10 GHz)
+    ion nu ~ 1.05e+14, 4.53e+13 s^-1; w(10 GHz)/nu <= 0.00139
+(d) sea water: tau_r = eps/sigma = 1.79297e-10 s, f_r = 1/(2 pi tau_r) = 8.87659e+08 Hz, f_x/f_r = 1.0125 = eps_r/chi_e = 1.0125, vacuum share 1/eps_r = 0.01235
+     A=0.01, d=0.001: G/C = 5.57733e+09 = sigma/eps = 5.57733e+09; max|C dv/dt| / max|G v| at f_r = 1.000000
+     A=0.0003, d=0.02: G/C = 5.57733e+09 = sigma/eps = 5.57733e+09; max|C dv/dt| / max|G v| at f_r = 1.000000
+(d) glass: tau_r = eps/sigma = 20.1259 s, f_r = 1/(2 pi tau_r) = 0.00790795 Hz, f_x/f_r = 1.78552 = eps_r/chi_e = 1.78552, vacuum share 1/eps_r = 0.4399
+     A=0.01, d=0.001: G/C = 0.0496871 = sigma/eps = 0.0496871; max|C dv/dt| / max|G v| at f_r = 1.000000
+     A=0.0003, d=0.02: G/C = 0.0496871 = sigma/eps = 0.0496871; max|C dv/dt| / max|G v| at f_r = 1.000000
+
+==============================================================================
+11.8 Relaxation time versus collision time
+==============================================================================
+  rho0=5.31e-11, beta=3.0, x=1.183, t/tau_r=0.251: Gauss residual 1.15e-10, continuity residual 8.29e-11
+  rho0=5.31e-11, beta=3.0, x=-1.880, t/tau_r=1.130: Gauss residual -4.16e-11, continuity residual -2.99e-11
+  rho0=5.31e-11, beta=3.0, x=-1.273, t/tau_r=1.338: Gauss residual 3.20e-11, continuity residual 2.62e-11
+  E_x(-0.3)+E_x(0.3) = 0.00e+00 (odd in x)
+  rho0=2e-06, beta=1.7, x=0.844, t/tau_r=1.454: Gauss residual 8.16e-12, continuity residual 5.23e-12
+  rho0=2e-06, beta=1.7, x=0.883, t/tau_r=0.005: Gauss residual -1.97e-11, continuity residual -2.26e-11
+  rho0=2e-06, beta=1.7, x=-0.800, t/tau_r=0.486: Gauss residual 2.38e-11, continuity residual 2.56e-11
+  E_x(-0.3)+E_x(0.3) = 0.00e+00 (odd in x)
+(b) page numbers: rho0/(beta eps0) = 6 eps0/(3 eps0) = 2 V/m amplitude
+    E_x(0.1 m, 0) = 2 sin(0.3) = 0.59104 V/m > 0  ->  current along +x at x = 0.1 m
+    trough of rho at x = pi/3 = 1.0472 m
+(c) copper: tau_r = eps0/sigma = 1.52658e-19 s (page 1.5e-19), Drude tau = 2.42146e-14 s (page 2.4e-14), ratio tau/tau_r = 158619 (page 1.6e5)
+(d) copper: sigma/(eps0 tau) = 2.70522e+32 s^-2 = N e^2/(m eps0) = 2.70522e+32
+    omega_p = 1.64475e+16 rad/s (page 1.64e16), f_p = 2.61771e+15 Hz (page 2.6e15), lambda = c/f_p = 114.5 nm (ultraviolet)
+    1/(2 tau) = 2.06487e+13 s^-1 (page 2.1e13), 2 tau = 4.84292e-14 s (page 4.8e-14)
+    roots: -2.06487e+13+1.64475e+16j, -2.06487e+13-1.64475e+16j
+    damped frequency sqrt(wp^2 - 1/(4 tau^2)) = 1.64475e+16 rad/s
+    4 sigma tau/eps0 = 6.345e+05 (>> 1: underdamped); oscillations per 2tau: 126.8 (page about 130); omega_p tau = 398.3
+  [ok] copper roots real part -1/(2 tau): got np.float64(-20648700658315.367)  expected -20648700658315.375
+    sea water: roots = -6.66611e+13, -5.5778e+09 s^-1 (page -6.7e13 and -5.6e9); sigma/eps = 5.57733e+09, 1/tau = 6.66667e+13
+    slow time constant 1/|s1| = 1.79282e-10 s vs eps/sigma = 1.79297e-10 s (page 0.18 ns); rel diff 8.37e-05
+    4 sigma tau/eps = 0.0003346 (<< 1: overdamped); eps/sigma = 1.793e-10 vs 4 tau = 6e-14
+    copper: eps0/sigma = 1.53e-19 vs 4 tau = 9.69e-14
+    tau = 1e-16: slow root -5.5773318e+09 vs -sigma/eps = -5.5773287e+09
+    tau = 1e-18: slow root -5.5773288e+09 vs -sigma/eps = -5.5773287e+09
+  copper mode ODE fit: decay rate 2.06487e+13 (pred 2.06487e+13), angular freq 1.64475e+16 (pred 1.64475e+16)
+  [ok] 11.8 copper decay rate: got np.float64(20648700658286.63)  expected 20648700658315.375
+  [ok] 11.8 copper oscillation: got np.float64(1.6447528652221374e+16)  expected np.float64(1.6447528652221386e+16)
+  sea water mode ODE: late-time decay rate -5.5778e+09 s^-1 (pred slow root -5.5778e+09, sigma/eps -5.57733e+09)
+  [ok] 11.8 sea water slow decay: got np.float64(-5577795404.791639)  expected np.float64(-5577795404.791661)
+  [ok] 11.8 sea water slow decay independent of beta: got np.float64(-5577795404.791655)  expected np.float64(-5577795404.791661)
+
+==============================================================================
+Summary
+==============================================================================
+All checks passed.

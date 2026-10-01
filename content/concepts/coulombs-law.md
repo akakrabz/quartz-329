@@ -26,3 +26,5 @@ The cube in the denominator is not a typo: one power normalizes the direction ve
 **Numbers.** $\dfrac{1}{4\pi\epsilon_0}\approx 9\times10^{9}$ m/F — but the course keeps $4\pi\epsilon_0$ explicit because $\epsilon_0\to\epsilon$ inside dielectrics (Lectures 8–9).
 
 **Where it appears.** [[1-electrostatics/02-coulombs-law-superposition-and-gauss|Lecture 2]] (statement, superposition, line charge), [[1-electrostatics/04-divergence-and-curl#6-static-electric-fields-are-curl-free|Lecture 4]] (its curl is zero).
+
+**Practice.** [[practice/topics#coulombs-law-and-point-charges|Coulomb's law and point charges]] (7 problems) — for example [[practice/02-coulombs-law-superposition-and-gauss#21-coulomb-force-as-a-vector|2.1 Coulomb force as a vector]] (easy), [[practice/02-coulombs-law-superposition-and-gauss#28-dipole-on-axis-and-bisector|2.8 Dipole on axis and bisector]] (medium), [[practice/02-coulombs-law-superposition-and-gauss#212-two-charges-one-given-field|2.12 Two charges, one given field]] (hard).

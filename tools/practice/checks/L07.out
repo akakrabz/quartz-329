@@ -1,0 +1,334 @@
+constants used: eps0 = 8.8542e-12 F/m, e = 1.6022e-19 C, me = 9.1094e-31 kg
+==============================================================================
+7.1  Two plates, two potentials
+==============================================================================
+  [PASS] V(0) [V]: got 9  want 9
+  [PASS] V(3 mm) [V]: got 0.  want 0
+  [PASS] V(1 mm) [V]: got 6.  want 6
+  [PASS] V'' at x=0.5 mm (Laplace): got 0.  want 0
+  [PASS] V'' at x=1.7 mm (Laplace): got 0.  want 0
+  [PASS] V'' at x=2.9 mm (Laplace): got 0.  want 0
+  [PASS] E_x [V/m] (= +3000, points +x: from 9 V plate to grounded plate): got 3000.  want 3000
+  [PASS] rho_s(x=0) [C/m^2]: got 2.656256e-08  want 2.65626e-08
+  [PASS] rho_s(x=3mm) [C/m^2]: got -2.656256e-08  want -2.65626e-08
+  rho_s(x=0) in nC/m^2 = 26.5626
+  [PASS] solve_bvp V(1 mm): got 6.  want 6
+  [PASS] check: field of two sheets rho_s/eps0 [V/m]: got 3000.  want 3000
+
+==============================================================================
+7.2  Which potential needs charge (MC)
+==============================================================================
+  (a) 3x^2-2y^2-z^2: Laplacian at 4 points = [ 0.  0.  0. -0.]
+  (b) 5xyz: Laplacian at 4 points = [ 0. -0.  0.  0.]
+  (c) x^2+y^2-z^2: Laplacian at 4 points = [2. 2. 2. 2.]
+  (d) 4 ln r (cyl): Laplacian at 4 points = [-0.e+00  1.e-06 -0.e+00 -0.e+00]
+  (e) 2/r (sph): Laplacian at 4 points = [ 0.  0. -0. -0.]
+  [PASS] (a) Laplacian: got 0  want 0
+  [PASS] (c) Laplacian [V/m^2]: got 2.  want 2
+  [PASS] (a) 3x^2-2y^2-z^2 harmonic: got 4.440892e-10  want 0
+  [PASS] (b) 5xyz harmonic: got -4.440892e-10  want 0
+  [PASS] (d) harmonic: got -1.771916e-07  want 0
+  [PASS] (e) harmonic: got 3.397282e-08  want 0
+  [PASS] (c) rho = -eps0*lap V [C/m^3]: got -1.770838e-11  want -1.77084e-11
+  [PASS] cyl formula for (d): (1/r)(r V')' : got -8.881784e-09  want 0
+  [PASS] sph formula for (e): (1/r^2)(r^2 V')' : got 1.009563e-08  want 0
+  [PASS] (a) 3x^2-2y^2-z^2: d2V/dx2, d2V/dy2, d2V/dz2: got [ 6. -4. -2.]  want [ 6 -4 -2]
+  [PASS] (c) x^2+y^2-z^2: d2V/dx2, d2V/dy2, d2V/dz2: got [ 2.  2. -2.]  want [ 2  2 -2]
+  [PASS] (d) d2V/dr2 = -4/r^2 (nonzero, but not the Laplacian) at r=1.2: got -2.777778  want -2.777778
+  [PASS] (e) d2V/dr2 = +4/r^3 (nonzero, but not the Laplacian) at r=1.2: got 2.314815  want 2.314815
+  [PASS] (d) d2V/dr2 = -4/r^2 (nonzero, but not the Laplacian) at r=1.7: got -1.384083  want -1.384083
+  [PASS] (e) d2V/dr2 = +4/r^3 (nonzero, but not the Laplacian) at r=1.7: got 0.814167  want 0.814166
+
+==============================================================================
+7.3  Find the error: concentric spheres
+==============================================================================
+  [PASS] A [V m]: got 2.  want 2.
+  [PASS] B [V]: got -100.  want -100.
+  [PASS] V(a) [V]: got 100.  want 100
+  [PASS] V(b) [V]: got 0.  want 0
+  [PASS] spherical Laplacian / (2A/r^3) at r=0.012: got 6.656675e-09  want 0
+  [PASS] 3-D Cartesian Laplacian / (2A/r^3) at |r|=0.012: got -8.096231e-07  want 0
+  [PASS] spherical Laplacian / (2A/r^3) at r=0.015: got 3.460565e-09  want 0
+  [PASS] 3-D Cartesian Laplacian / (2A/r^3) at |r|=0.015: got -5.179857e-07  want 0
+  [PASS] spherical Laplacian / (2A/r^3) at r=0.019: got -4.158729e-09  want 0
+  [PASS] 3-D Cartesian Laplacian / (2A/r^3) at |r|=0.019: got -3.238516e-07  want 0
+  [PASS] E_r(a) [V/m] (outward): got 20000.000002  want 20000
+  [PASS] E_r(b) [V/m] (outward): got 5000.  want 5000
+  [PASS] r^2 E_r constant = A [V m]: got [2. 2. 2.]  want [2 2 2]
+  [PASS] student's uniform field = average (V(a)-V(b))/(b-a) [V/m]: got 10000.  want 10000
+  [PASS] true V(1.5 cm) [V]: got 33.333333  want 33.333333
+  student's V(1.5 cm) = 50 V
+  [PASS] linear V fails spherical Laplace (nonzero): (1/r^2)(r^2 V')' at 1.5 cm: got True  want True
+    value of that Laplacian = -1.33333e+06 V/m^2
+
+==============================================================================
+7.4  Wedge between two plates
+==============================================================================
+  [PASS] V on phi=0 plate [V]: got 0.  want 0
+  [PASS] V on phi=pi/2 plate [V]: got 100.  want 100
+  [PASS] V at phi=pi/4 [V]: got 50.  want 50
+  [PASS] Laplacian at [0.05, 0.02, 0.1]: got 0.000817  want 0
+  [PASS] Laplacian at [0.1, 0.1, -0.3]: got 7.105427e-05  want 0
+  [PASS] Laplacian at [0.02, 0.2, 0.0]: got -0.000568  want 0
+  [PASS] |E| at r=10 cm [V/m] = 2000/pi: got 636.619772  want 636.619772
+  2000/pi = 636.62 V/m
+  [PASS] E along -phi_hat (E.phihat/|E|): got -1.  want -1
+  [PASS] E components (x,y) [V/m] = 450.16*(1,-1): got [ 450.158158 -450.158158]  want [ 450.158 -450.158]
+  [PASS] rho_s on grounded plate at r=10 cm [C/m^2] = -200 eps0/(pi r): got -5.636751e-09  want -5.636751e-09
+    in nC/m^2 = -5.63675
+  [PASS] rho_s on 100 V plate at r=10 cm [C/m^2] (positive): got 5.636751e-09  want 5.636751e-09
+  [PASS] arc check |E| * (pi r/2) = 100 V: got 100.  want 100
+
+==============================================================================
+7.5  Laplace's equation, true or false
+==============================================================================
+  [PASS] (a) lap(3V1 - 2V2 + 7) = 0 at [0.3, -0.2, 0.7]  -> TRUE: got -1.776357e-09  want 0
+  [PASS] (a) lap(3V1 - 2V2 + 7) = 0 at [1.1, 0.4, -0.5]  -> TRUE: got -3.552714e-09  want 0
+  [PASS] (a) lap(3V1 - 2V2 + 7) = 0 at [-0.6, 0.9, 0.2]  -> TRUE: got 8.881784e-10  want 0
+  [PASS] (b) lap(V1^2) = 2|grad V1|^2 = 11.6800 (nonzero) at [0.3, -0.2, 0.7]  -> FALSE: got 11.680028  want 11.68
+  [PASS] (b) lap(V1^2) = 2|grad V1|^2 = 94.2400 (nonzero) at [1.1, 0.4, -0.5]  -> FALSE: got 94.240028  want 94.24
+  [PASS] (b) lap(V1^2) = 2|grad V1|^2 = 52.1600 (nonzero) at [-0.6, 0.9, 0.2]  -> FALSE: got 52.160028  want 52.16
+  [PASS] (b) simplest counterexample: V = x is harmonic, lap(x^2) = 2 [V/m^2]: got 2.  want 2
+  [PASS] (c) harmonic: sphere average = centre value (c=[0.3, -0.2, 0.7], R=0.5): got 4.29  want 4.29
+  [PASS] (c) with charge: average - centre = R^2 lap V / 6 (c=[0.3, -0.2, 0.7], R=0.5): got 0.083333  want 0.083333
+  [PASS] (c) harmonic: sphere average = centre value (c=[1.1, 0.4, -0.5], R=0.2): got 7.76  want 7.76
+  [PASS] (c) with charge: average - centre = R^2 lap V / 6 (c=[1.1, 0.4, -0.5], R=0.2): got 0.013333  want 0.013333
+  [PASS] (c)/(d) trial 0: random combination is harmonic: got 2.775558e-11  want 0
+  [PASS] (c)/(d) trial 0: max inside < max on boundary, min inside > min on boundary: got [ True  True]  want [ True  True]
+  [PASS] (c)/(d) trial 1: random combination is harmonic: got 8.326673e-11  want 0
+  [PASS] (c)/(d) trial 1: max inside < max on boundary, min inside > min on boundary: got [ True  True]  want [ True  True]
+  [PASS] (c)/(d) trial 2: random combination is harmonic: got -6.938894e-11  want 0
+  [PASS] (c)/(d) trial 2: max inside < max on boundary, min inside > min on boundary: got [ True  True]  want [ True  True]
+  [PASS] (d) relaxation from random start (max |V| = 50.0 V) ends at V = 0: got 2.249882e-54  want 0
+  => (a) true, (b) false, (c) false, (d) true
+
+==============================================================================
+7.6  Coaxial cable by Laplace
+==============================================================================
+  ln 4 = 1.38629
+  [PASS] V(a) [V]: got 100.  want 100
+  [PASS] V(b) [V]: got 0.  want 0
+  [PASS] cyl Laplacian at r=1.5 mm: got 0.754644  want 0
+  [PASS] 3-D Cartesian Laplacian at r=1.5 mm: got -14.29612  want 0
+  [PASS] cyl Laplacian at r=2.5 mm: got -0.466088  want 0
+  [PASS] 3-D Cartesian Laplacian at r=2.5 mm: got -1.875833  want 0
+  [PASS] cyl Laplacian at r=3.5 mm: got -0.035893  want 0
+  [PASS] 3-D Cartesian Laplacian at r=3.5 mm: got -0.436984  want 0
+  [PASS] V0/ln(b/a) [V]: got 72.134752  want 72.1348
+  [PASS] E_r(a) [V/m] outward: got 72134.752038  want 72134.75
+  [PASS] E_r(b) [V/m] outward: got 18033.688022  want 18033.69
+  [PASS] radius where V = 50 V [m] = sqrt(ab): got 0.002  want 0.002
+  [PASS] V(sqrt(ab)) [V]: got 50.  want 50
+  V at arithmetic mean 2.5 mm = 33.9036 V
+  [PASS] rho_s(a) [C/m^2]: got 6.386946e-07  want 6.38698e-07
+  [PASS] rho_s(b) [C/m^2]: got -1.596737e-07  want -1.59675e-07
+  rho_s(a) nC/m^2 = 638.695
+  rho_s(b) nC/m^2 = -159.674
+  [PASS] rho_l inner [C/m] = 2 pi eps0 V0/ln(b/a): got 4.013037e-09  want 4.013037e-09
+  rho_l inner nC/m = 4.01304
+  rho_l outer nC/m = -4.01304
+  [PASS] (rho_l inner + outer)/rho_l inner = 0: got -6.695221e-10  want 0
+  [PASS] Gauss check: E(r) = rho_l/(2 pi eps0 r) at 3 mm: got 24044.917346  want 24044.91735
+  [PASS] solve_bvp V(2 mm) [V]: got 50.  want 50
+  [PASS] solve_bvp E(a) [V/m]: got 72134.752045  want 72134.75
+
+==============================================================================
+7.7  Space charge between grounded plates
+==============================================================================
+  [PASS] (a) V(0): got 0.  want 0
+  [PASS] (a) V(d): got 0.  want 0
+  [PASS] (a) V'' = -rho0/eps0 at x=0.005: got -112940.906725  want -112940.906737
+  [PASS] (a) V'' = -rho0/eps0 at x=0.015: got -112940.90676  want -112940.906737
+  [PASS] (a) V'' = -rho0/eps0 at x=0.025: got -112940.906734  want -112940.906737
+  [PASS] rho0/eps0 [V/m^2]: got 112940.906737  want 112940.9
+  [PASS] (a) V_max at d/2 [V] = rho0 d^2/(8 eps0): got 12.705852  want 12.705852
+  [PASS] (a) V_max hand value [V]: got 12.705852  want 12.70585
+  [PASS] (a) numerical argmax [m]: got 0.015  want 0.015
+  [PASS] (a) E_x(0) [V/m] = -rho0 d/(2 eps0) (points -x, into plate): got -1694.113601  want -1694.113601
+  [PASS] (a) E_x(d) [V/m] = +rho0 d/(2 eps0) (points +x, into plate): got 1694.113601  want 1694.113601
+  [PASS] (a) |E| at plates hand value [V/m]: got 1694.113601  want 1694.114
+  [PASS] (a) rho_s(0) [C/m^2] = -rho0 d/2: got -1.5e-08  want -1.5e-08
+  [PASS] (a) rho_s(d) [C/m^2] = -rho0 d/2: got -1.5e-08  want -1.5e-08
+  [PASS] (b) V(0): got 0.  want 0
+  [PASS] (b) V(d): got 0.  want 0
+  [PASS] (b) V'' = -rho/eps0 at x=0.005: got -37646.96892  want -37646.968912
+  [PASS] (b) V'' = -rho/eps0 at x=0.015: got -112940.906742  want -112940.906737
+  [PASS] (b) V'' = -rho/eps0 at x=0.025: got -188234.844494  want -188234.844562
+  [PASS] (b) total charge per area [C/m^2] = rho0 d: got 3.e-08  want 3.e-08
+  [PASS] (b) argmax [m] = d/sqrt3: got 0.017321  want 0.017321
+  (b) x_max in cm = 1.73205
+  [PASS] (b) V_max [V] = 2 rho0 d^2/(9 sqrt3 eps0): got 13.041293  want 13.041293
+  (b) V_max = 13.0413 V
+  [PASS] (b) E_x(0) [V/m] = -rho0 d/(3 eps0): got -1129.409067  want -1129.409067
+  [PASS] (b) E_x(d) [V/m] = +2 rho0 d/(3 eps0): got 2258.818135  want 2258.818135
+  [PASS] (b) E_x(0), E_x(d) hand values [V/m]: got [-1129.409067  2258.818135]  want [-1129.409  2258.818]
+  [PASS] (b)/(c) rho_s(0) [C/m^2] = -rho0 d/3: got -1.e-08  want -1.e-08
+  [PASS] (b)/(c) rho_s(d) [C/m^2] = -2 rho0 d/3: got -2.e-08  want -2.e-08
+  [PASS] (c) total induced = -total space charge: got -3.e-08  want -3.e-08
+  [PASS] (c) charge between plate 0 and zero-field plane = |rho_s(0)|: got 1.e-08  want 1.e-08
+  [PASS] (c) charge between zero-field plane and plate d = |rho_s(d)|: got 2.e-08  want 2.e-08
+  [PASS] (b) E_x = 0 at x = d/sqrt3: got 8.881784e-09  want 0
+  [PASS] (a) solve_bvp V(x) agrees: got [8.571941e-15 7.058807e+00 1.129409e+01 1.270585e+01 1.129409e+01
+ 7.058807e+00 1.628142e-16]  want [ 0.        7.058807 11.294091 12.705852 11.294091  7.058807  0.      ]
+  [PASS] (b) solve_bvp V(x) agrees: got [ 8.642655e-15  5.490183e+00  1.003919e+01  1.270585e+01  1.254899e+01
+  8.627430e+00 -2.834104e-16]  want [ 0.        5.490183 10.039192 12.705852 12.54899   8.62743   0.      ]
+
+==============================================================================
+7.8  Plates and a charged sheet (z in m, V in V, charges in units of eps0)
+==============================================================================
+  [PASS] V(0): got 0  want 0
+  [PASS] V(3) from below: got 9  want 9
+  [PASS] V(3) from above: got 9  want 9
+  [PASS] V(4): got 3  want 3
+  [PASS] E_z below [V/m]: got -3.  want -3
+  [PASS] E_z above [V/m]: got 6.  want 6
+  [PASS] rho_s(z=0)/eps0: got -3.  want -3
+  [PASS] rho_s(z=4)/eps0: got -6.  want -6
+  [PASS] rho_s(sheet)/eps0: got 9.  want 9
+  [PASS] sum of charges: got 0.  want 0
+  rho_s(0) [C/m^2] = -2.65626e-11
+  rho_s(4) [C/m^2] = -5.31251e-11
+  rho_s(sheet) [C/m^2] = 7.96877e-11
+  [PASS] superposition E(z<0), E(0<z<3), E(3<z<4), E(z>4): got [ 0. -3.  6.  0.]  want [ 0 -3  6  0]
+  [PASS] (d) V_s [V]: got 12.  want 12
+  [PASS] (d) E below, above [V/m]: got [-4.  9.]  want [-4  9]
+  [PASS] (d) jump (E_above - E_below) = 13: got 13.  want 13
+  [PASS] (d) plate charges /eps0: got [-4. -9.]  want [-4 -9]
+  [PASS] (d) plates + sheet = 0: got 0.  want 0
+  [PASS] wrong-order jump gives a NEGATIVE V_s (a minimum on a positive sheet) [V]: got -4.5  want -4.5
+  [PASS]   ... which indeed satisfies E_below - E_above = 9 with the wrong order: got 9.  want 9
+  [PASS] FD Poisson solve: V(3) for rho_s = 9 eps0 [V]: got 9.  want 9.
+  [PASS] FD Poisson solve: V(3) for rho_s = 13 eps0 [V]: got 12.  want 12.
+
+==============================================================================
+7.9  Junction with an intrinsic layer (exam units: rho in C/m^3, z in m, eps0 kept symbolic)
+==============================================================================
+  total charge per area (must be 0): 0.0
+  [PASS] E_z*eps0 by integrating rho (Gauss) vs formula: got [ 0.  -1.  -3.  -4.  -4.  -4.  -2.8 -0.8  0. ]  want [-0.  -1.  -3.  -4.  -4.  -4.  -2.8 -0.8  0. ]
+  [PASS] V*eps0 by integrating -E vs formula: got [-0.    0.25  2.25  6.    8.   10.8  13.02 13.92 14.  ]  want [-0.    0.25  2.25  6.    8.   10.8  13.02 13.92 14.  ]
+  [PASS] V'' = -rho at z=-2.2 (eps0=1 units): got 2.  want 2
+  [PASS] V'' = -rho at z=0.4 (eps0=1 units): got 0.  want 0
+  [PASS] V'' = -rho at z=1.6 (eps0=1 units): got -4.  want -4
+  [PASS] continuity of V at z=-1,1,2: got [-8.000711e-12 -8.000711e-12  0.000000e+00]  want [0 0 0]
+  [PASS] V(-1), V(1), V(0), V(2)  [units 1/eps0]: got [ 4. 12.  8. 14.]  want [ 4 12  8 14]
+  [PASS] max |E| [units 1/eps0]: got 4.  want 4
+  [PASS] solve_ivp V(2), V(0) [1/eps0]: got [14.  8.]  want [14  8]
+  [PASS] solve_ivp E(2) = -V'(2) = 0: got 6.874538e-08  want 0
+  4/eps0 [V/m] = 4.51764e+11
+  8/eps0 [V] = 9.03527e+11
+  14/eps0 [V] = 1.58117e+12
+  6/eps0 [V] = 6.77645e+11
+  [PASS] no-gap V2 [1/eps0]: got 6.  want 6
+  [PASS] lecture formula rho2 W2 (W1+W2)/2 [1/eps0]: got 6.  want 6
+  [PASS] gap adds Emax*g [1/eps0]: got 8  want 8
+  [PASS] neutrality NA W1 = ND W2: got 2.e+15  want 2.e+15
+  [PASS] (d) E_max [V/m]: got 3093184.304227  want 3093180.
+  [PASS] (d) V2 - V1 [V]: got 1.082615  want 1.08261
+  (d) e N_A [C/m^3] = 1602.18
+  (d) e N_D [C/m^3] = 3204.35
+  (d) eps = 11.7 eps0 [F/m] = 1.03594e-10
+  [PASS] (d) W1/2 + g + W2/2 [m]: got 3.5e-07  want 3.5e-07
+  [PASS] (d) E_max = e N_D W2/eps (same from the n side) [V/m]: got 3093184.304227  want 3093184.304227
+  [PASS] (d) solve_ivp V across structure [V]: got 1.082614  want 1.082615
+  [PASS] (d) solve_ivp max field [V/m]: got 3093184.293394  want 3093184.304227
+  [PASS] (d) solve_ivp field at u=0.54 um (outside) [V/m]: got -0.058257  want 0
+  [PASS] (d) scaling from exam answer: 14/eps0 * (e NA/2) * (1e-7)^2 / 11.7: got 1.082615  want 1.082615
+
+==============================================================================
+7.10  Space-charge-limited vacuum diode
+==============================================================================
+  [PASS] V(0): got 0.  want 0
+  [PASS] V(d): got 16.  want 16
+  [PASS] V(1 mm) [V]: got 1.  want 1.
+  [PASS] rho = -eps0 V'' at x=1 mm: got -3.935195e-06  want -3.935195e-06
+  [PASS] rho = -eps0 V'' at x=3 mm: got -1.891844e-06  want -1.891844e-06
+  [PASS] rho = -eps0 V'' at x=6 mm: got -1.191787e-06  want -1.191787e-06
+  [PASS] 4 eps0 Va/(9 d^2) [C/m^3]: got 9.837986e-07  want 9.83799e-07
+  [PASS] rho(1 mm) [C/m^3]: got -3.935195e-06  want -3.9352e-06
+  [PASS] rho(d) [C/m^3]: got -9.837986e-07  want -9.83799e-07
+  [PASS] E = -V' at x=1 mm: got -1333.333333  want -1333.333333
+  [PASS] E = -V' at x=5 mm: got -2279.967929  want -2279.967929
+  [PASS] E_x(d) [V/m] (points -x, toward cathode): got -2666.666667  want -2666.667
+  [PASS] E_x(0) [V/m]: got -0.  want 0.
+  [PASS] rho_s cathode [C/m^2]: got -0.  want 0.
+  [PASS] rho_s anode [C/m^2] = 4 eps0 Va/(3d): got 2.361117e-08  want 2.36112e-08
+  [PASS] space charge per area [C/m^2] (quad) = -4 eps0 Va/(3d): got -2.361117e-08  want -2.361117e-08
+  [PASS] space charge per area, hand value [C/m^2]: got -2.361117e-08  want -2.36112e-08
+  [PASS] total = 0: got 3.308722e-24  want 0
+  [PASS] empty diode anode charge eps0 Va/d [C/m^2]: got 1.770838e-08  want 1.77084e-08
+  [PASS] ratio anode charge with/without space charge: got 1.333333  want 1.333333
+  [PASS] v(d) [m/s]: got 2372387.834103  want 2372390.
+  [PASS] v(x) = v(d) (x/d)^(2/3) at 1 mm: got 593096.958526  want 593096.958526
+  [PASS] J = rho v at 5 positions [A/m^2] (constant, negative => -x): got [-2.333952 -2.333952 -2.333952 -2.333952 -2.333952]  want [-2.33395 -2.33395 -2.33395 -2.33395 -2.33395]
+  [PASS] Child-Langmuir |J| [A/m^2]: got 2.333952  want 2.33395
+  [PASS] transit time T = 3d/v(d) [s]: got 1.011639e-08  want 1.011639e-08
+  [PASS] |J| = |space charge| / T: got 2.333952  want 2.333952
+  [PASS] |Q|/T = 4 eps0 Va v(d)/(9 d^2) = |rho(d)| v(d) = |J|: got [2.333952 2.333952 2.333952]  want [2.333952 2.333952 2.333952]
+  transit time = 1.01164e-08 s
+  transit time in ns = 10.1164
+  [PASS] scaling: (e/me)(4Va/(3d)) = (2/3) v0^2/d: got 4.690187e+14  want 4.690187e+14
+  [PASS] equation of motion: arrival time [s] (start offset ~3e-6 relative): got 1.011638e-08  want 1.011639e-08
+  [PASS] equation of motion: arrival speed [m/s]: got 2372387.834103  want 2372387.834103
+  [PASS] energy first integral (V')^2 vs 4K sqrt(V) at 5 mm: got 5198253.756721  want 5198253.756823
+
+==============================================================================
+7.11  Charged ball, two ways
+==============================================================================
+  [PASS] inside: (1/r^2)(r^2V')' = -rho0/eps0 at r=0.03: got -112940.910573  want -112940.906737
+  [PASS] inside: (1/r^2)(r^2V')' = -rho0/eps0 at r=0.07: got -112940.907442  want -112940.906737
+  [PASS] outside: Laplace at r=0.15: got -6.66647e-05  want 0
+  [PASS] outside: Laplace at r=0.4: got -4.189982e-06  want 0
+  [PASS] V continuous at a: got 376.469689  want 376.469689
+  [PASS] V' continuous at a: got -3764.696892  want -3764.696891
+  [PASS] V(0) [V] = rho0 a^2/(2 eps0): got 564.704534  want 564.704
+  [PASS] V(a) [V] = rho0 a^2/(3 eps0): got 376.469689  want 376.469
+  [PASS] V(0)/V(a) = 3/2: got 1.5  want 1.5
+  [PASS] outside = Q/(4 pi eps0 r): got 150.587876  want 150.587876
+  [PASS] Gauss: 4 pi r^2 eps0 E_r = Q_enc at r=0.05: got 5.235988e-10  want 5.235988e-10
+  [PASS] Gauss: 4 pi r^2 eps0 E_r = Q_enc at r=0.2: got 4.18879e-09  want 4.18879e-09
+  [PASS] Green's integral V(0) [V]: got 564.704534  want 564.704534
+  [PASS] brute-force Green's integral V(0.05) [V]: got 517.645823  want 517.645823
+  [PASS] brute-force Green's integral V(0.2) [V]: got 188.234845  want 188.234845
+  [PASS] A/r is harmonic for r>0 (the excluded point-charge term): got 0.00063  want 0
+  [PASS] solve_bvp V(0+) [V]: got 564.704534  want 564.704534
+  [PASS] solve_bvp V(a) [V]: got 376.469689  want 376.469689
+
+==============================================================================
+7.12  Grounded conducting sphere in a uniform field
+==============================================================================
+  [PASS] a=0.1: Laplacian at [0.2 0.1 0.3]: got 0.002842  want 0
+  [PASS] a=0.1: Laplacian at [-0.5  0.4 -0.2]: got 0.000284  want 0
+  [PASS] a=0.1: Laplacian at [ 0.05 -0.6   0.9 ]: got 0.001137  want 0
+  [PASS] a=0.1: radial part = -2E0 cos(th)(1/r - a^3/r^4): got -5824.546646  want -5824.546655
+  [PASS] a=0.1: angular part = +2E0 cos(th)(1/r - a^3/r^4): got 5824.546599  want 5824.546655
+  [PASS] a=0.1: V on the sphere: got [-0. -0. -0. -0.  0.  0.  0.]  want [0. 0. 0. 0. 0. 0. 0.]
+  [PASS] a=0.1: V + E0 z -> 0 far away (relative): got 9.950039e-10  want 0
+  [PASS] a=0.1, th=0.000: E_r = 3E0 cos th, E_th = 0: got [2999.999183    0.      ]  want [3000.    0.]
+  [PASS] a=0.1, th=0.600: E_r = 3E0 cos th, E_th = 0: got [ 2.476006e+03 -1.417851e-04]  want [2476.006845    0.      ]
+  [PASS] a=0.1, th=1.571: E_r = 3E0 cos th, E_th = 0: got [ 1.836970e-13 -2.999999e-04]  want [1.83697e-13 0.00000e+00]
+  [PASS] a=0.1, th=2.500: E_r = 3E0 cos th, E_th = 0: got [-2.403430e+03 -1.453849e-05]  want [-2403.430847     0.      ]
+  [PASS] a=0.1, th=3.142: E_r = 3E0 cos th, E_th = 0: got [-2.999999e+03 -3.673939e-13]  want [-3000.     0.]
+  [PASS] a=0.1: total induced charge (Qtop + Qbot)/Qtop: got 0.  want 0
+  [PASS] a=0.1: charge on upper hemisphere = 3 pi eps0 E0 a^2: got 8.344875e-10  want 8.344875e-10
+  [PASS] a=0.37: Laplacian at [0.74 0.37 1.11]: got -0.000498  want 0
+  [PASS] a=0.37: Laplacian at [-1.85  1.48 -0.74]: got 0.000166  want 0
+  [PASS] a=0.37: Laplacian at [ 0.185 -2.22   3.33 ]: got 0.000997  want 0
+  [PASS] a=0.37: radial part = -2E0 cos(th)(1/r - a^3/r^4): got -1574.201779  want -1574.201799
+  [PASS] a=0.37: angular part = +2E0 cos(th)(1/r - a^3/r^4): got 1574.201785  want 1574.201799
+  [PASS] a=0.37: V on the sphere: got [-0. -0. -0. -0.  0.  0.  0.]  want [0. 0. 0. 0. 0. 0. 0.]
+  [PASS] a=0.37: V + E0 z -> 0 far away (relative): got 9.950041e-10  want 0
+  [PASS] a=0.37, th=0.000: E_r = 3E0 cos th, E_th = 0: got [2999.999238    0.      ]  want [3000.    0.]
+  [PASS] a=0.37, th=0.600: E_r = 3E0 cos th, E_th = 0: got [2.476006e+03 2.339256e-05]  want [2476.006845    0.      ]
+  [PASS] a=0.37, th=1.571: E_r = 3E0 cos th, E_th = 0: got [ 1.836970e-13 -2.999999e-04]  want [1.83697e-13 0.00000e+00]
+  [PASS] a=0.37, th=2.500: E_r = 3E0 cos th, E_th = 0: got [-2.403430e+03 -1.124116e-04]  want [-2403.430847     0.      ]
+  [PASS] a=0.37, th=3.142: E_r = 3E0 cos th, E_th = 0: got [-2.999999e+03 -3.673939e-13]  want [-3000.     0.]
+  [PASS] a=0.37: total induced charge (Qtop + Qbot)/Qtop: got 0.  want 0
+  [PASS] a=0.37: charge on upper hemisphere = 3 pi eps0 E0 a^2: got 1.142413e-08  want 1.142413e-08
+  [PASS] max |E| on sphere = 3 E0 [V/m]: got 3000.  want 3000
+  [PASS] rho_s at north pole = 3 eps0 E0 [C/m^2]: got 2.656256e-08  want 2.65626e-08
+  [PASS] rho_s at south pole [C/m^2]: got -2.656256e-08  want -2.65626e-08
+  [PASS] rho_s zero on equator: got 1.626488e-24  want 0
+
+==============================================================================
+TOTAL FAILURES: 0
+==============================================================================

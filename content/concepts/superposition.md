@@ -25,3 +25,5 @@ tags: [concept, electrostatics, exam-1]
 > $|\mathbf{E}_1+\mathbf{E}_2|\ne|\mathbf{E}_1|+|\mathbf{E}_2|$ unless the two point the same way. Resolve into components (Cartesian, or a fixed direction at the field point) before adding.
 
 **Where it appears.** [[1-electrostatics/02-coulombs-law-superposition-and-gauss|Lecture 2]] (dipole on its bisector, continuous distributions), [[1-electrostatics/03-gauss-law-at-work|Lecture 3]] (sheets and slabs), [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] (potentials add as scalars — even easier).
+
+**Practice.** [[practice/topics#superposition|Superposition]] (18 problems) — for example [[practice/03-gauss-law-at-work#31-two-sheets-of-charge|3.1 Two sheets of charge]] (easy), [[practice/02-coulombs-law-superposition-and-gauss#28-dipole-on-axis-and-bisector|2.8 Dipole on axis and bisector]] (medium), [[practice/03-gauss-law-at-work#39-two-slabs-and-a-sheet|3.9 Two slabs and a sheet]] (hard).

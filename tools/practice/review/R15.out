@@ -1,0 +1,277 @@
+
+=== 15.1 long solenoid: L by flux linkage and by energy ===
+PASS  15.1(a) L, flux route N*Psi/I [H]: computed 0.000394784, page 0.395e-3
+PASS  15.1(a) L, energy route 2W/I^2 [H]: computed 0.000394784, page 0.395e-3
+PASS  15.1(a) L = 4 pi^2 x 1e-5 H: computed 0.00039478418, expected 0.00039478418
+INFO  15.1 Biot-Savart sum of 500 loops: B at centre 0.00501054 T vs mu0 n I 0.00502655 T (ratio 0.99682); the ideal formula is intended ('ignore end effects')
+PASS  15.1(b)(i) L, 1000 turns on 25 cm [H]: computed 0.00157914, page 1.58e-3
+PASS  15.1(b)(ii) L, 500 turns on 50 cm [H]: computed 0.000197392, page 0.197e-3
+PASS  15.1(c) H = nI [A/m]: computed 4000, page 4000
+PASS  15.1(c) w = 1/2 mu0 H^2 [J/m^3]: computed 10.0531, page 10.1
+PASS  15.1(c) w = 3.2 pi: computed 10.053096, expected 10.053096
+PASS  15.1(c) interior volume [m^3]: computed 7.85398e-05, page 7.85e-5
+PASS  15.1(c) W = 1/2 L I^2 [J]: computed 0.000789568, page 0.790e-3
+PASS  15.1(c) W = int 1/2 mu0 H^2 dV [J]: computed 0.000789568, page 0.790e-3
+PASS  15.1(c) W = 8 pi^2 x 1e-5 J: computed 0.00078956835, expected 0.00078956835
+
+=== 15.2 shorted coil: ODE L dI/dt = -R I ===
+PASS  15.2(a) tau (1/e time of the ODE) = 5 ms: computed 0.005, expected 0.005
+PASS  15.2(a) I(t) = 2 exp(-200 t) A: computed [2.       1.213061 0.735759 0.44626  0.270671 0.16417  0.099574 0.060395
+ 0.036631 0.022218 0.013476 0.008174 0.004958], expected [2.       1.213061 0.735759 0.44626  0.270671 0.16417  0.099574 0.060395
+ 0.036631 0.022218 0.013476 0.008174 0.004958]
+PASS  15.2(b) I(tau) [A]: computed 0.735759, page 0.736
+PASS  15.2(b) V = L dI/dt [V]: computed -5.88607, page -5.89
+PASS  15.2(b) self-emf -L dI/dt [V]: computed 5.88607, page 5.89
+PASS  15.2(b) R I [V]: computed 5.88607, page 5.89
+PASS  15.2(c) W0 [J]: computed 0.08, page 80e-3
+PASS  15.2(c) W(tau) [J]: computed 0.0108268, page 10.8e-3
+PASS  15.2(c) W(tau)/W0: computed 0.135335, page 0.135
+PASS  15.2(c) half-energy time [s]: computed 0.00173287, page 1.73e-3
+PASS  15.2(c) half-energy time = (tau/2) ln 2: computed 0.001732868, expected 0.001732868
+PASS  15.2(c) I at that time [A]: computed 1.41421, page 1.41
+PASS  15.2 check: heat int I^2 R dt [J]: computed 0.08, page 0.08
+PASS  15.2 check: heat = W0: computed 0.08, expected 0.08
+
+=== 15.3 fields from given potentials (finite differences); page: A = -4yt y^ + 5x z^ ===
+PASS  15.3 key (a) E = 0, B = -5 y^ T is the only option matching FD fields at 6 random (r,t): {'a': True, 'b': False, 'c': False, 'd': False}
+PASS  15.3 distractor (b) = -grad Phi only: computed [-0.        3.720813 -0.      ], expected [0.       3.720813 0.      ]
+PASS  15.3 distractor (c) = reversed curl_y (dAz/dx - dAx/dz): computed 5, expected 5
+PASS  15.3 distractor (d) = -grad Phi + dA/dt: computed [0.       7.441626 0.      ], expected [0.       7.441626 0.      ]
+PASS  15.3 curl x and z components vanish: computed [0. 0.], expected [0. 0.]
+PASS  15.3 gauge: grad(-2y^2 t) = -4yt y^: computed [0.       4.894493 0.      ], expected [0.       4.894493 0.      ]
+PASS  15.3 gauge: -d lambda/dt = Phi: computed 1.7305563, expected 1.7305563
+PASS  15.3 static pair: curl(5x z^) = -5 y^: computed [ 0. -5.  0.], expected [ 0. -5.  0.]
+PASS  15.3 check: curl E = 0: computed [0. 0. 0.], expected [0. 0. 0.]
+PASS  15.3 check: dB/dt = 0: computed [0. 0. 0.], expected [0. 0. 0.]
+PASS  15.3 re-param: exam potentials give E = 0: computed [-2.220446e-11 -0.000000e+00 -0.000000e+00], expected [0. 0. 0.]
+PASS  15.3 re-param: exam potentials give B = 0 (key 'both zero'): computed [0. 0. 0.], expected [0. 0. 0.]
+PASS  15.3 re-param: page B != 0, so the exam key does not carry over: 
+INFO  15.3 re-param: exam coefficients {3, -6, 3}; page {2, -4, 5} (static term was 3x z^, repeating the exam's 3, before this review); gauge axis x -> y; static term curl-free -> B != 0
+
+=== 15.4 gauge transformations, true/false (finite differences) ===
+PASS  15.4 reference pair: B = B0 z^: computed [0.  0.  0.7], expected [0.  0.  0.7]
+PASS  15.4(a) page key true: FD: same fields = True
+PASS  15.4(b) page key false: FD: same fields = False
+PASS  15.4(c) page key true: FD: same fields = True
+PASS  15.4(d) page key false: FD: same fields = False
+PASS  15.4(b) E' = -2 z^ V/m: computed [-0. -0. -2.], expected [ 0.  0. -2.]
+PASS  15.4(d) B' = -B0 z^: computed [ 0.   0.  -0.7], expected [ 0.   0.  -0.7]
+PASS  15.4(d) curl(A'-A) = -2 B0 z^: computed [ 0.   0.  -1.4], expected [ 0.   0.  -1.4]
+PASS  15.4(a) A + grad(-B0 x y) = A': computed [-1.209841e+00 -2.006040e-11  0.000000e+00], expected [-1.209841  0.        0.      ]
+PASS  15.4(c) grad(2zt) = 2t z^: computed [0.       0.       4.391005], expected [0.       0.       4.391005]
+PASS  15.4(c) -d(2zt)/dt = -2z = Phi': computed 1.9943599, expected 1.9943599
+
+=== 15.5 two-wire line, find the error ===
+PASS  15.5 wire 1 in the gap: z^ x x^ = +y^: computed [0. 1. 0.], expected [0. 1. 0.]
+PASS  15.5 wire 2 in the gap: (-z^) x (-x^) = +y^: computed [0. 1. 0.], expected [0. 1. 0.]
+PASS  15.5 Biot-Savart: both wires give +y^ at x = 0.3D: B1 = [0.00000000e+00 6.66666666e-05 0.00000000e+00], B2 = [0.00000000e+00 2.85714285e-05 0.00000000e+00]
+PASS  15.5 student's value, wire 1 only [H/m]: computed 4.39445e-07, page 0.44e-6
+PASS  15.5(a) corrected L' (both wires, flux between surfaces) [H/m]: computed 8.7889e-07, page 0.879e-6
+PASS  15.5 ln 9: computed 2.19722, page 2.197
+PASS  15.5(a) corrected = 2 x student: computed 2, expected 2
+INFO  15.5 energy route with the same line-current fields, outside both wires: 2W'/I^2 = 0.9190 uH/m (~(mu0/pi)ln(D/a) = 0.9210); exact two-wire (mu0/pi)arccosh(D/2a) = 0.9170 uH/m. The page's 0.879 is the 'flux between the surfaces' approximation the statement prescribes (about 4-5 % low); not an error.
+PASS  15.5 note: exact (mu0/pi)arccosh(D/2a) above 0.879 [%]: computed 4.33306, page 4
+PASS  15.5 note: DC energy route (line-current fields outside both wires) above 0.879 [%]: computed 4.56647, page 5
+PASS  15.5(b) C' (line charges, V between surfaces) [F/m]: computed 1.26597e-11, page 12.7e-12
+PASS  15.5(b) C' = pi eps0/ln9: computed 1.2659722e-11, expected 1.2659722e-11
+PASS  15.5(b) L'C' corrected [s^2/m^2]: computed 1.11265e-17, page 1.11e-17
+PASS  15.5(b) L'C' = mu0 eps0: computed 1.1126501e-17, expected 1.1126501e-17
+PASS  15.5(b) student's L'C' = mu0 eps0 / 2: computed 5.5632503e-18, expected 5.5632503e-18
+PASS  15.5(b) student's 1/sqrt(L'C') [m/s]: computed 4.23971e+08, page 4.24e8
+
+=== 15.6 RL switch-on: ODE L dI/dt = V0 - R I ===
+PASS  15.6(a) tau (63.2 % time of the ODE) = 20 ms: computed 0.02, expected 0.02
+PASS  15.6(a) I(t) = 1.2(1 - exp(-50 t)) A: computed [0.       0.472163 0.758545 0.932244 1.037598 1.101498 1.140256 1.163763
+ 1.178021 1.186669 1.191914], expected [0.       0.472163 0.758545 0.932244 1.037598 1.101498 1.140256 1.163763
+ 1.178021 1.186669 1.191914]
+PASS  15.6(b) I(tau) [A]: computed 0.758545, page 0.759
+PASS  15.6(b) V_R [V]: computed 7.58545, page 7.59
+PASS  15.6(b) V_L [V]: computed 4.41455, page 4.41
+PASS  15.6(b) V_R + V_L = 12 V: computed 12, expected 12
+PASS  15.6(c) W [J]: computed 0.057539, page 57.5e-3
+PASS  15.6(c) I(tau) to 4 s.f. as displayed [A]: computed 0.758545, page 0.7585
+PASS  15.6(c) literal 1/2(0.2)(0.7585)^2 [J]: computed 0.0575322, page 57.5e-3
+INFO  15.6 old literal 1/2(0.2)(0.759)^2 = 57.61 mJ (page said 57.5; fixed to 0.7585)
+PASS  15.6(c) P_battery [W]: computed 9.10254, page 9.10
+PASS  15.6(c) P_R [W]: computed 5.7539, page 5.75
+PASS  15.6(c) dW/dt [W]: computed 3.34864, page 3.35
+PASS  15.6(c) dW/dt from numerical derivative of 1/2 L I(t)^2: computed 3.3486359, expected 3.3486359
+PASS  15.6(c) balance P_battery = P_R + dW/dt: computed 9.102536, expected 9.102536
+PASS  15.6(c) integrated: battery energy - heat = 1/2 L I^2 at tau: computed 0.057539002, expected 0.057539002
+PASS  15.6(d) W_inf [J]: computed 0.144, page 144e-3
+PASS  15.6(d) half-energy time [s]: computed 0.0245589, page 24.6e-3
+PASS  15.6(d) t/tau: computed 1.22795, page 1.228
+PASS  15.6 watch-out: half-current time [s]: computed 0.0138629, page 13.9e-3
+PASS  15.6 check: V_L(0+) = V0: computed 12, expected 12
+PASS  15.6 check: I(inf) = 1.2 A: computed 1.2, expected 1.2
+
+=== 15.7 internal inductance of a round wire ===
+PASS  15.7(a) H(r = 0.3a) by Ampere = I r/(2 pi a^2), a = 1 mm: computed 47.746483, expected 47.746483
+PASS  15.7(a) H(r = 0.8a) by Ampere = I r/(2 pi a^2), a = 1 mm: computed 127.32395, expected 127.32395
+PASS  15.7(b) W' at 1 A, a = 1 mm [J/m]: computed 2.5e-08, page 2.5e-8
+PASS  15.7(b) L'_int = 2W'/I^2, a = 1 mm [H/m]: computed 5e-08, page 50e-9
+PASS  15.7(b) L'_int = mu0/(8 pi), a = 1 mm: computed 5e-08, expected 5e-08
+PASS  15.7(c) strip flux / I, a = 1 mm [H/m]: computed 1e-07, page 100e-9
+PASS  15.7(c) flux weighted by enclosed fraction / I = mu0/(8 pi), a = 1 mm: computed 5e-08, expected 5e-08
+PASS  15.7(a) H(r = 0.3a) by Ampere = I r/(2 pi a^2), a = 4 mm: computed 11.936621, expected 11.936621
+PASS  15.7(a) H(r = 0.8a) by Ampere = I r/(2 pi a^2), a = 4 mm: computed 31.830989, expected 31.830989
+PASS  15.7(b) W' at 1 A, a = 4 mm [J/m]: computed 2.5e-08, page 2.5e-8
+PASS  15.7(b) L'_int = 2W'/I^2, a = 4 mm [H/m]: computed 5e-08, page 50e-9
+PASS  15.7(b) L'_int = mu0/(8 pi), a = 4 mm: computed 5e-08, expected 5e-08
+PASS  15.7(c) strip flux / I, a = 4 mm [H/m]: computed 1e-07, page 100e-9
+PASS  15.7(c) flux weighted by enclosed fraction / I = mu0/(8 pi), a = 4 mm: computed 5e-08, expected 5e-08
+PASS  15.7(d) L' with both internal terms [H/m]: computed 9.7889e-07, page 0.979e-6
+PASS  15.7(d) increase [%]: computed 11.378, page 11
+
+=== 15.8 two coaxial solenoids ===
+PASS  15.8 N1: computed 1000, page 1000
+PASS  15.8 N2: computed 500, page 500
+PASS  15.8(a) L1 flux route [H]: computed 0.000789568, page 0.790e-3
+PASS  15.8(a) L1 energy route [H]: computed 0.000789568, page 0.790e-3
+PASS  15.8(a) L2 flux route [H]: computed 0.000789568, page 0.790e-3
+PASS  15.8(a) L2 energy route [H]: computed 0.000789568, page 0.790e-3
+PASS  15.8(a) L1 = 0.8 pi^2 x 1e-4 H: computed 0.00078956835, expected 0.00078956835
+PASS  15.8(b) M route 1 (inner field through outer turns) [H]: computed 0.000394784, page 0.395e-3
+PASS  15.8(b) M route 2 (outer field through inner turns) [H]: computed 0.000394784, page 0.395e-3
+PASS  15.8(b) M from interaction energy int mu0 H1.H2 dV [H]: computed 0.000394784, page 0.395e-3
+PASS  15.8(b) M = 0.4 pi^2 x 1e-4 H: computed 0.00039478418, expected 0.00039478418
+PASS  15.8(c) |emf| = M dI1/dt [V]: computed 0.0394784, page 39.5e-3
+PASS  15.8(d) L_aiding = 2W/I^2 [H]: computed 0.00236871, page 2.37e-3
+PASS  15.8(d) L_aiding = L1 + L2 + 2M: computed 0.0023687051, expected 0.0023687051
+PASS  15.8(d) L_opposing = 2W/I^2 [H]: computed 0.000789568, page 0.790e-3
+PASS  15.8(d) L_opposing = L1 + L2 - 2M: computed 0.00078956835, expected 0.00078956835
+PASS  15.8 check: k = M/sqrt(L1 L2): computed 0.5, page 0.5
+
+=== 15.9 toroid with a two-layer core ===
+INFO  15.9 Biot-Savart of the free currents (1000 closed rectangular turns); H does not depend on mu here (field tangential to the layer interface, Ampere has no mu)
+PASS  15.9(a) H_phi at r = 0.06 m, z = 0.005 m vs NI/(2 pi r): computed 5305.1648, expected 5305.1648
+PASS  15.9(a) H along +phi^ at r = 0.06 m: H = [-1.66666393e+01  5.30513859e+03 -4.24073958e-13]
+PASS  15.9(a) H_phi at r = 0.075 m, z = 0.015 m vs NI/(2 pi r): computed 4244.1318, expected 4244.1318
+PASS  15.9(a) H along +phi^ at r = 0.075 m: H = [-1.33333114e+01  4.24411087e+03  5.84797987e-13]
+PASS  15.9(a) H_phi at r = 0.095 m, z = 0.005 m vs NI/(2 pi r): computed 3350.6304, expected 3350.6304
+PASS  15.9(a) H along +phi^ at r = 0.095 m: H = [-1.05262985e+01  3.35061385e+03  1.34572803e-13]
+PASS  15.9(a) H ~ 0 in the hole r < a: |H| = 1.99e-13 A/m
+PASS  15.9(a) H ~ 0 outside r > b: |H| = 8.01e-13 A/m
+PASS  15.9(a) H ~ 0 above the core: |H| = 1.08e-12 A/m
+PASS  15.9(a) H_phi equal just below/above the interface z = h/2: computed 4244.1318, expected 4244.1318
+PASS  15.9(a) H(r = a) [A/m]: computed 6366.2, page 6366
+PASS  15.9(a) H(r = b) [A/m]: computed 3183.1, page 3183
+PASS  15.9(b) turn normal: z^ (up inner face) x r^ (outward on top) = phi^ (at phi = 0): computed [0. 1. 0.], expected [0. 1. 0.]
+PASS  15.9(b) mu0 N h/(2 pi) [Wb/A]: computed 4e-06, page 4e-6
+PASS  15.9(b) Psi/I per turn [Wb/A]: computed 1.38629e-05, page 1.39e-5
+PASS  15.9(b) Psi/I to 4 s.f. as displayed [Wb/A]: computed 1.38629e-05, page 1.386e-5
+PASS  15.9(b) literal (1.386e-5)(2) [Wb]: computed 2.772e-05, page 2.77e-5
+PASS  15.9(b) Psi per turn at 2 A [Wb]: computed 2.77259e-05, page 2.77e-5
+PASS  15.9(b) N Psi [Wb]: computed 0.0277259, page 2.77e-2
+PASS  15.9(b) L = N Psi/I [H]: computed 0.0138629, page 13.9e-3
+PASS  15.9(b) all-air L [H]: computed 0.00277259, page 2.77e-3
+PASS  15.9(b) L/L_air = 5 (area-average mu_r): computed 5, expected 5
+PASS  15.9(b) V = L dI/dt at 50 A/s [V]: computed 0.693147, page 0.693
+PASS  15.9(b) L to 4 s.f. as displayed [H]: computed 0.0138629, page 13.86e-3
+PASS  15.9(b) literal (13.86 mH)(50 A/s) [V]: computed 0.693, page 0.693
+PASS  15.9(c) literal 1/2(13.86 mH)(2 A)^2 [J]: computed 0.02772, page 27.7e-3
+INFO  15.9 old literals: (1.39e-5)(2) = 2.78e-05, (13.9 mH)(50) = 0.695 V, 1/2(13.9 mH)(4) = 27.8 mJ (page said 2.77e-5, 0.693, 27.7)
+PASS  15.9(c) W = 1/2 L I^2 [J]: computed 0.0277259, page 27.7e-3
+PASS  15.9(c) W in ferrite by int 1/2 mu H^2 dV [J]: computed 0.0249533, page 24.95e-3
+PASS  15.9(c) W in air [J]: computed 0.00277259, page 2.77e-3
+PASS  15.9(c) W total by int 1/2 mu H^2 dV [J]: computed 0.0277259, page 27.7e-3
+PASS  15.9(c) ferrite share [%]: computed 90, page 90
+PASS  15.9 check: 2W/I^2 = N Psi/I: computed 0.013862944, expected 0.013862944
+PASS  15.9(d) |B| factor for N = 500: computed 0.5, page 0.5
+PASS  15.9(d) Psi per turn factor for N = 500: computed 0.5, page 0.5
+PASS  15.9(d) N Psi factor for N = 500: computed 0.25, page 0.25
+PASS  15.9(d) L factor for N = 500: computed 0.25, page 0.25
+INFO  15.9 re-param: exam #2 is symbolic (key psi1 = mu0 N I h ln(b/a)/2pi); with the two-layer core the page's Psi, N Psi, L and V are 5x the key's formula; the key's formula only reappears as the all-air comparison in (b)
+
+=== 15.10 shorted parallel-plate line, gap filled with mu = 3 mu0, eps = 3 eps0 ===
+PASS  15.10(a) Js = I/W [A/m]: computed 200, page 200
+PASS  15.10(a) top-sheet term between: 1/2 (200 x^) x (-y^): computed [   0.    0. -100.], expected [   0.    0. -100.]
+PASS  15.10(a) bottom-sheet term between: 1/2 (-200 x^) x y^: computed [   0.    0. -100.], expected [   0.    0. -100.]
+PASS  15.10(a) H between [A/m]: computed [   0.    0. -200.], expected [   0.    0. -200.]
+PASS  15.10(a) H above both: computed [0. 0. 0.], expected [0. 0. 0.]
+PASS  15.10(a) H below both: computed [0. 0. 0.], expected [0. 0. 0.]
+PASS  15.10(a) Biot-Savart, very wide strips (W = 1000 d, Js = 200 A/m): H between: computed [   0.          0.       -199.872676], expected [   0.    0. -200.]
+PASS  15.10(a) Biot-Savart, very wide strips: H above ~ 0: 
+INFO  15.10 at the real W/d = 25 the vacuum strips give H_z = -194.9 A/m at the centre (2.5 % fringing; ignored as the statement says)
+PASS  15.10(a) BC at top strip: y^ x (H_above - H_between) = Js,top: computed [200.   0.   0.], expected [200.   0.   0.]
+PASS  15.10(a) |B| in the film [T]: computed 0.000753982, page 7.54e-4
+PASS  15.10(a) B direction: computed [ 0.  0. -1.], expected [ 0.  0. -1.]
+PASS  15.10(b) current path clockwise seen from +z (signed area < 0): signed area -0.002 m^2
+PASS  15.10(b) dS: x^ (top) x (-y^) (short) = -z^: computed [ 0.  0. -1.], expected [-0. -0. -1.]
+PASS  15.10(b) Psi [Wb]: computed 1.50796e-06, page 1.51e-6
+PASS  15.10(b) L = Psi/I [H]: computed 1.50796e-07, page 151e-9
+PASS  15.10(b) L' = L/l [H/m]: computed 1.50796e-07, page 151e-9
+PASS  15.10(c) W_m = int 1/2 mu H^2 dV [J]: computed 7.53982e-06, page 7.54e-6
+PASS  15.10(c) 1/2 L I^2 [J]: computed 7.53982e-06, page 7.54e-6
+PASS  15.10(c) L to 4 s.f. as displayed [H]: computed 1.50796e-07, page 150.8e-9
+PASS  15.10(c) literal 1/2(150.8 nH)(10 A)^2 [J]: computed 7.54e-06, page 7.54e-6
+PASS  15.10(c) literal 1/2(3)(4pi e-7)(200)^2(0.05)(0.002)(1) [J]: computed 7.53982e-06, page 7.54e-6
+PASS  15.10(c) energy route 2W/I^2 = flux route Psi/I: computed 1.5079645e-07, expected 1.5079645e-07
+PASS  15.10(c) C' [F/m]: computed 6.64064e-10, page 664e-12
+PASS  15.10(c) L'C' = mu eps: computed 1.001385e-16, expected 1.001385e-16
+PASS  15.10(c) L'C'/(mu0 eps0): computed 9, page 9
+PASS  15.10(c) 1/sqrt(L'C') [m/s]: computed 9.99308e+07, page 9.99e7
+PASS  15.10(c) 1/sqrt(L'C') = c/3: computed 99930819, expected 99930819
+PASS  15.10(d) |B| factor: computed 1.5, page 1.5
+PASS  15.10(d) Psi factor: computed 0.75, page 0.75
+PASS  15.10(d) L factor: computed 0.25, page 0.25
+PASS  15.10(d) C' factor: computed 4, page 4
+PASS  15.10(d) L'C' unchanged: computed 1, expected 1
+INFO  15.10 re-param: exam key psi = mu0 I l d/w, L = mu0 l d/w with these numbers give 5.03e-07 Wb and 50.3 nH (the page's values before this review: the key carried over); with the fill the page has 1.51e-06 Wb, 151 nH, B 0.000754 T (key mu0 I/w = 0.000251 T, along -y^ in the exam frame); key scaling (2d, I/2) x0.5, x1.0, x2.0 vs page (d) x1.5, x0.75, x0.25, x4
+PASS  15.10 re-param: key psi, L, B formulas no longer reproduce the page's answers: 
+
+=== 15.11 wire and rectangular loop ===
+PASS  15.11(a) Biot-Savart B at (d1, 0, h/2) per ampere: computed [0.e+00 1.e-05 0.e+00], expected [0.e+00 1.e-05 0.e+00]
+PASS  15.11(a) phi^ on y = 0, x > 0: z^ x x^ = +y^: computed [0. 1. 0.], expected [0. 1. 0.]
+PASS  15.11(a) loop normal: z^ (up near side) x x^ (along top) = +y^: computed [0. 1. 0.], expected [0. 1. 0.]
+PASS  15.11(a) M = Psi/I (Biot-Savart flux) [H]: computed 1.38629e-07, page 1.39e-7
+PASS  15.11(a) M = (mu0 h/2 pi) ln 4: computed 1.3862943e-07, expected 1.3862944e-07
+PASS  15.11(b) emf in the reference direction [V]: computed -0.00138629, page -1.39e-3
+PASS  15.11(b) force on the near side along +x^ (away from the wire): computed [1. 0. 0.], expected [1. 0. 0.]
+PASS  15.11(b) force on the far side along -x^ (toward the wire): computed [-1.  0.  0.], expected [-1.  0.  0.]
+PASS  15.11(b) top and bottom forces cancel: computed [0. 0. 0.], expected [0. 0. 0.]
+PASS  15.11(b) net F_x per (I i) = (mu0 h/2 pi)(1/d1 - 1/d2): computed 3.7500001e-06, expected 3.75e-06
+PASS  15.11(b) loop repelled: 
+PASS  15.11(c) curl A = B (finite differences) at (d1, 0, 0.2), t = 0: computed [0.e+00 1.e-05 0.e+00], expected [0.e+00 1.e-05 0.e+00]
+PASS  15.11(c) closed integral of A.dl (r0 = 1 m) = Psi at 1 A: computed 1.3862944e-07, expected 1.3862943e-07
+PASS  15.11(c) closed integral of A.dl independent of r0 (0.37 m): computed 1.3862944e-07, expected 1.3862944e-07
+PASS  15.11(c) E_z(d1) - E_z(d2) [V/m]: computed -0.00277259, page -2.77e-3
+PASS  15.11(c) E_z(d1) - E_z(d2) independent of r0: computed -0.0027725887, expected -0.0027725887
+PASS  15.11(c) closed integral of E.dl = h [E_z(d1) - E_z(d2)] [V]: computed -0.00138629, page -1.39e-3
+PASS  15.11(c) equals the emf of (b): computed -0.0013862944, expected -0.0013862943
+PASS  15.11(d) i_inf [A]: computed -0.277259, page -0.277
+PASS  15.11(d) emf to 4 s.f. as displayed [V]: computed -0.00138629, page -1.386e-3
+PASS  15.11(d) literal -1.386 mV / 5 mOhm [A]: computed -0.2772, page -0.277
+INFO  15.11 old literal -1.39 mV / 5 mOhm = -0.278 A (page said -0.277; fixed to -1.386)
+PASS  15.11(d) tau (63.2 % time of the ODE) = 0.2 ms: computed 0.0002, expected 0.0002
+PASS  15.11(d) 99 % time [s]: computed 0.000921034, page 0.921e-3
+
+=== 15.12 coax with a magnetic sleeve ===
+PASS  15.12(a) H_phi(r = 0.5 mm) by Ampere: computed 79.577472, expected 79.577472
+PASS  15.12(a) H_phi(r = 1.5 mm) by Ampere: computed 106.1033, expected 106.1033
+PASS  15.12(a) H_phi(r = 3 mm) by Ampere: computed 53.051648, expected 53.051648
+PASS  15.12(a) H_phi(r = 5 mm) by Ampere: computed -3.5339496e-15, expected 0
+PASS  15.12(a) H(a) [A/m]: computed 159.155, page 159
+PASS  15.12(a) H continuous at r = s: computed 79.577472, expected 79.577471
+PASS  15.12(a) B jumps by 4 at r = s: computed 4, expected 4
+PASS  15.12(b) W'_1 at 1 A [J/m]: computed 2.5e-08, page 2.50e-8
+PASS  15.12(b) W'_2 at 1 A [J/m]: computed 2.77259e-07, page 2.77e-7
+PASS  15.12(b) W'_3 at 1 A [J/m]: computed 6.93147e-08, page 6.93e-8
+PASS  15.12(b) 2W'_1/I^2 [H/m]: computed 5e-08, page 50e-9
+PASS  15.12(b) 2W'_2/I^2 [H/m]: computed 5.54518e-07, page 554.5e-9
+PASS  15.12(b) 2W'_3/I^2 [H/m]: computed 1.38629e-07, page 138.6e-9
+PASS  15.12(b) total L' [H/m]: computed 7.43147e-07, page 743e-9
+PASS  15.12(b) share of region 1 [%]: computed 6.72814, page 6.7
+PASS  15.12(b) share of region 2 [%]: computed 74.6175, page 74.6
+PASS  15.12(b) share of region 3 [%]: computed 18.6544, page 18.7
+PASS  15.12(c) L'_ext by flux [H/m]: computed 6.93147e-07, page 0.693e-6
+PASS  15.12(c) L'_ext = 1e-6 ln 2 H/m: computed 6.9314718e-07, expected 6.9314718e-07
+PASS  15.12(c) flux route = energy contributions of regions 2 + 3: computed 6.9314718e-07, expected 6.9314718e-07
+PASS  15.12(d) C' [F/m]: computed 6.42086e-11, page 64.2e-12
+PASS  15.12(d) L'_ext C' [s^2/m^2]: computed 4.4506e-17, page 4.45e-17
+PASS  15.12(d) L'_ext C' = 4 mu0 eps0: computed 4.4506002e-17, expected 4.4506002e-17
+PASS  15.12(d) 1/sqrt(L'_ext C') [m/s]: computed 1.49896e+08, page 1.50e8
+PASS  15.12(d) sleeve 1/sqrt(mu eps) [m/s]: computed 7.49481e+07, page 7.49e7
+PASS  15.12 check: uniform fill gives L'_ext C' = mu eps: computed 1.7802401e-16, expected 1.7802401e-16
+
+SUMMARY: 237 PASS, 0 FAIL

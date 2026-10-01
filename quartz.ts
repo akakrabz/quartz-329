@@ -12,6 +12,13 @@ ExternalPlugin.Explorer({
     if (a.isFolder !== b.isFolder) {
       return a.isFolder ? -1 : 1
     }
+    // practice/: the difficulty and topic lists come first, in this order
+    const first: Record<string, number> = { easy: 1, medium: 2, hard: 3, topics: 4 }
+    const ra = first[a.slugSegment ?? ""] ?? 99
+    const rb = first[b.slugSegment ?? ""] ?? 99
+    if (ra !== rb) {
+      return ra - rb
+    }
     return (a.slugSegment ?? "").localeCompare(b.slugSegment ?? "", undefined, {
       numeric: true,
       sensitivity: "base",

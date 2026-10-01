@@ -1,0 +1,461 @@
+
+==============================================================================
+8.1  Resistance of a copper wire
+==============================================================================
+  R = l/(sigma A) = 1 ohm
+  J = I/A = 2e+06 A/m^2
+  E = J/sigma = 0.0344828 V/m
+  E in mV/m = 34.4828 mV/m
+  V = E l = 2 V
+  [OK  ] V = E l equals I R: got 2, expected 2
+  [OK  ] R by integrating dz/(sigma A): got 1, expected 1
+  stretched: A' = A/2 = 5e-07 m^2
+  stretched: R' = 4 ohm
+  [OK  ] R' = 4 R: got 4, expected 4
+  -> E and J point along the current; electrons drift the opposite way
+
+==============================================================================
+8.2  Relaxation times tau = eps/sigma
+==============================================================================
+  tau(copper), eps_r=1, sigma=5.8e+07 S/m = 1.52658e-19 s
+  tau(sea water), eps_r=81, sigma=4 S/m = 1.79297e-10 s
+  tau(distilled water), eps_r=81, sigma=0.0001 S/m = 7.17189e-06 s
+  tau(glass), eps_r=6, sigma=1e-12 S/m = 53.1251 s
+  tau(sea water) in ns = 0.179297 ns
+  tau(distilled water) in microseconds = 7.17189 us
+  ln(100) = 4.60517
+  sea water: time to fall to 1% = tau ln 100 = 8.25695e-10 s
+     ... in ns = 0.825695 ns
+  [OK  ] 1% time from numerical ODE solve (event detection): got 8.25695e-10, expected 8.25695e-10
+  (1 ms)/tau(copper) = 6.55057e+15
+  -> copper: conductor-like (tau << 1 ms) on a 1 ms time scale
+  (1 ms)/tau(sea water) = 5.57733e+06
+  -> sea water: conductor-like (tau << 1 ms) on a 1 ms time scale
+  (1 ms)/tau(distilled water) = 139.433
+  -> distilled water: conductor-like (tau << 1 ms) on a 1 ms time scale
+  (1 ms)/tau(glass) = 1.88235e-05
+  -> glass: insulator-like (tau >> 1 ms) on a 1 ms time scale
+
+==============================================================================
+8.3  MC: total field from a known P in eps = 3 eps0
+==============================================================================
+  [OK  ] chi_e = eps_r - 1: got 2, expected 2
+  [OK  ] option (b) P/(2eps0) satisfies P = eps0 chi E: got [2e-06, 0, 0], expected [2e-06, 0, 0]
+  [OK  ] D = eps E equals eps0 E + P: got [3e-06, 0, 0], expected [3e-06, 0, 0]
+     (a) P/(3eps0): satisfies P = eps0*chi*E ? False
+     (b) P/(2eps0): satisfies P = eps0*chi*E ? True
+     (c) 2P/eps0: satisfies P = eps0*chi*E ? False
+     (d) P/eps0: satisfies P = eps0*chi*E ? False
+     (e) 3P/(2eps0): satisfies P = eps0*chi*E ? False
+  [OK  ] (a) is what P = eps E would give: got [75293.9, 0, 0], expected [75293.9, 0, 0]
+  [OK  ] (c) is what P = eps0 E / chi would give: got [451764, 0, 0], expected [451764, 0, 0]
+  [OK  ] (e) equals D/eps0 (vacuum field of the same D): got [338823, 0, 0], expected [338823, 0, 0]
+  [OK  ] chi_e = eps_r - 1: got 2, expected 2
+  [OK  ] option (b) P/(2eps0) satisfies P = eps0 chi E: got [1e-07, -3e-07, 5e-08], expected [1e-07, -3e-07, 5e-08]
+  [OK  ] D = eps E equals eps0 E + P: got [1.5e-07, -4.5e-07, 7.5e-08], expected [1.5e-07, -4.5e-07, 7.5e-08]
+     (a) P/(3eps0): satisfies P = eps0*chi*E ? False
+     (b) P/(2eps0): satisfies P = eps0*chi*E ? True
+     (c) 2P/eps0: satisfies P = eps0*chi*E ? False
+     (d) P/eps0: satisfies P = eps0*chi*E ? False
+     (e) 3P/(2eps0): satisfies P = eps0*chi*E ? False
+  [OK  ] (a) is what P = eps E would give: got [3764.7, -11294.1, 1882.35], expected [3764.7, -11294.1, 1882.35]
+  [OK  ] (c) is what P = eps0 E / chi would give: got [22588.2, -67764.5, 11294.1], expected [22588.2, -67764.5, 11294.1]
+  [OK  ] (e) equals D/eps0 (vacuum field of the same D): got [16941.1, -50823.4, 8470.57], expected [16941.1, -50823.4, 8470.57]
+
+==============================================================================
+8.4  Neutral conducting slab 0<z<2 cm in E0 = 10 kV/m z-hat
+==============================================================================
+  rho_s(z=0) = n.D = (-z).(eps0 E0 z) = -8.85419e-08 C/m^2
+  rho_s(z=0) in nC/m^2 = -88.5419 nC/m^2
+  rho_s(z=2cm) in nC/m^2 = 88.5419 nC/m^2
+  [OK  ] faces equal and opposite (slab neutral): got 0, expected 0
+  [OK  ] E_z below the slab (z=-0.01 m) by superposition: got 10000, expected 10000
+  [OK  ] E_z inside the slab (z=0.01 m) by superposition: got 0, expected 0
+  [OK  ] E_z above the slab (z=0.03 m) by superposition: got 10000, expected 10000
+  [OK  ] V(2cm)-V(0) with the slab (equipotential): got -0, expected 0
+  V(2cm)-V(0) WITHOUT the slab (distractor in (e)) = -200 V
+  -> electrons pushed toward -z (against E0): bottom face negative, top face positive
+
+==============================================================================
+8.5  Find the error: graded slab P = P0 (1 + z/d) z-hat, 0<z<d
+==============================================================================
+  [OK  ] rho_b = -dPz/dz = -P0/d by FD (P0=5e-06, d=0.001): got [-0.005, -0.005, -0.005, -0.005, -0.005], expected [-0.005, -0.005, -0.005, -0.005, -0.005]
+    rho_sb(0) correct (n=-z) = -5e-06 C/m^2
+    rho_sb(d) (n=+z) = 1e-05 C/m^2
+    integral of rho_b over thickness = -5e-06 C/m^2
+  [OK  ]   total bound charge per area (correct) = 0: got 1.69407e-21, expected 0
+  [OK  ]   student's total = 2 P0: got 1e-05, expected 1e-05
+  [OK  ]   eps0 dEz/dz = rho_b (E = -P/eps0): got -0.005, expected -0.005
+  [OK  ]   jump eps0*(E(0+) - E(0-)) = rho_sb(0): got -5e-06, expected -5e-06
+  [OK  ]   jump eps0*(E(d+) - E(d-)) = rho_sb(d): got 1e-05, expected 1e-05
+  [OK  ] rho_b = -dPz/dz = -P0/d by FD (P0=2.0, d=3.0): got [-0.666667, -0.666667, -0.666667, -0.666667, -0.666667], expected [-0.666667, -0.666667, -0.666667, -0.666667, -0.666667]
+    rho_sb(0) correct (n=-z) = -2 C/m^2
+    rho_sb(d) (n=+z) = 4 C/m^2
+    integral of rho_b over thickness = -2 C/m^2
+  [OK  ]   total bound charge per area (correct) = 0: got 0, expected 0
+  [OK  ]   student's total = 2 P0: got 4, expected 4
+  [OK  ]   eps0 dEz/dz = rho_b (E = -P/eps0): got -0.666667, expected -0.666667
+  [OK  ]   jump eps0*(E(0+) - E(0-)) = rho_sb(0): got -2, expected -2
+  [OK  ]   jump eps0*(E(d+) - E(d-)) = rho_sb(d): got 4, expected 4
+
+==============================================================================
+8.6  Coaxial-shell resistor, radial current
+==============================================================================
+  [OK  ] R radial: closed form vs series-shell integral (a=0.01,b=0.02): got 0.551589, expected 0.551589
+  [OK  ] R radial: closed form vs FD Laplace solve: got 0.551589, expected 0.551589
+  [OK  ]   current through every cylinder the same (div J = 0), spread 1.1e-08
+  [OK  ] R radial: closed form vs series-shell integral (a=0.003,b=0.012): got 1.19262, expected 1.19262
+  [OK  ] R radial: closed form vs FD Laplace solve: got 1.19262, expected 1.19262
+  [OK  ]   current through every cylinder the same (div J = 0), spread 1.2e-07
+  R_radial = ln(b/a)/(2 pi sigma L) = 0.551589 ohm
+  J(a) = I/(2 pi a L) = 477.465 A/m^2
+  J(b) = 238.732 A/m^2
+  E(a) = J(a)/sigma = 238.732 V/m
+  E(b) = 119.366 V/m
+  V(a)-V(b) = integral of E dr = 1.65477 V
+  [OK  ] V(a)-V(b) = I R: got 1.65477, expected 1.65477
+  1500/pi (J(a) exact form) = 477.465 A/m^2
+  R_axial = L/(sigma pi (b^2-a^2)) = 53.0516 ohm
+  R_axial / R_radial = 96.1797
+  [OK  ] thin wall limit t/a=0.001: got 0.000795377, expected 0.000795775
+  [OK  ] thin wall limit t/a=1e-05: got 7.95771e-06, expected 7.95775e-06
+  [OK  ] div J = 0 (FD) at (1.3cm, 0.4cm, 0): got -8.52651e-07, expected 0
+  -> E and J point radially outward (+r-hat) from the inner electrode; V(a) > V(b)
+
+==============================================================================
+8.7  Radially polarized ball, no free charge
+==============================================================================
+ parameter set P0=2e-06, R=0.05
+  [OK  ]   A: -div P = -2P0/r by FD at r=0.01871: got -0.000213809, expected -0.000213809
+  [OK  ]   B: -div P = -3P0/R by FD at r=0.01871: got -0.00012, expected -0.00012
+  [OK  ]   A: -div P = -2P0/r by FD at r=0.03937: got -0.0001016, expected -0.0001016
+  [OK  ]   B: -div P = -3P0/R by FD at r=0.03937: got -0.00012, expected -0.00012
+  [OK  ]   A: volume bound charge = -4 pi P0 R^2: got -6.28319e-08, expected -6.28319e-08
+  [OK  ]   B: volume bound charge = -4 pi P0 R^2: got -6.28319e-08, expected -6.28319e-08
+  [OK  ]   A: total bound charge = 0: got 1.32349e-23, expected 0
+  [OK  ]   B: total bound charge = 0: got 0, expected 0
+  [OK  ]   A: E_r(0.25R) = -P0/eps0: got -225882, expected -225882
+  [OK  ]   B: E_r(0.25R) = -P0 r/(eps0 R): got -56470.5, expected -56470.5
+  [OK  ]   A: E_r(0.80R) = -P0/eps0: got -225882, expected -225882
+  [OK  ]   B: E_r(0.80R) = -P0 r/(eps0 R): got -180705, expected -180705
+  [OK  ]   A,B: E_r(1.5R) = 0 outside: got 2.11465e-11, expected 0
+  [OK  ]   A,B: E_r(4.0R) = 0 outside: got 2.97373e-12, expected 0
+  [OK  ]   B: D_r = eps0 E_r + P_r = 0 inside: got -2.11758e-22, expected 0
+  [OK  ]   B: brute-force Coulomb E_z at z=0.5R: got -112941, expected -112941
+  [OK  ]   B: brute-force Coulomb E_z at z=2.0R: got -0, expected 0
+  [OK  ]   B: brute-force V(0) = -P0 R/(2 eps0): got -5647.05, expected -5647.05
+ parameter set P0=0.007, R=1.3
+  [OK  ]   A: -div P = -2P0/r by FD at r=0.4864: got -0.028782, expected -0.028782
+  [OK  ]   B: -div P = -3P0/R by FD at r=0.4864: got -0.0161538, expected -0.0161538
+  [OK  ]   A: -div P = -2P0/r by FD at r=1.024: got -0.0136769, expected -0.0136769
+  [OK  ]   B: -div P = -3P0/R by FD at r=1.024: got -0.0161538, expected -0.0161538
+  [OK  ]   A: volume bound charge = -4 pi P0 R^2: got -0.14866, expected -0.14866
+  [OK  ]   B: volume bound charge = -4 pi P0 R^2: got -0.14866, expected -0.14866
+  [OK  ]   A: total bound charge = 0: got 0, expected 0
+  [OK  ]   B: total bound charge = 0: got 0, expected 0
+  [OK  ]   A: E_r(0.25R) = -P0/eps0: got -7.90586e+08, expected -7.90586e+08
+  [OK  ]   B: E_r(0.25R) = -P0 r/(eps0 R): got -1.97647e+08, expected -1.97647e+08
+  [OK  ]   A: E_r(0.80R) = -P0/eps0: got -7.90586e+08, expected -7.90586e+08
+  [OK  ]   B: E_r(0.80R) = -P0 r/(eps0 R): got -6.32469e+08, expected -6.32469e+08
+  [OK  ]   A,B: E_r(1.5R) = 0 outside: got 0, expected 0
+  [OK  ]   A,B: E_r(4.0R) = 0 outside: got 0, expected 0
+  [OK  ]   B: D_r = eps0 E_r + P_r = 0 inside: got 0, expected 0
+  [OK  ]   B: brute-force Coulomb E_z at z=0.5R: got -3.95293e+08, expected -3.95293e+08
+  [OK  ]   B: brute-force Coulomb E_z at z=2.0R: got 0.00023986, expected 0
+  [OK  ]   B: brute-force V(0) = -P0 R/(2 eps0): got -5.13881e+08, expected -5.13881e+08
+  A: rho_b(R) = -2P0/R = -8e-05 C/m^3
+  A: rho_b(R/2) = -4P0/R = -0.00016 C/m^3
+  A,B: rho_sb = P0 = 2e-06 C/m^2
+  total surface bound charge 4 pi R^2 P0 = 6.28319e-08 C
+     ... in nC = 62.8319 nC
+  B: rho_b = -3P0/R = -0.00012 C/m^3
+  A: E inside = -P0/eps0 (r-hat) = -225882 V/m
+  B: E just inside surface = -P0/eps0 = -225882 V/m
+  B: E at r = R/2 = -P0/(2 eps0) = -112941 V/m
+  B: V(0) - V(inf) = -P0 R/(2 eps0) = -5647.05 V
+  -> E inside points inward (-r-hat); centre is at LOWER potential than infinity
+
+==============================================================================
+8.8  Point charge q at the centre of a dielectric sphere
+==============================================================================
+ parameter set q=8e-09, er=4.0, R=0.03
+  [OK  ]   P = eps0 chi E inside: got 2.12207e-06, expected 2.12207e-06
+  [OK  ]   P = (1 - 1/er) D: got 2.12207e-06, expected 2.12207e-06
+  [OK  ]   rho_b = -div P = 0 for 0<r<R (FD): got 0, expected 0
+  [OK  ]   rho_b = -div P = 0 for 0<r<R (FD): got 7.53078e-11, expected 0
+  [OK  ]   total surface bound charge = (1-1/er) q: got 6e-09, expected 6e-09
+  [OK  ]   total charge inside r=0.001R is q/er: got 2e-09, expected 2e-09
+  [OK  ]   bound charge inside r=0.001R is -(1-1/er) q: got -6e-09, expected -6e-09
+  [OK  ]   total charge inside r=0.1R is q/er: got 2e-09, expected 2e-09
+  [OK  ]   bound charge inside r=0.1R is -(1-1/er) q: got -6e-09, expected -6e-09
+  [OK  ]   total charge inside r=0.9R is q/er: got 2e-09, expected 2e-09
+  [OK  ]   bound charge inside r=0.9R is -(1-1/er) q: got -6e-09, expected -6e-09
+  [OK  ]   total bound charge (centre + surface) = 0: got 0, expected 0
+  [OK  ]   jump eps0 [E(R+) - E(R-)] = rho_sb: got 5.30516e-07, expected 5.30516e-07
+  [OK  ]   D_r continuous at R (no free surface charge): got 7.07355e-07, expected 7.07355e-07
+  [OK  ]   brute-force superposition E at r=0.5R: got 79889.3, expected 79889.3
+  [OK  ]   brute-force superposition E at r=2.0R: got 19972.3, expected 19972.3
+ parameter set q=-3e-06, er=2.5, R=0.4
+  [OK  ]   P = eps0 chi E inside: got -3.58099e-06, expected -3.58099e-06
+  [OK  ]   P = (1 - 1/er) D: got -3.58099e-06, expected -3.58099e-06
+  [OK  ]   rho_b = -div P = 0 for 0<r<R (FD): got -3.71716e-11, expected 0
+  [OK  ]   rho_b = -div P = 0 for 0<r<R (FD): got -3.57015e-11, expected 0
+  [OK  ]   total surface bound charge = (1-1/er) q: got -1.8e-06, expected -1.8e-06
+  [OK  ]   total charge inside r=0.001R is q/er: got -1.2e-06, expected -1.2e-06
+  [OK  ]   bound charge inside r=0.001R is -(1-1/er) q: got 1.8e-06, expected 1.8e-06
+  [OK  ]   total charge inside r=0.1R is q/er: got -1.2e-06, expected -1.2e-06
+  [OK  ]   bound charge inside r=0.1R is -(1-1/er) q: got 1.8e-06, expected 1.8e-06
+  [OK  ]   total charge inside r=0.9R is q/er: got -1.2e-06, expected -1.2e-06
+  [OK  ]   bound charge inside r=0.9R is -(1-1/er) q: got 1.8e-06, expected 1.8e-06
+  [OK  ]   total bound charge (centre + surface) = 0: got -6.35275e-22, expected 0
+  [OK  ]   jump eps0 [E(R+) - E(R-)] = rho_sb: got -8.95247e-07, expected -8.95247e-07
+  [OK  ]   D_r continuous at R (no free surface charge): got -1.49208e-06, expected -1.49208e-06
+  [OK  ]   brute-force superposition E at r=0.5R: got -269627, expected -269627
+  [OK  ]   brute-force superposition E at r=2.0R: got -42129.1, expected -42129.1
+  chi_e = er - 1 = 3
+  D(R) = q/(4 pi R^2) = 7.07355e-07 C/m^2
+  E(R-) = q/(4 pi eps R^2) = 19972.3 V/m
+  E(R+) = q/(4 pi eps0 R^2) = 79889.3 V/m
+  P(R-) = rho_sb(R) = (3/4) q/(4 pi R^2) = 5.30516e-07 C/m^2
+     ... in nC/m^2 = 530.516 nC/m^2
+  total surface bound charge = 6 nC
+  bound point charge at centre = -6 nC
+  net charge at centre q/er = 2 nC
+  E(R+) - E(R-) = 59917 V/m
+  eps0 * jump = 5.30516e-07 C/m^2
+
+==============================================================================
+8.9  Point charge in the cavity of a thick conducting shell
+==============================================================================
+  inner-surface charge = -3 nC
+  outer-surface charge = -2 nC
+  rho_s(b) = -5.96831e-07 C/m^2
+  rho_s(b) in nC/m^2 = -596.831 nC/m^2
+  rho_s(c) = -9.94718e-08 C/m^2
+  rho_s(c) in nC/m^2 = -99.4718 nC/m^2
+  k q = 26.9627 V m
+  k (q+Qs) = -17.9751 V m
+  [OK  ] E_r(r=0.01 m) brute-force superposition: got 269627, expected 269627
+     E_r(0.01 m) = 269627 V/m
+  [OK  ] E_r(r=0.03 m) brute-force superposition: got 2.67801e-12, expected 0
+     E_r(0.03 m) = 0 V/m
+  [OK  ] E_r(r=0.05 m) brute-force superposition: got -7190.04, expected -7190.04
+     E_r(0.05 m) = -7190.04 V/m
+  -> r<b: E outward (+r-hat); in the metal E = 0; r>c: E inward (-r-hat) since q+Qs < 0
+  V(shell) = k (q+Qs)/c = -449.378 V
+  V(1 cm) = V(shell) + k q (1/r - 1/b) = 898.755 V
+  [OK  ] V(shell) by brute-force superposition (r=3 cm): got -449.378, expected -449.378
+  [OK  ] V(1 cm) by brute-force superposition: got 898.755, expected 898.755
+  [OK  ] off-centre q (s=1 cm): total induced inner charge still -q: got -3e-09, expected -3e-09
+  [OK  ]   image solution: q + image give V = 0 on r = b (formula sanity): got [0, 0, 0, 0, 0, 0, 0], expected [0, 0, 0, 0, 0, 0, 0]
+    near-side / far-side inner density ratio (image method, not used on page) = 27
+  -> off-centre: inner total -q (unchanged), inner distribution non-uniform (densest nearest q);
+  -> outer surface uniform with q+Qs; E in metal 0; E outside unchanged; V(shell) unchanged
+  grounded: outer-surface charge = 0 nC
+  grounded: shell net charge = -3 nC
+  grounded: charge that flows from ground onto shell = 2 nC
+  grounded: V(1 cm) = k q (1/r - 1/b) = 1348.13 V
+  [OK  ] grounded: V(1 cm) brute force: got 1348.13, expected 1348.13
+  [OK  ] grounded: V(shell) brute force = 0: got 1.13687e-13, expected 0
+  [OK  ] grounded: E outside = 0: got 5.45697e-12, expected 0
+  [OK  ] set 2: E_r(r=0.1) brute force: got -6.29129e+06, expected -6.29129e+06
+  [OK  ] set 2: E_r(r=0.32) brute force: got -4.88608e-09, expected 0
+  [OK  ] set 2: E_r(r=0.9) brute force: got -55478.7, expected -55478.7
+
+==============================================================================
+8.10  Relaxation of rho(x,0) = 18 eps0 cos(3x) in eps = 9 eps0, sigma = 900 eps0
+==============================================================================
+  sigma = 900 eps0 = 7.96877e-09 S/m
+  tau = eps/sigma = 0.01 s
+  E amplitude rho0/(k eps) = 0.666667 V/m
+  J amplitude sigma * E amplitude = 5.31251e-09 A/m^2
+  J amplitude / eps0 = 600 (x eps0) A/m^2
+  [OK  ] Gauss eps dEx/dx = rho at (x=0.37, t=0.0): got 7.08681e-11, expected 7.08681e-11
+  [OK  ] continuity d(rho)/dt + dJx/dx = 0 at (x=0.37, t=0.0): got -1.42729e-10, expected 0
+  [OK  ] Gauss eps dEx/dx = rho at (x=1.9, t=0.004): got 8.91745e-11, expected 8.91745e-11
+  [OK  ] continuity d(rho)/dt + dJx/dx = 0 at (x=1.9, t=0.004): got -6.58499e-10, expected 0
+  [OK  ] Gauss eps dEx/dx = rho at (x=-2.2, t=0.031): got 6.82242e-12, expected 6.82242e-12
+  [OK  ] continuity d(rho)/dt + dJx/dx = 0 at (x=-2.2, t=0.031): got 8.71781e-11, expected 0
+  [OK  ] numerical ODE solution vs rho0 cos(kx) exp(-t/tau): got [4.83902e-11, 6.5489e-12], expected [4.83902e-11, 6.5489e-12]
+  time to 1% = tau ln 100 = 0.0460517 s
+  E_x(pi/6, 10 ms) = (2/3) e^-1 = 0.245253 V/m
+  rho(0, 10 ms)/eps0 = 6.62183 (x eps0) C/m^3
+  1/tau = 100 1/s
+  d(rho)/dt amplitude / eps0 = -(1/tau)(18) = -1800
+  dJx/dx amplitude / eps0 = 3 (600) = 1800
+  [OK  ] continuity amplitudes cancel: got -2.27374e-13, expected 0
+  -> J at x slightly > 0 is +x, at x slightly < 0 is -x: current flows away from the crest at x=0
+  J_x(+0.1, 0) sign: 1.0   J_x(-0.1, 0) sign: -1.0
+  [OK  ] net charge per spatial period = 0: got -1.27385e-16, expected 0
+  [OK  ] charge per area in one positive lump = 12 eps0: got 1.0625e-10, expected 1.0625e-10
+  [OK  ] brute-force grid solution, k=3.0: decay rate = 1/tau: got 99.999, expected 100
+  [OK  ] brute-force grid solution, k=3.0: initial |E|max = rho0/(k eps): got 0.666664, expected 0.666667
+  [OK  ] brute-force grid solution, k=30.0: decay rate = 1/tau: got 99.999, expected 100
+  [OK  ] brute-force grid solution, k=30.0: initial |E|max = rho0/(k eps): got 0.0666664, expected 0.0666667
+  -> decay rate independent of the spatial period (k=3 and k=30 identical); E amplitude scales as 1/k
+
+==============================================================================
+8.11  Composite sphere: core Q1, dielectric 3eps0, shell Q2, coat 2eps0, free space
+==============================================================================
+ parameter set Q1=6.0, Q2=-8.0, radii=1.0,2.0,3.0,4.0, er2=3.0, er4=2.0
+  [OK  ]   free: core surface carries Q1: got 6, expected 6
+  [OK  ]   free: shell inner surface carries -Q1: got -6, expected -6
+  [OK  ]   free: shell outer surface carries Q1+Q2: got -2, expected -2
+  [OK  ]   free: shell total = Q2: got -8, expected -8
+  [OK  ]   rho_b = 0 by FD at r=1.5: got 9.80963e-11, expected 0
+  [OK  ]   rho_b = 0 by FD at r=3.5: got 1.0014e-10, expected 0
+  [OK  ]   dielectric (ii): total bound charge = 0: got 0, expected 0
+  [OK  ]   dielectric (iv): total bound charge = 0: got 0, expected 0
+  [OK  ]   (ii) inner-face bound total = -(1-1/er2) Q1: got -4, expected -4
+  [OK  ]   (iv) inner-face bound total = -(1-1/er4)(Q1+Q2): got 1, expected 1
+  [OK  ]   eps0*jump in E_r at r=1 equals free+bound surface charge: got 0.159155, expected 0.159155
+  [OK  ]   eps0*jump in E_r at r=2 equals free+bound surface charge: got -0.0397887, expected -0.0397887
+  [OK  ]   eps0*jump in E_r at r=3 equals free+bound surface charge: got -0.00884194, expected -0.00884194
+  [OK  ]   eps0*jump in E_r at r=4 equals free+bound surface charge: got -0.00497359, expected -0.00497359
+  [OK  ]   D_r continuous at r4 (no free charge): got -0.00994718, expected -0.00994718
+  [OK  ]   brute-force E_r at r=0.5 vs D/eps: got -1.87091e-07, expected 0
+  [OK  ]   brute-force E_r at r=1.5 vs D/eps: got 7.98893e+09, expected 7.98893e+09
+  [OK  ]   brute-force E_r at r=2.5 vs D/eps: got 1.87091e-07, expected 0
+  [OK  ]   brute-force E_r at r=3.5 vs D/eps: got -7.33678e+08, expected -7.33678e+08
+  [OK  ]   brute-force E_r at r=6 vs D/eps: got -4.99308e+08, expected -4.99308e+08
+ parameter set Q1=-2e-09, Q2=5e-09, radii=0.01,0.025,0.03,0.05, er2=5.5, er4=1.7
+  [OK  ]   free: core surface carries Q1: got -2e-09, expected -2e-09
+  [OK  ]   free: shell inner surface carries -Q1: got 2e-09, expected 2e-09
+  [OK  ]   free: shell outer surface carries Q1+Q2: got 3e-09, expected 3e-09
+  [OK  ]   free: shell total = Q2: got 5e-09, expected 5e-09
+  [OK  ]   rho_b = 0 by FD at r=0.0175: got 2.17884e-10, expected 0
+  [OK  ]   rho_b = 0 by FD at r=0.04: got 1.8849e-10, expected 0
+  [OK  ]   dielectric (ii): total bound charge = 0: got 0, expected 0
+  [OK  ]   dielectric (iv): total bound charge = 0: got -2.06795e-25, expected 0
+  [OK  ]   (ii) inner-face bound total = -(1-1/er2) Q1: got 1.63636e-09, expected 1.63636e-09
+  [OK  ]   (iv) inner-face bound total = -(1-1/er4)(Q1+Q2): got -1.23529e-09, expected -1.23529e-09
+  [OK  ]   eps0*jump in E_r at r=0.01 equals free+bound surface charge: got -2.89373e-07, expected -2.89373e-07
+  [OK  ]   eps0*jump in E_r at r=0.025 equals free+bound surface charge: got 4.62996e-08, expected 4.62996e-08
+  [OK  ]   eps0*jump in E_r at r=0.03 equals free+bound surface charge: got 1.56034e-07, expected 1.56034e-07
+  [OK  ]   eps0*jump in E_r at r=0.05 equals free+bound surface charge: got 3.93206e-08, expected 3.93206e-08
+  [OK  ]   D_r continuous at r4 (no free charge): got 9.5493e-08, expected 9.5493e-08
+  [OK  ]   brute-force E_r at r=0.005 vs D/eps: got 3.87465e-12, expected 0
+  [OK  ]   brute-force E_r at r=0.0175 vs D/eps: got -10671.7, expected -10671.7
+  [OK  ]   brute-force E_r at r=0.0275 vs D/eps: got -1.81977e-11, expected 0
+  [OK  ]   brute-force E_r at r=0.04 vs D/eps: got 9912.74, expected 9912.74
+  [OK  ]   brute-force E_r at r=0.075 vs D/eps: got 4793.36, expected 4793.36
+ printed values for the page (Q1=6 C, Q2=-8 C, radii 1,2,3,4 m, 3eps0, 2eps0):
+    D_r(1.5) * pi r^2 = 1.5 C
+    E_r(1.5) * pi eps0 r^2 = 0.5
+    P_r(1.5) * pi r^2 = 1 C
+    D_r(3.5) * pi r^2 = -0.5 C
+    E_r(3.5) * pi eps0 r^2 = -0.25
+    P_r(3.5) * pi r^2 = -0.25 C
+    D_r(5.0) * pi r^2 = -0.5 C
+    E_r(5.0) * pi eps0 r^2 = -0.5
+    P_r(5.0) * pi r^2 = 0 C
+    D(ii) coefficient 3/(2 pi) = 0.477465
+    free rho_s(r=1) = 3/(2pi) = 0.477465 C/m^2
+    free rho_s(r=2) = -3/(8pi) = -0.119366 C/m^2
+    free rho_s(r=3) = -1/(18pi) = -0.0176839 C/m^2
+    bound rho_sb(r=1) = -1/pi = -0.31831 C/m^2
+    bound rho_sb(r=2) = 1/(4pi) = 0.0795775 C/m^2
+    bound rho_sb(r=3) = 1/(36pi) = 0.00884194 C/m^2
+    bound rho_sb(r=4) = -1/(64pi) = -0.00497359 C/m^2
+    free totals (core, shell inner, shell outer) = [6, -6, -2] C
+    bound totals (r=1,2,3,4) = [-4, 4, 1, -1] C
+  [OK  ]   1/(36pi) - 1/(18pi) = -1/(36pi) = eps0 E_r(3+): got -0.00884194, expected -0.00884194
+  [OK  ]   values: 3/(2pi), -3/(8pi), -1/(18pi): got [0.477465, -0.119366, -0.0176839], expected [0.477465, -0.119366, -0.0176839]
+  [OK  ]   values: -1/pi, 1/(4pi), 1/(36pi), -1/(64pi): got [-0.31831, 0.0795775, 0.00884194, -0.00497359], expected [-0.31831, 0.0795775, 0.00884194, -0.00497359]
+  [OK  ]   E(ii) = 1/(2 pi eps0 r^2): got 7.98893e+09, expected 7.98893e+09
+  [OK  ]   E(iv) = -1/(4 pi eps0 r^2): got -7.33678e+08, expected -7.33678e+08
+  [OK  ]   E(v) = -1/(2 pi eps0 r^2): got -7.19004e+08, expected -7.19004e+08
+  [OK  ]   P(ii) = 1/(pi r^2): got 0.141471, expected 0.141471
+  [OK  ]   P(iv) = -1/(4 pi r^2): got -0.00649612, expected -0.00649612
+    free + bound charge on r = 1, 2, 3, 4 = [2, -2, -1, -1] C
+    total charge enclosed for 1<r<2, 2<r<3, 3<r<4, r>4 = [2, 0, -1, -2] C
+  [OK  ]   Gauss with total charge at r=1.5: eps0 E_r 4 pi r^2 = enclosed total: got 2, expected 2
+  [OK  ]   Gauss with total charge at r=2.5: eps0 E_r 4 pi r^2 = enclosed total: got 0, expected 0
+  [OK  ]   Gauss with total charge at r=3.5: eps0 E_r 4 pi r^2 = enclosed total: got -1, expected -1
+  [OK  ]   Gauss with total charge at r=5.0: eps0 E_r 4 pi r^2 = enclosed total: got -2, expected -2
+    -(1-1/er) x enclosed free charge, inner faces of (ii), (iv) = [-4, 1] C
+    eps0 E_r(4-) = -0.00497359 C/m^2
+    eps0 E_r(4+) = -0.00994718 C/m^2
+  [OK  ]   eps0 E_r(4-) = -1/(64pi): got -0.00497359, expected -0.00497359
+  [OK  ]   eps0 E_r(4+) = -1/(32pi): got -0.00994718, expected -0.00994718
+  -> D, E, P point outward (+r-hat) in (ii) and inward (-r-hat) in (iv), (v)
+
+==============================================================================
+8.12  Uniformly (transversely) polarized rod, P = P0 x-hat, radius a
+==============================================================================
+ parameter set P0=1e-06, a=0.01
+  [OK  ]   total bound charge per unit length = 0: got -6.49666e-25, expected 0
+  [OK  ]   rho_b = -div P = 0 (FD): got 0, expected 0
+  [OK  ]   two cylinders (d=1.0e-04) at [0. 0.] a: E = -P/(2eps0): got [-56470.5, 0], expected [-56470.5, 0]
+  [OK  ]   two cylinders (d=1.0e-04) at [ 0.3 -0.5] a: E = -P/(2eps0): got [-56470.5, 0], expected [-56470.5, 0]
+  [OK  ]   two cylinders (d=1.0e-04) at [-0.7  0.1] a: E = -P/(2eps0): got [-56470.5, 0], expected [-56470.5, 0]
+  [OK  ]   two cylinders (d=1.0e-06) at [0. 0.] a: E = -P/(2eps0): got [-56470.5, 0], expected [-56470.5, 0]
+  [OK  ]   two cylinders (d=1.0e-06) at [ 0.3 -0.5] a: E = -P/(2eps0): got [-56470.5, 0], expected [-56470.5, 0]
+  [OK  ]   two cylinders (d=1.0e-06) at [-0.7  0.1] a: E = -P/(2eps0): got [-56470.5, 0], expected [-56470.5, 0]
+  [OK  ]   brute-force surface-charge field inside at [0. 0.] a: got [-56470.5, 1.3255e-12], expected [-56470.5, 0]
+  [OK  ]   brute-force surface-charge field inside at [0.4 0.3] a: got [-56470.5, -1.81899e-12], expected [-56470.5, 0]
+  [OK  ]   brute-force surface-charge field inside at [-0.2 -0.6] a: got [-56470.5, 1.36424e-12], expected [-56470.5, 0]
+  [OK  ]   brute-force outside at r=3a, phi=0 deg vs 2-D dipole: got [6274.49, 3.34167e-13], expected [6274.49, 0]
+  [OK  ]   brute-force outside at r=3a, phi=90 deg vs 2-D dipole: got [-6274.49, -5.45075e-13], expected [-6274.49, 7.68404e-13]
+  [OK  ]   brute-force outside at r=2a, phi=30 deg vs 2-D dipole: got [7058.81, 12226.2], expected [7058.81, 12226.2]
+  [OK  ]   brute-force outside at r=1.002a, phi=0 deg vs 2-D dipole: got [56245.2, 7.27048e-10], expected [56245.2, 0]
+  [OK  ]   brute-force outside at r=1.002a, phi=90 deg vs 2-D dipole: got [-56245.2, 1.26645e-10], expected [-56245.2, 6.88806e-12]
+  [OK  ]   BC at phi=0: E_t continuous: got 0, expected 0
+  [OK  ]   BC at phi=0: eps0 (E_out,n - E_in,n) = P0 cos(phi): got 1e-06, expected 1e-06
+  [OK  ]   BC at phi=0: D_n continuous (no free charge): got 5e-07, expected 5e-07
+  [OK  ]   BC at phi=30: E_t continuous: got 28235.2, expected 28235.2
+  [OK  ]   BC at phi=30: eps0 (E_out,n - E_in,n) = P0 cos(phi): got 8.66025e-07, expected 8.66025e-07
+  [OK  ]   BC at phi=30: D_n continuous (no free charge): got 4.33013e-07, expected 4.33013e-07
+  [OK  ]   BC at phi=90: E_t continuous: got 56470.5, expected 56470.5
+  [OK  ]   BC at phi=90: eps0 (E_out,n - E_in,n) = P0 cos(phi): got 6.12323e-23, expected 6.12323e-23
+  [OK  ]   BC at phi=90: D_n continuous (no free charge): got 3.06162e-23, expected 3.06162e-23
+  [OK  ]   BC at phi=137: E_t continuous: got 38512.8, expected 38512.8
+  [OK  ]   BC at phi=137: eps0 (E_out,n - E_in,n) = P0 cos(phi): got -7.31354e-07, expected -7.31354e-07
+  [OK  ]   BC at phi=137: D_n continuous (no free charge): got -3.65677e-07, expected -3.65677e-07
+  [OK  ]   E just outside at phi=0 = +P0/(2eps0) x-hat: got [56470.5, 0], expected [56470.5, 0]
+  [OK  ]   E just outside at phi=90 = -P0/(2eps0) x-hat: got [-56470.5, 6.91564e-12], expected [-56470.5, 0]
+ parameter set P0=0.0003, a=0.25
+  [OK  ]   total bound charge per unit length = 0: got 2.66103e-20, expected 0
+  [OK  ]   rho_b = -div P = 0 (FD): got 0, expected 0
+  [OK  ]   two cylinders (d=2.5e-03) at [0. 0.] a: E = -P/(2eps0): got [-1.69411e+07, 0], expected [-1.69411e+07, 0]
+  [OK  ]   two cylinders (d=2.5e-03) at [ 0.3 -0.5] a: E = -P/(2eps0): got [-1.69411e+07, 0], expected [-1.69411e+07, 0]
+  [OK  ]   two cylinders (d=2.5e-03) at [-0.7  0.1] a: E = -P/(2eps0): got [-1.69411e+07, 0], expected [-1.69411e+07, 0]
+  [OK  ]   two cylinders (d=2.5e-05) at [0. 0.] a: E = -P/(2eps0): got [-1.69411e+07, 0], expected [-1.69411e+07, 0]
+  [OK  ]   two cylinders (d=2.5e-05) at [ 0.3 -0.5] a: E = -P/(2eps0): got [-1.69411e+07, 0], expected [-1.69411e+07, 0]
+  [OK  ]   two cylinders (d=2.5e-05) at [-0.7  0.1] a: E = -P/(2eps0): got [-1.69411e+07, 0], expected [-1.69411e+07, 0]
+  [OK  ]   brute-force surface-charge field inside at [0. 0.] a: got [-1.69411e+07, 2.56025e-10], expected [-1.69411e+07, 0]
+  [OK  ]   brute-force surface-charge field inside at [0.4 0.3] a: got [-1.69411e+07, -1.39698e-09], expected [-1.69411e+07, 0]
+  [OK  ]   brute-force surface-charge field inside at [-0.2 -0.6] a: got [-1.69411e+07, 6.98492e-10], expected [-1.69411e+07, 0]
+  [OK  ]   brute-force outside at r=3a, phi=0 deg vs 2-D dipole: got [1.88235e+06, -6.69947e-11], expected [1.88235e+06, 0]
+  [OK  ]   brute-force outside at r=3a, phi=90 deg vs 2-D dipole: got [-1.88235e+06, -3.35503e-10], expected [-1.88235e+06, 2.30521e-10]
+  [OK  ]   brute-force outside at r=2a, phi=30 deg vs 2-D dipole: got [2.11764e+06, 3.66786e+06], expected [2.11764e+06, 3.66786e+06]
+  [OK  ]   brute-force outside at r=1.002a, phi=0 deg vs 2-D dipole: got [1.68736e+07, 2.16887e-07], expected [1.68736e+07, 0]
+  [OK  ]   brute-force outside at r=1.002a, phi=90 deg vs 2-D dipole: got [-1.68736e+07, 3.88273e-08], expected [-1.68736e+07, 2.06642e-09]
+  [OK  ]   BC at phi=0: E_t continuous: got 0, expected 0
+  [OK  ]   BC at phi=0: eps0 (E_out,n - E_in,n) = P0 cos(phi): got 0.0003, expected 0.0003
+  [OK  ]   BC at phi=0: D_n continuous (no free charge): got 0.00015, expected 0.00015
+  [OK  ]   BC at phi=30: E_t continuous: got 8.47057e+06, expected 8.47057e+06
+  [OK  ]   BC at phi=30: eps0 (E_out,n - E_in,n) = P0 cos(phi): got 0.000259808, expected 0.000259808
+  [OK  ]   BC at phi=30: D_n continuous (no free charge): got 0.000129904, expected 0.000129904
+  [OK  ]   BC at phi=90: E_t continuous: got 1.69411e+07, expected 1.69411e+07
+  [OK  ]   BC at phi=90: eps0 (E_out,n - E_in,n) = P0 cos(phi): got 1.83697e-20, expected 1.83697e-20
+  [OK  ]   BC at phi=90: D_n continuous (no free charge): got 9.18485e-21, expected 9.18485e-21
+  [OK  ]   BC at phi=137: E_t continuous: got 1.15538e+07, expected 1.15538e+07
+  [OK  ]   BC at phi=137: eps0 (E_out,n - E_in,n) = P0 cos(phi): got -0.000219406, expected -0.000219406
+  [OK  ]   BC at phi=137: D_n continuous (no free charge): got -0.000109703, expected -0.000109703
+  [OK  ]   E just outside at phi=0 = +P0/(2eps0) x-hat: got [1.69411e+07, 0], expected [1.69411e+07, 0]
+  [OK  ]   E just outside at phi=90 = -P0/(2eps0) x-hat: got [-1.69411e+07, 2.07469e-09], expected [-1.69411e+07, 0]
+  P0/(2 eps0) = 56470.5 V/m
+  E inside = -P0/(2eps0) x-hat, x-component = -56470.5 V/m
+  D inside = eps0 E + P = P0/2 (x-hat) = 5e-07 C/m^2
+  E just outside at phi=0, x-component = 56470.5 V/m
+  E just outside at phi=90 deg, x-component = -56470.5 V/m
+  E at (3a, 0) = P0/(18 eps0), x-component = 6274.49 V/m
+  [OK  ] 2-D dipole field at (3a, 0) equals P0/(18 eps0) x-hat: got [6274.49, 0], expected [6274.49, 0]
+  [OK  ] 2-D dipole field at (0, 3a) equals -P0/(18 eps0) x-hat: got [-6274.49, 7.68404e-13], expected [-6274.49, 0]
+  [OK  ] sphere: field at centre from P0 cos(theta) surface charge = -P0/(3 eps0): got -37647, expected -37647
+  [OK  ] slab (normal P): field between sheets +-P0 = -P0/eps0: got -112941, expected -112941
+  slab / rod / sphere factors = [1, 0.5, 0.333333]
+
+==============================================================================
+ALL CHECKS PASSED

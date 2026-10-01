@@ -1,0 +1,255 @@
+
+==============================================================================
+13.1  One sheet on z = 0
+==============================================================================
+H(P1) = (4, 0, 0) A/m   brute force: (4, 0, 0) A/m
+H(P2) = (-4, 0, 0) A/m   brute force: (-4, 0, -7.639e-07) A/m
+B(P1) = mu0*H = 5.0265e-06 T along x  (= 5.027 uT); 4*mu0 = 5.0265e-06
+B(P2) = -5.0265e-06 T along x
+(b) H above = (4, -3, 0) A/m  |H| = 5.0  |Js|/2 = 5.0  H.Js = 0.0
+    H below = (-4, 3, 0) A/m
+    brute force above at (1,2,0.3): (4, -3, 1.273e-07) A/m
+    x^ cross z^ = [ 0. -1.  0.]  y^ cross z^ = [1. 0. 0.]
+
+==============================================================================
+13.2  MC: H_t jump at a sheet on x = 0 with a normal component
+==============================================================================
+Js x n = (0, 3, 0) A/m
+correct H1 (x>0) = (2, 2, 0) A/m   check n x (H1-H2) = (0, 0, 3) A/m  = Js? True
+second route: sheet self-field x<0: (0, -1.5, 0) A/m  x>0: (0, 1.5, 0) A/m
+  external (continuous) field = (2, 0.5, 0) A/m  -> H1 = (2, 2, 0) A/m
+distractors:
+  (a) n x Js used: (2, -4, 0) A/m
+  (c) jump added to normal comp: (2+3, -1, 0) = (5, -1, 0) A/m
+  (d) Js added: (2, -1, 3) A/m
+  (e) half jump: (2, 0.5, 0) A/m  (= external field)
+  (f) normal flipped: (-2, 2, 0) A/m
+  (a) n x (H1-H2) = (0, 0, -3) A/m;  normal comp continuous: True
+  (c) n x (H1-H2) = (0, 0, 0) A/m;  normal comp continuous: False
+  (d) n x (H1-H2) = (0, -3, 0) A/m;  normal comp continuous: True
+  (e) n x (H1-H2) = (0, 0, 1.5) A/m;  normal comp continuous: True
+  (f) n x (H1-H2) = (0, 0, 3) A/m;  normal comp continuous: False
+
+==============================================================================
+13.3  Solenoid, flux, nested solenoid
+==============================================================================
+H inside = n1 I1 = 1000.0 A/m ; B = 1.25664e-03 T (4 pi e-4 = 1.25664e-03)
+Psi through cross-section = 1.57914e-06 Wb ; 16 pi^2 e-8 = 1.57914e-06
+I2 = -n1 I1 / n2 = -2.500 A  (negative = clockwise seen from +z)
+annulus H = 1000 A/m ; flux through r<=2 cm = 1.18435e-06 Wb ; 12 pi^2 e-8 = 1.18435e-06
+jump at r=a2: r^ x (H_ann - H_core) = (0, -1000, 0) A/m  ; inner winding n2 I2 phi^ = (0, -1000, 0) A/m
+BS outer alone at centre: Bz = 1.25639e-03 T  (mu0 n1 I1 = 1.25664e-03; ratio 0.99980)
+BS inner alone at centre: Bz = -1.25657e-03 T ; sum = -1.884e-07 T (should be ~0)
+BS both at r = 1.5 cm: B = (2.094e-09, 0, 0.001256) T ; H = 999.8 A/m (expect 1000)
+BS both at r = 3 cm (outside): H = -0.15 A/m (expect ~0; finite-length leakage)
+
+==============================================================================
+13.4  Toroid, rectangular cross-section
+==============================================================================
+r = 4 cm: H = NI/(2 pi r) = 4774.65 A/m ; B = 6.0000 mT
+r = 5 cm: H = NI/(2 pi r) = 3819.72 A/m ; B = 4.8000 mT
+r = 6 cm: H = NI/(2 pi r) = 3183.10 A/m ; B = 4.0000 mT
+B(a)/B(b) = 1.500
+mu0/(2pi) = 2.000e-07 ; mu0 N I/(2 pi) = 2.400e-04 T m
+BS toroid at r = 3.0 cm: H = (0, -0.2797, 0) A/m ; expected H_phi = 0.00 (phi^ = +y here)
+BS toroid at r = 4.5 cm: H = (0, 4245, 0) A/m ; expected H_phi = 4244.13 (phi^ = +y here)
+BS toroid at r = 5.0 cm: H = (0, 3820, 0) A/m ; expected H_phi = 3819.72 (phi^ = +y here)
+BS toroid at r = 5.5 cm: H = (0, 3473, 0) A/m ; expected H_phi = 3472.47 (phi^ = +y here)
+BS toroid at r = 7.0 cm: H = (0, -0.1479, 0) A/m ; expected H_phi = 0.00 (phi^ = +y here)
+
+==============================================================================
+13.5  True/false checks
+==============================================================================
+(i) sheet K=6.0: brute-force |H| at 1.0 m = 3.000000 A/m
+(i) sheet K=6.0: brute-force |H| at 2.0 m = 3.000000 A/m
+(ii) solenoid length 4 m, radius 1 cm: B centre = 1.256621e-03 T ; flux = 3.9478e-07 Wb
+(ii) solenoid length 4 m, radius 2 cm: B centre = 1.256574e-03 T ; flux = 1.5791e-06 Wb
+(iii) sheet self-field is tangential: 1/2 Js x n . n = 0.0
+(iv) curl A1 = (0, 0, 0.7) T ; curl A2 = (0, 0, 0.7) T ; div A1 = 0.0e+00, div A2 = 0.0e+00
+     A2 - A1 = (-0.42, 0.105, 0)  ; grad(B0 x y/2) = (-0.42, 0.105, 0) 
+(iv) curl A1 = (0, 0, 0.7) T ; curl A2 = (0, 0, 0.7) T ; div A1 = 0.0e+00, div A2 = 0.0e+00
+     A2 - A1 = (0.175, -0.7, 0)  ; grad(B0 x y/2) = (0.175, -0.7, 0) 
+(v) loop a=1, I=1: Bz(2) = 5.619851e-08 ; Bz z^3 = 4.495880e-07 (mu0/2 = 6.283185e-07); Bz z^2 = 2.248e-07
+(v) loop a=1, I=1: Bz(4) = 8.964093e-09 ; Bz z^3 = 5.737019e-07 (mu0/2 = 6.283185e-07); Bz z^2 = 1.434e-07
+(v) loop a=1, I=1: Bz(8) = 1.198974e-09 ; Bz z^3 = 6.138745e-07 (mu0/2 = 6.283185e-07); Bz z^2 = 7.673e-08
+(v) loop a=1, I=1: Bz(16) = 1.525036e-10 ; Bz z^3 = 6.246546e-07 (mu0/2 = 6.283185e-07); Bz z^2 = 3.904e-08
+
+==============================================================================
+13.6  Find the error: parallel-plate line (plates y = 0 and y = d)
+==============================================================================
+K = I/w = 200.0 A/m
+student (n=+y for both): top (0, 0, 100) A/m  bottom (0, 0, -100) A/m  sum (0, 0, 0) A/m
+correct between: (0, 0, -200) A/m  top part (0, 0, -100) A/m  bottom part (0, 0, -100) A/m
+above: (0, 0, 0) A/m  below: (0, 0, 0) A/m
+B between = -2.5133e-04 T along z  (251.3 uT magnitude)
+jump at top plate: y^ x (H_above - H_between) = (200, 0, 0) A/m  J_top = (200, 0, 0) A/m
+brute-force (filament) between, top plate at y=d: (0, 0, -200) A/m
+finite-width strips w=0.04, d=0.002: B mid-gap = 2.4333e-04 T = 0.9682 mu0 K (edge effect)
+   quad check: one strip B = mu0 K/(2pi) * 3.041676 -> two strips 2.4333e-04 T
+scaling d->2d, I->I/2: |B| factor = 0.50
+
+==============================================================================
+13.7  Graded slab J = J0 (x/d) z^, 0<x<d
+==============================================================================
+K = int J dx = 10.000000 A/m ; J0 d/2 = 10.0
+z^ x x^ = [0. 1. 0.]
+x = -2.0000 cm: H_y analytic = -5.00000  superposed sheets = -5.00000 A/m
+x =  0.0000 cm: H_y analytic = -5.00000  superposed sheets = -5.00000 A/m
+x =  1.2500 cm: H_y analytic = -4.37500  superposed sheets = -4.37500 A/m
+x =  2.5000 cm: H_y analytic = -2.50000  superposed sheets = -2.50000 A/m
+x =  3.5355 cm: H_y analytic = +0.00000  superposed sheets = -0.00000 A/m
+x =  4.0000 cm: H_y analytic = +1.40000  superposed sheets = +1.40000 A/m
+x =  5.0000 cm: H_y analytic = +5.00000  superposed sheets = +5.00000 A/m
+x =  8.0000 cm: H_y analytic = +5.00000  superposed sheets = +5.00000 A/m
+zero at x0 = 3.5355 cm ; d/sqrt2 = 3.5355 cm
+current below x0 = 5.0000, above = 5.0000 A/m
+curl check x=0.01: dHy/dx = 80.0000 ; J_z = 80.0000
+curl check x=0.03: dHy/dx = 240.0000 ; J_z = 240.0000
+curl check x=0.045: dHy/dx = 360.0000 ; J_z = 360.0000
+H_y = 4000 x^2 - 5 ? at x=0.025: -2.4999999999999996
+
+==============================================================================
+13.8  Three sheets z=0,1,2 m with different directions
+==============================================================================
+Js3 = (-4, -6, 0) A/m
+z = -1.0: H = (0, 0, 0) A/m |H| = 0.0000 ; brute force (-1.91e-07, 2.546e-07, -3.257e-09) A/m
+z =  0.5: H = (0, -4, 0) A/m |H| = 4.0000 ; brute force (-1.91e-07, -4, -4.996e-09) A/m
+z =  1.5: H = (6, -4, 0) A/m |H| = 7.2111 ; brute force (6, -4, 2.498e-09) A/m
+z =  3.0: H = (0, 0, 0) A/m |H| = 0.0000 ; brute force (-1.91e-07, 2.546e-07, 3.925e-09) A/m
+|H| in 1<z<2: sqrt(52) = 7.2111 ; B = 9.062 uT ; B(0<z<1) = 5.027 uT
+jump at z=0.0: z^ x (H_above - H_below) = (4, 0, 0) A/m ; Js = (4, 0, 0) A/m
+jump at z=1.0: z^ x (H_above - H_below) = (0, 6, 0) A/m ; Js = (0, 6, 0) A/m
+jump at z=2.0: z^ x (H_above - H_below) = (-4, -6, 0) A/m ; Js = (-4, -6, 0) A/m
+marching: H(0<z<1) = Js1 x z^ = (0, -4, 0) A/m ; H(1<z<2) = (Js1+Js2) x z^ = (6, -4, 0) A/m
+
+==============================================================================
+13.9  Two slabs (+ sheet) along y; slabs normal to z
+==============================================================================
+y^ x z^ = [1. 0. 0.] (so a +y current gives +x field above, -x below)
+K1 = 6.0 A/m, K2 = -6.0 A/m
+z =  -4.0: Hx (sheets superposed) = +0.00000 ; piecewise = +0.00000 A/m
+z =  -2.0: Hx (sheets superposed) = +3.00000 ; piecewise = +3.00000 A/m
+z =  -0.5: Hx (sheets superposed) = +6.00000 ; piecewise = +6.00000 A/m
+z =   1.5: Hx (sheets superposed) = +3.00000 ; piecewise = +3.00000 A/m
+z =   4.0: Hx (sheets superposed) = +0.00000 ; piecewise = +0.00000 A/m
+continuity at z=-3: Hx(z-) = +0.000000, Hx(z+) = +0.000000
+continuity at z=-1: Hx(z-) = +6.000000, Hx(z+) = +6.000000
+continuity at z=0: Hx(z-) = +6.000000, Hx(z+) = +6.000000
+continuity at z=3: Hx(z-) = +0.000000, Hx(z+) = +0.000000
+curl check z=-2.5: (curl H)_y = dHx/dz = +3.0000 ; J_y = +3.0
+curl check z=-1.7: (curl H)_y = dHx/dz = +3.0000 ; J_y = +3.0
+curl check z=0.7: (curl H)_y = dHx/dz = -2.0000 ; J_y = -2.0
+curl check z=2.2: (curl H)_y = dHx/dz = -2.0000 ; J_y = -2.0
+sheet field below z=1: (1, 0, 0) A/m  above: (-1, 0, 0) A/m
+with sheet: z =  -4.0: Hx = +1.00000 A/m
+with sheet: z =  -2.0: Hx = +4.00000 A/m
+with sheet: z =  -0.5: Hx = +7.00000 A/m
+with sheet: z =   1.5: Hx = +2.00000 A/m
+with sheet: z =   4.0: Hx = -1.00000 A/m
+no zero in (-3,-1)  [Hx ends: +1.000, +7.000]
+no zero in (-1,0)  [Hx ends: +7.000, +7.000]
+no zero in (0,1)  [Hx ends: +7.000, +5.000]
+zero of Hx in (1,3): z = 2.500000 m
+outside: Hx(z<-3) = +1.000, Hx(z>3) = -1.000
+jump at z=1: below +5.0000, above +3.0000; z^ x (Habove-Hbelow) x^ = (0, -2, 0) A/m  Js = (0, -2, 0) A/m
+with sheet, the ramp 3z+10 in slab 1 would vanish at z = -3.3333333333333335 (outside the slab -> no zero there)
+(d) at z=2.3: div A = 0.00e+00 ; curl A = (-1.257e-06, 0, 0) T ; H = B/mu0 = (-1, 0, 0) A/m
+(d) at z=-0.6: div A = 0.00e+00 ; curl A = (1.257e-06, 0, 0) T ; H = B/mu0 = (1, 0, 0) A/m
+jump of dA_y/dz across z=1: 2.5133e-06 = 2 mu0 (2.5133e-06) -> J_s,y = -(jump)/mu0 = -2.0000 A/m
+H_t jump from B = curl A: (0, -2, 0) A/m
+
+==============================================================================
+13.10  Vector potentials of a wire and of a solenoid
+==============================================================================
+r = [0.03 0.04 0.  ]: curl A = (-32, 24, 0) uT ; mu0 I/(2 pi r) phi^ = (-32, 24, 0) uT ; div A = 0.0e+00
+   Laplacian of A_z (r>0) = -2.70e-09
+r = [-0.02  0.05  0.3 ]: curl A = (-34.48, -13.79, 0) uT ; mu0 I/(2 pi r) phi^ = (-34.48, -13.79, 0) uT ; div A = 0.0e+00
+   Laplacian of A_z (r>0) = 1.16e-10
+|B| at (3,4) cm = 40.000 uT ; phi^ = (-0.8, 0.6, 0)
+   circle r=0.01: closed-line integral of dA_z/dr = -1.256637e-05 ; -mu0 I = -1.256637e-05
+   circle r=0.2: closed-line integral of dA_z/dr = -1.256637e-05 ; -mu0 I = -1.256637e-05
+(b) flux per metre: A_z(a) - A_z(b) = 2.772589e-06 Wb/m ; int B dr = 2.772589e-06 ; (mu0 I/2pi) ln 4 = 2.772589e-06
+   rectangle up at r=a, out, down at r=b, in: loop integral = 2.772589e-06 Wb ; normal = z^ x x^ = [0. 1. 0.]
+   finite wire half-length 10.0: A(a)-A(b) = 2.772581e-06 ; A(a) itself = 1.5202e-05 (grows with L)
+   finite wire half-length 1000.0: A(a)-A(b) = 2.772589e-06 ; A(a) itself = 2.4412e-05 (grows with L)
+(c) B0 = mu0 n I = 2.51327e-03 T
+   inside: curl A = (0, 0, 0.002513) T ; div A = 0.0e+00
+   inside: curl A = (0, 0, 0.002513) T ; div A = 0.0e+00
+   outside: curl A = (0, 0, 0) T ; div A = 1.3e-14
+   outside: curl A = (0, 0, 0) T ; div A = 0.0e+00
+   A_phi(R) inside formula = 1.25664e-05, outside formula = 1.25664e-05 Wb/m (continuous)
+   A_phi(2R) = 6.28319e-06 Wb/m
+   loop integral of A at r = 0.02: 7.89568e-07 Wb ; flux B0 pi R^2 = 7.89568e-07 Wb
+   loop integral of A at r = 0.05: 7.89568e-07 Wb ; flux B0 pi R^2 = 7.89568e-07 Wb
+   Coulomb-integral A_phi(r=0.005) = 6.28319e-06 ; formula 6.28319e-06
+   Coulomb-integral A_phi(r=0.01) = 1.25664e-05 ; formula 1.25664e-05
+   Coulomb-integral A_phi(r=0.02) = 6.28319e-06 ; formula 6.28319e-06
+   Coulomb-integral A_phi(r=0.04) = 3.14159e-06 ; formula 3.14159e-06
+
+==============================================================================
+13.11  Loop on axis, Helmholtz pair, far field
+==============================================================================
+single coil z = 0.0: BS = (0, 0, 0.3142) mT ; formula = 0.314159 mT
+single coil z = 0.1: BS = (0, 0, 0.2248) mT ; formula = 0.224794 mT
+single coil z = 0.3: BS = (0, 0, 0.05362) mT ; formula = 0.053620 mT
+centre: mu0 N I/(2a) = 3.14159e-04 T
+Helmholtz midpoint: BS = (0, 0, 0.4496) mT ; formula = 4.495881e-04 T ; (4/5)^1.5 mu0 N I / a = 4.495881e-04
+(4/5)^1.5 = 0.71554 ; 8/(5 sqrt5) = 0.71554 ; mu0 N I/a = 6.28319e-04
+dB/dz at midpoint = 0.000e+00 ; d2B/dz2 = -6.462e-09 T/m^2 (single coil at its centre: -2.356e-02)
+d2/dz2 (a^2+z^2)^-1.5 at z=0.1000: FD 0.0000e+00 ; formula 3(4z^2-a^2)/(a^2+z^2)^3.5 = 0.0000e+00
+d2/dz2 (a^2+z^2)^-1.5 at z=0.0667: FD -3.6020e+03 ; formula 3(4z^2-a^2)/(a^2+z^2)^3.5 = -3.6020e+03
+at 2 cm: pair B/B0 - 1 = -1.1394e-04 (-0.0114 %), (144/125)(z/a)^4 = 1.1520e-04
+         single B/B0 - 1 = -1.4815e-02 (-1.481 %)
+         BS pair at z=2cm: 4.495370e-04 vs formula 4.495369e-04
+m = 2 N I pi a^2 = 25.1327 A m^2 (8 pi = 25.1327)
+z = 2.0 m: exact 6.281448e-07 T (BS 6.281447e-07) ; dipole 6.283185e-07 T ; ratio 0.999724
+z = 4.0 m: exact 7.853844e-08 T (BS 7.853843e-08) ; dipole 7.853982e-08 T ; ratio 0.999982
+B(2 m)/B(4 m) = 7.99793 (2^3 = 8)
+single coil at z = 10a: exact/dipole = 0.98519
+spacing 1.0a: (B/Bdip - 1)*(z/a)^2 at z=50a = -0.00112 (theory 1.5((s/a)^2-1) = 0.000)
+spacing 0.5a: (B/Bdip - 1)*(z/a)^2 at z=50a = -1.12479 (theory 1.5((s/a)^2-1) = -1.125)
+
+==============================================================================
+13.12  Finite solenoid on its axis
+==============================================================================
+n = 2000.0/m ; mu0 n I = 3.76991e-03 T
+centre: 3.69670e-03 T = 0.980581 mu0 n I ; 5/sqrt(26) = 0.980581
+end:    1.87560e-03 T = 0.497519 mu0 n I ; (1/2)10/sqrt(101) = 0.497519
+end/centre = 0.50737
+BS (600 rings) at z = 0.0: Bz = 3.696702e-03 T ; formula 3.696702e-03 T
+BS (600 rings) at z = 0.15: Bz = 1.875601e-03 T ; formula 1.875601e-03 T
+BS (600 rings) at z = 0.1: Bz = 3.487869e-03 T ; formula 3.487865e-03 T
+BS (600 rings) at z = 1.5: Bz = 1.537631e-07 T ; formula 1.537631e-07 T
+quad of n dz' loops at z=0.0: 3.696702e-03 T
+quad of n dz' loops at z=0.15: 1.875601e-03 T
+centre within 1%: ell/a >= 14.0358 ; 1.98/sqrt(0.0199) = 14.0358
+z = 1.5: exact 1.53763e-07 T ; dipole mu0 m/(2 pi z^3) = 1.50796e-07 T ; ratio 1.01967
+z = 3.0: exact 1.89413e-08 T ; dipole mu0 m/(2 pi z^3) = 1.88496e-08 T ; ratio 1.00487
+m = N I pi a^2 = 2.54469 A m^2 (0.81 pi = 2.54469)
+semi-infinite check: end of a very long solenoid -> 0.500000 mu0 n I
+
+==============================================================================
+Page values: derived checks and numbers rounded exactly as quoted on the page
+==============================================================================
+13.1  H_above - H_below = (8, -6, 0) A/m ; z^ x (H_above - H_below) = (6, 8, 0) A/m = J_s
+13.3  B = 1.257 mT ; Psi = 1.58 uWb ; Psi(annulus) = 1.18 uWb
+13.3  jump at r = a1 (n = r^ = x^ at (a1,0,0)): r^ x (0 - H_ann) = (0, 1000, 0) A/m ; n1 I1 phi^ = (0, 1000, 0) A/m
+13.4  H(4, 5, 6 cm) = 4775, 3820, 3183 A/m
+13.4  BS residue at r = 3 cm: H_phi = -0.28 A/m
+13.4  BS residue at r = 7 cm: H_phi = -0.15 A/m
+13.5(ii)  a = 1 cm: B = 1.2566 mT ; flux = 0.395 uWb
+13.5(ii)  a = 2 cm: B = 1.2566 mT ; flux = 1.58 uWb
+13.5(v)  B_z z^3 x 1e7 at z = 2, 4, 8, 16 m: 4.496, 5.737, 6.139, 6.247 ; mu0/2 x 1e7 = 6.283
+13.6  strip/sheet = 0.9682 -> sheet model high by 3.2 % ; w/d = 20
+13.8  z = 0.5: sheet 1 (0, -2, 0) A/m, sheet 2 (-3, 0, 0) A/m, sheet 3 (3, -2, 0) A/m, sum (0, -4, 0) A/m
+13.8  z = 1.5: sheet 1 (0, -2, 0) A/m, sheet 2 (3, 0, 0) A/m, sheet 3 (3, -2, 0) A/m, sum (6, -4, 0) A/m
+13.8  marching jumps J_s x z^: (0, -4, 0) A/m, (6, 0, 0) A/m, (-6, 4, 0) A/m
+13.9  slab 1 (K=+6): below (-3, 0, 0) A/m, above (3, 0, 0) A/m
+13.9  slab 2 (K=-6): below (3, 0, 0) A/m, above (-3, 0, 0) A/m
+13.9  slabs + sheet, H_x at z = -3, -1, 0, 1-, 1+, 3: +1.000, +7.000, +7.000, +5.000, +3.000, -1.000
+13.10  mu0 I/(2 pi) = 2.0e-06 T m ; flux = 2.77 uWb
+13.11  m = 8 pi = 25.13 A m^2
+13.12  mu0 n I = 3.770 mT ; centre 3.697 mT ; end 1.876 mT ; centre deficit 1.9 % ; ell/a >= 14.04 ; this coil ell/a = 10
+13.12  far field from slices: mu0 N I a^2/(2 z^3) at z = 1.5 m = 1.50796e-07 T
+
+ALL CHECKS PRINTED.

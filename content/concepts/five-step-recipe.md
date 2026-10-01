@@ -25,4 +25,6 @@ aliases: ["5-step program", "superposition integral recipe"]
 
 The same five steps compute magnetic fields with $d\mathbf{B} = \mu_0I\,d\mathbf{l}\times\hat R/(4\pi R^2)$ in place of $d\mathbf{E}$ — [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]] runs them for the straight wire.
 
+**Practice.** [[practice/topics#continuous-charge-and-the-five-step-program|Continuous charge and the five-step program]] (5 problems) — for example [[practice/02-coulombs-law-superposition-and-gauss#26-ring-of-charge-on-its-axis|2.6 Ring of charge on its axis]] (medium), [[practice/02-coulombs-law-superposition-and-gauss#29-finite-line-charge-at-any-point|2.9 Finite line charge at any point]] (hard).
+
 Related: [[concepts/superposition]] · [[concepts/coulombs-law]] · [[concepts/biot-savart-law]].

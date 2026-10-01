@@ -32,4 +32,6 @@ $\mathbf{E}$ points from high $V$ to low $V$, and $V$ is defined up to a constan
 
 **Where it appears.** [[1-electrostatics/04-divergence-and-curl#5-conservative-fields|Lecture 4 §5]], [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] (potential), [[1-electrostatics/06-circulation-and-boundary-conditions|Lecture 6]] (Kirchhoff's voltage law is statement 2), [[problems/curl-potential-and-charge-from-a-field]].
 
+**Practice.** [[practice/topics#circulation-and-kirchhoffs-voltage-law|Circulation and Kirchhoff's voltage law]] (7 problems) — for example [[practice/06-circulation-and-boundary-conditions#62-kirchhoff-around-a-triangle|6.2 Kirchhoff around a triangle]] (easy), [[practice/06-circulation-and-boundary-conditions#66-circulation-of-two-fields|6.6 Circulation of two fields]] (medium), [[practice/06-circulation-and-boundary-conditions#69-two-tilted-charged-planes|6.9 Two tilted charged planes]] (hard).
+
 Related: [[concepts/curl]] · [[concepts/stokes-theorem]] · [[concepts/electrostatic-potential]].

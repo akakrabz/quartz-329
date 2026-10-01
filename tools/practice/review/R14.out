@@ -1,0 +1,157 @@
+=== 14.1 Flux through a tilted loop ===
+PASS  14.1 |a|, |b|: computed [0.2, 0.2]  page [0.2, 0.2]
+PASS  14.1 a.b (perpendicular): computed [0]  page [0]
+PASS  14.1 a x b [m^2]: computed [0, -0.034641, 0.02]  page [0, -0.034641, 0.02]
+PASS  14.1 |a x b|: computed [0.04]  page [0.04]
+PASS  14.1 n-hat: computed [0, -0.866025, 0.5]  page [0, -0.866025, 0.5]
+PASS  14.1 tilt angle [deg]: computed [60]  page [60]
+PASS  14.1 Psi(0), Psi(0.1) [Wb] (page 0.016-0.04t): computed [0.016, 0.012]  page [0.016, 0.012]
+PASS  14.1 tent-surface flux at t=0.1 s [Wb]: computed [0.012]  page [0.012]
+PASS  14.1 emf: -dPsi/dt and oint E.dl along C [V]: computed [0.04, 0.04]  page [0.04, 0.04]
+PASS  14.1 I [A]: computed [0.08]  page [0.08]
+PASS  14.1 current flows along C (emf > 0)
+
+=== 14.2 Current from a ramping field ===
+PASS  14.2 A [m^2], Psi(0) [Wb]: computed [0.06, 0.042]  page [0.06, 0.042]
+PASS  14.2 emf ccw before/after B reverses, and oint E.dl [V]: computed [0.3, 0.3, 0.3]  page [0.3, 0.3, 0.3]
+PASS  14.2 I [A]: computed [0.1]  page [0.1]
+PASS  14.2 current counter-clockwise seen from +z (emf>0 for ccw C) -> key (b)
+PASS  14.2 time at which B_z = 0 [s]: computed [0.14]  page [0.14]
+PASS  14.2 distractor (d): 0.6 m^2 -> I [A]; 0.006 m^2 -> I [A]: computed [1, 0.01]  page [1, 0.01]
+PASS  14.2 (curl E)_z = -dBz/dt [T/s]: computed [5]  page [5]
+PASS  14.2 start at -0.7 T: Psi(0), emf: computed [-0.042, 0.3]  page [-0.042, 0.3]
+
+=== 14.3 Magnet pulled up through a ring (point dipole, k = mu0/4pi = 1) ===
+   t = [0.15 0.28 0.32 0.45]  Psi = 3.97383, 100.583, 100.583, 3.97383  emf(ccw) = -71.529, -2081.02, 2081.02, 71.529
+PASS  14.3 flux along +z throughout (Psi > 0)
+PASS  14.3 approaching: emf < 0 -> clockwise from +z
+PASS  14.3 receding: emf > 0 -> counter-clockwise from +z  => key (b)
+PASS  14.3 flux peaks when the magnet is in the ring's plane (z_m at peak): computed [-5.55112e-17]  page [0]
+PASS  14.3 force on ring along +z in both phases (Fz = 1.78e+06, 1.78e+06); magnet held back
+PASS  14.3 exam set-up (N down, falling): ccw approaching, cw after -> pattern (a)
+
+=== 14.4 Lenz true/false ===
+PASS  14.4(a) emf ccw at t=0, flux and motional routes [V]: computed [0.00628319, 0.00628318]  page [0.00628, 0.00628]
+PASS  14.4(a) v x B . phi-hat at (0.1,0,0) [V/m]: computed [0.01]  page [0.01]
+PASS  14.4(a) TRUE (ccw)
+PASS  14.4(b) Psi at t=0 and t=1 [Wb]: computed [0.045, 0.045]  page [0.045, 0.045]
+PASS  14.4(b) v x B [V/m]: computed [0, -1, 0]  page [0, -1, 0]
+PASS  14.4(b) side emfs (right, left) and total [V]: computed [-0.3, 0.3, 0]  page [-0.3, 0.3, 0]
+PASS  14.4(b) FALSE (no emf)
+PASS  14.4(c) Psi(1 s) [Wb], emf(1 s) [V], oint E.dl [V]: computed [-0.00952736, -0.00476368, -0.00476368]  page [-0.00953, -0.00476, -0.00476]
+PASS  14.4(c) TRUE (emf<0 -> clockwise)
+PASS  14.4(d) emf around ring + gap chord at t=1 s [V]: computed [-0.00476368]  page [-0.00476]
+PASS  14.4(e) FALSE: in (a) and (c) induced field is parallel to the applied field
+
+=== 14.5 Sliding bar, find the error ===
+PASS  14.5 Psi(t)=0.6t at t=0.4 [Wb]; emf ccw (flux) [V]; motional up the bar [V]: computed [0.24, -0.6, -0.6]  page [0.24, -0.6, -0.6]
+PASS  14.5 |I| [A] (student: 2 A): computed [1]  page [1]
+PASS  14.5 current clockwise (down the bar, -y)
+PASS  14.5 force on bar [N]: computed [-0.12, 0, 0]  page [-0.12, 0, 0]
+
+=== 14.6 Rotating rod ===
+PASS  14.6 |v x B| at tip [V/m]; emf pivot->rim [V]: computed [4, 1]  page [4, 1]
+PASS  14.6 v x B points outward (rim is + terminal)
+PASS  14.6 Psi at t=0.03 s (= -B L^2 wt/2) [Wb]: computed [-0.03]  page [-0.03]
+PASS  14.6 flux-rule emf along the path [V]: computed [1]  page [1]
+PASS  14.6 I [A]: computed [4]  page [4]
+PASS  14.6 magnetic torque on rod [N m]: computed [-0.1]  page [-0.1]
+PASS  14.6 powers: tau*w, I^2 R, E I [W]: computed [4, 4, 4]  page [4, 4, 4]
+
+=== 14.7 Generator coil ===
+PASS  14.7 omega [rad/s]: computed [188.496]  page [188.5]
+PASS  14.7 area vector of C at t=0 (+y, A): computed [-0, 0.002, 0]  page [0, 0.002, 0]
+PASS  14.7 n-hat(t) = Rz(wt) y-hat at wt=0.4: computed [-0.389418, 0.921061, 0]  page [-0.389418, 0.921061, 0]
+PASS  14.7 Psi(t) = -5e-4 sin(wt): computed [-9.36907e-05, -0.000342274]  page [-9.36907e-05, -0.000342274]
+PASS  14.7 emf(0) = 1.5 pi, emf(1/180) = 0.75 pi [V]: computed [4.71239, 2.35619]  page [4.71, 2.36]
+PASS  14.7 Lenz: Psi just after t=0 is negative
+PASS  14.7 side speed [m/s] = 1.2 pi: computed [3.76991]  page [3.77]
+PASS  14.7 v x B on the x=+2 cm side [V/m]: computed [0, 0, -0.942478]  page [0, 0, -0.942478]
+PASS  14.7 per-side emfs (top, +x side, bottom, -x side) [V]: computed [0, 0.0471239, 0, 0.0471239]  page [0, 0.0471239, 0, 0.0471239]
+PASS  14.7 one turn, 50 turns [V]: computed [0.0942478, 4.71239]  page [0.0942478, 4.71239]
+PASS  14.7 I0 [A], <P> [W]: computed [0.471239, 1.11033]  page [0.471, 1.11]
+
+=== 14.8 Square loop in a graded field ===
+PASS  14.8 div B, |curl B|: computed [0, 6.93889e-14]  page [0, 0]
+PASS  14.8 Psi(0), Psi(0.2) [Wb] (0.004+0.06t): computed [0.004, 0.016]  page [0.004, 0.016]
+PASS  14.8 emf ccw [V]: computed [-0.06]  page [-0.06]
+PASS  14.8 edge emfs bottom/right/top/left [V]: computed [0, -0.09, 0, 0.03]  page [0, -0.09, 0, 0.03]
+PASS  14.8 motional total [V]: computed [-0.06]  page [-0.06]
+PASS  14.8 |I| [A]: computed [1.2]  page [1.2]
+PASS  14.8 clockwise (emf<0 for ccw)
+PASS  14.8 F right, F left (x comps) [N]: computed [-0.036, 0.012]  page [-0.036, 0.012]
+PASS  14.8 F bottom, F top (y comps) [N]: computed [0.024, -0.024]  page [0.024, -0.024]
+PASS  14.8 net magnetic force [N]: computed [-0.024, -3.46945e-18, 0]  page [-0.024, 0, 0]
+PASS  14.8 power F v and I^2 R [W]: computed [0.072, 0.072]  page [0.072, 0.072]
+PASS  14.8 circle of 0.04 m^2: flux and motional emf [V]: computed [-0.06, -0.06]  page [-0.06, -0.06]
+
+=== 14.9 Loop crossing a field strip ===
+PASS  14.9 Psi at t=0.02, 0.07, 0.12, 0.15 s [Wb]: computed [-0.008, -0.016, -0.008, 0]  page [-0.008, -0.016, -0.008, 0]
+PASS  14.9 Psi = -0.4t at t=0.03 [Wb]: computed [-0.012]  page [-0.012]
+PASS  14.9 emf (ccw) entering / inside / leaving / after [V]: computed [0.4, -0, -0.4, -0]  page [0.4, 0, -0.4, 0]
+PASS  14.9 |I| entering, leaving [A]: computed [4, 4]  page [4, 4]
+PASS  14.9 v x B in the slab [V/m]: computed [-0, 2, 0]  page [0, 2, 0]
+PASS  14.9 oint (v x B).dl at t=0.02 s [V]: computed [0.4]  page [0.4]
+PASS  14.9 oint (v x B).dl at t=0.07 s [V]: computed [0]  page [0]
+PASS  14.9 oint (v x B).dl at t=0.12 s [V]: computed [-0.4]  page [-0.4]
+PASS  14.9 magnetic force entering / inside / leaving (x) [N]: computed [-0.32, 0, -0.32]  page [-0.32, 0, -0.32]
+PASS  14.9 y-force cancels (entering) [N]: computed [-5.55112e-17]  page [0]
+PASS  14.9 work and heat [J]: computed [0.128, 0.128]  page [0.128, 0.128]
+PASS  14.9(e) emf at t=0.01, 0.03, 0.05, 0.07 [V]: computed [0.4, -0, -0.4, -0]  page [0.4, 0, -0.4, 0]
+PASS  14.9(e) Psi in the middle phase [Wb]: computed [-0.008]  page [-0.008]
+PASS  14.9(e) work and heat [J]: computed [0.064, 0.064]  page [0.064, 0.064]
+
+=== 14.10 Voltmeters around a ramping solenoid (NEW numbers) ===
+PASS  14.10 ring A_phi: elliptic formula vs direct sum: computed [2.00137e-08]  page [2.00137e-08]
+PASS  14.10 ring sum: 2 pi r A_phi(r) / Psi_s at r=0.5, 1, 2 m: computed [0.999999, 0.999997, 0.999988]  page [1, 1, 1]
+PASS  14.10 E_phi at r=0.5, 1 m [V/m] (page 0.637, 0.318): computed [0.636619, 0.318309]  page [0.637, 0.318]
+PASS  14.10 E_phi > 0: counter-clockwise from +z
+PASS  14.10 circuit emf (ccw) = oint E_ind.dl [V]: computed [1.99999]  page [2]
+PASS  14.10 I [A] (ccw): computed [0.0999994]  page [0.1]
+PASS  14.10 I > 0: counter-clockwise
+PASS  14.10 drops I R1, I R2, I R3 [V]: computed [0.399998, 0.599996, 0.999994]  page [0.4, 0.6, 1]
+PASS  14.10 electrostatic potential closes around the circuit: computed [2.22045e-16]  page [0]
+PASS  14.10 brute force: V1, V2 [V]: computed [0.399997, -1.59999]  page [0.4, -1.6]
+PASS  14.10 V1 - V2 [V]: computed [1.99999]  page [2]
+PASS  14.10 brute force: V3 below the wire, V3 inside (y=0.5) [V]: computed [-5.96293e-07, -1.99999]  page [0, -2]
+PASS  14.10 winding numbers of meter loops (1, 2, 3a, 3b): computed [-3.53395e-17, -1, -3.53395e-17, -1]  page [0, -1, 0, -1]
+PASS  14.10 KVL route: V1 = w1*2 + I R1, V2 = w2*2 + I R1 [V]: computed [0.399998, -1.6]  page [0.4, -1.6]
+PASS  14.10 second route for V2: 0 - I R3 - I R2 [V]: computed [-1.59999]  page [-1.6]
+PASS  14.10 KVL route: V3 = w3*2 + 0 [V]: computed [-7.0679e-17, -2]  page [0, -2]
+PASS  14.10 circuit emf from -dPsi/dt (Psi = oint A.dl) [V]: computed [1.99999]  page [2]
+PASS  14.10 OLD key: I [A], E_phi(0.5), E_phi(1) [V/m]: computed [0.199999, 0.381972, 0.190985]  page [0.2, 0.382, 0.191]
+PASS  14.10 OLD key: V1, V2, V3 (wire), V3 (inside) [V]: computed [0.199999, -0.999995, -2.38428e-07, -1.2]  page [0.2, -1, 0, -1.2]
+   resemblance table (circuit | R values | dPsi/dt through circuit):
+   SU17 HE2 #3 : 1 m^2 square, uniform B     | 1, 3, 2 ohm + wire | -12 Wb/s (dB/dt=-12 T/s)
+   SU18 HE2 #3 : 2 m x 2 m square, uniform B | meters 3 kohm      | -12 Wb/s (B=-3t z, 4 m^2)
+   page (old)  : 2 m x 2 m square, solenoid  | 1, 2, 3 ohm + wire | -1.2 Wb/s
+   page (new)  : 3 m x 2 m rectangle, solenoid | 4, 6, 10 ohm + wire | -2 Wb/s
+PASS  14.10 new R set and rate differ from both exams
+
+=== 14.11 Magnetic braking ===
+PASS  14.11 emf (ccw) at v=3 [V], |I| [A], F [N]: computed [-0.6, 3, -0.6]  page [-0.6, 3, -0.6]
+PASS  14.11 clockwise current (down the bar)
+PASS  14.11 k [kg/s], tau [s]: computed [0.2, 0.5]  page [0.2, 0.5]
+PASS  14.11 v(0.5), v(1) vs 3 e^{-2t} [m/s]: computed [1.10364, 0.406006]  page [1.10364, 0.406006]
+PASS  14.11 distance [m], heat [J], KE0 [J]: computed [1.5, 0.45, 0.45]  page [1.5, 0.45, 0.45]
+PASS  14.11(d) v(0.5) [m/s], terminal [m/s]: computed [1.89636, 3]  page [1.9, 3]
+PASS  14.11(d) v(0.3) vs 3(1-e^{-2t}): computed [1.35357]  page [1.35357]
+PASS  14.11(d) P_in, I, I^2 R at terminal speed: computed [1.8, 3, 1.8]  page [1.8, 3, 1.8]
+
+=== 14.12 Shrinking ring in a ramping solenoid ===
+PASS  14.12 E_phi at r=a, 2a [V/m]: computed [-0.1, -0.05]  page [-0.1, -0.05]
+PASS  14.12 E_phi(r) = -r inside (r=0.05), -0.01/r outside (r=0.3): computed [-0.05, -0.0333333]  page [-0.05, -0.0333333]
+PASS  14.12 (curl E)_z inside, outside [T/s]: computed [-2, 0]  page [-2, 0]
+PASS  14.12 Psi(t) vs pi(0.08-0.5t)^2(0.1+2t): computed [0.00201062, 0.00212058, 0.00190066, 0.00084823]  page [0.00201062, 0.00212058, 0.00190066, 0.00084823]
+PASS  14.12 emf(t) vs 3 pi (0.08-0.5t)(t-0.02): computed [-0.0150796, -0.00706858, 0.0155509, 0.0226195]  page [-0.0150796, -0.00706858, 0.0155509, 0.0226195]
+PASS  14.12 t=0: transformer, motional, sum [mV]: computed [-40.2124, 25.1327, -15.0796]  page [-40.21, 25.13, -15.08]
+PASS  14.12 t=0: in units of pi mV: computed [-12.8, 8]  page [-12.8, 8]
+PASS  14.12 sum equals (b) at t=0: computed [-0.0150796]  page [-0.0150796]
+PASS  14.12 reversal time [s]: computed [0.02]  page [0.02]
+PASS  14.12 time of max flux [s], max flux [Wb]: computed [0.0200004, 0.00215513]  page [0.02, 0.00216]
+PASS  14.12 t=0.02: transformer, motional [mV]: computed [-30.7876, 30.7876]  page [-30.79, 30.79]
+PASS  14.12 clockwise before (emf<0 at t=0.01), ccw after (emf>0 at 0.05)
+PASS  14.12 t=0.1: emf, transformer, motional [mV]: computed [22.6195, -5.65486, 28.2743]  page [22.62, -5.65, 28.27]
+PASS  14.12 emf(0.1) in units of pi mV: computed [7.2]  page [7.2]
+
+SUMMARY: 126 PASS, 0 FAIL

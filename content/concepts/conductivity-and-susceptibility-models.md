@@ -27,4 +27,6 @@ aliases: ["Drude model", "Lorentz oscillator", "mobility", "AC conductivity", "p
 
 **Where it appears.** [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]] (all of it); the constants it explains are introduced in [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] and [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]]; the polarization current reappears in [[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations|Lecture 16]]; complex $\epsilon$ and $\sigma$ return with lossy media in Unit 3.
 
+**Practice.** [[practice/topics#drude-and-lorentz-models|Drude and Lorentz models]] (8 problems) — for example [[practice/11-lorentz-drude-models#111-drift-speed-in-a-house-wire|11.1 Drift speed in a house wire]] (easy), [[practice/11-lorentz-drude-models#115-sea-waters-two-ions|11.5 Sea water's two ions]] (medium), [[practice/11-lorentz-drude-models#117-conductor-like-or-dielectric-like|11.7 Conductor-like or dielectric-like]] (hard).
+
 Related: [[concepts/conductors]] · [[concepts/polarization]] · [[concepts/permittivity]] · [[concepts/conductance]].

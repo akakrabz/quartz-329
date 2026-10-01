@@ -21,4 +21,6 @@ aliases: ["magnetic energy density", "stored energy in an inductor"]
 
 **Where it appears.** [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15 §4]]; the energy-integral route to $L$ in [[problems/coax-inductance-and-the-lc-product]]; Poynting's theorem in Unit 3.
 
+**Practice.** [[practice/topics#magnetic-energy-and-rl-circuits|Magnetic energy and RL circuits]] (8 problems) — for example [[practice/15-inductance-and-magnetic-energy#151-a-long-solenoid-by-the-numbers|15.1 A long solenoid by the numbers]] (easy), [[practice/15-inductance-and-magnetic-energy#156-switching-on-an-rl-circuit|15.6 Switching on an RL circuit]] (medium), [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core|15.9 Toroid with a two-layer core]] (hard).
+
 Related: [[concepts/inductance]] · [[concepts/electrostatic-energy]] · [[concepts/magnetic-field]].

@@ -42,4 +42,6 @@ aliases: ["Gauss law", "Gauss's law for E", "Maxwell equation 1"]
 
 **Where it appears.** [[1-electrostatics/02-coulombs-law-superposition-and-gauss|Lecture 2]] (derived), [[1-electrostatics/03-gauss-law-at-work|Lecture 3]] (used), [[1-electrostatics/04-divergence-and-curl|Lecture 4]] (differential form), Lectures 8–10 (conductors, dielectrics, capacitance), [[problems/charged-slab-with-a-power-law-profile]].
 
+**Practice.** [[practice/topics#gausss-law-and-flux|Gauss's law and flux]] (16 problems) — for example [[practice/03-gauss-law-at-work#31-two-sheets-of-charge|3.1 Two sheets of charge]] (easy), [[practice/03-gauss-law-at-work#37-point-charge-flux-through-a-disk|3.7 Point-charge flux through a disk]] (medium), [[practice/03-gauss-law-at-work#312-flux-bookkeeping-line-and-sheet|3.12 Flux bookkeeping, line and sheet]] (hard).
+
 Related: [[concepts/flux]] · [[concepts/electric-flux-density]] · [[concepts/divergence]] · [[concepts/superposition]] · [[concepts/amperes-law]] (the same idea with a loop: circulation of $\mathbf{H}$ = enclosed current) · [[demos/point-charges-and-gauss]].

@@ -28,4 +28,6 @@ aliases: ["flux rule", "law of induction", "Lenz's rule", "Lenz's law", "motiona
 
 **Where it appears.** Previewed in [[1-electrostatics/04-divergence-and-curl|Lecture 4]] and [[concepts/conservative-field]]; stated and worked in Lecture 14; used for self-inductance in [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15]]; paired with Ampère–Maxwell in [[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations|Lecture 16]] to give waves; [[problems/emf-of-a-loop-moving-near-a-line-current]], [[problems/sliding-bar-and-the-voltmeter-readings]].
 
+**Practice.** [[practice/topics#magnetic-flux-faradays-law-and-lenz|Magnetic flux, Faraday's law and Lenz]] (10 problems) — for example [[practice/14-faradays-law-and-induced-emf#141-flux-through-a-tilted-loop|14.1 Flux through a tilted loop]] (easy), [[practice/04-divergence-and-curl#48-circulation-from-a-given-curl|4.8 Circulation from a given curl]] (medium), [[practice/14-faradays-law-and-induced-emf#149-loop-crossing-a-field-strip|14.9 Loop crossing a field strip]] (hard).
+
 Related: [[concepts/electromotive-force]] · [[concepts/magnetic-flux]] · [[concepts/stokes-theorem]] · [[concepts/lorentz-force]] · [[concepts/maxwells-equations]].

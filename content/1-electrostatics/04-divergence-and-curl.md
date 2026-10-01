@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 4
 ---
 
-*Lecture 4 · course notes §4 · slides "Divergence and curl, Maxwell's equations in differential form" · prev: [[1-electrostatics/03-gauss-law-at-work|Lecture 3]] · next: [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]]*
+*Lecture 4 · course notes §4 · slides "Divergence and curl, Maxwell's equations in differential form" · prev: [[1-electrostatics/03-gauss-law-at-work|Lecture 3]] · next: [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] · practice: [[practice/04-divergence-and-curl|12 problems]]*
 
 > [!abstract] In one breath
 > Gauss's law holds for *every* closed surface, including a vanishingly small box around a single point. Divide by the box's volume and you get a local statement: the **divergence** of $\mathbf{D}$ equals the charge density *at that point*, $\nabla\cdot\mathbf{D} = \rho$. The same move applied to a tiny loop turns a circulation $\oint\mathbf{E}\cdot d\mathbf{l}$ into the **curl**. Divergence measures "flux per unit volume" (sources), curl measures "circulation per unit area" (whirlpools). The divergence theorem and Stokes' theorem let you switch between the integral laws of Lectures 2–3 and these differential laws at will — and they show that static electric fields have zero curl, which is what makes voltage possible (Lecture 5).
@@ -188,6 +188,9 @@ Concept page: [[concepts/maxwells-equations]].
 
 > [!exam] On Exam 1
 > FA26 problem 1 is this lecture plus Lecture 5 in one package: compute $\nabla\times\mathbf{E}$ for a given polynomial field (find it is zero), find the potential, compute $\rho = \epsilon_0\nabla\cdot\mathbf{E}$, and evaluate a line integral using path independence. Worked with different numbers in [[problems/curl-potential-and-charge-from-a-field]]. Two things get tested every time: the determinant expanded correctly, and the realization that "curl-free" says nothing about whether $\rho$ is zero — curl and divergence answer different questions.
+
+> [!tip] Practice this lecture
+> [[practice/04-divergence-and-curl|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/04-divergence-and-curl#41-faucet-or-whirlpool|4.1 Faucet or whirlpool]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 4 (Gauss on a small cube → divergence; Examples 1–4; Helmholtz; curl-free Coulomb and line fields). Shao, Lecture 4 slides (FTC → gradient theorem → Stokes ladder; whirlpool/faucet; paddlewheel; true/false panels; pn junction; continuity from Ampère).

@@ -1,0 +1,187 @@
+PASS  self-test segment B-S (long wire, I=1, d=0.1): (Bx,By,Bz): page [0, 2e-06, 0] | computed [0, 2e-06, 0]
+
+== 13.1 one sheet, two points
+PASS  H(P1) A/m: page [4, 0, 0] | computed [4, 0, 0]
+PASS  H(P2) A/m: page [-4, 0, 0] | computed [-4, 0, -4.824845e-19]
+PASS  |B| = 4 mu0 (uT): page 5.027 | computed 5.026548
+PASS  (b) H above: page [4, -3, 0] | computed [4, -3, 1.268045e-15]
+PASS  (b) H below: page [-4, 3, 0] | computed [-4, 3, 5.09515e-16]
+PASS  (b) |H| = |Js|/2 = 5: page [5, 5] | computed [5, 5]
+PASS  (b) H.Js: page 0 | computed -7.105427e-15
+PASS  jump z x (Ha-Hb) = Js: page [6, 8, 0] | computed [6, 8, -0]
+
+== 13.2 crossing a sheet (MC)
+PASS  sheet's own field left / right (y comps): page [-1.5, 1.5] | computed [-1.5, 1.5]
+PASS  distant-source field (2, 0.5): page [2, 0.5, 0] | computed [2, 0.5, 0]
+PASS  key (b): H right = 2x+2y: page [2, 2, 0] | computed [2, 2, 0]
+PASS  only option satisfying both BCs is (b) (1=yes): page 1 | computed 1
+PASS  (a) n x Js = -3y ; x x (H1-H2) = -3z: page [0, -3, 0, 0, 0, -3] | computed [0, -3, 0, 0, 0, -3]
+PASS  (c) x x (H1-H2) = 0: page [0, 0, 0] | computed [0, 0, 0]
+PASS  (d) x x 3z = -3y: page [0, -3, 0] | computed [0, -3, 0]
+PASS  (e) x x (H1-H2) = 1.5z ; (e) = average of sides: page [0, 0, 1.5, 2, 0.5, 0] | computed [0, 0, 1.5, 2, 0.5, 0]
+PASS  (f) x x (-4x+3y) = 3z, but Hx flips: page [0, 0, 3] | computed [0, -0, 3]
+
+== 13.3 solenoid inside a solenoid
+PASS  (a) H = n1 I1 (A/m): page 1000 | computed 1000
+PASS  (a) B (mT): page 1.257 | computed 1.256637
+PASS  (a) Psi = 16 pi^2 e-8 Wb ; ~1.58 uWb: page [1.579137e-06, 1.58e-06] | computed [1.579137e-06, 1.579137e-06]
+PASS  (b) I2 (A), negative = clockwise seen from +z: page -2.5 | computed -2.5
+PASS  (c) Psi annulus = 12 pi^2 e-8 ; ~1.18 uWb: page [1.184353e-06, 1.18e-06] | computed [1.184353e-06, 1.184353e-06]
+PASS  BC at r=a2: r x (1000z - 0) = n2 I2 phi (phi comp): page -1000 | computed -1000
+PASS  BC at r=a1: r x (0 - 1000z) = n1 I1 phi (phi comp): page 1000 | computed 1000
+PASS  B-S two 2-m coils: Hz in annulus (r=1.5 cm): page 999.8 | computed 999.8473
+INFO  B-S two 2-m coils: Hz at r=0.5 cm (ideal 0; finite-length residue): -0.1448815
+
+== 13.4 toroid
+PASS  B-S 600 rectangular turns: H_phi(5 cm), two azimuths: page [3820, 3820] | computed [3819.719, 3819.719]
+INFO  B-S H_phi at r=3 cm (two azimuths): 7.80602e-13, 1.361924e-12
+INFO  B-S H_phi at r=7 cm: -5.300462e-13, 1.257218e-12
+PASS  B-S: max |H_phi| at r=3 and 7 cm below 1e-11 A/m (page after fix) (1=yes): page 1 | computed 1
+INFO  B-S |H| above the core (r=5 cm, z=1.5 cm): 1.434956e-12
+PASS  H (A/m) at 4, 5, 6 cm: page [4775, 3820, 3183] | computed [4774.648, 3819.719, 3183.099]
+PASS  B (mT) at 4, 5, 6 cm: page [6, 4.8, 4] | computed [6, 4.8, 4]
+PASS  mu0 N I/(2 pi) (T m): page 0.00024 | computed 0.00024
+PASS  B(a)/B(b): page 1.5 | computed 1.5
+
+== 13.5 true/false
+PASS  (i) |H| at z = 1 m and 2 m (3.000000): page [3, 3] | computed [3, 3]
+PASS  (ii) B centre of 4-m coil, a=1,2 cm (mT): page [1.2566, 1.2566] | computed [1.256621, 1.256574]
+PASS  (ii) Psi = B pi a^2 (uWb): 0.395, 1.58: page [0.395, 1.58] | computed [0.3947792, 1.579058]
+PASS  (iii) sheet field has no normal component (Hz): page 0 | computed -5.491727e-16
+PASS  (iv) curl A1, curl A2 at [ 0.3 -1.2  0.8]: page [0, 0, 0.7, 0, 0, 0.7] | computed [0, 0, 0.7, 0, 0, 0.7]
+PASS  (iv) A2 - A1 = grad(B0 x y/2); div A1, div A2: page [-0.42, 0.105, 0, 0, 0] | computed [-0.42, 0.105, 0, 0, 0]
+PASS  (iv) curl A1, curl A2 at [-2.   0.7  5. ]: page [0, 0, 0.7, 0, 0, 0.7] | computed [0, 0, 0.7, 0, 0, 0.7]
+PASS  (iv) A2 - A1 = grad(B0 x y/2); div A1, div A2: page [0.245, -0.7, 0, 0, 0] | computed [0.245, -0.7, 0, 0, 0]
+PASS  (v) Bz z^3 at z=2,4,8,16 (1e-7 T m^3): page [4.496, 5.737, 6.139, 6.247] | computed [4.495881, 5.737021, 6.138748, 6.246549]
+PASS  (v) limit mu0/2 (1e-7): page 6.283 | computed 6.283185
+PASS  (v) Bz z^2 keeps falling (1=yes): page 1 | computed 1
+
+== 13.6 parallel-plate line (find the error)
+PASS  K = I/w (A/m): page 200 | computed 200
+PASS  H between plates: page [0, 0, -200] | computed [0, 0, -200]
+PASS  H above / below: page [0, 0, 0, 0, 0, 0] | computed [0, 0, -1.421085e-14, 0, 0, 0]
+PASS  B between (T), 251.3 uT: page [0.00025133, 251.3] | computed [0.0002513274, 251.3274]
+PASS  student's sum (n=+y for both) = field above the line: page [0, 0, -1.421085e-14] | computed [0, 0, 0]
+PASS  student's top/bottom terms 100z, -100z: page [100, -100] | computed [100, -100]
+PASS  BC at top: y x (H_above - H_gap) = 200x: page [200, 0, 0] | computed [200, 0, 0]
+PASS  (c) factor (2d, I/2): page 0.5 | computed 0.5
+PASS  finite strips mid-gap B (T): page 0.00024333 | computed 0.0002433341
+PASS  ratio to mu0 K ; (2/pi) arctan(w/d): page [0.9682, 0.9682] | computed [0.9681955, 0.9681955]
+PASS  sheet model high by % (relative to exact) [page after fix: 3.3]: page 3.3 | computed 3.284926
+INFO  exact below sheet model by %: 3.18045
+
+== 13.7 graded slab
+PASS  (a) K (A/m): page 10 | computed 10
+PASS  (b,d) H at x=-0.02 (wires | Ampere | page formula): page [-5, -5, 0, 0] | computed [-5, -5, 1.350463e-16, 0]
+PASS  (b,d) H at x=0.0125 (wires | Ampere | page formula): page [-4.375, -4.375, 0, 0] | computed [-4.375, -4.375, 1.39447e-16, 0]
+PASS  (b,d) H at x=0.025 (wires | Ampere | page formula): page [-2.5, -2.5, 0, 0] | computed [-2.5, -2.5, 1.352917e-16, 0]
+PASS  (b,d) H at x=0.04 (wires | Ampere | page formula): page [1.4, 1.4, 0, 0] | computed [1.4, 1.4, 1.196966e-16, 0]
+PASS  (b,d) H at x=0.07 (wires | Ampere | page formula): page [5, 5, 0, 0] | computed [5, 5, 1.546349e-16, 0]
+PASS  (c) zero x0 (cm) = d/sqrt2: page 3.5355 | computed 3.535534
+PASS  (c) current left/right of x0: page [5, 5] | computed [5, 5]
+PASS  (d) H at 1.25, 2.5, 4 cm: page [-4.375, -2.5, 1.4] | computed [-4.375, -2.5, 1.4]
+PASS  curl: dHy/dx at 1, 3, 4.5 cm (A/m^2): page [80, 240, 360] | computed [80, 240, 360]
+
+== 13.8 three sheets
+PASS  (a) Js3 (A/m): page [-4, -6] | computed [-4, -6]
+PASS  (a) H = 0 above and below: page [0, 0, 0, 0, 0, 0] | computed [-2.664535e-15, 4.440892e-16, -1.879105e-16, 2.664535e-15, -1.332268e-15, 4.732861e-17]
+PASS  (b) sheet terms in 0<z<1: -2y, -3x, 3x-2y: page [0, -2, 0, -3, 0, 0, 3, -2, 0] | computed [0, -2, 0, -3, 0, 0, 3, -2, 0]
+PASS  (b) H in 0<z<1: page [0, -4, 0] | computed [2.664535e-15, -4, 5.940835e-17]
+PASS  (b) H in 1<z<2: page [6, -4, 0] | computed [6, -4, -2.587007e-17]
+PASS  (b) |B| (uT) 5.027, |H| 7.2111, |B| 9.062: page [5.027, 7.2111, 9.062] | computed [5.026548, 7.211103, 9.061739]
+PASS  (c) jumps z x dH at z=0,1,2: page [4, 0, 0, 0, 6, 0, -4, -6, 0] | computed [4, 0, -0, -4.440892e-16, 6, 0, -4, -6, 0]
+
+== 13.9 two slabs and a sheet  (NEW parameters: slab 2 = -1.5 A/m^2 on 0<z<4, sheet -3y on z=1)
+PASS  (a) Hx at z=-4 (wires | Ampere | page); Hy, Hz: page [0, 0, 0, 0] | computed [0, 0, 0, -2.694971e-18]
+PASS  (a) Hx at z=-2 (wires | Ampere | page); Hy, Hz: page [3, 3, 0, 0] | computed [3, 3, 0, -5.27642e-17]
+PASS  (a) Hx at z=-0.5 (wires | Ampere | page); Hy, Hz: page [6, 6, 0, 0] | computed [6, 6, 0, -9.901571e-18]
+PASS  (a) Hx at z=0.5 (wires | Ampere | page); Hy, Hz: page [5.25, 5.25, 0, 0] | computed [5.25, 5.25, 0, 2.814967e-17]
+PASS  (a) Hx at z=2 (wires | Ampere | page); Hy, Hz: page [3, 3, 0, 0] | computed [3, 3, 0, 3.460024e-17]
+PASS  (a) Hx at z=3.5 (wires | Ampere | page); Hy, Hz: page [0.75, 0.75, 0, 0] | computed [0.75, 0.75, 0, 2.763996e-17]
+PASS  (a) Hx at z=5 (wires | Ampere | page); Hy, Hz: page [0, 0, 0, 0] | computed [4.440892e-16, 0, 0, -2.73673e-18]
+PASS  (b) Hx at z=-4 (wires | Ampere | page): page [1.5, 1.5] | computed [1.5, 1.5]
+PASS  (b) Hx at z=-2 (wires | Ampere | page): page [4.5, 4.5] | computed [4.5, 4.5]
+PASS  (b) Hx at z=-0.5 (wires | Ampere | page): page [7.5, 7.5] | computed [7.5, 7.5]
+PASS  (b) Hx at z=0.5 (wires | Ampere | page): page [6.75, 6.75] | computed [6.75, 6.75]
+PASS  (b) Hx at z=2 (wires | Ampere | page): page [1.5, 1.5] | computed [1.5, 1.5]
+PASS  (b) Hx at z=3 (wires | Ampere | page): page [0, 0] | computed [1.554312e-15, 0]
+PASS  (b) Hx at z=3.5 (wires | Ampere | page): page [-0.75, -0.75] | computed [-0.75, -0.75]
+PASS  (b) Hx at z=5 (wires | Ampere | page): page [-1.5, -1.5] | computed [-1.5, -1.5]
+PASS  (a) building blocks: slab1 below/above, slab2 below/above: page [-3, 3, 3, -3] | computed [-3, 3, 3, -3]
+PASS  (a) Hx at z=-1 and z=4 from wires: 6 (reaching 6 at z=-1), 0 (back to 0 at z=4): page [6, 0] | computed [6, 0]
+PASS  (a) slab-2 ramp 3-1.5z alone at z=1, 3: page [1.5, -1.5] | computed [1.5, -1.5]
+PASS  (b) sheet's own field below/above: page [1.5, -1.5] | computed [1.5, -1.5]
+PASS  (b) Hx just below/above z=1: 6 -> 3: page [6, 3] | computed [6, 3]
+PASS  (b) z x (H1 - H2) at sheet = -3y: page [0, -3, 0] | computed [0, -3, 0]
+PASS  (b) faces z=-3,-1,0,4 continuous: 1.5, 7.5, 7.5, -1.5 (below|above each): page [1.5, 1.5, 7.5, 7.5, 7.5, 7.5, -1.5, -1.5] | computed [1.5, 1.5, 7.5, 7.5, 7.5, 7.5, -1.5, -1.5]
+PASS  (c) without sheet: min Hx on -3<z<4 is > 0 (1=yes): page 1 | computed 1
+PASS  (c) with sheet: zero at z (m): page 3 | computed 3
+PASS  (c) 3z+10.5 root (outside slab 1); 7.5-1.5z >= 6 on (0,1): page [-3.5, 6] | computed [-3.5, 6]
+PASS  (c) no other zero: sign changes of Hx(b) on a fine grid = 1: page 1 | computed 1
+PASS  (d) curl A at z=-0.6 (1e-6 T) = mu0 x sheet field (wires): page [1.884956, 0, 0] | computed [1.884956, 0, -6.59198e-18]
+PASS  (d) Bx at z=-0.6 (1e-6 T), div A: page [1.885, 0] | computed [1.884956, 0]
+PASS  (d) curl A at z=2.3 (1e-6 T) = mu0 x sheet field (wires): page [-1.884956, 0, 0] | computed [-1.884956, 0, 9.492073e-17]
+PASS  (d) Bx at z=2.3 (1e-6 T), div A: page [-1.885, 0] | computed [-1.884956, 0]
+PASS  (d) slope jump of Ay at z=1 = 3 mu0 (Wb/m^2): page 3.7699e-06 | computed 3.769911e-06
+PASS  (d) J_s = -(jump)/mu0 (A/m, along y): page -3 | computed -3
+PASS  check: dHx/dz in slabs at 4 points: page [3, 3, -1.5, -1.5] | computed [3, 3, -1.5, -1.5]
+PASS  check: net current 6-6-3 and outside +-1.5: page [-3, 1.5, -1.5] | computed [-3, 1.5, -1.5]
+PASS  new current data share no value with the exam's (1=yes): page 1 | computed 1
+PASS  old version (b) Hx at z=-2, 0.5, 2, 4 (was 4, 6, 1, -1): page [4, 6, 1, -1] | computed [4, 6, 1, -1]
+
+== 13.10 vector potentials of wire and solenoid
+PASS  (a) B at (3,4,0) cm (uT) from curl A, r0=1: page [-32, 24, 0] | computed [-32, 24, 0]
+PASS  (a) same with r0=0.37 m: page [-32, 24, 0] | computed [-32, 24, 0]
+PASS  (a) B by Biot-Savart of a long wire (uT); |B|=40: page [-32, 24, 0, 40] | computed [-32, 24, 0, 40]
+PASS  (a) div A, Laplacian Az / |d2Az/dx2| at [0.03 0.04 0.  ]: page [0, 0] | computed [0, -3.372038e-06]
+PASS  (a) div A, Laplacian Az / |d2Az/dx2| at [-0.2   0.05  1.3 ]: page [0, 0] | computed [0, 1.29596e-07]
+PASS  (a) closed-circle integral of dAz/dr = -mu0 I: page -1.256637e-05 | computed -1.256637e-05
+PASS  (b) vector area of the oriented rectangle (along +y): page [0, 0.03, 0] | computed [0, 0.03, 0]
+PASS  (b) loop integral of A (Wb), r0=1.0: page 2.772589e-06 | computed 2.772589e-06
+PASS  (b) loop integral of A (Wb), r0=0.3: page 2.772589e-06 | computed 2.772589e-06
+PASS  (b) flux of Biot-Savart B through the rectangle (Wb): page 2.772589e-06 | computed 2.772589e-06
+PASS  (b) finite wire Az(1 cm), half-lengths 10 m and 1 km (Wb/m): page [1.5202e-05, 2.4412e-05] | computed [1.520181e-05, 2.441215e-05]
+PASS  (b) finite wire Az(1cm)-Az(4cm), 10 m and 1 km (Wb/m): page [2.772581e-06, 2.772589e-06] | computed [2.772581e-06, 2.772589e-06]
+PASS  (c) B0 = mu0 n I (T): page 0.00251327 | computed 0.002513274
+PASS  (c) curl A inside (r=0.5cm) / outside (r=2cm) (T): page [0, 0, 0.002513274, 0, 0, 0] | computed [0, 0, 0.002513274, 0, 0, 1.32476e-12]
+PASS  (c) div A inside / outside: page [0, 0] | computed [-2.117582e-16, 8.432213e-13]
+PASS  (c) A_phi(R) from both forms (Wb/m): page [1.25664e-05, 1.25664e-05] | computed [1.256637e-05, 1.256637e-05]
+PASS  (d) A_phi(2R) (Wb/m): page 6.28319e-06 | computed 6.283185e-06
+PASS  (d) loop integral of A on r=0.015 (Wb): page 7.89568e-07 | computed 7.895684e-07
+PASS  (d) loop integral of A on r=0.02 (Wb): page 7.89568e-07 | computed 7.895684e-07
+PASS  (d) loop integral of A on r=0.05 (Wb): page 7.89568e-07 | computed 7.895684e-07
+PASS  check: Coulomb-integral A_phi at r=0.5,1,2,4 cm (Wb/m): page [6.28319e-06, 1.25664e-05, 6.28319e-06, 3.14159e-06] | computed [6.283185e-06, 1.256637e-05, 6.283185e-06, 3.141592e-06]
+
+== 13.11 Helmholtz coils
+PASS  (a) B (mT) at z=0, 10, 30 cm: page [0.314159, 0.2248, 0.05362] | computed [0.3141593, 0.2247941, 0.05361976]
+PASS  (a) centre = pi e-4 T: page 0.0003141593 | computed 0.0003141593
+PASS  (b) midpoint B (T); (4/5)^1.5 mu0NI/a: page [0.0004495881, 0.0004495881] | computed [0.0004495881, 0.0004495881]
+PASS  (b) factors 0.71554 and mu0NI/a = 6.28319e-4: page [0.71554, 0.000628319] | computed [0.7155418, 0.0006283185]
+PASS  (c) pair B'(0), B''(0) relative to single-coil B'': page [0, 0] | computed [-8.131516e-15, -2.747686e-05]
+PASS  (c) single coil B''(0) (T/m^2): page -0.02356 | computed -0.02356121
+PASS  (c) drop 2 cm away: pair %, single %: page [0.0114, 1.481] | computed [0.01139423, 1.481466]
+INFO  (c) pair drop % at 2 cm (more digits): 0.01139423
+PASS  (d) m (A m^2) = 8 pi: page [25.13274, 25.13] | computed [25.13274, 25.13274]
+PASS  (d) exact B at 2 m, 4 m (T): page [6.281448e-07, 7.853844e-08] | computed [6.281448e-07, 7.853844e-08]
+PASS  (d) dipole at 2 m, 4 m (T): page [6.283185e-07, 7.853982e-08] | computed [6.283185e-07, 7.853982e-08]
+PASS  (d) ratios 0.999724, 0.999982; B(2)/B(4): page [0.999724, 0.999982, 7.99793] | computed [0.9997235, 0.9999825, 7.997928]
+PASS  check: polygon (4000-gon) Biot-Savart midpoint (mT): page 0.4496 | computed 0.4495882
+PASS  check: polygon (4000-gon) Biot-Savart at 2 m (1e-7 T): page 6.281447 | computed 6.281446
+PASS  check: one coil at z=10a, exact/dipole: page 0.98519 | computed 0.9851853
+PASS  check: spacing s=0.5a, z=20a: ratio-1 vs 1.5((s/a)^2-1)(a/z)^2: page -0.0028125 | computed -0.002809193
+PASS  check: spacing s=1.5a, z=20a: ratio-1 vs 1.5((s/a)^2-1)(a/z)^2: page 0.0046875 | computed 0.004649767
+
+== 13.12 finite solenoid
+PASS  (b) n, mu0 n I (T): page [2000, 0.00376991] | computed [2000, 0.003769911]
+PASS  (a,b) B(0) formula | z'-quad (T): page [0.0036967, 0.0036967] | computed [0.003696702, 0.003696702]
+PASS  (a,b) B(l/2) formula | z'-quad (T): page [0.0018756, 0.0018756] | computed [0.001875601, 0.001875601]
+PASS  (b) B(0)/mu0nI = 5/sqrt26, B(end)/mu0nI = 5/sqrt101, ratio: page [0.980581, 0.497519, 0.50737] | computed [0.9805807, 0.4975186, 0.5073714]
+PASS  check: 600 discrete rings B-S, centre and end (T): page [0.003696702, 0.001875601] | computed [0.003696702, 0.001875601]
+PASS  (b) very long coil: end value / mu0nI: page 0.5 | computed 0.5
+PASS  (c) l/a >= 14.0358: page 14.0358 | computed 14.03585
+PASS  (c) this coil (l/a=10) is 1.9 % below: page 1.9 | computed 1.941932
+PASS  (d) m = 0.81 pi (A m^2): page [2.54469, 2.54469] | computed [2.54469, 2.54469]
+PASS  (d) z=1.5: exact (formula | quad), dipole, ratio: page [1.53763e-07, 1.53763e-07, 1.50796e-07, 1.01967] | computed [1.537631e-07, 1.537631e-07, 1.507964e-07, 1.019674]
+PASS  (d) z=3.0: exact (formula | quad), dipole, ratio: page [1.89413e-08, 1.89413e-08, 1.88496e-08, 1.00487] | computed [1.89413e-08, 1.89413e-08, 1.884956e-08, 1.004867]
+
+TOTAL: 155 PASS, 0 FAIL

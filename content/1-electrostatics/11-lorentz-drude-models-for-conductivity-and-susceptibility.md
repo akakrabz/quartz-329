@@ -5,7 +5,7 @@ tags: [lecture, electrostatics]
 lecture: 11
 ---
 
-*Lecture 11 · course notes §11 · no slide deck (the slides jump from capacitance to Biot–Savart) · prev: [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] · next: [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]] · not on Exam 1*
+*Lecture 11 · course notes §11 · no slide deck (the slides jump from capacitance to Biot–Savart) · prev: [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] · next: [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]] · not on Exam 1 · practice: [[practice/11-lorentz-drude-models|8 problems]]*
 
 > [!abstract] In one breath
 > Unit 1 used two material constants without explaining them: the conductivity $\sigma$ in $\mathbf{J} = \sigma\mathbf{E}$ ([[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]]) and the susceptibility $\chi_e$ in $\mathbf{P} = \epsilon_0\chi_e\mathbf{E}$ ([[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]]). This lecture supplies the mechanism, Newton's second law applied to one charge at a time. A **free** carrier accelerates in $\mathbf{E}$, collides, and settles at a drift velocity $\propto\mathbf{E}$; multiply by the carrier density and charge and you have Ohm's law with $\sigma = Nq^2\tau/m$. A **bound** electron is pulled off its nucleus against a spring; the dipole it makes is $\propto\mathbf{E}$, and $N_d$ of them per unit volume give $\chi_e = N_de^2/(m\epsilon_0\omega_0^2)$. Let the field vary in time and the bound electrons move too — a **polarization current** $\partial\mathbf{P}/\partial t$ flows in a perfect insulator. That current is half of what Lecture 16 will add to Ampère's law.
@@ -141,6 +141,9 @@ Concept page: [[concepts/conductivity-and-susceptibility-models]] · related: [[
 
 > [!exam] On exams
 > Not on Exam 1. The testable content is small and conceptual: derive the drift velocity from the force balance, recognize $\mathbf{J} = Nq\mathbf{v}$, know that $\sigma\propto Nq^2\tau/m$ and why the DC value is fine at radio frequencies, and know that $\partial\mathbf{P}/\partial t$ is a current. If a question gives $N$, $q$, $m$, $\tau$ and asks for $\sigma$ or the mobility, it is this lecture.
+
+> [!tip] Practice this lecture
+> [[practice/11-lorentz-drude-models|8 practice problems]] — 4 easy, 2 medium, 2 hard — each with a folded hint and a worked solution. Start with [[practice/11-lorentz-drude-models#111-drift-speed-in-a-house-wire|11.1 Drift speed in a house wire]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 11 (Drude force balance, decay, mobility, unit-cube derivation of $\mathbf{J} = Nq\mathbf{v}$, species sum, phasor AC conductivity and its validity, conductivity table, Lorentz oscillator, zero-input response, DC susceptibility, polarization current, the closing remark on $\sigma\mathbf{E} + d\mathbf{P}/dt$); Lecture 12 footnote 2 and the Jefimenko (1962) and Parker (1970) papers it cites (surface charges on current-carrying wires). The copper numbers and the AC susceptibility formula are extensions, checked against the notes' DC limits.

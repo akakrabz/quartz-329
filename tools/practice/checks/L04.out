@@ -1,0 +1,239 @@
+=== 4.1 Faucet or whirlpool
+  [OK] div E1 at [-1.05 -0.93 -1.24]: numeric 4  vs  closed form 4
+  [OK] curl E1 at [-1.05 -0.93 -1.24]: numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] div E2 at [-1.05 -0.93 -1.24]: numeric 0  vs  closed form 0
+  [OK] curl E2 at [-1.05 -0.93 -1.24]: numeric [ 0.  0. -5.]  vs  closed form [ 0.  0. -5.]
+  [OK] div E1 at [ 1.95 -0.15  0.85]: numeric 4  vs  closed form 4
+  [OK] curl E1 at [ 1.95 -0.15  0.85]: numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] div E2 at [ 1.95 -0.15  0.85]: numeric 0  vs  closed form 0
+  [OK] curl E2 at [ 1.95 -0.15  0.85]: numeric [ 0.  0. -5.]  vs  closed form [ 0.  0. -5.]
+  [OK] div E1 at [ 1.72  1.73 -1.  ]: numeric 4  vs  closed form 4
+  [OK] curl E1 at [ 1.72  1.73 -1.  ]: numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] div E2 at [ 1.72  1.73 -1.  ]: numeric 0  vs  closed form 0
+  [OK] curl E2 at [ 1.72  1.73 -1.  ]: numeric [ 0.  0. -5.]  vs  closed form [ 0.  0. -5.]
+  rho for E1 = 4 eps0 = 3.5417e-11 C/m^3  (page: 3.54e-11)
+  E2 at (0,1,0) = [ 2. -0.  0.]  (page: +2 x-hat);  E2 at (1,0,0) = [ 0. -3.  0.]  (page: -3 y-hat)
+  [OK] E2 circulation per unit area around a small CCW (from +z) circle: numeric -5  vs  closed form -5
+  -> negative circulation for CCW travel: the wheel turns CLOCKWISE seen from +z
+
+=== 4.2 Curl-free but not charge-free (MC)
+  [OK] curl E at [-2.38 -0.75  0.13]: numeric [ 0.000000e+00 -5.551115e-11  2.220446e-10]  vs  closed form [0. 0. 0.]
+  [OK] div E at [-2.38 -0.75  0.13] (=2x): numeric -4.75614  vs  closed form -4.75614
+  [OK] curl E at [ 2.21  1.43 -1.06]: numeric [0.000000e+00 6.661338e-10 4.440892e-10]  vs  closed form [0. 0. 0.]
+  [OK] div E at [ 2.21  1.43 -1.06] (=2x): numeric 4.41581  vs  closed form 4.41581
+  [OK] curl E at [-2.62 -0.62 -2.72]: numeric [ 0.000000e+00 -8.881784e-10  0.000000e+00]  vs  closed form [0. 0. 0.]
+  [OK] div E at [-2.62 -0.62 -2.72] (=2x): numeric -5.24733  vs  closed form -5.24733
+  [OK] curl E at [-0.37 -0.16  1.39]: numeric [ 0.000000e+00 -1.110223e-10 -2.220446e-10]  vs  closed form [0. 0. 0.]
+  [OK] div E at [-0.37 -0.16  1.39] (=2x): numeric -0.738254  vs  closed form -0.738254
+  rho = 2 eps0 x; e.g. at x = 1 m: 1.7708e-11 C/m^3; zero only on x = 0  -> (d) FALSE
+  [OK] line integral (0,0,0)->(1,2,3), straight line: numeric 7  vs  closed form 7
+  [OK] line integral, staircase x then y then z: numeric 7  vs  closed form 7
+  [OK] line integral, staircase z then y then x: numeric 7  vs  closed form 7
+  [OK]   staircase legs (x, then y, then z): numeric [ 0. -2.  9.]  vs  closed form [ 0. -2.  9.]
+  [OK] -grad f = E at [-1.45 -0.9   0.68], f = -(x z^2 + 2xy - 3y): numeric [-1.341408 -5.891155 -1.961946]  vs  closed form [-1.341408 -5.891155 -1.961946]
+  [OK]   curl(grad f) = 0 (nested finite differences): numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] -grad f = E at [-0.78  1.72  1.24], f = -(x z^2 + 2xy - 3y): numeric [ 4.981789 -4.551664 -1.924169]  vs  closed form [ 4.981789 -4.551664 -1.924169]
+  [OK]   curl(grad f) = 0 (nested finite differences): numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] -grad f = E at [-0.09 -2.4   1.64], f = -(x z^2 + 2xy - 3y): numeric [-2.112741 -3.185224 -0.30411 ]  vs  closed form [-2.112741 -3.185224 -0.30411 ]
+  [OK]   curl(grad f) = 0 (nested finite differences): numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  f(1,2,3) = -7
+  [OK] f(O) - f(P) = line integral O->P: numeric 7  vs  closed form 7
+
+=== 4.3 Along or across the flow (T/F)
+  [OK] (a) div at [0.56 0.41 0.  ]: numeric 0  vs  closed form 0
+  [OK] (b) curl at [0.56 0.41 0.  ]: numeric [0.       0.       1.775949]  vs  closed form [0.       0.       1.775949]
+  [OK] (a) div at [-0.84 -0.89 -0.69]: numeric 0  vs  closed form 0
+  [OK] (b) curl at [-0.84 -0.89 -0.69]: numeric [ 0.        0.       23.509535]  vs  closed form [ 0.        0.       23.509535]
+  [OK] (a) div at [-0.52  0.08 -0.87]: numeric 0  vs  closed form 0
+  [OK] (b) curl at [-0.52  0.08 -0.87]: numeric [0.       0.       3.399046]  vs  closed form [0.       0.       3.399046]
+  (b) curl_z > 0 -> paddlewheel turns counter-clockwise seen from +z
+  [OK] (c) Coulomb div at r = 1.193: numeric -2.77556e-11  vs  closed form 0
+  [OK] (c) Coulomb div at r = 1.767: numeric 5.55112e-11  vs  closed form 0
+  [OK] (c) Coulomb div at r = 2.746: numeric -1.38778e-11  vs  closed form 0
+  [OK] (d) free-vortex curl at [1.61 0.37 0.65]: numeric [0.000000e+00 0.000000e+00 1.387779e-11]  vs  closed form [0. 0. 0.]
+  [OK] (d) free-vortex curl at [1.84 0.99 0.83]: numeric [0.000000e+00 0.000000e+00 5.551115e-11]  vs  closed form [0. 0. 0.]
+  [OK] (d) free-vortex curl at [0.45 1.02 0.57]: numeric [0.000000e+00 0.000000e+00 5.551115e-11]  vs  closed form [0. 0. 0.]
+  [OK] (d) circulation around a circle enclosing the axis = 2 pi k: numeric 10.6814  vs  closed form 10.6814
+
+=== 4.4 The missing metric factor (find the error)
+  [OK] div D at r = 0.0150 m equals 3 D0 r / a^2: numeric 0.0003  vs  closed form 0.0003
+  [OK] div D at r = 0.0240 m equals 3 D0 r / a^2: numeric 0.00048  vs  closed form 0.00048
+  student's rho(a/2) = 2 D0 (a/2)/a^2 = D0/a = 200.0 uC/m^3 (page: 200)
+  correct   rho(a/2) = 3 D0/(2a)          = 300.0 uC/m^3 (page: 300)
+  [OK] Gauss: flux 2 pi L D0 r^3/a^2 = charge from 3 D0 r/a^2: numeric 2.4429e-07  vs  closed form 2.4429e-07
+  [OK] student's rho encloses (4 pi/3) L D0 r^3/a^2 = 2/3 of the flux: numeric 0.666667  vs  closed form 0.666667
+
+=== 4.5 Draining a cube (continuity)
+  [OK] div J at [-0.06  0.74  0.08] -> d rho/dt = -5: numeric -5  vs  closed form -5
+  [OK] div J at [ 0.7   0.49 -0.53] -> d rho/dt = -5: numeric -5  vs  closed form -5
+  [OK] dQ/dt = integral of d rho/dt over the cube [A]: numeric -0.625  vs  closed form -0.625
+  outward current through face x=0.5 (+x): +0.5000 A
+  outward current through face x=0 (-x): -0.0000 A
+  outward current through face y=0.5 (+y): +0.2500 A
+  outward current through face y=0 (-y): -0.0000 A
+  outward current through face z=0.5 (+z): -0.1250 A
+  outward current through face z=0 (-z): -0.0000 A
+  J_x(0.5)= 2.0  J_y(0.5)= 1.0  J_z(0.5)= -0.5  A/m^2; face area 0.25 m^2; volume 0.125 m^3
+  [OK] net outward current = -dQ/dt: numeric 0.625  vs  closed form 0.625
+
+=== 4.6 Three fields in curved coordinates
+  [OK] (a) curl E1 at [ 0.03 -0.05  0.04]: numeric [  0.   0. 100.]  vs  closed form [  0.   0. 100.]
+  [OK] (a) div E1 at [ 0.03 -0.05  0.04]: numeric -1.11022e-09  vs  closed form 0
+  [OK] (b) div E2 at r=0.071: numeric 1.9984e-07  vs  closed form 0
+  [OK] (b) curl E2 . phi-hat = E0 a^2 sin(th)/r^3: numeric 116.619  vs  closed form 116.619
+  [OK] (b) curl E2 has no r, theta parts: numeric [-6.280373e-09 -3.123516e-08]  vs  closed form [0. 0.]
+  [OK] (c) E3 spherical form = Cartesian dipole + ball form: numeric [ 11.682338 -19.470563   1.434315]  vs  closed form [ 11.682338 -19.470563   1.434315]
+  [OK] (c) curl E3 at r=0.071: numeric [ 1.110223e-07  1.221245e-07 -8.881784e-08]  vs  closed form [0. 0. 0.]
+  [OK] (c) div E3 at r=0.071 = 3 E0/a: numeric 150  vs  closed form 150
+  [OK] (a) curl E1 at [-0.02  0.06 -0.01]: numeric [  0.   0. 100.]  vs  closed form [  0.   0. 100.]
+  [OK] (a) div E1 at [-0.02  0.06 -0.01]: numeric 2.77556e-09  vs  closed form 0
+  [OK] (b) div E2 at r=0.064: numeric -3.33067e-08  vs  closed form 0
+  [OK] (b) curl E2 . phi-hat = E0 a^2 sin(th)/r^3: numeric 188.119  vs  closed form 188.119
+  [OK] (b) curl E2 has no r, theta parts: numeric [-6.068567e-09  5.716029e-08]  vs  closed form [0. 0.]
+  [OK] (c) E3 spherical form = Cartesian dipole + ball form: numeric [  1.787158  -5.361474 -18.152002]  vs  closed form [  1.787158  -5.361474 -18.152002]
+  [OK] (c) curl E3 at r=0.064: numeric [-4.440892e-08  3.996803e-07 -2.553513e-07]  vs  closed form [0. 0. 0.]
+  [OK] (c) div E3 at r=0.064 = 3 E0/a: numeric 150  vs  closed form 150
+  (d) rho = 3 eps0 E0/a = 150 eps0 = 1.3281e-09 C/m^3 (page: 150 eps0 ~ 1.33 nC/m^3)
+  [OK] (c) check: eps0 * flux of E3 through r=0.07 m = rho * (4/3) pi r^3: numeric 1.90819e-12  vs  closed form 1.90819e-12
+
+=== 4.7 Divergence theorem on a hemisphere
+  [OK] div D = D0/a [C/m^3]: numeric 1.2e-05  vs  closed form 1.2e-05
+  D0/a = 12.0 uC/m^3; hemisphere volume 2 pi a^3/3 = 0.2618 m^3
+  [OK] volume integral of div D = 2 pi a^2 D0/3: numeric 3.14159e-06  vs  closed form 3.14159e-06
+  [OK] dome flux = (2 pi/3 + pi) a^2 D0 = 5 pi a^2 D0/3: numeric 7.85398e-06  vs  closed form 7.85398e-06
+  [OK]   x-part through dome = 2 pi a^2 D0/3: numeric 3.14159e-06  vs  closed form 3.14159e-06
+  [OK]   uniform z-part through dome = pi a^2 D0: numeric 4.71239e-06  vs  closed form 4.71239e-06
+  [OK] base flux = -pi a^2 D0: numeric -4.71239e-06  vs  closed form -4.71239e-06
+  [OK] closed-surface flux = volume integral: numeric 3.14159e-06  vs  closed form 3.14159e-06
+  dome 7.854 uC, base -4.712 uC, total Q 3.1416 uC = pi uC = 3.1416 uC
+  rho * volume = 3.1416 uC
+
+=== 4.8 Circulation from a given curl (SP18 Exam 1 #2 style; vector changed from the exam's (2,-3,5) to (3,2,-4))
+  [OK] (a) uniform E: loop integral: numeric 0  vs  closed form 0
+  [OK] (a) leg P1->P2: numeric -8  vs  closed form -8
+  [OK] (a) leg P2->P3: numeric 6  vs  closed form 6
+  [OK] (a) P1->P2->P3 total = E.(P3-P1): numeric -2  vs  closed form -2
+  [OK] (a) P1->P2->P3 total = -2 V: numeric -2  vs  closed form -2
+  [OK] (a) P1->P4->P3 total = -2 V: numeric -2  vs  closed form -2
+  normal from right-hand rule (leg1 x leg2): [-1.  0.  0.]  (page: -x-hat);  area = 6 m^2
+  [OK] (b) circulation = (curl . n) A: numeric -18  vs  closed form -18
+  (b) dB/dt = -curl E = [-3. -2.  4.] T/s
+  [OK] (d) curl of 2z x - 4x y + 3y z at [-1.08  0.37  1.43]: numeric [ 3.  2. -4.]  vs  closed form [ 3.  2. -4.]
+  [OK] (d) curl of 2z x - 4x y + 3y z at [0.12 1.86 0.63]: numeric [ 3.  2. -4.]  vs  closed form [ 3.  2. -4.]
+  [OK] (d) the four legs P1P2, P2P3, P3P4, P4P1: numeric [  0.   0. -18.   0.]  vs  closed form [  0.   0. -18.   0.]
+  [OK] (d) route via P2: numeric 0  vs  closed form 0
+  [OK] (d) route via P4: numeric 18  vs  closed form 18
+  [OK] (c),(d) via P2 minus via P4 = loop integral: numeric -18  vs  closed form -18
+  [OK] (d) Stokes: flux of curl Ed through the rectangle (normal -x-hat): numeric -18  vs  closed form -18
+
+=== 4.9 Electrostatic or not (Summer HE1 #2 style)
+  [OK] (a) curl E1 at [-0.63 -0.03  1.44]: numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] (a) curl E2 at [-0.63 -0.03  1.44]: numeric [0.       0.       2.636128]  vs  closed form [0.       0.       2.636128]
+  [OK] (b) div E at [-0.63 -0.03  1.44]: numeric 0.25131  vs  closed form 0.25131
+  [OK] (a) curl E1 at [ 0.31 -0.38  1.57]: numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] (a) curl E2 at [ 0.31 -0.38  1.57]: numeric [ 0.        0.       -1.466531]  vs  closed form [ 0.        0.       -1.466531]
+  [OK] (b) div E at [ 0.31 -0.38  1.57]: numeric 2.63073  vs  closed form 2.63073
+  [OK] (a) curl E1 at [ 1.34  0.48 -1.77]: numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  [OK] (a) curl E2 at [ 1.34  0.48 -1.77]: numeric [ 0.       0.      -2.70341]  vs  closed form [ 0.       0.      -2.70341]
+  [OK] (b) div E at [ 1.34  0.48 -1.77]: numeric -3.22103  vs  closed form -3.22103
+  [OK] (b) max |div E| = 3 pi/2 [V/m^2]: numeric 4.71239  vs  closed form 4.71239
+  (b) 3 pi/2 = 4.7124 V/m^2;  max |rho| = (3 pi/2) eps0 = 4.1724e-11 C/m^3; attained at y = -3.0 (odd integers)
+  (b) rho on the plane y = +1 m: -4.1724e-11 C/m^3
+  (b) rho on the plane y = +3 m: +4.1724e-11 C/m^3
+  (b) rho on the plane y = -1 m: +4.1724e-11 C/m^3
+  [OK] (c) max |curl E| = pi [V/m^2]: numeric 3.14159  vs  closed form 3.14159
+  (c) pi = 3.1416 V/m^2 at x = odd integers; check |curl| at x=1: 3.1415926533551186
+  [OK] (d) route A for E2: numeric 1.22465e-16  vs  closed form 0
+  [OK] (d) route B for E2: numeric 2  vs  closed form 2
+  [OK] (d) flux of curl E2 through unit square (+z) = A - B: numeric -2  vs  closed form -2
+  [OK] (d) closed form -pi * 2/pi = -2: numeric -2  vs  closed form -2
+  [OK] (e) staircase climbing at x0 = 2/3 m gives 1 V: numeric 1  vs  closed form 1
+  [OK] (e) straight diagonal gives 4/pi: numeric 1.27324  vs  closed form 1.27324
+  4/pi = 1.2732 V
+  [OK] (e) E1 along route A = 6/pi: numeric 1.90986  vs  closed form 1.90986
+  [OK] (e) E1 along route B = 6/pi: numeric 1.90986  vs  closed form 1.90986
+  6/pi = 1.9099 V
+
+=== 4.10 Charge layers from a piecewise D
+  [OK] (a) div D at r = 0.5 a  = 4 D0 r/a^2: numeric 4e-05  vs  closed form 4e-05
+  [OK]      curl D at r = 0.5 a: numeric [-5.293956e-15 -2.646978e-15  7.940934e-15]  vs  closed form [0. 0. 0.]
+  [OK] (a) div D at r = 0.9 a  = 4 D0 r/a^2: numeric 7.2e-05  vs  closed form 7.2e-05
+  [OK]      curl D at r = 0.9 a: numeric [-2.117582e-14 -2.117582e-14 -1.588187e-14]  vs  closed form [0. 0. 0.]
+  [OK] (a) div D at r = 1.3 a  = 0: numeric 1.05879e-14  vs  closed form 0
+  [OK]      curl D at r = 1.3 a: numeric [3.176374e-14 2.117582e-14 1.058791e-14]  vs  closed form [0. 0. 0.]
+  [OK] (a) div D at r = 1.8 a  = 0: numeric 3.70577e-14  vs  closed form 0
+  [OK]      curl D at r = 1.8 a: numeric [-2.117582e-14 -5.293956e-15  5.293956e-15]  vs  closed form [0. 0. 0.]
+  [OK] (a) div D at r = 2.5 a  = 0: numeric 0  vs  closed form 0
+  [OK]      curl D at r = 2.5 a: numeric [0. 0. 0.]  vs  closed form [0. 0. 0.]
+  rho(a/2) = 2 D0/a = 40.0 uC/m^3;  rho(a) = 4 D0/a = 80.0 uC/m^3
+  thin-shell flux at r=a, delta=0.001: -7.440789e-07 C  -> 4 pi a^2 rho_s with rho_s = -5.9212 uC/m^2
+  thin-shell flux at r=a, delta=1e-05: -7.538817e-07 C  -> 4 pi a^2 rho_s with rho_s = -5.9992 uC/m^2
+  [OK] (b) rho_s(a) = D(a+) - D(a-) = -3 D0: numeric -6e-06  vs  closed form -6e-06
+  [OK] (b) rho_s(2a) = D(2a+) - D(2a-) = D0/2: numeric 1e-06  vs  closed form 1e-06
+  rho_s(a) = -6.0 uC/m^2, rho_s(2a) = +1.0 uC/m^2
+  [OK] (c) Q_core = 4 pi a^2 D0: numeric 2.51327e-07  vs  closed form 2.51327e-07
+  4 pi a^2 D0 = 2.5133e-07 C = 8 pi x 1e-8 = 2.5133e-07
+  Q_core = +0.2513 uC, Q_a = -0.7540 uC, Q_2a = +0.5027 uC, total = -1.06e-16 uC
+  [OK] (c) total charge zero: numeric -1.05879e-22  vs  closed form 0
+  [OK] (d) flux through r = 1.5 a = -8 pi a^2 D0: numeric -5.02655e-07  vs  closed form -5.02655e-07
+  [OK] (d) = enclosed charge Q_core + Q_a: numeric -5.02655e-07  vs  closed form -5.02655e-07
+  flux at 1.5a = -0.5027 uC
+
+=== 4.11 An expanding ion cloud (continuity)
+  [OK] (a) continuity div J + d rho/dt = 0 at t=0.3 ms: numeric 1.86347e-13  vs  closed form 0
+  [OK]     div J = 3 rho/tau: numeric 0.00286933  vs  closed form 0.00286933
+  [OK] (a) continuity div J + d rho/dt = 0 at t=0.3 ms: numeric 1.927e-13  vs  closed form 0
+  [OK]     div J = 3 rho/tau: numeric 0.00286933  vs  closed form 0.00286933
+  [OK] (a) continuity div J + d rho/dt = 0 at t=1.0 ms: numeric 1.50348e-13  vs  closed form 0
+  [OK]     div J = 3 rho/tau: numeric 0.00100409  vs  closed form 0.00100409
+  [OK] (a) continuity div J + d rho/dt = 0 at t=1.0 ms: numeric 1.51143e-13  vs  closed form 0
+  [OK]     div J = 3 rho/tau: numeric 0.00100409  vs  closed form 0.00100409
+  Q0 = (4/3) pi a^3 rho0 = 1.2566e-11 C = 4 pi pC = 12.566 pC
+  [OK] (a) cloud charge rho(t)(4/3)pi R(t)^3 at t=0.0 ms: numeric 1.25664e-11  vs  closed form 1.25664e-11
+  [OK] (a) cloud charge rho(t)(4/3)pi R(t)^3 at t=0.5 ms: numeric 1.25664e-11  vs  closed form 1.25664e-11
+  [OK] (a) cloud charge rho(t)(4/3)pi R(t)^3 at t=3.0 ms: numeric 1.25664e-11  vs  closed form 1.25664e-11
+  Monte Carlo: fraction of ions inside r=a at t = (tau/3) ln2: 0.4995 (expect 0.5)
+  [OK] (b) dQ_a/dt (finite diff) = -outward current at t=0.0 ms: numeric -1.88495e-08  vs  closed form -1.88496e-08
+  [OK]     outward current = 3 Q0/tau e^{-3t/tau}: numeric 1.88496e-08  vs  closed form 1.88496e-08
+  [OK] (b) dQ_a/dt (finite diff) = -outward current at t=1.0 ms: numeric -4.2059e-09  vs  closed form -4.2059e-09
+  [OK]     outward current = 3 Q0/tau e^{-3t/tau}: numeric 4.2059e-09  vs  closed form 4.2059e-09
+  I(0+) = 3 Q0/tau = 1.8850e-08 A = 6 pi nA = 18.85 nA
+  J_r(a, 0+) = rho0 a/tau = 1.500e-05 A/m^2 (page: 15 uA/m^2)
+  [OK] (c) Q_a(t_half) = Q0/2: numeric 6.28319e-12  vs  closed form 6.28319e-12
+  t_half = (tau/3) ln 2 = 0.4621 ms;  R(t_half) = a 2^(1/3) = 1.2599 cm
+  [OK] (d) Gauss D_r = rho r/3 at r=0.3a, t=0.2 ms: numeric 2.22245e-09  vs  closed form 2.22245e-09
+  [OK]     J_r + dD_r/dt = 0: numeric 1.28987e-16  vs  closed form 0
+  [OK] (d) Gauss D_r = rho r/3 at r=0.9a, t=0.2 ms: numeric 6.66736e-09  vs  closed form 6.66736e-09
+  [OK]     J_r + dD_r/dt = 0: numeric 3.86962e-16  vs  closed form 0
+  outside the cloud at t=0.2 ms, r=0.0276 m: D_r = Q0/(4 pi r^2) = 1.3100e-09, time-independent, J = 0
+  [OK] (d) Gauss D_r = rho r/3 at r=0.3a, t=1.5 ms: numeric 3.16198e-10  vs  closed form 3.16198e-10
+  [OK]     J_r + dD_r/dt = 0: numeric 5.53317e-17  vs  closed form 0
+  [OK] (d) Gauss D_r = rho r/3 at r=0.9a, t=1.5 ms: numeric 9.48593e-10  vs  closed form 9.48593e-10
+  [OK]     J_r + dD_r/dt = 0: numeric 1.65995e-16  vs  closed form 0
+  outside the cloud at t=1.5 ms, r=0.0529 m: D_r = Q0/(4 pi r^2) = 3.5701e-10, time-independent, J = 0
+
+=== 4.12 Inside a current-carrying rod
+  [OK] (a) curl H at r=0.3 a = 4 H0 r^2/a^3 z-hat: numeric [   0.    0. 7200.]  vs  closed form [   0.    0. 7200.]
+  [OK] (a) curl H at r=0.5 a = 4 H0 r^2/a^3 z-hat: numeric [    0.     0. 20000.]  vs  closed form [    0.     0. 20000.]
+  [OK] (a) curl H at r=0.9 a = 4 H0 r^2/a^3 z-hat: numeric [    0.           0.       64800.000006]  vs  closed form [    0.     0. 64800.]
+  [OK] (a) curl H at r=1.5 a = 0: numeric [0.000000e+00 0.000000e+00 7.105427e-07]  vs  closed form [0. 0. 0.]
+  [OK] (a) curl H at r=3.0 a = 0: numeric [ 0.000000e+00  0.000000e+00 -7.105427e-07]  vs  closed form [0. 0. 0.]
+  [OK] (a) div(curl H) at [0.004 0.006 0.   ] (nested finite differences): numeric 0  vs  closed form 0
+  [OK] (a) div(curl H) at [-0.009  0.003  0.01 ] (nested finite differences): numeric 0  vs  closed form 0
+  (scale for the last check: J itself ~ 80000 A/m^2, its r-derivative ~ 8000000 A/m^3)
+  J(r=a) = 4 H0/a = 8.000e+04 A/m^2 (page: 8e4)
+  [OK] (b) total current = 2 pi a H0 = 16 pi A: numeric 50.2655  vs  closed form 50.2655
+  I = 50.2655 A = 16 pi = 50.2655
+  [OK] (b) direction: curl_z > 0 at r = a/2 (current along +z): numeric 1  vs  closed form 1
+  [OK] (c) MMF around quarter-disk boundary (R = a/2) = pi H0 a/32: numeric 0.785398  vs  closed form 0.785398
+  [OK] (c) flux of J through quarter disk: numeric 0.785398  vs  closed form 0.785398
+  pi H0 a/32 = 0.7854 A = pi/4 = 0.7854
+  [OK] (c) quarter disk with full radius a: pi H0 a/2 = 4 pi = I/4: numeric 12.5664  vs  closed form 12.5664
+  4 pi = 12.5664 A
+  [OK] (d) MMF around circle r = 2a = I: numeric 50.2655  vs  closed form 50.2655
+  MMF(2a) = 50.2655 A
+  [OK] (e) a B_r = g(phi)/r field is divergence-free off the axis at [0.01 0.02 0.  ]: numeric -2.66454e-07  vs  closed form 0
+  [OK] (e) a B_r = g(phi)/r field is divergence-free off the axis at [-0.03   0.005  0.1  ]: numeric -4.44089e-08  vs  closed form 0
+  (e) but |B_r| = g/r diverges as r -> 0, so finiteness on the axis forces g = 0, B_r = 0
+
+ALL CHECKS PASSED

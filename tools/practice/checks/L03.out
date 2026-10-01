@@ -1,0 +1,323 @@
+
+==============================================================================
+3.1 Two sheets of charge
+==============================================================================
+   z = -1.0 m: E_z =  -169.411 V/m (brute-force disk R=1e7 m:  -169.411)
+   [ok] 3.1 E_z(-1.0): got -169.4113544589  want -169.411360106
+   z = +1.0 m: E_z =   282.352 V/m (brute-force disk R=1e7 m:   282.352)
+   [ok] 3.1 E_z(1.0): got 282.352238608  want 282.3522668433
+   z = +3.0 m: E_z =   169.411 V/m (brute-force disk R=1e7 m:   169.411)
+   [ok] 3.1 E_z(3.0): got 169.4112979885  want 169.411360106
+   rounded: z<0: -169 V/m, 0<z<2: +282 V/m, z>2: +169 V/m
+   jump of eps0*E_z at z=0: 4.000 nC/m^2 (= rho_s1 = 4)
+   jump of eps0*E_z at z=2: -1.000 nC/m^2 (= rho_s2 = -1)
+
+==============================================================================
+3.2 Flux through a tilted window
+==============================================================================
+   corners: (0,0,0) (0,2,0) (3,2,4) (3,0,4); 4th corner = u+v = [3. 2. 4.]
+   u.v = 0.0 (edges perpendicular -> rectangle) ; edge lengths |u| = 2.0 m, |v| = 5.0 m
+   u x v = [ 8.  0. -6.]  |u x v| = area = 10.0 m^2
+   n-hat (positive z component) = [-0.8 -0.   0.6]
+   (a) |E| = 500 V/m, E.n = 300.0 V/m, int E.dS = 3000.0 V*m (grid sum 3000.0), psi_E = int D.dS = 2.6563e-08 C = 26.56 nC
+   [ok] 3.2(a) flux grid vs formula: got 2999.9999999999  want 3000.0
+   (b) |E| = 500 V/m, E.n = -0.0 V/m, int E.dS = -0.0 V*m (grid sum -0.0), psi_E = int D.dS = -7.8641e-25 C = -0.00 nC
+   [ok] 3.2(b) flux grid vs formula: got -0.0  want -0.0
+   shadow of the window on the xy-plane: 3 m x 2 m = 6 m^2 ; 500*6 = 3000 V*m
+   [ok] 3.2(a) value: got 3000.0  want 3000.0
+   [ok] 3.2(b) value: got -0.0  want 0.0
+
+==============================================================================
+3.3 Finite line inside a closed cylinder (MC)
+==============================================================================
+   side flux = 5.2442 nC, top cap = 0.3779 nC, bottom cap = 0.3779 nC
+   total = 6.0000 nC ; Q_enc = rho_l*2 m = 6.0 nC
+   closed form side = rho_l*(sqrt10 - sqrt2) = 5.2442 nC ; caps together = 0.7558 nC
+   [ok] 3.3 total flux = 6 nC: got 6e-09  want 6e-09
+   [ok] 3.3 side closed form: got 5.2e-09  want 5.2e-09
+   distractor (d): rho_l * 4 m = 12.0 nC
+
+==============================================================================
+3.4 Charges written with delta functions
+==============================================================================
+   4 d(x-1)d(y+1)d(z)    point 4 nC at (1,-1,0)               ->   4.0000 nC inside the cube
+   -2 d(x+1)d(y)         line -2 nC/m || z through (-1,0)     ->  -8.0000 nC inside the cube
+   0.5 d(z-1)            sheet 0.5 nC/m^2 on z=1              ->   8.0000 nC inside the cube
+   2 d(x)d(y-3)d(z)      point 2 nC at (0,3,0)                ->   0.0000 nC inside the cube
+   total enclosed charge = 4.0000 nC = flux of D out of the cube
+   line length inside the cube = 4 m ; sheet area inside the cube = 16 m^2 ; (0,3,0) outside since |y| = 3 > 2
+   [ok] 3.4 total charge: got 4.0  want 4.0
+   units: 3 deltas -> nC ; 2 deltas -> nC/m ; 1 delta -> nC/m^2 (each delta carries 1/m)
+
+==============================================================================
+3.5 Magnetic flux through a dome (MC)
+==============================================================================
+   |B| = 0.50 T ; base area pi a^2 = 0.25*pi = 0.7854 m^2 ; dome area 2 pi a^2 = 0.50*pi = 1.5708 m^2
+   base (outward -z): psi_base = -0.314159 Wb = -0.1000*pi
+   dome by direct surface integral = 0.314159 Wb = 0.1000*pi
+   dome + base = 0.00e+00 (closed surface -> 0)
+   x-part alone through the dome: 1.09e-17 Wb
+   [ok] 3.5 dome flux = 0.1 pi: got 0.3141592654  want 0.3141592654
+   answer (b) 0.1*pi = 0.3142 Wb ; distractors: (c) 0.4*2*pi*a^2 = 0.200*pi = 0.628; (d) |B|*2*pi*a^2 = 0.250*pi = 0.785; (e) |B|*pi*a^2 = 0.125*pi = 0.393
+
+==============================================================================
+3.6 Sphere with a graded density rho0(1-r/a)
+==============================================================================
+   parameter set rho0 = 2e-06 C/m^3, a = 0.09 m
+      r = 0.300a: closed   1575.526  Gauss-quad   1575.526  Coulomb-rays   1575.526 V/m
+   [ok] 3.6 E closed vs Gauss r=0.300a: got 1575.5256489854  want 1575.5256489854
+   [ok] 3.6 E closed vs Coulomb r=0.300a: got 1575.5256489855  want 1575.5256489854
+      r = 0.667a: closed   2258.818  Gauss-quad   2258.818  Coulomb-rays   2258.818 V/m
+   [ok] 3.6 E closed vs Gauss r=0.667a: got 2258.818134746  want 2258.818134746
+   [ok] 3.6 E closed vs Coulomb r=0.667a: got 2258.8181347467  want 2258.818134746
+      r = 0.900a: closed   1982.113  Gauss-quad   1982.113  Coulomb-rays   1982.113 V/m
+   [ok] 3.6 E closed vs Gauss r=0.900a: got 1982.1129132396  want 1982.1129132396
+   [ok] 3.6 E closed vs Coulomb r=0.900a: got 1982.1129132397  want 1982.1129132396
+      r = 1.500a: closed    752.939  Gauss-quad    752.939  Coulomb-rays    752.939 V/m
+   [ok] 3.6 E closed vs Gauss r=1.500a: got 752.9393782487  want 752.9393782487
+   [ok] 3.6 E closed vs Coulomb r=1.500a: got 752.9393782488  want 752.9393782487
+   [ok] 3.6 r_max = 2a/3: got 0.0600000009  want 0.06
+   [ok] 3.6 E_max = rho0 a/(9 eps0): got 2258.818134746  want 2258.818134746
+   [ok] 3.6 Q = pi rho0 a^3/3: got 1.5e-09  want 1.5e-09
+   parameter set rho0 = 5e-06 C/m^3, a = 0.2 m
+      r = 0.300a: closed   8752.920  Gauss-quad   8752.920  Coulomb-rays   8752.920 V/m
+   [ok] 3.6 E closed vs Gauss r=0.300a: got 8752.9202721409  want 8752.9202721409
+   [ok] 3.6 E closed vs Coulomb r=0.300a: got 8752.9202721417  want 8752.9202721409
+      r = 0.667a: closed  12548.990  Gauss-quad  12548.990  Coulomb-rays  12548.990 V/m
+   [ok] 3.6 E closed vs Gauss r=0.667a: got 12548.989637478  want 12548.989637478
+   [ok] 3.6 E closed vs Coulomb r=0.667a: got 12548.9896374817  want 12548.989637478
+      r = 0.900a: closed  11011.738  Gauss-quad  11011.738  Coulomb-rays  11011.738 V/m
+   [ok] 3.6 E closed vs Gauss r=0.900a: got 11011.7384068869  want 11011.7384068869
+   [ok] 3.6 E closed vs Coulomb r=0.900a: got 11011.7384068874  want 11011.7384068869
+      r = 1.500a: closed   4182.997  Gauss-quad   4182.997  Coulomb-rays   4182.997 V/m
+   [ok] 3.6 E closed vs Gauss r=1.500a: got 4182.996545826  want 4182.996545826
+   [ok] 3.6 E closed vs Coulomb r=1.500a: got 4182.9965458269  want 4182.996545826
+   [ok] 3.6 r_max = 2a/3: got 0.1333333333  want 0.1333333333
+   [ok] 3.6 E_max = rho0 a/(9 eps0): got 12548.989637478  want 12548.989637478
+   [ok] 3.6 Q = pi rho0 a^3/3: got 4.19e-08  want 4.19e-08
+   PAGE: Q = 1.5268e-09 C = 1.527 nC ; r_max = 2a/3 = 6.0 cm ; E_max = 2258.8 V/m ; E(a) = 1694.1 V/m ; ratio E(a)/E_max = 0.75
+   shell at b = 2a = 18 cm: rho_s = -Q/(4 pi b^2) = -3.7500e-09 C/m^2 = -3.750 nC/m^2 ; -rho0 a/48 = -3.750 nC/m^2
+   [ok] 3.6 rho_s = -rho0 a /48: got -3.8e-09  want -3.8e-09
+   [ok] 3.6 continuity at r=a: got 1694.1136010595  want 1694.1136010595
+
+==============================================================================
+3.7 Point-charge flux through a disk
+==============================================================================
+   Q=12 nC h=0.04 m a=0.03000 m: closed 1.200000 nC, brute-force 1.200000 nC
+   [ok] 3.7 disk flux: got 1.2e-09  want 1.2e-09
+   Q=5 nC h=0.1 m a=0.37000 m: closed 1.847727 nC, brute-force 1.847727 nC
+   [ok] 3.7 disk flux: got 1.8e-09  want 1.8e-09
+   Q=12 nC h=0.04 m a=0.06928 m: closed 3.000000 nC, brute-force 3.000000 nC
+   [ok] 3.7 disk flux: got 3e-09  want 3e-09
+   PAGE (b): sqrt(h^2+a^2) = 5.0 cm, cos(alpha) = 0.80, psi = 1.200 nC = Q/10
+   PAGE (c): radius for Q/4: 6.9282 cm ; sqrt(3) h = 6.9282 cm
+   [ok] 3.7 a(Q/4) = sqrt3 h: got 0.0692820323  want 0.0692820323
+   PAGE (d): a -> inf: psi -> 6.000000 nC (Q/2 = 6 nC)
+   [ok] 3.7 cap (solid angle) a=0.03: got 1.2e-09  want 1.2e-09
+   [ok] 3.7 cap (solid angle) a=0.07: got 3e-09  want 3e-09
+
+==============================================================================
+3.8 Find the error: odd slab rho0 x/a
+==============================================================================
+   parameter set rho0 = 1e-06 C/m^3, a = 1 m
+      x = -1.50a: closed  0.000000e+00  sheet-sum  0.000000e+00 V/m
+   [ok] 3.8 E(-1.5a): got 0.0  want 0.0
+      x = -0.70a: closed -2.879993e+04  sheet-sum -2.879993e+04 V/m
+   [ok] 3.8 E(-0.7a): got -28799.931218012  want -28799.931218012
+      x = -0.20a: closed -5.421164e+04  sheet-sum -5.421164e+04 V/m
+   [ok] 3.8 E(-0.2a): got -54211.6352339049  want -54211.6352339049
+      x = +0.00a: closed -5.647045e+04  sheet-sum -5.647045e+04 V/m
+   [ok] 3.8 E(0.0a): got -56470.453368651  want -56470.453368651
+      x = +0.40a: closed -4.743518e+04  sheet-sum -4.743518e+04 V/m
+   [ok] 3.8 E(0.4a): got -47435.1808296668  want -47435.1808296668
+      x = +0.95a: closed -5.505869e+03  sheet-sum -5.505869e+03 V/m
+   [ok] 3.8 E(0.95a): got -5505.8692034435  want -5505.8692034435
+      x = +1.30a: closed  0.000000e+00  sheet-sum  0.000000e+00 V/m
+   [ok] 3.8 E(1.3a): got 0.0  want 0.0
+   [ok] 3.8 E even: E(0.2a) = E(-0.2a): got -54211.6352339049  want -54211.6352339049
+   [ok] 3.8 E even: E(0.6a) = E(-0.6a): got -36141.0901559366  want -36141.0901559366
+   [ok] 3.8 |E(0)| = rho0 a/(2 eps0) = (1/eps0) int_0^a rho: got 56470.453368651  want 56470.453368651
+      student's Q_enc(-0.5a..0.5a) = 0.00e+00 (zero, but uninformative)
+   parameter set rho0 = 3e-06 C/m^3, a = 0.25 m
+      x = -1.50a: closed  0.000000e+00  sheet-sum  0.000000e+00 V/m
+   [ok] 3.8 E(-1.5a): got 0.0  want 0.0
+      x = -0.70a: closed -2.159995e+04  sheet-sum -2.159995e+04 V/m
+   [ok] 3.8 E(-0.7a): got -21599.948413509  want -21599.948413509
+      x = -0.20a: closed -4.065873e+04  sheet-sum -4.065873e+04 V/m
+   [ok] 3.8 E(-0.2a): got -40658.7264254287  want -40658.7264254287
+      x = +0.00a: closed -4.235284e+04  sheet-sum -4.235284e+04 V/m
+   [ok] 3.8 E(0.0a): got -42352.8400264882  want -42352.8400264882
+      x = +0.40a: closed -3.557639e+04  sheet-sum -3.557639e+04 V/m
+   [ok] 3.8 E(0.4a): got -35576.3856222501  want -35576.3856222501
+      x = +0.95a: closed -4.129402e+03  sheet-sum -4.129402e+03 V/m
+   [ok] 3.8 E(0.95a): got -4129.4019025826  want -4129.4019025826
+      x = +1.30a: closed  0.000000e+00  sheet-sum  0.000000e+00 V/m
+   [ok] 3.8 E(1.3a): got 0.0  want 0.0
+   [ok] 3.8 E even: E(0.2a) = E(-0.2a): got -40658.7264254287  want -40658.7264254287
+   [ok] 3.8 E even: E(0.6a) = E(-0.6a): got -27105.8176169525  want -27105.8176169525
+   [ok] 3.8 |E(0)| = rho0 a/(2 eps0) = (1/eps0) int_0^a rho: got 42352.8400264882  want 42352.8400264882
+      student's Q_enc(-0.5a..0.5a) = 0.00e+00 (zero, but uninformative)
+   E points -x (negative E_x) inside: from the positive right half toward the negative left half
+
+==============================================================================
+3.9 Two slabs and a sheet (fields in V/m because rho is given in units of eps0)
+==============================================================================
+   per-area charges: slab1 = +6 eps0 C/m^2, slab2 = -6 eps0 C/m^2, net = 0
+   each slab alone outside: |E| = 3 V/m
+   z =  -4.0 m: (b) E_z = +0.0000 (sheet-sum -0.0000) ; (c) with sheet E_z = -2.0000 (sheet-sum -2.0000) V/m
+   [ok] 3.9(b) z=-4: got [ 0. -0.]  want [0 0]
+   [ok] 3.9(c) z=-4: got [-2. -2.]  want [-2 -2]
+   z =  -2.0 m: (b) E_z = +3.0000 (sheet-sum +3.0000) ; (c) with sheet E_z = +1.0000 (sheet-sum +1.0000) V/m
+   [ok] 3.9(b) z=-2: got [3. 3.]  want [3 3]
+   [ok] 3.9(c) z=-2: got [1. 1.]  want [1 1]
+   z =  -0.5 m: (b) E_z = +6.0000 (sheet-sum +6.0000) ; (c) with sheet E_z = +8.0000 (sheet-sum +8.0000) V/m
+   [ok] 3.9(b) z=-0.5: got [6. 6.]  want [6 6]
+   [ok] 3.9(c) z=-0.5: got [8. 8.]  want [8 8]
+   z =  +1.5 m: (b) E_z = +3.0000 (sheet-sum +3.0000) ; (c) with sheet E_z = +5.0000 (sheet-sum +5.0000) V/m
+   [ok] 3.9(b) z=1.5: got [3. 3.]  want [3 3]
+   [ok] 3.9(c) z=1.5: got [5. 5.]  want [5 5]
+   z =  +4.0 m: (b) E_z = +0.0000 (sheet-sum +0.0000) ; (c) with sheet E_z = +2.0000 (sheet-sum +2.0000) V/m
+   [ok] 3.9(b) z=4: got [0. 0.]  want [0 0]
+   [ok] 3.9(c) z=4: got [2. 2.]  want [2 2]
+   piecewise (b): z<-3: 0 ; -3<z<-1: 3z+9 ; -1<z<0: 6 ; 0<z<3: 6-2z ; z>3: 0
+   [ok] 3.9 piecewise (b) z=-2.5: got 1.5  want 1.5
+   [ok] 3.9 piecewise (b) z=-1.2: got 5.4  want 5.4
+   [ok] 3.9 piecewise (b) z=-0.3: got 6.0  want 6
+   [ok] 3.9 piecewise (b) z=0.7: got 4.6  want 4.6
+   [ok] 3.9 piecewise (b) z=2.2: got 1.6  want 1.6
+   piecewise (c): z<-3: -2 ; -3<z<-1: 3z+7 ; -1<z<0: 8 ; 0<z<3: 8-2z ; z>3: +2
+   [ok] 3.9 piecewise (c) z=-3.5: got -2.0  want -2
+   [ok] 3.9 piecewise (c) z=-2.5: got -0.5  want -0.5
+   [ok] 3.9 piecewise (c) z=-1.2: got 3.4  want 3.4
+   [ok] 3.9 piecewise (c) z=-0.3: got 8.0  want 8
+   [ok] 3.9 piecewise (c) z=0.7: got 6.6  want 6.6
+   [ok] 3.9 piecewise (c) z=2.2: got 3.6  want 3.6
+   [ok] 3.9 piecewise (c) z=3.5: got 2.0  want 2
+   break points (b): E(-3)=0, E(-1)=6, E(0)=6, E(3)=0 ; (c): E(-3)=-2, E(-1-)=4, E(-1+)=8, E(0)=8, E(3)=2
+   (d) E = 0 at z = -2.333333 m (-7/3 = -2.333333)
+   [ok] 3.9(d) zero: got -2.3333333333  want -2.3333333333
+   jump at z=-1: 4.000000 V/m -> eps0*jump = 4.000 eps0 = rho_s ; far fields: net 4 eps0 -> +-2 V/m
+   [ok] 3.9 jump = rho_s/eps0: got 4.000000003  want 4.0
+   sign changes of E_z (with sheet) on [-6,6]: [-2.3333] -> the only zero is z = -7/3 m
+   [ok] 3.9(d) single zero: got 1  want 1
+
+==============================================================================
+3.10 Sphere with an off-centre cavity (rho = 30 eps0)
+==============================================================================
+   rho/(3 eps0) = 10.000000 V/m^2
+   (a) full ball at [0.3 0.  0. ]: Coulomb rays [ 3. -0. -0.] vs rho r/(3eps0) [3. 0. 0.]
+   [ok] 3.10(a) uniform ball interior: got [ 3. -0. -0.]  want [3. 0. 0.]
+   (a) full ball at [ 0.2 -0.5  0.4]: Coulomb rays [ 2. -5.  4.] vs rho r/(3eps0) [ 2. -5.  4.]
+   [ok] 3.10(a) uniform ball interior: got [ 2. -5.  4.]  want [ 2. -5.  4.]
+   (b) predicted cavity field = rho d/(3 eps0) = [5. 0. 0.] V/m
+      point [ 0.762 -0.073  0.04 ] in cavity: Coulomb rays [ 5. -0. -0.] ; superposition [5. 0. 0.]
+   [ok] 3.10(b) cavity field uniform: got [ 5. -0. -0.]  want [5. 0. 0.]
+      point [ 0.364  0.231 -0.157] in cavity: Coulomb rays [ 5. -0.  0.] ; superposition [5. 0. 0.]
+   [ok] 3.10(b) cavity field uniform: got [ 5. -0.  0.]  want [5. 0. 0.]
+      point [ 0.463 -0.293 -0.078] in cavity: Coulomb rays [ 5. -0.  0.] ; superposition [5. 0. 0.]
+   [ok] 3.10(b) cavity field uniform: got [ 5. -0.  0.]  want [5. 0. 0.]
+      point [ 0.513 -0.307  0.099] in cavity: Coulomb rays [ 5.  0. -0.] ; superposition [5. 0. 0.]
+   [ok] 3.10(b) cavity field uniform: got [ 5.  0. -0.]  want [5. 0. 0.]
+   (c) |P| = 0.7071 m < a ; |P-d| = 0.5000 m > b (in the material)
+       b^3 = 0.064 m^3 ; |P-d|^3 = 0.125 m^3 ; (P-d)/|P-d|^3 = [0. 4. 0.] m^-2 ; at S: |S| = 2.5 m, |S-d| = 2.0 m
+      big ball [5. 5. 0.] ; cavity (-rho) [-0.   -2.56 -0.  ] ; total [5.   2.44 0.  ] V/m, |E| = 5.5636
+      Coulomb rays (no superposition): [5.   2.44 0.  ]
+   [ok] 3.10(c) superposition: got [5.   2.44 0.  ]  want [5.   2.44 0.  ]
+   [ok] 3.10(c) brute force: got [5.        2.4399987 0.       ]  want [5.   2.44 0.  ]
+   (d) at S: big 1.6000 x ; cavity -0.1600 x ; total [1.44 0.   0.  ] ; rays [ 1.43999 -0.       0.     ]
+       without cavity: 1.6000 V/m along +x
+   [ok] 3.10(d) superposition: got [1.44 0.   0.  ]  want [1.44 0.   0.  ]
+   [ok] 3.10(d) brute force: got [ 1.43999201 -0.          0.        ]  want [1.44 0.   0.  ]
+   wall point (0.5,0.4,0): cavity formula [5. 0. 0.] ; material formula [5. 0. 0.]
+   [ok] 3.10 wall continuity: got [5. 0. 0.]  want [5. 0. 0.]
+   big-ball term at wall point: [5. 4. 0.] ; cavity term: [-0. -4. -0.]
+
+==============================================================================
+3.11 Coaxial cable with a graded core
+==============================================================================
+   parameter set rho0=3e-06, a=0.01, b=0.02, c=0.03: rho1 = 4.000000e-07 C/m^3
+   [ok] 3.11 core charge/length = 2 pi rho0 a^2/3: got 6e-10  want 6e-10
+      r = 0.500 cm: closed    282.3523  Gauss-quad    282.3523  Coulomb-rays    282.3523 V/m
+   [ok] 3.11 closed vs Gauss r=0.005: got 282.3522668433  want 282.3522668433
+   [ok] 3.11 closed vs Coulomb r=0.005: got 282.3522668409  want 282.3522668433
+      r = 1.000 cm: closed   1129.4091  Gauss-quad   1129.4091  Coulomb-rays   1129.4091 V/m
+   [ok] 3.11 closed vs Gauss r=0.01: got 1129.409067373  want 1129.409067373
+   [ok] 3.11 closed vs Coulomb r=0.01: got 1129.409067408  want 1129.409067373
+      r = 1.500 cm: closed    752.9394  Gauss-quad    752.9394  Coulomb-rays    752.9394 V/m
+   [ok] 3.11 closed vs Gauss r=0.015: got 752.9393782487  want 752.9393782487
+   [ok] 3.11 closed vs Coulomb r=0.015: got 752.9393782493  want 752.9393782487
+      r = 2.000 cm: closed    564.7045  Gauss-quad    564.7045  Coulomb-rays    564.7045 V/m
+   [ok] 3.11 closed vs Gauss r=0.02: got 564.7045336865  want 564.7045336865
+   [ok] 3.11 closed vs Coulomb r=0.02: got 564.7045336861  want 564.7045336865
+      r = 2.500 cm: closed    248.4700  Gauss-quad    248.4700  Coulomb-rays    248.4700 V/m
+   [ok] 3.11 closed vs Gauss r=0.025: got 248.4699948221  want 248.4699948221
+   [ok] 3.11 closed vs Coulomb r=0.025: got 248.4699948211  want 248.4699948221
+      r = 2.800 cm: closed     93.5796  Gauss-quad     93.5796  Coulomb-rays     93.5796 V/m
+   [ok] 3.11 closed vs Gauss r=0.028: got 93.5796084395  want 93.5796084395
+   [ok] 3.11 closed vs Coulomb r=0.028: got 93.5796084384  want 93.5796084395
+      r = 3.600 cm: closed      0.0000  Gauss-quad      0.0000  Coulomb-rays     -0.0000 V/m
+   [ok] 3.11 closed vs Gauss r=0.036: got 0.0  want 0.0
+   [ok] 3.11 closed vs Coulomb r=0.036: got -8e-10  want 0.0
+   parameter set rho0=1e-06, a=0.02, b=0.05, c=0.06: rho1 = 2.424242e-07 C/m^3
+   [ok] 3.11 core charge/length = 2 pi rho0 a^2/3: got 8e-10  want 8e-10
+      r = 1.000 cm: closed    188.2348  Gauss-quad    188.2348  Coulomb-rays    188.2348 V/m
+   [ok] 3.11 closed vs Gauss r=0.01: got 188.2348445622  want 188.2348445622
+   [ok] 3.11 closed vs Coulomb r=0.01: got 188.2348445606  want 188.2348445622
+      r = 2.000 cm: closed    752.9394  Gauss-quad    752.9394  Coulomb-rays    752.9394 V/m
+   [ok] 3.11 closed vs Gauss r=0.02: got 752.9393782487  want 752.9393782487
+   [ok] 3.11 closed vs Coulomb r=0.02: got 752.9393782724  want 752.9393782487
+      r = 3.500 cm: closed    430.2511  Gauss-quad    430.2511  Coulomb-rays    430.2511 V/m
+   [ok] 3.11 closed vs Gauss r=0.035: got 430.251073285  want 430.251073285
+   [ok] 3.11 closed vs Coulomb r=0.035: got 430.2510732849  want 430.251073285
+      r = 5.000 cm: closed    301.1758  Gauss-quad    301.1758  Coulomb-rays    301.1758 V/m
+   [ok] 3.11 closed vs Gauss r=0.05: got 301.1757512995  want 301.1757512995
+   [ok] 3.11 closed vs Coulomb r=0.05: got 301.175751299  want 301.1757512995
+      r = 5.500 cm: closed    143.1207  Gauss-quad    143.1207  Coulomb-rays    143.1207 V/m
+   [ok] 3.11 closed vs Gauss r=0.055: got 143.1207082621  want 143.1207082621
+   [ok] 3.11 closed vs Coulomb r=0.055: got 143.1207082616  want 143.1207082621
+      r = 5.800 cm: closed     55.7034  Gauss-quad     55.7034  Coulomb-rays     55.7034 V/m
+   [ok] 3.11 closed vs Gauss r=0.058: got 55.7033521212  want 55.7033521212
+   [ok] 3.11 closed vs Coulomb r=0.058: got 55.7033521206  want 55.7033521212
+      r = 7.200 cm: closed      0.0000  Gauss-quad     -0.0000  Coulomb-rays     -0.0000 V/m
+   [ok] 3.11 closed vs Gauss r=0.072: got -0.0  want 0.0
+   [ok] 3.11 closed vs Coulomb r=0.072: got -6e-10  want 0.0
+   PAGE: rho1 = 0.4000 uC/m^3 (shell density = -0.4 uC/m^3)
+         core charge per length 2 pi rho0 a^2/3 = 6.2832e-10 C/m = 0.6283 nC/m (= 2 pi x 1e-10) ; c^2 - b^2 = 5 cm^2
+         E(a) = rho0 a/(3 eps0) = 1129.41 V/m (from outside 1129.41)
+         E(b) = rho0 a^2/(3 eps0 b) = 564.70 V/m (shell side 564.70)
+         E(2.5 cm) = 248.47 V/m ; factor (c^2-r^2)/(c^2-b^2) = 0.5500; rho0 a^2/(3 eps0 r) at 2.5 cm = 451.76
+         E(c-) = 4.518e-08 (continuous to 0)
+         max |E| on a scan = 1129.35 V/m at r = 1.000 cm
+   thin shell at r=b alternative: rho_s = -rho0 a^2/(3b) = -5.0000e-09 C/m^2 = -5.000 nC/m^2
+   [ok] 3.11 thin shell: got -5e-09  want -5e-09
+   [ok] 3.11 E(a): got 1129.409067373  want 1129.409067373
+
+==============================================================================
+3.12 Flux bookkeeping, line and sheet (rho_l = 6 nC/m on z axis, rho_s = 4 nC/m^2 on z=0)
+==============================================================================
+   (b) top 6.283185 nC (2 pi = 6.283185) ; bottom 6.283185 nC ; side 18.000000 nC ; total 30.566371 nC
+       Q_enc = rho_l*3 + rho_s*pi = 30.566371 nC (18 + 4 pi)
+   [ok] 3.12(b) top: got 6.2831853072  want 6.2831853072
+   [ok] 3.12(b) bottom: got 6.2831853072  want 6.2831853072
+   [ok] 3.12(b) side: got 18.0  want 18.0
+   [ok] 3.12(b) total: got 30.5663706144  want 30.5663706144
+   (c) top z=3   : +8.000000 nC
+   (c) bottom z=1: -8.000000 nC
+   (c) x=+1      : +3.000000 nC
+   (c) x=-1      : +3.000000 nC
+   (c) y=+1      : +3.000000 nC
+   (c) y=-1      : +3.000000 nC
+       total 12.000000 nC = rho_l*2 = 12.0 nC
+   [ok] 3.12(c) top: got 8.0  want 8.0
+   [ok] 3.12(c) bottom: got -8.0  want -8.0
+   [ok] 3.12(c) side x=+1: got 3.0  want 3.0
+   [ok] 3.12(c) side x=-1: got 3.0  want 3.0
+   [ok] 3.12(c) side y=+1: got 3.0  want 3.0
+   [ok] 3.12(c) side y=-1: got 3.0  want 3.0
+   (d) dome flux (direct) = 12.283185 nC ; 6 + 2 pi = 12.283185 ; sheet part alone 6.283185 (2 pi)
+   [ok] 3.12(d) dome: got 12.2831853072  want 12.2831853072
+   [ok] 3.12(d) sheet part: got 6.2831853072  want 6.2831853072
+   numbers: 2 pi = 6.28 ; 18 + 4 pi = 30.57 ; 6 + 2 pi = 12.28 nC
+
+==============================================================================
+ALL CHECKS PASSED
