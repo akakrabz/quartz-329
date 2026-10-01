@@ -1,11 +1,11 @@
 ---
 title: "Errata in the course materials"
-description: "Slips found in the lecture slides, the course notes, the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
+description: "Slips found in the lecture slides (Lectures 1–16), the course notes, the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
 tags: [toolkit, exam-1]
 aliases: ["errata", "known errors in the slides", "errors in the exam key"]
 ---
 
-Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–10, so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
+Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–16, so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
 
 > [!tip] How to read this page
 > "Slide" means the annotated lecture decks (Shao, after Goddard and Cunningham); "notes" means Prof. Kudeki's lecture notes; "key" means the FA26 Exam 1 solutions; "HW sol." means the FA26 homework solution sets. Nothing here is a criticism of the materials — most of these are momentary hand slips that the authors corrected verbally or on the next line. They are listed because they are copied verbatim into notecards every semester.
@@ -35,6 +35,20 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | Exam 1 review, slide 21 | "$\vec E = \nabla V$ for some scalar $V$" | $\vec E = -\nabla V$ | the course convention (the same deck's slide 22 and equation sheet have the minus sign) |
 | Exam 1 review, slide 24 (ink) | $\hat n\cdot(\vec P_1-\vec P_2) = \rho_{sb}$ | $\hat n\cdot(\vec P_1-\vec P_2) = -\rho_{sb}$ | the minus sign is what makes $\epsilon_0E_n$ jump by $\rho_s+\rho_{sb}$ while $D_n$ jumps by $\rho_s$ ([[concepts/polarization]]) |
 | Exam 1 review, slides 13–15 and equation sheet | $\epsilon\oint\vec E\cdot d\vec S = Q_{\text{enc}}$ | valid only when one uniform $\epsilon$ fills the region; in general $\oint\vec D\cdot d\vec S = Q_{\text{free}}$ | with two dielectrics inside the surface there is no single $\epsilon$ to pull out |
+| L11–12 slide 17 | line current $\vec J = \hat z I(z)\,\delta(x-x_0)(y-y_0)$ | $\hat z\,I(z)\,\delta(x-x_0)\,\delta(y-y_0)$ (fixed in ink) | each δ carries 1/m; one is missing |
+| L11–12 slide 15 | $\int_0^{2\pi}\big(\tfrac{\mu_0I}{2\pi}\big)$ | $\int_0^{2\pi}\tfrac{\mu_0I}{2\pi}\,d\phi = \mu_0I$ | the $d\phi$ is dropped |
+| L11–12 slide 16 | "$\nabla\cdot\vec H = 0$" listed as a law of magnetostatics | $\nabla\cdot\vec B = 0$; the $\vec H$ form holds only where $\mu$ is uniform | fine in free space, wrong across a magnetic interface |
+| L11–12 slide 8 | "magnetic flux at point 1 due to current 2" | magnetic flux *density* $d\vec B$ | flux is an integral over a surface, in Wb |
+| L13 slides 5, 6, 10 | $\vec J_{s0}$ with a vector arrow; $\mathbf I_s = \vec J_{s0}\hat z\,dx$ | $\vec J_s = J_{s0}\hat z$ with scalar $J_{s0}$; the strip current is $dI = J_{s0}\,dx$ (ink fixes slide 5) | a magnitude is a scalar |
+| L13 slide 20 | $\nabla\times\vec H = \vec J + d\vec D/dt$; ink $\oiint_S\nabla\times\vec H\cdot d\vec S$ for Stokes | $\partial\vec D/\partial t$; Stokes is over the *open* surface, $\iint_S$ | a closed-surface integral of a curl is identically zero |
+| L13 slide 13 | "the magnetic field outside the solenoid is 0" stated as given | it follows from Ampère's law on a loop with both legs outside plus the field vanishing far away (course notes, Lecture 13) | an assumption presented as a fact |
+| L14 slides 12–13 | $\tau$ in $B_0e^{-t/\tau}$ called a time constant beside $RC$ and $L/R$ | it is the decay constant of the *applied* field, not a circuit constant | three unrelated $\tau$'s in two lectures |
+| L15 slide 13 | typed sign in the inductor's $v$–$i$ relation inconsistent with the symbol's $+/-$ | $V = L\,dI/dt$ is the *drop* in the direction of $I$; the self-emf $-L\,dI/dt$ is the *rise* | the circuit symbol on the same slide is right |
+| L15 slide 15 | solenoid $L = N^2\mu_0A\ell$ with $N$ = turns per length and $n$ = total turns | $L = n^2\mu_0A\ell = N^2\mu_0A/\ell$ with $n$ = turns per metre, $N = n\ell$ (the notes' convention) | the two symbols are swapped relative to the notes |
+| L16 slides 3, 5 | continuity with total derivatives, $\nabla\cdot\vec J = -d\rho/dt$ | $\nabla\cdot\vec J = -\partial\rho/\partial t$ (the total $dQ/dt$ is fine for a fixed volume) | $\rho$ is a field of $(x,y,z,t)$ |
+| L16 slide 6 | line current $B_\phi = \mu_0I/(2\pi R)$ with $R$ the cylindrical radius, next to a point charge with spherical $R$; "$B = \tfrac{\mu_0}{2}\vec J_s\times\hat a_n$" | $B_\phi = \mu_0I/(2\pi r)$; $\vec B = \tfrac{\mu_0}{2}\vec J_s\times\hat a_n$ | one letter for two radii; a scalar equated to a vector |
+| L16 slide 10 | $D_{1n} = \rho$ at a perfect conductor | $D_{1n} = \rho_s$ | surface charge density, C/m² |
+| L16 slide 8 | $\lvert\vec H_{t1}\rvert - \lvert\vec H_{t2}\rvert = \pm\lvert\vec J_s\rvert$ | $\hat a_n\times(\vec H_1-\vec H_2) = \vec J_s$ | the magnitude form hides the direction; use the vector form |
 
 ## Course notes (Kudeki)
 
@@ -48,6 +62,16 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L8 p. 12 | boundary condition "relevant for $\vec D = \epsilon\vec E+\vec P$" | $\vec D = \epsilon_0\vec E+\vec P$ |
 | L9 pp. 4, 7 (margin graphs) | $V(z)$ for the two-layer plates, and $\epsilon(z) = 4\epsilon_0/(4-z)$, drawn as straight lines | qualitative sketches: the actual rise is 2 V then 1 V (not the other way round), and $\epsilon(z)$ is convex |
 | L10 p. 7 | coax length written "$l$" once | $\ell$, as everywhere else |
+| L11 pp. 4–5 | superconductivity: "the DC conductivity vanishes" | the DC *resistivity* vanishes ($\sigma\to\infty$) |
+| L12 p. 7 | surface current written $\mathbf J_s(x,y)$ for a sheet on $x = x_0$ | $\mathbf J_s(y,z)$ (the displayed equation has it right) |
+| L13 p. 2 | "where $_y(x)$ is an odd function"; "for $x<\tfrac W2$" | $B_y(x)$; $\lvert x\rvert<\tfrac W2$ |
+| L13 p. 9 | "the Earth's magnetic field had such a dipole topology" | has |
+| L14 p. 4, footnote 3 | Scanlon et al., *Am. J. Phys.* 37, 689 (1969); Saslow, *Am. J. Phys.* 58, 22 (2021) | Scanlon et al. is on p. 698 (as footnote 5 says); the Saslow reference is *The Physics Teacher* 59, 22 (2021) |
+| L14 p. 12 | "passes through small a loop" | a small loop |
+| L15 p. 4 | solenoid field "as examined in Example 3 of Lecture 12" | Example 3 of Lecture 13 (stale cross-reference) |
+| L15 p. 7 | "$\mathcal L$ and $\mathcal C$ are proportional to $\epsilon_0$ and $\mu_0$, respectively" | the other way round: $\mathcal L\propto\mu_0$, $\mathcal C\propto\epsilon_0$ |
+| L15 p. 3 | "an $N$-turn coil … the resistive $n$-turn coil" | one symbol; $N$ plays no role once $L$ is given |
+| L16 p. 5, p. 7 | "this results would be"; "By, contrast"; "requires $\nabla\cdot\mathbf B$ to an invariant scalar" | this result would be; By contrast; to be a time-invariant scalar |
 
 ## FA26 Exam 1 solution key
 
@@ -80,6 +104,12 @@ None of these changes a boxed answer; all of them are exactly the slips graders 
 - Permittivity of free space: $\epsilon_0$ (slides), $\epsilon_o$ (notes); relative permittivity is given as "$2\epsilon_0$" on the slides and as $\epsilon_r$ in the notes.
 - Volume: the notes use $dV$ and $V$ for a volume on the same page where $V$ is the potential; this site writes $d^3\mathbf r'$ or $d\mathcal V$ where it could be confused.
 - Unit vectors: $\hat a_x$ (slides) vs $\hat x$ (notes, this site); the spherical radius is $r$ in the notes and $R$ on the review's differential-element table.
-- The review deck's "Stoke's theorem" is Stokes' theorem, after G. G. Stokes.
+- The review deck's "Stoke's theorem" is Stokes' theorem, after G. G. Stokes (the course notes write it the same way in Lectures 12 and 14).
+- Three different $\tau$'s: the Drude collision time (Lecture 11, $\sim10^{-14}$ s), the relaxation time $\epsilon/\sigma$ (Lectures 8, 10), and the circuit time constants $RC$ and $L/R$ (Lectures 10, 15). Lecture 14 also uses $\tau$ for the decay of an applied field.
+- $L$ is overloaded in Lectures 13–15: the length of an Amperian rectangle, the equatorial radius of a dipole field line ($r = L\sin^2\theta$), a loop's length in a footnote, and the inductance. This site writes $\ell$ for lengths wherever confusion is possible.
+- Turns: the notes use $n$ for turns per metre and $N = n\ell$ for the total; one slide swaps them.
+- Scalar potential: $V$ in the notes, $\Phi$ on the potentials slides. Magnetic flux: $\Psi$ in the notes; some slides write $\Phi$ or $\psi_m$.
+- Biot–Savart's vector from source to field point: $\mathbf r$, $r$ in the notes (clashing with the cylindrical $r$ of $\mu_0I/2\pi r$), $\hat a_R$, $R$ on the slides. This site writes $\mathbf R$, $\hat R$.
+- Boundary-condition sides: Kudeki's $\pm$ superscripts ($\hat n$ from $-$ to $+$) and the slides' subscripts 1/2 ($\hat a_n$ from 2 into 1) are the same convention with different labels.
 
 *If you find another one, it belongs here — the pages that quote a slide slip also say so inline, but this is the list to check against before an exam.*

@@ -31,4 +31,4 @@ aliases: ["capacitor", "per-unit-length capacitance", "series capacitors", "para
 
 **Where it appears.** [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]], [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] (layered plates), [[problems/two-layer-coaxial-capacitor]] (FA26 4(e)); Unit 4 (per-unit-length $\mathcal{C}$ and $\mathcal{L}$ of a transmission line).
 
-Related: [[concepts/electrostatic-potential]] · [[concepts/gauss-law]] · [[concepts/conductors]] · [[concepts/permittivity]] · [[concepts/conductance]] · [[concepts/electrostatic-energy]].
+Related: [[concepts/inductance]] (the magnetic twin: $L = N\Psi/I$, same geometric factor inverted, $\mathcal{LC} = \mu\epsilon$) · [[concepts/electrostatic-potential]] · [[concepts/gauss-law]] · [[concepts/conductors]] · [[concepts/permittivity]] · [[concepts/conductance]] · [[concepts/electrostatic-energy]].

@@ -35,6 +35,14 @@ Wavelength–frequency: $\lambda f = c$. With $c = 300$ m/µs: 1 MHz ↔ 300 m, 
 | $\mu$ | H/m | V·s/(A·m) |
 | $\sigma$ (conductivity) | S/m | (Ω·m)⁻¹ |
 | capacitance $C$; per length $\mathcal{C}$ | F; F/m | |
+| conductance $G$; per length $\mathcal{G}$ | S; S/m | |
+| inductance $L$; per length $\mathcal{L}$ | H (henry) = Wb/A; H/m | V·s/A |
+| $\mathbf{A}$ (vector potential) | Wb/m | T·m = V·s/m |
+| emf $\mathcal{E} = \oint(\mathbf{E}+\mathbf{v}\times\mathbf{B})\cdot d\mathbf{l}$ | V | |
+| MMF $\oint\mathbf{H}\cdot d\mathbf{l}$ | A | |
+| surface current $\mathbf{J}_s$ | A/m | same as $\mathbf{H}$: $H_t$ jumps by $J_s$ |
+| mobility $\lvert q\tau/m\rvert$ | m²/(V·s) | |
+| energy density $w$ | J/m³ | $\tfrac12\epsilon E^2$, $\tfrac12\mu H^2$ |
 
 ## The dimension ladder of sources
 

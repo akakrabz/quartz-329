@@ -28,4 +28,4 @@ independent of geometry — the relaxation time of [[concepts/conductors]] again
 
 **Where it appears.** [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]], [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] (Ohm's law, relaxation), HW4 #4; Unit 4 (the per-unit-length $\mathcal{G}$ of a lossy transmission line).
 
-Related: [[concepts/capacitance]] · [[concepts/conductors]] · [[concepts/permittivity]].
+Related: [[concepts/capacitance]] · [[concepts/inductance]] (the third line parameter: $\mathcal{G}/\mathcal{C} = \sigma/\epsilon$ and $\mathcal{LC} = \mu\epsilon$ share one geometric factor) · [[concepts/conductors]] · [[concepts/permittivity]].

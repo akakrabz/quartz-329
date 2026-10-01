@@ -4,7 +4,7 @@ description: "Lectures 1–11: from Coulomb's law to capacitance. Charges at res
 tags: [electrostatics]
 ---
 
-Static charge → static electric field. The unit builds one idea at a time: force defines the field (L1–2); symmetry plus Gauss's law computes it (L3); divergence and curl describe it locally (L4); zero curl gives a potential (L5–7); materials respond to it (L8–9); and the whole thing packages into a circuit element, the capacitor (L10). Exam 1 covers Lectures 1–10.
+Static charge → static electric field. The unit builds one idea at a time: force defines the field (L1–2); symmetry plus Gauss's law computes it (L3); divergence and curl describe it locally (L4); zero curl gives a potential (L5–7); materials respond to it (L8–9); and the whole thing packages into a circuit element, the capacitor (L10). Lecture 11 then explains, from Newton's law for one charge, where the two material constants $\sigma$ and $\chi_e$ come from. Exam 1 covers Lectures 1–10.
 
 | # | page | one line |
 |---|---|---|
@@ -18,7 +18,7 @@ Static charge → static electric field. The unit builds one idea at a time: for
 | 8 | [[1-electrostatics/08-conductors-dielectrics-and-polarization\|Conductors, dielectrics, and polarization]] | $\mathbf{J}=\sigma\mathbf{E}$; $\mathbf{E}=0$ inside conductors, $\tau=\epsilon/\sigma$; $\mathbf{P}$, bound charge, $\mathbf{D}=\epsilon_0\mathbf{E}+\mathbf{P}=\epsilon\mathbf{E}$ |
 | 9 | [[1-electrostatics/09-static-fields-in-dielectric-media\|Static fields in dielectric media]] | the $\mathbf{D}$-first chain; refraction at interfaces; layered and graded media; spheres |
 | 10 | [[1-electrostatics/10-capacitance-and-conductance\|Capacitance and conductance]] | $C=Q/V$ by two routes; plates, coax, spheres; series/parallel; $\tfrac12CV^2$; $G=(\sigma/\epsilon)C$; diode |
-| 11 | Lorentz–Drude models for conductivity and susceptibility | *coming* (not on Exam 1) |
+| 11 | [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility\|Where σ and χe come from: the Lorentz–Drude models]] | $\sigma = Nq^2\tau/m$ and its AC form; $\chi_e = N_de^2/(m\epsilon_0\omega_0^2)$; polarization current $\partial\mathbf{P}/\partial t$; what drives a current in a wire (not on Exam 1) |
 
 **Worked problems for this unit** (one per FA26 Exam 1 problem, re-parameterized): [[problems/curl-potential-and-charge-from-a-field]] · [[problems/charged-slab-with-a-power-law-profile]] · [[problems/fields-across-a-dielectric-interface]] · [[problems/two-layer-coaxial-capacitor]] · plus [[problems/flux-through-a-plane-from-two-charges]]
 **Demo:** [[demos/point-charges-and-gauss]]

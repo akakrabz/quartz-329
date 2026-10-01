@@ -123,7 +123,7 @@ V(\mathbf{r}) = \int\frac{\nabla'\cdot\mathbf{F}(\mathbf{r}')}{4\pi\lvert\mathbf
 \mathbf{A}(\mathbf{r}) = \int\frac{\nabla'\times\mathbf{F}(\mathbf{r}')}{4\pi\lvert\mathbf{r}-\mathbf{r}'\rvert}d^3\mathbf{r}' .
 $$
 
-So divergence and curl really are the complete "sources" of a field. For a static $\mathbf{E}$ the curl part is absent and $V$ is the Coulomb integral; for the magnetic field of Unit 2 the divergence part is absent and $\mathbf{A}$ — the vector potential — carries everything. ($V$ is fixed up to a constant and $\mathbf{A}$ up to a gradient; this **gauge freedom** never changes $\mathbf{F}$.)
+So divergence and curl really are the complete "sources" of a field. For a static $\mathbf{E}$ the curl part is absent and $V$ is the Coulomb integral; for the magnetic field of Unit 2 the divergence part is absent and $\mathbf{A}$ — the [[concepts/vector-potential|vector potential]] of [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Lecture 13]] — carries everything. ($V$ is fixed up to a constant and $\mathbf{A}$ up to a gradient; this **gauge freedom** never changes $\mathbf{F}$.)
 
 ## 6. Summary
 

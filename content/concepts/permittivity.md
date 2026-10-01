@@ -27,4 +27,6 @@ aliases: ["dielectric constant", "relative permittivity", "electric susceptibili
 
 **Where it appears.** [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]], [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]], [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]], [[problems/fields-across-a-dielectric-interface]], [[problems/two-layer-coaxial-capacitor]].
 
-Related: [[concepts/polarization]] · [[concepts/electric-flux-density]] · [[concepts/boundary-conditions]] · [[concepts/capacitance]].
+Where $\chi_e$ comes from — bound electrons on springs, $\chi_e = N_de^2/(m\epsilon_0\omega_0^2)$, flat up to optical frequencies — is the Lorentz model of [[concepts/conductivity-and-susceptibility-models]].
+
+Related: [[concepts/polarization]] · [[concepts/conductivity-and-susceptibility-models]] · [[concepts/electric-flux-density]] · [[concepts/boundary-conditions]] · [[concepts/capacitance]].

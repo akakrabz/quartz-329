@@ -90,7 +90,7 @@ The line integral $\int_a^b\mathbf{E}\cdot d\mathbf{l}$ is defined as a limit of
 > With the $+$ sign both paths give 1: path independent, $\nabla\times\mathbf{E}=0$, and $V(p) - V(o) = -1$ — which is what $V=-xy$ predicts. With the $-$ sign the answers differ ($+1$ versus $-1$), and no potential exists. Their difference, 2, is exactly the flux of $\nabla\times\mathbf{E} = -2\hat{z}$ through the square with the loop's (clockwise, $-\hat{z}$) orientation: Stokes' theorem, checked.
 
 > [!intuition] What a voltmeter measures
-> An ideal voltmeter with its leads on $p$ and $o$ reads $\int_p^o\mathbf{E}\cdot d\mathbf{l}$ *along its own leads*. It gives a meaningful "voltage between two points" only because the integral is independent of how the leads are routed — which is true for static fields. When Faraday's law appears (Lecture 14, [[2-magnetostatics/index|Unit 2]]) the induced $\mathbf{E}$ has curl, and the reading of a voltmeter genuinely depends on where you drape the wires.
+> An ideal voltmeter with its leads on $p$ and $o$ reads $\int_p^o\mathbf{E}\cdot d\mathbf{l}$ *along its own leads*. It gives a meaningful "voltage between two points" only because the integral is independent of how the leads are routed — which is true for static fields. When Faraday's law appears ([[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]]) the induced $\mathbf{E}$ has curl, and the reading of a voltmeter genuinely depends on where you drape the wires.
 
 ## 5. From E to V: two recipes
 

@@ -1080,6 +1080,622 @@ def fig_capacitance_recipes():
     figure("capacitance-recipes", "".join(o),
            "<strong>Three chains, one habit.</strong> Capacitance and conductance are never computed from a formula you remember; they fall out of a chain of steps whose direction depends on what the problem hands you. Given the voltage, start from Laplace's equation and walk to the charge; given the charge, start from Gauss's law and walk to the voltage. For conductance, replace ε by σ and D by J: the geometry factor is the same, which is why G/C = σ/ε whenever one homogeneous medium fills the field region.")
 
+# --------------------------------------------------------------------------- Lectures 11–16 figures
+# (appended to figs.py; same helpers and conventions)
+
+def _odot(cx, cy, r=7, color="currentColor"):
+    """current out of the page: circle with a dot"""
+    return circle(cx, cy, r, stroke=color, w=1.4) + circle(cx, cy, 1.8, fill=color, stroke="none")
+
+def _otimes(cx, cy, r=7, color="currentColor"):
+    """current into the page: circle with a cross"""
+    k = r * 0.62
+    return (circle(cx, cy, r, stroke=color, w=1.4) +
+            line(cx-k, cy-k, cx+k, cy+k, stroke=color, w=1.4) + line(cx-k, cy+k, cx+k, cy-k, stroke=color, w=1.4))
+
+def _sub(base, s, size=9):
+    """base text with a subscript s (SVG tspan)"""
+    return f'{base}<tspan baseline-shift="sub" style="font-size:{size}px">{s}</tspan>'
+
+def _zigzag(x1, y1, x2, y2, n=6, amp=8, color="var(--hi)", w=2.0):
+    """resistor symbol along the segment (x1,y1)->(x2,y2)"""
+    dx, dy = x2-x1, y2-y1
+    Ln = math.hypot(dx, dy); ux, uy = dx/Ln, dy/Ln; nx, ny = -uy, ux
+    pts = [(x1, y1)]
+    for i in range(n):
+        t = (i+0.5)/n; s = amp if i % 2 == 0 else -amp
+        pts.append((x1+ux*Ln*t+nx*s, y1+uy*Ln*t+ny*s))
+    pts.append((x2, y2))
+    return path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in pts), stroke=color, w=w)
+
+def _coil(x1, y, x2, n=5, r=9, color="var(--accent)"):
+    """inductor symbol: n half-loops along a horizontal segment"""
+    step = (x2-x1)/n
+    d = f"M{x1:.1f},{y:.1f}"
+    for i in range(n):
+        d += f" A{step/2:.1f},{r:.1f} 0 0 1 {x1+(i+1)*step:.1f},{y:.1f}"
+    return path(d, stroke=color, w=2.0)
+
+# --------------------------------------------------------------------------- 26. Drude and Lorentz models
+def fig_drude_lorentz_models():
+    W, H = 640, 290
+    o = [svg_open(W, H)]
+    ox, oy = 30, 60
+    o.append(text(ox+130, oy-30, "free carrier (Drude): collisions + drift", size=13, anchor="middle", weight=600, fill="var(--accent)"))
+    rng = np.random.default_rng(3)
+    pts = [(0.0, 0.0)]
+    for k in range(8):
+        ang = rng.uniform(0, 2*math.pi); L = rng.uniform(34, 56)
+        pts.append((pts[-1][0]+L*math.cos(ang), pts[-1][1]+L*math.sin(ang)))
+    mx = sum(p[0] for p in pts)/len(pts); my = sum(p[1] for p in pts)/len(pts)
+    base = [(ox+62+(x-mx)*0.85, oy+105+(y-my)*0.85) for x, y in pts]
+    o.append(path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in base), stroke="currentColor", w=1.3, dash="4 3", opacity=0.7))
+    o.append(charge(*base[0], "+", r=6))
+    o.append(text(ox+60, oy+40, "E = 0: no net drift", size=11, fill="var(--muted)"))
+    drift = [(X+13*i+128, Y) for i, (X, Y) in enumerate(base)]
+    o.append(path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in drift), stroke="var(--accent)", w=1.8))
+    o.append(charge(*drift[0], "+", r=6))
+    o.append(arrow(drift[-1][0]-4, drift[-1][1], drift[-1][0]+22, drift[-1][1], stroke="var(--accent)", w=2.2))
+    o.append(text(ox+222, oy+40, "E on: mean drift v = (qτ/m)E", size=11, fill="var(--accent)"))
+    o.append(arrow(ox+70, oy+185, ox+230, oy+185, stroke="var(--hi)", w=2.4)); o.append(text(ox+150, oy+203, "E", size=15, math=True, fill="var(--hi)", weight=600))
+    o.append(text(ox+150, oy+160, "J = Nqv = σE,   σ = Nq²τ/m", size=12.5, weight=600))
+    # right: bound electron on a spring
+    rx, ry = 400, 150
+    o.append(text(rx+100, oy-30, "bound electron (Lorentz): a spring", size=13, anchor="middle", weight=600, fill="var(--accent2)"))
+    o.append(_tint(rx-10, ry-70, 230, 150, "var(--accent2)", 0.08, rx=70))
+    o.append(charge(rx+120, ry, "+", r=12, fill="var(--accent2)"))
+    o.append(text(rx+120, ry+30, "nucleus", size=11, fill="var(--muted)"))
+    ex = rx+40
+    zz = [(rx+108, ry)]
+    for i in range(7):
+        zz.append((rx+108-(i+0.5)*(68/7), ry+(7 if i % 2 == 0 else -7)))
+    zz.append((ex+6, ry))
+    o.append(path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in zz), stroke="currentColor", w=1.4))
+    o.append(charge(ex, ry, "-", r=8, fill="var(--hi)"))
+    o.append(text(ex, ry-18, "−e", size=12, fill="var(--hi)"))
+    o.append(arrow(rx+120, ry-40, ex, ry-40, stroke="currentColor", w=1.6, small=True)); o.append(text((rx+120+ex)/2, ry-46, "r", size=14, math=True))
+    o.append(arrow(rx+150, ry-40, rx+205, ry-40, stroke="var(--hi)", w=2.2)); o.append(text(rx+178, ry-46, "E", size=14, math=True, fill="var(--hi)", weight=600))
+    o.append(arrow(rx+150, ry+55, rx+205, ry+55, stroke="var(--accent2)", w=2.2)); o.append(text(rx+178, ry+72, "p = −e r  ∥ E", size=12, fill="var(--accent2)", weight=600))
+    o.append(text(rx+100, oy+200, "m r″ = −eE − mω₀²r − 2mα r′", size=12.5, weight=600))
+    o.append(text(rx+100, oy+218, "DC:  P = " + _sub("N", "d") + " p = ε₀χₑE,   χₑ = " + _sub("N", "d") + " e²/(mε₀ω₀²)", size=11.5))
+    o.append(svg_close())
+    figure("drude-lorentz-models", "".join(o),
+           "<strong>Two mechanical models, two material constants.</strong> Left: a free carrier random-walks between collisions; with a field on, each flight is bent a little in the direction of q<b>E</b> and the walk drifts at a mean velocity set by the balance between q<b>E</b> and the collisional drag −m<b>v</b>/τ. Summing Nq<b>v</b> over the carriers gives Ohm's law with σ = Nq²τ/m. Right: a bound electron sits on a spring of natural frequency ω₀; a DC field stretches the spring until −e<b>E</b> balances −mω₀²<b>r</b>, producing a dipole moment along <b>E</b>. N<sub>d</sub> such dipoles per unit volume make the polarization <b>P</b> = ε₀χ<sub>e</sub><b>E</b>. The same spring, driven at ω, gives the frequency dependence of ε that Unit 3 needs.")
+
+# --------------------------------------------------------------------------- 27. Force between parallel wires
+def fig_two_wires_force():
+    W, H = 640, 250
+    o = [svg_open(W, H)]
+    def panel(px, same):
+        y1, y2 = 70, 170
+        for y in (y1, y2):
+            o.append(line(px, y, px+240, y, stroke="currentColor", w=5, opacity=0.85))
+        o.append(arrow(px+95, y1-14, px+150, y1-14, stroke="currentColor", w=2)); o.append(text(px+122, y1-22, "I₁", size=13))
+        if same:
+            o.append(arrow(px+95, y2+22, px+150, y2+22, stroke="currentColor", w=2)); o.append(text(px+122, y2+40, "I₂", size=13))
+        else:
+            o.append(arrow(px+150, y2+22, px+95, y2+22, stroke="currentColor", w=2)); o.append(text(px+122, y2+40, "I₂", size=13))
+        for k in range(4):
+            o.append(_otimes(px+80+k*42, y2-26, r=6, color="var(--accent)"))
+        o.append(text(px+244, y2-22, "B₁", size=13, anchor="start", fill="var(--accent)", weight=600))
+        if same:
+            o.append(arrow(px+40, y2-6, px+40, y2-48, stroke="var(--hi)", w=2.6)); o.append(text(px+48, y2-52, "F on 2", size=12, anchor="start", fill="var(--hi)", weight=600))
+            o.append(arrow(px+200, y1+6, px+200, y1+48, stroke="var(--hi)", w=2.6)); o.append(text(px+208, y1+30, "F on 1", size=12, anchor="start", fill="var(--hi)", weight=600))
+            o.append(text(px+120, 232, "parallel currents attract", size=13, weight=600))
+        else:
+            o.append(arrow(px+40, y2+6, px+40, y2+48, stroke="var(--hi)", w=2.6)); o.append(text(px+48, y2+30, "F on 2", size=12, anchor="start", fill="var(--hi)", weight=600))
+            o.append(arrow(px+200, y1-6, px+200, y1-48, stroke="var(--hi)", w=2.6)); o.append(text(px+208, y1-26, "F on 1", size=12, anchor="start", fill="var(--hi)", weight=600))
+            o.append(text(px+120, 232, "antiparallel currents repel", size=13, weight=600))
+    panel(30, True); panel(350, False)
+    o.append(text(320, 24, "dF = I dl × B,   with B of the other wire = μ₀I/(2πr) φ̂", size=13, weight=600))
+    o.append(svg_close())
+    figure("two-wires-force", "".join(o),
+           "<strong>Ampère's 1820 observation, in field language.</strong> Wire 1 makes a field <b>B</b>₁ that circulates around it (into the page below the wire, for a current to the right). Wire 2 sits in that field and each of its current elements feels d<b>F</b> = I₂ d<b>l</b> × <b>B</b>₁: toward wire 1 when the currents run the same way, away when they are opposed. The force on wire 1 is the mirror image. There is no electric field anywhere in the lab — both wires are neutral — yet the moving carriers feel a force. Lecture 12 explains where it comes from: in the carriers' own frame the other wire is <em>not</em> neutral.")
+
+# --------------------------------------------------------------------------- 28. Biot–Savart for a straight wire
+def fig_biot_savart_line():
+    W, H = 640, 300
+    o = [svg_open(W, H)]
+    wx = 150
+    o.append(line(wx, 280, wx, 30, stroke="currentColor", w=3.5, arrow=True))
+    o.append(text(wx+10, 36, "z", size=14, math=True, anchor="start"))
+    o.append(arrow(wx-22, 220, wx-22, 170, stroke="currentColor", w=2)); o.append(text(wx-30, 198, "I", size=14, math=True, anchor="end"))
+    ez = 95
+    o.append(line(wx, ez+10, wx, ez-10, stroke="var(--hi)", w=6))
+    o.append(text(wx-12, ez+4, "I dz ẑ", size=12.5, anchor="end", fill="var(--hi)", weight=600))
+    px, py = wx+190, 190
+    o.append(line(wx, py, px, py, stroke="currentColor", w=1.2, dash="4 3"))
+    o.append(text((wx+px)/2, py+18, "r", size=14, math=True))
+    o.append(circle(px, py, 4, fill="currentColor"))
+    o.append(text(px+10, py+4, "P", size=14, anchor="start"))
+    o.append(arrow(wx, ez, px-6, py-3, stroke="var(--accent)", w=2))
+    o.append(text((wx+px)/2+16, (ez+py)/2-10, "R = √(r² + z²)", size=12.5, fill="var(--accent)", anchor="start"))
+    th = math.atan2(py-ez, px-wx)
+    o.append(path(f"M{px-34:.1f},{py:.1f} A34,34 0 0 0 {px-34*math.cos(th):.1f},{py-34*math.sin(th):.1f}", stroke="var(--muted)", w=1.2))
+    o.append(text(px-48, py-10, "α", size=13, math=True, fill="var(--muted)"))
+    o.append(line(wx+8, ez, wx+8, py, stroke="var(--muted)", w=1, dash="2 3"))
+    o.append(text(wx+16, (ez+py)/2+4, "z", size=13, math=True, anchor="start", fill="var(--muted)"))
+    o.append(_otimes(px, py+36, r=9, color="var(--accent2)"))
+    o.append(text(px, py+62, "dB: into page (φ̂)", size=12, fill="var(--accent2)", weight=600))
+    fx = 415
+    o.append(text(fx, 60, "dB = μ₀ I dl × R̂ /(4πR²)", size=13.5, anchor="start", weight=600))
+    o.append(text(fx, 86, "|dl × R̂| = dz cos α = dz · r/R", size=12, anchor="start"))
+    o.append(text(fx, 110, "dB = μ₀ I r dz /(4π(r²+z²)³ᐟ²)", size=12, anchor="start"))
+    o.append(line(fx, 126, fx+210, 126, stroke="var(--muted)", w=1))
+    o.append(text(fx, 150, "∫ dz/(r²+z²)³ᐟ² = 2/r²  (−∞ to ∞)", size=12, anchor="start"))
+    o.append(text(fx, 186, "B = μ₀ I /(2π r)  φ̂", size=15, anchor="start", weight=700, fill="var(--accent)"))
+    o.append(text(fx, 214, "all elements point along φ̂:", size=11.5, anchor="start", fill="var(--muted)"))
+    o.append(text(fx, 230, "no cancellation, one integral", size=11.5, anchor="start", fill="var(--muted)"))
+    o.append(svg_close())
+    figure("biot-savart-line", "".join(o),
+           "<strong>Biot–Savart is Coulomb's law for current elements.</strong> Each element I d<b>l</b> contributes a field d<b>B</b> that falls off as 1/R² and points along d<b>l</b> × <b>R̂</b>, with <b>R</b> drawn <em>from the element to the field point</em>. For a straight wire every element's contribution points the same way — around the wire — so the five-step recipe of Lecture 2 reduces to one scalar integral, and the result is the 1/r field that the relativistic argument produced. Compare the line charge of Lecture 2: same integral, same 1/r, but the electric field points <em>away</em> from the line while the magnetic field circles it.")
+
+# --------------------------------------------------------------------------- 29. Ampère's law for a coax: H_phi(r)
+def fig_ampere_coax_profile():
+    W, H = 640, 290
+    o = [svg_open(W, H)]
+    cx, cy = 150, 150
+    a, b = 38, 95
+    o.append(circle(cx, cy, b+6, fill="currentColor", stroke="none", opacity=0.18))
+    o.append(circle(cx, cy, b, fill="var(--paper)", stroke="none"))
+    o.append(circle(cx, cy, a, fill="var(--hi)", stroke="none", opacity=0.35))
+    o.append(circle(cx, cy, a, stroke="currentColor", w=1.2))
+    o.append(circle(cx, cy, b, stroke="currentColor", w=1.2)); o.append(circle(cx, cy, b+6, stroke="currentColor", w=1.2))
+    for (dx, dy) in ((0, 0), (16, 10), (-16, 10), (0, -18), (14, -10), (-14, -10)):
+        o.append(circle(cx+dx, cy+dy, 1.8, fill="currentColor", stroke="none"))
+    for k in range(10):
+        ang = k*2*math.pi/10
+        X, Y = cx+(b+3)*math.cos(ang), cy+(b+3)*math.sin(ang)
+        o.append(line(X-2.2, Y-2.2, X+2.2, Y+2.2, w=1.1)); o.append(line(X-2.2, Y+2.2, X+2.2, Y-2.2, w=1.1))
+    for r, col in ((22, "var(--accent)"), (66, "var(--accent2)"), (122, "var(--muted)")):
+        o.append(circle(cx, cy, r, stroke=col, w=1.8, dash="5 4"))
+        ang = -0.9
+        X, Y = cx+r*math.cos(ang), cy+r*math.sin(ang)
+        o.append(arrow(X, Y, X+10*math.sin(ang), Y-10*math.cos(ang), stroke=col, w=1.8, small=True))
+    o.append(text(cx+a*0.7+4, cy-a*0.7-6, "a", size=13, math=True, anchor="start"))
+    o.append(text(cx+b*0.72+4, cy-b*0.72-4, "b", size=13, math=True, anchor="start"))
+    o.append(text(cx, cy+b+30, "core: I out of page (⊙);  shell: I back (⊗)", size=11.5))
+    gx, gy, gw, gh = 360, 60, 250, 170
+    o.append(line(gx, gy+gh, gx+gw, gy+gh, w=1.5, arrow=True)); o.append(line(gx, gy+gh, gx, gy, w=1.5, arrow=True))
+    o.append(text(gx+gw+4, gy+gh+4, "r", size=14, math=True, anchor="start")); o.append(text(gx-8, gy+10, _sub("H", "φ"), size=13, anchor="end"))
+    ra, rb = gx+70, gx+175
+    pk = gy+30
+    o.append(path(f"M{gx},{gy+gh} L{ra},{pk}", stroke="var(--accent)", w=2.6))
+    pts = []
+    for k in range(40):
+        r = ra + (rb-ra)*k/39
+        hval = (gy+gh) - ((gy+gh)-pk)*(ra-gx)/(r-gx)
+        pts.append((r, hval))
+    o.append(path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in pts), stroke="var(--accent2)", w=2.6))
+    o.append(line(rb, pts[-1][1], rb, gy+gh, stroke="var(--muted)", w=1.6, dash="3 3"))
+    o.append(path(f"M{rb},{gy+gh} L{gx+gw-10},{gy+gh}", stroke="var(--muted)", w=3.2))
+    for X, lab in ((ra, "a"), (rb, "b")):
+        o.append(line(X, gy+gh, X, gy+gh+6, w=1.2)); o.append(text(X, gy+gh+22, lab, size=13, math=True))
+    o.append(text(gx+6, pk-6, "I/(2πa)", size=11.5, anchor="start"))
+    o.append(line(gx, pk, ra, pk, stroke="var(--muted)", w=1, dash="2 3"))
+    o.append(text(ra-30, (gy+gh+pk)/2+30, "I r/(2πa²)", size=11.5, anchor="start", fill="var(--accent)"))
+    o.append(text(ra+40, pk+34, "I/(2πr)", size=12, anchor="start", fill="var(--accent2)", weight=600))
+    o.append(text(rb+16, gy+gh-12, "0", size=13, anchor="start", fill="var(--muted)", weight=600))
+    o.append(text(gx+gw/2, gy+gh+48, "H·2πr = " + _sub("I", "enc") + "(r)", size=13, weight=600))
+    o.append(svg_close())
+    figure("ampere-coax-profile", "".join(o),
+           "<strong>Ampère's law is Gauss's law with a loop.</strong> For a coax with a uniform current I in the core and −I on the shell, symmetry says <b>H</b> = H<sub>φ</sub>(r) φ̂, so the circulation around a circle is simply H<sub>φ</sub>·2πr, and the law hands you the field once you count the enclosed current: a fraction r²/a² of I inside the core, all of I between the conductors, and zero outside (I − I). Compare the Gauss-law profile of a charged cylinder in Lecture 3 — same reasoning, with 'charge inside' replaced by 'current through'. The only region where H<sub>φ</sub> is constant is outside, where it is zero (the Lecture 12 challenge question).")
+
+# --------------------------------------------------------------------------- 30. Current sheet and slab: H_y(x), mirroring the E-field figure of Lecture 3
+def fig_current_sheet_slab():
+    W, H = 640, 300
+    o = [svg_open(W, H)]
+    sx, top, bot = 150, 50, 250
+    o.append(line(sx, top, sx, bot, stroke="var(--hi)", w=2, dash="3 3", opacity=0.7))
+    for k in range(7):
+        o.append(_odot(sx, top+14+k*30, r=6, color="var(--hi)"))
+    o.append(text(sx, top-14, "Jₛ ẑ  (out of page)", size=12, fill="var(--hi)", weight=600))
+    for yy in (90, 150, 210):
+        o.append(arrow(sx+60, yy+22, sx+60, yy-22, stroke="var(--accent)", w=2.2))
+        o.append(arrow(sx-60, yy-22, sx-60, yy+22, stroke="var(--accent)", w=2.2))
+    o.append(text(sx+72, 150, "H = +ŷ Jₛ/2", size=12.5, anchor="start", fill="var(--accent)", weight=600))
+    o.append(text(sx-72, 150, "H = −ŷ Jₛ/2", size=12.5, anchor="end", fill="var(--accent)", weight=600))
+    o.append(rect(sx-40, 120, 80, 60, stroke="currentColor", sw=1.6, dash="5 4", rx=2))
+    o.append(arrow(sx+40, 170, sx+40, 130, stroke="currentColor", w=1.6, small=True))
+    o.append(arrow(sx-40, 130, sx-40, 170, stroke="currentColor", w=1.6, small=True))
+    o.append(text(sx+46, 196, "L", size=12, math=True, anchor="start"))
+    o.append(text(sx, 272, "x → ;  y ↑ ;  ∮H·dl = 2(Jₛ/2)L = Jₛ L ✓", size=11.5))
+    gx, gy, gw, gh = 360, 50, 250, 200
+    midy = gy+gh/2
+    o.append(line(gx, midy, gx+gw, midy, w=1.4, arrow=True)); o.append(text(gx+gw+4, midy+4, "x", size=14, math=True, anchor="start"))
+    o.append(line(gx+gw/2, gy+gh, gx+gw/2, gy, w=1.4, arrow=True)); o.append(text(gx+gw/2+8, gy+8, _sub("H", "y"), size=13, anchor="start"))
+    c = gx+gw/2
+    lvl = 55
+    o.append(path(f"M{gx+10},{midy+lvl} L{c},{midy+lvl} L{c},{midy-lvl} L{gx+gw-10},{midy-lvl}", stroke="var(--hi)", w=2.6))
+    hw = 45
+    o.append(path(f"M{gx+10},{midy+lvl} L{c-hw},{midy+lvl} L{c+hw},{midy-lvl} L{gx+gw-10},{midy-lvl}", stroke="var(--accent2)", w=2.6, dash="6 4"))
+    for X, lab in ((c-hw, "−W/2"), (c+hw, "W/2")):
+        o.append(line(X, midy-4, X, midy+4, w=1.2)); o.append(text(X, midy+18, lab, size=11))
+    o.append(text(c-8, midy-lvl-8, "+Jₛ/2 = J₀W/2", size=11.5, anchor="end"))
+    o.append(text(c+8, midy+lvl+18, "−Jₛ/2", size=11.5, anchor="start"))
+    o.append(text(gx+10, gy+12, "sheet: step of Jₛ", size=11.5, anchor="start", fill="var(--hi)", weight=600))
+    o.append(text(gx+10, gy+gh-4, "slab: ramp, slope J₀", size=11.5, anchor="start", fill="var(--accent2)", weight=600))
+    o.append(svg_close())
+    figure("current-sheet-slab", "".join(o),
+           "<strong>The current sheet is the magnetic twin of the charge sheet.</strong> A uniform surface current J<sub>s</sub> ẑ on x = 0 makes a field that is tangential (along ŷ), independent of distance, and <em>reversed</em> on the two sides — exactly the structure of the sheet-charge field in Lecture 3, with 'normal' replaced by 'tangential'. Ampère's law around a straddling rectangle gives the magnitude J<sub>s</sub>/2. Smear the current over a slab of thickness W and the step becomes a ramp of slope J<sub>0</sub> that saturates at J<sub>0</sub>W/2, with no jump — just as the slab of charge turned the D-step into a ramp. The jump of tangential <b>H</b> across a sheet, by exactly J<sub>s</sub>, is the boundary condition of Lecture 16.")
+
+# --------------------------------------------------------------------------- 31. Solenoid with Amperian paths
+def fig_solenoid_ampere():
+    W, H = 640, 270
+    o = [svg_open(W, H)]
+    cx = 250; left, right = cx-70, cx+70; top, bot = 40, 240
+    o.append(_tint(left, top, right-left, bot-top, "var(--accent)", 0.08))
+    for k in range(8):
+        yy = top+12+k*(bot-top-24)/7
+        o.append(_otimes(right, yy, r=6, color="var(--hi)"))
+        o.append(_odot(left, yy, r=6, color="var(--hi)"))
+    for xx in (cx-40, cx-13, cx+13, cx+40):
+        o.append(arrow(xx, bot-18, xx, top+18, stroke="var(--accent)", w=2))
+    o.append(text(cx, top-14, "B = μ₀ n I ẑ inside,  0 outside", size=12.5, weight=600, fill="var(--accent)"))
+    o.append(text(cx, bot+22, "n turns per metre, I per turn  ⇒  a current sheet Jₛ = nI", size=11.5))
+    o.append(rect(left-70, 80, right-left+140, 70, stroke="currentColor", sw=1.6, dash="5 4"))
+    o.append(text(right+76, 118, "C₁:  " + _sub("I", "enc") + " = nLI − nLI = 0", size=11.5, anchor="start"))
+    o.append(rect(cx-20, 165, right-cx+20+50, 60, stroke="var(--accent2)", sw=1.8, dash="5 4"))
+    o.append(arrow(cx-20, 220, cx-20, 172, stroke="var(--accent2)", w=1.8, small=True))
+    o.append(text(right+56, 196, "C₂:  " + _sub("B", "z") + " L = μ₀ (nL) I", size=11.5, anchor="start", fill="var(--accent2)"))
+    o.append(text(cx-26, 196, "L", size=12, math=True, anchor="end"))
+    o.append(text(60, 70, "⊙ out, ⊗ in", size=11, fill="var(--hi)"))
+    o.append(svg_close())
+    figure("solenoid-ampere", "".join(o),
+           "<strong>Two Amperian rectangles settle the solenoid.</strong> C₁ links n L turns going one way and n L turns going the other, so its circulation is zero: the field outside is uniform (and, for an isolated infinite coil, zero). C₂ has one leg inside, where it collects B<sub>z</sub>L, and one leg outside where there is nothing; it links n L turns carrying I, so B<sub>z</sub> = μ₀ n I. Seen from a distance the winding is a current sheet of J<sub>s</sub> = nI wrapped into a cylinder, and the result is just the sheet rule: tangential H jumps by J<sub>s</sub> across it, from 0 outside to nI inside.")
+
+# --------------------------------------------------------------------------- 32. Field of a current loop (dipole)
+def fig_current_loop_field():
+    W, H = 640, 330
+    o = [svg_open(W, H)]
+    cx, cy = 300, 160
+    a = 70
+    def fieldline(Lr, col, w=1.6):
+        pts = []
+        for k in range(181):
+            th = math.pi*k/180
+            r = Lr*math.sin(th)**2
+            x = r*math.sin(th); z = r*math.cos(th)
+            pts.append((cx+x, cy-z))
+        o.append(path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in pts), stroke=col, w=w))
+        pts2 = [(2*cx-X, Y) for X, Y in pts]
+        o.append(path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in pts2), stroke=col, w=w))
+        X, Y = cx+Lr, cy
+        o.append(arrow(X, Y-12, X, Y+12, stroke=col, w=w))
+        o.append(arrow(2*cx-X, Y-12, 2*cx-X, Y+12, stroke=col, w=w))
+    for Lr, col in ((110, "var(--accent)"), (160, "var(--accent)"), (230, "var(--muted)")):
+        fieldline(Lr, col)
+    o.append(arrow(cx, cy+70, cx, cy-80, stroke="var(--accent2)", w=2.6))
+    o.append(text(cx+8, cy-70, _sub("B", "z") + " on the axis", size=12.5, anchor="start", fill="var(--accent2)", weight=600))
+    o.append(_otimes(cx+a, cy, r=7, color="var(--hi)")); o.append(_odot(cx-a, cy, r=7, color="var(--hi)"))
+    o.append(line(cx-a, cy, cx+a, cy, stroke="var(--hi)", w=1.2, dash="3 3", opacity=0.6))
+    o.append(text(cx, cy+100, "loop of radius a carrying I, seen edge-on (⊙ toward you, ⊗ away)", size=11.5, fill="var(--hi)"))
+    o.append(text(cx, cy+122, _sub("B", "z") + "(z) = μ₀ I a² / [2 (a² + z²)³ᐟ²]  on the axis", size=12.5, weight=600))
+    o.append(text(cx, cy+142, "far away:  B ∝ 1/r³  —  a magnetic dipole,  field lines  r = L sin²θ", size=11.5))
+    o.append(text(cx, 22, "every closed field line links the loop once:  ∮B·dl = μ₀ I  on each", size=12, fill="var(--muted)"))
+    o.append(svg_close())
+    figure("current-loop-field", "".join(o),
+           "<strong>The field of a single current loop.</strong> On the axis Biot–Savart (or the vector potential) gives a closed form; everywhere else the field is a pattern of closed lines threading the loop — the shape of a bar magnet's field, and of the Earth's. Every field line links the loop, so the circulation along each is the same μ₀I, and the longer outer lines must carry a weaker average field. The on-axis formula shows how much weaker: far away the field falls off as 1/r³, not 1/r² — the signature of a dipole. Two coaxial loops with parallel currents pull toward each other, which is how bar magnets attract: each is a stack of atomic current loops.")
+
+# --------------------------------------------------------------------------- 33. Faraday's law: flux rule and the three ways to change Ψ
+def fig_faraday_flux_rule():
+    W, H = 640, 290
+    o = [svg_open(W, H)]
+    cx, cy = 150, 130
+    o.append(f'<ellipse cx="{cx}" cy="{cy+30}" rx="95" ry="36" fill="var(--accent)" fill-opacity="0.10" stroke="currentColor" stroke-width="2.2"/>')
+    o.append(arrow(cx-10, cy+66, cx+24, cy+66, stroke="currentColor", w=2.2))
+    o.append(text(cx+30, cy+78, "C", size=14, math=True, anchor="start"))
+    for xx in (cx-60, cx-20, cx+20, cx+60):
+        o.append(arrow(xx, cy+95, xx, cy-55, stroke="var(--accent)", w=1.8, opacity=0.85))
+    o.append(text(cx+70, cy-56, "B(t) increasing", size=12.5, anchor="start", fill="var(--accent)", weight=600))
+    o.append(arrow(cx, cy+30, cx, cy-20, stroke="currentColor", w=2.4)); o.append(text(cx+8, cy-12, "dS", size=13, anchor="start", weight=600))
+    o.append(arrow(cx+88, cy+52, cx+56, cy+61, stroke="var(--hi)", w=2.4))
+    o.append(text(cx+100, cy+36, "induced I (Lenz)", size=11.5, anchor="start", fill="var(--hi)", weight=600))
+    o.append(text(cx, 236, "ℰ ≡ ∮(E + v×B)·dl = −dΨ/dt,   Ψ = ∫B·dS", size=12.5, weight=600))
+    o.append(text(cx, 256, "C and dS tied by the right-hand rule; ℰ > 0 means a drive along C", size=11, fill="var(--muted)"))
+    bx = 360
+    o.append(text(bx+130, 36, "three ways to get dΨ/dt ≠ 0", size=13, weight=600))
+    def mini(x, y, title, kind):
+        o.append(rect(x, y, 80, 80, stroke="var(--muted)", sw=1, rx=6))
+        o.append(f'<ellipse cx="{x+40}" cy="{y+50}" rx="26" ry="11" fill="none" stroke="currentColor" stroke-width="1.6"/>')
+        if kind == 0:
+            for xx in (x+22, x+40, x+58):
+                o.append(arrow(xx, y+72, xx, y+16, stroke="var(--accent)", w=1.6, small=True))
+            o.append(text(x+40, y+12, "B(t)", size=11, fill="var(--accent)"))
+        elif kind == 1:
+            for xx in (x+16, x+40, x+64):
+                o.append(line(xx, y+72, xx, y+22, stroke="var(--accent)", w=1.2, opacity=0.6))
+            o.append(path(f"M{x+22},{y+28} A22,10 0 0 1 {x+58},{y+28}", stroke="var(--hi)", w=1.6, arrow=True))
+            o.append(text(x+40, y+16, "rotate / stretch", size=9.5, fill="var(--hi)"))
+        else:
+            for xx in (x+14, x+30, x+42, x+52, x+60, x+66):
+                o.append(line(xx, y+72, xx, y+22, stroke="var(--accent)", w=1.2, opacity=0.6))
+            o.append(arrow(x+50, y+50, x+74, y+50, stroke="var(--hi)", w=1.8, small=True))
+            o.append(text(x+40, y+16, "v in B(r)", size=10, fill="var(--hi)"))
+        for k, t in enumerate(title.split("|")):
+            o.append(text(x+40, y+95+k*13, t, size=10))
+    mini(bx, 60, "fixed C,|B changes", 0); mini(bx+95, 60, "uniform B,|C moves", 1); mini(bx+190, 60, "C moves in|nonuniform B", 2)
+    o.append(text(bx+130, 200, "the first is 'transformer' emf: ∮E·dl ≠ 0", size=11.5, fill="var(--accent)"))
+    o.append(text(bx+130, 218, "the other two are motional: ∮(v×B)·dl", size=11.5, fill="var(--hi)"))
+    o.append(text(bx+130, 246, "same −dΨ/dt either way", size=12.5, weight=600))
+    o.append(svg_close())
+    figure("faraday-flux-rule", "".join(o),
+           "<strong>The flux rule.</strong> Orient the loop C, let the right-hand rule fix d<b>S</b>, and compute the flux Ψ = ∫<b>B</b>·d<b>S</b> through <em>any</em> surface spanning C (they all agree, because ∇·<b>B</b> = 0). The emf — the work per unit charge done by <b>E</b> + <b>v</b>×<b>B</b> once around C — equals −dΨ/dt. The minus sign is Lenz's rule: here the upward flux is growing, so the induced current circulates the other way and makes a downward field inside the loop, resisting the change. Whether the flux changes because <b>B</b> varies in time, because the loop moves or deforms, or because it slides through a nonuniform field, the rule is the same; what differs is how much of the emf is ∮<b>E</b>·d<b>l</b> and how much is ∮(<b>v</b>×<b>B</b>)·d<b>l</b>.")
+
+# --------------------------------------------------------------------------- 34. Sliding bar on rails: motional emf and its circuit model
+def fig_rails_motional_emf():
+    W, H = 640, 290
+    o = [svg_open(W, H)]
+    x0, xb = 40, 230
+    yt, yb = 70, 190
+    o.append(line(x0, yt, 300, yt, w=4, opacity=0.85)); o.append(line(x0, yb, 300, yb, w=4, opacity=0.85))
+    o.append(text(150, yt-28, "rails: perfect conductors", size=10.5, fill="var(--muted)"))
+    o.append(_zigzag(x0, yt, x0, yb, n=7, amp=7, color="var(--hi)"))
+    o.append(text(x0-8, (yt+yb)/2+4, "R₂", size=13, anchor="end"))
+    o.append(line(xb, yt, xb, yb, stroke="var(--accent)", w=6))
+    o.append(text(xb+10, yb+16, "bar, R₁", size=12, anchor="start", fill="var(--accent)"))
+    o.append(arrow(xb+6, yt-20, xb+56, yt-20, stroke="var(--accent)", w=2.4)); o.append(text(xb+30, yt-28, "v", size=14, math=True, fill="var(--accent)", weight=600))
+    for i in range(4):
+        for j in range(2):
+            o.append(_otimes(x0+40+i*45, yt+40+j*40, r=6, color="var(--muted)"))
+    o.append(text(170, yb+22, "B into the page (⊗)", size=11.5, fill="var(--muted)"))
+    o.append(arrow(xb-14, yb-20, xb-14, yt+20, stroke="var(--hi)", w=2.4))
+    o.append(text(xb-20, (yt+yb)/2+4, "v×B", size=12, anchor="end", fill="var(--hi)", weight=600))
+    o.append(arrow(150, yt-8, 110, yt-8, stroke="currentColor", w=1.6, small=True)); o.append(text(130, yt-14, "I", size=13, math=True))
+    o.append(text(xb+10, yt+4, "+", size=14, anchor="start")); o.append(text(xb+10, yb+4, "−", size=14, anchor="start"))
+    o.append(text(150, 250, "ℰ = ∮(v×B)·dl = vBℓ   (ℓ = rail spacing)", size=12.5, weight=600))
+    px, py, wd, ht = 400, 60, 200, 160
+    o.append(line(px, py, px+wd, py, w=1.6)); o.append(line(px, py+ht, px+wd, py+ht, w=1.6))
+    o.append(line(px, py, px, py+ht/2-35, w=1.6)); o.append(line(px, py+ht/2+35, px, py+ht, w=1.6))
+    o.append(_zigzag(px, py+ht/2-35, px, py+ht/2+35, n=7, amp=7, color="var(--hi)"))
+    o.append(text(px-10, py+ht/2+4, "R₂", size=13, anchor="end"))
+    o.append(line(px+wd, py, px+wd, py+30, w=1.6))
+    o.append(_zigzag(px+wd, py+30, px+wd, py+80, n=6, amp=7, color="var(--accent)"))
+    o.append(text(px+wd+10, py+58, "R₁", size=13, anchor="start", fill="var(--accent)"))
+    o.append(line(px+wd, py+80, px+wd, py+100, w=1.6))
+    o.append(line(px+wd-16, py+104, px+wd+16, py+104, w=1.6)); o.append(line(px+wd-9, py+114, px+wd+9, py+114, w=3.4))
+    o.append(text(px+wd+22, py+104, "+", size=13, anchor="start")); o.append(text(px+wd+22, py+122, "−", size=13, anchor="start"))
+    o.append(text(px+wd+34, py+114, "ℰ = vBℓ", size=12.5, anchor="start", weight=600))
+    o.append(line(px+wd, py+114, px+wd, py+ht, w=1.6))
+    o.append(arrow(px+120, py-16, px+70, py-16, stroke="currentColor", w=1.6, small=True)); o.append(text(px+95, py-24, "I = ℰ/(R₁+R₂)", size=11.5))
+    o.append(text(px+wd/2, py+ht+28, "the moving bar is a battery", size=11.5))
+    o.append(text(px+wd/2, py+ht+44, "with internal resistance R₁", size=11.5))
+    o.append(text(px+wd/2, py+ht+62, "open circuit: E = −v×B in the bar, I = 0", size=10.5, fill="var(--muted)"))
+    o.append(svg_close())
+    figure("rails-motional-emf", "".join(o),
+           "<strong>Motional emf, and the circuit it is equivalent to.</strong> The carriers in the moving bar feel <b>v</b>×<b>B</b> along the bar, which pushes positive charge toward its upper end: the bar acts as a battery of emf vBℓ whose internal resistance is the bar's own R₁, driving the load R₂ through the perfectly conducting rails. The same number comes from the flux rule, because the loop's area grows at rate vℓ. In the lab the electric field is curl-free (<b>B</b> is constant, so ∇×<b>E</b> = −∂<b>B</b>/∂t = 0), so it is the <em>same</em> inside the bar and inside the load — Lecture 14's surprising result; what differs between them is that only the bar has the <b>v</b>×<b>B</b> term.")
+
+# --------------------------------------------------------------------------- 35. The voltmeter paradox: a loop with two resistors in a changing flux
+def fig_voltmeter_paradox():
+    W, H = 640, 300
+    o = [svg_open(W, H)]
+    L0, T0, S = 110, 60, 160
+    Ax, Ay = L0+S, T0
+    Bx, By = L0, T0+S
+    o.append(line(L0, T0, Ax, Ay, w=2.2)); o.append(line(L0, T0+S, Ax, T0+S, w=2.2))
+    o.append(line(L0, T0, L0, T0+50, w=2.2)); o.append(_zigzag(L0, T0+50, L0, T0+110, n=6, amp=7)); o.append(line(L0, T0+110, L0, T0+S, w=2.2))
+    o.append(text(L0-12, T0+84, "R₁", size=13, anchor="end"))
+    o.append(line(Ax, T0, Ax, T0+50, w=2.2)); o.append(_zigzag(Ax, T0+50, Ax, T0+110, n=6, amp=7, color="var(--accent)")); o.append(line(Ax, T0+110, Ax, T0+S, w=2.2))
+    o.append(text(Ax+12, T0+84, "R₂", size=13, anchor="start", fill="var(--accent)"))
+    o.append(circle(Ax, Ay, 5, fill="currentColor")); o.append(text(Ax+10, Ay-6, "A", size=14, anchor="start", weight=600))
+    o.append(circle(Bx, By, 5, fill="currentColor")); o.append(text(Bx-10, By+16, "B", size=14, anchor="end", weight=600))
+    for i in range(3):
+        for j in range(3):
+            o.append(_odot(L0+30+i*50, T0+30+j*50, r=6, color="var(--muted)"))
+    o.append(text(L0+S/2, T0+S+34, "B out of page, decreasing", size=11.5))
+    o.append(text(L0+S/2, T0+S+52, "⇒ ℰ = −dΨ/dt > 0, counter-clockwise", size=11.5))
+    o.append(arrow(Ax+28, T0+S-20, Ax+28, T0+S-60, stroke="var(--hi)", w=2.2)); o.append(text(Ax+36, T0+S-36, "I", size=14, math=True, anchor="start", fill="var(--hi)"))
+    o.append(arrow(L0+S-40, T0-18, L0+40, T0-18, stroke="var(--hi)", w=2.2))
+    o.append(line(Ax, Ay, Bx, By, stroke="var(--accent2)", w=1.8, dash="6 4"))
+    o.append(circle((Ax+Bx)/2, (Ay+By)/2, 14, fill="var(--paper)", stroke="var(--accent2)", w=1.8))
+    o.append(text((Ax+Bx)/2, (Ay+By)/2+5, "V", size=13, fill="var(--accent2)", weight=700))
+    tx = 360
+    o.append(text(tx, 60, "voltmeter from A to B reads", size=13, anchor="start", weight=600))
+    o.append(text(tx, 92, "• along the R₁ side:   +I R₁", size=12.5, anchor="start"))
+    o.append(text(tx, 118, "• along the R₂ side:   −I R₂", size=12.5, anchor="start", fill="var(--accent)"))
+    o.append(text(tx, 144, "• along the diagonal:  in between", size=12.5, anchor="start", fill="var(--accent2)"))
+    o.append(text(tx, 182, "the two side readings differ by exactly", size=12, anchor="start"))
+    o.append(text(tx, 202, "I R₁ + I R₂ = ℰ,  the emf of the loop", size=12.5, anchor="start", weight=600))
+    o.append(text(tx, 238, "a voltmeter reads ∫E·dl along its own leads;", size=11.5, anchor="start", fill="var(--muted)"))
+    o.append(text(tx, 256, "with dΨ/dt ≠ 0 that integral is path-dependent", size=11.5, anchor="start", fill="var(--muted)"))
+    o.append(text(tx, 274, "('voltage between A and B' is no longer defined)", size=11.5, anchor="start", fill="var(--muted)"))
+    o.append(svg_close())
+    figure("voltmeter-paradox", "".join(o),
+           "<strong>When 'the voltage between A and B' stops meaning anything.</strong> A changing flux drives a current I around the loop. Two ideal voltmeters connected to the same nodes A and B read different values — +IR₁ if the leads run beside R₁, −IR₂ if they run beside R₂ — and a third lead path reads something in between. None of them is wrong: each meter reports ∫<b>E</b>·d<b>l</b> along its own leads, and that integral is path-dependent because ∇×<b>E</b> = −∂<b>B</b>/∂t ≠ 0. The difference between two readings is the emf of the loop their leads form. This is the end of the path-independent voltage of Lecture 5; it returns only where the flux through the leads is negligible.")
+
+# --------------------------------------------------------------------------- 36. Inductance recipe beside the capacitance recipe
+def fig_inductance_recipes():
+    W, H = 640, 230
+    o = [svg_open(W, H)]
+    def chain(y, title, nodes, labels, color):
+        o.append(text(30, y-26, title, size=13, anchor="start", weight=600, fill=color))
+        n = len(nodes); x0 = 44; step = (W-88)/(n-1) if n > 1 else 0
+        for i, nd in enumerate(nodes):
+            X = x0 + i*step
+            o.append(f'<rect x="{X-26}" y="{y-16}" width="52" height="32" rx="7" fill="{color}" fill-opacity="0.16" stroke="currentColor" stroke-width="1.2"/>')
+            o.append(text(X, y+5, nd, size=14, weight=600))
+            if i < n-1:
+                o.append(arrow(X+28, y, X+step-28, y, stroke="currentColor", w=1.5, small=True))
+                o.append(text(X+step/2, y-10, labels[i], size=10.5, fill="var(--muted)"))
+    chain(60, "capacitance, given the charge (Lecture 10)", ["Q", "D", "E", "V", "C"],
+          ["Gauss's law", "E = D/ε", "V = −∫E·dl", "C = Q/V"], "var(--accent)")
+    chain(140, "inductance, given the current (Lecture 15)", ["I", "H", "B", "Ψ", "L"],
+          ["Ampère's law", "B = μH", "Ψ = ∫B·dS", "L = NΨ/I"], "var(--accent2)")
+    o.append(text(320, 196, "same geometric factor both times:  C = ε·(factor),  L = μ/(factor)  ⇒  𝓛𝓒 = με for any line", size=12, weight=600))
+    o.append(text(320, 216, "energy:  W = ½CV² = ∫½εE² dV      ↔      W = ½LI² = ∫½μH² dV", size=12))
+    o.append(svg_close())
+    figure("inductance-recipes", "".join(o),
+           "<strong>The inductance chain is the capacitance chain with the letters changed.</strong> Capacitance: put charge on the conductors, find <b>D</b> by Gauss's law, divide by ε, integrate to the voltage, take the ratio. Inductance: send current through the conductors, find <b>H</b> by Ampère's law, multiply by μ, integrate to the flux, take the ratio. For a transmission-line geometry the geometric factor that multiplies ε in 𝓒 divides μ in 𝓛, so their product is always με — the fact that sets the wave speed in Unit 4.")
+
+# --------------------------------------------------------------------------- 37. Coax: C and L side by side
+def fig_coax_l_and_c():
+    W, H = 640, 300
+    o = [svg_open(W, H)]
+    def coax(cx, cy, a, b):
+        o.append(circle(cx, cy, b+7, fill="currentColor", stroke="none", opacity=0.18))
+        o.append(circle(cx, cy, b, fill="var(--paper)", stroke="none"))
+        o.append(circle(cx, cy, a, fill="currentColor", stroke="none", opacity=0.35))
+        o.append(circle(cx, cy, a, stroke="currentColor", w=1.2)); o.append(circle(cx, cy, b, stroke="currentColor", w=1.2)); o.append(circle(cx, cy, b+7, stroke="currentColor", w=1.2))
+    a, b = 28, 90
+    cx, cy = 150, 150
+    coax(cx, cy, a, b)
+    for k in range(10):
+        ang = k*2*math.pi/10
+        o.append(arrow(cx+(a+6)*math.cos(ang), cy+(a+6)*math.sin(ang), cx+(b-6)*math.cos(ang), cy+(b-6)*math.sin(ang), stroke="var(--accent)", w=1.6, small=True))
+    o.append(text(cx, cy+b+32, "E = (ρₗ/2πεr) r̂", size=12.5, fill="var(--accent)", weight=600))
+    o.append(text(cx, cy+b+52, "𝓒 = 2πε / ln(b/a)   [F/m]", size=13, weight=600))
+    o.append(text(cx, 36, "+ρₗ on the core, −ρₗ on the shell", size=12))
+    cx2 = 470
+    coax(cx2, cy, a, b)
+    for r in (a+14, a+34, b-16):
+        o.append(circle(cx2, cy, r, stroke="var(--accent2)", w=1.7))
+        X, Y = cx2, cy-r
+        o.append(arrow(X+6, Y, X-8, Y, stroke="var(--accent2)", w=1.7, small=True))
+    o.append(circle(cx2, cy, 2.5, fill="currentColor", stroke="none"))
+    o.append(text(cx2, cy+b+32, "B = (μI/2πr) φ̂", size=12.5, fill="var(--accent2)", weight=600))
+    o.append(text(cx2, cy+b+52, "𝓛 = (μ/2π) ln(b/a)   [H/m]", size=13, weight=600))
+    o.append(text(cx2, 36, "+I on the core (out of page), −I on the shell", size=12))
+    o.append(text(310, 130, "same", size=12, fill="var(--muted)")); o.append(text(310, 146, "geometry", size=12, fill="var(--muted)"))
+    o.append(text(310, 168, "𝓛𝓒 = με", size=15, weight=700))
+    o.append(text(310, 190, "1/√(𝓛𝓒) = 1/√(με)", size=12))
+    o.append(text(310, 206, "= c in vacuum", size=12))
+    o.append(svg_close())
+    figure("coax-l-and-c", "".join(o),
+           "<strong>One cable, two circuit elements.</strong> Charge the conductors and the radial <b>E</b> between them stores energy: capacitance per metre 𝓒 = 2πε/ln(b/a). Send a current down the core and back on the shell and the azimuthal <b>B</b> between them stores energy: inductance per metre 𝓛 = (μ/2π) ln(b/a). The logarithm appears in the numerator of one and the denominator of the other, so 𝓛𝓒 = με independent of the radii — and 1/√(𝓛𝓒) is the speed of light in the filling. That is not a coincidence of the coax; it holds for every two-conductor line, and it is why signals on cables travel at (nearly) the speed of light.")
+
+# --------------------------------------------------------------------------- 38. RC and RL decays side by side
+def fig_rc_vs_rl():
+    W, H = 640, 285
+    o = [svg_open(W, H)]
+    px, py, wd, ht = 40, 50, 180, 130
+    o.append(line(px, py, px+wd, py, w=1.6)); o.append(line(px, py+ht, px+wd, py+ht, w=1.6))
+    o.append(line(px, py, px, py+ht, w=1.6))
+    o.append(line(px+wd, py, px+wd, py+30, w=1.6)); o.append(_zigzag(px+wd, py+30, px+wd, py+100, n=7, amp=7)); o.append(line(px+wd, py+100, px+wd, py+ht, w=1.6))
+    o.append(text(px+wd+10, py+70, "R", size=14, math=True, anchor="start"))
+    o.append(_coil(px+40, py+ht, px+140, n=5, r=10)); o.append(text(px+90, py+ht+30, "L", size=14, math=True, fill="var(--accent)"))
+    o.append(arrow(px+60, py-14, px+120, py-14, stroke="var(--hi)", w=2)); o.append(text(px+90, py-22, "I(t)", size=12.5, fill="var(--hi)"))
+    o.append(text(px+wd/2, py+ht+56, "KVL:  R I = −L dI/dt  (self-emf = rise)", size=11.5))
+    o.append(text(px+wd/2, py+ht+74, "I(t) = I(0) exp(−t/τ),  τ = L/R", size=12.5, weight=600))
+    gx, gy, gw, gh = 300, 50, 300, 150
+    o.append(line(gx, gy+gh, gx+gw, gy+gh, w=1.4, arrow=True)); o.append(line(gx, gy+gh, gx, gy, w=1.4, arrow=True))
+    o.append(text(gx+gw+4, gy+gh+4, "t", size=14, math=True, anchor="start"))
+    pts = [(gx+gw*k/60, gy+gh-(gh-20)*math.exp(-4*k/60)) for k in range(61)]
+    o.append(path("M" + " L".join(f"{X:.1f},{Y:.1f}" for X, Y in pts), stroke="var(--hi)", w=2.6))
+    o.append(line(gx, gy+20, gx+gw/4, gy+gh, stroke="var(--muted)", w=1.2, dash="4 3"))
+    o.append(line(gx+gw/4, gy+gh, gx+gw/4, gy+gh+6, w=1.2)); o.append(text(gx+gw/4, gy+gh+22, "τ", size=14, math=True))
+    o.append(text(gx-6, gy+24, "I(0)", size=12, anchor="end"))
+    o.append(text(gx+gw/4+10, gy+gh-(gh-20)*math.exp(-1)-6, "I(0)/e", size=11, anchor="start", fill="var(--muted)"))
+    o.append(text(gx+gw/2, 36, "same curve, two circuits", size=13, weight=600))
+    o.append(text(gx+gw/2, gy+gh+48, "RC (Lecture 10): V = V(0) exp(−t/τ),  τ = RC", size=11, fill="var(--muted)"))
+    o.append(text(gx+gw/2, gy+gh+66, "RL (Lecture 15): I = I(0) exp(−t/τ),  τ = L/R", size=11, fill="var(--muted)"))
+    o.append(svg_close())
+    figure("rc-vs-rl", "".join(o),
+           "<strong>Dual circuits, dual time constants.</strong> A capacitor left to itself across a resistor loses its voltage as e<sup>−t/RC</sup>; an inductor shorted through a resistor loses its current as e<sup>−t/(L/R)</sup>. In the RL loop the self-emf −L dI/dt is a voltage <em>rise</em> in the direction of the current that exactly matches the drop RI; the current cannot stop abruptly because that would require an infinite emf. Large C makes a slowly varying voltage source; large L makes a slowly varying current source. The tangent at t = 0 reaches zero at t = τ in both cases — a quick way to read τ off a plot.")
+
+# --------------------------------------------------------------------------- 39. Charge conservation: the bucket and the continuity equation
+def fig_continuity_bucket():
+    W, H = 640, 275
+    o = [svg_open(W, H)]
+    bx, by, bw, bh = 60, 84, 170, 140
+    o.append(path(f"M{bx},{by} L{bx},{by+bh} L{bx+bw},{by+bh} L{bx+bw},{by}", stroke="currentColor", w=2.5))
+    o.append(_tint(bx+2, by+70, bw-4, bh-72, "var(--accent)", 0.18))
+    rng = np.random.default_rng(5)
+    for k in range(26):
+        X = bx+10+rng.uniform(0, bw-20); Y = by+80+rng.uniform(0, bh-92)
+        o.append(circle(X, Y, 3, fill="var(--hi)", stroke="none"))
+    o.append(path(f"M{bx-40},{by-30} L{bx+30},{by-30} L{bx+30},{by+10}", stroke="currentColor", w=1.6))
+    o.append(path(f"M{bx-40},{by-10} L{bx+50},{by-10} L{bx+50},{by+10}", stroke="currentColor", w=1.6))
+    o.append(arrow(bx-30, by-20, bx+10, by-20, stroke="var(--hi)", w=2.2)); o.append(text(bx+58, by-16, _sub("I", "in"), size=12.5, anchor="start", fill="var(--hi)", weight=600))
+    o.append(path(f"M{bx+bw},{by+100} L{bx+bw+50},{by+100}", stroke="currentColor", w=1.6)); o.append(path(f"M{bx+bw},{by+120} L{bx+bw+50},{by+120}", stroke="currentColor", w=1.6))
+    o.append(arrow(bx+bw+6, by+110, bx+bw+44, by+110, stroke="var(--hi)", w=2.2)); o.append(text(bx+bw+8, by+94, _sub("I", "out"), size=12.5, anchor="start", fill="var(--hi)", weight=600))
+    o.append(text(bx+bw/2, by+bh+28, "dQ/dt = " + _sub("I", "in") + " − " + _sub("I", "out"), size=13.5, weight=600))
+    o.append(text(bx+bw/2, 24, "charge is never created or destroyed alone", size=12, fill="var(--muted)"))
+    cx, cy = 460, 140
+    o.append(f'<ellipse cx="{cx}" cy="{cy}" rx="80" ry="58" fill="var(--accent2)" fill-opacity="0.12" stroke="currentColor" stroke-width="2"/>')
+    o.append(text(cx, cy+4, "ρ(t), Q = ∫ρ dV", size=12.5, weight=600))
+    for ang in (0.3, 1.1, 2.0, 2.9, 3.9, 4.8, 5.6):
+        X, Y = cx+80*math.cos(ang), cy+58*math.sin(ang)
+        nx, ny = math.cos(ang)/80, math.sin(ang)/58
+        nn = math.hypot(nx, ny); nx, ny = nx/nn, ny/nn
+        o.append(arrow(X-6*nx, Y-6*ny, X+26*nx, Y+26*ny, stroke="var(--hi)", w=1.8, small=True))
+    o.append(text(cx+100, cy-50, "J", size=14, math=True, anchor="start", fill="var(--hi)", weight=600))
+    o.append(text(cx, cy+88, "∮J·dS = −dQ/dt", size=13.5, weight=600))
+    o.append(text(cx, cy+110, "⇒  ∇·J = −∂ρ/∂t   (continuity equation)", size=12.5))
+    o.append(text(cx, 24, "the divergence theorem turns the bucket into a point law", size=12, fill="var(--muted)"))
+    o.append(svg_close())
+    figure("continuity-bucket", "".join(o),
+           "<strong>Charge conservation as a bookkeeping law.</strong> Current flowing into a region raises the charge inside; current flowing out lowers it; nothing else changes it. For any closed surface the net outward current ∮<b>J</b>·d<b>S</b> is therefore the rate of <em>decrease</em> of the enclosed charge. The divergence theorem converts that into a statement at a point, ∇·<b>J</b> = −∂ρ/∂t: where current lines diverge, charge is being depleted. Lecture 8 used exactly this (with <b>J</b> = σ<b>E</b> and Gauss's law) to get the relaxation time ε/σ; Lecture 16 uses it to find what is missing from Ampère's law.")
+
+# --------------------------------------------------------------------------- 40. Displacement current: a draining point charge, two surfaces
+def fig_displacement_current_hemisphere():
+    W, H = 640, 310
+    o = [svg_open(W, H)]
+    cx, cy = 215, 160
+    o.append(path(f"M{cx-120},{cy} A120,95 0 0 0 {cx+120},{cy}", stroke="var(--accent)", w=2.2, fill="var(--accent)").replace('fill="var(--accent)"', 'fill="var(--accent)" fill-opacity="0.10"'))
+    o.append(path(f"M{cx-120},{cy} A120,105 0 0 1 {cx+120},{cy}", stroke="var(--accent2)", w=2.2, fill="var(--accent2)").replace('fill="var(--accent2)"', 'fill="var(--accent2)" fill-opacity="0.10"'))
+    o.append(f'<ellipse cx="{cx}" cy="{cy}" rx="120" ry="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-dasharray="7 4"/>')
+    o.append(arrow(cx+30, cy+34, cx+70, cy+30, stroke="currentColor", w=2.2)); o.append(text(cx+76, cy+44, "C (radius a)", size=12, anchor="start"))
+    o.append(charge(cx, cy, "+", r=11)); o.append(text(cx+16, cy+6, "Q(t)", size=13, anchor="start", weight=600))
+    o.append(line(cx, cy-11, cx, 36, stroke="currentColor", w=3))
+    o.append(arrow(cx+14, 112, cx+14, 62, stroke="var(--hi)", w=2.4)); o.append(text(cx+22, 90, "I = −dQ/dt", size=12.5, anchor="start", fill="var(--hi)", weight=600))
+    for ang in (-2.4, -0.7, 2.5, 0.6, -1.2, -1.9):
+        X1, Y1 = cx+22*math.cos(ang), cy+22*math.sin(ang)*0.7
+        X2, Y2 = cx+62*math.cos(ang), cy+62*math.sin(ang)*0.7
+        o.append(arrow(X1, Y1, X2, Y2, stroke="var(--muted)", w=1.4, small=True, opacity=0.9))
+    o.append(text(cx-60, cy-112, "S₁: dome above", size=12, anchor="end", fill="var(--accent2)", weight=600))
+    o.append(text(8, cy+100, "S₂: bowl below", size=12, anchor="start", fill="var(--accent)", weight=600))
+    o.append(text(cx, cy+132, "D-flux of Q: Q/2 up through the dome, Q/2 down through the bowl", size=11, fill="var(--muted)"))
+    tx = 395
+    o.append(text(tx, 52, "∮H·dl = ∫(J + ∂D/∂t)·dS,  any S on C", size=12.5, anchor="start", weight=600))
+    o.append(text(tx, 84, "dome S₁: pierced by the wire", size=12, anchor="start", fill="var(--accent2)", weight=600))
+    o.append(text(tx, 102, "J-term = +I;  D-flux = +Q/2", size=11.5, anchor="start"))
+    o.append(text(tx, 118, "⇒  I + d(Q/2)/dt = I − I/2 = I/2", size=11.5, anchor="start"))
+    o.append(text(tx, 150, "bowl S₂: no wire through it", size=12, anchor="start", fill="var(--accent)", weight=600))
+    o.append(text(tx, 168, "J-term = 0;  D-flux = −Q/2 (oriented by C)", size=11.5, anchor="start"))
+    o.append(text(tx, 184, "⇒  0 + d(−Q/2)/dt = +I/2", size=11.5, anchor="start"))
+    o.append(line(tx, 200, tx+225, 200, stroke="var(--muted)", w=1))
+    o.append(text(tx, 222, "both surfaces give I/2", size=12, anchor="start", weight=600))
+    o.append(text(tx, 246, "without ∂D/∂t they give I and 0:", size=11.5, anchor="start", fill="var(--muted)"))
+    o.append(text(tx, 262, "Ampère alone breaks charge conservation", size=11.5, anchor="start", fill="var(--muted)"))
+    o.append(svg_close())
+    figure("displacement-current-hemisphere", "".join(o),
+           "<strong>Why Ampère's law needs a second term.</strong> A point charge drains away through a wire. Take the circle C around the wire, in the plane of the charge, and ask for ∮<b>H</b>·d<b>l</b>. Stokes' theorem lets you evaluate the right-hand side on <em>any</em> surface spanning C: a dome above is pierced by the wire, a bowl below is not. With only ∫<b>J</b>·d<b>S</b> on the right the two surfaces give I and 0 — nonsense, since the left side does not know which surface you picked. Add the displacement current ∫∂<b>D</b>/∂t·d<b>S</b>: by Gauss's law half of Q's flux threads each surface, and its rate of change (dQ/dt = −I) restores agreement at I/2 — which is also what Biot–Savart gives for a semi-infinite wire. The classic charging capacitor is the same story with the plates playing the part of Q(t).")
+
+# --------------------------------------------------------------------------- 41. Fields just outside a perfect conductor
+def fig_pec_boundary_fields():
+    W, H = 640, 250
+    o = [svg_open(W, H)]
+    def slab(x, title, kind):
+        y0 = 150
+        o.append(rect(x, y0, 160, 60, fill="currentColor", stroke="none", opacity=0.22))
+        o.append(line(x, y0, x+160, y0, w=2))
+        o.append(text(x+80, y0+36, "perfect conductor", size=11, fill="var(--muted)"))
+        o.append(text(x+80, 40, title, size=12.5, weight=600))
+        if kind == "oblique":
+            o.append(arrow(x+55, y0-8, x+105, y0-50, stroke="var(--muted)", w=2.4))
+            o.append(text(x+80, 62, "neither E nor H", size=12, fill="var(--hi)", weight=600))
+            o.append(text(x+80, 78, "(tangential E and normal B", size=10.5, fill="var(--muted)"))
+            o.append(text(x+80, 91, "must both vanish at the surface)", size=10.5, fill="var(--muted)"))
+        elif kind == "tangential":
+            o.append(arrow(x+30, y0-28, x+130, y0-28, stroke="var(--accent2)", w=2.6))
+            o.append(text(x+80, 62, "H only", size=12, fill="var(--accent2)", weight=600))
+            o.append(text(x+80, 78, "carried by a surface current", size=10.5, fill="var(--muted)"))
+            o.append(text(x+80, 93, "n̂ × H = Jₛ", size=11.5, weight=600))
+            for k in range(5):
+                o.append(_otimes(x+20+k*30, y0+8, r=4.5, color="var(--accent2)"))
+        else:
+            o.append(arrow(x+80, y0-8, x+80, y0-52, stroke="var(--accent)", w=2.6))
+            o.append(text(x+80, 62, "E only", size=12, fill="var(--accent)", weight=600))
+            o.append(text(x+80, 78, "ending on surface charge", size=10.5, fill="var(--muted)"))
+            o.append(text(x+80, 93, "n̂ · D = ρₛ", size=11.5, weight=600))
+            for k in range(5):
+                o.append(text(x+20+k*30, y0+12, "+", size=12, fill="var(--accent)", weight=700))
+    slab(30, "oblique field", "oblique"); slab(240, "tangential field", "tangential"); slab(450, "normal field", "normal")
+    o.append(text(320, 236, "E meets a perfect conductor head-on; H slides along it", size=12.5, weight=600))
+    o.append(svg_close())
+    figure("pec-boundary-fields", "".join(o),
+           "<strong>What can exist at the surface of a perfect conductor.</strong> Inside, <b>E</b> = 0 and (by the course's convention) <b>H</b> = 0. Tangential <b>E</b> is continuous, so it must vanish just outside: <b>E</b> arrives <em>normal</em> to the surface and ends on surface charge ρ<sub>s</sub> = n̂·<b>D</b>. Normal <b>B</b> is continuous, so it too must vanish: <b>H</b> runs <em>tangent</em> to the surface, and its full value is carried by a surface current, <b>J</b><sub>s</sub> = n̂×<b>H</b>. An oblique arrow can be neither field. These two facts are what every reflection problem in Unit 3 and every transmission-line problem in Unit 4 is built on.")
+
 if __name__ == "__main__":
     for f in (fig_dl_ds_cube, fig_coulomb_pair, fig_line_charge_side, fig_dipole_map, fig_flux_patch,
               fig_gauss_cylinder, fig_sheet_slab, fig_flux_plane, fig_curl_div_panels, fig_paddlewheel,
@@ -1087,5 +1703,9 @@ if __name__ == "__main__":
               fig_equipotentials_gradient, fig_path_independence, fig_bc_pillbox_loop, fig_bc_summary_panels,
               fig_laplace_plates, fig_pn_potential, fig_conductor_in_field, fig_dielectric_slab_polarization,
               fig_two_layer_plates, fig_field_refraction, fig_coax_capacitor, fig_lossy_capacitor_rc,
-              fig_capacitance_recipes):
+              fig_capacitance_recipes,
+              fig_drude_lorentz_models, fig_two_wires_force, fig_biot_savart_line, fig_ampere_coax_profile,
+              fig_current_sheet_slab, fig_solenoid_ampere, fig_current_loop_field, fig_faraday_flux_rule,
+              fig_rails_motional_emf, fig_voltmeter_paradox, fig_inductance_recipes, fig_coax_l_and_c,
+              fig_rc_vs_rl, fig_continuity_bucket, fig_displacement_current_hemisphere, fig_pec_boundary_fields):
         f()

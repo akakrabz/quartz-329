@@ -28,4 +28,6 @@ aliases: ["bound charge", "polarization charge", "dielectric", "dipole moment pe
 
 **Where it appears.** [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] (derived), [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] (used), [[problems/fields-across-a-dielectric-interface]] (FA26 3(c)), [[problems/two-layer-coaxial-capacitor]] (bound line charges as a bonus).
 
-Related: [[concepts/electric-flux-density]] · [[concepts/permittivity]] · [[concepts/conductors]] · [[concepts/charge-density]].
+When $\mathbf{E}$ varies in time the bound charges move and $\partial\mathbf{P}/\partial t$ is a real current density — the polarization current of [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]], and the material part of the [[concepts/displacement-current]].
+
+Related: [[concepts/electric-flux-density]] · [[concepts/permittivity]] · [[concepts/conductivity-and-susceptibility-models]] · [[concepts/conductors]] · [[concepts/charge-density]].

@@ -11,7 +11,7 @@ aliases: ["E field", "electric field"]
 > $$
 > The force a small stationary test charge $q$ would feel at $\mathbf{r}$, divided by $q$. It exists whether or not a test charge is there.
 
-**How it is produced.** By charge: a point charge gives the Coulomb field $\dfrac{Q}{4\pi\epsilon_0 r^2}\hat{r}$ ([[concepts/coulombs-law]]); many charges give the vector sum ([[concepts/superposition]]); charge densities give integrals. Time-varying magnetic fields *also* produce $\mathbf{E}$ (Faraday, Lecture 14) — that part of $\mathbf{E}$ is not curl-free.
+**How it is produced.** By charge: a point charge gives the Coulomb field $\dfrac{Q}{4\pi\epsilon_0 r^2}\hat{r}$ ([[concepts/coulombs-law]]); many charges give the vector sum ([[concepts/superposition]]); charge densities give integrals. Time-varying magnetic fields *also* produce $\mathbf{E}$ (Faraday, [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]]) — that part of $\mathbf{E}$ is not curl-free.
 
 **How to picture it.**
 - *Arrow plots*: length ∝ $|\mathbf{E}|$ at grid points.

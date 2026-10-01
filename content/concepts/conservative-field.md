@@ -13,7 +13,7 @@ aliases: ["curl-free field", "irrotational field", "path independence", "zero ci
 >
 > (1)⟹(2) is Stokes' theorem; (2)⟺(3) is "two paths from $A$ to $B$ make a loop"; (3)⟹(4) is the definition $V(\mathbf{r}) = -\int_{\text{ref}}^{\mathbf{r}}\mathbf{E}\cdot d\mathbf{l}$; (4)⟹(1) is the identity $\nabla\times\nabla V = 0$.
 
-**Why static E is conservative.** The Coulomb field of a point charge is radial, and every radial field $g(r)\mathbf{r}$ has zero curl; curl is linear, so any superposition of Coulomb fields — every electrostatic field — is curl-free ([[1-electrostatics/04-divergence-and-curl#6-static-electric-fields-are-curl-free|Lecture 4 §6]]). Time-varying $\mathbf{B}$ breaks this (Faraday, Lecture 14): the induced part of $\mathbf{E}$ has curl, and "voltage" then depends on the path.
+**Why static E is conservative.** The Coulomb field of a point charge is radial, and every radial field $g(r)\mathbf{r}$ has zero curl; curl is linear, so any superposition of Coulomb fields — every electrostatic field — is curl-free ([[1-electrostatics/04-divergence-and-curl#6-static-electric-fields-are-curl-free|Lecture 4 §6]]). Time-varying $\mathbf{B}$ breaks this (Faraday, [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]]): the induced part of $\mathbf{E}$ has curl, and "voltage" then depends on the path.
 
 **The potential** ([[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]]; full page: [[concepts/electrostatic-potential]]). With the minus-sign convention,
 $$

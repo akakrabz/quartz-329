@@ -179,7 +179,7 @@ Magnetic field lines have no beginnings or ends: they close on themselves or run
 > $$
 > \psi_B = \oint_S \mathbf{B}\cdot d\mathbf{S} = 0 \quad\text{for every closed surface } S.
 > $$
-> There is no magnetic charge. An *open* surface can have nonzero magnetic flux through it (that is what Faraday's law uses in Lecture 14); a *closed* one never does.
+> There is no magnetic charge. An *open* surface can have nonzero magnetic flux through it (that is what Faraday's law uses in [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]]); a *closed* one never does.
 
 ## 7. Summary
 

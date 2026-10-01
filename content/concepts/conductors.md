@@ -25,4 +25,6 @@ aliases: ["perfect electric conductor", "PEC", "Ohm's law", "conductivity", "rel
 
 **Where it appears.** [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]], [[1-electrostatics/07-poisson-and-laplace|Lecture 7]] (plates as equipotentials, $\rho_s$ from $\mathbf{D}$), [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] (every capacitor), [[problems/two-layer-coaxial-capacitor]].
 
-Related: [[concepts/boundary-conditions]] · [[concepts/conductance]] · [[concepts/polarization]] (the bound-charge contrast).
+The field that drives a *current* through a resistive wire is itself electrostatic — made by surface charges distributed along the wire ([[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility#6-what-drives-the-current-in-a-wire-a-footnote-worth-a-section|Lecture 11 §6]]); the microscopic origin of $\sigma$ is in [[concepts/conductivity-and-susceptibility-models]]. At the surface of a *perfect* conductor the magnetic field is tangential and carried by a surface current, $\hat n\times\mathbf{H} = \mathbf{J}_s$ ([[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations|Lecture 16]]).
+
+Related: [[concepts/boundary-conditions]] · [[concepts/conductance]] · [[concepts/conductivity-and-susceptibility-models]] · [[concepts/polarization]] (the bound-charge contrast).

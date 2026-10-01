@@ -15,7 +15,7 @@ Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written t
 ## Course map
 
 ### [[0-toolkit/index|Toolkit]] — the mathematics assumed
-[[0-toolkit/01-coordinates-and-differential-elements|Coordinates and differential elements]] · [[0-toolkit/02-vector-calculus-cheatsheet|Vector calculus cheat sheet]] · [[0-toolkit/03-units-and-constants|Units and constants]] · [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]] · [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]]
+[[0-toolkit/01-coordinates-and-differential-elements|Coordinates and differential elements]] · [[0-toolkit/02-vector-calculus-cheatsheet|Vector calculus cheat sheet]] · [[0-toolkit/03-units-and-constants|Units and constants]] · [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]]
 
 ### [[1-electrostatics/index|Unit 1 · Electrostatics]] — Lectures 1–11 (Exam 1: L1–10)
 1. [[1-electrostatics/01-fields-forces-and-the-maxwell-roadmap|Fields, forces, and the Maxwell roadmap]]
@@ -28,13 +28,20 @@ Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written t
 8. [[1-electrostatics/08-conductors-dielectrics-and-polarization|Conductors, dielectrics, and polarization]]
 9. [[1-electrostatics/09-static-fields-in-dielectric-media|Static fields in dielectric media]]
 10. [[1-electrostatics/10-capacitance-and-conductance|Capacitance and conductance]]
-11. Lorentz–Drude models for conductivity and susceptibility — *coming (not on Exam 1)*
+11. [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Where σ and χe come from: the Lorentz–Drude models]] (not on Exam 1)
 
-### [[2-magnetostatics/index|Unit 2 · Magnetostatics]] — Lectures 12–15
-Magnetic force and Ampère's law · current sheets, solenoids, vector potential · Faraday's law · inductance — *planned*
+### [[2-magnetostatics/index|Unit 2 · Magnetostatics and induction]] — Lectures 12–15
+12. [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Magnetic force, Biot–Savart, and Ampère's law]]
+13. [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Current sheets, solenoids, and the vector potential]]
+14. [[2-magnetostatics/14-faradays-law-and-induced-emf|Faraday's law and induced emf]]
+15. [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Inductance, magnetic energy, and the potentials]]
+
+The unit page carries the **[[2-magnetostatics/index#the-dictionary-electrostatics--magnetostatics|electrostatics ↔ magnetostatics dictionary]]** — every Unit 2 result beside its Unit 1 twin.
 
 ### [[3-maxwell-and-waves/index|Unit 3 · Maxwell's equations and waves]] — Lectures 16–26
-Displacement current and the full Maxwell equations · plane TEM waves · Poynting · phasors · lossy media · polarization · reflection and standing waves — *planned*
+16. [[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations|Charge conservation, displacement current, and Maxwell's equations]]
+
+Then: plane TEM waves · Poynting · phasors · lossy media · polarization · reflection and standing waves — *planned*
 
 ### [[4-transmission-lines/index|Unit 4 · Transmission lines]] — Lectures 27–38
 Guided TEM waves · bounce diagrams · sinusoidal steady state and input impedance · quarter-wave transformers · the Smith chart · impedance matching — *planned*
@@ -79,4 +86,4 @@ The notes use a few recurring boxes, so you can skim for what you need:
 > [!derivation]- Derivation (click to expand)
 > Longer derivations are folded so the narrative stays readable. Expand when you want the details.
 
-*Status: Unit 1 through the Exam 1 scope (Toolkit, Lectures 1–10, 25 concept pages, one worked problem per Exam 1 problem) is written; Lecture 11 and the remaining units are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*
+*Status: Lectures 1–16 are written (Toolkit, all of Unit 1, all of Unit 2, the first lecture of Unit 3), with 37 concept pages and ten worked problems; Lectures 17–38 are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*

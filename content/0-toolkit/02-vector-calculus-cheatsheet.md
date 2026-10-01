@@ -94,4 +94,14 @@ $$
 
 Orientation conventions: $d\mathbf{S}$ outward on a closed surface; on an open surface bounded by $C$, $d\mathbf{l}$ and $d\mathbf{S}$ are related by the right-hand rule (curl the fingers along $C$, the thumb gives $d\mathbf{S}$).
 
-Related: [[1-electrostatics/04-divergence-and-curl]] · [[concepts/divergence]] · [[concepts/curl]] · [[concepts/divergence-theorem]] · [[concepts/stokes-theorem]].
+## Integrals and facts that Unit 2 uses
+
+$$
+\int_{-\infty}^{\infty}\frac{dz}{(r^2+z^2)^{3/2}} = \frac{2}{r^2}\quad\Big(\text{antiderivative } \frac{z}{r^2\sqrt{r^2+z^2}}\Big),\qquad
+\int_a^b\frac{dr}{r} = \ln\frac ba,\qquad
+\mathbf{B}\cdot(\mathbf{v}\times d\mathbf{l}) = -(\mathbf{v}\times\mathbf{B})\cdot d\mathbf{l}.
+$$
+
+The first is the straight-wire Biot–Savart integral (and the line-charge Coulomb integral); the second gives every coax result; the third is the triple-product identity behind the motional emf. Curl in cylindrical coordinates for a purely azimuthal field: $(\nabla\times\mathbf{H})_z = \dfrac1r\dfrac{d}{dr}(rH_\phi)$ — zero for $H_\phi\propto1/r$ (off the wire), and $J_0$ for $H_\phi = J_0r/2$ (inside a uniform current $J_0$). For a field $H_y(x)$: $(\nabla\times\mathbf{H})_z = dH_y/dx$. A straight finite wire segment at perpendicular distance $a$: $H_\phi = \dfrac{I}{4\pi a}(\sin\theta_2-\sin\theta_1)$ with the angles from the perpendicular — $\dfrac{I}{2\pi a}$ for an infinite wire, $\dfrac{I}{4\pi a}$ at the end of a semi-infinite one.
+
+Related: [[1-electrostatics/04-divergence-and-curl]] · [[concepts/divergence]] · [[concepts/curl]] · [[concepts/divergence-theorem]] · [[concepts/stokes-theorem]] · [[concepts/biot-savart-law]] · [[concepts/vector-potential]].

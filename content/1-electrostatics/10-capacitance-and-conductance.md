@@ -5,7 +5,7 @@ tags: [lecture, electrostatics, exam-1]
 lecture: 10
 ---
 
-*Lecture 10 · course notes §10 · slides "Capacitance and Conductance" · prev: [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] · next: Lecture 11 (Lorentz–Drude models for σ and χe; not on Exam 1)*
+*Lecture 10 · course notes §10 · slides "Capacitance and Conductance" · prev: [[1-electrostatics/09-static-fields-in-dielectric-media|Lecture 9]] · next: [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]] (not on Exam 1)*
 
 > [!abstract] In one breath
 > Put charge $+Q$ on one conductor and $-Q$ on another and a potential difference $V$ appears between them. Because electrostatics is linear, doubling $Q$ doubles $V$: the ratio $C = Q/V$ is a constant of the *geometry and the dielectric* — the **capacitance**, in farads. You never look it up; you compute it by running the chain of the last five lectures in whichever direction the problem allows: from a given $V$ through Laplace's equation to the charge, or from a given $Q$ through Gauss's law to the voltage. Three geometries cover the course. Fill the gap with a slightly conducting material and the same field pattern also carries a leakage current $I = GV$, with $G = (\sigma/\epsilon)C$; the stored energy is $\tfrac12CV^2$, spread through the field at $\tfrac12\epsilon E^2$ per cubic metre; and a diode's depletion layer is a capacitor whose $C$ shrinks as the voltage grows.

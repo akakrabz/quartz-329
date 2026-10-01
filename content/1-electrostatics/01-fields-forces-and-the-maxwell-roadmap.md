@@ -56,7 +56,7 @@ Two consequences we will *derive* later but should be *announced* now:
 
 1. **Statics decouple.** If nothing changes in time, both $\partial/\partial t$ terms vanish, and the table splits into two independent problems:
    - *Electrostatics* (Lectures 1–11): $\nabla\cdot\mathbf{E}=\rho/\epsilon_0$ and $\nabla\times\mathbf{E}=0$ — a **curl-free** field fixed by charge.
-   - *Magnetostatics* (Lectures 12–13): $\nabla\cdot\mathbf{B}=0$ and $\nabla\times\mathbf{B}=\mu_0\mathbf{J}$ — a **divergence-free** field fixed by current. (Lectures 14–15, Faraday's law and inductance, are where $\partial\mathbf{B}/\partial t$ first re-enters.)
+   - *Magnetostatics* ([[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]], [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Lecture 13]]): $\nabla\cdot\mathbf{B}=0$ and $\nabla\times\mathbf{B}=\mu_0\mathbf{J}$ — a **divergence-free** field fixed by current. ([[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]] and [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15]], Faraday's law and inductance, are where $\partial\mathbf{B}/\partial t$ first re-enters.)
 2. **Waves.** With the time derivatives kept, the equations support solutions $\mathbf{E},\mathbf{B}\propto\cos\!\big(2\pi f\,(t - z/c)+\phi\big)$ in empty space — disturbances travelling at $c$ with wavelength $\lambda = c/f$. That is Lecture 18; it is also why the course ends with transmission lines and the Smith chart.
 
 ### Quasi-statics: when is a circuit "a circuit"?

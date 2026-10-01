@@ -18,7 +18,7 @@ A material's electrical character is summarized by its **conductivity** $\sigma$
 > $$
 > \mathbf{J} = \sigma\,\mathbf{E}\qquad[\text{A/m}^2 = (\text{S/m})(\text{V/m})].
 > $$
-> Current density is proportional to the field, with the material property $\sigma$ as the constant. The circuit version follows for a block of length $l$ and cross-section $A$: $V = El$, $I = JA$, so $R = V/I = l/(\sigma A)$. Resistivity is $1/\sigma$ [Ω·m]. Real conductors obey this because their carriers keep colliding with the lattice — the drift velocity, and hence $\mathbf{J}$, settles at a value proportional to $\mathbf{E}$ (Lecture 11 builds the model).
+> Current density is proportional to the field, with the material property $\sigma$ as the constant. The circuit version follows for a block of length $l$ and cross-section $A$: $V = El$, $I = JA$, so $R = V/I = l/(\sigma A)$. Resistivity is $1/\sigma$ [Ω·m]. Real conductors obey this because their carriers keep colliding with the lattice — the drift velocity, and hence $\mathbf{J}$, settles at a value proportional to $\mathbf{E}$ ([[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]] builds the model).
 
 Conductivities span more than twenty orders of magnitude at room temperature: copper $\approx 6\times10^{7}$ S/m, sea water $\approx 4$, germanium $\approx 2$, distilled water $\sim10^{-4}$, glass $\sim10^{-12}$, fused quartz $\sim10^{-17}$; superconductors are effectively $\infty$. The two ends of the scale are idealized:
 

@@ -21,6 +21,6 @@ aliases: ["stored energy", "energy density", "field energy"]
 > - With a dielectric, $\epsilon$ replaces $\epsilon_0$ in $w$; $\tfrac12\mathbf{D}\cdot\mathbf{E}$ is the form that needs no thought.
 > - $\tfrac12QV$ uses the total charge and the *final* voltage; it is half of $QV$ because the voltage grew from zero during charging.
 
-**Where it appears.** [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]], [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] ($U = qV$, the electron-volt); Unit 3 (Poynting's theorem adds the magnetic $\tfrac12\mu H^2$ and the flow of energy).
+**Where it appears.** [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]], [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] ($U = qV$, the electron-volt); [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15]] (the magnetic twin, $\tfrac12LI^2$ and $\tfrac12\mu H^2$ — [[concepts/magnetic-energy]]); Unit 3 (Poynting's theorem adds the flow of energy).
 
 Related: [[concepts/capacitance]] · [[concepts/electrostatic-potential]].

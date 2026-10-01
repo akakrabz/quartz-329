@@ -23,4 +23,6 @@ aliases: ["5-step program", "superposition integral recipe"]
 
 **Where it appears.** [[1-electrostatics/02-coulombs-law-superposition-and-gauss|Lecture 2]]; homework 1–2; [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] repeats it for the potential (a scalar integral from the start — even easier).
 
-Related: [[concepts/superposition]] · [[concepts/coulombs-law]].
+The same five steps compute magnetic fields with $d\mathbf{B} = \mu_0I\,d\mathbf{l}\times\hat R/(4\pi R^2)$ in place of $d\mathbf{E}$ — [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]] runs them for the straight wire.
+
+Related: [[concepts/superposition]] · [[concepts/coulombs-law]] · [[concepts/biot-savart-law]].

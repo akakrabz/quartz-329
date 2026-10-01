@@ -30,4 +30,4 @@ aliases: ["potential", "voltage", "electric potential", "equipotential", "gradie
 
 **Where it appears.** [[1-electrostatics/05-curl-free-fields-and-the-electrostatic-potential|Lecture 5]] (everything above), [[1-electrostatics/07-poisson-and-laplace|Lecture 7]] (Poisson's equation for $V$), [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]] (conductors are equipotentials), [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] ($C = Q/V$), [[problems/curl-potential-and-charge-from-a-field]], [[problems/charged-slab-with-a-power-law-profile]], [[problems/two-layer-coaxial-capacitor]].
 
-Related: [[concepts/conservative-field]] · [[concepts/electric-field]] · [[concepts/poissons-equation]].
+Related: [[concepts/conservative-field]] · [[concepts/electric-field]] · [[concepts/poissons-equation]] · [[concepts/vector-potential]] (the magnetic twin) · [[concepts/electromotive-force]] (what replaces path-independent voltage when fields vary).

@@ -151,7 +151,7 @@ Each integral law becomes a local one by the theorem that matches its geometry �
 | $\oint_S\mathbf{D}\cdot d\mathbf{S} = \displaystyle\int_V\rho\,dV$ (Gauss) | divergence | $\nabla\cdot\mathbf{D} = \rho$ |
 | $\oint_S\mathbf{B}\cdot d\mathbf{S} = 0$ | divergence | $\nabla\cdot\mathbf{B} = 0$ |
 
-Physical names: $\oint_C\mathbf{E}\cdot d\mathbf{l}$ is an **EMF** (volts) and $\oint_C\mathbf{H}\cdot d\mathbf{l}$ an **MMF** (amperes). Ampère's right-hand side has a "static" part, the **conduction current** $\mathbf{J}$, and a "dynamic" part, the **displacement current** $\partial\mathbf{D}/\partial t$ — Maxwell's addition, and the reason light exists (Lecture 16 onward).
+Physical names: $\oint_C\mathbf{E}\cdot d\mathbf{l}$ is an **EMF** (volts) and $\oint_C\mathbf{H}\cdot d\mathbf{l}$ an **MMF** (amperes). Ampère's right-hand side has a "static" part, the **conduction current** $\mathbf{J}$, and a "dynamic" part, the **displacement current** $\partial\mathbf{D}/\partial t$ — Maxwell's addition, and the reason light exists ([[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations|Lecture 16]] onward).
 
 > [!trap] Partial, not total, time derivatives
 > Fields depend on $(x,y,z,t)$; the differential equations use $\partial/\partial t$. Some slides write $d/dt$ — read it as $\partial/\partial t$.

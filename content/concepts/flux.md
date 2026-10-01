@@ -25,4 +25,4 @@ aliases: ["electric flux", "surface integral"]
 
 **Two theorems about it.** [[concepts/gauss-law|Gauss's law]] (flux of $\mathbf{D}$ out of a closed surface = enclosed charge) is physics; the [[concepts/divergence-theorem|divergence theorem]] (flux out = volume integral of the divergence) is mathematics.
 
-**Where it appears.** [[1-electrostatics/03-gauss-law-at-work#1-flux-counting-arrows-through-a-surface|Lecture 3 §1]] (definition and intuition), Lecture 14 (Faraday's law: EMF = −dψ_B/dt), [[problems/flux-through-a-plane-from-two-charges]].
+**Where it appears.** [[1-electrostatics/03-gauss-law-at-work#1-flux-counting-arrows-through-a-surface|Lecture 3 §1]] (definition and intuition), [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]] (Faraday's law, $\mathcal{E} = -d\Psi/dt$ — see [[concepts/magnetic-flux]]), [[problems/flux-through-a-plane-from-two-charges]].
