@@ -52,8 +52,11 @@ LECTURES = {
     13: ("2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential", "Current sheets, solenoids and the vector potential"),
     14: ("2-magnetostatics/14-faradays-law-and-induced-emf", "Faraday's law and induced emf"),
     15: ("2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials", "Inductance, magnetic energy and the potentials"),
+    16: ("3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations", "Charge conservation, displacement current and Maxwell's equations"),
+    17: ("3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter", "Magnetization and Maxwell's equations in matter"),
+    18: ("3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves", "The wave equation and plane TEM waves"),
 }
-UNIT_INDEXES = ["1-electrostatics/index.md", "2-magnetostatics/index.md"]
+UNIT_INDEXES = ["1-electrostatics/index.md", "2-magnetostatics/index.md", "3-maxwell-and-waves/index.md"]
 LEVELS = ["easy", "medium", "hard"]
 EXPECT = {L: (5, 3, 4) for L in LECTURES}
 EXPECT[11] = (4, 2, 2)
@@ -89,6 +92,8 @@ TOPICS = [
     ("induced", "Induced electric field and voltmeters"),
     ("inductance", "Inductance"),
     ("magenergy", "Magnetic energy and RL circuits"),
+    ("magmedia", "Magnetization and magnetic media"),
+    ("waves", "Plane waves and the wave equation"),
 ]
 TOPIC_TITLE = dict(TYPES + TOPICS)
 
@@ -163,6 +168,10 @@ RULES = {
     "inductance": ["inductance"], "mutual inductance": ["inductance"], "internal inductance": ["inductance"],
     "two-wire line": ["inductance"], "LC product": ["inductance"],
     "magnetic energy": ["magenergy"], "RL circuit": ["magenergy"], "RL decay": ["magenergy"], "power": ["magenergy"],
+    "magnetization": ["magmedia"], "magnetization current": ["magmedia"], "permeability": ["magmedia"],
+    "hysteresis": ["magmedia"],
+    "plane waves": ["waves"], "wave equation": ["waves"], "intrinsic impedance": ["waves"],
+    "moving pulses": ["waves"],
     "multiple choice": ["mc"], "true or false": ["mc"], "find the error": ["fte"],
 }
 # geometry words that carry no topic of their own (the problem's other tags place it)
@@ -182,6 +191,8 @@ CONCEPT_TOPICS = {
     "maxwells-equations": ["divcurl"], "permittivity": ["dielectrics"], "poissons-equation": ["laplace"],
     "polarization": ["polarization"], "stokes-theorem": ["divcurl"], "superposition": ["superposition"],
     "vector-potential": ["vecpot"],
+    "magnetization": ["magmedia"], "permeability": ["magmedia"],
+    "plane-waves": ["waves"], "wave-equation": ["waves"], "intrinsic-impedance": ["waves"],
 }
 
 # lecture to draw a concept page's example problems from (default: where its topic has most problems)

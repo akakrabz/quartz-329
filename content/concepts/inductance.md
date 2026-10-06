@@ -27,6 +27,8 @@ aliases: ["self-inductance", "mutual inductance", "henry", "inductor", "inductan
 | shorted coax, radii $a<b$, length $\ell$ | $\dfrac{\mu\ell}{2\pi}\ln\dfrac ba$, $\ \mathcal{L} = \dfrac{\mu}{2\pi}\ln\dfrac ba$ | $B_\phi = \mu I/2\pi r$; flux through the $r$–$z$ rectangle; external inductance only |
 | shorted parallel plates, width $W$, gap $d$ | $\mathcal{L} = \mu\,d/W$ | $H = I/W$ between the plates |
 
+**With a magnetic core, $L\propto\mu$** ([[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter|Lecture 17]]). The free current fixes $\mathbf{H}$, and the flux $\int\mu\mathbf{H}\cdot d\mathbf{S}$ scales with $\mu$: a solenoid filled with a core of relative permeability $\mu_r$ has $L = n^2\mu A\ell$, $\mu_r$ times its air-core value (12.6 μH becomes 1.26 mH for $n = 1000$/m, $A = 1$ cm², $\ell = 10$ cm, $\mu_r = 100$). The course notes cite such inductance measurements as the laboratory evidence that $\mathbf{M}\propto\mathbf{H}$ in most materials. Iron is not linear: its $L$ depends on the current and collapses toward the air value as the core saturates.
+
 Beside $\mathcal{C} = 2\pi\epsilon/\ln(b/a)$ and $\mathcal{C} = \epsilon W/d$: the geometric factor of $\mathcal{L}$ is the inverse of the geometric factor of $\mathcal{C}$, so $\mathcal{L}\mathcal{C} = \mu\epsilon$ for any line with one homogeneous filling, and $1/\sqrt{\mathcal{LC}} = 1/\sqrt{\mu\epsilon}$ is the signal speed (Unit 4). Also $\mathcal{G}/\mathcal{C} = \sigma/\epsilon$.
 
 > [!trap]
@@ -36,8 +38,8 @@ Beside $\mathcal{C} = 2\pi\epsilon/\ln(b/a)$ and $\mathcal{C} = \epsilon W/d$: t
 > - "A coil has $L = \ldots$" lumps the field into an element; the lumped model needs the coil to be small compared with $\lambda = c/f$.
 > - Check coax numbers against $\mathcal{LC} = \mu\epsilon$.
 
-**Where it appears.** [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15]] (all of the above), [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]] (the self-emf that $I = \mathcal{E}/R$ neglects), [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] (the twin), [[problems/coax-inductance-and-the-lc-product]]; the telegrapher's equations of Unit 4 are built from $\mathcal{L}$ and $\mathcal{C}$.
+**Where it appears.** [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials|Lecture 15]] (all of the above), [[2-magnetostatics/14-faradays-law-and-induced-emf|Lecture 14]] (the self-emf that $I = \mathcal{E}/R$ neglects), [[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter|Lecture 17]] (cores, $L\propto\mu$), [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]] (the twin), [[problems/coax-inductance-and-the-lc-product]]; the telegrapher's equations of Unit 4 are built from $\mathcal{L}$ and $\mathcal{C}$.
 
-**Practice.** [[practice/topics#inductance|Inductance]] (8 problems) — for example [[practice/15-inductance-and-magnetic-energy#151-a-long-solenoid-by-the-numbers|15.1 A long solenoid by the numbers]] (easy), [[practice/15-inductance-and-magnetic-energy#157-internal-inductance-of-a-wire|15.7 Internal inductance of a wire]] (medium), [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core|15.9 Toroid with a two-layer core]] (hard).
+**Practice.** [[practice/topics#inductance|Inductance]] (11 problems) — for example [[practice/15-inductance-and-magnetic-energy#151-a-long-solenoid-by-the-numbers|15.1 A long solenoid by the numbers]] (easy), [[practice/15-inductance-and-magnetic-energy#157-internal-inductance-of-a-wire|15.7 Internal inductance of a wire]] (medium), [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core|15.9 Toroid with a two-layer core]] (hard).
 
 Related: [[concepts/capacitance]] · [[concepts/magnetic-flux]] · [[concepts/faradays-law]] · [[concepts/magnetic-energy]] · [[concepts/conductance]].

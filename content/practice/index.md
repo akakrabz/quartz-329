@@ -1,10 +1,10 @@
 ---
 title: "Practice problems"
-description: "164 practice problems for Lectures 2–15 — 69 easy, 41 medium, 54 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
+description: "200 practice problems for Lectures 2–18 — 84 easy, 50 medium, 66 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
 tags: [practice]
 ---
 
-Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **164 problems for Lectures 2–15**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 26 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
+Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **200 problems for Lectures 2–18**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 32 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
 
 > [!recipe] How to use the bank
 > 1. Pick a lecture you have read and do its **easy** problems first — a few minutes each, one idea per problem.
@@ -29,7 +29,7 @@ Every problem's title bar carries one **difficulty tag** and one to three **topi
 | <span class="diff medium">medium</span> | a standard exam sub-problem: one modelling decision (which surface, path, coordinates or region), a real integral, or a three- or four-step chain | 8–15 min |
 | <span class="diff hard">hard</span> | exam length, in several parts: superposition of several pieces, several regions with matching conditions, a non-trivial integral, a sign-heavy direction analysis, or two lectures combined | 20–40 min |
 
-Browse: [[practice/easy|all 69 easy]] · [[practice/medium|all 41 medium]] · [[practice/hard|all 54 hard]] · [[practice/topics|by topic]] — 28 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
+Browse: [[practice/easy|all 84 easy]] · [[practice/medium|all 50 medium]] · [[practice/hard|all 66 hard]] · [[practice/topics|by topic]] — 30 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
 
 ## By lecture
 
@@ -49,7 +49,10 @@ Browse: [[practice/easy|all 69 easy]] · [[practice/medium|all 41 medium]] · [[
 | 13 | [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential\|Current sheets, solenoids and the vector potential]] | [[practice/13-current-sheets-solenoids-and-vector-potential\|12 problems]] | [[practice/easy#lecture-13--current-sheets-solenoids-and-the-vector-potential\|5]] | [[practice/medium#lecture-13--current-sheets-solenoids-and-the-vector-potential\|3]] | [[practice/hard#lecture-13--current-sheets-solenoids-and-the-vector-potential\|4]] |
 | 14 | [[2-magnetostatics/14-faradays-law-and-induced-emf\|Faraday's law and induced emf]] | [[practice/14-faradays-law-and-induced-emf\|12 problems]] | [[practice/easy#lecture-14--faradays-law-and-induced-emf\|5]] | [[practice/medium#lecture-14--faradays-law-and-induced-emf\|3]] | [[practice/hard#lecture-14--faradays-law-and-induced-emf\|4]] |
 | 15 | [[2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials\|Inductance, magnetic energy and the potentials]] | [[practice/15-inductance-and-magnetic-energy\|12 problems]] | [[practice/easy#lecture-15--inductance-magnetic-energy-and-the-potentials\|5]] | [[practice/medium#lecture-15--inductance-magnetic-energy-and-the-potentials\|3]] | [[practice/hard#lecture-15--inductance-magnetic-energy-and-the-potentials\|4]] |
-| | **total** | **164** | **69** | **41** | **54** |
+| 16 | [[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations\|Charge conservation, displacement current and Maxwell's equations]] | [[practice/16-charge-conservation-and-displacement-current\|12 problems]] | [[practice/easy#lecture-16--charge-conservation-displacement-current-and-maxwells-equations\|5]] | [[practice/medium#lecture-16--charge-conservation-displacement-current-and-maxwells-equations\|3]] | [[practice/hard#lecture-16--charge-conservation-displacement-current-and-maxwells-equations\|4]] |
+| 17 | [[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter\|Magnetization and Maxwell's equations in matter]] | [[practice/17-magnetization-and-maxwell-in-matter\|12 problems]] | [[practice/easy#lecture-17--magnetization-and-maxwells-equations-in-matter\|5]] | [[practice/medium#lecture-17--magnetization-and-maxwells-equations-in-matter\|3]] | [[practice/hard#lecture-17--magnetization-and-maxwells-equations-in-matter\|4]] |
+| 18 | [[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves\|The wave equation and plane TEM waves]] | [[practice/18-wave-equation-and-plane-waves\|12 problems]] | [[practice/easy#lecture-18--the-wave-equation-and-plane-tem-waves\|5]] | [[practice/medium#lecture-18--the-wave-equation-and-plane-tem-waves\|3]] | [[practice/hard#lecture-18--the-wave-equation-and-plane-tem-waves\|4]] |
+| | **total** | **200** | **84** | **50** | **66** |
 
 Exam 1 covered Lectures 1–10. Lecture 1 has no practice page: its content (fields defined by force, the Maxwell roadmap) is exercised from Lecture 2 on.
 
@@ -85,6 +88,12 @@ These follow a past ECE 329 exam problem (Spring 2018 midterms, Summer 2017–20
 | [[practice/15-inductance-and-magnetic-energy#153-fields-from-given-potentials\|15.3 Fields from given potentials]] | <span class="diff easy">easy</span> | SP18 Exam 2 #1(v) |
 | [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core\|15.9 Toroid with a two-layer core]] | <span class="diff hard">hard</span> | SP18 Exam 2 #2 |
 | [[practice/15-inductance-and-magnetic-energy#1510-shorted-parallel-plate-line\|15.10 Shorted parallel-plate line]] | <span class="diff hard">hard</span> | SP18 Exam 2 #3 |
+| [[practice/16-charge-conservation-and-displacement-current#1611-a-region-with-no-conduction-current\|16.11 A region with no conduction current]] | <span class="diff hard">hard</span> | SP18 Exam 2 #1(iv) |
+| [[practice/16-charge-conservation-and-displacement-current#1612-four-conditions-at-a-tilted-interface\|16.12 Four conditions at a tilted interface]] | <span class="diff hard">hard</span> | SP18 Exam 2 #1(vi) |
+| [[practice/17-magnetization-and-maxwell-in-matter#1710-three-sheets-and-two-slabs\|17.10 Three sheets and two slabs]] | <span class="diff hard">hard</span> | SP18 Exam 2 #1(vi) |
+| [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap\|17.11 A toroid with an air gap]] | <span class="diff hard">hard</span> | SP18 Exam 2 #2 |
+| [[practice/18-wave-equation-and-plane-waves#183-phase-rate-and-snapshot-period\|18.3 Phase rate and snapshot period]] | <span class="diff easy">easy</span> | SP18 Exam 2 #1(vii) |
+| [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium\|18.9 Triangle pulse in a magnetic medium]] | <span class="diff hard">hard</span> | SP18 Exam 2 #4 |
 
 ## How the answers were checked
 

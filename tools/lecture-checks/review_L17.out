@@ -1,0 +1,107 @@
+== A. curls of every M on the pages (finite differences)
+OK    M=Mz(x) z: curl M = -dMz/dx y  (page S3)
+OK    graded M0(x/d) z: curl = -(M0/d) y  (concept magnetization)
+OK    uniform slab M: curl M = 0 inside
+OK    loop lattice: leftover shared-edge current density = -dM/dx along +y
+OK    slab top face: int curl M dn = [ 0.  -9.9  0. ] = M x z = -9.9 y
+OK    slab bottom face: [0.  9.9 0. ] = +9.9 y
+OK    twin: int(-div P)dn = 3.00000 = P.n (rho_sb)
+OK    rod M z, side n = r: M x r = M phi (solenoid sense)
+OK    rod end faces: M x (+-z) = 0
+OK    interface: int curl M dz = [-12. -16.   0.] = n x (M1-M2) = (-12,-16,0)
+OK    two faces: M2 x n + M1 x (-n) = n x (M1-M2)
+OK    problem (e) faces: (-15,-20) and (+3,+4)
+OK    problem trap: same normal for both faces gives (-18,-24)
+== B. torque on loops (np.cross, discretised)
+OK    square loop: x cross u = m_hat = (0, sin, cos)
+OK    discretised m = I l^2 (0, sin, cos)
+OK    net force zero in uniform B
+OK    torque = m x B = I l^2 B sin(theta) x
+OK    F(+x side) = -IlB y ; u x y = sin(theta) x
+OK    u-sides: forces +-IlB cos(theta) x, along their own position line (no torque)
+OK    rotation about +T turns m toward B
+OK    circular tilted loop: T = m x B, F = 0
+== C. atomic numbers
+   Bohr loop I = 1.056 mA ; area = 8.791e-21 m^2 ; m = 9.2807e-24 (e v a0/2 = 9.2807e-24) ; muB = 9.2740e-24
+FAIL  Bohr: I = 1.05 mA, m = 9.27e-24 A m^2 = muB
+OK    electron at -y moving -x: L along -z ; current +x there -> CCW -> m +z (antiparallel)
+   iron N = 8.491e+28 /m^3, M_sat = 1.732e+06 A/m, mu0 M = 2.177 T
+OK    iron saturation numbers
+OK    permanent magnet M = 1.0345e+06 A/m ~ 1000 turns/m x 1000 A
+OK    copper electrons: 2.462e+30 /m^3, 2.462e+21 per mm^3
+   kT(300 K) = 4.142e-21 J ; muB*1T = 9.274e-24 J ; ratio 447
+OK    thermal: muB B is ~1/450 of kT
+== D. solenoid / core / inductance / demagnetization
+   H = 2000.0 A/m ; B0 = 2.513 mT ; M = 1.980e+05 ; mu0 M = 0.2488 T ; B_core = 0.2513 T ; ratio 100.0
+OK    coil-with-core numbers
+OK    iron mu_r 5000 linear: 12.57 T
+OK    L air = 12.57 uH, x100 = 1.257 mH
+OK    sphere mu_r=100: H_in = H0 - M/3 = 3H0/(mu_r+2) = 0.0294118 H0 ; B_in/(mu0 H0) = 2.94118
+OK    sphere mu_r=5000: H_in = H0 - M/3 = 3H0/(mu_r+2) = 0.00059976 H0 ; B_in/(mu0 H0) = 2.9988
+OK    sphere mu_r=1e+09: H_in = H0 - M/3 = 3H0/(mu_r+2) = 3e-09 H0 ; B_in/(mu0 H0) = 3
+OK    sphere mu_r=0.99999: H_in = H0 - M/3 = 3H0/(mu_r+2) = 1 H0 ; B_in/(mu0 H0) = 0.999993
+   -> H_in < H0 only for chi_m > 0; a diamagnetic sphere has H_in slightly > H0 (page trap says 'smaller' unconditionally)
+OK    long rod L/a=20: B_centre/(mu0 M) = 0.9950
+OK    notes' stack average = mu0 N I_l A_l
+OK    concept-map M = B(mu-mu0)/(mu mu0) = chi_m H
+== E. slab between two sheets (slide 16) + bound-current check
+OK    each sheet gives +0.05 x between
+OK    H = 0.1 x between, 0 outside
+   B_slab = 1.2566e-05 T ; M = 9.90 A/m ; mu0(H+M) = 1.2566e-05 ; mu_r=1: B = 1.2566e-07 T
+OK    slab numbers
+OK    bound faces: -9.9 y top, +9.9 y bottom (same sense as free)
+OK    vacuum formula with free+bound: B/mu0 = 10 x in slab, 0.1 x in gap, 0 outside
+OK    fig slab: top free & bound odot, bottom free & bound otimes; y into page
+OK    page frame (x right, z up, y into page) is right-handed
+== F. tables: chi_m <-> mu_r
+OK    bismuth: 1 + (-0.00017) = 0.9998300 vs printed 0.99983
+OK    silver: 1 + (-7e-05) = 0.9999300 vs printed 0.99993
+OK    copper: 1 + (-9.4e-06) = 0.9999906 vs printed 0.999991
+OK    water: 1 + (-8.8e-06) = 0.9999912 vs printed 0.999991
+OK    aluminum: 1 + (2.1e-05) = 1.0000210 vs printed 1.00002
+OK    platinum: 1 + (2.9e-05) = 1.0000290 vs printed 1.000029
+OK    liquid oxygen: 1 + (3.5e-05) = 1.0000350 vs printed 1.000035
+OK    palladium: 1 + (0.0008) = 1.0008000 vs printed 1.0008
+OK    silver: mu_r 0.99993 <-> chi -7e-5 (only if the table really says 0.99993)
+   physical reference values (molar susceptibilities, CGS 1e-6 cm^3/mol, CRC; reviewer's memory) -> SI volume chi:
+     Al           chi_SI = +2.07e-05
+     Bi           chi_SI = -1.65e-04
+     Cu           chi_SI = -9.67e-06
+     Pb           chi_SI = -1.58e-05
+     Pd           chi_SI = +8.05e-04
+     Pt           chi_SI = +2.67e-04
+     Ag           chi_SI = -2.38e-05
+     H2O          chi_SI = -9.03e-06
+     O2 liq 90K   chi_SI = +3.45e-03
+     O2 gas 293K  chi_SI = +1.80e-06
+   -> slides: Pt +2.90e-5 (real ~ +2.7e-4: x10 low), liquid O2 +3.50e-5 (real ~ +3.5e-3: x100 low); Ag real -2.4e-5 (mu_r 0.99998)
+== G. boundary conditions, refraction, iron
+OK    iron 85 deg -> 0.131 deg ; 89.9 deg -> 6.54 deg
+OK    problem (a),(b)
+OK    problem (c): M = B/mu0 - H
+OK    problem (b) magnitudes
+OK    problem (d) angles 29.1, 59.0 ; ratio 1/3
+OK    problem (e) check, J_sM perp H_t, (chi1-chi2) z x H1t
+OK    normal H jump = -(normal M jump) = -6
+OK    variant: H2, B2, M2
+OK    variant: J_sM = (-12,-6), check (-12,-4)
+OK    variant theta2 = 50.2 deg
+OK    general pattern (200 random cases): B_n continuous, n x dH = Js, n x dB/mu0 = Js + n x dM
+== H. figure geometry (screen frame X right, Y up, Z out)
+OK    fig1: loop edge (P_L -> P_R) is perpendicular to m
+OK    fig1: current otimes at P_R (lower right), odot at P_L (upper left)
+OK    fig1: F right at P_R, left at P_L
+OK    fig1: torque +Z (odot, CCW arc), = m x B0
+OK    fig1 panel A: near side y=-a, CCW about +z has +x current there (m up)
+OK    fig2 lattice M odot: edge n=[1. 0. 0.] -> M x n = [0. 1. 0.]
+OK    fig2 lattice M odot: edge n=[0. 1. 0.] -> M x n = [-1. -0. -0.]
+OK    fig2 lattice M odot: edge n=[-1. -0. -0.] -> M x n = [-0. -1. -0.]
+OK    fig2 lattice M odot: edge n=[-0. -1. -0.] -> M x n = [1. 0. 0.]
+OK    fig2 rod M up: right side otimes, left side odot
+OK    fig4: virgin curve inside loop; B_r = 0.809; B(-Hc) = 0 on the descending branch
+OK    fig4: upper branch leftward + lower rightward = counter-clockwise (signed area 3.59 > 0)
+OK    fig5: drawn H1, H2 at 29.1, 59.0 deg from the normal, both pointing down-right
+OK    fig5 right: iron line at 85 deg from normal
+== I. Lecture 16 slide exercises
+OK    rho_s = 3 D0 and -2 D0
+== 1 FAIL(s)

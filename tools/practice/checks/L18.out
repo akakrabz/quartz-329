@@ -1,0 +1,254 @@
+
+==============================================================================
+18.1 Which way and how fast (multiple choice)
+==============================================================================
+p = 5 cos(2pi 1e8 t + 0.8 pi x): v = [-2.5e+08 -0.0e+00 -0.0e+00] m/s -> -x speed 2.5000e+08
+q = u(0.004 z - t):              v = [  0.   0. 250.] m/s -> +z speed 250
+r = exp(-(t + 0.0125 y)^2):      v = [ -0. -80.  -0.] m/s -> -y speed 80
+  t = 0 s: edge of q at z = 0.000 m; peak of r at y = 0.000 m
+  t = 1 s: edge of q at z = 250.000 m; peak of r at y = -80.000 m
+  t = 2 s: edge of q at z = 500.000 m; peak of r at y = -160.000 m
+  t = 0 ns: crest (phase 0) of p at x = 0.0000 m
+  t = 1 ns: crest (phase 0) of p at x = -0.2500 m
+  t = 2 ns: crest (phase 0) of p at x = -0.5000 m
+  slownesses: q 0.004 s/m -> 1/0.004 = 250 m/s; r 0.0125 s/m -> 80 m/s
+  p slower than c: non-magnetic eps_r = (c/v)^2 = 1.4380 (c = 3e8: 1.4400)
+  options: (a) +2.5e8 x, +250 z, -80 y  (b) -2.5e8 x, -250 z, -80 y  (c) -2.5e8 x, +250 z, -80 y [correct]
+           (d) -2.5e8 x, +0.004 z, -0.0125 y  (e) -2.5e8 x, +250 z, +80 y
+
+==============================================================================
+18.2 The partner field (free space)
+==============================================================================
+(a) E = 6 y cos(w(t - z/c)):  u = +z
+  z x y = [-1.  0.  0.]  (-x)
+    |H| = 6/eta0 = 15.927 mA/m (120pi: 15.915); |B| = 6/c = 20.014 nT
+  E(y) x H(-x) = [ 0. -0.  1.]  (+z)
+  [18.2a] Faraday rel.res 2.9e-10 | Ampere-Maxwell 2.9e-10 | div/curl 0.0e+00 | wave eq E 2.4e-09, H 3.5e-09  -> OK
+(b) E = 3 x exp(-((t + y/c)/tau)^2):  u = -y
+  (-y) x x = [0. 0. 1.]  (+z)
+    |H| = 3/eta0 = 7.963 mA/m; |B| = 3/c = 10.007 nT
+  E(x) x H(+z) = [ 0. -1.  0.]  (-y)
+  [18.2b] Faraday rel.res 3.1e-10 | Ampere-Maxwell 2.8e-10 | div/curl 0.0e+00 | wave eq E 2.2e-07, H 7.2e-08  -> OK
+(c) H = 0.05 z cos(w(t - x/c)) A/m:  u = +x;  E = eta0 H x u
+  z x x = [0. 1. 0.]  (+y)
+    |E| = eta0*0.05 = 18.837 V/m (120pi: 18.850); |B| = mu0*0.05 = 62.832 nT = E/c = 62.832 nT
+  E(+y) x H(z) = [1. 0. 0.]  (+x)
+    check also H = u x E/eta0: [0. 0. 1.] = z
+  [18.2c] Faraday rel.res 3.4e-10 | Ampere-Maxwell 3.3e-10 | div/curl 0.0e+00 | wave eq E 2.9e-09, H 3.1e-09  -> OK
+
+==============================================================================
+18.3 Phase rate and snapshot period (SP18 Exam 2 #1(vii) style)
+==============================================================================
+omega = 6pi/10 ns = 1.8850e+09 rad/s (= 6pi x 1e8); beta = 2pi/0.4 = 15.7080 rad/m (= 5pi)
+v = omega/beta = 1.2000e+08 m/s; temporal period 2pi/omega = 3.3333 ns; 0.4 m / period = 1.2000e+08
+eps_r = (c/v)^2 = 6.2414 (c = 3e8: 6.2500); eta = mu0 v = 150.796 Ohm = 48.000 pi; eta0/sqrt(eps_r) = 150.796
+H amplitude = 12/eta = 79.577 mA/m; B = 12/v = 100.000 nT = mu0 H = 100.000 nT
+  u(+x) x E(y) = [0. 0. 1.]  (+z)
+  E(y) x H(z) = [1. 0. 0.]  (+x)
+  [18.3] Faraday rel.res 1.2e-10 | Ampere-Maxwell 6.6e-10 | div/curl 0.0e+00 | wave eq E 1.2e-08, H 8.6e-09  -> OK
+
+==============================================================================
+18.4 What the derivation needs (true or false)
+==============================================================================
+(a) travelling wave: lap E_x = -4.3151, -(w/v)^2 E_x = -4.3151  -> lap E != 0, so it cannot satisfy Laplace's equation (what remains without dD/dt)
+(b) div(eps E) = rho check: eps*dEx/dx = 7.0000e-10 vs rho = 7.0000e-10
+    lap E - mu eps d2E/dt2 = [2.82352e+01 1.00000e-04 0.00000e+00]; grad(rho)/eps = [28.2352  0.      0.    ]  -> extra term, statement FALSE
+(c) div D = 0.000e+00 (zero); div E at x=0 = -2.00000 V/m^2 = -E0/a = -2.00000  -> FALSE
+(d) E = z cos(w(t - z/v)): 1D wave-equation rel. residual 6.5e-10 (solves it), but div E = 0.0433 vs (w/v) sin(.) = 0.0433  -> violates Gauss (rho = 0): FALSE
+    and curl E = [0. 0. 0.] -> Faraday gives no H partner
+
+==============================================================================
+18.5 Find the error: H pointing the wrong way
+==============================================================================
+E = z 12 cos(1.5pi e8 t + 2pi x): same signs -> travels -x; v = 7.5000e+07 m/s; eps_r = 15.978 (c=3e8: 16.000)
+eta = mu0 v = 94.248 Ohm = 30.000 pi (eta0/4 = 94.183); |H| = 12/eta = 0.12732 A/m = 127.3 mA/m
+  u(-x) x z = [0. 1. 0.]  (+y)
+  z x u(-x) = [ 0. -1.  0.]  (-y)
+  E(z) x H_correct = [-1.  0.  0.]  (-x)
+  E(z) x H_student = [ 1.  0. -0.]  (+x)
+  [18.5 correct H = +y] Faraday rel.res 7.0e-11 | Ampere-Maxwell 6.4e-10 | div/curl 0.0e+00 | wave eq E 2.5e-07, H 2.6e-07  -> OK
+  [18.5 student's H = -y] Faraday rel.res 2.00 (2 = opposite sign) -> FAILS
+
+==============================================================================
+18.6 Which fields can be waves (mu eps = 1e-16 s^2/m^2, mu = mu0)
+==============================================================================
+v = 1/sqrt(mu eps) = 1.0000e+08 m/s; eps_r = 8.9876; eta = mu0 v = 125.6637 Ohm = 40.0000 pi
+  E1 = 4 cos(2e8 t - 2z)                     max rel. residual of d2/dz2 - mu eps d2/dt2: 6.11e-08 -> SOLVES
+  E2 = 4 cos(2e8 t) cos(2z)                  max rel. residual of d2/dz2 - mu eps d2/dt2: 2.41e-08 -> SOLVES
+  E3 = 4 cos(2e8 t - 6z)                     max rel. residual of d2/dz2 - mu eps d2/dt2: 8.89e-01 -> fails
+  E4 = 4 cos(2e8 t - 2z) cos(2e8 t + 2z)     max rel. residual of d2/dz2 - mu eps d2/dt2: 1.84e+00 -> fails
+  omega^2 = (2e8)^2 = 4e+16 rad^2/s^2; beta^2 = 4; mu eps omega^2 = 4
+  E3: d2/dz2 = -36 E, mu eps d2/dt2 = -4 E; own speed 2e8/6 = 3.3333e+07 m/s; needs mu eps = 9.0e-16 -> eps_r = 80.89
+  E4 = 2cos(4z) + 2cos(4e8 t): at z = 0, t = pi/4e8 = 7.8540 ns: d2/dz2 = -32.0, mu eps d2/dt2 = 32.0
+  E4 identity check: True
+(b) H for E2: H_y = (E0/eta) sin(wt) sin(bz), E0/eta = 0.031831 A/m = 31.83 mA/m (= 1/(10 pi) = 0.031831)
+  [18.6 standing pair (E2, H2)] Faraday rel.res 7.0e-10 | Ampere-Maxwell 6.9e-10 | div/curl 0.0e+00 | wave eq E 1.1e-06, H 2.0e-06  -> OK
+  with the opposite sign of H: Faraday rel.res 2.00 (fails)
+(c) E2 = 2cos(wt-bz) + 2cos(wt+bz): True ; H = (2/eta)[cos(wt-bz) - cos(wt+bz)] = H2: True
+    each travelling part: E amplitude 2 V/m, H amplitude 2/eta = 15.92 mA/m
+(d) E = 0 everywhere when w t = pi/2: t = 7.8540 ns; then H_y = 31.83 sin(2z) mA/m, largest at z = pi/4 = 0.7854 m (and every pi/2 = 1.5708 m)
+    E2 nodes (E = 0 at all t): cos(2z) = 0 -> z = pi/4 + n pi/2; H2 nodes: sin(2z) = 0 -> z = n pi/2
+
+==============================================================================
+18.7 A cable and its filling (parallel strips W = 8 mm, d = 1 mm)
+==============================================================================
+v = 3 m / 18 ns = 1.66667e+08 m/s; eps_r = (c/v)^2 = 3.2355 (c = 3e8: 3.2400 = 1.8^2)
+eta = mu0 v = 209.440 Ohm; eta0/1.8 = 209.295; 120pi/1.8 = 209.440
+  eps_r = 3.2400: C' = eps W/d = 229.50 pF/m; L' = mu0 d/W = 157.08 nH/m (0.1571 uH/m); 1/sqrt(L'C') = 1.66551e+08 m/s; sqrt(L'/C') = 26.162 Ohm; eta d/W = 26.162 Ohm; L'C' = 3.6050e-17 = mu eps = 3.6050e-17
+  eps_r = 3.2355: C' = eps W/d = 229.18 pF/m; L' = mu0 d/W = 157.08 nH/m (0.1571 uH/m); 1/sqrt(L'C') = 1.66667e+08 m/s; sqrt(L'/C') = 26.180 Ohm; eta d/W = 26.180 Ohm; L'C' = 3.6000e-17 = mu eps = 3.6000e-17
+coax with the same sqrt(L'/C'): (eta/2pi) ln(b/a) = eta d/W -> ln(b/a) = 2pi d/W = 0.7854 (pi/4); b/a = 2.1933
+  coax L' = 157.08 nH/m, C' = 229.50 pF/m (identical to the strips); delay over 3 m = 18.01 ns (with c=3e8 eps_r: 18.0 ns)
+  sqrt(L'/C') coax = 26.162 Ohm
+
+==============================================================================
+18.8 A probe record turned into snapshots (vacuum, travel +x, E along z; c = 300 m/us, eta0 = 120 pi)
+==============================================================================
+  snapshot t = 2 us: x =  -400 m -> s = +3.3333 us, E_z = +0 V/m
+  snapshot t = 2 us: x =  -300 m -> s = +3.0000 us, E_z = +0 V/m
+  snapshot t = 2 us: x =  -100 m -> s = +2.3333 us, E_z = -2 V/m
+  snapshot t = 2 us: x =     0 m -> s = +2.0000 us, E_z = -2 V/m
+  snapshot t = 2 us: x =   100 m -> s = +1.6667 us, E_z = -2 V/m
+  snapshot t = 2 us: x =   299 m -> s = +1.0033 us, E_z = -2 V/m
+  snapshot t = 2 us: x =   301 m -> s = +0.9967 us, E_z = +5 V/m
+  snapshot t = 2 us: x =   450 m -> s = +0.5000 us, E_z = +5 V/m
+  snapshot t = 2 us: x =   599 m -> s = +0.0033 us, E_z = +5 V/m
+  snapshot t = 2 us: x =   601 m -> s = -0.0033 us, E_z = +0 V/m
+  snapshot t = 2 us: x =   700 m -> s = -0.3333 us, E_z = +0 V/m
+  probe x = 900 m: t = 2.9 us -> E_z = +0 V/m
+  probe x = 900 m: t = 3.1 us -> E_z = +5 V/m
+  probe x = 900 m: t = 3.9 us -> E_z = +5 V/m
+  probe x = 900 m: t = 4.1 us -> E_z = -2 V/m
+  probe x = 900 m: t = 5.9 us -> E_z = -2 V/m
+  probe x = 900 m: t = 6.1 us -> E_z = +0 V/m
+  probe x = 900 m: starts at t = 3 us, sign change at t = 4 us, ends at 6 us
+  H = u x E/eta0 with E = E_z z:   x x z = [ 0. -1.  0.]  (-y)
+  at x = 450 m, t = 2.0 us: E = +5 z V/m, H = [  0.    -13.263   0.   ] mA/m (-y), |B| = |E|/c = 16.667 nT; E x H -> +x
+  at x = 0 m, t = 2.0 us: E = -2 z V/m, H = [0.    5.305 0.   ] mA/m (+y), |B| = |E|/c = 6.667 nT; E x H -> +x
+  [18.8 smoothed record] Faraday rel.res 2.8e-10 | Ampere-Maxwell 2.8e-10 | div/curl 0.0e+00 | wave eq E 5.6e-10, H 5.6e-10  -> OK
+  with H = +y E_z/eta0 instead: Faraday rel.res 2.00 (fails)
+
+==============================================================================
+18.9 SP18 Exam 2 #4 style: triangle pulse moving -z at 150 m/us, x-polarized
+==============================================================================
+  snapshot peak g(450) = 6.00 V/m; g(300) = 0.00; g(900) = 0.00
+  E(z,t) = g(z + 150 t - 300) equals F(t + z/150): True
+  E(z,0) = g(z - 300): [(600, 0.0), (675, 3.0), (750, 6.0), (975, 3.0), (1200, 0.0)]
+  E(z,0) formula 0.04(z-600) on [600,750], (1200-z)/75 on [750,1200]: True
+  front (6 V/m side... front edge) z_front(t) = 600 - 150 t; at t=2: 300 ; reaches -750 m at t = 9.0 us
+  probe z = -750 m, t =  9.0 us: s = 4.00, E_x = 0.00 V/m
+  probe z = -750 m, t =  9.5 us: s = 4.50, E_x = 3.00 V/m
+  probe z = -750 m, t = 10.0 us: s = 5.00, E_x = 6.00 V/m
+  probe z = -750 m, t = 11.5 us: s = 6.50, E_x = 3.00 V/m
+  probe z = -750 m, t = 13.0 us: s = 8.00, E_x = 0.00 V/m
+  shift at t = 11.5 us: z + 150*11.5 - 300 = z + 1425
+  cross-check snapshot at t = 11.5 us, z = -750: g(z + 150*11.5 - 300) = 3.0
+  wrong shift g(z + 300) at t = 0 occupies [0, 600] m (pulse at [300, 900] m at 2 us -> would mean +z travel)
+  mu_r eps_r = (c/v)^2 = 3.9945; measured eta = 6/15.9 mA/m = 377.36 Ohm (eta0 = 376.73); mu_r/eps_r = 1.0033 -> mu_r = 2.002, eps_r = 1.995
+  with mu_r = eps_r = 2: eta = mu v = 2 mu0 (1.5e8) = 376.991 Ohm (= 120 pi = 376.991); eta0 sqrt(1) = 376.730
+  peak H = 6/eta = 15.915 mA/m; peak B = mu H = 40.000 nT = E/v = 40.000 nT
+  u(-z) x x = [ 0. -1.  0.]  (-y)
+  E(x) x H(-y) = [ 0.  0. -1.]  (-z)
+  H at probe z = -750 m, t = 11.5 us: [ 0.    -7.958  0.   ] mA/m
+  exact constants: v = 1.49896e+08 m/s, eta = 376.730 Ohm
+    z = -750 m, t = 9.5 us (s = 4.497): Faraday rel.res 1.3e-10, Ampere 1.3e-10, |curl E| = 4.003e-02
+    z = -750 m, t = 11.5 us (s = 6.497): Faraday rel.res 1.5e-10, Ampere 1.3e-10, |curl E| = 1.334e-02
+    z = 300 m, t = 2.3 us (s = 4.301): Faraday rel.res 3.7e-12, Ampere 3.7e-12, |curl E| = 4.003e-02
+    z = 600 m, t = 1.0 us (s = 5.003): Faraday rel.res 3.4e-13, Ampere 3.4e-13, |curl E| = 1.334e-02
+  [18.9 smooth stand-in, same direction/eta] Faraday rel.res 7.2e-11 | Ampere-Maxwell 7.2e-11 | div/curl 0.0e+00 | wave eq E 1.7e-11, H 2.9e-11  -> OK
+
+==============================================================================
+18.10 Two pulses passing through each other (vacuum, c = 300 m/us, eta0 = 120 pi)
+==============================================================================
+  A: H_y = +6/eta0 = 15.915 mA/m; B: H_y = -3/eta0 = -7.958 mA/m
+  u_A(+z) x x = [0. 1. 0.]  (+y)
+  u_B(-z) x x = [ 0. -1.  0.]  (-y)
+  at t = 0: A occupies z in (-600,-300): 6.0 at z=-450; B occupies (300,900): 3.0 at z=600
+  t = 1.5 us, z =  -200 m: E_x = 0 V/m, H_y = +0.000 mA/m
+  t = 1.5 us, z =  -149 m: E_x = 9 V/m, H_y = +7.958 mA/m, E/H = 1131.0 Ohm
+  t = 1.5 us, z =  -100 m: E_x = 9 V/m, H_y = +7.958 mA/m, E/H = 1131.0 Ohm
+  t = 1.5 us, z =     0 m: E_x = 9 V/m, H_y = +7.958 mA/m, E/H = 1131.0 Ohm
+  t = 1.5 us, z =   100 m: E_x = 9 V/m, H_y = +7.958 mA/m, E/H = 1131.0 Ohm
+  t = 1.5 us, z =   149 m: E_x = 9 V/m, H_y = +7.958 mA/m, E/H = 1131.0 Ohm
+  t = 1.5 us, z =   151 m: E_x = 3 V/m, H_y = -7.958 mA/m, E/H = -377.0 Ohm
+  t = 1.5 us, z =   300 m: E_x = 3 V/m, H_y = -7.958 mA/m, E/H = -377.0 Ohm
+  t = 1.5 us, z =   449 m: E_x = 3 V/m, H_y = -7.958 mA/m, E/H = -377.0 Ohm
+  t = 1.5 us, z =   451 m: E_x = 0 V/m, H_y = +0.000 mA/m
+  overlap ratio E_x/H_y = 9/(3/eta0) = 3 eta0 = 1131.0 Ohm (360 pi); single pulse: +/- eta0 = 377.0
+  probe z = 0, t = 0.9 us: E_x = 0 V/m, H_y = +0.000 mA/m
+  probe z = 0, t = 1.2 us: E_x = 9 V/m, H_y = +7.958 mA/m
+  probe z = 0, t = 1.8 us: E_x = 9 V/m, H_y = +7.958 mA/m
+  probe z = 0, t = 2.2 us: E_x = 3 V/m, H_y = -7.958 mA/m
+  probe z = 0, t = 2.8 us: E_x = 3 V/m, H_y = -7.958 mA/m
+  probe z = 0, t = 3.2 us: E_x = 0 V/m, H_y = +0.000 mA/m
+  t = 4 us, z =  -800 m: E_x = 3, H_y = -7.958 mA/m
+  t = 4 us, z =  -600 m: E_x = 3, H_y = -7.958 mA/m
+  t = 4 us, z =  -301 m: E_x = 3, H_y = -7.958 mA/m
+  t = 4 us, z =  -299 m: E_x = 0, H_y = +0.000 mA/m
+  t = 4 us, z =     0 m: E_x = 0, H_y = +0.000 mA/m
+  t = 4 us, z =   599 m: E_x = 0, H_y = +0.000 mA/m
+  t = 4 us, z =   601 m: E_x = 6, H_y = +15.915 mA/m
+  t = 4 us, z =   750 m: E_x = 6, H_y = +15.915 mA/m
+  t = 4 us, z =   899 m: E_x = 6, H_y = +15.915 mA/m
+  t = 4 us, z =   901 m: E_x = 0, H_y = +0.000 mA/m
+  B' case, t = 1.5 us, z = -200 m: E_x = 0 V/m, H_y = +0.000 mA/m
+  B' case, t = 1.5 us, z = -100 m: E_x = 0 V/m, H_y = +31.831 mA/m
+  B' case, t = 1.5 us, z =    0 m: E_x = 0 V/m, H_y = +31.831 mA/m
+  B' case, t = 1.5 us, z =  100 m: E_x = 0 V/m, H_y = +31.831 mA/m
+  B' case, t = 1.5 us, z =  140 m: E_x = 0 V/m, H_y = +31.831 mA/m
+  B' case, t = 1.5 us, z =  160 m: E_x = 0 V/m, H_y = +0.000 mA/m
+  B' alone: H_y = -(-6)/eta0 = 15.915 mA/m; overlap H_y = 12/eta0 = 31.831 mA/m
+  u_B'(-z) x (-6x) = [0. 6. 0.]  (+y)
+  B' case, t = 2.5 us, z = -500 m: E_x = 0 V/m, H_y = +0.000 mA/m
+  B' case, t = 2.5 us, z = -400 m: E_x = -6 V/m, H_y = +15.915 mA/m
+  B' case, t = 2.5 us, z = -200 m: E_x = -6 V/m, H_y = +15.915 mA/m
+  B' case, t = 2.5 us, z =  200 m: E_x = 6 V/m, H_y = +15.915 mA/m
+  B' case, t = 2.5 us, z =  300 m: E_x = 6 V/m, H_y = +15.915 mA/m
+  B' case, t = 2.5 us, z =  449 m: E_x = 6 V/m, H_y = +15.915 mA/m
+  B' case, t = 2.5 us, z =  550 m: E_x = 0 V/m, H_y = +0.000 mA/m
+  [18.10 total field, E adds / H subtracts] Faraday rel.res 2.8e-10 | Ampere-Maxwell 2.8e-10 | div/curl 0.0e+00 | wave eq E 5.4e-10, H 5.5e-10  -> OK
+  with H = (f + g)/eta0 instead: Ampere rel.res 2.00 (fails)
+
+==============================================================================
+18.11 The derivation along x: E = z E_z(x,t), H = y H_y(x,t)
+==============================================================================
+  curl(z E_z) = [0.       1.556025 0.      ]; -dE_z/dx y = [0.       1.556025 0.      ]  (Faraday y-comp: dEz/dx = mu dHy/dt)
+  curl(y H_y) = [0.         0.         0.01871359]; +dH_y/dx z = [0.         0.         0.01871359]  (Ampere z-comp: dHy/dx = eps dEz/dt)
+  dEz/dx = -1.556025e+00; mu dHy/dt = -1.556025e+00
+  dHy/dx = 1.871359e-02; eps dEz/dt = 1.871359e-02
+  [18.11 H_y = (Bg - Af)/eta] Faraday rel.res 4.3e-11 | Ampere-Maxwell 2.7e-11 | div/curl 0.0e+00 | wave eq E 1.3e-07, H 6.8e-07  -> OK
+  with the z-case formula H_y = (Af - Bg)/eta: Faraday rel.res 2.00 (fails)
+  u(+x) x z = [ 0. -1.  0.]  (-y)
+  u(-x) x z = [0. 1. 0.]  (+y)
+  E(z) x H(-y) = [1. 0. 0.]  (+x)
+  E(z) x H(+y) = [-1.  0.  0.]  (-x)
+(d) E = z 10 cos(5pi e8 t + 4pi x): toward -x, v = 1.2500e+08 m/s, eps_r = 5.7520 (c=3e8: 5.7600), eta = mu0 v = 157.080 Ohm = 50.00 pi; H amplitude 10/eta = 63.662 mA/m; B = 10/v = 80.00 nT
+  [18.11(d) E = z 10cos(.), H = +y 63.7 mA/m cos(.)] Faraday rel.res 2.9e-10 | Ampere-Maxwell 8.3e-10 | div/curl 0.0e+00 | wave eq E 6.6e-08, H 7.2e-08  -> OK
+(e) adding E_x = 3cos(5pi e8 t + 4pi x): div E = -22.1590 vs -12 pi sin(4pi x) = -22.1590; amplitude 12 pi = 37.699 V/m^2
+
+==============================================================================
+18.12 A wave on a slant: E = (6x - 8y) cos(7.5pi e8 t - 2.4pi x - 1.8pi y)
+==============================================================================
+  |grad phase| = 9.4248 rad/m = 3.0000 pi; u = [0.8 0.6 0. ]; angle from x axis = 36.87 deg
+  velocity from phase: [2.0e+08 1.5e+08 0.0e+00] m/s;  v = 2.5000e+08 m/s; eps_r = 1.4380 (c=3e8: 1.4400)
+  E0 . u = 8.88e-16; |E0| = 10.0 V/m; eta = mu0 v = 314.159 Ohm = 100.00 pi
+  u x E0 = [  0.   0. -10.]  -> H0 = [  0.      0.    -31.831] mA/m (-z), |H0| = 31.831 mA/m
+  E0 x H0 = [0.254648 0.190986 0.      ] -> direction (+0.8000, +0.6000, +0.0000) (u = [0.8 0.6 0. ])
+  pieces: 0.8x X (-8y) = [ 0.   0.  -6.4], 0.6y X 6x = [ 0.   0.  -3.6]
+  pieces of E0 x (-z): 6x X (-z) = [0. 6. 0.], (-8y) X (-z) = [8. 0. 0.]
+  [18.12 (E, H)] Faraday rel.res 2.3e-10 | Ampere-Maxwell 7.9e-10 | div/curl 2.2e-10 | wave eq E 2.9e-07, H 2.8e-07  -> OK
+  curl E at a point = [0.     0.     8.8695]; -30 pi sin(phi) z = [0.     0.     8.8695]; 30 pi = 94.248 V/m^2
+  -mu0 dH/dt = [-0.     -0.      8.8695];  10 omega/v = 94.2478 = 10*3pi
+  coefficients (multiples of pi): 6*2.4 = 14.4, 8*1.8 = 14.4, 8*2.4 = 19.2, 6*1.8 = 10.8; 19.2 + 10.8 = 30.0
+  div E = 0.00e+00; terms 6*2.4pi = 45.2389, -8*1.8pi = -45.2389
+  curl H / sin(phi) = [-0.18  0.24 -0.  ]; eps dE/dt / sin(phi) = [-0.18  0.24 -0.  ]; 3pi*10/eta = 0.3000, 10 eps omega = 0.3000; direction [-0.6  0.8 -0. ]
+  Ampere: eps omega/(1.8 pi) * 6 = H0 -> 31.8310 mA/m vs 10/eta = 31.8310
+(e) E' = (8x + 6y)cos: E'.u = 10.00; div E' = -8.8695 vs 30 pi sin(phi) = -8.8695
+    E'' = 10 z cos: H'' = u x E''/eta = [ 19.099 -25.465   0.   ] mA/m = (0.6x - 0.8y) 31.831 mA/m
+    u x z = [ 0.6 -0.8  0. ]; E'' x H'' -> (+0.8000, +0.6000, -0.0000)
+  [18.12(e) z-polarized partner] Faraday rel.res 2.6e-10 | Ampere-Maxwell 7.8e-10 | div/curl 2.3e-10 | wave eq E 2.9e-07, H 2.8e-07  -> OK
+
+==============================================================================
+SUMMARY
+==============================================================================
+constants: c = 2.997925e+08 m/s, eta0 = 376.7303 Ohm, 120 pi = 376.9911 Ohm
+Maxwell/wave-equation checks passed: 13/13

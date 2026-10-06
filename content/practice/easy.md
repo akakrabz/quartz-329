@@ -1,6 +1,6 @@
 ---
 title: "Easy problems"
-description: "All 69 easy practice problems for Lectures 2–15, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
+description: "All 84 easy practice problems for Lectures 2–18, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
 tags: [practice]
 ---
 
@@ -118,3 +118,27 @@ tags: [practice]
 - [[practice/15-inductance-and-magnetic-energy#153-fields-from-given-potentials|15.3 Fields from given potentials]] — potentials · multiple choice · *modelled on SP18 Exam 2 #1(v)*
 - [[practice/15-inductance-and-magnetic-energy#154-gauge-transformations-true-or-false|15.4 Gauge transformations, true or false]] — gauge · true or false
 - [[practice/15-inductance-and-magnetic-energy#155-two-wire-line-find-the-error|15.5 Two-wire line, find the error]] — find the error · two-wire line · inductance
+
+## Lecture 16 · Charge conservation, displacement current and Maxwell's equations
+
+- [[practice/16-charge-conservation-and-displacement-current#161-charge-piling-up-in-a-cylinder|16.1 Charge piling up in a cylinder]] — continuity · divergence theorem
+- [[practice/16-charge-conservation-and-displacement-current#162-displacement-current-through-a-window|16.2 Displacement current through a window]] — displacement current · flux
+- [[practice/16-charge-conservation-and-displacement-current#163-the-missing-displacement-current|16.3 The missing displacement current]] — find the error · displacement current · polarization current
+- [[practice/16-charge-conservation-and-displacement-current#164-what-changes-when-fields-vary|16.4 What changes when fields vary]] — true or false · displacement current · continuity
+- [[practice/16-charge-conservation-and-displacement-current#165-fields-just-outside-a-metal-ball|16.5 Fields just outside a metal ball]] — multiple choice · boundary conditions · conductors
+
+## Lecture 17 · Magnetization and Maxwell's equations in matter
+
+- [[practice/17-magnetization-and-maxwell-in-matter#171-moment-and-torque-on-a-loop|17.1 Moment and torque on a loop]] — magnetic dipole · right-hand rule
+- [[practice/17-magnetization-and-maxwell-in-matter#172-four-rods-in-a-solenoid|17.2 Four rods in a solenoid]] — multiple choice · permeability · magnetization
+- [[practice/17-magnetization-and-maxwell-in-matter#173-ferrite-between-sheets-find-the-error|17.3 Ferrite between sheets, find the error]] — find the error · current sheets · permeability
+- [[practice/17-magnetization-and-maxwell-in-matter#174-reading-a-hysteresis-loop|17.4 Reading a hysteresis loop]] — true or false · hysteresis · magnetization
+- [[practice/17-magnetization-and-maxwell-in-matter#175-a-nickel-rod-as-a-solenoid|17.5 A nickel rod as a solenoid]] — magnetization · magnetization current · sheets and solenoids
+
+## Lecture 18 · The wave equation and plane TEM waves
+
+- [[practice/18-wave-equation-and-plane-waves#181-which-way-and-how-fast|18.1 Which way and how fast]] — multiple choice · plane waves
+- [[practice/18-wave-equation-and-plane-waves#182-the-partner-field|18.2 The partner field]] — plane waves · intrinsic impedance
+- [[practice/18-wave-equation-and-plane-waves#183-phase-rate-and-snapshot-period|18.3 Phase rate and snapshot period]] — plane waves · intrinsic impedance · *modelled on SP18 Exam 2 #1(vii)*
+- [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] — true or false · wave equation · displacement current
+- [[practice/18-wave-equation-and-plane-waves#185-the-backwards-magnetic-field|18.5 The backwards magnetic field]] — find the error · plane waves · intrinsic impedance

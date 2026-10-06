@@ -1,0 +1,110 @@
+== A. constants, media, cable
+   c = 2.9979246e+08 m/s, eta0 = 376.7303 ohm, 120pi = 376.9911 ohm
+PASS  c = 2.998e8 m/s
+PASS  eta0 = 376.7 ohm
+PASS  120pi approximates eta0 to 0.07 %   [6.923e-04]
+PASS  c ~ 30 cm/ns, 300 m/us, 300 km/ms
+PASS  tau for 1 m = 1/c = 3.34 ns   [3.3356 ns]
+PASS  1 V/m: H = 2.65 mA/m, B = 3.34 nT = E/c   [H = 2.6544 mA/m, B = 3.3356 nT]
+PASS  eps_r = 4: v = 1.50e8, eta = 188 (60pi)   [v = 1.4990e+08, eta = 188.365, 60pi = 188.496]
+PASS  v = 1e8: eps_r = (c/v)^2 = 8.99, eta = mu0 v = 40pi = 126   [eps_r = 8.9876, mu0*v = 125.664, eta0/sqrt(eps_r) = 125.664]
+PASS  polyethylene: v = c/1.5 = 2.00e8, eta = 251   [v = 1.9986e+08, eta = 251.154, 80pi = 251.327]
+PASS  mu_r = 2, eps_r = 8: eta = eta0/2 (= eps_r 4 alone), v = c/4
+PASS  eta = sqrt(mu/eps) = mu v = 1/(eps v); v = c/sqrt(mur epsr), eta = eta0 sqrt(mur/epsr)
+PASS  units: mu/eps in (H/m)/(F/m) = (ohm s)/(s/ohm) = ohm^2
+PASS  coax factor ln(3.5)/2pi = 0.199, x 251 ohm = 50 ohm   [0.19938 -> 50.076 ohm]
+PASS  coax LC = mu eps, sqrt(L/C) = (eta/2pi) ln(b/a); plates sqrt(L/C) = eta d/W
+PASS  coax page: Z0 = (60 ohm/sqrt(eps_r)) ln(b/a) ~ eta0/2pi = 59.96
+
+== B. finite-difference Maxwell residuals (relative); pass < 1e-6, fail = O(1)
+PASS  Maxwell row 1  x f(t-z/v), +y f/eta   [Far 6.9e-12 Amp 9.6e-13 divE 0.0e+00 divH 0.0e+00]
+PASS  Maxwell row 2  x f(t+z/v), -y f/eta   [Far 2.5e-12 Amp 2.4e-12 divE 0.0e+00 divH 0.0e+00]
+PASS  Maxwell row 3  y f(t-z/v), -x f/eta   [Far 2.5e-12 Amp 2.6e-12 divE 0.0e+00 divH 0.0e+00]
+PASS  Maxwell row 4  y f(t+z/v), +x f/eta   [Far 2.2e-12 Amp 2.1e-12 divE 0.0e+00 divH 0.0e+00]
+PASS  Maxwell WRONG  y f(t-z/v), +x f/eta (must fail)   [Far 1.0e+00 Amp 1.0e+00 divE 0.0e+00 divH 0.0e+00]
+PASS  Maxwell WRONG  x f(t+z/v), +y f/eta (must fail)   [Far 1.0e+00 Amp 1.0e+00 divE 0.0e+00 divH 0.0e+00]
+PASS  Maxwell superposition Ex = Af + Bg, Hy = (Af - Bg)/eta   [Far 1.1e-12 Amp 1.6e-12 divE 0.0e+00 divH 0.0e+00]
+PASS  Maxwell superposition with +Bg in Hy fails both curls   [Far 1.0e+00 Amp 1.0e+00]
+PASS  1/(mu v) = eps v = 1/eta
+PASS  z-integration 'constant' C(t): Faraday forces C' = 0 (time-varying C fails, constant passes)   [C(t): Far 1.0e+00; const: Far 2.6e-12]
+PASS  z-polarized z f(t-z/v): div E = -f'/v != 0 and curl E = 0   [div = -8.3872e+00, -f'/v = -8.3872e+00, |curl| = 0.0e+00]
+PASS  Maxwell general u: E = E0 f(t - u.r/v), H = u x E/eta   [Far 3.5e-09 Amp 4.2e-09 divE 4.6e-09 divH 4.4e-10]
+PASS  E = eta H x u (inverse rule)
+PASS  3D vector wave equation holds for E and for H (numerical Laplacian)   [9.9e-07, 9.9e-07]
+PASS  cos(w(t - z/v)): d2/dz2 = -(w/v)^2 E = mu eps d2/dt2
+PASS  cos(w(t + z/v)): d2/dz2 = -(w/v)^2 E = mu eps d2/dt2
+PASS  curl curl F = grad div F - lap F (Cartesian test field)   [[-2.94289  1.6757  -0.39203]]
+
+== C. explicit cross products
+PASS  sign table x-pol +z: E x H = travel and H = u x E
+PASS  sign table x-pol -z: E x H = travel and H = u x E
+PASS  sign table y-pol +z: E x H = travel and H = u x E
+PASS  sign table y-pol -z: E x H = travel and H = u x E
+PASS  example: E = y toward -z: H = (-z) x y = +x; y x x = -z
+PASS  problem: u = +y, E || z: H || y x z = +x; E x H = z x x = +y
+PASS  problem trap: z x y = -x (wrong order)
+PASS  variant: u = -y: H = (-y) x z = -x
+PASS  cyclic relabelling of row 1 gives E z, H +x, travel +y (correct); det = +1
+PASS  swap y<->z of row 3 gives H = -x for E z travelling +y (wrong: improper map)
+   static sheet J = -x, z>0: H = 1/2 J x n = [0.  0.5 0. ]
+   static sheet J = -x, z<0: H = 1/2 J x n = [ 0.  -0.5  0. ]
+PASS  static sheet: H = +y/2 for z>0, -y/2 for z<0
+PASS  radiating sheet: E = -(eta/2)J = +x (opposite J) both sides; H = u x E/eta = +-y/2; jump z x (H+ - H-) = J
+PASS  boundary form n x (H1 - H2) = Js with n = z: jump Hy+ - Hy- = Js
+
+== D. speeds read off arguments (slide 24)
+PASS  f = (0.05y - t)^2 -> +20 y; g = u(t + 0.02x) -> -50 x; h = cos(2pi1e8 t - 2pi z) -> +1e8 z   [[ 0. 20.  0.], [-50.  -0.  -0.], [      -0.               -0.         99999999.99999999]]
+PASS  zero of f at y = 20 t   [[np.float64(0.0), np.float64(20.0), np.float64(40.0)]]
+PASS  f(at - bz): travels +z at a/b (a=6, b=2 -> 3)
+PASS  function of z - vt is +z travelling (z - 5t)
+PASS  answer (c): 20 y, -50 x, 1e8 z
+
+== E. shift identities, mirror rule, slide 26
+PASS  +z: E(z,t) = E(0, t - z/v) = E(z - vt, 0)
+PASS  -z: E(z,t) = E(0, t + z/v) = E(z + vt, 0)
+PASS  feature at (z0,t0) found at z0 + v(t - t0) (+z) and z0 - v(t - t0) (-z)
+PASS  mirror: +z snapshot E(z,0) = record at -z/v; -z snapshot = record at +z/v
+PASS  slide 26: (a) 0.9 (b) 0.4 (c) 1.0 via t + z/v = 2.2, 0.4, 1.6   [[0.8999999999999999, 0.3999999999999999, 1.0]]
+PASS  slide 26 wrong sign: t - z/v = -1.8, 6.4, -0.4 -> 0, 0, 0
+PASS  slide 26 snapshots: t=0 zero for z<=0, 1 at 100-200 m, 0 at 400; t=1 shifted 100 m toward -z   [[0.  1.  1.  1.  0.5 0.  0.  0. ]]
+PASS  record point at 0.4 s: z = 40 m at t = 0 -> z = -300 m at 3.4 s (3 s after it passes z = 0)
+
+== F. operator factorisation and z-integrals
+PASS  d_tau + d_t = 2 d_zeta and d_tau - d_t = -2 d_xi
+PASS  (d_tau + d_t)(d_tau - d_t) = d_tau^2 - d_t^2   [5.128710 vs 5.128710]
+PASS  f(t - tau): d_tau = -f', d_t = +f'  (so d_tau E = -d_t E)
+PASS  d/dz[-v f(t - z/v)] = f'(t - z/v) and d/dz[v g(t + z/v)] = g'(t + z/v)
+
+== G. worked problem 'A pulse on the move' (y in m, t in us)
+PASS  given profile peaks at 6 V/m at the front y = 700
+PASS  (a) E(y,0) = E(y+600, 3us) = 0.02(y+200)[u(y+200)-u(y-100)]
+PASS  trap: E(y-600, 3) sits on 1000<y<1300
+PASS  (b) closed form = shift form = F(t - y/200) everywhere
+PASS  front y = 100 + 200t (700 at 3 us), back y = -200 + 200t
+PASS  F(s): probe at y=0 sees front (6 V/m) at t = -0.5 us, back at 1 us
+PASS  (c) record at 1 km = 4(6 - t) on 4.5<t<6 us, 0 otherwise; reads 4 V/m at 5 us   [first 4.500, last 5.999]
+PASS  snapshot at 5 us = 0.02(y-800) on 800<y<1100 -> 4 V/m at 1000 m
+PASS  duration 1.5 us = 300 m / 200 m/us
+PASS  (d) eps_r = (c/v)^2 = 2.247 (2.25 with c = 3e8)   [2.2469]
+PASS  (e) eta = mu0 v = 80pi = 251.3; eta0/1.5 = 251.2   [251.3274, 251.1535]
+PASS  (e) H coefficient 0.02/eta = 7.96e-5; 4/eta = 1/(20pi) = 0.0159
+PASS  (e) peak H = 6/251.3 = 23.9 mA/m, B = mu0 H = E/v = 30 nT; 6/eta0 = 15.9 mA/m
+PASS  problem E = z F(t - y/v), H = +x F/eta satisfies Faraday, Ampere, div   [Far 2.2e-12 Amp 2.2e-12 divE 0.0e+00 divH 0.0e+00]
+PASS  problem with H = -x F/eta fails both curls   [Far 1.0e+00 Amp 1.0e+00]
+PASS  variant (-y): at t=0 on 1000<y<1300; probe at 1 km records 4t on 0<t<1.5 us
+
+== H. figure geometry (screen frame: X right, Y up, Z out of the screen)
+PASS  drawn frame right-handed: x(up) x y(out) = z(right)
+PASS  fig 1 static: J arrows down; H right side out (odot), left side in (otimes)
+PASS  fig 1 dynamic: E up both sides; E x H -> right on right, left on left
+PASS  fig 3 x-pol +z: screen E x H = drawn travel arrow (right)
+PASS  fig 3 x-pol -z: screen E x H = drawn travel arrow (left)
+PASS  fig 3 y-pol +z: screen E x H = drawn travel arrow (right)
+PASS  fig 3 y-pol -z: screen E x H = drawn travel arrow (left)
+PASS  fig 2 record: peak 1 at 0.5 ns, 0.2 at 2 ns, 0.04 at 3 ns
+PASS  fig 2 +z: peak moves -0.150 -> +2.248 m (2.4 m), front at +2.398 m, tail behind
+PASS  fig 2 -z: peak moves +0.150 -> -2.248 m (2.4 m), front at -2.398 m, tail behind
+PASS  fig 4: t=0 snapshot breakpoints 0,100,200,400,500 m; t=1 s at -100,0,100,300,400 m
+PASS  fig 5: back/front at t = 0, 3, 5 us: (-200,100), (400,700), (800,1100)
+
+SUMMARY: all checks pass

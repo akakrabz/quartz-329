@@ -1,0 +1,187 @@
+18.1 velocities read from arguments
+  PASS  18.1 v_p [m/s]: computed [-2.5e+08, -0, -0], page [-2.5e+08, -0, -0]
+  PASS  18.1 v_q [m/s]: computed [0, 0, 250], page [0, 0, 250]
+  PASS  18.1 v_r [m/s]: computed [-0, -80, -0], page [-0, -80, -0]
+  PASS  18.1 crest of p that is at x=0 at t=0, position at t=1 ns [m]: computed -0.25, page -0.25
+  PASS  18.1 step edge of q at t = 0, 1, 2 s [m]: computed [5.1159e-11, 250, 500], page [0, 250, 500]
+  PASS  18.1 peak of r at t = 0, 1 s [m]: computed [3.8369e-13, -80], page [0, -80]
+  PASS  18.1 only option (c) matches: ['c']
+  PASS  18.1 distractors differ in (p,q,r index) {'a': [0], 'b': [1], 'c': [], 'd': [1, 2], 'e': [2]} = (a) p sign, (b) q sign, (d) q,r slowness, (e) r sign
+  PASS  18.1 eps_r for p in a non-magnetic medium: computed 1.438, page 1.44
+
+18.2 partner fields (page constants eta0 = 376.7, c = 3.00e8)
+  PASS  18.2(a) H amplitude vector [mA/m]: computed [-15.928, 0, 0], page [-15.9, -0, -0]
+  PASS  18.2(a) E x H direction: computed [0, -0, 1], page [0, 0, 1]
+  PASS  18.2(a) B [nT]: computed 20, page 20
+  PASS  18.2(b) H amplitude vector [mA/m]: computed [0, 0, 7.9639], page [0, 0, 7.96]
+  PASS  18.2(b) E x H direction: computed [0, -1, 0], page [-0, -1, -0]
+  PASS  18.2(b) B [nT]: computed 10, page 10
+  PASS  18.2(c) E amplitude vector [V/m]: computed [0, 18.835, 0], page [0, 18.8, 0]
+  PASS  18.2(c) back: u x E/eta0 [mA/m]: computed [0, 0, 50], page [0, 0, 50]
+  PASS  18.2(c) E x H direction: computed [1, 0, 0], page [1, 0, 0]
+  PASS  18.2(c) B = mu0 H and E/c [nT]: computed [62.832, 62.783], page [62.8, 62.8]
+  PASS  18.2(a) pair satisfies Maxwell (rel. residuals: Faraday 6.7e-09, Ampere-Maxwell 6.7e-09, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.2(b) pair satisfies Maxwell (rel. residuals: Faraday 1.9e-08, Ampere-Maxwell 1.9e-08, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.2(c) pair satisfies Maxwell (rel. residuals: Faraday 6.7e-09, Ampere-Maxwell 6.7e-09, divE 0.0e+00, divH 0.0e+00)
+
+18.3 phase rate and snapshot period
+  PASS  18.3 probe sees 3 full cycles (6 zero crossings) in 10 ns -> phase grows 6 pi
+  PASS  18.3 snapshot repeats every 0.4 m (and 0.2 m gives -E, so 0.4 m is the fundamental period)
+  PASS  18.3 omega [rad/s]: computed 1.885e+09, page 1.885e+09
+  PASS  18.3 beta [rad/m]: computed [15.708, 15.708], page [15.708, 15.7]
+  PASS  18.3 v [m/s]: computed 1.2e+08, page 1.2e+08
+  PASS  18.3 temporal period [ns]: computed 3.3333, page 3.33
+  PASS  18.3 eps_r with c = 2.998e8 and with 3e8: computed [6.2414, 6.25], page [6.24, 6.25]
+  PASS  18.3 eta [ohm]: computed [150.8, 150.8], page [150.8, 150.8]
+  PASS  18.3 H amplitude vector [mA/m]: computed [0, 0, 79.577], page [0, 0, 79.6]
+  PASS  18.3 E x H direction: computed [1, 0, 0], page [1, 0, 0]
+  PASS  18.3 B = E/v = mu0 H [nT]: computed [100, 100], page [100, 100]
+  PASS  18.3 H / (12/eta0) = sqrt(eps_r): computed 2.4983, page 2.5
+  PASS  18.3 pair satisfies Maxwell (rel. residuals: Faraday 4.0e-09, Ampere-Maxwell 4.0e-09, divE 0.0e+00, divH 0.0e+00)
+
+18.4 what the derivation needs
+  PASS  18.4(a) lap E_x / E_x = -(omega/v)^2: computed -4, page -4
+  PASS  18.4(b) div E = rho/eps: computed 9882.3, page 9882.3
+  PASS  18.4(b) curl E = 0 (static field is consistent): computed 0, page 0
+  PASS  18.4(b) lap E = rho0/(eps a) x (nonzero), = grad(rho)/eps: computed [14118, 0, 0], page [14118, 0, 0]
+  PASS  18.4(c) div D = 0: computed 0, page 0
+  PASS  18.4(c) div E at x=0 = -E0/a: computed -20, page -20
+  PASS  18.4(c) div E = -E.grad(eps)/eps at x = 0.31: computed -7.6208, page -7.6208
+  PASS  18.4(d) d2E/dz2 = (1/v^2) d2E/dt2: computed -19.856, page -19.856
+  PASS  18.4(d) div E = (omega E0/v) sin(...): computed -1.1971, page -1.1971
+  PASS  18.4(d) curl E = 0: computed 0, page 0
+
+18.5 find the error
+  PASS  18.5 v [m/s]: computed 7.5e+07, page 7.5e+07
+  PASS  18.5 eps_r (c0) and (3e8): computed [15.978, 16], page [15.98, 16]
+  PASS  18.5 eta = mu0 v = 30 pi and eta0/4 [ohm]: computed [94.248, 94.248, 94.183], page [94.2, 94.2, 94.2]
+  PASS  18.5 correct H = u x E/eta [A/m]: computed [0, 0.12732, 0], page [0, 0.127, 0]
+  PASS  18.5 student's E x u / eta [A/m] (their arithmetic is right for their formula): computed [0, -0.12732, 0], page [-0, -0.127, -0]
+  PASS  18.5 E x H(correct) direction: computed [-1, 0, 0], page [-1, -0, -0]
+  PASS  18.5 E x H(student) direction: computed [1, 0, -0], page [1, 0, 0]
+  PASS  18.5 corrected pair satisfies Maxwell (rel. residuals: Faraday 6.5e-10, Ampere-Maxwell 6.5e-10, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.5 student's pair must VIOLATE Maxwell (rel. residuals: Faraday 2.0e+00, Ampere-Maxwell 2.0e+00, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.5 dEz/dx = mu0 dHy/dt (page's scalar form) at 5 points: computed [-3.6214, -20.947, 68.454, -1.0165, 58.763], page [-3.6214, -20.947, 68.454, -1.0165, 58.763]
+
+18.6 which fields can be waves
+  PASS  18.6 v, eps_r, eta: computed [1e+08, 8.9876, 125.66], page [1e+08, 9, 125.66]
+  PASS  18.6(a) satisfies the wave equation: {1: True, 2: True, 3: False, 4: False}
+  PASS  18.6(a) E1 speed, E3 speed [m/s]: computed [1e+08, 3.3333e+07], page [1e+08, 3.33e+07]
+  PASS  18.6(a) eps_r that E3 would need: computed 80.888, page 81
+  PASS  18.6(a) E4 = 2cos4z + 2cos(4e8 t) at 60 points: computed [-0.22407, -1.4431, 1.9748, 2.2536, -0.17403, 1.8397, -0.57827, 0.58467, -0.93575, 1.6793, 1.761, -1.7779, 0.014847, -0.96281, 0.94451, 2.1829, 1.7312, 1.2826, -1.032, 1.2639, 1.9878, -0.0074819, -0.4729, 1.0767, -0.9907, -0.20451, -1.212, 2.8507, -1.4742, -1.7086, -3.0264, -1.8521, -1.161, -0.6376, -0.18021, -1.3484, 2.8516, -1.4695, -3.2902, 1.1739, -0.13397, -1.7719, -1.4395, 0.96783, -0.65524, -0.65026, 0.84076, -3.564, -0.090707, 0.45256, -0.58684, 2.9267, 2.6047, -1.3904, -0.28697, -2.2946, 0.38064, 2.9715, 0.027988, 2.8472], page [-0.22407, -1.4431, 1.9748, 2.2536, -0.17403, 1.8397, -0.57827, 0.58467, -0.93575, 1.6793, 1.761, -1.7779, 0.014847, -0.96281, 0.94451, 2.1829, 1.7312, 1.2826, -1.032, 1.2639, 1.9878, -0.0074819, -0.4729, 1.0767, -0.9907, -0.20451, -1.212, 2.8507, -1.4742, -1.7086, -3.0264, -1.8521, -1.161, -0.6376, -0.18021, -1.3484, 2.8516, -1.4695, -3.2902, 1.1739, -0.13397, -1.7719, -1.4395, 0.96783, -0.65524, -0.65026, 0.84076, -3.564, -0.090707, 0.45256, -0.58684, 2.9267, 2.6047, -1.3904, -0.28697, -2.2946, 0.38064, 2.9715, 0.027988, 2.8472]
+  PASS  18.6(a) E4 at z=0, t=7.85 ns: d2E/dz2 and me d2E/dt2 [V/m^3]: computed [7.854, -32, 32], page [7.85, -32, 32]
+  PASS  18.6(b) H_y by time-integrating Faraday vs (4/eta) sin wt sin bz: computed [0.008155, -0.019187, -0.00031459, -0.0010295, 0.016317, 0.0035152], page [0.008155, -0.019187, -0.00031459, -0.0010295, 0.016317, 0.0035152]
+  PASS  18.6(b) amplitude 4/eta [mA/m]: computed 31.831, page 31.8
+  PASS  18.6(b) E2, H pair satisfies Maxwell (rel. residuals: Faraday 6.3e-10, Ampere-Maxwell 4.9e-10, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.6(c) E2 = 2cos(wt-bz) + 2cos(wt+bz): computed [-0.39233, -0.2023, -2.8108, 3.0052, 1.8731, 2.7484, -1.6839, -2.1538, -1.1434, 2.8222], page [-0.39233, -0.2023, -2.8108, 3.0052, 1.8731, 2.7484, -1.6839, -2.1538, -1.1434, 2.8222]
+  PASS  18.6(c) (Af - Bg)/eta = H_y: computed [0.008155, -0.019187, -0.00031459, -0.0010295, 0.016317, 0.0035152, 0.018056, 0.012069, -0.017883, 0.0088878], page [0.008155, -0.019187, -0.00031459, -0.0010295, 0.016317, 0.0035152, 0.018056, 0.012069, -0.017883, 0.0088878]
+  PASS  18.6(d) t when E2 = 0 everywhere [ns]; max|E2| then: computed [7.854, 2.4493e-16], page [7.85, 0]
+  PASS  18.6(d) H then: peak [mA/m] and first z of the peak [m]: computed [31.831, 0.7854], page [31.8, 0.785]
+  PASS  18.6(d) quarter period later max|H|: computed 3.8982e-18, page 0
+  PASS  18.6 check: E/H = eta cot wt cot bz: computed 390.17, page 390.17
+
+18.7 strip line and matching coax
+  PASS  18.7(a) v, eps_r: computed [1.6667e+08, 3.24], page [1.67e+08, 3.24]
+  PASS  18.7(a) eta: 120pi/sqrt(er), mu0 v, sqrt(mu0/eps): computed [209.44, 209.44, 209.29], page [209, 209, 209]
+  PASS  18.7(b) C [pF/m], L [nH/m]: computed [229.5, 157.08], page [229.5, 157.1]
+  PASS  18.7(b) 1/sqrt(LC) [m/s]: computed 1.6655e+08, page 1.67e+08
+  PASS  18.7(c) sqrt(L/C) direct and eta d/W [ohm]: computed [26.162, 26.162, 26.18], page [26.2, 26.2, 26.2]
+  PASS  18.7(d) b/a and ln(b/a): computed [2.1933, 0.7854, 2.1933], page [2.19, 0.785, 2.19]
+  PASS  18.7(d) coax L [nH/m], C [pF/m]: computed [157.08, 229.5], page [157.1, 229.5]
+  PASS  18.7(d) coax delay over 3 m [ns]: computed 18.012, page 18
+
+18.8 probe record -> snapshots (+x travel, E along z; c = 300 m/us, eta0 = 120 pi)
+  PASS  18.8(b) snapshot at t=2 us [x m]: computed (-299.5,299.5):-2; (300.5,599.5):5 | page (-300,300):-2; (300,600):5
+  PASS  18.8(c) record at x=900 m [t us]: computed (3.001,3.999):5; (4.001,5.999):-2 | page (3,4):5; (4,6):-2
+  PASS  18.8(d) at x=450 m: E_z [V/m], H [mA/m], B [nT]: computed [5, 0, -13.263, 0, 16.667], page [5, 0, -13.3, 0, 16.7]
+  PASS  18.8(d) at x=450 m: E x H direction: computed [1, 0, -0], page [1, 0, 0]
+  PASS  18.8(d) at x=0 m: E_z [V/m], H [mA/m], B [nT]: computed [-2, 0, 5.3052, 0, 6.6667], page [-2, 0, 5.31, 0, 6.67]
+  PASS  18.8(d) at x=0 m: E x H direction: computed [1, 0, 0], page [1, 0, 0]
+  PASS  18.8 FDTD: record at x=0 reproduces the GIVEN record: computed (0.001667,0.9983):5; (1.002,2.998):-2 | page (0,1):5; (1,3):-2
+  PASS  18.8 FDTD: record at x=900 m: computed (3.002,3.998):5; (4.002,5.998):-2 | page (3,4):5; (4,6):-2
+  PASS  18.8 FDTD: snapshot at 2 us: computed (-299.5,299.5):-2; (300.5,599.5):5 | page (-300,300):-2; (300,600):5
+  PASS  18.8 FDTD: H_y at (450 m, 2 us) and (0, 2 us) [mA/m]: computed [-13.263, 5.3052], page [-13.3, 5.31]
+  PASS  18.8 pair (smoothed edges) satisfies Maxwell (rel. residuals: Faraday 1.2e-09, Ampere-Maxwell 1.2e-09, divE 0.0e+00, divH 0.0e+00)
+
+18.9 triangle pulse toward -z at 150 m/us
+  PASS  18.9 given profile: peak 6 V/m at 450 m, support 300..900 m: computed [6, 450, 300.25, 899.75], page [6, 450, 300, 900]
+  PASS  18.9(a) max|my E(z,0) - page (a)|: computed 0, page 0
+  PASS  18.9(a) peak position at t=0 [m]: computed 750, page 750
+  PASS  18.9(b) max|my E(z,t) - page F(t + z/v)| at t = 0, 2, 5.3, 11.5: computed 4.4409e-15, page 0
+  PASS  18.9 setup: peak at t = 0, 2, 4, 11.5 [m] = 750 - 150 t: computed [750, 450, 150, -975], page [750, 450, 150, -975]
+  PASS  18.9(c) record at z=-750: start, peak time, end [us], peak [V/m]: computed [9.0005, 10, 12.999, 6], page [9, 10, 13, 6]
+  PASS  18.9(c) readings at 9.5 and 11.5 us [V/m]: computed [3, 3], page [3, 3]
+  PASS  18.9(c) snapshot at 11.5 us is g(z + 1425): value at -750: computed 3, page 3
+  PASS  18.9(c) NOT mirrored: record rise 0.999 us then fall 3 us; snapshot (low->high z) rise 0.998 us-equivalent then fall 3
+  PASS  18.9(d) mu_r eps_r, eta measured [ohm], mu_r/eps_r: computed [3.9945, 377.36, 1.0033], page [3.99, 377, 1]
+  PASS  18.9(d) mu_r, eps_r: computed [2.0019, 1.9953], page [2, 2]
+  PASS  18.9(d) speed with mu_r = eps_r = 2 is c/2 [m/s]: computed 1.499e+08, page 1.5e+08
+  PASS  18.9(e) H direction = (-z) x x: computed [0, -1, 0], page [-0, -1, -0]
+  PASS  18.9(e) E x H direction: computed [0, 0, -1], page [-0, -0, -1]
+  PASS  18.9(e) eta = mu v [ohm], peak H [mA/m], peak B = mu H and E/v [nT]: computed [376.99, 376.99, 15.915, 40, 40], page [377, 377, 15.9, 40, 40]
+  PASS  18.9(e) H at the probe at 11.5 us [mA/m]: computed -7.9577, page -7.96
+  PASS  18.9 FDTD (backward from the GIVEN data at 2 us): max|E(z,0) - page (a)|: computed 0, page 0
+  PASS  18.9 FDTD: probe at -750 m reads E_x at 9.5, 10, 11.5, 13 us [V/m]: computed [3, 6, 3, 0], page [3, 6, 3, 0]
+  PASS  18.9 FDTD: H_y at the probe at 11.5 us [mA/m]: computed -7.9489, page -7.96
+  PASS  18.9 FDTD: snapshot at 11.5 us vs g(z + 1425): computed 0, page 0
+  (medium used for the FD check: mu = 2 mu0, eps = 1.9972 eps0, i.e. exactly v = 1.5e8, eta = 120 pi)
+  PASS  18.9 pair E = F x, H = -F/eta y satisfies Maxwell (rel. residuals: Faraday 1.4e-10, Ampere-Maxwell 1.4e-10, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.9 wrong-sign pair H = +F/eta y must VIOLATE Maxwell (rel. residuals: Faraday 2.0e+00, Ampere-Maxwell 2.0e+00, divE 0.0e+00, divH 0.0e+00)
+
+18.10 two pulses passing through each other (c = 300 m/us, eta0 = 120 pi)
+  PASS  18.10(a) page f(t - z/c) on 1<s<2 and g(t + z/c) on 1<s<3 equal the shifted t=0 data
+  PASS  18.10(a) H_y per V/m of A and of B (x eta0): computed [1, -1], page [1, -1]
+  PASS  18.10(a) H_y on A, on B [mA/m]: computed [15.915, -7.9577], page [15.9, -7.96]
+  PASS  18.10(b) E_x at 1.5 us [V/m]: computed (-149.5,149.5):9; (150,449.5):3 | page (-150,150):9; (150,450):3
+  PASS  18.10(b) H_y at 1.5 us [mA/m]: computed (-149.5,149.5):7.958; (150,449.5):-7.958 | page (-150,150):7.96; (150,450):-7.96
+  PASS  18.10(b) E/H in overlap and in B alone [ohm]: computed [1131, -376.99], page [1131, -377]
+  PASS  18.10(c) probe E_x at z=0 [t us]: computed (1.001,1.999):9; (2,2.999):3 | page (1,2):9; (2,3):3
+  PASS  18.10(c) probe H_y at z=0 [mA/m]: computed (1.001,1.999):7.958; (2,2.999):-7.958 | page (1,2):7.96; (2,3):-7.96
+  PASS  18.10(d) E_x at 4 us: computed (-899.5,-300.5):3; (600.5,899.5):6 | page (-900,-300):3; (600,900):6
+  PASS  18.10(d) H_y at 4 us [mA/m]: computed (-899.5,-300.5):-7.958; (600.5,899.5):15.92 | page (-900,-300):-7.96; (600,900):15.9
+  PASS  18.10(e) H_y of B' [mA/m]: computed 15.915, page 15.9
+  PASS  18.10(e) max|E| at 1.5 us: computed 0, page 0
+  PASS  18.10(e) H_y at 1.5 us [mA/m]: computed (-149.5,149.5):31.83 | page (-150,150):31.8
+  PASS  18.10(e) E_x at 2.5 us: computed (-449.5,-150.5):-6; (150.5,449.5):6 | page (-450,-150):-6; (150,450):6
+  PASS  18.10(e) H_y at 2.5 us [mA/m]: computed (-449.5,-150.5):15.92; (150.5,449.5):15.92 | page (-450,-150):15.9; (150,450):15.9
+  PASS  18.10 FDTD: E_x at 1.5 us: computed (-149.5,149.5):9; (150,449.5):3 | page (-150,150):9; (150,450):3
+  PASS  18.10 FDTD: H_y at 1.5 us [mA/m]: computed (-149,149.5):7.958; (150.5,449):-7.958 | page (-150,150):7.96; (150,450):-7.96
+  PASS  18.10 FDTD: E_x at 4 us: computed (-899.5,-300.5):3; (600.5,899.5):6 | page (-900,-300):3; (600,900):6
+  PASS  18.10 FDTD: probe E_x at z=0: computed (1.002,1.998):9; (2,2.998):3 | page (1,2):9; (2,3):3
+  PASS  18.10 FDTD (e): max|E| at 1.5 us; H_y at z=0 [mA/m]: computed [0, 31.831], page [0, 31.8]
+  PASS  18.10 FDTD (e): E_x at 2.5 us: computed (-449.5,-150.5):-6; (150.5,449.5):6 | page (-450,-150):-6; (150,450):6
+  PASS  18.10 total pair, H = (f - g)/eta0 satisfies Maxwell (rel. residuals: Faraday 1.4e-09, Ampere-Maxwell 1.4e-09, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.10 total pair with H = (f + g)/eta0 must VIOLATE Maxwell (rel. residuals: Faraday 9.9e-01, Ampere-Maxwell 9.9e-01, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.10 check: with (f + g) BOTH Faraday (0.99) and Ampere-Maxwell (0.99) fail
+
+18.11 the derivation along x
+  PASS  18.11(c) general pair, H_y = (Bg - Af)/eta satisfies Maxwell (rel. residuals: Faraday 7.4e-09, Ampere-Maxwell 5.2e-09, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.11(c) z-case sign transplanted, H_y = (Af - Bg)/eta must VIOLATE Maxwell (rel. residuals: Faraday 2.0e+00, Ampere-Maxwell 2.0e+00, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.11(a) dEz/dx - mu dHy/dt and dHy/dx - eps dEz/dt (relative): computed [9.6146e-11, 1.8213e-10], page [0, 0]
+  PASS  18.11(a) curl of Ez(x) z = -dEz/dx y; curl of Hy(x) y = +dHy/dx z (signs): computed [-1, 1], page [-1, 1]
+  PASS  18.11(d) v, eps_r (c0, 3e8), eta = mu0 v: computed [1.25e+08, 5.752, 5.76, 157.08], page [1.25e+08, 5.75, 5.76, 157.08]
+  PASS  18.11(d) H amplitude vector [mA/m]: computed [0, 63.662, 0], page [0, 63.7, 0]
+  PASS  18.11(d) E x H direction; B = E/v and mu0 H [nT]: computed [-1, 0, 0, 80, 80], page [-1, 0, 0, 80, 80]
+  PASS  18.11(d) pair satisfies Maxwell (rel. residuals: Faraday 2.6e-09, Ampere-Maxwell 2.6e-09, divE 0.0e+00, divH 0.0e+00)
+  PASS  18.11(e) div of the added field vs -12 pi sin(...): computed 35.167, page 35.167
+  PASS  18.11(e) curl of the added field: computed 0, page 0
+  PASS  18.11(e) field of (d) plus the x component must VIOLATE Maxwell (rel. residuals: Faraday 2.6e-09, Ampere-Maxwell 3.0e-01, divE 3.0e-01, divH 0.0e+00)
+
+18.12 a wave on a slant
+  PASS  18.12(a) u, angle [deg], v, eps_r: computed [0.8, 0.6, 0, 36.87, 2.5e+08, 1.438], page [0.8, 0.6, 0, 36.9, 2.5e+08, 1.44]
+  PASS  18.12(b) E0.u: computed 8.8818e-16, page 0
+  PASS  18.12(c) eta [ohm], |E0|: computed [314.16, 10], page [314.16, 10]
+  PASS  18.12(c) u x E0 and H amplitude vector [mA/m]: computed [0, 0, -10, 0, 0, -31.831], page [0, 0, -10, 0, 0, -31.8]
+  PASS  18.12(c) E0 x (-z) = 10 u: computed [8, 6, -0], page [8, 6, 0]
+  PASS  18.12(b) div E (FD): computed -5.3291e-09, page 0
+  PASS  18.12(d) dEy/dx, dEx/dy, curl E (per sin phi): computed [-60.319, 33.929, 0, 0, -94.248], page [-60.319, 33.929, 0, 0, -94.248]
+  PASS  18.12(d) -mu0 dH/dt (per sin phi): computed [-0, -0, -94.248], page [-0, -0, -94.248]
+  PASS  18.12(d) curl H direction and |curl H| = 30 pi/eta = 10 eps omega: computed [-0.6, 0.8, 0, 0.3, 0.3, 0.3], page [-0.6, 0.8, 0, 0.3, 0.3, 0.3]
+  PASS  18.12 pair (E, H) satisfies Maxwell (rel. residuals: Faraday 7.1e-10, Ampere-Maxwell 8.5e-10, divE 3.1e-10, divH 0.0e+00)
+  PASS  18.12(e) E'.u and div E' (per sin phi): computed [10, 94.248], page [10, 94.248]
+  PASS  18.12(e) u x z and H'' amplitude vector [mA/m]: computed [0.6, -0.8, 0, 19.099, -25.465, 0], page [0.6, -0.8, 0, 19.1, -25.5, 0]
+  PASS  18.12(e) z x (0.6x - 0.8y) = u: computed [0.8, 0.6, -0], page [0.8, 0.6, 0]
+  PASS  18.12(e) pair (E'', H'') satisfies Maxwell (rel. residuals: Faraday 8.5e-10, Ampere-Maxwell 7.1e-10, divE 0.0e+00, divH 3.1e-10)
+  PASS  18.12(e) E' has div E' != 0 (rel. 1.56)
+
+SUMMARY: 161 PASS, 0 FAIL out of 161 checks

@@ -22,4 +22,4 @@ aliases: ["Gauss's theorem", "Gauss–Ostrogradsky theorem"]
 
 **Where it appears.** [[1-electrostatics/04-divergence-and-curl#2-divergence-flux-per-unit-volume|Lecture 4 §2]]. Its curl-side twin is [[concepts/stokes-theorem]].
 
-**Practice.** [[practice/topics#divergence-curl-and-the-integral-theorems|Divergence, curl and the integral theorems]] (17 problems) — for example [[practice/04-divergence-and-curl#41-faucet-or-whirlpool|4.1 Faucet or whirlpool]] (easy), [[practice/04-divergence-and-curl#46-three-fields-in-curved-coordinates|4.6 Three fields in curved coordinates]] (medium), [[practice/04-divergence-and-curl#49-electrostatic-or-not|4.9 Electrostatic or not]] (hard).
+**Practice.** [[practice/topics#divergence-curl-and-the-integral-theorems|Divergence, curl and the integral theorems]] (21 problems) — for example [[practice/04-divergence-and-curl#41-faucet-or-whirlpool|4.1 Faucet or whirlpool]] (easy), [[practice/04-divergence-and-curl#46-three-fields-in-curved-coordinates|4.6 Three fields in curved coordinates]] (medium), [[practice/04-divergence-and-curl#49-electrostatic-or-not|4.9 Electrostatic or not]] (hard).

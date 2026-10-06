@@ -1,6 +1,6 @@
 ---
 title: "Medium problems"
-description: "All 41 medium practice problems for Lectures 2–15, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
+description: "All 50 medium practice problems for Lectures 2–18, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
 tags: [practice]
 ---
 
@@ -90,3 +90,21 @@ tags: [practice]
 - [[practice/15-inductance-and-magnetic-energy#156-switching-on-an-rl-circuit|15.6 Switching on an RL circuit]] — RL circuit · magnetic energy · power
 - [[practice/15-inductance-and-magnetic-energy#157-internal-inductance-of-a-wire|15.7 Internal inductance of a wire]] — internal inductance · magnetic energy
 - [[practice/15-inductance-and-magnetic-energy#158-two-coaxial-solenoids|15.8 Two coaxial solenoids]] — mutual inductance · solenoid · magnetic energy
+
+## Lecture 16 · Charge conservation, displacement current and Maxwell's equations
+
+- [[practice/16-charge-conservation-and-displacement-current#166-conduction-versus-displacement-in-soil|16.6 Conduction versus displacement in soil]] — displacement current · relaxation time · Ohm's law
+- [[practice/16-charge-conservation-and-displacement-current#167-charging-plates-with-a-dielectric-core|16.7 Charging plates with a dielectric core]] — displacement current · Ampère's law · side-by-side dielectrics
+- [[practice/16-charge-conservation-and-displacement-current#168-charges-and-currents-on-a-coax|16.8 Charges and currents on a coax]] — boundary conditions · conductors · surface charge
+
+## Lecture 17 · Magnetization and Maxwell's equations in matter
+
+- [[practice/17-magnetization-and-maxwell-in-matter#176-graded-magnetization-in-a-slab|17.6 Graded magnetization in a slab]] — magnetization current · curl · current slab
+- [[practice/17-magnetization-and-maxwell-in-matter#177-a-wire-of-magnetic-steel|17.7 A wire of magnetic steel]] — magnetization current · Ampère's law · internal inductance
+- [[practice/17-magnetization-and-maxwell-in-matter#178-field-lines-leaving-iron|17.8 Field lines leaving iron]] — magnetic boundary conditions · permeability · magnetization current
+
+## Lecture 18 · The wave equation and plane TEM waves
+
+- [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] — wave equation · superposition
+- [[practice/18-wave-equation-and-plane-waves#187-a-cable-and-its-filling|18.7 A cable and its filling]] — LC product · intrinsic impedance
+- [[practice/18-wave-equation-and-plane-waves#188-from-probe-record-to-snapshots|18.8 From probe record to snapshots]] — moving pulses · plane waves

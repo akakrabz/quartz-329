@@ -1,4 +1,4 @@
-# Practice-problem bank — authoring spec (ECE 329, Lectures 2–15)
+# Practice-problem bank — authoring spec (ECE 329, Lectures 2–18)
 
 You are writing practice-problem pages for a Quartz study site for UIUC ECE 329 "Fields and Waves I".
 The student who asked for this is behind on lectures and anxious; their own diagnosis is "I did not
@@ -24,7 +24,7 @@ does more harm than no answer key.
 ## 2. Problem counts and difficulty
 
 Per lecture page: **12 problems — 5 easy, 3 medium, 4 hard** (Lecture 11: 8 problems — 4 easy,
-2 medium, 2 hard). Number them `L.1 … L.12` in order easy → medium → hard.
+2 medium, 2 hard). Lectures 16–18 have 12 each. Number them `L.1 … L.12` in order easy → medium → hard.
 
 | tag | what it means | time | hint? | solution length |
 |---|---|---|---|---|
@@ -223,6 +223,11 @@ Files (read what helps; images are readable with the Read tool):
 | 13 | `practice/13-current-sheets-solenoids-and-vector-potential.md` | `2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential` |
 | 14 | `practice/14-faradays-law-and-induced-emf.md` | `2-magnetostatics/14-faradays-law-and-induced-emf` |
 | 15 | `practice/15-inductance-and-magnetic-energy.md` | `2-magnetostatics/15-inductance-magnetic-energy-and-the-potentials` |
+| 16 | `practice/16-charge-conservation-and-displacement-current.md` | `3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations` |
+| 17 | `practice/17-magnetization-and-maxwell-in-matter.md` | `3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter` |
+| 18 | `practice/18-wave-equation-and-plane-waves.md` | `3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves` |
+
+Frontmatter tags for Lectures 16–18: `[practice, waves]`.
 
 ## 10. Coverage checklists (cover every bullet at least once; ideas are suggestions)
 
@@ -253,6 +258,12 @@ Files (read what helps; images are readable with the Read tool):
 **L14 Faraday, emf, Lenz, motional, voltmeters.** Flux through tilted loops; emf for B(t) given; Lenz directions (magnets, shrinking/expanding loops, decaying fields); motional emf of a bar, both routes; rotating loop/generator; rotating rod ½BωL²; loop entering/leaving a field region (piecewise emf, force); nonuniform B(x) moving loop; induced E inside/outside a solenoid with dI/dt; magnetic braking with mass; voltmeter readings in a changing flux (two meters, different leads).
 
 **L15 Inductance, energy, potentials.** L of solenoid/toroid (rectangular cross-section)/coax/parallel plates; N² scaling; RL decay and rise (τ = L/R), energy at t; mutual inductance wire–loop, coaxial solenoids; energy density and energy by ∫½μH²dV; L from energy (internal inductance of a wire μ/8π per m); 𝓛𝓒 = με checks; two-wire line; potentials: E = −∇Φ − ∂A/∂t, B = ∇×A from given (Φ, A), gauge-transformation invariance; SP18 Exam 2 style toroid flux/emf and parallel-plate line inductance with scaling questions.
+
+**L16 Charge conservation, displacement current, Maxwell's equations, dynamic boundary conditions.** Continuity in integral and differential form (rate of change of charge in a cube/sphere/cylinder from a given J; ∂ρ/∂t at a point; current leaving a region of decaying charge, with the Lecture 8 relaxation link); displacement current density ∂D/∂t for a given E(t) (uniform, sinusoidal in time) and the displacement current through an area; displacement vs conduction current in a lossy medium (ratio of amplitudes for E₀cos ωt — no phasors); the charging capacitor (displacement current between the plates equals the wire current; H between circular plates by Ampère–Maxwell); the two-surface/MMF argument (variants of the draining charge, not a copy of the site's worked problem); taking the divergence of Ampère–Maxwell and of Faraday (why ∇·B = 0 and Gauss's law are consistent with the curl equations); checking a given (E, B) pair against all four Maxwell equations in free space with given ρ, J (keep it non-wave-like, e.g. quasi-static fields or a field with sources); the four boundary conditions for time-varying fields at an interface (sheet current, surface charge, oblique n̂); perfect conductor: which fields can exist just outside, ρ_s = n̂·D and J_s = n̂×H for given exterior fields; MC/TF on what is new in Lecture 16 vs. statics.
+
+**L17 Magnetization, Maxwell's equations in matter.** Magnetic moment $\mathbf{m} = I\mathbf{A}$ of a loop or orbiting charge (direction by the right-hand rule), torque $\mathbf{m}\times\mathbf{B}$ and which way it turns the loop; $\mathbf{M} = N\mathbf{m}$ [A/m] from a density of moments; magnetization current $\mathbf{J}_M = \nabla\times\mathbf{M}$ for a given non-uniform $\mathbf{M}$ (Cartesian and cylindrical) and surface current $\mathbf{J}_{sM} = \mathbf{M}\times\hat n$ on the faces, with the net bound current through a cross-section equal to zero; a uniformly magnetized rod as a solenoid ($nI\to M$), its $\mathbf{B}$ inside; $\mathbf{H} = \mathbf{B}/\mu_0-\mathbf{M}$ and the decomposition $\mathbf{J} = \mathbf{J}_f+\partial\mathbf{P}/\partial t+\nabla\times\mathbf{M}$; linear media $\mathbf{M} = \chi_m\mathbf{H}$, $\mathbf{B} = \mu\mathbf{H}$, $\mu_r$ (numbers for dia-, para-, ferromagnets; MC/TF on which is which and why); solenoid/toroid/coax with a magnetic core or a partial core ($H$ from free current, then $B$, $M$, bound currents, $L\propto\mu$); hysteresis loop reading ($B_r$, $H_c$, saturation; TF); boundary conditions with $\mu_1\neq\mu_2$ ($B_n$ continuous, $H_t$ jumps by the *free* $J_s$, $\mu_1H_{1n} = \mu_2H_{2n}$), refraction $\tan\theta_1/\tan\theta_2 = \mu_1/\mu_2$ and lines leaving iron almost normally, bound surface current $\hat n\times(\mathbf{M}_1-\mathbf{M}_2)$ at an interface; the slab between current sheets (free $\mathbf{H}$ by superposition, then $\mathbf{B}$, $\mathbf{M}$, bound currents on the faces) in new geometries; polarization ↔ magnetization twin problems. Do not duplicate the site's worked problem `problems/fields-across-a-magnetic-interface.md` or the Lecture 17 page's slab example numbers.
+
+**L18 Wave equation, plane TEM waves.** Source-free Maxwell equations and the steps of the wave-equation derivation (which assumption enters where; MC on what fails without $\partial\mathbf{D}/\partial t$, with $\rho\neq0$, or with non-uniform $\epsilon$); checking whether a given $E_x(z,t)$ satisfies the 1-D wave equation and finding $v$; reading direction and speed from arguments such as $t-z/v$, $t+0.02x$, $(0.05y-t)^2$, $\cos(\omega t-\beta z)$ written as real cosines (slowness vs speed, term-order traps); $v = 1/\sqrt{\mu\epsilon}$, $\eta = \sqrt{\mu/\epsilon}$, $\eta_0\approx120\pi$ Ω, $c\approx300$ m/µs; $\mathbf{H}$ from $\mathbf{E}$ and the reverse with $\mathbf{H} = \hat u\times\mathbf{E}/\eta$ for $x$- and $y$-polarized waves travelling toward $\pm z$ and along other axes (write the cross product out), $\lvert\mathbf{B}\rvert = \lvert\mathbf{E}\rvert/v$; why a $z$-polarized wave cannot travel along $z$; moving pulses (a waveform given at one place versus time or at one instant versus position: the snapshot at another time, what a probe records, mirrored vs not); two counter-propagating pulses overlapping (E adds, H subtracts); $v$ and $\eta$ in a lossless dielectric or magnetic medium, $\epsilon_r$ from a measured speed or $\eta$; the cable link $1/\sqrt{\mathcal{L}\mathcal{C}} = v$ and $\sqrt{\mathcal{L}/\mathcal{C}} = \eta\times$ geometry. Out of scope: the current-sheet amplitude $\eta J_s/2$ (Lecture 19), phasors, the Poynting theorem and power (Lecture 20; $\mathbf{E}\times\mathbf{H}$ only as the direction rule). Wavelength may be used only if the problem defines it (the spatial period of a snapshot). Do not duplicate the site's worked problem `problems/a-pulse-on-the-move.md`; a variant of SP18 Exam 2 #4 must differ in waveform, numbers and direction from both the exam and that worked problem.
 
 ## 11. Exemplars (style anchors — numbers verified; you may reuse one if it fits your lecture)
 
@@ -336,3 +347,10 @@ Files (read what helps; images are readable with the Read tool):
    hint helpful without giving the answer away? Does each solution say *why*?
 4. Reply with: the file path(s), a table of your problems (number, title, difficulty, tags, source),
    the path of the check script and output, and any doubts or anything you could not verify.
+
+## 13. Lectures 16–18 (build 5)
+
+- FA26 HW6 (`sources/txt` has no copy on purpose) is **open homework**: do not base any problem on it, re-parameterized or not. FA26 HW5 is closed; its text and solutions are in `/home/claude/work/sources/txt/329fall26hw5.txt` and `329fall26hw5sol.txt` and may be used like the other homework (re-parameterized).
+- Lecture 17–18 scope and notation come from the site pages `3-maxwell-and-waves/17-…md`, `18-…md` once written, and from the digests in `/home/claude/work/digest6/`.
+- No phasors before Lecture 21: time-harmonic fields are written as real cosines; no complex η, no Poynting vector before Lecture 20 (instantaneous E×H may be mentioned only if the Lecture 18 page introduces it).
+

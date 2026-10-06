@@ -28,6 +28,8 @@ Wavelength–frequency: $\lambda f = c$. With $c = 300$ m/µs: 1 MHz ↔ 300 m, 
 | $\mathbf{P}$ (polarization) | C/m² | dipole moment per volume |
 | $\mathbf{B}$ | T (tesla) | Wb/m² = V·s/m² |
 | $\mathbf{H}$ | A/m | |
+| $\mathbf{M}$ (magnetization) | A/m | magnetic moment per volume; same unit as $\mathbf{H}$ (Lecture 17) |
+| magnetic moment $\mathbf{m} = I\mathbf{A}$ | A·m² | J/T |
 | $V$ (potential) | V | J/C |
 | flux $\psi_E = \oint\mathbf{D}\cdot d\mathbf{S}$ | C | |
 | flux $\psi_B = \int\mathbf{B}\cdot d\mathbf{S}$ | Wb | V·s |
@@ -42,6 +44,9 @@ Wavelength–frequency: $\lambda f = c$. With $c = 300$ m/µs: 1 MHz ↔ 300 m, 
 | MMF $\oint\mathbf{H}\cdot d\mathbf{l}$ | A | |
 | surface current $\mathbf{J}_s$ | A/m | same as $\mathbf{H}$: $H_t$ jumps by $J_s$ |
 | mobility $\lvert q\tau/m\rvert$ | m²/(V·s) | |
+| $\chi_m$, $\mu_r$, $\chi_e$, $\epsilon_r$ | dimensionless | $\mu = \mu_r\mu_0 = (1+\chi_m)\mu_0$ |
+| wave speed $v = 1/\sqrt{\mu\epsilon}$ | m/s | $c = 2.998\times10^8$ m/s $\approx 300$ m/µs in vacuum |
+| intrinsic impedance $\eta = \sqrt{\mu/\epsilon}$ | Ω | $E/H$ in a plane wave (V/m over A/m) |
 | energy density $w$ | J/m³ | $\tfrac12\epsilon E^2$, $\tfrac12\mu H^2$ |
 
 ## The dimension ladder of sources

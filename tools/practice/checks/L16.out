@@ -1,0 +1,291 @@
+================================================================================================
+16.1 Charge piling up in a cylinder (easy)
+================================================================================================
+   [ok] div J at r = 0.2 m (finite difference) vs 6r - 4 [A/m^3]: computed -2.8  expected -2.8
+      d(rho)/dt = -div J = +2.800000 A/m^3 at r = 0.2 m -> GROWING
+   [ok] div J at r = 1.0 m (finite difference) vs 6r - 4 [A/m^3]: computed 2  expected 2
+      d(rho)/dt = -div J = -2.000000 A/m^3 at r = 1.0 m -> SHRINKING
+   [ok] div J at r = 0.5 m (finite difference) vs 6r - 4 [A/m^3]: computed -0.9999999997  expected -1
+      d(rho)/dt = -div J = +1.000000 A/m^3 at r = 0.5 m -> GROWING
+   d(rho)/dt = 4 - 6r vanishes at r = 2/3 = 0.666667 m
+   [ok] dQ/dt = int (4-6r) dV over r<0.5, 0<z<2 [A]: computed 3.141592654  expected 3.141592654
+   [ok] side face r = 0.5 m: outward current [A] (= pi): computed 3.141592654  expected 3.141592654
+   [ok] top face z = 2 m: outward current [A] (= -2 pi, i.e. 2 pi in): computed -6.283185307  expected -6.283185307
+   [ok] bottom face z = 0: outward current [A]: computed 0  expected 0
+      J_r(0.5) = 0.500 A/m^2 on side area 2 pi (0.5)(2) = 6.283185 m^2 (= 2 pi); J_z(2) = -8 A/m^2 on top area pi/4 = 0.785398 m^2
+   [ok] net outward current [A] = -dQ/dt: computed -3.141592654  expected -3.141592654
+   ANSWER 16.1: d(rho)/dt = 4 - 6r A/m^3: +2.8 A/m^3 (growing) at r = 0.2 m, -2 A/m^3 (shrinking) at r = 1 m; dQ/dt = +pi = 3.1416 A, the cylinder GAINS charge (side pi A out, top 2 pi A in)
+================================================================================================
+16.2 Displacement current through a window (easy)
+================================================================================================
+   eps0 omega E0 = 0.556325 A/m^2  (amplitude of dD/dt); components 0.6 and 0.8 -> x: 0.333795, z: 0.445060 A/m^2
+   [ok] dD/dt at t = 0.10 us vs -eps0 w E0 sin(wt)(0.6,0,0.8): computed [-0.1961998  0.        -0.2615997]  expected [-0.1961998 -0.        -0.2615997]
+   [ok] dD/dt at t = 0.37 us vs -eps0 w E0 sin(wt)(0.6,0,0.8): computed [-0.2433261  0.        -0.3244348]  expected [-0.2433261 -0.        -0.3244348]
+   psi_E amplitude = 0.8 eps0 E0 A = 7.083350e-10 C
+   [ok] I_d(t = 0.25 us) = d psi_E/dt (numeric) vs -0.8 eps0 w E0 A sin(wt) [A]: computed -0.004450600219  expected -0.004450600222
+   [ok] I_d(t = 0.10 us) = d psi_E/dt (numeric) vs -0.8 eps0 w E0 A sin(wt) [A]: computed -0.002615997172  expected -0.002615997174
+   [ok] I_d(t = 0.75 us) = d psi_E/dt (numeric) vs -0.8 eps0 w E0 A sin(wt) [A]: computed 0.004450600219  expected 0.004450600222
+   eps0 = 8.8542e-12 F/m;  psi_E amplitude = 7.083 x 10^-10 C
+   [ok] exact form: eps0 omega E0 = 2 pi 1e10 eps0 [A/m^2]: computed 0.5563250277  expected 0.5563250277
+   [ok] exact form: I_d amplitude = 1.6 pi 1e8 eps0 [A]: computed 0.004450600222  expected 0.004450600222
+   amplitude of I_d = 4.4506 mA; period = 1.000 us
+      t = 0.25 us: sin(wt) = +1.000000, I_d = -4.4506 mA (-z through the window), E = [1.699662e-12 0.000000e+00 2.266216e-12] V/m (zero)
+      t = 0.75 us: sin(wt) = -1.000000, I_d = +4.4506 mA (+z through the window), E = [-1.102182e-12 -0.000000e+00 -1.469576e-12] V/m (zero)
+      t = 1.25 us: sin(wt) = +1.000000, I_d = -4.4506 mA (-z through the window), E = [1.836970e-12 0.000000e+00 2.449294e-12] V/m (zero)
+   (wrong) using |E| instead of E_z: amplitude 5.5633 mA (25% too high)
+   ANSWER 16.2: dD/dt = -0.5563 sin(wt)(0.6 x + 0.8 z) A/m^2; I_d = -4.451 sin(wt) mA; amplitude 4.45 mA; largest at t = 0.25, 0.75, ... us, when E = 0; at t = 0.25 us it is 4.45 mA along -z
+================================================================================================
+16.3 The missing displacement current (easy, find the error)
+================================================================================================
+   C = eps A/d = 141.667 pF; dV/dt = I/C = 2.11764e+07 V/s; dE/dt = I/(eps A) = 4.23528e+10 V/(m s)
+   [ok] dD/dt = eps dE/dt [A/m^2] = I/A: computed 1.5  expected 1.5
+   [ok] correct I_d = A dD/dt [A]: computed 0.003  expected 0.003
+   [ok] student's I_d = eps0 A dE/dt [A]: computed 0.00075  expected 0.00075
+   [ok] polarization current A dP/dt = (eps-eps0) A dE/dt [A]: computed 0.00225  expected 0.00225
+   [ok] Gauss route: A d(Q/A)/dt [A]: computed 0.003  expected 0.003
+   ANSWER 16.3: slip = eps0 used for D (dropped dP/dt); I_d = 3 mA = I; 0.75 mA vacuum part + 2.25 mA polarization current; MMF equal
+================================================================================================
+16.4 What changes when fields vary (easy, true or false) -- numerical illustrations
+================================================================================================
+   (a) capacitor charged by I = 1.0 A: conduction current through flat disk = 1.0 A, through bag in the gap = 0 A; displacement through the bag = dQ/dt = 1.0 A -> conduction alone is surface dependent: FALSE
+   [ok] (c) div(curl F) at random point 1: computed 0  expected 0
+   [ok] (c) div(curl F) at random point 2: computed 5.551115123e-13  expected 0
+   (c) 0 = div J + d(div D)/dt = div J + d rho/dt: TRUE
+   (d) B = B0 (x,y,z) static: div B = 3.000000 B0 (nonzero, constant in time); d(div B)/dt = 0 is satisfied with E = 0, yet div B != 0 -> Faraday alone does not force div B = 0: FALSE
+   (e) rectangle 1 m long, w = 1e-02 m: displacement current through it = 7.0e-02 A -> 0 as w -> 0: FALSE
+   (e) rectangle 1 m long, w = 1e-04 m: displacement current through it = 7.0e-04 A -> 0 as w -> 0: FALSE
+   (e) rectangle 1 m long, w = 1e-06 m: displacement current through it = 7.0e-06 A -> 0 as w -> 0: FALSE
+   (b) eps0 dE/dt is nonzero in vacuum whenever E changes: TRUE
+   ANSWER 16.4: (a) F, (b) T, (c) T, (d) F, (e) F
+================================================================================================
+16.5 Fields just outside a metal ball (easy, multiple choice)
+================================================================================================
+   [ok] n-hat at P = position / radius: computed [0.  0.6 0.8]  expected [0.  0.6 0.8]
+   angle between n-hat and z-hat = 36.870 deg
+   (1) [0. 3. 4.]: n.v = +5.0000, |n x v| = 0.0000, tangential part [0. 0. 0.] (|.| = 0.0000) -> can be E: True, can be H: False
+   (2) [5. 0. 0.]: n.v = +0.0000, |n x v| = 5.0000, tangential part [5. 0. 0.] (|.| = 5.0000) -> can be E: False, can be H: True
+   (3) [ 0.  4. -3.]: n.v = -0.0000, |n x v| = 5.0000, tangential part [ 0.  4. -3.] (|.| = 5.0000) -> can be E: False, can be H: True
+   (4) [0. 0. 5.]: n.v = +4.0000, |n x v| = 3.0000, tangential part [ 0.  -2.4  1.8] (|.| = 3.0000) -> can be E: False, can be H: False
+   -> (1) only E, (2) and (3) only H, (4) neither = option (a)
+   arithmetic: n.(3) = 0.6*4 + 0.8*(-3) = 2.4 - 2.4; n x (3) x-comp = 0.6*(-3) - 0.8*4 = -1.8 - 3.2 = -5.0
+   [ok] rho_s = n.D for (1) as E in kV/m [C/m^2]: computed 4.427093906e-08  expected 4.427093906e-08
+      rho_s = 5000 eps0 = 44.271 nC/m^2 (positive: E leaves the surface)
+   [ok] J_s = n x H for (3) as H in A/m: computed [-5.  0.  0.]  expected [-5.  0.  0.]
+   [ok] check: J_s x n = H_t (= vector (3)): computed [ 0.  4. -3.]  expected [ 0.  4. -3.]
+   ANSWER 16.5: (a); rho_s = 44.3 nC/m^2; J_s = [-5.  0.  0.] A/m = -5 x-hat A/m
+================================================================================================
+16.6 Conduction versus displacement in soil (medium)
+================================================================================================
+   eps = 9 eps0 = 7.968769e-11 F/m; relaxation time eps/sigma = 7.9688 ns; omega_c = sigma/eps = 1.254899e+08 rad/s; f_c = 19.9723 MHz
+   [ok] 1/(2 pi f_c) = eps/sigma [s]: computed 7.968769032e-09  expected 7.968769032e-09
+   conduction amplitude sigma E0 = 0.2000 A/m^2
+   [ok] f = 1e+06 Hz: displacement amplitude (numeric) vs omega eps E0 [A/m^2]: computed 0.01001385048  expected 0.0100138505
+      ratio |dD/dt|/|J| = omega eps/sigma = f/f_c = 0.05007;  conduction/displacement = 19.9723
+   [ok] f = 2e+09 Hz: displacement amplitude (numeric) vs omega eps E0 [A/m^2]: computed 20.02770096  expected 20.027701
+      ratio |dD/dt|/|J| = omega eps/sigma = f/f_c = 100.13850;  conduction/displacement = 0.0100
+   1 MHz: dD/dt has its maximum at t = -250.000 ns = -0.2500 periods (field max at t = 0): leads by a quarter period
+   [ok] time of dD/dt maximum [periods]: computed -0.2500000002  expected -0.25
+   [ok] f = f_c: max of J + dD/dt over a period [A/m^2] vs sqrt2 sigma E0: computed 0.2828427125  expected 0.2828427125
+   [ok] f = f_c: phase of the maximum, omega t mod 2pi vs 7pi/4: computed 5.497787144  expected 5.497787144
+   [ok] J + dD/dt = sqrt2 sigma E0 cos(wt + pi/4) at t = 0.0 ns: computed 0.2  expected 0.2
+   [ok] J + dD/dt = sqrt2 sigma E0 cos(wt + pi/4) at t = 1.3 ns: computed 0.1648616901  expected 0.1648616901
+   [ok] J + dD/dt = sqrt2 sigma E0 cos(wt + pi/4) at t = 4.1 ns: computed 0.07568551099  expected 0.07568551099
+   (wrong) adding the two amplitudes would give 0.40 A/m^2
+   [ok] general amplitude of J + dD/dt at f = 1e+06 Hz vs E0 sqrt(sigma^2 + omega^2 eps^2): computed 0.2002505361  expected 0.2002505361
+   [ok] general amplitude of J + dD/dt at f = 2e+09 Hz vs E0 sqrt(sigma^2 + omega^2 eps^2): computed 20.02869959  expected 20.02869959
+   ANSWER 16.6: J = 0.2 cos(wt) x A/m^2, dD/dt = -omega eps E0 sin(wt) x (leads by 90 deg); ratio omega eps/sigma; f_c = 19.97 MHz, 1/(2 pi f_c) = eps/sigma = 7.97 ns; 1 MHz: conduction 20.0x; 2 GHz: displacement 100x; at f_c: 0.283 cos(wt + pi/4) x A/m^2
+================================================================================================
+16.7 Charging plates with a dielectric core (medium)
+================================================================================================
+   plate area pi a^2 = 5.026548e-03 m^2; C(air) = 22.253 pF
+   (a) dD/dt = I/(pi a^2) = 99.4718 A/m^2 along +z (the direction of the lead current)
+   [ok] exact form: dD/dt = 312.5/pi [A/m^2]: computed 99.47183943  expected 99.47183943
+   [ok] exact form: H(a/2) = I/(4 pi a) = 3.125/pi [A/m]: computed 0.9947183943  expected 0.9947183943
+   [ok] exact form: H(a) = I/(2 pi a) = 6.25/pi [A/m]: computed 1.989436789  expected 1.989436789
+   [ok] (a) H_phi(r = 2.0 cm) numeric vs formula [A/m]: computed 0.9947183943  expected 0.9947183943
+   [ok] (a) H_phi(r = 4.0 cm) numeric vs formula [A/m]: computed 1.989436789  expected 1.989436789
+   [ok] (a) H_phi(r = 8.0 cm) numeric vs formula [A/m]: computed 0.9947183943  expected 0.9947183943
+   [ok] (a) H_phi(r = 1.3 cm) numeric vs formula [A/m]: computed 0.6465669563  expected 0.6465669563
+      H(2 cm) = 0.9947 A/m, H(8 cm) = 0.9947 A/m (= I/(4 pi a) = 0.9947), H(a) = 1.9894 A/m (max)
+   [ok] (a) (1/r) d(r H)/dr at r = 0.01 m vs dD/dt: computed 99.47183943  expected 99.47183943
+   [ok] (a) (1/r) d(r H)/dr at r = 0.03 m vs dD/dt: computed 99.47183943  expected 99.47183943
+   lead field at 8 cm: I/(2 pi r) = 0.9947 A/m (same as in the gap at 8 cm)
+   (b) dE/dt = 7.489626e+12 V/(m s); I = dE/dt * eps0 pi a^2 (3/4 + 3/4) -> check: 0.500000 A
+   [ok] (b) displacement current through the core / I: computed 0.5  expected 0.5
+      dD/dt in core = 198.9437 A/m^2, in air = 66.3146 A/m^2 (ratio 3.0)
+   [ok] (b) H_phi(r = 1 cm) numeric vs piecewise formula [A/m]: computed 0.9947183943  expected 0.9947183943
+   [ok] (b) H_phi(r = 2 cm) numeric vs piecewise formula [A/m]: computed 1.989436789  expected 1.989436789
+   [ok] (b) H_phi(r = 3 cm) numeric vs piecewise formula [A/m]: computed 1.878912523  expected 1.878912523
+   [ok] (b) H_phi(r = 4 cm) numeric vs piecewise formula [A/m]: computed 1.989436789  expected 1.989436789
+   [ok] (b) H_phi(r = 8 cm) numeric vs piecewise formula [A/m]: computed 0.9947183943  expected 0.9947183943
+   [ok] (b) H(2 cm) with core = I/(2 pi a) [A/m]: computed 1.989436789  expected 1.989436789
+      with core: H(2 cm) = 1.9894 A/m (x2.000 of air value), H(8 cm) = 0.9947 A/m (unchanged)
+      continuity at r = a/2: 1.989437 vs 1.989437; at r = a: 1.989437 vs 1.989437
+   ANSWER 16.7: (a) dD/dt = 99.5 z A/m^2; H = I r/(2 pi a^2) phi (r<a), I/(2 pi r) phi (r>a); 0.995 A/m at 2 cm and at 8 cm (CCW seen from +z); (b) one half; H(2 cm) = 1.99 A/m (doubled), H(8 cm) = 0.995 A/m
+================================================================================================
+16.8 Charges and currents on a coax (medium)
+================================================================================================
+   |P| = 2.0000 mm (= a), |Q| = 6.0000 mm (= b)
+   [ok] n-hat at P (out of inner conductor): computed [0.6 0.8 0. ]  expected [0.6 0.8 0. ]
+   [ok] n-hat at Q (out of outer conductor, toward axis): computed [ 0.6  0.8 -0. ]  expected [0.6 0.8 0. ]
+   P: |n x E| = 0.000e+00 (E normal), n.H = 2.220e-15 (H tangential), n.E = +30000.0 V/m
+   Q: |n x E| = 9.095e-13 (E normal), n.H = 4.441e-16 (H tangential), n.E = -10000.0 V/m
+   arithmetic: n_P.H_P = -14.4 + 14.4; n_Q.H_Q = 4.8 - 4.8; (n_P x H_P)_z = 0.6*18 - 0.8*(-24) = 10.8 + 19.2 = 30.0; (n_Q x H_Q)_z = 0.6*(-6) - 0.8*8 = -3.6 - 6.4 = -10.0
+   E_P = 30 kV/m * n_P, E_Q = -10 kV/m * n_Q; |H_P| = 30, |H_Q| = 10 A/m
+   [ok] rho_s(P) [C/m^2] = 30000 eps0: computed 2.656256344e-07  expected 2.656256344e-07
+   [ok] rho_s(Q) [C/m^2] = -10000 eps0: computed -8.854187813e-08  expected -8.854187813e-08
+      rho_s(P) = +265.63 nC/m^2, rho_s(Q) = -88.54 nC/m^2
+   [ok] J_s(P) = n x H [A/m]: computed [ 0. -0. 30.]  expected [ 0.  0. 30.]
+   [ok] J_s(Q) = n x H [A/m]: computed [  0.  -0. -10.]  expected [  0.   0. -10.]
+   [ok] exact form: lambda_in = 120 pi eps0 [C/m]: computed 3.337950166e-09  expected 3.337950166e-09
+   [ok] exact form: I_in = 0.12 pi [A]: computed 0.3769911184  expected 0.3769911184
+   lambda_in = +3.3380 nC/m, lambda_out = -3.3380 nC/m; I_in = +0.3770 A (z), I_out = -0.3770 A (z)
+   [ok] lambda_in + lambda_out = 0: computed 4.135903063e-25  expected 0
+   [ok] I_in + I_out = 0: computed 5.551115123e-17  expected 0
+   [ok] Gauss: E_r(a) = lambda/(2 pi eps0 a) [V/m]: computed 30000  expected 30000
+   [ok] Gauss: E_r(b) = lambda/(2 pi eps0 b) [V/m]: computed 10000  expected 10000
+   [ok] Ampere: H(a) = I/(2 pi a) [A/m]: computed 30  expected 30
+   [ok] Ampere: H(b) = I/(2 pi b) [A/m]: computed 10  expected 10
+   [ok] V(a) - V(b) = int_a^b E dr [V] = 30 kV/m * a ln 3: computed 65.91673732  expected 65.91673732
+   [ok] C' = lambda/V [F/m] vs 2 pi eps0/ln(b/a): computed 5.06388863e-11  expected 5.06388863e-11
+      V = 65.917 V, C' = 50.639 pF/m
+   (wrong) n = +r-hat at Q: rho_s = +88.54 nC/m^2, J_s = [ 0.  0. 10.] A/m (net charge and current: impossible)
+   ANSWER 16.8: n_P = n_Q = (0.6, 0.8, 0); rho_s(P) = 265.6 nC/m^2, J_s(P) = 30 z A/m; rho_s(Q) = -88.54 nC/m^2, J_s(Q) = -10 z A/m; +-3.34 nC/m; 0.377 A along +z on the inner, along -z on the outer
+================================================================================================
+16.9 A leaky capacitor and its leads (hard)
+================================================================================================
+   sigma = 2000 eps0 = 1.77084e-08 S/m; A = 7.853982e-03 m^2
+   C = 278.163 pF; R_leak = d/(sigma A) = 7.1900 MOhm; eps/sigma = 2.0000 ms; R C = 2.7816 ms
+   [ok] R_leak C = eps/sigma [s]: computed 0.002  expected 0.002
+   [ok] tau = C R R_l/(R + R_l) [s]: computed 0.001163464328  expected 0.001163464328
+   tau = 1.1635 ms; 1/tau = 1/(RC) + sigma/eps = 359.502 + 500.000 = 859.502 1/s
+   [ok] V(t = 0.5 ms) from ODE vs V0 exp(-t/tau) [V]: computed 65.06710683  expected 65.06710683
+   [ok] V(t = 2.0 ms) from ODE vs V0 exp(-t/tau) [V]: computed 17.92445609  expected 17.92445609
+   t = 0: I_R = 10.0000 uA (leads, along +z), I_leak = 13.9081 uA (through the dielectric, along -z), -dQ/dt = 23.9081 uA
+   [ok] J_z at t = 0 [A/m^2] = -sigma V0/d: computed -0.001770837563  expected -0.001770837563
+   [ok] dD_z/dt at t = 1e-4 s (finite difference) vs +eps V/(tau d): computed 0.002793366683  expected 0.002793366679
+   [ok] dD_z/dt at t = 0 [A/m^2]: computed 0.003044077107  expected 0.003044077107
+   [ok] J_z + dD_z/dt at t = 0 = I_R/A [A/m^2]: computed 0.001273239545  expected 0.001273239545
+      J = -1.77084e-03 z A/m^2 (down), dD/dt = 3.04408e-03 z A/m^2 (up), sum = 1.27324e-03 z A/m^2 (up) = I_R/A = 1.27324e-03
+   [ok] J_z + dD_z/dt at t = 0.7 ms vs I_R(t)/A: computed 0.0006976156504  expected 0.0006976156484
+   [ok] J_z + dD_z/dt at t = 3.0 ms vs I_R(t)/A: computed 9.662268443e-05  expected 9.662268415e-05
+   [ok] H_phi(r = 2.5 cm, t = 0) numeric vs formula [A/m]: computed 1.591549431e-05  expected 1.591549431e-05
+   [ok] H_phi(r = 5.0 cm, t = 0) numeric vs formula [A/m]: computed 3.183098862e-05  expected 3.183098862e-05
+   [ok] H_phi(r = 10.0 cm, t = 0) numeric vs formula [A/m]: computed 1.591549431e-05  expected 1.591549431e-05
+      H(2.5 cm, 0) = 15.915 uA/m, H(a, 0) = 31.831 uA/m; CCW seen from +z (total current along +z)
+   two surfaces, loop r = 7 cm around the upper lead: flat disk -> I_R = 10.000 uA; bag through the gap -> conduction -13.908 uA + displacement +23.908 uA = 10.000 uA
+      leads cut, t = 0.001 ms: J_z = -1.76995e-03 A/m^2, dD_z/dt = +1.76995e-03 A/m^2
+   [ok] leads cut: (J + dD/dt)/|J| at t = 0.001 ms: computed -1.44490183e-10  expected 0
+      leads cut, t = 1.0 ms: J_z = -1.07407e-03 A/m^2, dD_z/dt = +1.07407e-03 A/m^2
+   [ok] leads cut: (J + dD/dt)/|J| at t = 1.0 ms: computed -2.102998394e-11  expected 0
+   leads cut: tau = eps/sigma = 2.0 ms; conduction alone would give H(2.5 cm) = 22.14 uA/m, displacement alone -22.14 uA/m; sum 0
+   sigma -> 0: J = 0 and dD/dt = I_R/A (the ordinary capacitor)
+   ANSWER 16.9: C = 278 pF, R_leak = 7.19 MOhm, eps/sigma = 2 ms, tau = 1.16 ms, V = 100 exp(-t/tau) V; I_R = 10 uA exp(-t/tau) along +z; J = -1.771 mA/m^2 z, dD/dt = +3.044 mA/m^2 z at t = 0; sum 1.273 mA/m^2 = I_R/A; H = I_R r/(2 pi a^2) phi, 15.9 uA/m at 2.5 cm; H = 0 if leads cut
+================================================================================================
+16.10 MMF around a discharging pair (hard)
+================================================================================================
+   [ok] I(0) = -dQ/dt at t = 0 [A] (finite difference): computed 0.002000000013  expected 0.002
+   I(t) = 2.000 mA exp(-t/tau), flowing from the + sphere (z = +b) down to the - sphere: along -z
+   cos(theta0) = b/sqrt(a^2+b^2) = 0.600000
+   [ok] flux of D through the flat disk z = 0 per unit Q (numeric) vs -(1 - cos theta0): computed -0.4  expected -0.4
+   [ok]   of which from +Q: -(1 - cos theta0)/2: computed -0.2  expected -0.2
+   [ok] MMF via disk at t = 0 [A] = -I cos theta0: computed -0.0012  expected -0.0012
+      disk: conduction -2.000 mA, displacement +0.800 mA, MMF = -1.200 mA (clockwise seen from +z)
+   [ok] flux through the cup per unit Q (C-oriented, numeric) vs psi_disk + 1: computed 0.6  expected 0.6
+      cup: side +0.376393 Q, bottom +0.223607 Q, total +0.600000 Q (= 0.6 Q); no conduction term
+   [ok] MMF via cup at t = 0 [A]: computed -0.0012  expected -0.0012
+   [ok] Gauss: psi_disk(+z) + psi_cup(outward) = Q_enc = -Q (per unit Q): computed -1  expected -1
+   Biot-Savart at (a,0,0): H = [ 0.       -0.004775  0.      ] A/m (phi-hat there = +y): H_phi = -4.7746 mA/m
+   [ok] H_phi on C = -(I/4 pi a)(2 cos theta0) [A/m]: computed -0.004774648293  expected -0.004774648293
+   [ok] exact form: H_phi(t = 0) = -15/pi mA/m [A/m]: computed -0.004774648293  expected -0.004774648293
+   [ok] MMF by Biot-Savart (numerical line integral) [A]: computed -0.0012  expected -0.0012
+   Biot-Savart of a radial shell current (radius 0.02 m) at [0.04 0.01 0.02]: [-1.705e-13  3.260e-13  0.000e+00] (zero: displacement current of each charge makes no H)
+   Biot-Savart of a radial shell current (radius 0.09 m) at [0.04 0.01 0.02]: [-2.487e-14  5.773e-14 -1.421e-14] (zero: displacement current of each charge makes no H)
+   (e) cos(theta1) = 0.600000, cos(theta2) = 9/sqrt(97) = 0.913812
+   [ok] (e) flux through the disk z = 6 cm per unit Q (numeric) vs (1-c1)/2 - (1-c2)/2: computed 0.1569057743  expected 0.1569057743
+      from +Q: +0.200000 Q (up), from -Q: -0.043094 Q (down), total +0.156906 Q
+   [ok] (e) MMF at t = 0 = (I/2)(cos theta1 - cos theta2) [A]: computed -0.0003138115486  expected -0.0003138115486
+   [ok] (e) MMF by Biot-Savart around C' [A]: computed -0.0003138115486  expected -0.0003138115486
+      MMF(C') = -0.156906 I = -0.3138 mA at t = 0 (static Ampere: 0)
+   ANSWER 16.10: I = 2 mA exp(-t/tau) along -z; MMF(C) = -I cos theta0 = -0.6 I = -1.2 mA at t = 0 (disk: -I + 0.4 I; cup: 0 + d(0.6 Q)/dt); H_phi = -4.77 mA/m; MMF(C') = -0.1569 I = -0.314 mA
+================================================================================================
+16.11 A region with no conduction current (hard, SP18 Exam 2 #1(iv) style)
+================================================================================================
+   [ok] D_A: rho at [ 0.3 -0.7  0.2], t = 0.4 ms [C/m^3]: computed 1.6e-09  expected 1.6e-09
+   [ok] D_A: d rho/dt [A/m^3] (needs div J = -d rho/dt): computed 4.000000001e-06  expected 4e-06
+   [ok] D_A: rho at [-0.9  0.4  0.8], t = 0.4 ms [C/m^3]: computed 1.6e-09  expected 1.6e-09
+   [ok] D_A: d rho/dt [A/m^3] (needs div J = -d rho/dt): computed 4.000000001e-06  expected 4e-06
+   [ok] D_B: rho at [ 0.3 -0.7  0.2], t = 0.4 ms [C/m^3]: computed 4e-09  expected 4e-09
+   [ok] D_B: d rho/dt [A/m^3] (needs div J = -d rho/dt): computed 0  expected 0
+   [ok] D_B: rho at [-0.9  0.4  0.8], t = 0.4 ms [C/m^3]: computed 4e-09  expected 4e-09
+   [ok] D_B: d rho/dt [A/m^3] (needs div J = -d rho/dt): computed 0  expected 0
+   [ok] D_C: rho at [ 0.3 -0.7  0.2], t = 0.4 ms [C/m^3]: computed 0  expected 0
+   [ok] D_C: d rho/dt [A/m^3] (needs div J = -d rho/dt): computed 0  expected 0
+   [ok] D_C: rho at [-0.9  0.4  0.8], t = 0.4 ms [C/m^3]: computed 0  expected 0
+   [ok] D_C: d rho/dt [A/m^3] (needs div J = -d rho/dt): computed 0  expected 0
+   D_A: rho = 2 D0 t/T = 4 (t/T) nC/m^3, d rho/dt = 2 D0/T = 4 uA/m^3 -> would need div J = -4 uA/m^3: NOT compatible
+   D_B: rho = 2 D0 = 4 nC/m^3, static -> compatible (charge held in place)
+   D_C: rho = 0 -> compatible
+   [ok] D_B: curl of (D0/2T)(-y, x, 0) at [ 0.3 -0.7  0.2] vs dD_B/dt = (D0/T) z: computed [0.e+00 0.e+00 2.e-06]  expected [0.e+00 0.e+00 2.e-06]
+   [ok] D_B: curl of (D0/2T)(-y, x, 0) at [-0.9  0.4  0.8] vs dD_B/dt = (D0/T) z: computed [0.e+00 0.e+00 2.e-06]  expected [0.e+00 0.e+00 2.e-06]
+   D_A: div(dD_A/dt) = 4.0000e-06 A/m^3 != 0 -> no H can have this curl
+   [ok] D_C: curl H at [ 0.3 -0.7  0.2] vs dD_C/dt: computed [-1.4e-06  6.0e-07  0.0e+00]  expected [-1.4e-06  6.0e-07  0.0e+00]
+   [ok] D_C: curl H at [-0.9  0.4  0.8] vs dD_C/dt: computed [ 8.0e-07 -1.8e-06  0.0e+00]  expected [ 8.0e-07 -1.8e-06  0.0e+00]
+   [ok] D_C: curl H at [ 0.1   0.95 -0.6 ] vs dD_C/dt: computed [1.9e-06 2.0e-07 0.0e+00]  expected [1.9e-06 2.0e-07 0.0e+00]
+   D0/(2T) = 1.000e-06 A/m;  H(1,0,0) = -1.000e-06 z A/m, H(0,1,0) = +1.000e-06 z A/m, H(0,0,z) = 0.0e+00
+   [ok] (d) div D_C at [ 0.3 -0.7  0.2], t = 0.2 ms [= rho = 0]: computed 0  expected 0
+   [ok] (d) div B at [ 0.3 -0.7  0.2]: computed 0  expected 0
+   [ok] (d) curl E vs -dB/dt (= 0, H static) at [ 0.3 -0.7  0.2], t = 0.2 ms: computed [ 0.0000000e+00  0.0000000e+00 -1.7763568e-09]  expected [0. 0. 0.]
+   [ok] (d) curl H vs J + dD/dt at [ 0.3 -0.7  0.2]: computed [-1.4e-06  6.0e-07  0.0e+00]  expected [-1.4e-06  6.0e-07  0.0e+00]
+   [ok] (d) div D_C at [ 0.3 -0.7  0.2], t = 0.9 ms [= rho = 0]: computed 0  expected 0
+   [ok] (d) div B at [ 0.3 -0.7  0.2]: computed 0  expected 0
+   [ok] (d) curl E vs -dB/dt (= 0, H static) at [ 0.3 -0.7  0.2], t = 0.9 ms: computed [ 0.0000000e+00  0.0000000e+00 -1.7763568e-08]  expected [0. 0. 0.]
+   [ok] (d) curl H vs J + dD/dt at [ 0.3 -0.7  0.2]: computed [-1.4e-06  6.0e-07  0.0e+00]  expected [-1.4e-06  6.0e-07  0.0e+00]
+   [ok] (d) div D_C at [-0.9  0.4  0.8], t = 0.2 ms [= rho = 0]: computed 0  expected 0
+   [ok] (d) div B at [-0.9  0.4  0.8]: computed 0  expected 0
+   [ok] (d) curl E vs -dB/dt (= 0, H static) at [-0.9  0.4  0.8], t = 0.2 ms: computed [0. 0. 0.]  expected [0. 0. 0.]
+   [ok] (d) curl H vs J + dD/dt at [-0.9  0.4  0.8]: computed [ 8.0e-07 -1.8e-06  0.0e+00]  expected [ 8.0e-07 -1.8e-06  0.0e+00]
+   [ok] (d) div D_C at [-0.9  0.4  0.8], t = 0.9 ms [= rho = 0]: computed 0  expected 0
+   [ok] (d) div B at [-0.9  0.4  0.8]: computed 0  expected 0
+   [ok] (d) curl E vs -dB/dt (= 0, H static) at [-0.9  0.4  0.8], t = 0.9 ms: computed [0.0000000e+00 0.0000000e+00 2.1316282e-08]  expected [0. 0. 0.]
+   [ok] (d) curl H vs J + dD/dt at [-0.9  0.4  0.8]: computed [ 8.0e-07 -1.8e-06  0.0e+00]  expected [ 8.0e-07 -1.8e-06  0.0e+00]
+   Stokes check: (y-hat then z-hat edges -> normal [1. 0. 0.]) displacement current through the square = 1.000000 uA
+   [ok] Stokes check: circulation of H around the unit square in x = 0 [A] = flux of dD_C/dt: computed 1e-06  expected 1e-06
+   [ok] Stokes check value [A] = D0/(2T): computed 1e-06  expected 1e-06
+   [ok] (e) d(div B1)/dt = 2 B0/T (nonzero -> Faraday impossible): computed 2  expected 2
+   [ok] (e) d(div B2)/dt = 0 (Faraday allows it): computed 0  expected 0
+   [ok] (e) div B2 = 2 B0 (nonzero -> needs magnetic charge): computed 0.002  expected 0.002
+   ANSWER 16.11: (a) only d rho/dt = 0 must hold; (b) D_A impossible (d rho/dt = 4 uA/m^3), D_B allowed (static rho = 4 nC/m^3), D_C allowed (rho = 0); (c) H = 1e-6 (y^2 - x^2) z A/m: -1 uA/m at (1,0,0), +1 uA/m at (0,1,0); (d) all four hold; (e) B1 ruled out by Faraday, B2 by div B = 0 (no magnetic charge)
+================================================================================================
+16.12 Four conditions at a tilted interface (hard, SP18 Exam 2 #1(vi) style)
+================================================================================================
+   n-hat = [ 0.666667 -0.333333  0.666667]; n.Js = 0.00e+00 (tangential); P = origin on the plane: 2(0)-0+2(0) = 0
+   [ok] E2n [V/m]: computed 3000  expected 3000
+   [ok] E2 normal part [V/m]: computed [ 2000. -1000.  2000.]  expected [ 2000. -1000.  2000.]
+   [ok] E2 tangential part [V/m]: computed [ 2000.  2000. -1000.]  expected [ 2000.  2000. -1000.]
+   [ok] H2n [A/m]: computed 3  expected 3
+   [ok] H2 normal part [A/m]: computed [ 2. -1.  2.]  expected [ 2. -1.  2.]
+   [ok] H2 tangential part [A/m]: computed [1. 2. 0.]  expected [1. 2. 0.]
+   [ok] E1n from n.(D1 - D2) = rho_s [V/m]: computed 9000  expected 9000
+   [ok] E1 [V/m]: computed [ 8000. -1000.  5000.]  expected [ 8000. -1000.  5000.]
+   [ok] n.(D1 - D2) = rho_s [C/m^2]: computed 2.656256344e-08  expected 2.656256344e-08
+   [ok] n x (E1 - E2) = 0: computed [ 2.2737368e-13  0.0000000e+00 -2.2737368e-13]  expected [0. 0. 0.]
+      D1 = [141.667 -17.708  88.542] nC/m^2 (= eps0 (16, -2, 10) kV/m), D2 = [177.084  44.271  44.271] nC/m^2 (= eps0 (20, 5, 5) kV/m)
+      |E1| = 9486.83 V/m;  rho_s = 3000 eps0 = 26.563 nC/m^2
+   arithmetic: (1,4,1) x (2,-1,2) = [ 9.  0. -9.]; n.H1 terms (12 - 1 - 2)/3; n.E2 = (8 - 1 + 2)/3, n.H2 = (6 - 1 + 4)/3
+   9 n-hat = [ 6. -3.  6.] kV/m (E1 normal part)
+   [ok] J_s x n [A/m]: computed [ 3.  0. -3.]  expected [ 3.  0. -3.]
+   [ok] H1 [A/m]: computed [ 6.  1. -1.]  expected [ 6.  1. -1.]
+   [ok] n x (H1 - H2) = J_s: computed [1. 4. 1.]  expected [1. 4. 1.]
+      n x (H1 - H2) before dividing by 3: [ 3. 12.  3.];  n.H1 = 3.000000 A/m
+   [ok] n.(B1 - B2) = 0 [T]: computed -1.428295758e-22  expected 0
+      B1 = mu0 H1 = [ 7.5398  1.2566 -1.2566] uT; B2 = [3.7699 1.2566 2.5133] uT; B_n = 3 mu0 = 3.7699 uT both sides
+   [ok] bound surface charge n.P2 - n.P1 [C/m^2] = 3000 eps0: computed 2.656256344e-08  expected 2.656256344e-08
+      n.P2 = 4 eps0 (3 kV/m) = 12000 eps0, n.P1 = eps0 (9 kV/m) = 9000 eps0
+   [ok] total eps0 n.(E1 - E2) = rho_s + rho_sb [C/m^2]: computed 5.312512688e-08  expected 5.312512688e-08
+      rho_sb = 26.563 nC/m^2, total = 6000 eps0 = 53.125 nC/m^2
+   (e) rectangle l = 1 m, w = 1e-03 m: flux of a finite dD/dt (say 1 A/m^2) = 1e-03 A -> 0; J_s through it stays |J_s| l
+   (e) rectangle l = 1 m, w = 1e-06 m: flux of a finite dD/dt (say 1 A/m^2) = 1e-06 A -> 0; J_s through it stays |J_s| l
+   ANSWER 16.12: n = (2,-1,2)/3; E2 = (2,-1,2) + (2,2,-1) kV/m, H2 = (2,-1,2) + (1,2,0) A/m; E1 = (8,-1,5) kV/m, D1 = eps0(16,-2,10) kV/m; H1 = (6,1,-1) A/m, B1 = (7.54, 1.257, -1.257) uT; rho_sb = 3000 eps0 = 26.6 nC/m^2, total 53.1 nC/m^2
+================================================================================================
+checks run: 153;  failures: 0

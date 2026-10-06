@@ -2,7 +2,7 @@
 title: "Magnetic field: B and H"
 description: "B is the magnetic flux density (tesla), defined by the force qv×B; H = B/μ is the field whose circulation is the current (A/m). Both are produced by moving charge, both are divergence-free, and the canonical results — line, sheet, solenoid, loop — are listed here."
 tags: [concept, magnetostatics]
-aliases: ["magnetic flux density", "B field", "H field", "permeability"]
+aliases: ["magnetic flux density", "B field", "H field"]
 ---
 
 > [!key] Definition
@@ -10,9 +10,11 @@ aliases: ["magnetic flux density", "B field", "H field", "permeability"]
 > $$
 > \mathbf{F} = q\mathbf{v}\times\mathbf{B}\qquad(\text{equivalently } d\mathbf{F} = I\,d\mathbf{l}\times\mathbf{B}\text{ on a current element}),
 > $$
-> in tesla, $\text{T} = \text{N/(A·m)} = \text{Wb/m}^2$. $\mathbf{H} = \mathbf{B}/\mu_0$ in free space, $\mathbf{B} = \mu\mathbf{H}$ in a medium, in A/m: it is the field whose line integral around a loop equals the current through it. $\mu_0 = 4\pi\times10^{-7}$ H/m is the permeability of free space; $\mu = (1+\chi_m)\mu_0 = \mu_r\mu_0$ in a material (Lecture 17). The pairing $\mathbf{B}\leftrightarrow\mathbf{D}$ (flux densities: normal components continuous unless a surface charge intervenes — $\rho_s$ for $\mathbf{D}$, never for $\mathbf{B}$) and $\mathbf{H}\leftrightarrow\mathbf{E}$ (fields: tangential components continuous unless a surface current intervenes — $\mathbf{J}_s$ for $\mathbf{H}$, never for $\mathbf{E}$) is the one that boundary conditions respect.
+> in tesla, $\text{T} = \text{N/(A·m)} = \text{Wb/m}^2$. $\mathbf{H} = \mathbf{B}/\mu_0$ in free space, $\mathbf{B} = \mu\mathbf{H}$ in a medium, in A/m: it is the field whose line integral around a loop equals the current through it. $\mu_0 = 4\pi\times10^{-7}$ H/m is the permeability of free space; $\mu = (1+\chi_m)\mu_0 = \mu_r\mu_0$ in a material ([[concepts/permeability]]). The pairing $\mathbf{B}\leftrightarrow\mathbf{D}$ (flux densities: normal components continuous unless a surface charge intervenes — $\rho_s$ for $\mathbf{D}$, never for $\mathbf{B}$) and $\mathbf{H}\leftrightarrow\mathbf{E}$ (fields: tangential components continuous unless a surface current intervenes — $\mathbf{J}_s$ for $\mathbf{H}$, never for $\mathbf{E}$) is the one that boundary conditions respect.
 
 **Physics.** Moving charge — current — makes $\mathbf{B}$, and $\mathbf{B}$ acts only on moving charge. The force is perpendicular to the velocity, so static magnetic fields do no work: they bend trajectories (circular motion of radius $mv/|q|B$) without changing speed. Why a neutral current-carrying wire exerts a force at all is a relativistic effect of the Coulomb force ([[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]]); magnetism is what remains of electrostatics when a near-perfect charge cancellation is spoiled by motion.
+
+**In matter** ([[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter|Lecture 17]]). The general definition is $\mathbf{H}\equiv\mathbf{B}/\mu_0-\mathbf{M}$, with $\mathbf{M}$ the [[concepts/magnetization]] of the material. It is built so that $\oint\mathbf{H}\cdot d\mathbf{l}$ counts *free* current only. So free currents set $\mathbf{H}$ — independently of the medium whenever symmetry lets Ampère's law decide alone, as for a sheet, a solenoid or a coax — and the medium then sets $\mathbf{B} = \mu\mathbf{H}$, just as free charge sets $\mathbf{D}$ and the medium sets $\mathbf{E} = \mathbf{D}/\epsilon$. $\mathbf{B}$, not $\mathbf{H}$, is the field in the force law.
 
 **The two laws.** Static: $\nabla\times\mathbf{H} = \mathbf{J}$ (sources in the curl — [[concepts/amperes-law]]) and $\nabla\cdot\mathbf{B} = 0$ always (no magnetic charge; field lines close on themselves). Any current distribution's field is given by [[concepts/biot-savart-law]] or by the [[concepts/vector-potential]]. Dynamic: $\nabla\times\mathbf{H} = \mathbf{J}+\partial\mathbf{D}/\partial t$ ([[concepts/displacement-current]]).
 

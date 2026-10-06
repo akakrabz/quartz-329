@@ -1,11 +1,11 @@
 ---
 title: "Errata in the course materials"
-description: "Slips found in the lecture slides (Lectures 1–16), the course notes, the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
+description: "Slips found in the lecture slides (Lectures 1–18), the course notes, the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
 tags: [toolkit, exam-1]
 aliases: ["errata", "known errors in the slides", "errors in the exam key"]
 ---
 
-Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–16, so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
+Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–18, so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
 
 > [!tip] How to read this page
 > "Slide" means the annotated lecture decks (Shao, after Goddard and Cunningham); "notes" means Prof. Kudeki's lecture notes; "key" means the FA26 Exam 1 solutions; "HW sol." means the FA26 homework solution sets. Nothing here is a criticism of the materials — most of these are momentary hand slips that the authors corrected verbally or on the next line. They are listed because they are copied verbatim into notecards every semester.
@@ -47,8 +47,17 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L15 slide 15 | solenoid $L = N^2\mu_0A\ell$ with $N$ = turns per length and $n$ = total turns | $L = n^2\mu_0A\ell = N^2\mu_0A/\ell$ with $n$ = turns per metre, $N = n\ell$ (the notes' convention) | the two symbols are swapped relative to the notes |
 | L16 slides 3, 5 | continuity with total derivatives, $\nabla\cdot\vec J = -d\rho/dt$ | $\nabla\cdot\vec J = -\partial\rho/\partial t$ (the total $dQ/dt$ is fine for a fixed volume) | $\rho$ is a field of $(x,y,z,t)$ |
 | L16 slide 6 | line current $B_\phi = \mu_0I/(2\pi R)$ with $R$ the cylindrical radius, next to a point charge with spherical $R$; "$B = \tfrac{\mu_0}{2}\vec J_s\times\hat a_n$" | $B_\phi = \mu_0I/(2\pi r)$; $\vec B = \tfrac{\mu_0}{2}\vec J_s\times\hat a_n$ | one letter for two radii; a scalar equated to a vector |
-| L16 slide 10 | $D_{1n} = \rho$ at a perfect conductor | $D_{1n} = \rho_s$ | surface charge density, C/m² |
+| L16 slide 10 | $D_{1n} = \rho$ at a perfect conductor | $D_{1n} = \rho_s$ | surface charge density, C/m² (corrected in ink in the 2 Oct copy of the deck) |
 | L16 slide 8 | $\lvert\vec H_{t1}\rvert - \lvert\vec H_{t2}\rvert = \pm\lvert\vec J_s\rvert$ | $\hat a_n\times(\vec H_1-\vec H_2) = \vec J_s$ | the magnitude form hides the direction; use the vector form |
+| L17 slide 13 | platinum $\chi_m = +2.90\times10^{-5}$; liquid oxygen $\chi_m = +3.50\times10^{-5}$ | about $+2.7\times10^{-4}$ and $+3.5\times10^{-3}$ (handbook values) | exponent slips; use the slide's table only for orders of magnitude, never to memorize |
+| L17 slide 13 | paramagnets: "domains reorient" | the individual atomic moments turn toward $\mathbf{H}$ | domains belong to ferromagnets; a paramagnet has none |
+| L17 slide 15 | silver and lead $\mu_r = 0.99993$ | about $0.99998$ for both | slide 12's own $\chi_m = -1.70\times10^{-5}$ for lead gives $\mu_r = 0.99998$ |
+| L17 slide 16 | one sheet value $-0.1\,\hat a_y$ in the statement (the figure shows $-0.1$ on top and $+0.1$ below); hint "$\vec H = \big(\tfrac{\vec J}{2}\big)\hat x\times\hat a_n$" | two sheets of opposite current, as drawn; $\mathbf{H} = \tfrac12\mathbf{J}_s\times\hat a_n$ | the stray $\hat x$ is not part of the sheet formula |
+| L17 slide 18 | inside a magnetic column "$\mathbf{H}\neq0$ … it can be reduced or increased" | it is $\mathbf{B}$ (and $\mathbf{M}$) that changes; $\mathbf{H}$, fixed by the free current, is the same as without the material in the deck's own model (slide 19) | free currents set $\mathbf{H}$, the medium sets $\mathbf{B}$ |
+| L17 slides 7, 8, 10, 19 | $\mathbf{M} = \chi_m\mathbf{H}_{\text{ext}}$ | $\mathbf{M} = \chi_m\mathbf{H}$, with $\mathbf{H}$ the field inside the material | the two agree only where the material does not change $\mathbf{H}$ (a long rod or a slab along the field) |
+| L18 slides 2, 3, 8–10 | $d/dt$ in the point forms, including the boxed $\partial E_x/\partial z = -\mu_0\,dH_y/dt$ | $\partial/\partial t$ | the same slip as in Lectures 4, 14–16 |
+| L18 slide 5 | the static-sheet sketch draws $\mathbf{H}$ for a current *out of* the page | the opposite circulation, for slide 4's $\mathbf{J}_s = -J_s(t)\hat a_x$ (as on slides 6–11) | figure only; the equations are right |
+| L18 slides 11–13 | the sheet current $J_s(t)$ renamed $J_x(t)$ and then used as the volume density in $\partial_zH_y = -J_x-\partial_tD_x$ | a sheet needs $J_s(t)\,\delta(z)$ there | notation; the term is dropped on slide 14 anyway |
 
 ## Course notes (Kudeki)
 
@@ -72,6 +81,11 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L15 p. 7 | "$\mathcal L$ and $\mathcal C$ are proportional to $\epsilon_0$ and $\mu_0$, respectively" | the other way round: $\mathcal L\propto\mu_0$, $\mathcal C\propto\epsilon_0$ |
 | L15 p. 3 | "an $N$-turn coil … the resistive $n$-turn coil" | one symbol; $N$ plays no role once $L$ is given |
 | L16 p. 5, p. 7 | "this results would be"; "By, contrast"; "requires $\nabla\cdot\mathbf B$ to an invariant scalar" | this result would be; By contrast; to be a time-invariant scalar |
+| L17 p. 2 | $\mathbf{D} = \epsilon_e\mathbf{E}+\mathbf{P}$ | $\mathbf{D} = \epsilon_o\mathbf{E}+\mathbf{P}$; the same page also uses $\epsilon$ and $\mu$ before p. 8 defines them |
+| L17 p. 6 | figure caption $N_l$, text $N_a$ | one symbol for the number of loops per unit length |
+| L17 p. 7 | "$H$ is the same in both regions" | true for that geometry, where the free current alone fixes $H$ by symmetry; not a general rule |
+| L17 p. 4, footnote 6, p. 12 | "**M**called"; "dispacement", "chare"; an unclosed parenthesis | typos |
+| L18 p. 8, margin | shifted rectangle and triangle pulses labelled at $-\tau/2$ and $\tau/2$ | $t_o-\tau/2$ and $t_o+\tau/2$ |
 
 ## FA26 Exam 1 solution key
 
@@ -111,5 +125,7 @@ None of these changes a boxed answer; all of them are exactly the slips graders 
 - Scalar potential: $V$ in the notes, $\Phi$ on the potentials slides. Magnetic flux: $\Psi$ in the notes; some slides write $\Phi$ or $\psi_m$.
 - Biot–Savart's vector from source to field point: $\mathbf r$, $r$ in the notes (clashing with the cylindrical $r$ of $\mu_0I/2\pi r$), $\hat a_R$, $R$ on the slides. This site writes $\mathbf R$, $\hat R$.
 - Boundary-condition sides: Kudeki's $\pm$ superscripts ($\hat n$ from $-$ to $+$) and the slides' subscripts 1/2 ($\hat a_n$ from 2 into 1) are the same convention with different labels.
+- Magnetic constants: $\mu_o$ (notes) vs $\mu_0$ (slides, this site); the slides call magnetization "magnetic polarization" once (Lecture 17, slide 10). $\chi_m$ has no $\mu_0$: $\mathbf{M} = \chi_m\mathbf{H}$, unlike $\mathbf{P} = \epsilon_0\chi_e\mathbf{E}$.
+- Lecture 18: the slides rename the sheet current $J_s(t)$ to $J_x(t)$ (slides 11–13). Both sources write $v$ for the speed in a general medium and $c$ for vacuum, as this site does.
 
 *If you find another one, it belongs here — the pages that quote a slide slip also say so inline, but this is the list to check against before an exam.*

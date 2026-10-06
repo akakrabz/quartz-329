@@ -1,6 +1,6 @@
 ---
 title: "Problems by topic"
-description: "The 164 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
+description: "The 200 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
 tags: [practice]
 ---
 
@@ -41,6 +41,12 @@ Two-minute concept checks — every wrong option is explained in the solution. G
 - [[practice/14-faradays-law-and-induced-emf#144-lenzs-rule-true-or-false|14.4 Lenz's rule, true or false]] <span class="diff easy">easy</span>
 - [[practice/15-inductance-and-magnetic-energy#153-fields-from-given-potentials|15.3 Fields from given potentials]] <span class="diff easy">easy</span>
 - [[practice/15-inductance-and-magnetic-energy#154-gauge-transformations-true-or-false|15.4 Gauge transformations, true or false]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#164-what-changes-when-fields-vary|16.4 What changes when fields vary]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#165-fields-just-outside-a-metal-ball|16.5 Fields just outside a metal ball]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#172-four-rods-in-a-solenoid|17.2 Four rods in a solenoid]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#174-reading-a-hysteresis-loop|17.4 Reading a hysteresis loop]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#181-which-way-and-how-fast|18.1 Which way and how fast]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] <span class="diff easy">easy</span>
 
 ## Find the error
 
@@ -60,6 +66,9 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/13-current-sheets-solenoids-and-vector-potential#136-parallel-plate-line-find-the-error|13.6 Parallel-plate line, find the error]] <span class="diff medium">medium</span>
 - [[practice/14-faradays-law-and-induced-emf#145-a-sliding-bar-find-the-error|14.5 A sliding bar, find the error]] <span class="diff easy">easy</span>
 - [[practice/15-inductance-and-magnetic-energy#155-two-wire-line-find-the-error|15.5 Two-wire line, find the error]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#163-the-missing-displacement-current|16.3 The missing displacement current]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#173-ferrite-between-sheets-find-the-error|17.3 Ferrite between sheets, find the error]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#185-the-backwards-magnetic-field|18.5 The backwards magnetic field]] <span class="diff easy">easy</span>
 
 ## Coulomb's law and point charges
 
@@ -99,6 +108,8 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/13-current-sheets-solenoids-and-vector-potential#137-a-slab-with-graded-current|13.7 A slab with graded current]] <span class="diff medium">medium</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#138-three-sheets-in-three-directions|13.8 Three sheets in three directions]] <span class="diff medium">medium</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#1312-a-finite-solenoid-on-its-axis|13.12 A finite solenoid on its axis]] <span class="diff hard">hard</span>
+- [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] <span class="diff medium">medium</span>
+- [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] <span class="diff hard">hard</span>
 
 ## Gauss's law and flux
 
@@ -118,6 +129,8 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/08-conductors-dielectrics-and-polarization#88-point-charge-in-a-dielectric-sphere|8.8 Point charge in a dielectric sphere]] <span class="diff medium">medium</span>
 - [[practice/08-conductors-dielectrics-and-polarization#810-relaxation-of-a-charge-wave|8.10 Relaxation of a charge wave]] <span class="diff hard">hard</span>
 - [[practice/09-static-fields-in-dielectric-media#95-a-coated-wire-find-the-error|9.5 A coated wire, find the error]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#162-displacement-current-through-a-window|16.2 Displacement current through a window]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#1610-mmf-around-a-discharging-pair|16.10 MMF around a discharging pair]] <span class="diff hard">hard</span>
 
 ## Planar, cylindrical and spherical symmetry
 
@@ -161,6 +174,10 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/06-circulation-and-boundary-conditions#66-circulation-of-two-fields|6.6 Circulation of two fields]] <span class="diff medium">medium</span>
 - [[practice/12-magnetic-force-biot-savart-and-ampere#124-could-this-be-a-magnetic-field|12.4 Could this be a magnetic field]] <span class="diff easy">easy</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#1310-vector-potentials-of-wire-and-solenoid|13.10 Vector potentials of wire and solenoid]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#161-charge-piling-up-in-a-cylinder|16.1 Charge piling up in a cylinder]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#1611-a-region-with-no-conduction-current|16.11 A region with no conduction current]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#176-graded-magnetization-in-a-slab|17.6 Graded magnetization in a slab]] <span class="diff medium">medium</span>
+- [[practice/18-wave-equation-and-plane-waves#1812-a-wave-on-a-slant|18.12 A wave on a slant]] <span class="diff hard">hard</span>
 
 ## Continuity, relaxation and displacement current
 
@@ -172,6 +189,17 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/10-capacitance-and-conductance#109-leaky-spheres-one-lossy-half|10.9 Leaky spheres, one lossy half]] <span class="diff hard">hard</span>
 - [[practice/11-lorentz-drude-models#117-conductor-like-or-dielectric-like|11.7 Conductor-like or dielectric-like]] <span class="diff hard">hard</span>
 - [[practice/11-lorentz-drude-models#118-relaxation-time-versus-collision-time|11.8 Relaxation time versus collision time]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#161-charge-piling-up-in-a-cylinder|16.1 Charge piling up in a cylinder]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#162-displacement-current-through-a-window|16.2 Displacement current through a window]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#163-the-missing-displacement-current|16.3 The missing displacement current]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#164-what-changes-when-fields-vary|16.4 What changes when fields vary]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#166-conduction-versus-displacement-in-soil|16.6 Conduction versus displacement in soil]] <span class="diff medium">medium</span>
+- [[practice/16-charge-conservation-and-displacement-current#167-charging-plates-with-a-dielectric-core|16.7 Charging plates with a dielectric core]] <span class="diff medium">medium</span>
+- [[practice/16-charge-conservation-and-displacement-current#169-a-leaky-capacitor-and-its-leads|16.9 A leaky capacitor and its leads]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#1610-mmf-around-a-discharging-pair|16.10 MMF around a discharging pair]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#1611-a-region-with-no-conduction-current|16.11 A region with no conduction current]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#179-electret-and-magnet-twins|17.9 Electret and magnet twins]] <span class="diff hard">hard</span>
+- [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] <span class="diff easy">easy</span>
 
 ## Potential, work and the energy of charges
 
@@ -224,6 +252,13 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/13-current-sheets-solenoids-and-vector-potential#132-crossing-a-current-sheet|13.2 Crossing a current sheet]] <span class="diff easy">easy</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#138-three-sheets-in-three-directions|13.8 Three sheets in three directions]] <span class="diff medium">medium</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#139-two-opposite-slabs-and-a-sheet|13.9 Two opposite slabs and a sheet]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#165-fields-just-outside-a-metal-ball|16.5 Fields just outside a metal ball]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#168-charges-and-currents-on-a-coax|16.8 Charges and currents on a coax]] <span class="diff medium">medium</span>
+- [[practice/16-charge-conservation-and-displacement-current#1612-four-conditions-at-a-tilted-interface|16.12 Four conditions at a tilted interface]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#178-field-lines-leaving-iron|17.8 Field lines leaving iron]] <span class="diff medium">medium</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1710-three-sheets-and-two-slabs|17.10 Three sheets and two slabs]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap|17.11 A toroid with an air gap]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1712-a-short-bar-magnet|17.12 A short bar magnet]] <span class="diff hard">hard</span>
 
 ## Poisson's and Laplace's equations
 
@@ -254,6 +289,9 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/08-conductors-dielectrics-and-polarization#89-charge-in-a-conducting-shells-cavity|8.9 Charge in a conducting shell's cavity]] <span class="diff hard">hard</span>
 - [[practice/08-conductors-dielectrics-and-polarization#811-electret-rod-in-a-grounded-tube|8.11 Electret rod in a grounded tube]] <span class="diff hard">hard</span>
 - [[practice/09-static-fields-in-dielectric-media#910-sphere-shell-and-two-dielectric-layers|9.10 Sphere, shell and two dielectric layers]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#165-fields-just-outside-a-metal-ball|16.5 Fields just outside a metal ball]] <span class="diff easy">easy</span>
+- [[practice/16-charge-conservation-and-displacement-current#166-conduction-versus-displacement-in-soil|16.6 Conduction versus displacement in soil]] <span class="diff medium">medium</span>
+- [[practice/16-charge-conservation-and-displacement-current#168-charges-and-currents-on-a-coax|16.8 Charges and currents on a coax]] <span class="diff medium">medium</span>
 
 ## Polarization and bound charge
 
@@ -270,6 +308,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/09-static-fields-in-dielectric-media#99-glass-slab-in-an-oblique-field|9.9 Glass slab in an oblique field]] <span class="diff hard">hard</span>
 - [[practice/09-static-fields-in-dielectric-media#910-sphere-shell-and-two-dielectric-layers|9.10 Sphere, shell and two dielectric layers]] <span class="diff hard">hard</span>
 - [[practice/09-static-fields-in-dielectric-media#911-graded-coax-with-uniform-field|9.11 Graded coax with uniform field]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#179-electret-and-magnet-twins|17.9 Electret and magnet twins]] <span class="diff hard">hard</span>
 
 ## Fields in dielectric media
 
@@ -288,6 +327,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/10-capacitance-and-conductance#102-slide-in-a-slab|10.2 Slide in a slab]] <span class="diff easy">easy</span>
 - [[practice/10-capacitance-and-conductance#106-two-layers-between-charged-plates|10.6 Two layers between charged plates]] <span class="diff medium">medium</span>
 - [[practice/10-capacitance-and-conductance#107-one-slab-two-placements|10.7 One slab, two placements]] <span class="diff medium">medium</span>
+- [[practice/16-charge-conservation-and-displacement-current#167-charging-plates-with-a-dielectric-core|16.7 Charging plates with a dielectric core]] <span class="diff medium">medium</span>
 
 ## Capacitance, stored energy and force
 
@@ -307,6 +347,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/10-capacitance-and-conductance#109-leaky-spheres-one-lossy-half|10.9 Leaky spheres, one lossy half]] <span class="diff hard">hard</span>
 - [[practice/10-capacitance-and-conductance#1011-two-lossy-layers-in-series|10.11 Two lossy layers in series]] <span class="diff hard">hard</span>
 - [[practice/10-capacitance-and-conductance#1012-lossy-coax-driven-through-a-resistor|10.12 Lossy coax driven through a resistor]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#169-a-leaky-capacitor-and-its-leads|16.9 A leaky capacitor and its leads]] <span class="diff hard">hard</span>
 
 ## Drude and Lorentz models
 
@@ -318,6 +359,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/11-lorentz-drude-models#116-a-conductor-as-a-low-pass-filter|11.6 A conductor as a low-pass filter]] <span class="diff medium">medium</span>
 - [[practice/11-lorentz-drude-models#117-conductor-like-or-dielectric-like|11.7 Conductor-like or dielectric-like]] <span class="diff hard">hard</span>
 - [[practice/11-lorentz-drude-models#118-relaxation-time-versus-collision-time|11.8 Relaxation time versus collision time]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#163-the-missing-displacement-current|16.3 The missing displacement current]] <span class="diff easy">easy</span>
 
 ## Magnetic force and charged particles
 
@@ -328,11 +370,13 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/12-magnetic-force-biot-savart-and-ampere#123-an-electron-in-earths-field|12.3 An electron in Earth's field]] <span class="diff easy">easy</span>
 - [[practice/12-magnetic-force-biot-savart-and-ampere#129-a-rectangular-loop-beside-a-wire|12.9 A rectangular loop beside a wire]] <span class="diff hard">hard</span>
 - [[practice/12-magnetic-force-biot-savart-and-ampere#1210-two-crossing-line-currents|12.10 Two crossing line currents]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#171-moment-and-torque-on-a-loop|17.1 Moment and torque on a loop]] <span class="diff easy">easy</span>
 
 ## The Biot–Savart law
 
 - [[practice/12-magnetic-force-biot-savart-and-ampere#126-the-centre-of-a-square-loop|12.6 The centre of a square loop]] <span class="diff medium">medium</span>
 - [[practice/12-magnetic-force-biot-savart-and-ampere#128-a-hairpin-of-current|12.8 A hairpin of current]] <span class="diff medium">medium</span>
+- [[practice/16-charge-conservation-and-displacement-current#1610-mmf-around-a-discharging-pair|16.10 MMF around a discharging pair]] <span class="diff hard">hard</span>
 
 ## Ampère's law and current density
 
@@ -344,6 +388,8 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/12-magnetic-force-biot-savart-and-ampere#1212-a-wire-with-an-off-axis-hole|12.12 A wire with an off-axis hole]] <span class="diff hard">hard</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#134-toroid-with-rectangular-cross-section|13.4 Toroid with rectangular cross-section]] <span class="diff easy">easy</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#137-a-slab-with-graded-current|13.7 A slab with graded current]] <span class="diff medium">medium</span>
+- [[practice/16-charge-conservation-and-displacement-current#167-charging-plates-with-a-dielectric-core|16.7 Charging plates with a dielectric core]] <span class="diff medium">medium</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#177-a-wire-of-magnetic-steel|17.7 A wire of magnetic steel]] <span class="diff medium">medium</span>
 
 ## Current sheets, slabs, solenoids and toroids
 
@@ -360,6 +406,12 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/13-current-sheets-solenoids-and-vector-potential#1310-vector-potentials-of-wire-and-solenoid|13.10 Vector potentials of wire and solenoid]] <span class="diff hard">hard</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#1312-a-finite-solenoid-on-its-axis|13.12 A finite solenoid on its axis]] <span class="diff hard">hard</span>
 - [[practice/15-inductance-and-magnetic-energy#1510-shorted-parallel-plate-line|15.10 Shorted parallel-plate line]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#1612-four-conditions-at-a-tilted-interface|16.12 Four conditions at a tilted interface]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#173-ferrite-between-sheets-find-the-error|17.3 Ferrite between sheets, find the error]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#175-a-nickel-rod-as-a-solenoid|17.5 A nickel rod as a solenoid]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#176-graded-magnetization-in-a-slab|17.6 Graded magnetization in a slab]] <span class="diff medium">medium</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1710-three-sheets-and-two-slabs|17.10 Three sheets and two slabs]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1712-a-short-bar-magnet|17.12 A short bar magnet]] <span class="diff hard">hard</span>
 
 ## Vector potential, potentials and gauge
 
@@ -374,6 +426,8 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 
 - [[practice/13-current-sheets-solenoids-and-vector-potential#1311-helmholtz-coils-and-the-far-field|13.11 Helmholtz coils and the far field]] <span class="diff hard">hard</span>
 - [[practice/13-current-sheets-solenoids-and-vector-potential#1312-a-finite-solenoid-on-its-axis|13.12 A finite solenoid on its axis]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#171-moment-and-torque-on-a-loop|17.1 Moment and torque on a loop]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1712-a-short-bar-magnet|17.12 A short bar magnet]] <span class="diff hard">hard</span>
 
 ## Magnetic flux, Faraday's law and Lenz
 
@@ -387,6 +441,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/14-faradays-law-and-induced-emf#1410-voltmeters-around-a-ramping-solenoid|14.10 Voltmeters around a ramping solenoid]] <span class="diff hard">hard</span>
 - [[practice/14-faradays-law-and-induced-emf#1411-magnetic-braking|14.11 Magnetic braking]] <span class="diff hard">hard</span>
 - [[practice/14-faradays-law-and-induced-emf#1412-shrinking-ring-in-a-ramping-solenoid|14.12 Shrinking ring in a ramping solenoid]] <span class="diff hard">hard</span>
+- [[practice/16-charge-conservation-and-displacement-current#1611-a-region-with-no-conduction-current|16.11 A region with no conduction current]] <span class="diff hard">hard</span>
 
 ## Motional emf and generators
 
@@ -413,6 +468,9 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/15-inductance-and-magnetic-energy#1510-shorted-parallel-plate-line|15.10 Shorted parallel-plate line]] <span class="diff hard">hard</span>
 - [[practice/15-inductance-and-magnetic-energy#1511-wire-and-rectangular-loop|15.11 Wire and rectangular loop]] <span class="diff hard">hard</span>
 - [[practice/15-inductance-and-magnetic-energy#1512-coax-with-a-magnetic-sleeve|15.12 Coax with a magnetic sleeve]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#177-a-wire-of-magnetic-steel|17.7 A wire of magnetic steel]] <span class="diff medium">medium</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap|17.11 A toroid with an air gap]] <span class="diff hard">hard</span>
+- [[practice/18-wave-equation-and-plane-waves#187-a-cable-and-its-filling|18.7 A cable and its filling]] <span class="diff medium">medium</span>
 
 ## Magnetic energy and RL circuits
 
@@ -424,3 +482,32 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core|15.9 Toroid with a two-layer core]] <span class="diff hard">hard</span>
 - [[practice/15-inductance-and-magnetic-energy#1511-wire-and-rectangular-loop|15.11 Wire and rectangular loop]] <span class="diff hard">hard</span>
 - [[practice/15-inductance-and-magnetic-energy#1512-coax-with-a-magnetic-sleeve|15.12 Coax with a magnetic sleeve]] <span class="diff hard">hard</span>
+
+## Magnetization and magnetic media
+
+- [[practice/17-magnetization-and-maxwell-in-matter#172-four-rods-in-a-solenoid|17.2 Four rods in a solenoid]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#173-ferrite-between-sheets-find-the-error|17.3 Ferrite between sheets, find the error]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#174-reading-a-hysteresis-loop|17.4 Reading a hysteresis loop]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#175-a-nickel-rod-as-a-solenoid|17.5 A nickel rod as a solenoid]] <span class="diff easy">easy</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#176-graded-magnetization-in-a-slab|17.6 Graded magnetization in a slab]] <span class="diff medium">medium</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#177-a-wire-of-magnetic-steel|17.7 A wire of magnetic steel]] <span class="diff medium">medium</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#178-field-lines-leaving-iron|17.8 Field lines leaving iron]] <span class="diff medium">medium</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#179-electret-and-magnet-twins|17.9 Electret and magnet twins]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1710-three-sheets-and-two-slabs|17.10 Three sheets and two slabs]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap|17.11 A toroid with an air gap]] <span class="diff hard">hard</span>
+- [[practice/17-magnetization-and-maxwell-in-matter#1712-a-short-bar-magnet|17.12 A short bar magnet]] <span class="diff hard">hard</span>
+
+## Plane waves and the wave equation
+
+- [[practice/18-wave-equation-and-plane-waves#181-which-way-and-how-fast|18.1 Which way and how fast]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#182-the-partner-field|18.2 The partner field]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#183-phase-rate-and-snapshot-period|18.3 Phase rate and snapshot period]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#185-the-backwards-magnetic-field|18.5 The backwards magnetic field]] <span class="diff easy">easy</span>
+- [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] <span class="diff medium">medium</span>
+- [[practice/18-wave-equation-and-plane-waves#187-a-cable-and-its-filling|18.7 A cable and its filling]] <span class="diff medium">medium</span>
+- [[practice/18-wave-equation-and-plane-waves#188-from-probe-record-to-snapshots|18.8 From probe record to snapshots]] <span class="diff medium">medium</span>
+- [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium|18.9 Triangle pulse in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] <span class="diff hard">hard</span>
+- [[practice/18-wave-equation-and-plane-waves#1811-the-derivation-along-the-x-axis|18.11 The derivation along the x axis]] <span class="diff hard">hard</span>
+- [[practice/18-wave-equation-and-plane-waves#1812-a-wave-on-a-slant|18.12 A wave on a slant]] <span class="diff hard">hard</span>

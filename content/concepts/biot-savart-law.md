@@ -26,6 +26,6 @@ aliases: ["Biot-Savart", "field of a current element"]
 
 **Where it appears.** [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Lecture 12]] (statement; straight wire by the five steps), [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Lecture 13]] (loop, via $\mathbf{A}$), [[problems/mmf-around-a-draining-charge]] (semi-infinite wire check).
 
-**Practice.** [[practice/topics#the-biotsavart-law|The Biot–Savart law]] (2 problems) — for example [[practice/12-magnetic-force-biot-savart-and-ampere#126-the-centre-of-a-square-loop|12.6 The centre of a square loop]] (medium).
+**Practice.** [[practice/topics#the-biotsavart-law|The Biot–Savart law]] (3 problems) — for example [[practice/12-magnetic-force-biot-savart-and-ampere#126-the-centre-of-a-square-loop|12.6 The centre of a square loop]] (medium), [[practice/16-charge-conservation-and-displacement-current#1610-mmf-around-a-discharging-pair|16.10 MMF around a discharging pair]] (hard).
 
 Related: [[concepts/amperes-law]] · [[concepts/magnetic-field]] · [[concepts/superposition]] · [[concepts/five-step-recipe]].

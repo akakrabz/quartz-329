@@ -29,6 +29,6 @@ aliases: ["dielectric constant", "relative permittivity", "electric susceptibili
 
 Where $\chi_e$ comes from — bound electrons on springs, $\chi_e = N_de^2/(m\epsilon_0\omega_0^2)$, flat up to optical frequencies — is the Lorentz model of [[concepts/conductivity-and-susceptibility-models]].
 
-**Practice.** [[practice/topics#fields-in-dielectric-media|Fields in dielectric media]] (15 problems) — for example [[practice/09-static-fields-in-dielectric-media#91-three-layers-between-charged-plates|9.1 Three layers between charged plates]] (easy), [[practice/09-static-fields-in-dielectric-media#96-graded-dielectric-at-fixed-voltage|9.6 Graded dielectric at fixed voltage]] (medium), [[practice/09-static-fields-in-dielectric-media#99-glass-slab-in-an-oblique-field|9.9 Glass slab in an oblique field]] (hard).
+**Practice.** [[practice/topics#fields-in-dielectric-media|Fields in dielectric media]] (16 problems) — for example [[practice/09-static-fields-in-dielectric-media#91-three-layers-between-charged-plates|9.1 Three layers between charged plates]] (easy), [[practice/09-static-fields-in-dielectric-media#96-graded-dielectric-at-fixed-voltage|9.6 Graded dielectric at fixed voltage]] (medium), [[practice/09-static-fields-in-dielectric-media#99-glass-slab-in-an-oblique-field|9.9 Glass slab in an oblique field]] (hard).
 
 Related: [[concepts/polarization]] · [[concepts/conductivity-and-susceptibility-models]] · [[concepts/electric-flux-density]] · [[concepts/boundary-conditions]] · [[concepts/capacitance]].

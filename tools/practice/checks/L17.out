@@ -1,0 +1,277 @@
+
+================================================================================================
+17.1  Moment and torque on a loop
+================================================================================================
+   current path (0,0)->(4,0)->(4,5)->(0,5) cm: counter-clockwise seen from +z
+   [ok] m = I A z  [A m^2]: (0, 0, 0.004)  vs  (0, 0, 0.004)
+   [ok] T = m x B  [N m]: (0, 0.0012, 0)  vs  (0, 0.0012, 0)
+   [ok] sin(angle m,B) = 0.6, |T| = m B sin: (0.6, 0.0012)  vs  (0.6, 0.0012)
+   edge [0. 0. 0.] -> [4. 0. 0.] cm: F = (0, -0.032, 0) N
+   edge [4. 0. 0.] -> [4. 5. 0.] cm: F = (0.04, 0, -0.03) N
+   edge [4. 5. 0.] -> [0. 5. 0.] cm: F = (0, 0.032, -0) N
+   edge [0. 5. 0.] -> [0. 0. 0.] cm: F = (-0.04, 0, 0.03) N
+   [ok] edge x = 4 cm (current +y): F = (0.04, 0, -0.03) N  -> sinks: (0.04, 0, -0.03)  vs  (0.04, 0, -0.03)
+   [ok] edge x = 0 (current -y): F = (-0.04, 0, +0.03) N  -> rises: (-0.04, 0, 0.03)  vs  (-0.04, 0, 0.03)
+   [ok] net force = 0: (0, 0, 0)  vs  (0, 0, 0)
+   [ok] torque from edge forces about the centre: (0, 0.0012, 0)  vs  (0, 0.0012, 0)
+   T_hat x m_hat = (1, 0, 0)  -> m tilts toward +x (toward B)
+   [ok] stable orientation: normal along B = (0.6,0,0.8), tilt from z [deg]: 36.8699  vs  36.8699
+   [ok] rotating about +y by 36.87 deg takes z to B_hat: (0.6, 0, 0.8)  vs  (0.6, 0, 0.8)
+   ...and takes the x = 4 cm edge direction +x to (0.8, 0, -0.6) (it is lowered)
+   electron (ccw seen from +z): m direction = (-0, -0, -1)  (-z)
+   torque per unit m on it: m_hat x B = (0, -0.3, 0) N m per A m^2 (along -y)
+   angle(m_e, B) = 143.13 deg; after a small turn about T: 143.073 deg (decreases -> toward B)
+   [ok] electron: angle(m,B) = 143.13 deg: 143.13  vs  143.13
+
+================================================================================================
+17.2  Four rods in a solenoid (multiple choice)
+================================================================================================
+   P: M = -0.00376 A/m  chi_m = M/H = -9.4e-06  mu_r = 0.9999906  -> dia
+   Q: M = 0.0084 A/m  chi_m = M/H = 2.1e-05  mu_r = 1.000021  -> para
+   R: M = 0.32 A/m  chi_m = M/H = 0.0008  mu_r = 1.0008  -> para
+   S: M = 2e+05 A/m  chi_m = M/H = 500  mu_r = 501  -> ferro
+   [ok] chi_m P, Q, R, S: (-9.4e-06, 2.1e-05, 0.0008, 500)  vs  (-9.4e-06, 2.1e-05, 0.0008, 500)
+   [ok] mu_r P, Q, R, S: (0.999991, 1.00002, 1.0008, 501)  vs  (0.999991, 1.00002, 1.0008, 501)
+   [ok] B in S = mu0(H+M) [T]: 0.25183  vs  0.25183
+   B in S = 0.2518 T ;  empty solenoid mu0 H = 0.5027 mT = 502.7 uT
+   [ok] B in P - B empty = mu0 M_P [T]: -4.72496e-09  vs  -4.725e-09
+   B_S/B_empty = 501.0 ; wrong chi = M/(mu0 H) would be 1/mu0 = 7.958e+05 times too big
+   ratio of chi_m(S) to the largest para value: 6.25e+05 ; to Q: 2.38e+07
+
+================================================================================================
+17.3  Ferrite between two sheets (find the error)
+================================================================================================
+   z =  -1.0 cm: H(free sheets) = (0, 0, 0) A/m
+   z =   0.5 cm: H(free sheets) = (0, -0.5, 0) A/m
+   z =   2.0 cm: H(free sheets) = (0, -0.5, 0) A/m
+   z =   3.5 cm: H(free sheets) = (0, -0.5, 0) A/m
+   z =   5.0 cm: H(free sheets) = (0, 0, 0) A/m
+   [ok] H between the sheets: (0, -0.5, 0)  vs  (0, -0.5, 0)
+   [ok] H outside (z<0, z>4 cm): (0, 0, 0, 0, 0, 0)  vs  (0, 0, 0, 0, 0, 0)
+   student's numbers:
+   [ok]   B_air = mu0*0.5 [T] (0.628 uT): 6.28319e-07  vs  6.2832e-07
+   [ok]   H_slab(student) = B_air/mu = 1.0e-3 A/m: 0.001  vs  0.001
+   [ok]   M(student) = 499 * 1e-3 = 0.499 A/m: 0.499  vs  0.499
+   [ok] correct B_slab = 500 mu0 (-0.5 y) [T]: (0, -0.000314159, 0)  vs  (0, -0.000314159, 0)
+   [ok] correct M_slab = 499 (-0.5 y) [A/m]: (0, -249.5, 0)  vs  (0, -249.5, 0)
+   [ok] J_sM on z = 3 cm face (M x z): (-249.5, 0, 0)  vs  (-249.5, 0, 0)
+   [ok] J_sM on z = 1 cm face (M x -z): (249.5, 0, -0)  vs  (249.5, 0, 0)
+   [ok] vacuum check, free+bound: B in slab: (0, -0.000314159, 0)  vs  (0, -0.000314159, 0)
+   [ok] vacuum check: B in gap z = 0.5 cm and 3.5 cm: (0, -6.28319e-07, 0, 0, -6.28319e-07, 0)  vs  (0, -6.28319e-07, 0, 0, -6.28319e-07, 0)
+   [ok] vacuum check: B outside: (0, 0, 0, 0, 0, 0)  vs  (0, 0, 0, 0, 0, 0)
+   free + bound per side = 250.0 A/m ; B_slab/B_air = 500
+
+================================================================================================
+17.4  Reading a hysteresis loop (true or false)
+================================================================================================
+   B_r = 0.4 pi = 1.2566 T
+   [ok] (a) M at remanence = B_r/mu0 [A/m]: 1e+06  vs  1e+06
+   [ok] (b) M at coercive point = 0/mu0 - (-Hc) [A/m] (not zero): 800000  vs  800000
+   [ok] (c) saturated: dB = mu0 dH for dH = 1e5 A/m [T]: 0.125664  vs  0.125664
+
+================================================================================================
+17.5  A nickel rod as a solenoid
+================================================================================================
+   [ok] M = N m [A/m]: 508367  vs  508367
+   [ok] mu0 M [T]: 0.638833  vs  0.638832
+   [ok] J_sM at phi = 0 (n = x): M z x x = M y = M phi_hat: (0, 508367, 0)  vs  (0, 508367, 0)
+   [ok] end faces: M z x (+-z) = 0: (0, 0, 0, 0, 0, 0)  vs  (0, 0, 0, 0, 0, 0)
+   [ok] equivalent current I = M/n, n = 1000/m [A]: 508.367  vs  508.367
+   [ok] brute force: 2-m rod, centre B by summing loops ~ mu0 M: 0.638825  vs  0.638833
+   (2-m rod: B_centre/mu0M = 0.9999875; H = B/mu0 - M = -6.35 A/m ~ 0)
+
+================================================================================================
+17.6  Graded magnetization in a slab
+================================================================================================
+   [ok] curl M at z = 0.50 cm = (2 M0 z/d^2) y: (0, 750000, 0)  vs  (0, 750000, 0)
+   [ok] curl M at z = 1.00 cm = (2 M0 z/d^2) y: (0, 1.5e+06, 0)  vs  (0, 1.5e+06, 0)
+   [ok] curl M at z = 1.50 cm = (2 M0 z/d^2) y: (0, 2.25e+06, 0)  vs  (0, 2.25e+06, 0)
+   [ok] curl M at z = 1.99 cm = (2 M0 z/d^2) y: (0, 2.985e+06, 0)  vs  (0, 2.985e+06, 0)
+   2 M0/d^2 = 1.5e+08 A/m^3 ; J_M(1 cm) = 1.5e+06 A/m^2 ; J_M(top) = 3e+06 A/m^2
+   [ok] top face: M(d) x z = -M0 y [A/m]: (0, -30000, 0)  vs  (0, -30000, 0)
+   [ok] bottom face: M(0) x (-z) = 0: (0, 0, 0)  vs  (0, 0, 0)
+   [ok] volume current per metre of x = M0: 30000  vs  30000
+   [ok] net bound current through y = 0 (per m of x): 0  vs  0
+   [ok] B(1 cm) = mu0 M0/4 [T]: 0.00942478  vs  0.00942478
+   [ok] B just below top = mu0 M0 [T]: 0.0376991  vs  0.0376991
+   [ok] superposition B_x(1 cm) = mu0 M0/4: 0.00942478  vs  0.00942478
+   pieces at z = 1 cm (units mu0 M0/2): below 0.25, above -0.75, top sheet 1.0
+   [ok] superposition B_x(0.5 cm), B_x(1.9 cm) = mu0 M (z/d)^2: (0.00235619, 0.0340234)  vs  (0.00235619, 0.0340234)
+   [ok] superposition: B = 0 at z = -1 cm and z = 3 cm: (0, 0)  vs  (0, 0)
+   [ok] jump at top: z x (0 - mu0 M0 x)/mu0 = J_sM: (0, -30000, 0)  vs  (0, -30000, 0)
+
+================================================================================================
+17.7  A wire of magnetic steel
+================================================================================================
+   [ok] H(a) = I/(2 pi a) [A/m]: 795.775  vs  795.775
+   [ok] B just inside = mu H(a) [T]: 0.2  vs  0.2
+   [ok] B just outside = mu0 H(a) [T]: 0.001  vs  0.001
+   [ok] M(a) = 199 H(a) [A/m]: 158359  vs  158359
+   [ok] J_f = I/(pi a^2) [A/m^2]: 1.59155e+06  vs  1.59155e+06
+   [ok] curl M (FD at r = 0.5 mm) = chi_m J_f z: (0, 0, 3.16718e+08)  vs  (0, 0, 3.16718e+08)
+   J_M = 3.167e+08 A/m^2 along +z
+   [ok] curl H = J_f (FD): (0, 0, 1.59155e+06)  vs  (0, 0, 1.59155e+06)
+   [ok] J_sM = M(a) x r_hat [A/m]: (0, 0, -158359)  vs  (0, 0, -158359)
+   [ok] total volume magnetization current = chi I [A]: 995  vs  995
+   [ok] total surface magnetization current = -chi I [A]: -995  vs  -995
+   [ok] net bound current: 0  vs  0
+   [ok] vacuum Ampere inside (r=0.5 mm): mu0 I_tot/(2 pi r) = mu H: 0.1  vs  0.1
+   [ok] outside: enclosed I + 995 - 995 = I: 5  vs  5
+   B_out - B_in at r = a: -0.199 T
+   [ok] jump at r=a: r_hat x (B_out - B_in)/mu0 = J_sM: (0, 0, -158359)  vs  (0, 0, -158359)
+   [ok] W' = mu I^2/(16 pi) [J/m]: 0.000125  vs  0.000125
+   [ok] W' = 1.25e-4 J/m: 0.000125  vs  0.000125
+   [ok] L'_int = 2W'/I^2 = mu/(8 pi) = 1e-5 H/m: 1e-05  vs  1e-05
+   [ok] copper: mu0/(8 pi) = 5e-8 H/m: 5e-08  vs  5e-08
+
+================================================================================================
+17.8  Field lines leaving iron
+================================================================================================
+   [ok] H_iron = B/mu [A/m]: (318.31, 3.97887, -238.732)  vs  (318.31, 3.97887, -238.732)
+   [ok] B_air [T]: (0.0004, 0.01, -0.0003)  vs  (0.0004, 0.01, -0.0003)
+   [ok] H_air [A/m]: (318.31, 7957.75, -238.732)  vs  (318.31, 7957.75, -238.732)
+   [ok] BC: n.(B1-B2) = 0, n x (H1-H2) = 0: (0, 0, 0, 0)  vs  (0, 0, 0, 0)
+   |B2t| = 1 T, B2n = 0.01 T ; |B1t| = 0.5 mT, B1n = 10 mT
+   [ok] tan(theta_iron) = 100, tan(theta_air) = 0.05: (100, 0.05)  vs  (100, 0.05)
+   [ok] theta_iron, theta_air [deg]: (89.4271, 2.86241)  vs  (89.4271, 2.86241)
+   [ok] tan ratio = mu1/mu2 = 1/2000: 0.0005  vs  0.0005
+   [ok] M_iron = B/mu0 - H = 1999 H [A/m]: (636301, 7953.77, -477226)  vs  (636301, 7953.77, -477226)
+   [ok] M_iron values: (636301, 7953.77, -477226)  vs  (636302, 7953.77, -477226)
+   [ok] J_sM = n x (M1 - M2) [A/m]: (477226, -0, 636301)  vs  (477226, 0, 636302)
+   [ok] same from the iron's own face: M2 x n_out (n_out = +y): (477226, -0, 636301)  vs  (477226, -0, 636301)
+   [ok] |J_sM| = 0.9995 * 1.0 T/mu0: 795377  vs  795377
+   |J_sM| = 7.954e+05 A/m
+   [ok] check: n x (B1 - B2)/mu0 = J_sM: (477226, -0, 636301)  vs  (477226, -0, 636301)
+   B1 - B2 = (-0.7996, 0, 0.5997) T
+   [ok] H_y jump air - iron = M2y (normal M shows up in H_n): 7953.77  vs  7953.77
+   chi_m H_iron check (17.11 style): 1999 x H = (636301, 7953.77, -477226)
+
+================================================================================================
+17.9  Electret and magnet twins
+================================================================================================
+   [ok] rho_b = -div P at r = 0.5 cm = -3 P0 r/a^2: -0.0003  vs  -0.0003
+   [ok] curl M at r = 0.5 cm = 3 M0 r/a^2 z: (0, 0, 7.5e+06)  vs  (0, 0, 7.5e+06)
+   [ok] rho_b = -div P at r = 0.8 cm = -3 P0 r/a^2: -0.00048  vs  -0.00048
+   [ok] curl M at r = 0.8 cm = 3 M0 r/a^2 z: (0, 0, 1.2e+07)  vs  (0, 0, 1.2e+07)
+   rho_b(a/2) = -0.0003 C/m^3 ; J_M(a/2) = 7.5e+06 A/m^2
+   [ok] rho_sb = P(a).r_hat = P0 [C/m^2]: 2e-06  vs  2e-06
+   [ok] J_sM = M(a) x r_hat = -M0 z [A/m]: (0, 0, -50000)  vs  (0, 0, -50000)
+   [ok] volume bound charge per m = -2 pi a P0 [C/m]: -1.25664e-07  vs  -1.25664e-07
+   [ok] surface bound charge per m = +2 pi a P0 = 1.2566e-7 C/m: 1.25664e-07  vs  1.25664e-07
+   [ok] total bound charge: 0  vs  0
+   [ok] volume magnetization current = 2 pi a M0 = 3141.6 A: 3141.59  vs  3141.59
+   [ok] total magnetization current: 0  vs  0
+   [ok] E_r(0.5 cm) brute force = -P/eps0: -56470.5  vs  -56470.5
+   [ok] B_phi(0.5 cm) brute force = mu0 M: 0.015708  vs  0.015708
+   [ok] E_r(0.9900000000000001 cm) brute force = -P/eps0: -221387  vs  -221387
+   [ok] B_phi(0.9900000000000001 cm) brute force = mu0 M: 0.0615815  vs  0.0615815
+   [ok] E and B outside (r = 2 cm) brute force = 0: (0, 0)  vs  (0, 0)
+   [ok] E(a/2) = -P0/(4 eps0) [V/m]: -56470.5  vs  -56470.6
+   [ok] E(a-) = -P0/eps0 [V/m]: -225882  vs  -225882
+   [ok] B(a/2) = mu0 M0/4 [T]: 0.015708  vs  0.015708
+   [ok] B(a-) = mu0 M0 [T]: 0.0628319  vs  0.0628319
+   at (a/2,0,0): P_hat = (1, 0, 0), E along (-1, -0, -0) (against P)
+                 M_hat = (-0, 1, 0), B along M (B = +mu0 M)
+   [ok] continuity at r = 0.5 cm: d(rho_b)/dt + div(dP/dt) = 0: -1.05692e-15  vs  0
+   [ok] continuity at r = 0.8 cm: d(rho_b)/dt + div(dP/dt) = 0: -1.16168e-15  vs  0
+   [ok] dP/dt at a/2 = (dP0/dt)/4 = 0.1 uA/m^2: 1e-07  vs  1e-07
+   [ok] dP/dt arriving at r = a equals d(rho_sb)/dt = dP0/dt: 4e-07  vs  4e-07
+   [ok] eps0 dE/dt = -dP/dt at a/2: (-1e-07, -0, -0)  vs  (-1e-07, -0, -0)
+   [ok] dD/dt = eps0 dE/dt + dP/dt = 0: (0, 0, 0)  vs  (0, 0, 0)
+
+================================================================================================
+17.10  Three sheets and two slabs
+================================================================================================
+   [ok] K1 + K2 + K3 = 0: (0, 0, 0)  vs  (0, 0, 0)
+   H(z<0) = (0, 0, 0) A/m
+   H(0<z<2) = (4, 0, 0) A/m
+   H(2<z<4) = (0, -3, 0) A/m
+   H(z>4) = (0, 0, 0) A/m
+   [ok] H regions: (0, 0, 0, 4, 0, 0, 0, -3, 0, 0, 0, 0)  vs  (0, 0, 0, 4, 0, 0, 0, -3, 0, 0, 0, 0)
+   contributions in 0<z<2: K1 -> (2, 0, 0), K2+K3 -> (2, 0, -0)
+   contributions in 2<z<4: K1+K2 -> (0, -1.5, 0), K3 -> (0, -1.5, 0)
+   [ok] B lower = 100 mu0 x [T]: (0.000125664, 0, 0)  vs  (0.000125664, 0, 0)
+   [ok] B upper = -30 mu0 y [T]: (0, -3.76991e-05, 0)  vs  (0, -3.76991e-05, 0)
+   [ok] M lower, M upper [A/m]: (96, 0, 0, 0, -27, 0)  vs  (96, 0, 0, 0, -27, 0)
+   [ok] n x (H1 - H2) = K2: (3, -4, 0)  vs  (3, -4, 0)
+   [ok] n . (B1 - B2) = 0: 0  vs  0
+   [ok] n x (B1 - B2)/mu0 = 30 x - 100 y [A/m]: (30, -100, 0)  vs  (30, -100, 0)
+   [ok] J_sM at z = 0 (M_L x -z): (0, 96, 0)  vs  (0, 96, 0)
+   [ok] J_sM at z = 2 cm (z x (M_U - M_L)): (27, -96, 0)  vs  (27, -96, 0)
+   [ok] J_sM at z = 2 cm also = M_L x (+z) + M_U x (-z): (27, -96, 0)  vs  (27, -96, 0)
+   [ok] J_sM at z = 4 cm (M_U x z): (-27, 0, 0)  vs  (-27, 0, 0)
+   [ok] sum of magnetization currents = 0: (0, 0, 0)  vs  (0, 0, 0)
+   [ok] jump = K2 + J_sM(interface): (30, -100, 0)  vs  (30, -100, 0)
+   total sheet at z = 0 cm: (0, 100, 0) A/m
+   total sheet at z = 2 cm: (30, -100, 0) A/m
+   total sheet at z = 4 cm: (-30, 0, 0) A/m
+   [ok] vacuum formula with free+bound: B lower, B upper: (0.000125664, 0, 0, 0, -3.76991e-05, 0)  vs  (0.000125664, 0, 0, 0, -3.76991e-05, 0)
+   [ok] vacuum formula: B outside = 0: (0, 0, 0, 0, 0, 0)  vs  (0, 0, 0, 0, 0, 0)
+   [ok] bismuth: M = -6.8e-4 x A/m: (-0.00068, -0, -0)  vs  (-0.00068, 0, 0)
+   [ok] bismuth: J_sM at z = 0 = -6.8e-4 y A/m (opposite K1): (0, -0.00068, 0)  vs  (0, -0.00068, 0)
+   J_sM(Bi).K1 = -0.00272 < 0 -> opposes the free sheet
+
+================================================================================================
+17.11  A toroid with an air gap
+================================================================================================
+   NI = 50.0 A ; mean length 2 pi R = 0.31416 m ; iron path l_i = 0.31316 m
+   [ok] B (brentq) = mu0 NI/(g + l_i/mu_r) [T]: 0.0582699  vs  0.0582699
+   [ok] B = 0.05827 T: 0.0582699  vs  0.0582695
+   [ok] H_gap, H_iron [A/m]: (46369.7, 11.5924)  vs  (46369.8, 11.5925)
+   H_i l_i = 3.630 A ; H_g g = 46.370 A ; sum = 50.000000 A ; gap share = 92.74 %
+   [ok] no gap: B0 = mu NI/(2 pi R) [T]: 0.8  vs  0.8
+   B0/B = 13.729
+   [ok] Psi = B A [Wb], N Psi [Wb]: (5.82699e-06, 0.00145675)  vs  (5.82695e-06, 0.00145674)
+   [ok] L = N Psi/I = mu0 N^2 A/(g + l_i/mu_r) [H]: 0.00728374  vs  0.00728374
+   [ok] L = 7.284 mH: 0.00728374  vs  0.00728368
+   [ok] no gap: N Psi0 = 0.02 Wb, L0 = 0.1 H: (0.02, 0.1)  vs  (0.02, 0.1)
+   [ok] W = L I^2/2 = field energy (gap + iron) [J]: 0.000145675  vs  0.000145675
+   [ok] W = 1.4567e-4 J: 0.000145675  vs  0.000145674
+   [ok] gap fraction = H_g g/NI = 92.74 %: 0.927394  vs  0.927396
+   [ok] M = B/mu0 - H_i = chi_m H_i [A/m]: 46358.1  vs  46358.1
+   [ok] M = 4.6358e4 A/m: 46358.1  vs  46358.2
+   [ok] free winding current per metre NI/(2 pi R) [A/m]: 159.155  vs  159.155
+   bound/free per metre = 291.3
+   [ok] vacuum Ampere: (B/mu0)(2 pi R) = NI + M l_i (exact in this model): 14567.5  vs  14567.5
+   (B/mu0)(2 pi R) = 14567.5 A ; NI = 50 A ; M l_i = 14517.5 A
+   M l_i = 1.452e+04 A ; NI + M l_i = 14567 A
+   [ok] |emf| = L dI/dt at 20 A/s [V]: 0.145675  vs  0.145674
+   sensitivity: mu_r 4000 -> 8000 changes L from 7.284 mH to 7.558 mH
+
+================================================================================================
+17.12  A short bar magnet
+================================================================================================
+   [ok] mu0 M0 [T]: 1.13097  vs  1.13097
+   [ok] J_sM on side at phi=0: M0 z x x = M0 y: (0, 900000, 0)  vs  (0, 900000, 0)
+   [ok] B_z centre: formula vs loop integral: 0.799719  vs  0.799719
+   [ok] B centre: formula vs Biot-Savart sum over the side current: (1.20591e-19, 3.55686e-19, 0.799719)  vs  (0, 0, 0.799719)
+   [ok] B_z end face: formula vs loop integral: 0.505787  vs  0.505787
+   [ok] B end face: formula vs Biot-Savart sum over the side current: (6.64437e-18, 3.53163e-16, 0.505787)  vs  (0, 0, 0.505787)
+   [ok] B centre = mu0 M0/sqrt2 [T]: 0.799719  vs  0.799719
+   [ok] B centre = 0.7997 T: 0.799719  vs  0.799718
+   [ok] B end face = (mu0 M0/2)(2/sqrt5) [T]: 0.505787  vs  0.505787
+   [ok] B end = 0.5058 T: 0.505787  vs  0.505787
+   [ok] H centre = M0(1/sqrt2 - 1) [A/m]: -263604  vs  -263604
+   [ok] H centre = -2.636e5 A/m (along -z): -263604  vs  -263604
+   [ok] H end inside, outside [A/m]: (-497508, 402492)  vs  (-497508, 402492)
+   [ok] B continuity across end face (just inside/outside, formula): 0.505787  vs  0.505787
+   [ok] H_out - H_in = M0 = -(M1n - M2n): 900000  vs  900000
+   l/a = 100: B_centre/(mu0 M0) = 0.999800, H_centre/M0 = -0.000200; l/(2a) = 50
+   l/a = 0.01: B_centre/(mu0 M0) = 0.005000, H_centre/M0 = -0.995000; l/(2a) = 0.005
+   [ok] long rod: end-face B -> mu0 M0/2: 0.499994  vs  0.5
+
+================================================================================================
+ANSWER 17.1: m = 4.0e-3 z A m^2; T = 1.2e-3 y N m, F = 0; x=4 cm edge sinks (F_z = -0.03 N), x=0 edge rises; stable at m || B (tilt 36.9 deg about y); electron m along -z, also turned toward B
+ANSWER 17.2: (a); chi = -9.4e-6, 2.1e-5, 8.0e-4, 500; mu_r = 0.9999906, 1.000021, 1.0008, 501; B_S = 0.252 T; dB_P = -4.7 nT
+ANSWER 17.3: slip = normal-B rule for a tangential field; H = -0.5 y A/m, B = -3.14e-4 y T, M = -249.5 y A/m; J_sM = -249.5 x (z=3 cm), +249.5 x (z=1 cm)
+ANSWER 17.4: T F T F F F
+ANSWER 17.5: M = 5.08e5 z A/m; J_M = 0, J_sM = 5.08e5 phi A/m; B = 0.639 z T, H = 0; I = 508 A
+ANSWER 17.6: J_M = 1.5e8 z y A/m^2; J_sM = -3.0e4 y A/m on z = d; net 0; H = 0; B = mu0 M0 (z/d)^2 x: 9.42 mT, 37.7 mT, 0
+ANSWER 17.7: B 0.200 T in / 1.00 mT out; M(a) = 1.58e5 A/m; J_M = 3.17e8 z A/m^2 (995 A); J_sM = -1.58e5 z A/m (-995 A); L'_int = 10 uH/m
+ANSWER 17.8: H_Fe = (318.3, 3.98, -238.7) A/m; B_air = (0.4, 10, -0.3) mT; H_air = (318.3, 7958, -238.7) A/m; 89.43 / 2.86 deg; J_sM = (4.772e5, 0, 6.363e5) A/m
+ANSWER 17.9: rho_b = -3P0 r/a^2, rho_sb = P0, -+126 nC/m; J_M = 3M0 r/a^2 z, J_sM = -M0 z, +-3.14 kA; E(a/2) = -56.5 kV/m, B(a/2) = 15.7 mT
+ANSWER 17.10: H = 0, 4x, -3y, 0; B = 1.26e-4 x T, -3.77e-5 y T; M = 96x, -27y; J_sM = 96y, 27x-96y, -27x; Bi: -6.8e-4 y
+ANSWER 17.11: B = 58.3 mT (0.800 T no gap); H_i = 11.6, H_g = 4.64e4 A/m; L = 7.28 mH (100 mH); gap 92.7 %; M = 4.64e4 A/m; emf 0.146 V
+ANSWER 17.12: J_sM = 9e5 phi A/m; B = 0.800 T (centre), 0.506 T (end); H = -2.64e5, -4.98e5 in / +4.02e5 out A/m
+================================================================================================
+checks run: 158;  failures: 0

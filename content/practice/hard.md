@@ -1,6 +1,6 @@
 ---
 title: "Hard problems"
-description: "All 54 hard practice problems for Lectures 2–15, by lecture. Hard = exam length, in several parts; about 20–40 min each."
+description: "All 66 hard practice problems for Lectures 2–18, by lecture. Hard = exam length, in several parts; about 20–40 min each."
 tags: [practice]
 ---
 
@@ -103,3 +103,24 @@ tags: [practice]
 - [[practice/15-inductance-and-magnetic-energy#1510-shorted-parallel-plate-line|15.10 Shorted parallel-plate line]] — parallel plates · current sheets · inductance · *modelled on SP18 Exam 2 #3*
 - [[practice/15-inductance-and-magnetic-energy#1511-wire-and-rectangular-loop|15.11 Wire and rectangular loop]] — mutual inductance · vector potential · RL circuit
 - [[practice/15-inductance-and-magnetic-energy#1512-coax-with-a-magnetic-sleeve|15.12 Coax with a magnetic sleeve]] — coax · magnetic energy · LC product
+
+## Lecture 16 · Charge conservation, displacement current and Maxwell's equations
+
+- [[practice/16-charge-conservation-and-displacement-current#169-a-leaky-capacitor-and-its-leads|16.9 A leaky capacitor and its leads]] — displacement current · relaxation time · conductance
+- [[practice/16-charge-conservation-and-displacement-current#1610-mmf-around-a-discharging-pair|16.10 MMF around a discharging pair]] — displacement current · solid angle · Biot–Savart
+- [[practice/16-charge-conservation-and-displacement-current#1611-a-region-with-no-conduction-current|16.11 A region with no conduction current]] — displacement current · divergence · Faraday's law · *modelled on SP18 Exam 2 #1(iv)*
+- [[practice/16-charge-conservation-and-displacement-current#1612-four-conditions-at-a-tilted-interface|16.12 Four conditions at a tilted interface]] — boundary conditions · oblique interface · current sheet · *modelled on SP18 Exam 2 #1(vi)*
+
+## Lecture 17 · Magnetization and Maxwell's equations in matter
+
+- [[practice/17-magnetization-and-maxwell-in-matter#179-electret-and-magnet-twins|17.9 Electret and magnet twins]] — bound charge · magnetization current · displacement current
+- [[practice/17-magnetization-and-maxwell-in-matter#1710-three-sheets-and-two-slabs|17.10 Three sheets and two slabs]] — current sheets · magnetic boundary conditions · magnetization current · *modelled on SP18 Exam 2 #1(vi)*
+- [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap|17.11 A toroid with an air gap]] — toroid · magnetic boundary conditions · permeability · *modelled on SP18 Exam 2 #2*
+- [[practice/17-magnetization-and-maxwell-in-matter#1712-a-short-bar-magnet|17.12 A short bar magnet]] — magnetization · finite solenoid · magnetic boundary conditions
+
+## Lecture 18 · The wave equation and plane TEM waves
+
+- [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium|18.9 Triangle pulse in a magnetic medium]] — moving pulses · intrinsic impedance · *modelled on SP18 Exam 2 #4*
+- [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] — moving pulses · superposition
+- [[practice/18-wave-equation-and-plane-waves#1811-the-derivation-along-the-x-axis|18.11 The derivation along the x axis]] — wave equation · plane waves
+- [[practice/18-wave-equation-and-plane-waves#1812-a-wave-on-a-slant|18.12 A wave on a slant]] — plane waves · divergence · curl

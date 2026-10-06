@@ -79,6 +79,8 @@ $$
 > [!key] Answer (e)
 > About $50\ \Omega$ — the **characteristic impedance** of the line, the ratio of voltage to current for a wave travelling along it (Unit 4). The numbers were not chosen at random: $b/a = 3.5$ with $\epsilon_r = 2.25$ is the recipe for standard 50 Ω coax, and the formula is $Z_0 = \dfrac{1}{2\pi}\sqrt{\dfrac\mu\epsilon}\ln\dfrac ba = \dfrac{60\ \Omega}{\sqrt{\epsilon_r}}\ln\dfrac ba$.
 
+**Plane-wave twins ([[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves|Lecture 18]]).** $1/\sqrt{\mathcal{L}\mathcal{C}} = 1/\sqrt{\mu\epsilon}$ is exactly the speed of a plane wave in polyethylene. $\sqrt{\mathcal{L}/\mathcal{C}}$ is to the line what the [[concepts/intrinsic-impedance|intrinsic impedance]] $\eta = \sqrt{\mu/\epsilon} = 251\ \Omega$ is to the unbounded medium: the geometric factor $\ln(b/a)/2\pi = 0.199$ turns 251 Ω into 50 Ω.
+
 > [!trap] Where this problem loses points
 > - Using $\mu_0$ for the *field* but forgetting the medium's $\epsilon$ in $\mathcal{C}$ (or vice versa): each parameter takes its own material constant.
 > - Taking the flux through a circle instead of the $r$–$z$ rectangle; the circle's normal is along the axis, perpendicular to $\mathbf{B}$, and gives zero.

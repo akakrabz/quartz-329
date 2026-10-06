@@ -9,7 +9,8 @@
 - `REVIEW-SPEC.md` — the independent-verification procedure each page went through.
 - `checks/LNN.py` + `.out` — the authors' verification scripts, written with the first drafts.
   Some problems were changed afterwards (8.11 replaced; 4.9, 7.9, 9.10, 10.9, 11.8, 12.10, 13.9,
-  14.10, 15.3, 15.10 re-parameterized), so these scripts no longer match those problems.
+  14.10, 15.3, 15.10, 16.11, 16.12 re-parameterized; 17.10(c) corrected), so these scripts no longer
+  match those problems.
 - `review/RNN.py` + `.out` + `.md` — the independent reviewers' scripts and reports: every problem
   re-solved from its statement alone (numpy/scipy), PASS/FAIL against the page's stated values.
   These match the pages as delivered.
