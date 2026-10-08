@@ -9,7 +9,7 @@ Reference pages, not lectures. Come here when a lecture says "recall from MATH 2
 - [[0-toolkit/01-coordinates-and-differential-elements|Coordinates and differential elements]] — $d\mathbf{l}$, $d\mathbf{S}$, $dV$ in Cartesian, cylindrical, spherical; which system fits which source.
 - [[0-toolkit/02-vector-calculus-cheatsheet|Vector calculus cheat sheet]] — gradient, divergence, curl, Laplacian in all three systems; identities; the integral theorems.
 - [[0-toolkit/03-units-and-constants|Units, constants, and the dimension ladder]] — $\epsilon_0$, $\mu_0$, $c$; units of every field; the three-second dimension checks.
-- [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]] — every slip found in the slides, notes, exam key and HW solutions, with the correct statement; check your notecard against it.
 - [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]] — every slip found in the slides, notes, exam key and homework solutions, with the correction and the page here that has it right.
+- [[0-toolkit/05-midterm-2-summary|Midterm 2 — equation summary]] — Lectures 11–19 on one page: the equations, the canonical fields, the sign rules, the traps, and a study plan.
 
 Planned additions as the course reaches them: phasors and complex arithmetic (Lecture 21), the Smith chart as a coordinate transformation (Lecture 34).

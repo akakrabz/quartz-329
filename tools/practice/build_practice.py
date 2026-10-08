@@ -494,7 +494,7 @@ def gen_hub(pages):
            "> 5. A day later, redo every problem you got wrong, without looking.",
            "",
            "> [!tip] If you are behind",
-           "> Go lecture by lecture: read the lecture's *key* and *recipe* boxes, then do its easy problems and one medium — about forty minutes per lecture. Leave the hard problems for a second pass before the exam, starting with the ones [[practice/index#modelled-on-past-exams|modelled on past exams]].",
+           "> Go lecture by lecture: read the lecture's *key* and *recipe* boxes, then do its easy problems and one medium — about forty minutes per lecture. Leave the hard problems for a second pass before the exam, starting with the ones [[practice/index#modelled-on-past-exams|modelled on past exams]]. For Midterm 2, keep the [[0-toolkit/05-midterm-2-summary|equation summary]] open while you do the easy problems, then close it for the mediums.",
            "",
            "## The tag system",
            "",

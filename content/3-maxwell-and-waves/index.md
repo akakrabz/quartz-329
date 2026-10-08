@@ -4,6 +4,9 @@ description: "Lectures 16–26: the displacement current completes Maxwell's equ
 tags: [waves]
 ---
 
+> [!tip] Studying for Midterm 2?
+> The [[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]] collects Lectures 11–19 on one page, with a study plan.
+
 Time variation couples $\mathbf{E}$ and $\mathbf{B}$, and the coupled equations support waves travelling at $c$. Lecture 16 finishes the equations: charge conservation forces a second term into Ampère's law, and with it the four Maxwell equations and the four boundary conditions are complete for time-varying fields. Lecture 17 carries them into magnetic matter — the magnetic twin of what Lectures 8–9 did for dielectrics — and Lecture 18 finds that, with no sources at all, the two curl equations sustain each other as a wave. The rest of the unit studies what those equations predict — waves, their energy (Poynting), their description by phasors, what lossy and conducting media do to them, and what happens at an interface.
 
 | # | page | one line | practice |
