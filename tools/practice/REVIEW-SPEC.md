@@ -33,7 +33,8 @@ every such error and fix it, independently of the author's own checks.
 15 inductance (self, mutual), RL circuits, magnetic energy ½LI² = ∫½μH², potentials Φ and A, gauge ·
 16 charge conservation/continuity, displacement current ∂D/∂t, complete Maxwell equations, ∇·B = 0 from Faraday, boundary conditions for time-varying fields, perfect conductors (E normal, H tangential, ρ_s = n̂·D, J_s = n̂×H) ·
 17 magnetization M = Nm (m = IA), magnetization current ∇×M (surface M×n̂), H = B/μ₀ − M, M = χ_m H, μ = μ₀(1+χ_m) = μ₀μ_r, B = μH, dia/para/ferro, hysteresis, macroscopic Maxwell equations, boundary conditions with μ (μ₁H₁ₙ = μ₂H₂ₙ) ·
-18 source-free wave equation, 1-D wave equation, d'Alembert solutions f(t ∓ z/v), v = 1/√(με), η = √(μ/ε), η₀ ≈ 120π Ω, plane TEM waves (E_x with H_y, E_y with H_x), E×H along the direction of travel, reading speed and direction from a waveform's argument (no phasors, no Poynting power, no current-sheet amplitude — those are Lectures 19–21).
+18 source-free wave equation, 1-D wave equation, d'Alembert solutions f(t ∓ z/v), v = 1/√(με), η = √(μ/ε), η₀ ≈ 120π Ω, plane TEM waves (E_x with H_y, E_y with H_x), E×H along the direction of travel, reading speed and direction from a waveform's argument (no phasors, no Poynting power, no current-sheet amplitude — those are Lectures 19–21). ·
+19 d'Alembert solutions, uniform plane TEM waves, fields radiated by a current sheet (E = −(η/2)J_s(t−|ξ|/v), H = ½J_s×n̂ delayed), sinusoidal sheet currents with ω, β, λ, v_p as real cosines, instantaneous Poynting vector S = E×H (no Poynting theorem, no phasors).
 
 ## Procedure (aim for at most ~25 tool calls; do not rewrite the page wholesale)
 1. Read the page in full (2–3 Read calls with offset/limit).

@@ -55,6 +55,7 @@ LECTURES = {
     16: ("3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations", "Charge conservation, displacement current and Maxwell's equations"),
     17: ("3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter", "Magnetization and Maxwell's equations in matter"),
     18: ("3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves", "The wave equation and plane TEM waves"),
+    19: ("3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets", "d'Alembert solutions and radiation from current sheets"),
 }
 UNIT_INDEXES = ["1-electrostatics/index.md", "2-magnetostatics/index.md", "3-maxwell-and-waves/index.md"]
 LEVELS = ["easy", "medium", "hard"]
@@ -94,6 +95,7 @@ TOPICS = [
     ("magenergy", "Magnetic energy and RL circuits"),
     ("magmedia", "Magnetization and magnetic media"),
     ("waves", "Plane waves and the wave equation"),
+    ("radiation", "Current-sheet radiation and the Poynting vector"),
 ]
 TOPIC_TITLE = dict(TYPES + TOPICS)
 
@@ -172,6 +174,7 @@ RULES = {
     "hysteresis": ["magmedia"],
     "plane waves": ["waves"], "wave equation": ["waves"], "intrinsic impedance": ["waves"],
     "moving pulses": ["waves"],
+    "current sheet radiation": ["radiation"], "Poynting vector": ["radiation"], "wave parameters": ["waves"],
     "multiple choice": ["mc"], "true or false": ["mc"], "find the error": ["fte"],
 }
 # geometry words that carry no topic of their own (the problem's other tags place it)
@@ -193,6 +196,7 @@ CONCEPT_TOPICS = {
     "vector-potential": ["vecpot"],
     "magnetization": ["magmedia"], "permeability": ["magmedia"],
     "plane-waves": ["waves"], "wave-equation": ["waves"], "intrinsic-impedance": ["waves"],
+    "current-sheet-radiation": ["radiation"], "poynting-vector": ["radiation"],
 }
 
 # lecture to draw a concept page's example problems from (default: where its topic has most problems)

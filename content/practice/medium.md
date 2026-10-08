@@ -1,6 +1,6 @@
 ---
 title: "Medium problems"
-description: "All 50 medium practice problems for Lectures 2–18, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
+description: "All 53 medium practice problems for Lectures 2–19, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
 tags: [practice]
 ---
 
@@ -108,3 +108,9 @@ tags: [practice]
 - [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] — wave equation · superposition
 - [[practice/18-wave-equation-and-plane-waves#187-a-cable-and-its-filling|18.7 A cable and its filling]] — LC product · intrinsic impedance
 - [[practice/18-wave-equation-and-plane-waves#188-from-probe-record-to-snapshots|18.8 From probe record to snapshots]] — moving pulses · plane waves
+
+## Lecture 19 · d'Alembert solutions and radiation from current sheets
+
+- [[practice/19-radiation-from-current-sheets#196-a-triangle-pulse-in-glass|19.6 A triangle pulse in glass]] — current sheet radiation · moving pulses
+- [[practice/19-radiation-from-current-sheets#197-which-current-made-this-field|19.7 Which current made this field]] — current sheet radiation · boundary conditions
+- [[practice/19-radiation-from-current-sheets#198-a-cosine-current-in-a-dielectric|19.8 A cosine current in a dielectric]] — current sheet radiation · wave parameters · Poynting vector

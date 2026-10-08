@@ -1,0 +1,241 @@
+
+==============================================================================
+19.1 Which is a uniform plane TEM wave (multiple choice)
+==============================================================================
+  (a) E=z f(t-z/c), H=x f/eta0               Faraday 1.0e+00  Ampere 1.4e+00  divE/|curlE| 1.2e+30  -> FAILS
+  (b) E=y f(t-z/c), H=+x f/eta0              Faraday 2.0e+00  Ampere 2.0e+00  divE/|curlE| 0.0e+00  -> FAILS
+  (c) E=z f(t+x/c), H=+y f/eta0              Faraday 3.7e-08  Ampere 3.7e-08  divE/|curlE| 0.0e+00  -> satisfies Maxwell
+  (d) E=x e^-(y/a)^2 f(t-z/c), H=y ...       Faraday 7.1e-01  Ampere 2.5e-08  divE/|curlE| 0.0e+00  -> FAILS
+  (e) E=x f(t-z/c), H=y f/(2 eta0)           Faraday 5.0e-01  Ampere 5.0e-01  divE/|curlE| 0.0e+00  -> FAILS
+  (b) E x H direction: -z  but travel +z
+  (c) E x H direction: -x  travel -x (t + x/c);  u x E = (-x) x z = +y
+  (a) E along z, travel along z: div E = dEz/dz != 0 -> not TEM
+
+==============================================================================
+19.2 Sheet on y = 0 with Js = +z g(t), free space
+==============================================================================
+  y>0: n=+y, Js x n: z x y = -x -> H = -1/2 g x_hat
+  y<0: n=-y, z x (-y) = +x -> H = +1/2 g x_hat
+  eta0/2 * 0.5 = 94.25 V/m (60pi*0.5 = 30pi = 94.25); exact eta0: 94.18
+  y=+150 m, t=1 us: delay 0.50 us, source time +0.50 us, g = 0.5 -> E = [ -0.          -0.         -94.24777961] V/m, H = [-0.25  0.    0.  ] A/m
+  y=-450 m, t=1 us: delay 1.50 us, source time -0.50 us, g = 0.0 -> E = [-0. -0. -0.] V/m, H = [0. 0. 0.] A/m
+  [19.2 fields] Faraday rel.res 6.4e-07 | Ampere-Maxwell 6.4e-07 | div/curl 0.0e+00 -> OK
+  [19.2] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+  jump check with g=0.5: y x (H+ - H-) = [0.  0.  0.5] = +0.5 z ✓
+  S direction y>0: (-z) x (-x) = +y ; y<0: (-z) x (+x) = -y
+  static (Lecture 13) sheet 0.5 A/m: H = 1/2 Js x n =  [-0.25  0.    0.  ] above (same as radiated, undelayed)
+
+==============================================================================
+19.3 True or false (sheet facts)
+==============================================================================
+  (a) E just above = E just below: T (E even); (b) H equal: F (H reverses, jump = Js)
+  (c) plane wave does not decay with distance: amplitude independent of d -> F
+  (d) Js.E = -(eta/2)|Js|^2 < 0 -> T; e.g. Js=1 A/m: Js.E = -188.3651567821601 W/m^2
+  (e) er=1: E amp per 1 A/m = 188.4 V/m, H amp = 0.5 A/m, v = 2.9979e+08
+  (e) er=4: E amp per 1 A/m = 94.2 V/m, H amp = 0.5 A/m, v = 1.4990e+08
+  (e) ratio E(er=4)/E(er=1) = 0.5  -> T
+  (f) z<0 side of sheet on z=0 (Js = x f): E x H = (-x) x (+y) = -z  -> 'along +z' is F
+
+==============================================================================
+19.4 Reading wave parameters: H = 0.05 cos(6pi e8 t - 4 pi z) x_hat A/m
+==============================================================================
+  omega = 1.8850e+09 rad/s, f = 3.0000e+08 Hz, beta = 12.5664 rad/m, lambda = 0.5000 m
+  v_p = 1.5000e+08 m/s, er = (c/v)^2 = 4.0000 (course c) / 3.9945 (exact c)
+  eta = mu0 v_p = 188.4956 Ohm (= 60 pi = 188.4956); eta0/2 = 188.37
+  E amplitude = eta*0.05 = 9.4248 V/m (3 pi = 9.4248)
+  E = eta H x u: x x z = -y -> E = -y 9.42 cos(...)
+  check E x H: (-y) x x = +z  = travel +z ✓
+  [19.4 fields (mu0, eps = mu0^-1 v^-2)] Faraday rel.res 3.3e-09 | Ampere-Maxwell 3.3e-09 | div/curl 0.0e+00 -> OK
+
+==============================================================================
+19.5 Find the error: sheet on x = 0, Js = -y g(t)
+==============================================================================
+  correct x>0: (-y) x (+x) = +z -> H = +1/2 g z
+  correct x<0: (-y) x (-x) = -z -> H = -1/2 g z
+  E = -(eta0/2)(-y) g = +(eta0/2) g y on both sides
+  student x<0: H = +1/2 g z, E = eta0 H x u, u=-x: z x (-x) = -y -> student E = -(eta0/2) g y (wrong)
+  student x>0: z x x = +y -> +(eta0/2) g y (accidentally right)
+  [19.5 correct fields] Faraday rel.res 1.9e-06 | Ampere-Maxwell 1.9e-06 | div/curl 0.0e+00 -> OK
+  [19.5 correct] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+  student jump x(H+ - H-) = [0. 0. 0.]  vs Js = [-0. -1. -0.]  -> student violates the H jump
+  student E jump: E(0+) - E(0-) = [  0.   376.73   0.  ]  (= eta0 g y) -> violates E_t continuity
+  S check correct x<0: (+y) x (-z) = -x (away ✓)
+  E vs Js: E along +y, Js along -y -> opposite ✓
+
+==============================================================================
+19.6 Triangle pulse sheet on x = 0, Js = +z g(t), er = 9
+==============================================================================
+  v = 1.000e+08 m/s = 0.100 m/ns (exact 9.9931e+07); eta = 40 pi = 125.66 Ohm (exact 125.58)
+  eta/2 = 20 pi = 62.83; peak E = 20pi*3 = 60 pi = 188.5 V/m; peak H = 1.5 A/m
+  x>0: z x x = +y -> H = +1/2 g y;  x<0: z x (-x) = -y -> H = -1/2 g y
+  probe x=+0.5 m: delay 5 ns; record nonzero 5..9 ns, peak at 6 ns: E_z peak -188.5 V/m, H_y peak +1.5 A/m
+     t=5.5 ns: g=1.50  E_z=-94.2  H_y=+0.750
+     t=6.0 ns: g=3.00  E_z=-188.5  H_y=+1.500
+     t=7.5 ns: g=1.50  E_z=-94.2  H_y=+0.750
+  probe x=-0.3 m: delay 3 ns; record nonzero 3..7 ns, peak at 4 ns: E_z peak -188.5 V/m, H_y peak -1.5 A/m
+     t=3.5 ns: g=1.50  E_z=-94.2  H_y=-0.750
+     t=4.0 ns: g=3.00  E_z=-188.5  H_y=-1.500
+     t=5.5 ns: g=1.50  E_z=-94.2  H_y=-0.750
+  snapshot t = 6 ns: |x| = 0.1 (6 - t')
+     source time 0 ns -> |x| = 0.6 m, g = 0.0
+     source time 1 ns -> |x| = 0.5 m, g = 3.0
+     source time 4 ns -> |x| = 0.2 m, g = 0.0
+     x=+0.55: g=1.50, H_y=+0.750 A/m, E_z=-94.2 V/m
+     x=+0.30: g=1.00, H_y=+0.500 A/m, E_z=-62.8 V/m
+     x=-0.30: g=1.00, H_y=-0.500 A/m, E_z=-62.8 V/m
+     x=-0.55: g=1.50, H_y=-0.750 A/m, E_z=-94.2 V/m
+  [19.6 fields in er=9] Faraday rel.res 1.4e-06 | Ampere-Maxwell 1.4e-06 | div/curl 0.0e+00 -> OK
+  [19.6] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+  S x>0: (-z) x (+y) = +x ; x<0: (-z) x (-y) = -x
+
+==============================================================================
+19.7 Inverse problem: sheet on z = 0, probe at z = -600 m records E = +y 30pi V/m for 2.5<t<4 us
+==============================================================================
+  30 pi = 94.25 V/m; delay 600/300 = 2.0 us
+  Js = -(2/eta0) E(t + 2us) = -0.5000 y A/m for 0.5<t<2 us   (exact eta0: -0.50035)
+  H at probe (n=-z): 1/2 Js x (-z) = [0.25 0.   0.  ] +x
+  S at probe = E x H = [  0.      0.    -23.562] -z |S| = 23.56 W/m^2 (= eta0 Js^2/4 = 23.56)
+  z>0: H = 1/2 Js x z = [-0.25  0.    0.  ] -x
+  snapshot t=3 us: |z| = 300 (3 - t'), t' in (0.5, 2) -> 300 .. 750.0 m
+     z=-500: t'=1.333 us, on=True, E=94.25 y, H=[0.25 0.   0.  ]
+     z=+500: t'=1.333 us, on=True, E=94.25 y, H=[-0.25  0.    0.  ]
+     z=+200: t'=2.333 us, on=False, E=0.00 y, H=[0. 0. 0.]
+     z=+800: t'=0.333 us, on=False, E=0.00 y, H=[0. 0. 0.]
+  student trap: Js along +y would give E along -y (E opposes Js)
+  [19.7 fields] Faraday rel.res 2.4e-07 | Ampere-Maxwell 2.4e-07 | div/curl 0.0e+00 -> OK
+  [19.7] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+
+==============================================================================
+19.8 Cosine sheet on y = 0, Js = x 0.4 cos(wt), er = 2.25, f = 50 MHz
+==============================================================================
+  v = 2.000e+08 m/s (exact 1.9986e+08); eta = 80 pi = 251.33 Ohm (exact 251.15)
+  omega = 3.1416e+08 = pi e8 rad/s; beta = 1.57080 rad/m (pi/2 = 1.57080); lambda = 4.000 m
+  E amp = eta/2*0.4 = 50.27 V/m (16 pi = 50.27); H amp = 0.2 A/m
+  y>0: x x y = +z -> H = +0.2 z cos; y<0: x x (-y) = -z -> H = -0.2 z cos
+  S peak = eta J0^2/4 = 10.053 W/m^2 (3.2 pi = 10.053); E amp * H amp = 10.053
+  S dir y>0: (-x) x (+z) = +y ; y<0: (-x) x (-z) = -y
+  omega t at 5 ns = 1.57080 (pi/2 = 1.57080)
+  y=+1 m, t=5 ns: phase +0.000 pi, cos=+1.0000, E=[-50.265  -0.     -0.   ], H=[0.  0.  0.2], S=[ 0.    10.053  0.   ]
+  y=-3 m, t=5 ns: phase -1.000 pi, cos=-1.0000, E=[50.265  0.     0.   ], H=[-0.  -0.   0.2], S=[  0.    -10.053   0.   ]
+  y=+2 m, t=5 ns: phase -0.500 pi, cos=+0.0000, E=[-0. -0. -0.], H=[0. 0. 0.], S=[0. 0. 0.]
+  zeros of E on y>0 at t=5 ns: pi/2 - pi y/2 = pi/2 + k pi -> y = 0, 2, 4, ... m (y = 2k)
+     y=0: cos = +6.12e-17
+     y=2: cos = +5.05e-16
+     y=4: cos = -1.07e-15
+  S time dependence at fixed y: cos^2 -> period 10 ns (twice the frequency: 100 MHz)
+  -Js.E at sheet, peak: eta/2 * 0.16 = 20.106 W/m^2 = 2 * S peak = 20.106
+  [19.8 fields in er=2.25] Faraday rel.res 1.2e-08 | Ampere-Maxwell 1.2e-08 | div/curl 0.0e+00 -> OK
+  [19.8] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+
+==============================================================================
+19.9 SP18 E2 #5 style: sheet on z = 0, Js = -y g(t), free space, c = 0.3 m/ns
+==============================================================================
+  z>0: (-y) x (+z) = -x -> H = -1/2 g x;  z<0: (-y) x (-z) = +x -> H = +1/2 g x
+  E = -(eta0/2)(-y) g = +60 pi g y, 60pi = 188.50
+  snapshot t = 4 ns, |z| = 0.3 (4 - t')
+     t' = 0 ns -> |z| = 1.2 m
+     t' = 1 ns -> |z| = 0.9 m
+     t' = 3 ns -> |z| = 0.3 m
+     z=+0.20: t'=3.333, g=+0.000, H_x=-0.000 A/m, E_y=+0.0 V/m
+     z=+0.31: t'=2.967, g=-0.067, H_x=+0.033 A/m, E_y=-12.6 V/m
+     z=+0.60: t'=2.000, g=-2.000, H_x=+1.000 A/m, E_y=-377.0 V/m
+     z=+0.89: t'=1.033, g=-3.933, H_x=+1.967 A/m, E_y=-741.4 V/m
+     z=+0.91: t'=0.967, g=+2.000, H_x=-1.000 A/m, E_y=+377.0 V/m
+     z=+1.05: t'=0.500, g=+2.000, H_x=-1.000 A/m, E_y=+377.0 V/m
+     z=+1.19: t'=0.033, g=+2.000, H_x=-1.000 A/m, E_y=+377.0 V/m
+     z=+1.30: t'=-0.333, g=+0.000, H_x=-0.000 A/m, E_y=+0.0 V/m
+     z=-0.20: t'=3.333, g=+0.000, H_x=+0.000 A/m, E_y=+0.0 V/m
+     z=-0.60: t'=2.000, g=-2.000, H_x=-1.000 A/m, E_y=-377.0 V/m
+     z=-0.89: t'=1.033, g=-3.933, H_x=-1.967 A/m, E_y=-741.4 V/m
+     z=-0.91: t'=0.967, g=+2.000, H_x=+1.000 A/m, E_y=+377.0 V/m
+     z=-1.05: t'=0.500, g=+2.000, H_x=+1.000 A/m, E_y=+377.0 V/m
+  at |z| -> 0.9 m (inside, t'->1+): g=-4 -> H_x(z>0)=+2, H_x(z<0)=-2, E_y = -754.0 V/m (-240 pi)
+  on 0.9<|z|<1.2: g=+2 -> H_x(z>0)=-1, H_x(z<0)=+1, E_y = 377.0 V/m (120 pi)
+  probe z=-0.9 m: delay 3.0 ns; H_x(t)=+1/2 g(t-3)
+     t=3.50 ns: H_x = +1.000 A/m
+     t=4.01 ns: H_x = -1.990 A/m
+     t=5.00 ns: H_x = -1.000 A/m
+     t=5.99 ns: H_x = -0.010 A/m
+     t=6.50 ns: H_x = +0.000 A/m
+  S at z=+0.6, t=4 ns: t'=2.000, g=-2.00, E=[  -0. -377.   -0.], H=[ 1. -0. -0.], S=[  0.  -0. 377.] (+z) |S|=377.0  eta0 g^2/4 = 377.0
+  S at z=-1.0, t=4 ns: t'=0.667, g=+2.00, E=[  0. 377.   0.], H=[1. 0. 0.], S=[   0.    0. -377.] (-z) |S|=377.0  eta0 g^2/4 = 377.0
+  t=0.5 ns at sheet: Js = -2 y, E = 377.0 y; Js.E = -754.0 W/m^2 = -(eta0/2) g^2 = -754.0; each side 377.0
+  [19.9 fields] Faraday rel.res 6.0e-06 | Ampere-Maxwell 6.0e-06 | div/curl 0.0e+00 -> OK
+  [19.9] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+  [19.9 actual waveform (smooth points)] Faraday rel.res 3.1e-11 | Ampere-Maxwell 2.9e-11 | div/curl 0.0e+00 -> OK
+
+==============================================================================
+19.10 Two sheets: A on z=0, Js=+x 1 A/m for 0<t<10 ns; B on z=3 m, Js=-x 1 A/m for 10<t<20 ns
+==============================================================================
+  A above: x x z = -y -> H_A=-1/2 y ; A below: x x (-z) = +y -> +1/2 y
+  B above: (-x) x z = +y -> +1/2 y ; B below: (-x) x (-z) = -y -> -1/2 y
+  E_A = -60pi x = -188.5 x ; E_B = +60pi x = 188.5 x
+  [19.10 fields beyond z = 3 m vanish at all times (max 0.0e+00)] OK
+  record z=-1.5 m:
+     t=  3.0 ns: E_x=+0.0 V/m, H_y=+0.00 A/m
+     t=  7.0 ns: E_x=-188.5 V/m, H_y=+0.50 A/m
+     t= 14.9 ns: E_x=-188.5 V/m, H_y=+0.50 A/m
+     t= 20.0 ns: E_x=+0.0 V/m, H_y=+0.00 A/m
+     t= 27.0 ns: E_x=+188.5 V/m, H_y=-0.50 A/m
+     t= 34.9 ns: E_x=+188.5 V/m, H_y=-0.50 A/m
+     t= 40.0 ns: E_x=+0.0 V/m, H_y=+0.00 A/m
+  snapshot t=15 ns:
+     z=-5.00 m: E_x=+0.0, H_y=+0.00
+     z=-4.40 m: E_x=-188.5, H_y=+0.50
+     z=-3.00 m: E_x=-188.5, H_y=+0.50
+     z=-1.60 m: E_x=-188.5, H_y=+0.50
+     z=-1.40 m: E_x=+0.0, H_y=+0.00
+     z=+0.50 m: E_x=+0.0, H_y=+0.00
+     z=+1.40 m: E_x=+0.0, H_y=+0.00
+     z=+1.60 m: E_x=+0.0, H_y=-1.00
+     z=+2.50 m: E_x=+0.0, H_y=-1.00
+     z=+2.99 m: E_x=+0.0, H_y=-1.00
+     z=+3.01 m: E_x=+0.0, H_y=+0.00
+     z=+4.00 m: E_x=+0.0, H_y=+0.00
+     z=+4.60 m: E_x=+0.0, H_y=+0.00
+  E at sheet B during 10<t<20 (A's wave + B's own): [0. 0. 0.] -> J_B.E = 0.0
+  sheet A during 0<t<10: E = -188.5 x, J_A.E = -188.5 W/m^2
+  each pulse |S| = eta0/4 = 94.25 W/m^2, energy per pulse = S*10ns = 942.5 nJ/m^2; A supplies 1885.0 nJ/m^2
+  B's pulse in z<0 arrives at z=-1.5 m at 25..35 ns (distance 4.5 m = 15 ns after 10..20 ns)
+  [19.10 superposition] Faraday rel.res 1.4e-07 | Ampere-Maxwell 1.4e-07 | div/curl 0.0e+00 -> OK
+  [19.10 sheet A] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+  [19.10 sheet B (A's wave present)] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+
+==============================================================================
+19.11 Sheet on the plane y = x, Js = z 0.2 cos(wt), f = 150 MHz, free space
+==============================================================================
+  beta = 3.14159 rad/m (pi), lambda = 2.000 m
+  n (side x>y) = [ 0.7071 -0.7071  0.    ] ; distance d = |x - y|/sqrt2
+  x>y: H amp vector = 1/2 Js x n = [ 0.07071  0.07071 -0.     ] (+0.7071, +0.7071, -0.0000) |H| = 0.100; 0.1/sqrt2 = 0.07071
+  x<y: H amp vector = [-0.07071 -0.07071  0.     ]
+  E amp = eta0/2*0.2 = 12 pi = 37.699 V/m, along -z
+  P=(1,-1,0): d = 1.4142 m (sqrt2 = 1.4142); t1 = d/c = 4.714 ns
+  at P, t1: E = [ -0.     -0.    -37.699]  H = [ 0.07071  0.07071 -0.     ]  S = E x H = [ 2.6657 -2.6657  0.    ] (+0.7071, -0.7071, +0.0000) |S| = 3.7699 W/m^2 (1.2 pi = 3.7699); components +-2.6657
+  electron u = 3e6 z m/s: F_e = [0.00000000e+00 0.00000000e+00 6.04006361e-18] +z |F_e| = 6.040e-18 N
+  F_m = -e u x B = [ 4.27096994e-20 -4.27096994e-20 -0.00000000e+00] (+0.7071, -0.7071, -0.0000) |F_m| = 6.040e-20 N; ratio = 0.01000 (u/c with c=3e8: 0.010; with B = mu0 H and eta0=120pi exactly the ratio is u mu0/eta0 = 0.01000)
+  |B| at P = 1.257e-07 T; |E|/c = 1.257e-07
+  u x B = 0 when u parallel to B: direction (+0.7071, +0.7071, -0.0000)
+  [19.11 fields] Faraday rel.res 6.8e-09 | Ampere-Maxwell 6.8e-09 | div/curl 0.0e+00 -> OK
+  [19.11] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+  check H on x>y side at P, t1 from the sheet function: [ 0.07071  0.07071 -0.     ]  E: [ -0.     -0.    -37.673] (exact eta0)
+
+==============================================================================
+19.12 Boundary-condition derivation: sheet on x = 0, Js = -z K(t), mu_r = 2, eps_r = 8
+==============================================================================
+  v = c/4 = 7.4948e+07 m/s (75 m/us with c=3e8); eta = eta0/2 = 188.37 Ohm (60 pi = 188.50)
+  +x wave: H = u x E/eta, x x z = -y -> H_y = -A f/eta
+  -x wave: (-x) x z = +y -> H_y = +B g/eta
+  jump: x x (H1 - H2), H1-H2 = -2F/eta y; x x y = +z -> -2F/eta z = -K z -> F = eta K/2
+  recipe: x>0: (-z) x x = -y  ; x<0: (-z) x (-x) = +y
+  x=1.5 m, t=1 us: delay 0.020 us, exact H_y = -0.980 A/m, quasi-static -1.000, rel err -2.0%; E_z = (eta/2)K = 184.73 V/m
+  x=60.0 m, t=1 us: delay 0.800 us, exact H_y = -0.200 A/m, quasi-static -1.000, rel err -400.0%; E_z = (eta/2)K = 37.70 V/m
+  Faraday: dEz/dx = -(eta/2v) K' = -2.5133 V/m^2 ; mu dHy/dt = -(mu/2) K' = -2.5133 (exact eta/v = mu: 2.5133e-06 vs 2.5133e-06)
+  [19.12 fields (mu_r=2, eps_r=8)] Faraday rel.res 1.4e-08 | Ampere-Maxwell 1.4e-08 | div/curl 0.0e+00 -> OK
+  [19.12] at the sheet: E_t continuous and n x (H1 - H2) = Js -> OK
+  [19.12 ramp at x=1.5 m] Faraday rel.res 1.7e-12 | Ampere-Maxwell 1.0e-12 | div/curl 0.0e+00 -> OK
+  ramp fields from sheet function at x=1.5 m, t=1 us (exact c): [  0.    0.  184.6] [ 0.   -0.98  0.  ]
+  E opposes Js: E along +z Js along -z
+
+==============================================================================
+SUMMARY: 28/28 checks OK
+==============================================================================

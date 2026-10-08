@@ -1,6 +1,6 @@
 ---
 title: "Hard problems"
-description: "All 66 hard practice problems for Lectures 2–18, by lecture. Hard = exam length, in several parts; about 20–40 min each."
+description: "All 70 hard practice problems for Lectures 2–19, by lecture. Hard = exam length, in several parts; about 20–40 min each."
 tags: [practice]
 ---
 
@@ -124,3 +124,10 @@ tags: [practice]
 - [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] — moving pulses · superposition
 - [[practice/18-wave-equation-and-plane-waves#1811-the-derivation-along-the-x-axis|18.11 The derivation along the x axis]] — wave equation · plane waves
 - [[practice/18-wave-equation-and-plane-waves#1812-a-wave-on-a-slant|18.12 A wave on a slant]] — plane waves · divergence · curl
+
+## Lecture 19 · d'Alembert solutions and radiation from current sheets
+
+- [[practice/19-radiation-from-current-sheets#199-a-sheet-launches-a-step-and-a-ramp|19.9 A sheet launches a step and a ramp]] — current sheet radiation · moving pulses · Poynting vector · *modelled on SP18 Exam 2 #5*
+- [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] — current sheet radiation · superposition · moving pulses
+- [[practice/19-radiation-from-current-sheets#1911-a-sheet-on-a-diagonal-plane|19.11 A sheet on a diagonal plane]] — current sheet radiation · Poynting vector · plane waves
+- [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] — current sheet radiation · boundary conditions · intrinsic impedance

@@ -1,10 +1,10 @@
 ---
 title: "Practice problems"
-description: "200 practice problems for Lectures 2–18 — 84 easy, 50 medium, 66 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
+description: "212 practice problems for Lectures 2–19 — 89 easy, 53 medium, 70 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
 tags: [practice]
 ---
 
-Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **200 problems for Lectures 2–18**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 32 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
+Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **212 problems for Lectures 2–19**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 33 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
 
 > [!recipe] How to use the bank
 > 1. Pick a lecture you have read and do its **easy** problems first — a few minutes each, one idea per problem.
@@ -29,7 +29,7 @@ Every problem's title bar carries one **difficulty tag** and one to three **topi
 | <span class="diff medium">medium</span> | a standard exam sub-problem: one modelling decision (which surface, path, coordinates or region), a real integral, or a three- or four-step chain | 8–15 min |
 | <span class="diff hard">hard</span> | exam length, in several parts: superposition of several pieces, several regions with matching conditions, a non-trivial integral, a sign-heavy direction analysis, or two lectures combined | 20–40 min |
 
-Browse: [[practice/easy|all 84 easy]] · [[practice/medium|all 50 medium]] · [[practice/hard|all 66 hard]] · [[practice/topics|by topic]] — 30 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
+Browse: [[practice/easy|all 89 easy]] · [[practice/medium|all 53 medium]] · [[practice/hard|all 70 hard]] · [[practice/topics|by topic]] — 31 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
 
 ## By lecture
 
@@ -52,7 +52,8 @@ Browse: [[practice/easy|all 84 easy]] · [[practice/medium|all 50 medium]] · [[
 | 16 | [[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations\|Charge conservation, displacement current and Maxwell's equations]] | [[practice/16-charge-conservation-and-displacement-current\|12 problems]] | [[practice/easy#lecture-16--charge-conservation-displacement-current-and-maxwells-equations\|5]] | [[practice/medium#lecture-16--charge-conservation-displacement-current-and-maxwells-equations\|3]] | [[practice/hard#lecture-16--charge-conservation-displacement-current-and-maxwells-equations\|4]] |
 | 17 | [[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter\|Magnetization and Maxwell's equations in matter]] | [[practice/17-magnetization-and-maxwell-in-matter\|12 problems]] | [[practice/easy#lecture-17--magnetization-and-maxwells-equations-in-matter\|5]] | [[practice/medium#lecture-17--magnetization-and-maxwells-equations-in-matter\|3]] | [[practice/hard#lecture-17--magnetization-and-maxwells-equations-in-matter\|4]] |
 | 18 | [[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves\|The wave equation and plane TEM waves]] | [[practice/18-wave-equation-and-plane-waves\|12 problems]] | [[practice/easy#lecture-18--the-wave-equation-and-plane-tem-waves\|5]] | [[practice/medium#lecture-18--the-wave-equation-and-plane-tem-waves\|3]] | [[practice/hard#lecture-18--the-wave-equation-and-plane-tem-waves\|4]] |
-| | **total** | **200** | **84** | **50** | **66** |
+| 19 | [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets\|d'Alembert solutions and radiation from current sheets]] | [[practice/19-radiation-from-current-sheets\|12 problems]] | [[practice/easy#lecture-19--dalembert-solutions-and-radiation-from-current-sheets\|5]] | [[practice/medium#lecture-19--dalembert-solutions-and-radiation-from-current-sheets\|3]] | [[practice/hard#lecture-19--dalembert-solutions-and-radiation-from-current-sheets\|4]] |
+| | **total** | **212** | **89** | **53** | **70** |
 
 Exam 1 covered Lectures 1–10. Lecture 1 has no practice page: its content (fields defined by force, the Maxwell roadmap) is exercised from Lecture 2 on.
 
@@ -94,6 +95,7 @@ These follow a past ECE 329 exam problem (Spring 2018 midterms, Summer 2017–20
 | [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap\|17.11 A toroid with an air gap]] | <span class="diff hard">hard</span> | SP18 Exam 2 #2 |
 | [[practice/18-wave-equation-and-plane-waves#183-phase-rate-and-snapshot-period\|18.3 Phase rate and snapshot period]] | <span class="diff easy">easy</span> | SP18 Exam 2 #1(vii) |
 | [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium\|18.9 Triangle pulse in a magnetic medium]] | <span class="diff hard">hard</span> | SP18 Exam 2 #4 |
+| [[practice/19-radiation-from-current-sheets#199-a-sheet-launches-a-step-and-a-ramp\|19.9 A sheet launches a step and a ramp]] | <span class="diff hard">hard</span> | SP18 Exam 2 #5 |
 
 ## How the answers were checked
 

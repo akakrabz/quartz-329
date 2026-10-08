@@ -1,0 +1,95 @@
+== constants
+c = 2.997925e+08, eta0 = 376.7303, 120pi = 376.9911, rel = 6.92e-04, eta0/2 = 188.37, 1/eta0 = 2.6544 mA/m
+
+== Sec 3 notes' sheet J = x f(t) on z=0 (general medium eps_r=2.5)
+[Maxwell FD] notes sheet z>0 and z<0: worst relative residual (Faraday, Ampere-Maxwell) = 1.1e-06 OK
+E continuity: -83.43880531223404 -83.43880531223404
+jump z x (H+ - H-) = [0.70038609 0.         0.        ]  J_s = [0.70038536 0.         0.        ]
+E x H dir above/below: [0. 0. 1.] [ 0.  0. -1.]   static 1/2 J x n: [ 0.  -0.5  0. ] [0.  0.5 0. ]
+
+== Sec 4 slides' sheet J = -Js x, free space: E = x eta0/2 Js, H = +-y Js/2
+[Maxwell FD] slides sheet: worst relative residual (Faraday, Ampere-Maxwell) = 8.7e-07 OK
+jump: z x (H1-H2) = [-0.70038582  0.          0.        ]  vs J_s = [-0.70038536 -0.         -0.        ]
+recipe 1/2 J x n with J=-x: [0.  0.5 0. ] [ 0.  -0.5  0. ]  E=-eta/2 J -> [0.5 0.  0. ]
+
+== Example 1: E = x tri((t-y/c)/tau)
+[Maxwell FD] Example 1: worst relative residual (Faraday, Ampere-Maxwell) = 1.0e-10 OK
+dBz/dt = -6.6713e-03 T/s, -(curl E)_z = -6.6713e-03; H dir y x x = [ 0.  0. -1.], E x H = [0. 1. 0.]
+
+== Example 2 ratios: 0.003335640951981448 0.6671281903962897
+
+== Example 3: f = 2t rect(t) V/m (t in us), c = 300 m/us
+E(600,t) at t=1.5001,2,2.4999: [-0.9998  0.      0.9998]
+E(z,0) at z=-149.9,0,149.9: [ 0.99933333 -0.         -0.99933333]
+E(z,2) at z=450.1,600,749.9: [ 0.99933333  0.         -0.99933333]   H dir z x x = [0. 1. 0.]
+
+== Example 4: J = x f(t), f = 2t rect A/m, t=2 us
+  z= -749.9: Hy=-0.500 A/m, Ex=+59.96 pi V/m
+  z= -600.0: Hy=+0.000 A/m, Ex=-0.00 pi V/m
+  z= -450.1: Hy=+0.500 A/m, Ex=-59.96 pi V/m
+  z=  450.1: Hy=-0.500 A/m, Ex=-59.96 pi V/m
+  z=  600.0: Hy=-0.000 A/m, Ex=-0.00 pi V/m
+  z=  700.0: Hy=+0.333 A/m, Ex=+40.00 pi V/m
+  z=  749.9: Hy=+0.500 A/m, Ex=+59.96 pi V/m
+
+== Slide 17: J = -Js z on y=0
+H (y>0, y<0): [0.5 0.  0. ] [-0.5  0.   0. ]  E = -eta/2 J dir: [0.  0.  0.5]  ExH: [0. 1. 0.] [ 0. -1.  0.]
+[Maxwell FD] slide 17 cosine: worst relative residual (Faraday, Ampere-Maxwell) = 5.8e-08 OK
+
+== Slide 11: F profile, v = 100 m/s
+(a) E(z,1) at 0,100,200,400,500: [ 0.  1. -1.  0.  0.]  zero crossing t=0 at 100.0 (between B and C: falling in z)
+    E(50,1)= 0.5  -> 50 m now sits on the A'-B' rising edge; crossing at 150 m is on B'-C' (falling)
+(b) E(0,t) at [-4.  -3.  -1.  -0.5  0.   1. ] = [ 0.  0. -1.  0.  1.  0.]  first corner to cross z=0: E (t=-4), last: A (t=+1)
+(c) E(200,t) at [-2.  -1.   0.   1.   1.5  2.   3. ] = [ 0.   0.  -0.5 -1.   0.   1.   0. ]
+
+== Sec 7 numbers
+beta = 2.0944 rad/m, lambda = 3.000 m; peak S per side (Js0=1) = 94.18 W/m^2
+  S(z=0.4) = [ 0.         0.        90.0890765], formula = 90.0891
+  S(z=-0.4) = [  0.          0.        -90.0890765], formula = -90.0891
+  sum of both sides at sheet vs -J.E: 188.36515683343083 188.36515683343083
+  #1(vii)-style replacement: 4pi rad in 5 us -> w = 2513274.1228718343  f = 400000.0  lambda = 750.0
+
+== Sec 8 inverse problem (plot scale, peak 2 A/m)
+(a) H(400,t) at [1.9999 2.0001 2.2    2.3333 2.34  ] = [0.0000e+00 1.9994e+00 8.0000e-01 2.0000e-04 0.0000e+00]
+(b) H(x,4) at [-1000.1  -999.9  -950.   -900.    899.9   950.    999.9  1000.1] = [-0.    -1.998 -1.    -0.     0.     1.     1.998  0.   ]
+(c) E dir x>0: eta H x u = y x x = [ 0.  0. -1.] ; E_z(+-399.9,2)= [-752.70716671 -752.70716671]  2*eta0= 753.4606273337233
+(d) Jz(t)=2 Hy(0+,t) at [0.6    0.6668 0.8    0.9999 1.0001] = [0.0000e+00 3.9984e+00 2.4000e+00 1.2000e-03 0.0000e+00]   x x (y) = [0. 0. 1.]
+[Maxwell FD] sec 8 x-sheet pair (E=-z eta0 H_y, H odd): worst relative residual (Faraday, Ampere-Maxwell) = 8.8e-07 OK
+
+== Sec 9 TL picture: parallel-plate Z0 = eta d/W; two halves in parallel -> E = eta Js/2
+  E = V/d = 565.0954705002924  eta0 Js/2 = 565.0954705002925
+
+== Worked problem (re-parameterized: J = z Js(t) on x = 0, eps_r = 4)
+  v = 1.4990e+08 m/s (0.15 m/ns with c=3e8), eta = 188.37, eta/2 = 94.18
+  H (x>0, x<0): [0.  0.5 0. ] [ 0.  -0.5  0. ]   E dir: [-0. -0. -1.]   ExH: [1. 0. 0.] [-1.  0.  0.]
+  old version (J = y): H = [ 0.   0.  -0.5] [0.  0.  0.5]  == SP18 #5 key (-1/2 z fwd, +1/2 z rev): carries over -> re-parameterize
+  jump x x (H+ - H-) per unit J = [0. 0. 1.]
+   x=+0.2000: Hy=+0.000 A/m, Ez=    -0.0 V/m
+   x=+0.4500: Hy=-1.000 A/m, Ez=  +188.4 V/m
+   x=+0.5999: Hy=-1.000 A/m, Ez=  +188.4 V/m
+   x=+0.6001: Hy=+2.999 A/m, Ez=  -564.9 V/m
+   x=+0.7500: Hy=+1.500 A/m, Ez=  -282.5 V/m
+   x=+0.8999: Hy=+0.001 A/m, Ez=    -0.2 V/m
+   x=+0.9500: Hy=+0.000 A/m, Ez=    -0.0 V/m
+   x=-0.2000: Hy=-0.000 A/m, Ez=    -0.0 V/m
+   x=-0.4500: Hy=+1.000 A/m, Ez=  +188.4 V/m
+   x=-0.5999: Hy=+1.000 A/m, Ez=  +188.4 V/m
+   x=-0.6001: Hy=-2.999 A/m, Ez=  -564.9 V/m
+   x=-0.7500: Hy=-1.500 A/m, Ez=  -282.5 V/m
+   x=-0.8999: Hy=-0.001 A/m, Ez=    -0.2 V/m
+   probe x=-0.45, t=2.9: Hy=-0.000
+   probe x=-0.45, t=3.5: Hy=-0.750
+   probe x=-0.45, t=4.999: Hy=-2.998
+   probe x=-0.45, t=5.001: Hy=+1.000
+   probe x=-0.45, t=6: Hy=+1.000
+   probe x=-0.45, t=6.999: Hy=+1.000
+   probe x=-0.45, t=7.001: Hy=-0.000
+  S(0.75,6ns) = [423.82160288  -0.           0.        ]  eta/4*9 = 423.82160287521936
+  S(-0.75,6ns) = [-423.82160288   -0.           -0.        ]
+  -J.E at t'=1 ns: 847.6432057504387   max |S| (Js=6): 1695.2864115008774
+[Maxwell FD] worked problem pair (eps_r=4): worst relative residual (Faraday, Ampere-Maxwell) = 3.3e-07 OK
+  vacuum variant: front at 1.7999999999999998 m; eta0/2 = 188.36515683343083
+
+== Poynting concept trap: two counter-propagating waves along z (arbitrary polarizations)
+  S total = [-0.         -0.         -0.00268872]  S1+S2 = [ 0.         -0.         -0.00268872]  cross terms = [ 0.00000000e+00 -0.00000000e+00 -4.33680869e-19]
+  co-propagating: S total = [ 0.         -0.          0.00842156]  S1+S3 = [ 0.         -0.          0.00481353]

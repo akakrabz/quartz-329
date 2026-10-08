@@ -1,11 +1,11 @@
 ---
 title: "Errata in the course materials"
-description: "Slips found in the lecture slides (Lectures 1–18), the course notes, the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
+description: "Slips found in the lecture slides (Lectures 1–19), the course notes, the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
 tags: [toolkit, exam-1]
 aliases: ["errata", "known errors in the slides", "errors in the exam key"]
 ---
 
-Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–18, so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
+Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–19, so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
 
 > [!tip] How to read this page
 > "Slide" means the annotated lecture decks (Shao, after Goddard and Cunningham); "notes" means Prof. Kudeki's lecture notes; "key" means the FA26 Exam 1 solutions; "HW sol." means the FA26 homework solution sets. Nothing here is a criticism of the materials — most of these are momentary hand slips that the authors corrected verbally or on the next line. They are listed because they are copied verbatim into notecards every semester.
@@ -58,6 +58,9 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L18 slides 2, 3, 8–10 | $d/dt$ in the point forms, including the boxed $\partial E_x/\partial z = -\mu_0\,dH_y/dt$ | $\partial/\partial t$ | the same slip as in Lectures 4, 14–16 |
 | L18 slide 5 | the static-sheet sketch draws $\mathbf{H}$ for a current *out of* the page | the opposite circulation, for slide 4's $\mathbf{J}_s = -J_s(t)\hat a_x$ (as on slides 6–11) | figure only; the equations are right |
 | L18 slides 11–13 | the sheet current $J_s(t)$ renamed $J_x(t)$ and then used as the volume density in $\partial_zH_y = -J_x-\partial_tD_x$ | a sheet needs $J_s(t)\,\delta(z)$ there | notation; the term is dropped on slide 14 anyway |
+| L19 slides 18–21 | $\mathbf{H} = 2x[u(x)-u(x-100)]$ A/m, plotted with a peak of 2 | the formula peaks at 200 A/m; one of the two is off by 100 | every answer of the four-part example scales with it; the medium and the direction of $\mathbf{J}_s$ are also left unstated |
+| L19 slide 6 | a small "$H_y = (A/\eta_0)f(t)$" in the $z = 0^-$ column | $E_x(0^-) = Af(t)$ belongs there; the $H_y$ on that side has the opposite sign | stray line from the $z = 0^+$ column |
+| L19 slide 7 | $\hat a_n$ and "region 1" not identified | $\hat a_n = \hat a_z$, region 1 is $z>0$ | the boundary-condition signs depend on it |
 
 ## Course notes (Kudeki)
 
@@ -86,6 +89,7 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L17 p. 7 | "$H$ is the same in both regions" | true for that geometry, where the free current alone fixes $H$ by symmetry; not a general rule |
 | L17 p. 4, footnote 6, p. 12 | "**M**called"; "dispacement", "chare"; an unclosed parenthesis | typos |
 | L18 p. 8, margin | shifted rectangle and triangle pulses labelled at $-\tau/2$ and $\tau/2$ | $t_o-\tau/2$ and $t_o+\tau/2$ |
+| L19 pp. 4–5, Example 3 | asks for $\mathbf{H}(z,t)$ but never gives it; margin plot ordinate "$f(t)$ (V)" | $\mathbf{H} = \hat y\,f(t-z/c)/\eta_o$; the unit is V/m |
 
 ## FA26 Exam 1 solution key
 
@@ -126,6 +130,6 @@ None of these changes a boxed answer; all of them are exactly the slips graders 
 - Biot–Savart's vector from source to field point: $\mathbf r$, $r$ in the notes (clashing with the cylindrical $r$ of $\mu_0I/2\pi r$), $\hat a_R$, $R$ on the slides. This site writes $\mathbf R$, $\hat R$.
 - Boundary-condition sides: Kudeki's $\pm$ superscripts ($\hat n$ from $-$ to $+$) and the slides' subscripts 1/2 ($\hat a_n$ from 2 into 1) are the same convention with different labels.
 - Magnetic constants: $\mu_o$ (notes) vs $\mu_0$ (slides, this site); the slides call magnetization "magnetic polarization" once (Lecture 17, slide 10). $\chi_m$ has no $\mu_0$: $\mathbf{M} = \chi_m\mathbf{H}$, unlike $\mathbf{P} = \epsilon_0\chi_e\mathbf{E}$.
-- Lecture 18: the slides rename the sheet current $J_s(t)$ to $J_x(t)$ (slides 11–13). Both sources write $v$ for the speed in a general medium and $c$ for vacuum, as this site does.
+- Lectures 18–19: the slides switch between $J_s(t)$ and $J_x(t)$ for the sheet current (L18 slides 11–13, L19 slide 2), and L19 slides 15 and 22 use $f$ for both the waveform and the frequency. Both sources write $v$ for the speed in a general medium and $c$ for vacuum, as this site does.
 
 *If you find another one, it belongs here — the pages that quote a slide slip also say so inline, but this is the list to check against before an exam.*

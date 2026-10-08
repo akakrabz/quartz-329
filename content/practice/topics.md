@@ -1,6 +1,6 @@
 ---
 title: "Problems by topic"
-description: "The 200 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
+description: "The 212 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
 tags: [practice]
 ---
 
@@ -47,6 +47,8 @@ Two-minute concept checks — every wrong option is explained in the solution. G
 - [[practice/17-magnetization-and-maxwell-in-matter#174-reading-a-hysteresis-loop|17.4 Reading a hysteresis loop]] <span class="diff easy">easy</span>
 - [[practice/18-wave-equation-and-plane-waves#181-which-way-and-how-fast|18.1 Which way and how fast]] <span class="diff easy">easy</span>
 - [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#191-which-one-is-a-plane-wave|19.1 Which one is a plane wave]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#193-sheet-facts-true-or-false|19.3 Sheet facts, true or false]] <span class="diff easy">easy</span>
 
 ## Find the error
 
@@ -69,6 +71,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/16-charge-conservation-and-displacement-current#163-the-missing-displacement-current|16.3 The missing displacement current]] <span class="diff easy">easy</span>
 - [[practice/17-magnetization-and-maxwell-in-matter#173-ferrite-between-sheets-find-the-error|17.3 Ferrite between sheets, find the error]] <span class="diff easy">easy</span>
 - [[practice/18-wave-equation-and-plane-waves#185-the-backwards-magnetic-field|18.5 The backwards magnetic field]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#195-the-electric-field-that-flips|19.5 The electric field that flips]] <span class="diff easy">easy</span>
 
 ## Coulomb's law and point charges
 
@@ -110,6 +113,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/13-current-sheets-solenoids-and-vector-potential#1312-a-finite-solenoid-on-its-axis|13.12 A finite solenoid on its axis]] <span class="diff hard">hard</span>
 - [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] <span class="diff medium">medium</span>
 - [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] <span class="diff hard">hard</span>
 
 ## Gauss's law and flux
 
@@ -259,6 +263,10 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/17-magnetization-and-maxwell-in-matter#1710-three-sheets-and-two-slabs|17.10 Three sheets and two slabs]] <span class="diff hard">hard</span>
 - [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap|17.11 A toroid with an air gap]] <span class="diff hard">hard</span>
 - [[practice/17-magnetization-and-maxwell-in-matter#1712-a-short-bar-magnet|17.12 A short bar magnet]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#192-a-sheet-on-the-y--0-plane|19.2 A sheet on the y = 0 plane]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#195-the-electric-field-that-flips|19.5 The electric field that flips]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#197-which-current-made-this-field|19.7 Which current made this field]] <span class="diff medium">medium</span>
+- [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] <span class="diff hard">hard</span>
 
 ## Poisson's and Laplace's equations
 
@@ -511,3 +519,24 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] <span class="diff hard">hard</span>
 - [[practice/18-wave-equation-and-plane-waves#1811-the-derivation-along-the-x-axis|18.11 The derivation along the x axis]] <span class="diff hard">hard</span>
 - [[practice/18-wave-equation-and-plane-waves#1812-a-wave-on-a-slant|18.12 A wave on a slant]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#191-which-one-is-a-plane-wave|19.1 Which one is a plane wave]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#194-reading-a-waves-parameters|19.4 Reading a wave's parameters]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#196-a-triangle-pulse-in-glass|19.6 A triangle pulse in glass]] <span class="diff medium">medium</span>
+- [[practice/19-radiation-from-current-sheets#198-a-cosine-current-in-a-dielectric|19.8 A cosine current in a dielectric]] <span class="diff medium">medium</span>
+- [[practice/19-radiation-from-current-sheets#199-a-sheet-launches-a-step-and-a-ramp|19.9 A sheet launches a step and a ramp]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#1911-a-sheet-on-a-diagonal-plane|19.11 A sheet on a diagonal plane]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] <span class="diff hard">hard</span>
+
+## Current-sheet radiation and the Poynting vector
+
+- [[practice/19-radiation-from-current-sheets#192-a-sheet-on-the-y--0-plane|19.2 A sheet on the y = 0 plane]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#193-sheet-facts-true-or-false|19.3 Sheet facts, true or false]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#195-the-electric-field-that-flips|19.5 The electric field that flips]] <span class="diff easy">easy</span>
+- [[practice/19-radiation-from-current-sheets#196-a-triangle-pulse-in-glass|19.6 A triangle pulse in glass]] <span class="diff medium">medium</span>
+- [[practice/19-radiation-from-current-sheets#197-which-current-made-this-field|19.7 Which current made this field]] <span class="diff medium">medium</span>
+- [[practice/19-radiation-from-current-sheets#198-a-cosine-current-in-a-dielectric|19.8 A cosine current in a dielectric]] <span class="diff medium">medium</span>
+- [[practice/19-radiation-from-current-sheets#199-a-sheet-launches-a-step-and-a-ramp|19.9 A sheet launches a step and a ramp]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#1911-a-sheet-on-a-diagonal-plane|19.11 A sheet on a diagonal plane]] <span class="diff hard">hard</span>
+- [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] <span class="diff hard">hard</span>

@@ -1,6 +1,6 @@
 ---
 title: "Easy problems"
-description: "All 84 easy practice problems for Lectures 2–18, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
+description: "All 89 easy practice problems for Lectures 2–19, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
 tags: [practice]
 ---
 
@@ -142,3 +142,11 @@ tags: [practice]
 - [[practice/18-wave-equation-and-plane-waves#183-phase-rate-and-snapshot-period|18.3 Phase rate and snapshot period]] — plane waves · intrinsic impedance · *modelled on SP18 Exam 2 #1(vii)*
 - [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] — true or false · wave equation · displacement current
 - [[practice/18-wave-equation-and-plane-waves#185-the-backwards-magnetic-field|18.5 The backwards magnetic field]] — find the error · plane waves · intrinsic impedance
+
+## Lecture 19 · d'Alembert solutions and radiation from current sheets
+
+- [[practice/19-radiation-from-current-sheets#191-which-one-is-a-plane-wave|19.1 Which one is a plane wave]] — multiple choice · plane waves
+- [[practice/19-radiation-from-current-sheets#192-a-sheet-on-the-y--0-plane|19.2 A sheet on the y = 0 plane]] — current sheet radiation · boundary conditions
+- [[practice/19-radiation-from-current-sheets#193-sheet-facts-true-or-false|19.3 Sheet facts, true or false]] — true or false · current sheet radiation
+- [[practice/19-radiation-from-current-sheets#194-reading-a-waves-parameters|19.4 Reading a wave's parameters]] — wave parameters · intrinsic impedance
+- [[practice/19-radiation-from-current-sheets#195-the-electric-field-that-flips|19.5 The electric field that flips]] — find the error · current sheet radiation · boundary conditions
