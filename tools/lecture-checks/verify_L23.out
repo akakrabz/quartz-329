@@ -1,0 +1,468 @@
+=== A. constants and conversions
+ok   c: 299792458.081606 vs 299792458.0
+ok   eta0 [ohm]: 376.730314 vs 376.73
+ok   eps0 ~ 1e-9/36pi (0.1 % high): computed 8.84194e-12, page 8.85419e-12 (tol 0.2%)
+ok   20 log10 e = 8.686 dB per neper: 8.68589 vs 8.6859
+ok   10log e^{2 a z} = 20 log e^{a z}: 3.213779 vs 3.213779
+ok   = 8.686 a z: 3.213779 vs 3.213779
+=== B. Section 1: loss tangent, crossover frequencies, relaxation times (handbook values)
+ok   f_c seawater: computed 8.87659e+08, page 8.9e+08 (tol 2.0%)
+ok   seawater: good conductor below f_c/10: computed 8.87659e+07, page 8.9e+07 (tol 3.0%)
+ok   seawater: imperfect dielectric above 10 f_c: computed 8.87659e+09, page 8.9e+09 (tol 3.0%)
+ok   f_c moist soil: computed 1.79751e+07, page 1.8e+07 (tol 2.0%)
+ok   moist soil: good conductor below f_c/10: computed 1.79751e+06, page 1.8e+06 (tol 3.0%)
+ok   moist soil: imperfect dielectric above 10 f_c: computed 1.79751e+08, page 1.8e+08 (tol 3.0%)
+ok   f_c notes Ex.1 medium: computed 4.49378e+06, page 4.5e+06 (tol 2.0%)
+ok   notes Ex.1 medium: good conductor below f_c/10: computed 449378, page 450000 (tol 3.0%)
+ok   notes Ex.1 medium: imperfect dielectric above 10 f_c: computed 4.49378e+07, page 4.5e+07 (tol 3.0%)
+ok   f_c fresh water: computed 224689, page 225000 (tol 2.0%)
+ok   fresh water: good conductor below f_c/10: computed 22468.9, page 22000 (tol 3.0%)
+ok   fresh water: imperfect dielectric above 10 f_c: computed 2.24689e+06, page 2.2e+06 (tol 3.0%)
+ok   f_c dry earth: computed 35950.2, page 36000 (tol 2.0%)
+ok   dry earth: good conductor below f_c/10: computed 3595.02, page 3600 (tol 3.0%)
+ok   dry earth: imperfect dielectric above 10 f_c: computed 359502, page 360000 (tol 3.0%)
+ok   f_c Bakelite: computed 3.66839, page 3.7 (tol 2.0%)
+ok   Bakelite: good conductor below f_c/10: computed 0.366839, page 0.37 (tol 3.0%)
+ok   Bakelite: imperfect dielectric above 10 f_c: computed 36.6839, page 37 (tol 3.0%)
+ok   f_c mica: computed 0.0299585, page 0.03 (tol 2.0%)
+ok   mica: imperfect dielectric above 10 f_c: computed 0.299585, page 0.3 (tol 3.0%)
+ok   f_c copper (formal) 1.0e18 Hz: computed 1.04256e+18, page 1e+18 (tol 5.0%)
+ok   f_c aluminium 6.3e17 Hz: computed 6.29129e+17, page 6.3e+17 (tol 1.0%)
+ok   Rao Table 5.3 dry earth f_q = 3.6e4 Hz: computed 35950.2, page 36000 (tol 1.0%)
+ok   Rao Table 5.3 sea water (eps_r 80) f_q = 0.9e9 Hz: computed 8.98755e+08, page 9e+08 (tol 1.0%)
+ok   Rao Table 5.3 mica f_q = 3e-2 Hz: computed 0.0299585, page 0.03 (tol 1.0%)
+ok   seawater relaxation time eps/sigma = 0.18 ns: computed 1.79297e-10, page 1.8e-10 (tol 1.0%)
+ok   f_c = 1/(2 pi tau_r): 887659436.272708 vs 887659436.272708
+ok   period 0.1 ns at 10 GHz < tau_r; 1 ms at 1 kHz >> tau_r
+ok   seawater sigma/(w eps) at 1e+03 Hz: computed 887659, page 890000 (tol 1.0%)
+ok   seawater sigma/(w eps) at 1e+06 Hz: computed 887.659, page 888 (tol 1.0%)
+ok   seawater sigma/(w eps) at 1e+09 Hz: computed 0.887659, page 0.89 (tol 1.0%)
+ok   seawater sigma/(w eps) at 1e+10 Hz: computed 0.0887659, page 0.089 (tol 1.0%)
+ok   no-calculator form 18e9 sigma/(f eps_r) at 1 kHz: computed 888889, page 890000 (tol 1.0%)
+ok   36 pi/2 pi = 18: 888888.888889 vs 888888.888889
+ok   omega vs f: factor 2 pi = 6.3: 6.283185 vs 6.2832
+ok   leaky capacitor G/wC = sigma/(w eps): 887.659436 vs 887.659436
+=== C. Section 2: the table, exact polar forms, limits and accuracy
+ok   400 random media: alpha, beta, |eta| polar forms; tau = theta/2; alpha/beta = tan tau; |gamma||eta| = w mu; alpha <= beta; 0 <= tau <= 45 deg; alpha = sigma|eta|/(2 cos tau); Re{gamma/eta} = sigma
+ok   p = 0.1: imperfect-dielectric alpha 0.13 % high: computed 0.00124611, page 0.0013 (tol 6.0%)
+ok   p = 0.1: imperfect-dielectric beta 0.13 % low: computed 0.00124456, page 0.0013 (tol 6.0%)
+ok   p = 0.1: |eta| 0.25 %: computed 0.00249068, page 0.0025 (tol 2.0%)
+ok   p = 0.1: tau 0.33 %: computed 0.00332449, page 0.0033 (tol 2.0%)
+ok   p = 10: good-conductor alpha 5 % high: computed 0.0511839, page 0.05 (tol 3.0%)
+ok   p = 10: good-conductor beta 5 % low: computed 0.0486917, page 0.05 (tol 3.0%)
+ok   p = 10: exact tau 42.1 deg: computed 42.1447, page 42.1 (tol 0.2%)
+ok   p = 1: imperfect-dielectric alpha 10 % high: computed 0.0986841, page 0.1 (tol 2.0%)
+ok   p = 1: good-conductor alpha 55 % high: computed 0.553774, page 0.55 (tol 1.0%)
+ok   p << 1: alpha = (sigma/2) sqrt(mu/eps): 9.4e-05 vs 9.4e-05
+ok   p << 1: delta = (2/sigma) sqrt(eps/mu): 10617.674915 vs 10617.674915
+ok   p << 1: tau = sigma/(2 w eps): 2e-06 vs 2e-06
+ok   p >> 1: alpha = beta = sqrt(pi f mu sigma): [478.513137 478.513137] vs [478.513137 478.513137]
+ok   p >> 1: |eta| = sqrt(w mu/sigma): 1.2e-05 vs 1.2e-05
+ok   p >> 1: tau = 45 deg: 45.0 vs 45.0
+ok   p = 0.001: binomial phase minus exact phase = 1.25e-10 (third order)
+ok   p = 0.01: binomial phase minus exact phase = 1.25e-07 (third order)
+ok   p = 0.1: binomial phase minus exact phase = 0.000124 (third order)
+ok   seawater high-frequency plateau (sigma/2) sqrt(mu/eps) = 84 Np/m: computed 83.7178, page 84 (tol 1.0%)
+ok   plateau penetration depth 1.2 cm: computed 0.0119449, page 0.012 (tol 1.0%)
+ok   Rao Table 5.3 sea water alpha = 84.3 Np/m (eps_r 80): computed 84.2395, page 84.3 (tol 0.2%)
+ok   exact alpha at 100 GHz approaches the plateau: computed 83.717, page 83.7178 (tol 0.2%)
+ok   Rao Prob. 5.26 ratio sqrt(2 w eps/sigma) at 1e+03 Hz: 0.001501 vs 0.001501
+ok   Rao Prob. 5.26 ratio sqrt(2 w eps/sigma) at 1e+05 Hz: 0.01501 vs 0.01501
+ok   inverse: beta = 4 pi = 12.6 rad/m: computed 12.5664, page 12.6 (tol 0.3%)
+ok   inverse: alpha/beta = 0.004: computed 0.00397887, page 0.004 (tol 1.0%)
+ok   inverse: tau = 0.23 deg: computed 0.227971, page 0.23 (tol 1.0%)
+ok   inverse: p = tan 2 tau = 0.008: computed 0.00795787, page 0.008 (tol 1.0%)
+ok   inverse: delta = 40 wavelengths: 40.0 vs 40.0
+ok   inverse: v_p = 1e8 m/s: 100000000.0 vs 100000000.0
+ok   inverse: eps_r = (c/v_p)^2 = 9: computed 8.98755, page 9 (tol 0.2%)
+ok   inverse: |eta| = eta0/3 ~ 40 pi: computed 125.577, page 125.664 (tol 0.1%)
+ok   inverse: 40 pi = 126 ohm: computed 125.664, page 126 (tol 0.3%)
+ok   inverse: sigma = 2 alpha/|eta| = 8.0e-4 S/m: computed 0.000795775, page 0.0008 (tol 0.6%)
+ok   inverse: check sigma/(w eps) = 0.008: computed 0.00794674, page 0.008 (tol 1.0%)
+ok   inverse closes the loop: exact lambda = 0.5 m: computed 0.499984, page 0.5 (tol 0.1%)
+ok   inverse closes the loop: exact delta = 20 m: computed 20.0007, page 20 (tol 0.1%)
+=== D. Section 3: notes' Example 1 (imperfect dielectric, 1 GHz)
+ok   sigma/(w eps) with eps0 = 1e-9/36pi: 4.5e-3: 0.0045 vs 0.0045
+ok   exact sigma/(w eps): computed 0.00449378, page 0.0045 (tol 0.2%)
+ok   tau = 2.25e-3 rad: computed 0.00224687, page 0.00225 (tol 0.2%)
+ok   tau = 0.13 deg: computed 0.128736, page 0.13 (tol 1.0%)
+ok   |eta| = 188 ohm: computed 188.364, page 188 (tol 0.2%)
+ok   60 pi = 188.5: computed 188.496, page 188.5 (tol 0.1%)
+ok   alpha = 0.094 Np/m: computed 0.0941823, page 0.094 (tol 0.3%)
+ok   30 pi e-3: 0.094248 vs 0.094248
+ok   beta = 41.9 rad/m: computed 41.917, page 41.9 (tol 0.2%)
+ok   lambda = 15 cm: computed 0.149896, page 0.15 (tol 0.2%)
+ok   H amplitude 2/|eta| = 10.6 mA/m: computed 0.0106177, page 0.0106 (tol 0.3%)
+ok   H direction: z x y = -x: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   E x H = y x (-x) = +z: [0. 0. 1.] vs [0. 0. 1.]
+ok   <S_z>(z=0.0) quadrature = (2/|eta|) cos tau e^-2az: 0.010618 vs 0.010618
+ok     = z-component of 1/2 Re{E x H*} (vector cross product): 0.010618 vs 0.010618
+ok     no x-component: 0.0 vs 0.0
+ok     no y-component: 0.0 vs 0.0
+ok   <S_z>(z=3.0) quadrature = (2/|eta|) cos tau e^-2az: 0.006034 vs 0.006034
+ok     = z-component of 1/2 Re{E x H*} (vector cross product): 0.006034 vs 0.006034
+ok     no x-component: 0.0 vs 0.0
+ok     no y-component: 0.0 vs 0.0
+ok   <S_z>(z=10.0) quadrature = (2/|eta|) cos tau e^-2az: 0.001614 vs 0.001614
+ok     = z-component of 1/2 Re{E x H*} (vector cross product): 0.001614 vs 0.001614
+ok     no x-component: 0.0 vs 0.0
+ok     no y-component: 0.0 vs 0.0
+ok   <S>(0) = 1/(30 pi) W/m^2: computed 0.0106177, page 0.0106103 (tol 0.2%)
+ok   <S>(0) = 10.6 mW/m^2: computed 0.0106177, page 0.0106 (tol 0.3%)
+ok   2 alpha 10 = 0.6 pi (notes' approximation): 1.884956 vs 1.884956
+ok   e^{-0.6 pi} = 0.15: computed 0.151836, page 0.15 (tol 2.0%)
+ok   exact fraction after 10 m = 15 %: computed 0.152035, page 0.15 (tol 2.0%)
+ok   <S>(10 m) = 1.6 mW/m^2: computed 0.00161426, page 0.0016 (tol 1.0%)
+ok   loss 0.82 dB/m: computed 0.818057, page 0.82 (tol 0.5%)
+ok   8.2 dB over 10 m: computed 8.18057, page 8.2 (tol 0.5%)
+ok   delta = 1/alpha = 10.6 m: computed 10.6177, page 10.6 (tol 0.2%)
+ok   85 % lost in 10 m: computed 0.847965, page 0.85 (tol 0.5%)
+ok   Re{H e^{jwt}} = -(2/|eta|) cos(wt - tau) at z = 0: [-0.010618 -0.00533   0.005288  0.010618  0.00533  -0.005288 -0.010618] vs [-0.010618 -0.00533   0.005288  0.010618  0.00533  -0.005288 -0.010618]
+ok   Poynting: -d<S>/dz = <J.E> = 1/2 sigma |E|^2 (finite difference vs quadrature): 0.000941 vs 0.000941
+ok   Joule heating at z = 0: 1/2 sigma |E0|^2 = 2.0 mW/m^3: 0.002 vs 0.002
+ok   2 alpha <S>(0) = 2.0 mW/m^3: computed 0.002, page 0.002 (tol 0.2%)
+ok   alpha = sigma |eta| / (2 cos tau) (exact): 0.094182 vs 0.094182
+ok   2 alpha = sigma eta (imperfect dielectric): computed 0.188365, page 0.188364 (tol 0.0%)
+=== E. general <S> of a damped wave with complex E0, by quadrature
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = 2.0, f = 1e+09: 0.002618 vs 0.002618
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = 2.0, f = 1e+03: 7.84943 vs 7.84943
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = 2.0, f = 1e+07: 0.005118 vs 0.005118
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = (1.5-0.7j), f = 1e+09: 0.001794 vs 0.001794
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = (1.5-0.7j), f = 1e+03: 5.376859 vs 5.376859
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = (1.5-0.7j), f = 1e+07: 0.003506 vs 0.003506
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = (-0.3+2j), f = 1e+09: 0.002677 vs 0.002677
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = (-0.3+2j), f = 1e+03: 8.026042 vs 8.026042
+ok   <E_x H_y> = |E0|^2 cos tau e^-2az/(2|eta|), E0 = (-0.3+2j), f = 1e+07: 0.005233 vs 0.005233
+ok   E = x, H = +1 y: E x H = +1 z: [0. 0. 1.] vs [0. 0. 1.]
+ok   E = x, H = -1 y: E x H = -1 z: [ 0.  0. -1.] vs [-0. -0. -1.]
+=== F. Section 4: good conductor; notes' Examples 2 and 3
+ok   delta = 1/sqrt(pi f mu sigma) = sqrt(2/w mu sigma), f = 1000.0: 7.957747 vs 7.957747
+ok   gamma = (1+j)/delta, f = 1000.0: (0.125664+0.125664j) vs (0.125664+0.125664j)
+ok   eta = (1+j)/(sigma delta), f = 1000.0: (0.031416+0.031416j) vs (0.031416+0.031416j)
+ok   sqrt(w mu/2 sigma) = 1/(sigma delta): 0.031416 vs 0.031416
+ok   |eta| = sqrt(2)/(sigma delta) = sqrt(w mu/sigma): 0.044429 vs 0.044429
+ok   lambda = 2 pi delta: 49.999972 vs 50.0
+ok   v_p = w delta: 49999.971836 vs 50000.0
+ok   H amplitude sigma delta E0/sqrt2, lag pi/4: [22.507908  0.785398] vs [22.507908  0.785398]
+ok   <S>(0) = sigma delta E0^2 / 4 (quadrature): 7.957747 vs 7.957747
+ok   <S> = 1/2 Re{eta}|H0|^2 = |H0|^2/(2 sigma delta): 7.957747 vs 7.957747
+ok   delta = 1/sqrt(pi f mu sigma) = sqrt(2/w mu sigma), f = 1000000.0: 6.6e-05 vs 6.6e-05
+ok   gamma = (1+j)/delta, f = 1000000.0: (15131.914026+15131.914027j) vs (15131.914026+15131.914026j)
+ok   eta = (1+j)/(sigma delta), f = 1000000.0: (0.000261+0.000261j) vs (0.000261+0.000261j)
+ok   sqrt(w mu/2 sigma) = 1/(sigma delta): 0.000261 vs 0.000261
+ok   |eta| = sqrt(2)/(sigma delta) = sqrt(w mu/sigma): 0.000369 vs 0.000369
+ok   lambda = 2 pi delta: 0.000415 vs 0.000415
+ok   v_p = w delta: 415.227399 vs 415.227399
+ok   H amplitude sigma delta E0/sqrt2, lag pi/4: [2.71031102e+03 7.85398000e-01] vs [2.71031102e+03 7.85398000e-01]
+ok   <S>(0) = sigma delta E0^2 / 4 (quadrature): 958.23965 vs 958.23965
+ok   <S> = 1/2 Re{eta}|H0|^2 = |H0|^2/(2 sigma delta): 958.23965 vs 958.23965
+ok   delta = 1/sqrt(pi f mu sigma) = sqrt(2/w mu sigma), f = 60.0: 0.010983 vs 0.010983
+ok   gamma = (1+j)/delta, f = 60.0: (91.052005+91.052005j) vs (91.052005+91.052005j)
+ok   eta = (1+j)/(sigma delta), f = 60.0: (3e-06+3e-06j) vs (3e-06+3e-06j)
+ok   sqrt(w mu/2 sigma) = 1/(sigma delta): 3e-06 vs 3e-06
+ok   |eta| = sqrt(2)/(sigma delta) = sqrt(w mu/sigma): 4e-06 vs 4e-06
+ok   lambda = 2 pi delta: 0.069007 vs 0.069007
+ok   v_p = w delta: 4.140393 vs 4.140393
+ok   H amplitude sigma delta E0/sqrt2, lag pi/4: [2.71808811e+05 7.85398000e-01] vs [2.71808811e+05 7.85398000e-01]
+ok   <S>(0) = sigma delta E0^2 / 4 (quadrature): 96098.926723 vs 96098.926723
+ok   <S> = 1/2 Re{eta}|H0|^2 = |H0|^2/(2 sigma delta): 96098.926723 vs 96098.926723
+ok   e^{2 pi} = 535: computed 535.492, page 535 (tol 0.1%)
+ok   54.6 dB per wavelength (Rao 54.58): computed 54.5751, page 54.6 (tol 0.1%)
+ok   seawater 1 kHz lambda = 50 m: computed 50, page 50 (tol 0.0%)
+ok   seawater 1 kHz v_p = 5e4 m/s: computed 50000, page 50000 (tol 0.0%)
+ok   lossless eps_r = 81: c/9 = 3.3e7 m/s: computed 3.33103e+07, page 3.3e+07 (tol 1.0%)
+ok   copper 1 MHz lambda = 0.42 mm: computed 0.000415227, page 0.00042 (tol 1.2%)
+ok   copper 1 MHz v_p = 415 m/s: computed 415.227, page 415 (tol 0.2%)
+ok   seawater 1 kHz |H|/|E| = 22.5 (A/m)/(V/m): computed 22.5079, page 22.5 (tol 0.2%)
+ok   air: 1/377: computed 0.00265442, page 0.00265252 (tol 0.1%)
+ok   w_e/w_m = eps|eta|^2/mu = 1/sqrt(1+p^2): 1e-06 vs 1e-06
+ok   w_e/w_m = 1.1e-6 for seawater at 1 kHz: computed 1.12656e-06, page 1.1e-06 (tol 3.0%)
+ok   quadrature <w_e>/<w_m>: 1e-06 vs 1e-06
+ok   R of a square, delta thick = 1/(sigma delta) = Re{eta}: 0.031416 vs 0.031416
+ok   Re{eta} = 1/(sigma delta) (seawater 1 kHz): 0.031416 vs 0.031416
+ok   Ex.2 notes' ratio with eps = 4 eps0: 1.8e7: 18000000.0 vs 18000000.0
+ok   Ex.2 exact ratio with 4 eps0: computed 1.79751e+07, page 1.8e+07 (tol 0.2%)
+ok   Ex.2 ratio with seawater's 81 eps0 (2 s.f.): computed 887659, page 890000 (tol 0.6%)
+ok   Ex.2 tau = 45 deg (eps_r 4.0): computed 45, page 45 (tol 0.0%)
+ok   Ex.2 |eta| = pi sqrt2/100 (eps_r 4.0): computed 0.0444288, page 0.0444288 (tol 0.0%)
+ok   Ex.2 alpha = pi/25 (eps_r 4.0): computed 0.125664, page 0.125664 (tol 0.0%)
+ok   Ex.2 tau = 45 deg (eps_r 81.0): computed 45, page 45 (tol 0.0%)
+ok   Ex.2 |eta| = pi sqrt2/100 (eps_r 81.0): computed 0.0444288, page 0.0444288 (tol 0.0%)
+ok   Ex.2 alpha = pi/25 (eps_r 81.0): computed 0.125664, page 0.125664 (tol 0.0%)
+ok   pi sqrt2/100 = 0.0444 ohm: 0.044429 vs 0.044429
+ok   pi/25 = 0.126 Np/m: 0.125664 vs 0.125664
+ok   sqrt(pi 1e3 4pi e-7 4) = sqrt(16 pi^2 e-4): 0.125664 vs 0.125664
+ok   Ex.2 H amplitude 45 A/m: computed 45.0158, page 45 (tol 0.2%)
+ok   Ex.2 H is 4,240 times Ex.1's for the same E: computed 4239.68, page 4240 (tol 0.2%)
+ok   Ex.2 <S>(0) = 100/pi W/m^2: computed 31.831, page 31.831 (tol 0.0%)
+ok   Ex.2 <S>(0) = 31.8 W/m^2: computed 31.831, page 31.8 (tol 0.2%)
+ok   Ex.2 / Ex.1 power ratio = 3,000: computed 2997.92, page 3000 (tol 0.2%)
+ok   e^{-0.8 pi} = 0.081: computed 0.0810026, page 0.081 (tol 0.2%)
+ok   Ex.2 <S>(10 m) = 2.6 W/m^2: computed 2.5784, page 2.6 (tol 1.0%)
+ok   Ex.2 8 % left after 10 m: computed 0.0810027, page 0.08 (tol 2.0%)
+ok   Ex.2 1.09 dB/m: computed 1.0915, page 1.09 (tol 0.2%)
+ok   Ex.2 E x H = y x (-x) = +z: [0. 0. 1.] vs [0. 0. 1.]
+ok   Ex.2 <S_z>(0) by quadrature: 31.831007 vs 31.831007
+ok   Ex.3 4*36pi e9/(2pi e3 81) = 72e9/81e3: 888888.888889 vs 888888.888889
+ok   Ex.3 ratio 8.9e5: computed 888889, page 890000 (tol 0.2%)
+ok   Ex.3 1/sqrt(16 pi^2 e-4) = 100/(4 pi) = 25/pi: 7.957747 vs 7.957747
+ok   Ex.3 25/pi = 7.96 m (notes print 7.95): computed 7.95775, page 7.96 (tol 0.1%)
+ok   25/pi rounds to 7.96, not 7.95 (erratum)
+ok   Ex.3 exact delta: computed 7.95775, page 7.95775 (tol 0.0%)
+=== G. Section 5: submarines, the fair comparison and the frequency table
+ok   1 kHz seawater loses 92 % in 10 m: computed 0.918997, page 0.92 (tol 0.2%)
+ok   seawater 1 GHz ratio 0.89: computed 0.887659, page 0.89 (tol 0.3%)
+ok   seawater 1 GHz alpha = 77 Np/m: computed 77.4445, page 77 (tol 0.6%)
+ok   seawater 1 GHz delta = 1.3 cm: computed 0.0129125, page 0.013 (tol 1.0%)
+ok   seawater 1 GHz 673 dB/m: computed 672.675, page 673 (tol 0.1%)
+ok   10 m at 1 GHz: 6,700 dB: computed 6726.75, page 6700 (tol 0.5%)
+ok   10 m at 1 kHz: 11 dB: computed 10.915, page 11 (tol 1.0%)
+ok   100 x frequency -> 10 x attenuation (good conductor): 10.0 vs 10.0
+ok   table 8e+01 Hz: sigma/(w eps): computed 1.16797e+07, page 1.2e+07 (tol 4.0%)
+ok   table 8e+01 Hz: delta: computed 28.8658, page 28.9 (tol 2.0%)
+ok   table 8e+01 Hz: dB/m: computed 0.300906, page 0.3 (tol 2.0%)
+ok   table 8e+01 Hz: 100 dB depth: computed 332.33, page 332 (tol 3.0%)
+ok   table 8e+01 Hz: free-space wavelength: computed 3.94464e+06, page 3.9e+06 (tol 1.5%)
+ok   table 8e+01 Hz: 100 dB depth = 11.51 delta: 11.512925 vs 11.512925
+ok   table 1e+03 Hz: sigma/(w eps): computed 887659, page 890000 (tol 4.0%)
+ok   table 1e+03 Hz: delta: computed 7.95775, page 7.96 (tol 2.0%)
+ok   table 1e+03 Hz: dB/m: computed 1.0915, page 1.09 (tol 2.0%)
+ok   table 1e+03 Hz: 100 dB depth: computed 91.617, page 92 (tol 3.0%)
+ok   table 1e+03 Hz: free-space wavelength: computed 299792, page 300000 (tol 1.5%)
+ok   table 1e+03 Hz: 100 dB depth = 11.51 delta: 11.512925 vs 11.512925
+ok   table 2e+04 Hz: sigma/(w eps): computed 36985.8, page 37000 (tol 4.0%)
+ok   table 2e+04 Hz: delta: computed 1.62439, page 1.62 (tol 2.0%)
+ok   table 2e+04 Hz: dB/m: computed 5.34717, page 5.3 (tol 2.0%)
+ok   table 2e+04 Hz: 100 dB depth: computed 18.7015, page 19 (tol 3.0%)
+ok   table 2e+04 Hz: free-space wavelength: computed 12491.4, page 12500 (tol 1.5%)
+ok   table 2e+04 Hz: 100 dB depth = 11.51 delta: 11.512925 vs 11.512925
+ok   table 1e+06 Hz: sigma/(w eps): computed 887.659, page 888 (tol 4.0%)
+ok   table 1e+06 Hz: delta: computed 0.251788, page 0.25 (tol 2.0%)
+ok   table 1e+06 Hz: dB/m: computed 34.4969, page 34.5 (tol 2.0%)
+ok   table 1e+06 Hz: 100 dB depth: computed 2.89881, page 2.9 (tol 3.0%)
+ok   table 1e+06 Hz: free-space wavelength: computed 299.792, page 300 (tol 1.5%)
+ok   table 1e+06 Hz: 100 dB depth = 11.51 delta: 11.512925 vs 11.512925
+ok   table 1e+08 Hz: sigma/(w eps): computed 8.87659, page 8.9 (tol 4.0%)
+ok   table 1e+08 Hz: delta: computed 0.0266196, page 0.027 (tol 2.0%)
+ok   table 1e+08 Hz: dB/m: computed 326.297, page 326 (tol 2.0%)
+ok   table 1e+08 Hz: 100 dB depth: computed 0.30647, page 0.31 (tol 3.0%)
+ok   table 1e+08 Hz: free-space wavelength: computed 2.99792, page 3 (tol 1.5%)
+ok   table 1e+08 Hz: 100 dB depth = 11.51 delta: 11.512925 vs 11.512925
+ok   table 1e+09 Hz: sigma/(w eps): computed 0.887659, page 0.89 (tol 4.0%)
+ok   table 1e+09 Hz: delta: computed 0.0129125, page 0.013 (tol 2.0%)
+ok   table 1e+09 Hz: dB/m: computed 672.675, page 673 (tol 2.0%)
+ok   table 1e+09 Hz: 100 dB depth: computed 0.14866, page 0.15 (tol 3.0%)
+ok   table 1e+09 Hz: free-space wavelength: computed 0.299792, page 0.3 (tol 1.5%)
+ok   table 1e+09 Hz: 100 dB depth = 11.51 delta: 11.512925 vs 11.512925
+ok   100 dB depth = 11.5 delta: computed 11.5129, page 11.5 (tol 0.2%)
+ok   100 MHz good-conductor formula: 2.5 cm: computed 0.0251646, page 0.025 (tol 1.0%)
+ok     about 5 % short of the exact 2.7 cm: computed 0.0546589, page 0.05 (tol 12.0%)
+ok   1 GHz good-conductor formula would give 0.8 cm: computed 0.00795775, page 0.008 (tol 1.0%)
+ok   lambda0 at 76 Hz = 3,900 km: computed 3.94464e+06, page 3.9e+06 (tol 1.5%)
+ok   lambda0 at 24 kHz = 12.5 km: computed 12491.4, page 12500 (tol 0.2%)
+ok   1 kHz: 300 km in air: computed 299792, page 300000 (tol 0.1%)
+ok   24 kHz: 100 dB depth is 'a few tens of metres'
+ok   76 Hz: 100 dB depth is 'hundreds of metres'
+ok   ELF delta 29 m: computed 28.8658, page 29 (tol 1.0%)
+ok   ELF 100 dB at 330 m: computed 332.33, page 330 (tol 1.0%)
+=== H. Section 6: metals
+ok   copper delta = 0.0661/sqrt(f) m (Rao 0.066): computed 0.0660855, page 0.0661 (tol 0.1%)
+ok   aluminium delta = 0.0851/sqrt(f) m: computed 0.0850719, page 0.0851 (tol 0.1%)
+ok   copper delta at 6e+01 Hz: computed 0.0085316, page 0.00853 (tol 0.3%)
+ok   aluminium delta at 6e+01 Hz: computed 0.0109827, page 0.011 (tol 0.4%)
+ok   copper |eta| at 6e+01 Hz: computed 2.85796e-06, page 2.86e-06 (tol 0.3%)
+ok   copper: good-conductor formula accurate at 6e+01 Hz: computed 0.0085316, page 0.0085316 (tol 0.0%)
+ok   copper delta at 1e+03 Hz: computed 0.00208981, page 0.00209 (tol 0.3%)
+ok   aluminium delta at 1e+03 Hz: computed 0.00269021, page 0.00269 (tol 0.4%)
+ok   copper |eta| at 1e+03 Hz: computed 1.16676e-05, page 1.17e-05 (tol 0.3%)
+ok   copper: good-conductor formula accurate at 1e+03 Hz: computed 0.00208981, page 0.00208981 (tol 0.0%)
+ok   copper delta at 1e+06 Hz: computed 6.60855e-05, page 6.61e-05 (tol 0.3%)
+ok   aluminium delta at 1e+06 Hz: computed 8.50719e-05, page 8.51e-05 (tol 0.4%)
+ok   copper |eta| at 1e+06 Hz: computed 0.000368961, page 0.000369 (tol 0.3%)
+ok   copper: good-conductor formula accurate at 1e+06 Hz: computed 6.60855e-05, page 6.60855e-05 (tol 0.0%)
+ok   copper delta at 1e+08 Hz: computed 6.60855e-06, page 6.61e-06 (tol 0.3%)
+ok   aluminium delta at 1e+08 Hz: computed 8.50719e-06, page 8.51e-06 (tol 0.4%)
+ok   copper |eta| at 1e+08 Hz: computed 0.00368961, page 0.00369 (tol 0.3%)
+ok   copper: good-conductor formula accurate at 1e+08 Hz: computed 6.60855e-06, page 6.60855e-06 (tol 0.0%)
+ok   copper delta at 1e+09 Hz: computed 2.08981e-06, page 2.09e-06 (tol 0.3%)
+ok   aluminium delta at 1e+09 Hz: computed 2.69021e-06, page 2.69e-06 (tol 0.4%)
+ok   copper |eta| at 1e+09 Hz: computed 0.0116676, page 0.0117 (tol 0.3%)
+ok   copper: good-conductor formula accurate at 1e+09 Hz: computed 2.08981e-06, page 2.08981e-06 (tol 0.0%)
+ok   copper delta at 1e+10 Hz: computed 6.60855e-07, page 6.61e-07 (tol 0.3%)
+ok   aluminium delta at 1e+10 Hz: computed 8.50719e-07, page 8.51e-07 (tol 0.4%)
+ok   copper |eta| at 1e+10 Hz: computed 0.0368961, page 0.0369 (tol 0.3%)
+ok   copper: good-conductor formula accurate at 1e+10 Hz: computed 6.60855e-07, page 6.60855e-07 (tol 0.0%)
+ok   copper |eta| = 3.69e-7 sqrt(f) ohm (Rao): computed 3.68961e-07, page 3.69e-07 (tol 0.1%)
+ok   skin effect: a/2delta = 7.6 for a = 1 mm at 1 MHz: computed 7.56596, page 7.6 (tol 0.5%)
+ok   1 mm Al at 60 Hz = 0.09 delta: computed 0.091052, page 0.09 (tol 2.0%)
+ok   1 mm Al at 1 MHz = 11.8 delta: computed 11.7548, page 11.8 (tol 0.5%)
+ok   absorption 102 dB: computed 102.101, page 102 (tol 0.3%)
+ok   Al delta at 2.45 GHz = 1.7 um: computed 1.71871e-06, page 1.7e-06 (tol 1.5%)
+ok   a wall a fraction of a mm thick is hundreds of skin depths (0.2 mm -> 116)
+ok   copper 11.7 mOhm = 3e-5 of eta0: computed 3.09706e-05, page 3e-05 (tol 5.0%)
+ok   Drude nu = 4e13 /s -> 6.4 THz (infrared): computed 6.3662e+12, page 6.4e+12 (tol 1.0%)
+ok   aluminium delta / copper delta = 1.29: computed 1.2873, page 1.29 (tol 0.3%)
+ok   copper f_c = 1.0e18 Hz (X-ray range): computed 1.04256e+18, page 1e+18 (tol 5.0%)
+=== I. Section 7: recipe and traps
+ok   field at one delta: 37 %: computed 0.367879, page 0.37 (tol 1.0%)
+ok   power at one delta: 14 %: computed 0.135335, page 0.14 (tol 4.0%)
+ok   f/omega mix-up error sqrt(2 pi): 2.506628 vs 2.5066
+ok   using w in pi f mu sigma: error sqrt(2 pi): 2.506628 vs 2.506628
+ok   -z wave at z = -10 m: power factor e^{-2 alpha 10}: 0.081003 vs 0.081003
+ok   SP17 #2(iv) medium: sigma/(w eps) = 100: 100.0 vs 100.0
+=== J. Exam callout
+ok   S20 HE3 #3 'dry earth' (1e-3 S/m, eps0): f_c = 18 MHz: computed 1.79751e+07, page 1.8e+07 (tol 0.2%)
+ok     sigma/(w eps) at 100 Hz = 1.8e5: computed 179751, page 180000 (tol 0.2%)
+ok   pi f mu0 sigma = 4 pi^2 e-7 f sigma: 4e-06 vs 4e-06
+ok   f sigma = 4e3: sqrt = 0.04 pi -> delta = 25/pi: 0.125664 vs 0.125664
+ok   S19 conflict: sigma/(w eps) < 0.1 needs w > 10 sigma/eps, i.e. f > 8.9 GHz: computed 8.87659e+09, page 8.9e+09 (tol 0.3%)
+ok   10 GHz satisfies it
+ok   FA23 #6 phasor e^{-0.2z} e^{-j0.2z}: alpha = beta (good-conductor signature)
+ok   power attenuation 2 alpha per metre (method): 0.4 vs 0.4
+=== K. concept pages
+ok   displacement current leads total current by atan(sigma/w eps), p = 0.01: 0.01 vs 0.01
+ok   loss per radian / peak stored energy = sigma/(w eps) (1/Q), p = 0.01: 0.01 vs 0.01
+ok   displacement current leads total current by atan(sigma/w eps), p = 0.5: 0.5 vs 0.5
+ok   loss per radian / peak stored energy = sigma/(w eps) (1/Q), p = 0.5: 0.5 vs 0.5
+ok   displacement current leads total current by atan(sigma/w eps), p = 1.0: 1.0 vs 1.0
+ok   loss per radian / peak stored energy = sigma/(w eps) (1/Q), p = 1.0: 1.0 vs 1.0
+ok   displacement current leads total current by atan(sigma/w eps), p = 7.0: 7.0 vs 7.0
+ok   loss per radian / peak stored energy = sigma/(w eps) (1/Q), p = 7.0: 7.0 vs 7.0
+ok   displacement current leads total current by atan(sigma/w eps), p = 300.0: 300.0 vs 300.0
+ok   loss per radian / peak stored energy = sigma/(w eps) (1/Q), p = 300.0: 300.0 vs 300.0
+ok   fresh water at 1 MHz: 0.22: computed 0.224689, page 0.22 (tol 3.0%)
+ok   copper at 1 GHz: 1.0e9: computed 1.04256e+09, page 1e+09 (tol 5.0%)
+ok   notes' Ex.1 medium at 1 GHz: 4.5e-3: computed 0.00449378, page 0.0045 (tol 0.2%)
+ok     angle(eta) = 0.13 deg: computed 0.128736, page 0.13 (tol 1.0%)
+ok   eps = eps' - j eps'': adds w eps'' to sigma: (0.005451+0.22253j) vs (0.005451+0.22253j)
+ok   datasheet tan delta = (sigma + w eps'')/(w eps'): 0.024494 vs 0.024494
+ok   seawater delta = 252/sqrt(f) m: computed 251.646, page 252 (tol 0.2%)
+ok   seawater 60 Hz: 32.5 m: computed 32.4874, page 32.5 (tol 0.2%)
+ok   seawater 1 MHz: 25 cm: computed 0.251646, page 0.25 (tol 1.0%)
+ok   86 % of the power absorbed within delta: computed 0.864665, page 0.86 (tol 1.0%)
+ok   99.75 % within 3 delta: computed 0.997521, page 0.9975 (tol 0.0%)
+ok   ELF 76 Hz: 28.9 m: computed 28.8658, page 28.9 (tol 0.2%)
+ok   VLF 24 kHz: 1.62 m: computed 1.62437, page 1.62 (tol 0.3%)
+ok   11.5 delta at 76 Hz ~ 330 m: computed 331.957, page 330 (tol 1.0%)
+ok   11.5 delta at 24 kHz ~ 19 m: computed 18.6802, page 19 (tol 2.0%)
+ok   seawater 1 GHz exact delta 1.3 cm: computed 0.0129125, page 0.013 (tol 1.0%)
+ok     formula 0.8 cm: computed 0.00795775, page 0.008 (tol 1.0%)
+ok   moist soil 100 kHz: 15.9 m: computed 15.9155, page 15.9 (tol 0.1%)
+ok   seawater good conductor below about 90 MHz: computed 8.87659e+07, page 9e+07 (tol 2.0%)
+ok   models page: seawater f_c 0.89 GHz: computed 8.87659e+08, page 8.9e+08 (tol 0.3%)
+ok   models page: fresh water f_c 225 kHz: computed 224689, page 225000 (tol 0.2%)
+ok   models page: copper 66 um at 1 MHz: computed 6.60855e-05, page 6.6e-05 (tol 0.3%)
+ok   models page: seawater 7.96 m at 1 kHz: computed 7.95775, page 7.96 (tol 0.1%)
+=== L. worked problem: a 100 kHz wave into moist ground (sigma 1e-2 S/m, eps_r 10), travelling -y
+ok   (a) no-calculator ratio 180: 180.0 vs 180.0
+ok   (a) exact ratio 179.75: computed 179.751, page 179.75 (tol 0.0%)
+ok   (a) with eps0 instead of 10 eps0: 1,800: computed 1797.51, page 1800 (tol 0.2%)
+ok   (a) with f instead of w: 2 pi times too large = 1,130: computed 1129.41, page 1130 (tol 0.2%)
+ok   (a) relaxation time 8.9 ns: computed 8.85419e-09, page 8.9e-09 (tol 1.0%)
+ok   (a) period 10 us: 1e-05 vs 1e-05
+ok   (a) crossover 18 MHz: computed 1.79751e+07, page 1.8e+07 (tol 0.2%)
+ok   (b) pi f mu sigma = 4 pi^2 e-4: 0.003948 vs 0.003948
+ok   (b) alpha = beta = 2 pi e-2: 0.062832 vs 0.062832
+ok   (b) 0.0628 /m: computed 0.0628319, page 0.0628 (tol 0.1%)
+ok   (b) delta = 50/pi: 15.915494 vs 15.915494
+ok   (b) 15.9 m: computed 15.9155, page 15.9 (tol 0.1%)
+ok   (b) lambda = 2 pi delta = 100 m: 100.0 vs 100.0
+ok   (b) v_p = w delta = 1e7 m/s: 10000000.0 vs 10000000.0
+ok   (b) = c/30: computed 29.9792, page 30 (tol 0.1%)
+ok   (b) exact delta 15.96 m: computed 15.9598, page 15.96 (tol 0.1%)
+ok   (b) exact lambda 99.7 m: computed 99.7222, page 99.7 (tol 0.1%)
+ok   (b) exact within 0.3 %
+ok   (b) lossless lambda about 950 m: computed 948.027, page 950 (tol 0.3%)
+ok   (c) |eta| = sqrt(8 pi^2): 8.885766 vs 8.885766
+ok   (c) = 2 sqrt2 pi: 8.885766 vs 8.885766
+ok   (c) 8.89 ohm: computed 8.88577, page 8.89 (tol 0.1%)
+ok   (c) sigma delta = 1/(2 pi) S: 0.159155 vs 0.159155
+ok   (c) eta = 2 pi (1+j): (6.283185+6.283185j) vs (6.283185+6.283185j)
+ok   (c) exact |eta|: computed 8.8857, page 8.89 (tol 0.1%)
+ok   (c) tau 45 deg (exact 44.84): computed 44.8406, page 45 (tol 0.4%)
+ok   (c) H amplitude 0.1125 A/m: 0.11254 vs 0.1125
+ok   (c) u x E = (-y) x x = +z: [0. 0. 1.] vs [0. 0. 1.]
+ok   (c) E x H = x x z = -y (down): [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   (c) 45 deg = 1.25 us: 1e-06 vs 1e-06
+ok   (c) Faraday: (curl E)_z = -dEx/dy = -j w mu Hz: (-0.053238-0.01813j) vs (-0.053238-0.01813j)
+ok   (c) Ampere: (curl H)_x = dHz/dy = (sigma + j w eps) Ex: (0.005687-0.002778j) vs (0.005687-0.002778j)
+ok   (c) cos(w t + beta y): crest moves to more negative y (down)
+ok   (d) cos tau/(2|eta|) = 1/(8 pi) (good-conductor values): 0.039789 vs 0.039789
+ok   (d) 39.8 mW/m^2: computed 0.0397887, page 0.0398 (tol 0.1%)
+ok   (d) exact surface <S>: computed 0.0398996, page 0.0398 (tol 0.3%)
+ok   (d) <S_y>(0) = -cos tau/(2|eta|) by quadrature (downward): -0.0399 vs -0.0399
+ok   (d) e^{2 alpha y} at y = -25 m = e^{-pi}: 0.043214 vs 0.043214
+ok   (d) 4.3 %: computed 0.0432139, page 0.043 (tol 1.0%)
+ok   (d) 1.72 mW/m^2: computed 0.00171943, page 0.00172 (tol 0.2%)
+ok   (d) 0.546 dB/m: computed 0.545751, page 0.546 (tol 0.1%)
+ok   (d) 13.6 dB at 25 m (3 s.f.): computed 13.6438, page 13.6 (tol 0.4%)
+ok   (d) 10 log10 e^pi = 13.6 dB: 13.643764 vs 13.643764
+ok   (d) 1 % depth 36.6 m (3 s.f.): computed 36.6468, page 36.6 (tol 0.2%)
+ok   (d) = 20 dB / 0.546: computed 36.6468, page 36.6 (tol 0.2%)
+ok   (d) field at 10 %: 0.1 vs 0.1
+ok   (d) Joule heat 0..25 m = 38.1 mW/m^2: computed 0.0380693, page 0.0381 (tol 0.2%)
+ok   (d) = surface flux minus flux at 25 m (good-conductor values): 0.038069 vs 0.038069
+ok   (d) exact: integral of 1/2 sigma|E|^2 = <S>(0) - <S>(25 m): 0.03816 vs 0.03816
+ok   (e) alpha <= 0.0461 Np/m (3 s.f.): computed 0.0460517, page 0.0461 (tol 0.2%)
+ok   (e) f = 53.7 kHz: computed 53719.5, page 53700 (tol 0.1%)
+ok   (e) ratio at 53.7 kHz = 335: computed 335.196, page 335 (tol 0.2%)
+ok   (e) exact ratio: computed 334.611, page 335 (tol 0.3%)
+ok   (e) exact loss at 100 m: 39.9 dB: computed 39.9403, page 39.9 (tol 0.2%)
+ok   (e) 100 kHz over 100 m: 54.6 dB (= one wavelength): computed 54.5751, page 54.6 (tol 0.1%)
+ok   (e) frequency factor (40/54.6)^2 = 0.537: computed 0.536704, page 0.537 (tol 0.2%)
+ok   (e) lambda0 at 100 kHz = 3.0 km: computed 2997.92, page 3000 (tol 0.1%)
+ok   (e) lambda0 at 53.7 kHz = 5.6 km: computed 5580.71, page 5600 (tol 0.5%)
+ok   variant: ratio 1.8: computed 1.79751, page 1.8 (tol 0.2%)
+ok   variant: theta = 60.9 deg: computed 60.9117, page 60.9 (tol 0.2%)
+ok   variant: tau = 30.5 deg: computed 30.4559, page 30.5 (tol 0.3%)
+ok   variant: |eta| = 83.1 ohm: computed 83.0651, page 83.1 (tol 0.1%)
+ok   variant: alpha = 0.482 Np/m: computed 0.481805, page 0.482 (tol 0.1%)
+ok   variant: 4.19 dB/m: computed 4.18491, page 4.19 (tol 0.2%)
+ok   variant: beta = 0.819 rad/m: computed 0.819386, page 0.819 (tol 0.1%)
+ok   variant: good-conductor alpha 0.628: computed 0.628319, page 0.628 (tol 0.1%)
+ok   variant: 30 % high: computed 0.304093, page 0.3 (tol 2.0%)
+ok   variant: imperfect-dielectric alpha 0.596: computed 0.595663, page 0.596 (tol 0.1%)
+ok   variant: 24 % high: computed 0.236315, page 0.24 (tol 2.0%)
+ok   variant: alpha/beta = tan 30.5 deg = 0.59: computed 0.588008, page 0.59 (tol 0.5%)
+ok   seawater above 10 f_c: loss per wavelength alpha*lambda falls with f: [0.2783 0.0929 0.0279]
+ok     while the loss per metre stays within 1 % (plateau)
+ok   mu_r = 4.0: delta scales as 1/sqrt(mu_r): 0.5 vs 0.5
+ok   mu_r = 100.0: delta scales as 1/sqrt(mu_r): 0.1 vs 0.1
+=== M. figure labels and captions (figs_l23.py)
+ok   fig 1/2: 'below about 90 MHz': computed 8.87659e+07, page 9e+07 (tol 2.0%)
+ok   fig 2: 'above about 9 GHz': computed 8.87659e+09, page 9e+09 (tol 2.0%)
+ok   fig 2: sqrt(mu/eps) = eta0/9 = 42 ohm: computed 41.8589, page 42 (tol 1.0%)
+ok   fig 2: alpha at 1 GHz about 600 times alpha at 1 kHz: computed 616.284, page 600 (tol 3.0%)
+ok   fig 2: 1 kHz alpha = pi/25 = 0.126 (3 s.f.): computed 0.125664, page 0.126 (tol 0.4%)
+ok   fig 2: 1 GHz alpha = 77 Np/m: computed 77.4445, page 77 (tol 0.6%)
+ok   fig 3: e^{-2 pi} = -54.6 dB: computed 54.5751, page 54.6 (tol 0.1%)
+ok   fig 3: H peaks pi/4 (T/8) after E: 0.785398 vs 0.785398
+ok   fig 3: power reaches 1/e at delta/2: 0.5 vs 0.5
+ok   fig 4 label 8e+01 Hz: delta: computed 28.8658, page 29 (tol 2.0%)
+ok   fig 4 label 8e+01 Hz: 100 dB depth: computed 332.33, page 330 (tol 3.0%)
+ok   fig 4 label 1e+03 Hz: delta: computed 7.95775, page 7.96 (tol 2.0%)
+ok   fig 4 label 1e+03 Hz: 100 dB depth: computed 91.617, page 92 (tol 3.0%)
+ok   fig 4 label 2e+04 Hz: delta: computed 1.62439, page 1.6 (tol 2.0%)
+ok   fig 4 label 2e+04 Hz: 100 dB depth: computed 18.7015, page 19 (tol 3.0%)
+ok   fig 4 label 1e+09 Hz: delta: computed 0.0129125, page 0.013 (tol 2.0%)
+ok   fig 4 label 1e+09 Hz: 100 dB depth: computed 0.14866, page 0.15 (tol 3.0%)
+ok   fig 4: Cu 8.5 mm at 60 Hz: computed 0.0085316, page 0.0085 (tol 0.5%)
+ok   fig 4: Al 11 mm at 60 Hz: computed 0.0109827, page 0.011 (tol 0.5%)
+ok   fig 4: Cu 66 um at 1 MHz: computed 6.60855e-05, page 6.6e-05 (tol 0.3%)
+ok   fig 4: Cu 2.1 um at 1 GHz: computed 2.08981e-06, page 2.1e-06 (tol 1.0%)
+ok   fig 4: seawater delta levels off at 1.2 cm: computed 0.011945, page 0.012 (tol 1.0%)
+ok   fig 5: 100 kHz 0.55 dB/m (the problem's 0.546, 2 s.f.): computed 0.545751, page 0.55 (tol 1.0%)
+ok   fig 5: exact 100 kHz slope 0.544 dB/m, within 1.2 % of the label: computed 0.544235, page 0.55 (tol 1.2%)
+ok   fig 5: 53.7 kHz 0.40 dB/m (exact): computed 0.399397, page 0.4 (tol 0.2%)
+ok   fig 5: 10 MHz 4.2 dB/m (exact, 2 s.f.): computed 4.18491, page 4.2 (tol 0.6%)
+ok   fig 5 caption: delta 15.9 m (exact 15.96): computed 15.9598, page 15.9 (tol 0.4%)
+=== N. figure arrow directions (screen frame: X right, Y up, Z out of the screen)
+ok   physics -> screen map is a proper rotation (det +1): 1.0 vs 1.0
+ok   E along physics +x -> screen up (Y): [0. 1. 0.] vs [0. 1. 0.]
+ok   H along physics +y -> out of the screen (odot): [0. 0. 1.] vs [0. 0. 1.]
+ok   travel physics +z -> screen right (X): [1. 0. 0.] vs [1. 0. 0.]
+ok   cross product commutes with the map: [1. 0. 0.] vs [1. 0. 0.]
+ok   screen: E (up) x H (out, odot) = right = travel into the conductor: [1. 0. 0.] vs [1. 0. 0.]
+ok   physics: x x y = +z (E x H along the travel): [0. 0. 1.] vs [0. 0. 1.]
+
+ALL 452 CHECKS PASSED

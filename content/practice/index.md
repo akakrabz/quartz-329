@@ -1,10 +1,10 @@
 ---
 title: "Practice problems"
-description: "212 practice problems for Lectures 2–19 — 89 easy, 53 medium, 70 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
+description: "260 practice problems for Lectures 2–23 — 109 easy, 65 medium, 86 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
 tags: [practice]
 ---
 
-Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **212 problems for Lectures 2–19**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 33 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
+Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **260 problems for Lectures 2–23**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 49 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
 
 > [!recipe] How to use the bank
 > 1. Pick a lecture you have read and do its **easy** problems first — a few minutes each, one idea per problem.
@@ -29,7 +29,7 @@ Every problem's title bar carries one **difficulty tag** and one to three **topi
 | <span class="diff medium">medium</span> | a standard exam sub-problem: one modelling decision (which surface, path, coordinates or region), a real integral, or a three- or four-step chain | 8–15 min |
 | <span class="diff hard">hard</span> | exam length, in several parts: superposition of several pieces, several regions with matching conditions, a non-trivial integral, a sign-heavy direction analysis, or two lectures combined | 20–40 min |
 
-Browse: [[practice/easy|all 89 easy]] · [[practice/medium|all 53 medium]] · [[practice/hard|all 70 hard]] · [[practice/topics|by topic]] — 31 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
+Browse: [[practice/easy|all 109 easy]] · [[practice/medium|all 65 medium]] · [[practice/hard|all 86 hard]] · [[practice/topics|by topic]] — 35 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
 
 ## By lecture
 
@@ -53,7 +53,11 @@ Browse: [[practice/easy|all 89 easy]] · [[practice/medium|all 53 medium]] · [[
 | 17 | [[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter\|Magnetization and Maxwell's equations in matter]] | [[practice/17-magnetization-and-maxwell-in-matter\|12 problems]] | [[practice/easy#lecture-17--magnetization-and-maxwells-equations-in-matter\|5]] | [[practice/medium#lecture-17--magnetization-and-maxwells-equations-in-matter\|3]] | [[practice/hard#lecture-17--magnetization-and-maxwells-equations-in-matter\|4]] |
 | 18 | [[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves\|The wave equation and plane TEM waves]] | [[practice/18-wave-equation-and-plane-waves\|12 problems]] | [[practice/easy#lecture-18--the-wave-equation-and-plane-tem-waves\|5]] | [[practice/medium#lecture-18--the-wave-equation-and-plane-tem-waves\|3]] | [[practice/hard#lecture-18--the-wave-equation-and-plane-tem-waves\|4]] |
 | 19 | [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets\|d'Alembert solutions and radiation from current sheets]] | [[practice/19-radiation-from-current-sheets\|12 problems]] | [[practice/easy#lecture-19--dalembert-solutions-and-radiation-from-current-sheets\|5]] | [[practice/medium#lecture-19--dalembert-solutions-and-radiation-from-current-sheets\|3]] | [[practice/hard#lecture-19--dalembert-solutions-and-radiation-from-current-sheets\|4]] |
-| | **total** | **212** | **89** | **53** | **70** |
+| 20 | [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves\|Poynting's theorem and monochromatic waves]] | [[practice/20-poynting-theorem-and-power\|12 problems]] | [[practice/easy#lecture-20--poyntings-theorem-and-monochromatic-waves\|5]] | [[practice/medium#lecture-20--poyntings-theorem-and-monochromatic-waves\|3]] | [[practice/hard#lecture-20--poyntings-theorem-and-monochromatic-waves\|4]] |
+| 21 | [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation\|Monochromatic waves and phasor notation]] | [[practice/21-phasors-and-monochromatic-waves\|12 problems]] | [[practice/easy#lecture-21--monochromatic-waves-and-phasor-notation\|5]] | [[practice/medium#lecture-21--monochromatic-waves-and-phasor-notation\|3]] | [[practice/hard#lecture-21--monochromatic-waves-and-phasor-notation\|4]] |
+| 22 | [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves\|Phasor Maxwell equations and damped waves]] | [[practice/22-damped-waves-in-conducting-media\|12 problems]] | [[practice/easy#lecture-22--phasor-maxwell-equations-and-damped-waves\|5]] | [[practice/medium#lecture-22--phasor-maxwell-equations-and-damped-waves\|3]] | [[practice/hard#lecture-22--phasor-maxwell-equations-and-damped-waves\|4]] |
+| 23 | [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors\|Imperfect dielectrics and good conductors]] | [[practice/23-imperfect-dielectrics-and-good-conductors\|12 problems]] | [[practice/easy#lecture-23--imperfect-dielectrics-and-good-conductors\|5]] | [[practice/medium#lecture-23--imperfect-dielectrics-and-good-conductors\|3]] | [[practice/hard#lecture-23--imperfect-dielectrics-and-good-conductors\|4]] |
+| | **total** | **260** | **109** | **65** | **86** |
 
 Exam 1 covered Lectures 1–10. Lecture 1 has no practice page: its content (fields defined by force, the Maxwell roadmap) is exercised from Lecture 2 on.
 
@@ -67,7 +71,7 @@ These follow a past ECE 329 exam problem (Spring 2018 midterms, Summer 2017–20
 | [[practice/03-gauss-law-at-work#39-two-slabs-and-a-sheet\|3.9 Two slabs and a sheet]] | <span class="diff hard">hard</span> | Summer 2019 HE1 #1a |
 | [[practice/04-divergence-and-curl#48-circulation-from-a-given-curl\|4.8 Circulation from a given curl]] | <span class="diff medium">medium</span> | SP18 Exam 1 #2 |
 | [[practice/04-divergence-and-curl#49-electrostatic-or-not\|4.9 Electrostatic or not]] | <span class="diff hard">hard</span> | Summer 2018 HE1 #2a–b |
-| [[practice/05-electrostatic-potential#510-charged-slab-sheet-and-staircase\|5.10 Charged slab, sheet and staircase]] | <span class="diff hard">hard</span> | FA26 Exam 1 #1(b),(d) |
+| [[practice/05-electrostatic-potential#510-charged-slab-sheet-and-staircase\|5.10 Charged slab, sheet and staircase]] | <span class="diff hard">hard</span> | FA26 Exam 1 #1(b) |
 | [[practice/06-circulation-and-boundary-conditions#611-charged-shell-in-a-dielectric\|6.11 Charged shell in a dielectric]] | <span class="diff hard">hard</span> | FA26 Exam 1 #3 |
 | [[practice/07-poisson-and-laplace#79-junction-with-an-intrinsic-layer\|7.9 Junction with an intrinsic layer]] | <span class="diff hard">hard</span> | Summer 2019 HE1 #1a |
 | [[practice/08-conductors-dielectrics-and-polarization#810-relaxation-of-a-charge-wave\|8.10 Relaxation of a charge wave]] | <span class="diff hard">hard</span> | Summer 2017 HE2 #2a |
@@ -96,6 +100,22 @@ These follow a past ECE 329 exam problem (Spring 2018 midterms, Summer 2017–20
 | [[practice/18-wave-equation-and-plane-waves#183-phase-rate-and-snapshot-period\|18.3 Phase rate and snapshot period]] | <span class="diff easy">easy</span> | SP18 Exam 2 #1(vii) |
 | [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium\|18.9 Triangle pulse in a magnetic medium]] | <span class="diff hard">hard</span> | SP18 Exam 2 #4 |
 | [[practice/19-radiation-from-current-sheets#199-a-sheet-launches-a-step-and-a-ramp\|19.9 A sheet launches a step and a ramp]] | <span class="diff hard">hard</span> | SP18 Exam 2 #5 |
+| [[practice/20-poynting-theorem-and-power#202-joule-heating-at-a-point\|20.2 Joule heating at a point]] | <span class="diff easy">easy</span> | Summer 2019 HE3 #1b |
+| [[practice/20-poynting-theorem-and-power#204-standing-waves-true-or-false\|20.4 Standing waves, true or false]] | <span class="diff easy">easy</span> | SP17 Exam 3 #1c |
+| [[practice/20-poynting-theorem-and-power#206-split-then-add\|20.6 Split, then add]] | <span class="diff medium">medium</span> | Summer 2019 HE3 #1a(iv)–(v) |
+| [[practice/20-poynting-theorem-and-power#2010-a-sheet-in-a-magnetic-medium\|20.10 A sheet in a magnetic medium]] | <span class="diff hard">hard</span> | Summer 2020 HE3 #2c–d |
+| [[practice/21-phasors-and-monochromatic-waves#214-which-electric-field\|21.4 Which electric field]] | <span class="diff easy">easy</span> | SP17 Exam 3 #2(iii) |
+| [[practice/21-phasors-and-monochromatic-waves#219-a-phasor-from-two-snapshots\|21.9 A phasor from two snapshots]] | <span class="diff hard">hard</span> | Summer 2019 HE3 #3a |
+| [[practice/21-phasors-and-monochromatic-waves#2110-two-sheets-two-current-directions\|21.10 Two sheets, two current directions]] | <span class="diff hard">hard</span> | Summer 2020 final #4a |
+| [[practice/22-damped-waves-in-conducting-media#224-possible-or-not-possible\|22.4 Possible or not possible]] | <span class="diff easy">easy</span> | Summer 2020 HE3 #3a |
+| [[practice/22-damped-waves-in-conducting-media#228-power-soaking-into-lossy-ground\|22.8 Power soaking into lossy ground]] | <span class="diff medium">medium</span> | FA23 Exam 3 #6(a) |
+| [[practice/22-damped-waves-in-conducting-media#229-decoding-a-wave-toward-minus-y\|22.9 Decoding a wave toward minus y]] | <span class="diff hard">hard</span> | SP17 Exam 3 #3 |
+| [[practice/22-damped-waves-in-conducting-media#2210-two-components-in-a-magnetic-medium\|22.10 Two components in a magnetic medium]] | <span class="diff hard">hard</span> | SP19 Exam 3 #1 |
+| [[practice/23-imperfect-dielectrics-and-good-conductors#232-inside-a-good-conductor\|23.2 Inside a good conductor]] | <span class="diff easy">easy</span> | SP17 Exam 3 #2(i) |
+| [[practice/23-imperfect-dielectrics-and-good-conductors#235-power-against-depth-in-seawater\|23.5 Power against depth in seawater]] | <span class="diff easy">easy</span> | FA23 Exam 3 #6 |
+| [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground\|23.6 Wavelength and depth measured underground]] | <span class="diff medium">medium</span> | Summer 2017 HE3 #2b |
+| [[practice/23-imperfect-dielectrics-and-good-conductors#239-down-into-a-deep-lake\|23.9 Down into a deep lake]] | <span class="diff hard">hard</span> | Summer 2018 HE3 #3b |
+| [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf\|23.11 Dry earth from ELF to VHF]] | <span class="diff hard">hard</span> | Summer 2020 HE3 #3 |
 
 ## How the answers were checked
 

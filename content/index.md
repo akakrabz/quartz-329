@@ -9,7 +9,7 @@ Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written t
 > - **Lectures** (the spine, in course order) tell the story: motivation → definition → derivation → worked example → what goes wrong → what the exam does with it.
 > - **Concepts** are the glossary: one short page per idea (Gauss's law, curl, flux, …) with the key equation, when it applies, the traps, and links to every lecture and problem that uses it.
 > - **Problems** and **demos** are where the ideas get exercised — exam-style problems worked in full (with the numbers changed), and interactive pages you can drag things around in.
-> - **Practice** is where you do the exercising yourself: 212 problems for Lectures 2–19, tagged easy, medium or hard, each with a folded hint and a worked solution.
+> - **Practice** is where you do the exercising yourself: 260 problems for Lectures 2–23, tagged easy, medium or hard, each with a folded hint and a worked solution.
 >
 > Every page links to its neighbours; hover a link for a preview, and use the **graph view** at the top right of any page to see what connects to what. Fields and Waves is a web of ideas, not a list — the site is built the same way.
 
@@ -44,13 +44,17 @@ The unit page carries the **[[2-magnetostatics/index#the-dictionary-electrostati
 17. [[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter|Magnetization current and Maxwell's equations in matter]]
 18. [[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves|The wave equation and plane TEM waves]]
 19. [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|d'Alembert solutions and radiation from current sheets]]
+20. [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves|Poynting's theorem and monochromatic waves]]
+21. [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation|Monochromatic waves and phasor notation]]
+22. [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Maxwell's equations in phasor form and damped waves in conducting media]]
+23. [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors|Imperfect dielectrics and good conductors]]
 
-Then: plane TEM waves · Poynting · phasors · lossy media · polarization · reflection and standing waves — *planned*
+Lectures 20–23 were written from the course notes alone (the slides were not yet available). Then: signal transmission and polarization · reflection and standing waves — *planned*
 
 ### [[4-transmission-lines/index|Unit 4 · Transmission lines]] — Lectures 27–38
 Guided TEM waves · bounce diagrams · sinusoidal steady state and input impedance · quarter-wave transformers · the Smith chart · impedance matching — *planned*
 
-### [[practice/index|Practice problems]] — Lectures 2–19
+### [[practice/index|Practice problems]] — Lectures 2–23
 Twelve problems per lecture (eight for Lecture 11), from two-minute checks to exam length, each with a folded hint and a worked solution: by difficulty — [[practice/easy|easy]] · [[practice/medium|medium]] · [[practice/hard|hard]] — or [[practice/topics|by topic]] across lectures. Every lecture page links to its own set.
 
 ### Cross-cutting
@@ -95,4 +99,4 @@ The notes use a few recurring boxes, so you can skim for what you need:
 
 The [[practice/index|practice pages]] add their own five: the problem statement sits in an **easy**, **medium** or **hard** box (the difficulty tag, followed by topic tags), and the **hint** and **solution** below it are folded until you click them.
 
-*Status: Lectures 1–19 are written (Toolkit, all of Unit 1, all of Unit 2, Lectures 16–19 of Unit 3), with 44 concept pages, thirteen worked problems and 212 practice problems; Lectures 20–38 are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*
+*Status: Lectures 1–23 are written (Toolkit, all of Unit 1, all of Unit 2, Lectures 16–23 of Unit 3 — 20–23 from the course notes alone, as the slides were not yet available), with 50 concept pages, seventeen worked problems and 260 practice problems; Lectures 24–38 are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*

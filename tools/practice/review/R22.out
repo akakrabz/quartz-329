@@ -1,0 +1,336 @@
+== constants
+  PASS  c = 1/sqrt(mu0 eps0) with eps0 = 1e-9/36pi: page 300000000.0   computed 3e+08
+  PASS  eta0 = sqrt(mu0/eps0): page 376.99111843077515   computed 376.9911
+== intro: principal roots, 0 <= tau < 45 deg, H = u x E / eta, gamma/eta = sigma + j w eps
+  PASS  tau in [0,45) deg over sigma/w eps = 1e-6..1e8 (min 2.86e-05, max 45.000000)
+  PASS  alpha/beta = tan(tau) < 1 for every real sigma 
+== 22.1 phasor Maxwell, true or false
+  PASS  (b) d/dt -> +j w, so div J~ = -j w rho~ (statement with +j w is FALSE) 
+  PASS  (c) div(curl H~) = 0 numerically -> Gauss follows from Ampere + continuity (|div curl| = 1.1e-07)
+  PASS  (d) relaxation time eps/sigma [ns]: page 0.88   computed 0.8841941
+  PASS  (d) period / relaxation time > 1000 (1131)
+  PASS  (d) sigma + j w eps != 0 so rho~ = 0 
+  PASS  (e) sigma/(w eps0): page 1800   computed 1800
+  PASS  (e) Re eps_c / eps0: page 10   computed 10
+  PASS  (e) Im eps_c / eps0: page -1800   computed -1800
+  PASS  (e) sigma / w eps (conduction/displacement): page 180   computed 180
+  PASS  (f) phase of sigma E~ relative to E~ [deg]: page 0   computed 0
+  PASS  (f) phase of j w eps E~ relative to E~ [deg]: page 90   computed 90
+== 22.2 which phasors are allowed (gamma^2 = -8 + j6)
+  PASS  gamma^2 of the L22 sec.5 medium, real part: page -8   computed -8
+  PASS  gamma^2 of the L22 sec.5 medium, imag part: page 6   computed 6
+  PASS  gamma of that medium = 1 + j3 (principal root) [(1+3j)]
+  PASS  (a) Helmholtz True, div E = 0 True -> allowed True 
+  PASS  (b) Helmholtz True, div E = 0 True -> allowed True 
+  PASS  (c) Helmholtz False, div E = 0 True -> allowed False 
+  PASS  (d) Helmholtz False, div E = 0 True -> allowed False 
+  PASS  (e) Helmholtz True, div E = 0 False -> allowed False 
+  PASS  (f) Helmholtz True, div E = 0 True -> allowed True 
+  PASS  (c) (3+j)^2 = 8 + j6 and beta < alpha 
+  PASS  (d) (1-j3)^2 = -8 - j6 
+== 22.3 reading a damped wave
+  PASS  (a) crest moves toward +z (crest 0.1250 -> 0.1350 m in 0.1 ns)
+  PASS  (b) f [MHz]: page 100   computed 100
+  PASS  (b) |gamma| [1/m]: page 6.30   computed 6.303048
+  PASS  (b) angle gamma [deg]: page 85.45   computed 85.45013
+  PASS  (b) beta [rad/m]: page 6.28   computed 6.283185
+  PASS  (c) lambda [m]: page 1   computed 1
+  PASS  (c) v_p [m/s]: page 100000000.0   computed 1e+08
+  PASS  (c) delta [m]: page 2   computed 2
+  PASS  (d) amplitude at z = 4 m [V/m]: page 2.71   computed 2.706706
+  PASS  (d) amplitude ratio e^-2: page 0.135   computed 0.1353353
+  PASS  (d) power ratio e^-4: page 0.0183   computed 0.01831564
+  PASS  (d) e^2 (amplitude 'smaller by a factor'): page 7.39   computed 7.389056
+  PASS  (d) e^4 (power 'smaller by a factor'): page 54.6   computed 54.59815
+  info: implied medium sigma = 7.958 mS/m, eps = 8.943 eps0 (physical)
+== 22.4 possible or not possible
+  PASS  (a) alpha/beta = 4 > 1: impossible (max alpha/beta over all sigma < 1) 
+  PASS  (b) w eps [S/m]: page 0.222   computed 0.2222222
+  PASS  (b) sigma / w eps: page 0.045   computed 0.045
+  PASS  (b) exact alpha [Np/m]: page 0.942   computed 0.9422394
+  PASS  (b) exact beta [rad/m]: page 41.9   computed 41.8985
+  PASS  (b) alpha/beta: page 0.022   computed 0.02248862
+  PASS  (c) 2 ns at 50 MHz [deg]: page 36   computed 36
+  PASS  (c) 45 deg at 50 MHz [ns]: page 2.5   computed 2.5
+  PASS  (c) sigma/w eps needed for tau = -36 deg (negative): page -3.08   computed -3.077684
+  PASS  (d) alpha/beta for a 1/e fall over lambda/10: page 1.6   computed 1.591549
+  PASS  (d) e^-2pi [%]: page 0.19   computed 0.1867443
+  PASS  (e) f_p [MHz] (SI eps0): page 2.84   computed 2.839302
+  PASS  (e) gamma real below f_p (SI eps0) 
+  PASS  (e) delta at 2 MHz [m] (SI eps0): page 23.7   computed 23.67501
+  PASS  (e) Im eta at 2 MHz [ohm] (SI eps0): page 374   computed 373.8608
+  PASS  (e) <S> = 1/2 Re(E x H*) [W/m^2] (SI eps0): page 0   computed 0
+  PASS  (e) f_p [MHz] (course eps0): page 2.84   computed 2.841268
+  PASS  (e) gamma real below f_p (course eps0) 
+  PASS  (e) delta at 2 MHz [m] (course eps0): page 23.7   computed 23.6589
+  PASS  (e) Im eta at 2 MHz [ohm] (course eps0): page 374   computed 373.6064
+  PASS  (e) <S> = 1/2 Re(E x H*) [W/m^2] (course eps0): page 0   computed 0
+== 22.5 the magnetic field that leads (find the error)
+  PASS  a passive gamma exists for this eta (alpha > 0, beta > 0) (gamma = 0.2865+0.7872j)
+  PASS  Faraday H~ = u x E~ / eta (np.cross, u = +x) [[ 0.     +0.j       -0.28091+0.219804j  0.     +0.j      ]]
+  PASS  page H~ = -y 0.4 e^{-j20} e^{-gamma x} [[ 0.     +0.j       -0.28091+0.219804j  0.     +0.j      ]]
+  PASS  student's H~ (+20 deg) violates Faraday 
+  PASS  H (along -y) lags E_z by [deg]: page 20   computed 19.99975
+  PASS  sigma/w eps for tau = -20 deg: page -0.84   computed -0.8390996
+  PASS  <S> at x = 0 [W/m^2]: page 11.3   computed 11.27631
+  PASS  <S> direction +x [[1.+0.j 0.+0.j 0.+0.j]]
+  PASS  student's eta* -> same |<S>| (cos even): page 11.3   computed 11.27631
+== 22.6 from the medium to the wave
+  PASS  sigma + j w eps = (12 + j5)/120pi [(0.031831+0.013263j)]
+  PASS  Re [mS/m]: page 31.8   computed 31.83099
+  PASS  Im = w eps [mS/m]: page 13.3   computed 13.26291
+  PASS  w eps = 1/(24 pi): page 0.013262911924324612   computed 0.01326291
+  PASS  sigma/w eps: page 2.4   computed 2.4
+  PASS  eps_c = (5 - j12) eps0 [(5-12j)]
+  PASS  w mu0 = 120 pi: page 376.99111843077515   computed 376.9911
+  PASS  gamma^2 = -5 + j12 [(-5+12j)]
+  PASS  principal root gamma = 2 + j3 [(2+3j)]
+  PASS  other root -2 - j3 also squares to gamma^2 [(-5+12j)]
+  PASS  |gamma| [1/m]: page 3.61   computed 3.605551
+  PASS  angle gamma [deg]: page 56.31   computed 56.30993
+  PASS  principal root eta = (120pi/13)(3 + j2) [(86.99795+57.998634j)]
+  PASS  eta^2 = (120pi/13)^2 (5 + j12) [(4204.801875+10091.5245j)]
+  PASS  Re eta [ohm]: page 87.0   computed 86.99795
+  PASS  Im eta [ohm]: page 58.0   computed 57.99863
+  PASS  |eta| [ohm]: page 104.6   computed 104.5585
+  PASS  tau [deg]: page 33.69   computed 33.69007
+  PASS  gamma eta = j 120 pi [376.991118j]
+  PASS  other eta root angle [deg]: page -146.31   computed -146.3099
+  PASS  other eta root gives gamma eta = -j w mu0 [(-0-376.991118j)]
+  PASS  delta [m]: page 0.5   computed 0.5
+  PASS  lambda [m]: page 2.09   computed 2.094395
+  PASS  v_p [m/s]: page 100000000.0   computed 1e+08
+  PASS  beta without sigma [rad/m]: page 2.24   computed 2.236068
+  PASS  eta without sigma [ohm]: page 168.6   computed 168.5956
+  PASS  beta raised by [%]: page 34   computed 34.16408
+  PASS  |eta| lowered by [%]: page 38   computed 37.98263
+  PASS  general formula alpha: page 2   computed 2
+  PASS  general formula beta: page 3   computed 3
+== 22.7 microwave heating of raw meat
+  PASS  w [rad/s]: page 1.539e10   computed 1.53938e+10
+  PASS  sigma [S/m]: page 2.31   computed 2.313889
+  PASS  sigma / w eps: page 0.327   computed 0.3269231
+  PASS  w/c [rad/m]: page 51.31   computed 51.31268
+  PASS  |52 - j17|: page 54.71   computed 54.70832
+  PASS  angle (52 - j17) [deg]: page -18.10   computed -18.10376
+  PASS  sqrt(52-j17) real: page 7.304   computed 7.304393
+  PASS  sqrt(52-j17) imag: page -1.164   computed -1.163683
+  PASS  angle sqrt [deg]: page -9.05   computed -9.051882
+  PASS  j w sqrt(mu0 eps_c) = sqrt(j w mu (sigma + j w eps)) (principal) [(59.711707+374.807986j)]
+  PASS  alpha [Np/m]: page 59.7   computed 59.71171
+  PASS  beta [rad/m]: page 374.8   computed 374.808
+  PASS  delta [cm]: page 1.67   computed 1.674713
+  PASS  lambda in meat [cm]: page 1.68   computed 1.676374
+  PASS  lambda in air [cm]: page 12.24   computed 12.2449
+  PASS  v_p [m/s]: page 4.11e7   computed 4.107117e+07
+  PASS  sqrt(mu0/eps_c) = principal eta [(50.334053+8.018858j)]
+  PASS  |eta| [ohm]: page 50.97   computed 50.9688
+  PASS  |sqrt(52 - j17)|: page 7.397   computed 7.396507
+  PASS  tau [deg]: page 9.05   computed 9.051882
+  PASS  tau = atan(alpha/beta) [deg]: page 9.05   computed 9.051882
+  PASS  |H| [A/m]: page 19.6   computed 19.61984
+  PASS  cos tau: page 0.9875   computed 0.9875463
+  PASS  <S>(0) [kW/m^2]: page 9.69   computed 9.687752
+  PASS  <S>(0) by time averaging [kW/m^2]: page 9.69   computed 9.687752
+  PASS  2 alpha [1/m]: page 119.4   computed 119.4234
+  PASS  <S>(1 cm) [kW/m^2]: page 2.93   computed 2.934768
+  PASS  <S>(2 cm) [kW/m^2]: page 0.889   computed 0.8890464
+  PASS  half-power depth [mm]: page 5.8   computed 5.804115
+  PASS  Joule heating integral 1/2 sigma |E|^2 over all depth = <S>(0) [kW/m^2]: page 9.69   computed 9.687752
+  PASS  lambda/delta = 2 pi tan tau: page 1.001   computed 1.000992
+  PASS  imperfect-dielectric shortcut alpha [Np/m]: page 60.5   computed 60.4842
+  PASS  shortcut error [%]: page 1.3   computed 1.293707
+  PASS  power gone at z = delta [%] (page says 86): page 86   computed 86.46647
+  PASS  power absorbed in first cm [%]: page 70   computed 69.70641
+== 22.8 power soaking into lossy ground (z up)
+  PASS  (a) crest moves toward -z (down) (0.000 -> -0.726 m)
+  PASS  (a) amplitude e^{0.05 z} shrinks going down 
+  PASS  (a) |gamma|: page 0.1   computed 0.1
+  PASS  (a) angle gamma [deg]: page 60   computed 60
+  PASS  (a) beta [rad/m]: page 0.0866   computed 0.08660254
+  PASS  (a) delta [m]: page 20   computed 20
+  PASS  (a) lambda [m]: page 72.6   computed 72.55197
+  PASS  (b) w mu0 = 0.8 pi^2: page 7.895683520871486   computed 7.895684
+  PASS  (b) |eta| = 8 pi^2 [ohm]: page 78.96   computed 78.95684
+  PASS  (b) tau [deg]: page 30   computed 30
+  PASS  (b) implied medium returns the same principal gamma [(0.05+0.086603j)]
+  PASS  (b) implied medium returns the same principal eta [(68.378625+39.478418j)]
+  PASS  check: sigma [mS/m]: page 1.10   computed 1.096834
+  PASS  check: eps/eps0: page 11.4   computed 11.39863
+  PASS  check: sigma/w eps = sqrt3: page 1.7320508075688772   computed 1.732051
+  PASS  (b) H~ by Faraday curl = u x E / eta [[0.15447-0.153856j 0.     +0.j       0.     +0.j      ]]
+  PASS  (b) page H~ = x 0.253 e^{-j30} e^{gamma z} (to 3 s.f.) [[0.15447-0.153856j 0.     +0.j       0.     +0.j      ]]
+  PASS  (b) H amplitude 20/8pi^2 [A/m]: page 0.253   computed 0.253303
+  PASS  (c) <S> direction -z [[ 0.+0.j  0.+0.j -1.+0.j]]
+  PASS  (c) |<S>(0)| [W/m^2]: page 2.194   computed 2.193668
+  PASS  (c) 25 sqrt3 / 2 pi^2: page 2.194   computed 2.193668
+  PASS  (c) time-averaged |<S>(0)|: page 2.19   computed 2.193668
+  PASS  (c) e^{0.1 z} law: <S>(-7)/<S>(0): page 0.4965853037914095   computed 0.4965853
+  PASS  (d) power 1% depth [m]: page 46.1   computed 46.0517
+  PASS  (d) field 1% depth [m]: page 92.1   computed 92.1034
+  PASS  (e) absorbed in top 20 m [W/m^2]: page 1.90   computed 1.896787
+  PASS  (e) Joule integral 1/2 sigma |E|^2 over top 20 m [W/m^2]: page 1.90   computed 1.896787
+  PASS  (e) fraction [%]: page 86.5   computed 86.46647
+  PASS  watch out: without cos tau [W/m^2]: page 2.53   computed 2.53303
+  PASS  watch out: overstatement [%]: page 15   computed 15.47005
+== 22.9 decoding a wave toward -y
+  PASS  (a) crest moves toward -y (-0.0748 -> -0.9810)
+  PASS  (a) phasor Re{E~ e^{jwt}} reproduces the given E(y,t) [[-1.962739+0.j  2.321353+0.j  4.853791+0.j]]
+  PASS  (a) |gamma| = 5 sqrt2: page 7.07   computed 7.071068
+  PASS  (a) angle gamma [deg]: page 81.87   computed 81.8699
+  PASS  (b) lambda [m]: page 0.898   computed 0.8975979
+  PASS  (b) f [MHz]: page 95.5   computed 95.49297
+  PASS  (b) v_p [m/s]: page 8.57e7   computed 8.571429e+07
+  PASS  (b) delta [m]: page 1   computed 1
+  PASS  (c) w mu0 = 240 pi: page 753.9822368615503   computed 753.9822
+  PASS  (c) eta = 4.8 pi (7 + j) [(105.557513+15.079645j)]
+  PASS  (c) Re eta: page 105.6   computed 105.5575
+  PASS  (c) Im eta: page 15.1   computed 15.07964
+  PASS  (c) |eta| [ohm]: page 106.6   computed 106.6292
+  PASS  (c) 24 sqrt2 pi: page 106.6   computed 106.6292
+  PASS  (c) tau [deg]: page 8.13   computed 8.130102
+  PASS  (c) principal sqrt for the implied medium returns gamma [(1+7j)]
+  PASS  (c) principal sqrt for the implied medium returns eta [(105.557513+15.079645j)]
+  PASS  (d) Faraday curl = u x E / eta, u = -y [[0.025231+0.046461j 0.      +0.j       0.      +0.j      ]]
+  PASS  (d) page H~ = -x 75.0 e^{j21.87} e^{(1+j7)y} mA/m (3-4 s.f.) [[0.025231+0.046461j 0.      +0.j       0.      +0.j      ]]
+  PASS  (d) |H| [mA/m]: page 75.0   computed 75.02636
+  PASS  (d) phase of the -x component [deg]: page 21.87   computed 21.8699
+  PASS  (d) H lags E by [ns] (time sampling): page 0.236   computed 0.2364828
+  PASS  (d) tau/omega [ns]: page 0.236   computed 0.2364951
+  PASS  (d) tau [rad]: page 0.1419   computed 0.1418971
+  PASS  (d) E x H along -y [[ 0.+0.j -1.+0.j  0.+0.j]]
+  PASS  (e) gamma^2 = -48 + j14 [(-48+14j)]
+  PASS  (e) sigma + j w eps = (14 + j48)/240pi [(0.018568+0.063662j)]
+  PASS  (e) sigma [mS/m]: page 18.6   computed 18.56808
+  PASS  (e) eps [F/m]: page 1.06e-10   computed 1.061033e-10
+  PASS  (e) eps/eps0: page 12   computed 12
+  PASS  (e) sigma/w eps: page 0.2916666666666667   computed 0.2916667
+  PASS  (e) shortcut alpha [Np/m]: page 1.010   computed 1.010363
+  PASS  (e) shortcut beta [rad/m]: page 6.93   computed 6.928203
+  info: shortcut errors alpha +1.036 %, beta -1.026 %
+  PASS  (e) original claim 'within 1 %' is false (fixed on the page) 
+  PASS  (e) shortcut alpha error [%] (fixed text): page 1.04   computed 1.036297
+  PASS  (e) shortcut beta error [%] (fixed text, 'low'): page -1.03   computed -1.025668
+  PASS  check: tan 2 tau: page 0.292   computed 0.2916667
+  PASS  check: 2 tau [deg]: page 16.26   computed 16.2602
+  PASS  check: |gamma||eta| = w mu0: page 753.9822368615504   computed 753.9822
+== 22.10 two components in a magnetic medium
+  PASS  (a) lambda [m]: page 1.26   computed 1.256637
+  PASS  (a) delta [m]: page 0.333   computed 0.3333333
+  PASS  (a) v_p [m/s]: page 60000000.0   computed 6e+07
+  PASS  (b) w mu = 480 pi: page 1507.9644737231006   computed 1507.964
+  PASS  (b) eta = (240pi/17)(5 + j3) [(221.759481+133.055689j)]
+  PASS  (b) Re eta: page 221.8   computed 221.7595
+  PASS  (b) Im eta: page 133.1   computed 133.0557
+  PASS  (b) |eta|: page 258.6   computed 258.6138
+  PASS  (b) tau [deg]: page 30.96   computed 30.96376
+  PASS  (b) principal roots for implied medium return gamma [(3+5j)]
+  PASS  (b) principal roots for implied medium return eta [(221.759481+133.055689j)]
+  PASS  (c) Faraday curl = u x E / eta (u = -z, mu = 4 mu0) [[-0.018954-0.005458j -0.004094+0.014216j  0.      +0.j      ]]
+  PASS  (c) Ampere: curl H = (sigma + j w eps) E [[ 0.083359-0.022179j -0.029572-0.111146j  0.      +0.j      ]]
+  PASS  (c) u x (6x - j8y) = -j8 x - 6 y [[-0.-8.j -6.+0.j  0.+0.j]]
+  PASS  (c) |H_x| [mA/m]: page 30.93   computed 30.93416
+  PASS  (c) angle H_x [deg]: page -120.96   computed -120.9638
+  PASS  (c) |H_y| [mA/m] (with the -y sign): page 23.20   computed 23.20062
+  PASS  (c) angle of -H_y [deg]: page -30.96   computed -30.96376
+  PASS  (c) E(z,t) = e^{3z}[x 6 cos(wt+5z) + y 8 sin(wt+5z)] [[[ 2.799273+0.j  3.798256+0.j  0.041303+0.j]
+ [-3.477057+0.j -0.610655+0.j  5.100728+0.j]]]
+  PASS  (c) H(z,t) formula (mA/m, 4 s.f.) [[[-18.951367+0.j -12.097305+0.j  16.801483+0.j]
+ [ -4.094411+0.j -11.683123+0.j  -7.746599+0.j]]]
+  PASS  (d) sigma/w eps: page 1.875   computed 1.875
+  PASS  (d) sigma [mS/m]: page 19.9   computed 19.89437
+  PASS  (d) sigma = 1/16pi: page 0.019894367886486918   computed 0.01989437
+  PASS  (d) eps [F/m]: page 3.54e-11   computed 3.536777e-11
+  PASS  (d) eps/eps0: page 4   computed 4
+  PASS  (e) <S> along -z [[ 0.+0.j -0.+0.j -1.+0.j]]
+  PASS  (e) |<S>(0)| [W/m^2]: page 0.166   computed 0.1657864
+  PASS  (e) 25/48pi: page 0.16578639905405765   computed 0.1657864
+  PASS  (e) by time averaging [W/m^2]: page 0.166   computed 0.1657864
+  PASS  (e) E_x share [%]: page 36   computed 36
+  PASS  (e) E_x part [W/m^2]: page 0.060   computed 0.0596831
+  PASS  (e) E_y part [W/m^2]: page 0.106   computed 0.1061033
+  PASS  (e) e^{6z} law: page 0.40656965974059917   computed 0.4065697
+  PASS  watch out: |eta| with mu0 [ohm]: page 64.7   computed 64.65344
+  PASS  check: eta of mu_r = eps_r = 4 lossless = 120 pi: page 376.99111843077515   computed 376.9911
+== 22.11 current sheet in a lossy medium
+  PASS  medium of 22.6: gamma = 2 + j3 [(2+3j)]
+  PASS  |eta| [ohm]: page 104.6   computed 104.5585
+  PASS  (a) A from n x (H1 - H2) = Js (n = +x, region 1 = x>0) [(-173.995901-115.997267j)]
+  PASS  (a) H~(0+) = +2 y [[0.-0.j 2.+0.j 0.+0.j]]
+  PASS  (a) H~(0-) = -2 y [[ 0.+0.j -2.+0.j  0.+0.j]]
+  PASS  (a) E~ = -(eta/2) Js [[   0.        -0.j          0.        -0.j       -173.995901-115.997267j]]
+  PASS  (a) H~(0+) = 1/2 Js x n [[0.-0.j 2.+0.j 0.+0.j]]
+  PASS  Faraday at x = 0.37 [[0.      +0.j       0.424308-0.854701j 0.      +0.j      ]]
+  PASS  Ampere (sigma + j w eps) at x = 0.37 [[ 0.      +0.j        0.      +0.j       -3.412719+0.436476j]]
+  PASS  Faraday at x = -0.52 [[ 0.      -0.j       -0.007632+0.706868j  0.      +0.j      ]]
+  PASS  Ampere (sigma + j w eps) at x = -0.52 [[ 0.      +0.j        0.      +0.j       -2.135868+1.390841j]]
+  PASS  (b) 2|eta| [V/m]: page 209.1   computed 209.117
+  PASS  (b) angle [deg]: page 33.69   computed 33.69007
+  PASS  (b) E(x,t) = -z 209.1 e^{-2x} cos(wt - 3x + 33.69) [[-109.216297+0.j  -89.375569+0.j  113.405604+0.j]]
+  PASS  (b) H(x,t) = y 2 e^{-2x} cos(wt - 3x) [[ 0.682294+0.j  1.093181+0.j -0.809381+0.j]]
+  PASS  (b) -E leads Js by [ns] (time sampling): page 1.96   computed 1.960035
+  PASS  (b) -E leads Js by [deg]: page 33.69   computed 33.69052
+  PASS  (c) <S>(0+) along +x [[1.+0.j 0.+0.j 0.+0.j]]
+  PASS  (c) Re eta = 360pi/13 [ohm]: page 87.0   computed 86.99795
+  PASS  (c) |<S>(0+)| [W/m^2]: page 174.0   computed 173.9959
+  PASS  (c) <S>(0-) = -x 174.0 [[-173.995901+0.j   -0.      +0.j   -0.      +0.j]]
+  PASS  (c) time-averaged <S>(0+): page 174.0   computed 173.9959
+  PASS  (c) <-Js.E> by time averaging [W/m^2]: page 348.0   computed 347.9918
+  PASS  (c) <-Js.E> = 4 Re eta: page 348.0   computed 347.9918
+  PASS  (c) Joule heating 1/2 sigma |E|^2 in both half-spaces [W/m^2]: page 348.0   computed 347.9918
+  PASS  (d) fraction within delta [%]: page 86.5   computed 86.46647
+  PASS  (d) absorbed within delta [W/m^2]: page 150.4   computed 150.4481
+  PASS  (d) 99% distance [m]: page 1.15   computed 1.151293
+  PASS  (e) lossless eta [ohm]: page 168.6   computed 168.5956
+  PASS  (e) field at sheet 2 eta [V/m]: page 337.2   computed 337.1911
+  PASS  (e) power 1/4 J0^2 eta [W/m^2]: page 674.4   computed 674.3822
+  PASS  (e) ratio lossy/lossless (about half): page 0.5   computed 0.5160157
+  PASS  (e) 1/2 J0^2 Re{eta/2} = 4 Re eta: page 347.99180162840787   computed 347.9918
+== 22.12 three probes identify a medium
+  PASS  (a) B leads A (phase +57.30) and is stronger -> crest reaches B first -> travel +y 
+  PASS  (a) alpha [Np/m]: page 1.000   computed 0.9999208
+  PASS  (a) beta [rad/m]: page 4.00   computed 4.000295
+  PASS  (a) 57.30 deg in rad: page 1.000   computed 1.000074
+  PASS  (a) |gamma|: page 4.12   computed 4.123372
+  PASS  (a) angle gamma [deg] (exact atan 4): page 75.96   computed 75.96376
+  PASS  (a) angle gamma from the 4-s.f. probe data [deg]: page 75.96   computed 75.96582
+  PASS  (a) lambda = 2pi/beta > 0.25 m; +360 deg would give lambda < 0.25 m 
+  PASS  (b) |eta| [ohm]: page 457.2   computed 457.2474
+  PASS  (b) tau [deg]: page 14.04   computed 14.04
+  PASS  (b) Re eta: page 443.6   computed 443.5878
+  PASS  (b) Im eta: page 110.9   computed 110.9279
+  PASS  (b) atan(alpha/beta) [deg] (exact 1/4): page 14.04   computed 14.03624
+  PASS  (b) atan(alpha/beta) from probe data [deg]: page 14.04   computed 14.03418
+  PASS  (b) guessing -y travel gives Re(eta) < 0 
+  PASS  (c) |gamma||eta| [ohm/m]: page 1885   computed 1885.401
+  PASS  (c) mu [H/m]: page 6.28e-6   computed 6.28467e-06
+  PASS  (c) mu/mu0: page 5.00   computed 5.001182
+  PASS  (c) Im mu (real mu check): page 0   computed 0.0005077398
+  PASS  (c) |gamma/eta|: page 9.02e-3   computed 0.009017815
+  PASS  (c) angle gamma/eta [deg]: page 61.93   computed 61.92582
+  PASS  (c) sigma [mS/m]: page 4.24   computed 4.243913
+  PASS  (c) w eps [S/m]: page 7.96e-3   computed 0.00795677
+  PASS  (c) eps [F/m]: page 2.65e-11   computed 2.652257e-11
+  PASS  (c) eps/eps0: page 3.00   computed 2.999632
+  PASS  (c) sigma/w eps: page 0.533   computed 0.5333714
+  PASS  exact medium: principal gamma = 1 + j4 [(1+4j)]
+  PASS  exact medium: eta = (600pi/17)(4 + j) [(443.518963+110.879741j)]
+  PASS  exact medium: gamma/eta = (8 + j15)/600pi [(0.004244+0.007958j)]
+  PASS  exact medium reproduces |E_B| [V/m]: page 12.84   computed 12.84025
+  PASS  exact medium reproduces angle E_B [deg]: page 57.30   computed 57.29578
+  PASS  exact medium reproduces |H_A| [mA/m]: page 21.87   computed 21.87375
+  PASS  exact medium reproduces angle H_A [deg]: page -14.04   computed -14.03624
+  PASS  (d) classmate sigma' [mS/m]: page 21.2   computed 21.22054
+  PASS  (d) classmate eps'/eps0: page 15   computed 15.00252
+  PASS  (d) classmate |eta| [ohm]: page 91.4   computed 91.42786
+  PASS  (d) ratio sigma'/sigma: page 5   computed 5.00023
+  PASS  (d) classmate sigma/w eps unchanged: page 0.533   computed 0.533241
+  PASS  (e) <S> at A along +y [[0.+0.j 1.+0.j 0.+0.j]]
+  PASS  (e) <S> at A [W/m^2]: page 0.106   computed 0.1060833
+  PASS  (e) exact 1/3pi: page 0.106   computed 0.1061033
+  PASS  (e) <S> at B [W/m^2]: page 0.175   computed 0.1748949
+  PASS  (e) absorbed [W/m^2]: page 0.069   computed 0.0688116
+  PASS  (e) Joule integral 1/2 sigma |E|^2 over -0.25<y<0 [W/m^2]: page 0.069   computed 0.06882644
+  PASS  check: |gamma||eta| = 600 pi (exact medium): page 1884.9555921538758   computed 1884.956
+
+TOTAL: 316 PASS, 0 FAIL

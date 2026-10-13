@@ -1,0 +1,252 @@
+=== 21.1 Reading two waves ===
+PASS  21.1a omega = 2pi/T [rad/s]: computed 1.5708e+09 | page 1.5708e+09
+PASS  21.1a omega decimal: computed 1.5708e+09 | page 1.571e+09
+PASS  21.1a f [MHz]: computed 250 | page 250
+PASS  21.1a T [ns]: computed 4 | page 4
+PASS  21.1a beta = 2pi/lambda [rad/m]: computed 7.85398 | page 7.85
+PASS  21.1a lambda [m]: computed 0.8 | page 0.8
+PASS  21.1a crest velocity along y [m/s] (sign = direction): computed -2e+08 | page -2e+08
+PASS  21.1a direction (rigid translation): computed -y | page -y
+PASS  21.1a eps_r = (c/v_p)^2: computed 2.25 | page 2.25
+PASS  21.1b crest nearest origin with y>0 at t=0 [m]: computed 0.666667 | page 0.666667
+PASS  21.1b next crest recorded at y=0 [ns]: computed 3.33333 | page 3.33333
+PASS  21.1b (2/3 m)/v_p [ns]: computed 3.33333 | page 3.33
+PASS  21.1c f [Hz]: computed 500 | page 500
+PASS  21.1c lambda [m]: computed 2 | page 2
+PASS  21.1c crest velocity along x [m/s]: computed 1000 | page 1000
+PASS  21.1c direction (rigid translation): computed +x | page +x
+PASS  21.1c T_gas [K]: computed 288.921 | page 289
+PASS  21.1c dispersion check omega*sqrt(m/(5/3 kB T)) = beta: computed 3.14159 | page 3.14159
+PASS  21.1c T_gas in deg C (page: about 16): computed 15.7711 | page 16
+
+=== 21.2 Phasors both ways ===
+PASS  21.2a I phasor [A]: computed 3.4641-2j | page 3.46-2j
+PASS  21.2a |I|, angle [deg]: computed (4, -30) | page (4, -30)
+PASS  21.2a V phasor [V]: computed -7.07107+7.07107j | page -7.07+7.07j
+PASS  21.2a |V|, angle [deg]: computed (10, 135) | page (10, 135)
+PASS  21.2b amplitude, phase [deg]: computed (10, 36.87) | page (10, 36.9)
+PASS  21.2b 10cos(wt + 36.87 deg) = 8cos wt - 6sin wt (max abs error): residual 4.00e-15 (tol 1e-09)
+PASS  21.2c E = 13cos(wt + 4pi x + 112.6 deg) z (max abs error, V/m; 112.6 is rounded): residual 4.51e-03 (tol 2e-02)
+PASS  21.2c E = [-5cos(...) - 12sin(...)] z (max abs error): residual 2.26e-14 (tol 1e-09)
+PASS  21.2c |-5+12j|, angle [deg]: computed (13, 112.62) | page (13, 112.6)
+PASS  21.2c calculator atan(12/-5) [deg]: computed -67.3801 | page -67.4
+PASS  21.2c E direction (rigid translation): computed -x | page -x
+PASS  21.2c H = 2cos(wt - bz) x + 3sin(wt - bz) y (max abs error): residual 2.44e-15 (tol 1e-09)
+PASS  21.2c H direction (rigid translation): computed +z | page +z
+PASS  21.2d steady-state phasor (solve_ivp): computed 1.2-1.6j | page 1.2-1.6j
+PASS  21.2d amplitude, phase [deg]: computed (2, -53.13) | page (2, -53.1)
+PASS  21.2d solve_ivp vs 2cos(4t - 53.13 deg): residual 3.62e-11 (tol 1e-07)
+
+=== 21.3 Phasor pitfalls, true or false ===
+PASS  21.3a measured phasor of 5 sin wt (claim 5j): computed 1.11022e-16-5j | page -0-5j
+PASS  21.3a Re{5j e^{jwt}} = -5 sin wt: residual 0.00e+00 (tol 1e-12)
+PASS  21.3b component of a^2 at w (claim: A^2 = 9e^{j80deg}): computed 8.00593e-16 | page 0
+PASS  21.3b component of a^2 at 2w (= A^2/2): computed 0.781417+4.43163j | page 0.781417+4.43163j
+PASS  21.3b <a^2> = |A|^2/2: computed 4.5 | page 4.5
+PASS  21.3d <ab> by quad: computed 2.04969e-15 | page 0
+PASS  21.3e field at t=0 = Re{phasor} = 3cos(bz): residual 0.00e+00 (tol 1e-12)
+PASS  21.3e field at t=T/4 = -Im{phasor} = 3sin(bz): residual 8.88e-16 (tol 1e-12)
+PASS  21.3f <S> by Faraday + time average [W/m^2]: computed (0, 0, 0.53052) | page (0, 0, 0.53052)
+PASS  21.3f |<S>| (page 0.531; claim 400/(120 pi)): computed (0.53052, 1.061) | page (0.531, 1.06)
+PASS  21.3g single lossless wave: H~/E~ is real at every point (|Im/abs| of the ratio): residual 1.29e-12 (tol 1e-06)
+PASS  21.3 key (a)-(g): computed FFTTFFT | page FFTTFFT
+
+=== 21.4 Which electric field ===
+PASS  21.4 eta = sqrt(9 mu0/eps0) [ohm]: computed (1131, 360) | page (1131, 360)
+PASS  21.4 144 pi: computed 452.389 | page 452
+      f = 1e+08 Hz: relative mismatch of each option with the Ampere-integrated E: (a) 8.50e-07, (b) 2.00e+00, (c) 1.41e+00, (d) 6.67e-01
+PASS  21.4 key at f = 1e+08 Hz: computed a | page a
+PASS  21.4 option (a) matches (f = 1e+08): residual 8.50e-07 (tol 1e-05)
+PASS  21.4 (a) with the given H: Faraday and Ampere residuals (f = 1e+08): residual 6.51e-08 (tol 1e-05)
+      f = 7e+06 Hz: relative mismatch of each option with the Ampere-integrated E: (a) 8.50e-07, (b) 2.00e+00, (c) 1.41e+00, (d) 6.67e-01
+PASS  21.4 key at f = 7e+06 Hz: computed a | page a
+PASS  21.4 option (a) matches (f = 7e+06): residual 8.50e-07 (tol 1e-05)
+PASS  21.4 (a) with the given H: Faraday and Ampere residuals (f = 7e+06): residual 6.51e-08 (tol 1e-05)
+PASS  21.4 direction of the given H (rigid translation): computed -z | page -z
+PASS  21.4 distractor (b) = rotation with u=+z: residual 3.77e-16 (tol 1e-09)
+PASS  21.4 distractor (b) = eta u x H~: residual 3.77e-16 (tol 1e-09)
+PASS  21.4 distractor (c) = -j dropped: residual 6.60e-16 (tol 1e-09)
+PASS  21.4 distractor (d) = eta0 used: residual 3.79e-16 (tol 1e-09)
+PASS  21.4 <E x H> of keyed (a) [z-comp, sign]: computed -1 | page -1
+PASS  21.4 <E x H> of (b) with the given H points +z: computed 1 | page 1
+PASS  21.4 <E x H> of (c) with the given H is zero: computed (0, 0, 2.0213e-14) | page (0, 0, 0)
+PASS  21.4 v_p/c in the material: computed 0.333333 | page 0.333333
+
+=== 21.5 The power that flowed backward ===
+PASS  21.5 student's H~ agrees with the Faraday-integrated H: residual 7.85e-07 (tol 1e-06)
+PASS  21.5 <S> at z = 0, 0.13, 0.37 m [W/m^2]: computed (0, 0, 0.13263, 0, 0, 0.13263, 0, 0, 0.13263) | page (0, 0, 0.13263, 0, 0, 0.13263, 0, 0, 0.13263)
+PASS  21.5 <S>_z = 50/eta0 = 5/(12 pi) ~ 0.133: computed (0.13263, 0.13263) | page (0.133, 0.13263)
+PASS  21.5 power of the x part alone [W/m^2]: computed 0.0477464 | page 0.048
+PASS  21.5 power of the y part alone [W/m^2]: computed 0.0848826 | page 0.085
+PASS  21.5 student's (no conjugate) value at z=0 [W/m^2]: computed -0.0371362 | page -0.0371
+PASS  21.5 student's expression = -(14/eta0)cos(4 pi z) at z=0.05, 0.125: computed (-0.030044, -5.3895e-18) | page (-0.030044, 0)
+PASS  21.5 E0.E0 (no conjugate): computed -28+0j | page -28
+
+=== 21.6 Radio waves in a plasma ===
+PASS  21.6a omega_p [rad/s]: computed 3.77147e+07 | page 3.77e+07
+PASS  21.6a f_p [MHz]: computed 6.00249 | page 6
+PASS  21.6a shortcut 8.98 sqrt(N) [MHz]: computed 6.00385 | page 6
+PASS  21.6b frequencies with real beta: computed ['10 MHz', '100 MHz'] | page ['10 MHz', '100 MHz']
+PASS  21.6c sqrt(1 - fp^2/f^2): computed 0.799813 | page 0.8
+PASS  21.6c omega/c [rad/m]: computed 0.20944 | page 0.20944
+PASS  21.6c beta [rad/m] vs 4pi/75 (page uses fp = 6.00 exactly): computed 0.167513 | page 0.167552
+PASS  21.6c beta [rad/m]: computed (0.16751) | page 0.168 (rounding check)
+PASS  21.6c lambda [m]: computed 37.5088 | page 37.5
+PASS  21.6c v_p [m/s], v_p/c: computed (3.7509e+08, 1.2503) | page (3.75e+08, 1.25)
+PASS  21.6c free-space lambda [m]: computed 30 | page 30
+PASS  21.6c 100 MHz: fp^2/f^2, v_p/c: computed (0.003603, 1.0018) | page (0.0036, 1.0018)
+PASS  21.6d v_g = d omega/d beta (numerical) [m/s]: computed 2.39944e+08 | page 2.4e+08
+PASS  21.6d v_g/c: computed 0.799813 | page 0.8
+PASS  21.6d v_p v_g = c^2: computed 9e+16 | page 9e+16
+PASS  21.6d crossing times [ms]: group, light: computed (0.62515, 0.5) | page (0.625, 0.5)
+PASS  21.6d packet envelope arrival after 150 km [ms] (brute force): computed 0.625146 | page 0.625
+
+=== 21.7 Partner fields on three axes ===
+PASS  21.7a direction (rigid translation): computed +x | page +x
+PASS  21.7a f [MHz]: computed 300 | page 300
+PASS  21.7a H = (1/(20 pi))cos(wt - 2 pi x) z (Faraday): residual 7.85e-07 (tol 1e-05)
+PASS  21.7a H~ at x=0 [mA/m]: computed (0+0j, 0+0j, 15.915+6.1322e-13j) | page (0, 0, 15.9)
+PASS  21.7a <S> [W/m^2]: computed (0.047746, 0, 0) | page (0.0477, 0, 0)
+PASS  21.7a <S> = 3/(20 pi): computed 0.0477464 | page 0.0477465
+PASS  21.7b direction (rigid translation): computed -y | page -y
+PASS  21.7b lambda [m], f [MHz]: computed (2, 50) | page (2, 50)
+PASS  21.7b eta [ohm]: computed 125.664 | page 125.664
+PASS  21.7b E = 4 pi sin(wt + pi y) z (Ampere): residual 7.85e-07 (tol 1e-05)
+PASS  21.7b given H = -0.1 sin(wt + pi y) x: residual 4.16e-16 (tol 1e-12)
+PASS  21.7b E~ at y=0 [V/m]: computed (0+0j, 0+0j, 4.2188e-15-12.566j) | page (0+0j, 0+0j, 0-12.566j)
+PASS  21.7b E amplitude [V/m]: computed (12.566) | page 12.6 (rounding check)
+PASS  21.7b E~ x H~* at y=0: computed (0+0j, -1.2566-4.2188e-16j, 0+0j) | page (0, -1.2566, 0)
+PASS  21.7b <S> [W/m^2]: computed (0, -0.62832, 0) | page (0, -0.628, 0)
+PASS  21.7c beta [rad/m]: computed 6.28319 | page 6.28319
+PASS  21.7c u: computed (-0.6, 0.8, -0) | page (-0.6, 0.8, 0)
+PASS  21.7c direction (rigid translation among +-u and the axes): computed u | page u
+PASS  21.7c H = (5/120pi)(0.8x + 0.6y)cos(wt + 1.2pi x - 1.6pi y) (Faraday): residual 6.28e-07 (tol 1e-05)
+PASS  21.7c H~ at origin [mA/m]: computed (10.61-1.6502e-13j, 7.9577+3.4348e-13j, 0+0j) | page (10.6, 7.96, 0)
+PASS  21.7c <S> [W/m^2]: computed (-0.019894, 0.026526, 0) | page (-0.0199, 0.0265, 0)
+PASS  21.7c |<S>| = 5/(48 pi): computed (0.033157, 0.033157) | page (0.0332, 0.033157)
+
+=== 21.8 A driven electron in phasors ===
+PASS  21.8 omega [rad/s]: computed 1.25664e+08 | page 1.257e+08
+PASS  21.8a |v~| [m/s]: computed 279.906 | page 280
+PASS  21.8a phase of v relative to E [deg] (+90 = leads): computed 90 | page 90
+PASS  21.8a v(t) = -280 sin wt (rel. error; 280 rounds 279.9): residual 3.36e-04 (tol 1e-03)
+PASS  21.8b J0 [A/m^2]: computed 4.48409e-05 | page 4.48e-05
+PASS  21.8b phase of J relative to E [deg] (-90 = lags): computed -90 | page -90
+PASS  21.8b J(t) = 44.8 sin wt uA/m^2 (rel. error): residual 9.13e-04 (tol 2e-03)
+PASS  21.8b <J.E> (sampled) / (J0 E0 / 2): computed 3.70711e-15 | page 0
+PASS  21.8c displacement amplitude [uA/m^2]: computed (222.53) | page 223 (rounding check)
+PASS  21.8c phase(J) - phase(eps0 dE/dt) [deg] (antiphase): computed -180 | page -180
+PASS  21.8c amplitude ratio: computed (0.20151) | page 0.202 (rounding check)
+PASS  21.8c ratio = wp^2/w^2: computed 0.201509 | page 0.201509
+PASS  21.8c eps_eff/eps0: computed 0.798491 | page 0.798
+PASS  21.8c J~ + j w eps0 E~ = j w eps0 (1 - wp^2/w^2) E~: computed 1.31843e-16+0.000177684j | page 0+0.000177684j
+PASS  21.8c beta [rad/m]: computed 0.374303 | page 0.374
+PASS  21.8c beta = sqrt(w^2 - wp^2)/c: computed 0.374303 | page 0.374303
+PASS  21.8c (w/c), sqrt(eps_eff): computed (0.41888, 0.89358) | page (0.419, 0.894)
+PASS  21.8c lambda [m]: computed 16.7864 | page 16.8
+PASS  21.8c v_p [m/s], v_p/c: computed (3.3573e+08, 1.1191) | page (3.36e+08, 1.12)
+PASS  21.8 check f_p [MHz], (f_p/f)^2: computed (8.978, 0.20151) | page 8.98, 0.202 (rounding check)
+PASS  21.8c wave equation with the electron current holds at beta = 0.374: residual 2.11e-08 (tol 1e-04)
+PASS  21.8c ... and fails at the vacuum beta = w/c: residual 2.02e-01
+
+=== 21.9 A phasor from two snapshots ===
+PASS  21.9a beta [rad/m], lambda [m]: computed (3.1416, 2) | page (3.1416, 2)
+PASS  21.9a eta [ohm]: computed (251.33, 251.33) | page (251.33, 251)
+PASS  21.9b snapshots . u: computed (0, -4.4409e-16) | page (0, 0)
+PASS  21.9b (A, B, C) [V/m]: computed (0-3j, 1.1102e-16-4j, 4-1.1102e-16j) | page (-0-3j, -0-4j, 4+0j)
+PASS  21.9a (a, b, c) [rad/m] (measured phase gradient): computed (2.5133, -1.885, 0) | page (2.5133, -1.885, 0)
+PASS  21.9a (a, b, c) decimals: computed (2.5133, -1.885, 0) | page (2.51, -1.88, 0)
+PASS  21.9 template reproduces the measured phasor at random points: residual 3.47e-15 (tol 1e-09)
+PASS  21.9b E(0,t) = (3x+4y)sin wt + 4z cos wt: residual 0.00e+00 (tol 1e-12)
+PASS  21.9c page H~ = (2.4, 3.2, 5j)/(80pi) e^{j(...)} vs Faraday-integrated H: residual 7.84e-07 (tol 1e-06)
+PASS  21.9c H~ at origin [mA/m]: computed (9.5493-6.0162e-11j, 12.732+1.5837e-11j, 4.0638e-11+19.894j) | page (9.55+0j, 12.7+0j, 0+19.9j)
+PASS  21.9c |H~0| = sqrt(41)/(80 pi): computed 0.0254772 | page 0.0254772
+PASS  21.9d <S> [W/m^2]: computed (-0.065253, 0.04894, 1.3911e-14) | page (-0.0653, 0.0489, 0)
+PASS  21.9d |<S>|, 41/(160 pi): computed (0.081567, 0.081567) | page (0.0816, 0.081567)
+PASS  21.9d <S> along u: computed (-0.8, 0.6, 1.7055e-13) | page (-0.8, 0.6, 0)
+PASS  21.9d power of the z part alone [W/m^2]: computed 0.031831 | page 0.0318
+PASS  21.9d power of the xy part alone [W/m^2]: computed 0.0497359 | page 0.0497
+PASS  21.9e u.r_P [m] (= -lambda/4): computed -0.5 | page -0.5
+PASS  21.9e E(P, 0) [V/m]: computed (3, 4, 2.4493e-16) | page (3, 4, 0)
+PASS  21.9e E(0, T/4) [V/m]: computed (3, 4, 2.4493e-16) | page (3, 4, 0)
+
+=== 21.10 Two sheets, two current directions ===
+PASS  21.10a beta, lambda, d, eta/pi: computed (3.1416, 2, 0.5, 60) | page (3.1416, 2, 0.5, 60)
+PASS  21.10a J~_A, J~_B (measured): computed (2+5.5511e-17j, -2.7756e-17-1j) | page (2+0j, -0-1j)
+PASS  21.10b each sheet alone: page E~ and H~ on both sides vs measured phasors: residual 9.17e-16 (tol 1e-09)
+PASS  21.10c total E~ below the sheets (page formula vs measured phasor): residual 4.59e-16 (tol 1e-09)
+PASS  21.10c total E~ between the sheets (page formula vs measured phasor): residual 2.72e-16 (tol 1e-09)
+PASS  21.10c total E~ above the sheets (page formula vs measured phasor): residual 2.72e-16 (tol 1e-09)
+PASS  21.10c P [V/m], Q: computed (-188.5-2.8422e-14j, 0.5-6.4892e-17j) | page (-188.5, 0.5)
+PASS  21.10c P decimal: computed -188.496 | page -188.5
+PASS  21.10d <S>_z below, between, above [/pi]: computed (-37.5, 22.5, 37.5) | page (-37.5, 22.5, 37.5)
+PASS  21.10d decimals [W/m^2]: computed (117.81, 70.686) | page (118, 70.7)
+PASS  21.10d transverse <S> components vanish: computed (0, 0, 0, 0, 0, 0) | page (0, 0, 0, 0, 0, 0)
+PASS  21.10e total E~(0), E~(d) [/pi]: computed (-60+0j, 30+1.1309e-15j, 0+0j, -4.5235e-15+60j, -5.6543e-16+30j, 0+0j) | page (-60+0j, 30+0j, 0+0j, 0+60j, 0+30j, 0+0j)
+PASS  21.10e <-J_A.E>, <-J_B.E> by quad [W/m^2]: computed (188.5, 47.124) | page (188.5, 47.1)
+PASS  21.10e ... in units of pi: computed (60, 15, 75) | page (60, 15, 75)
+PASS  21.10e outflow S(above) - S(below) [/pi], total [W/m^2]: computed (75, 235.62) | page (75, 236)
+PASS  21.10e steps of S across A and across B [/pi]: computed (60, 15) | page (60, 15)
+PASS  21.10e alone: eta J0^2/4 [/pi]: computed (60, 15) | page (60, 15)
+PASS  21.10 check: z x (H+ - H-) = J_s at both sheets: residual 6.28e-10 (tol 1e-06)
+PASS  21.10 check: tangential E continuous at both sheets: residual 6.30e-10 (tol 1e-06)
+PASS  21.10 check: H~_B is continuous at z=0 and equals x/2 there: residual 1.57e-12 (tol 1e-09)
+PASS  21.10 check: curl equations in each region: residual 5.08e-10 (tol 1e-06)
+PASS  21.10f <S>_z above, below [/pi]: computed (67.5, -7.5) | page (67.5, -7.5)
+PASS  21.10f decimals [W/m^2]: computed (212.06, -23.562) | page (212, -23.6)
+PASS  21.10f E~ above and below [/pi]: computed (-90+0j, -30+1.6963e-14j) | page (-90, -30)
+PASS  21.10f deliveries A, B, total [/pi]: computed (30, 45, 75) | page (30, 45, 75)
+PASS  21.10f per-side powers no longer the sum of the separate ones: above (separate 30pi+7.5pi): computed (67.5, 37.5) | page (67.5, 37.5)
+
+=== 21.11 Two waves on one line ===
+PASS  21.11a beta, lambda, eta/pi: computed (6.2832, 1, 40) | page (6.2832, 1, 40)
+PASS  21.11a H(z,t) = (6/eta)cos(wt - bz) - (2/eta)sin(wt + bz) (Faraday): residual 7.65e-07 (tol 1e-06)
+PASS  21.11a page E~ and H~ formulas vs measured phasors: residual 7.65e-07 (tol 1e-06)
+PASS  21.11a 6/eta, 2/eta [mA/m]: computed (47.746, 15.915) | page (47.7, 15.9)
+PASS  21.11b <S>_z at 7 points in 0..1 m [W/m^2]: computed (0.12732, 0.12732, 0.12732, 0.12732, 0.12732, 0.12732, 0.12732) | page (0.12732, 0.12732, 0.12732, 0.12732, 0.12732, 0.12732, 0.12732)
+PASS  21.11b 16/eta = 0.4/pi: computed (0.12732, 0.12732) | page (0.127, 0.12732)
+PASS  21.11b E~ H~* = (32 - 24j cos 2bz)/eta (max abs deviation): residual 2.50e-07 (tol 1e-06)
+PASS  21.11b forward and backward powers [W/m^2]: computed (0.14324, 0.015915) | page (0.143, 0.0159)
+PASS  21.11c |E~| max at z, value; min at z, value: computed (0.125, 8, 0.375, 4) | page (0.125, 8, 0.375, 4)
+PASS  21.11c |H~| max at z, value [mA/m]; min at z, value: computed (0.375, 63.659, 0.125, 31.829) | page (0.375, 63.7, 0.125, 31.8)
+PASS  21.11c |E~|/|H~| at 0.125 and 0.375 m, in units of eta: computed (2.0001, 0.50003) | page (2, 0.5)
+PASS  21.11d <w_e> + <w_m> at 20 points = 20 eps [nJ/m^3]: computed (1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915) | page (1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915, 1.5915)
+PASS  21.11d 20 eps [nJ/m^3]: computed 1.59155 | page 1.59
+PASS  21.11d <w_e> range = 4 eps .. 16 eps (eps0 = 1/(mu0 c^2), consistent with c, eta0 given): computed (4, 16) | page (4, 16)
+      INFO 16 eps = 144 eps0: 1.27324 (c, eta0 given) | 1.27498 (eps0 = 8.854e-12) | 1.27500 (SI) nJ/m^3 -> old page value 1.28 only with full SI eps0; 4 eps: 0.3183 | 0.3187 (old page 0.319)
+PASS  21.11d FIXED range 'about 0.32 and 1.27 nJ/m^3' with eps0 = 8.8419e-12: computed (0.31831, 1.2732) | page 0.32, 1.27 (rounding check)
+PASS  21.11d 20 eps = 180 eps0 with eps0 = 8.8419e-12: computed (1.5915) | page 1.59 (rounding check)
+PASS  21.11d FIXED range 'about 0.32 and 1.27 nJ/m^3' with eps0 = 8.8540e-12: computed (0.31874, 1.275) | page 0.32, 1.27 (rounding check)
+PASS  21.11d 20 eps = 180 eps0 with eps0 = 8.8540e-12: computed (1.5937) | page 1.59 (rounding check)
+PASS  21.11d <S>/<w> [m/s], in units of v: computed (8e+07, 0.8) | page (8e+07, 0.8)
+PASS  21.11d v<w> = 20/eta: computed 0.159155 | page 0.159155
+PASS  21.11e fraction of the period with S_z < 0: computed 0.20483 | page 0.205
+PASS  21.11e 1 - (2/pi) atan 3: computed 0.204833 | page 0.20483
+PASS  21.11e first negative window [deg of wt]: computed (71.565, 108.43) | page (71.6, 108.4)
+PASS  21.11e min, max of S_z [W/m^2]: computed (-0.031831, 0.28648) | page (-0.0318, 0.286)
+PASS  21.11e average of S_z = 16/eta: computed 0.127324 | page 0.127324
+PASS  21.11 check: curl equations (finite differences): residual 7.42e-12 (tol 1e-06)
+
+=== 21.12 A medium from phasor readings ===
+PASS  21.12a direction from the time average of E x H at z=0: computed -z | page -z
+PASS  21.12a (E~ x H~*)_z: computed -7.54+2.61048e-16j | page -7.54
+PASS  21.12a/b (direction, beta/pi) allowed by the phases and spacing < lambda/2: computed [('-z', 1.0)] | page [('-z', 1.0)]
+PASS  21.12a FIXED remark: +z would need a 315 deg lag, beta >= 7pi, lambda/2 = 1/7 m < 0.25 m: computed (7, 0.14286) | page (7, 0.14286)
+PASS  21.12b beta, lambda, v_p, c/v_p: computed (3.1416, 2, 5e+07, 6) | page (3.1416, 2, 5e+07, 6)
+PASS  21.12b eta [ohm], eta/eta0: computed (188.5, 0.50001) | page (188.5, 0.5)
+PASS  21.12b (mu_r, eps_r): computed (3.0001, 12) | page (3, 12)
+PASS  21.12c curl equations with mu = 3mu0, eps = 12eps0 (37.7/0.2 vs exact eta: 2e-5): residual 2.36e-05 (tol 1e-03)
+PASS  21.12c Faraday-integrated H~(0): magnitude, phase [deg]: computed (0.2, 30) | page (0.2, 30)
+PASS  21.12c phase of E at z=0.25 [deg]: computed 75 | page 75
+PASS  21.12c omega [rad/s]: computed 1.5708e+08 | page 1.5708e+08
+PASS  21.12d <S> at z=-4 [W/m^2]: computed (0, 0, -3.77) | page (0, 0, -3.77)
+PASS  21.12d 1.2 pi: computed 3.76991 | page 3.77
+PASS  21.12d power through 1 m x 2 m [W]: computed 7.54 | page 7.54
+PASS  21.12e phasor at z=-0.5: magnitude, phase [deg]: computed (37.7, -60) | page (37.7, -60)
+PASS  21.12e T/4 [ns]: computed 10 | page 10
+PASS  21.12e E(-0.5, t) = E(0, t - T/4): residual 3.38e-14 (tol 1e-09)
+PASS  21.12e crests on -2<z<0 at t=0 [m]: computed (-0.16667) | page (-0.16667)
+PASS  21.12e same crest a quarter period later [m]: computed (-0.66667) | page (-0.667)
+PASS  21.12 watch-out: non-magnetic eps_r=36: eta [ohm], c/v_p: computed (62.832, 6) | page (62.8, 6)
+
+TOTAL: 224 PASS, 0 FAIL

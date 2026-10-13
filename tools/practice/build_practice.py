@@ -56,6 +56,10 @@ LECTURES = {
     17: ("3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter", "Magnetization and Maxwell's equations in matter"),
     18: ("3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves", "The wave equation and plane TEM waves"),
     19: ("3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets", "d'Alembert solutions and radiation from current sheets"),
+    20: ("3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves", "Poynting's theorem and monochromatic waves"),
+    21: ("3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation", "Monochromatic waves and phasor notation"),
+    22: ("3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves", "Phasor Maxwell equations and damped waves"),
+    23: ("3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors", "Imperfect dielectrics and good conductors"),
 }
 UNIT_INDEXES = ["1-electrostatics/index.md", "2-magnetostatics/index.md", "3-maxwell-and-waves/index.md"]
 LEVELS = ["easy", "medium", "hard"]
@@ -96,6 +100,10 @@ TOPICS = [
     ("magmedia", "Magnetization and magnetic media"),
     ("waves", "Plane waves and the wave equation"),
     ("radiation", "Current-sheet radiation and the Poynting vector"),
+    ("poynting", "Poynting's theorem, energy flow and time-average power"),
+    ("phasors", "Monochromatic waves, phasors and dispersion"),
+    ("lossy", "Damped waves in lossy and conducting media"),
+    ("goodcond", "Imperfect dielectrics, good conductors and skin depth"),
 ]
 TOPIC_TITLE = dict(TYPES + TOPICS)
 
@@ -141,15 +149,15 @@ RULES = {
     "side-by-side dielectrics": ["dielectrics"], "graded permittivity": ["dielectrics"],
     "dielectric insertion": ["dielectrics", "capacitance"],
     "capacitance": ["capacitance"], "coax and spheres": ["capacitance"], "series capacitance": ["capacitance"],
-    "series and parallel": ["capacitance"], "energy density": ["capacitance"],
+    "series and parallel": ["capacitance"], "energy density": [("capacitance", 1, 19), ("poynting", 20, 99)],
     "fixed charge vs fixed voltage": ["capacitance"], "small-signal capacitance": ["capacitance"],
     "diode": ["capacitance"],
-    "energy": [("capacitance", 1, 11), ("motional", 14, 14), ("magenergy", 15, 99)],
+    "energy": [("capacitance", 1, 11), ("motional", 14, 14), ("magenergy", 15, 19), ("poynting", 20, 99)],
     "force": [("capacitance", 1, 11), ("lorentzforce", 12, 99)],
     "conductance": ["conductance"], "RC self-discharge": ["conductance"], "RC transients": ["conductance"],
     "transients": [("conductance", 1, 11), ("magenergy", 12, 99)],
     "Drude model": ["drude"], "Lorentz model": ["drude"], "mobility": ["drude"], "conductivity": ["drude"],
-    "AC conductivity": ["drude"], "phasors": ["drude"], "plasma oscillation": ["drude"],
+    "AC conductivity": [("drude", 1, 21), ("lossy", 22, 99)], "phasors": [("drude", 1, 19), ("phasors", 20, 99)], "plasma oscillation": ["drude"],
     "several species": ["drude"], "drift velocity": ["drude"], "polarization current": ["drude"],
     "current density": [("drude", 1, 11), ("ampere", 12, 99)],
     "Lorentz force": ["lorentzforce"], "velocity selector": ["lorentzforce"], "mass spectrometer": ["lorentzforce"],
@@ -169,12 +177,24 @@ RULES = {
     "induced field": ["induced"],
     "inductance": ["inductance"], "mutual inductance": ["inductance"], "internal inductance": ["inductance"],
     "two-wire line": ["inductance"], "LC product": ["inductance"],
-    "magnetic energy": ["magenergy"], "RL circuit": ["magenergy"], "RL decay": ["magenergy"], "power": ["magenergy"],
+    "magnetic energy": ["magenergy"], "RL circuit": ["magenergy"], "RL decay": ["magenergy"], "power": [("magenergy", 1, 19), ("poynting", 20, 99)],
     "magnetization": ["magmedia"], "magnetization current": ["magmedia"], "permeability": ["magmedia"],
     "hysteresis": ["magmedia"],
-    "plane waves": ["waves"], "wave equation": ["waves"], "intrinsic impedance": ["waves"],
+    "plane waves": ["waves"], "wave equation": ["waves"], "intrinsic impedance": [("waves", 1, 21), ("lossy", 22, 99)],
     "moving pulses": ["waves"],
-    "current sheet radiation": ["radiation"], "Poynting vector": ["radiation"], "wave parameters": ["waves"],
+    "current sheet radiation": ["radiation"], "Poynting vector": [("radiation", 1, 19), ("poynting", 20, 99)],
+    "wave parameters": [("waves", 1, 20), ("phasors", 21, 99)],
+    "Poynting's theorem": ["poynting"], "time average": ["poynting"], "time-average power": ["poynting"],
+    "Joule heating": ["poynting"], "energy balance": ["poynting"], "power flow": ["poynting"],
+    "energy conservation": ["poynting"], "intensity": ["poynting"],
+    "monochromatic waves": ["phasors"], "dispersion relation": ["phasors"], "phase velocity": ["phasors"],
+    "plasma frequency": ["phasors"], "phasor fields": ["phasors"], "sine to cosine": ["phasors"],
+    "propagation constant": ["lossy"], "attenuation": ["lossy"], "complex permittivity": ["lossy"],
+    "complex intrinsic impedance": ["lossy"], "lossy media": ["lossy"], "damped waves": ["lossy"],
+    "phasor Maxwell equations": ["lossy"], "Helmholtz equation": ["lossy"], "penetration depth": ["lossy", "goodcond"],
+    "loss tangent": ["goodcond"], "skin depth": ["goodcond"], "good conductor": ["goodcond"],
+    "imperfect dielectric": ["goodcond"], "decibels": ["goodcond"], "seawater": ["goodcond"],
+    "regimes": ["lossy", "goodcond"],
     "multiple choice": ["mc"], "true or false": ["mc"], "find the error": ["fte"],
 }
 # geometry words that carry no topic of their own (the problem's other tags place it)
@@ -196,13 +216,15 @@ CONCEPT_TOPICS = {
     "vector-potential": ["vecpot"],
     "magnetization": ["magmedia"], "permeability": ["magmedia"],
     "plane-waves": ["waves"], "wave-equation": ["waves"], "intrinsic-impedance": ["waves"],
-    "current-sheet-radiation": ["radiation"], "poynting-vector": ["radiation"],
+    "current-sheet-radiation": ["radiation"], "poynting-vector": ["radiation", "poynting"],
+    "poynting-theorem": ["poynting"], "phasors": ["phasors"], "dispersion-relation": ["phasors"],
+    "propagation-constant": ["lossy"], "loss-tangent": ["goodcond"], "skin-depth": ["goodcond"],
 }
 
 # lecture to draw a concept page's example problems from (default: where its topic has most problems)
 CONCEPT_HOME = {"superposition": 3, "stokes-theorem": 4, "maxwells-equations": 4}
 
-EXAM_RE = re.compile(r"(SP18 Exam \d #[0-9a-z()]+|Summer 20\d\d HE\d(?: \(conflict\))? #[0-9a-z()–-]+|FA26 Exam 1 #[0-9a-z(),–-]+)")
+EXAM_RE = re.compile(r"((?:SP1[789]|FA2\d) Exam \d #[0-9a-z()]+|Summer 20\d\d (?:HE\d|final)(?: \(conflict\))? #[0-9a-z()–-]+|FA26 Exam 1 #[0-9a-z(),–-]+)")
 
 
 def gh_slug(s):

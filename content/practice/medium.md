@@ -1,6 +1,6 @@
 ---
 title: "Medium problems"
-description: "All 53 medium practice problems for Lectures 2–19, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
+description: "All 65 medium practice problems for Lectures 2–23, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
 tags: [practice]
 ---
 
@@ -114,3 +114,27 @@ tags: [practice]
 - [[practice/19-radiation-from-current-sheets#196-a-triangle-pulse-in-glass|19.6 A triangle pulse in glass]] — current sheet radiation · moving pulses
 - [[practice/19-radiation-from-current-sheets#197-which-current-made-this-field|19.7 Which current made this field]] — current sheet radiation · boundary conditions
 - [[practice/19-radiation-from-current-sheets#198-a-cosine-current-in-a-dielectric|19.8 A cosine current in a dielectric]] — current sheet radiation · wave parameters · Poynting vector
+
+## Lecture 20 · Poynting's theorem and monochromatic waves
+
+- [[practice/20-poynting-theorem-and-power#206-split-then-add|20.6 Split, then add]] — time-average power · plane waves · *modelled on Summer 2019 HE3 #1a(iv)–(v)*
+- [[practice/20-poynting-theorem-and-power#207-a-leaky-spherical-capacitor|20.7 A leaky spherical capacitor]] — Poynting's theorem · Joule heating · conductance
+- [[practice/20-poynting-theorem-and-power#208-energy-flows-into-a-solenoid|20.8 Energy flows into a solenoid]] — Poynting's theorem · power flow · magnetic energy
+
+## Lecture 21 · Monochromatic waves and phasor notation
+
+- [[practice/21-phasors-and-monochromatic-waves#216-radio-waves-in-a-plasma|21.6 Radio waves in a plasma]] — dispersion relation · plasma frequency · phase velocity
+- [[practice/21-phasors-and-monochromatic-waves#217-partner-fields-on-three-axes|21.7 Partner fields on three axes]] — phasor fields · intrinsic impedance · plane waves
+- [[practice/21-phasors-and-monochromatic-waves#218-a-driven-electron-in-phasors|21.8 A driven electron in phasors]] — phasors · time average · dispersion relation
+
+## Lecture 22 · Phasor Maxwell equations and damped waves
+
+- [[practice/22-damped-waves-in-conducting-media#226-from-the-medium-to-the-wave|22.6 From the medium to the wave]] — propagation constant · complex intrinsic impedance · complex permittivity
+- [[practice/22-damped-waves-in-conducting-media#227-microwave-heating-of-raw-meat|22.7 Microwave heating of raw meat]] — complex permittivity · penetration depth · time-average power
+- [[practice/22-damped-waves-in-conducting-media#228-power-soaking-into-lossy-ground|22.8 Power soaking into lossy ground]] — time-average power · attenuation · lossy media · *modelled on FA23 Exam 3 #6(a)*
+
+## Lecture 23 · Imperfect dielectrics and good conductors
+
+- [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground|23.6 Wavelength and depth measured underground]] — regimes · good conductor · penetration depth · *modelled on Summer 2017 HE3 #2b*
+- [[practice/23-imperfect-dielectrics-and-good-conductors#237-divers-talking-through-a-lake|23.7 Divers talking through a lake]] — imperfect dielectric · Joule heating · energy balance
+- [[practice/23-imperfect-dielectrics-and-good-conductors#238-the-missing-permittivity|23.8 The missing permittivity]] — find the error · loss tangent · regimes

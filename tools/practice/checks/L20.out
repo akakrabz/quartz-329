@@ -1,0 +1,248 @@
+
+==============================================================================
+20.1 Reading the energy ledger (true or false)
+==============================================================================
+  [units: eps E^2 = mu H^2 = J/m^3] OK
+  [units: dw/dt = W/m^3] OK
+  [units: E x H = W/m^2] OK
+  [units: div S = W/m^3] OK
+  [units: J.E = (A/m^2)(V/m) = W/m^3] OK
+  (b) sheet with Js = 1 A/m in vacuum: Js.E = -(eta0/2)*1 = -188.37 W/m^2 (< 0: a source)
+  (c) battery (1.5 V, 5 cm, 1 A, 1 cm^2): E = [ -0.  -0. -30.] V/m, J = [    0.     0. 10000.] A/m^2, J.E = -300000.0 W/m^3, over the volume -1.50 W = -VI
+  [(c) J.E < 0 inside the battery] OK
+  (e) eps(x): dw/dt + div S + J.E = -2.842e-06   (1/2 E^2 d(eps)/dt = +0.000e+00)
+  [(e) theorem holds when eps varies in space] OK
+  (e) eps(t): dw/dt + div S + J.E = -2.766e-01   (1/2 E^2 d(eps)/dt = +2.766e-01)
+  [(e) eps(t): residual equals -(1/2)E^2 d(eps)/dt (theorem as written fails)] OK
+  (f) at (0.2,0.3,0.1) m: |S| = 1.072e+02 W/m^2, div S = 3.55e-09
+  (f) closed sphere around both: net flux -6.06e-17 W vs integral of |S.n| dA 6.01e-01 W
+  [(f) net flux of E x H through a closed surface ~ 0] OK
+  Answers: (a) T (b) F (c) T (d) T (e) F (f) F
+
+==============================================================================
+20.2 Joule heating at a point: sigma = 0.02 S/m, J = -z 0.1 sin(wt) A/m^2
+==============================================================================
+  E = J/sigma = -z 5.000 sin(wt) V/m (parallel to J)
+  J.E = 0.500 sin^2(wt) W/m^3; max = 0.5000 W/m^3 at wt = 0.5000 pi; min = 0.00e+00
+  <J.E> = 0.25000 W/m^3  (= sigma E0^2/2 = 0.25000, = J0^2/(2 sigma) = 0.25000); per litre 0.250 mW
+  [20.2 max 0.5, avg 0.25] OK
+  <J><E> = 1.58e-33 (product of averages, not the average)
+  (d) same E, 2 sigma: <J.E> = 0.5000 W/m^3 ; same J, 2 sigma: <J.E> = 0.1250 W/m^3
+  [20.2(d) 0.5 and 0.125] OK
+
+==============================================================================
+20.3 Laser beam: E = z 240 pi cos(wt + beta y) V/m in air, A = 1 mm^2 (course constants)
+==============================================================================
+  E0 = 753.982 V/m, travel -y (wt + beta y)
+  H = u x E / eta0: (-y) x z = -x; H0 = E0/eta0 = 2.000000 A/m
+  E x H direction: -y
+  [20.3 fields (mu0, eps0 course)] Faraday rel.res 6.7e-09 | Ampere-Maxwell 6.7e-09 -> OK
+  S = -y 1507.96 cos^2(...) W/m^2 (= 480 pi = 1507.96)
+  <S_y> by quadrature = -753.9822 W/m^2 (= -240 pi = -753.9822)
+  [20.3 <S> = -y 240 pi] OK
+  P = <S> A = 0.7540 mW
+  <w> = <S>/c = 2.51327e-06 J/m^3 (8 pi e-7 = 2.51327e-06); by quadrature of 1/2 eps0 E^2 + 1/2 mu0 H^2: 2.51327e-06
+  1/2 eps0 E0^2 = 2.51327e-06 J/m^3 (electric + magnetic averages: 1.2566e-06 + 1.2566e-06)
+  [20.3 <w> = 8 pi e-7] OK
+  energy in 1 m of beam = <w> A (1 m) = 2.5133e-12 J = P/c = 2.5133e-12 J
+  ratio to sunlight 1361 W/m^2: 0.554 ; light needs 3.33 ns per metre
+
+==============================================================================
+20.4 Standing wave from y E0 cos(wt - bx) + y E0 cos(wt + bx), free space
+==============================================================================
+  [20.4 E = y 2E0 cos wt cos bx, H = z (2E0/eta0) sin wt sin bx, S = x (E0^2/eta0) sin 2wt sin 2bx] OK
+  H of the -x wave: (-x) x y = -z
+  [20.4 standing wave] Faraday rel.res 6.4e-09 | Ampere-Maxwell 6.4e-09 -> OK
+  (a) at x = 0.1 lambda, t = T/8: S_x = 2.5245e-03 W/m^2 (nonzero) ; at t = 3T/8: -2.5245e-03
+  [(a) S not identically zero] OK
+  (b) <S_x> at three x: [-8.47756744206944e-20, 4.2051828681827794e-20, 8.628743170102374e-20]
+  [(b) <S> = 0] OK
+  (c) <w> at x = 0, 0.1, 0.25, 0.4 lambda: ['8.854188e-12', '8.854188e-12', '8.854188e-12', '8.854188e-12']  ; eps0 E0^2 = 8.854188e-12
+  [(c) <w> = eps0 E0^2 everywhere (not zero)] OK
+  (d) at the E node x = lambda/4: |E| = 0.0e+00; w(t = 0, T/8, T/4, T/2) = [np.float64(6.639577394886099e-44), np.float64(8.8541878128e-12), np.float64(1.7708375625600004e-11), np.float64(3.3197886974430496e-43)]
+      2 eps0 E0^2 sin^2(wt) at T/8: 8.854188e-12; at T/4: 1.770838e-11
+  [(d) w at E node = 2 eps0 E0^2 sin^2 wt (not always 0)] OK
+  (e) energy between E nodes lambda/4 .. 3lambda/4 at four times: ['1.32720936e-11', '1.32720936e-11', '1.32720936e-11', '1.32720936e-11'] ; eps0 E0^2 lambda/2 = 1.32720936e-11
+      S_x at the nodes: 8.59e-19, -3.87e-18
+  [(e) constant energy between nodes] OK
+  (f) amplitude E0/2 for the -x wave: <S_x> = 9.954070e-04 vs 3 E0^2/(8 eta0) = 9.954070e-04
+  [(f) <S> = 3E0^2/(8 eta0) along +x] OK
+  Answers: (a) F (b) T (c) F (d) F (e) T (f) T
+
+==============================================================================
+20.5 Find the error: isotropic 6 kW transmitter, E_min = 10 mV/m (eta0 = 120 pi)
+==============================================================================
+  eta0/(4 pi) = 30.0000 ; eta0/(2 pi) = 60.0000
+  student: r = sqrt(30 P)/E = sqrt(180000)/0.01 = 42.426 km
+  correct: r = sqrt(60 P)/E = sqrt(360000) / 0.01 = 600.000/0.01 = 60.000 km ; ratio 1.41421 = sqrt 2
+  brute force: E0(r) = sqrt(2 eta0 <S>) = 10 mV/m at r = 60.000000 km
+  [20.5 range 60 km] OK
+  at 60 km: <S> = 1.3263e-07 W/m^2 ; E0^2/(2 eta0) = 1.3263e-07
+  field at 60 km if r were 42.4 km... student's E0 at 60 km would be 0.00707 V/m (= rms value 0.00707)
+
+==============================================================================
+20.6 Split, then add: E = x 6 cos(wt + bz) - y 8 sin(wt + bz) V/m, eps_r = 4, f = 75 MHz
+==============================================================================
+  v = 1.5000e+08 m/s, eta = 188.4956 Ohm (60 pi = 188.4956), beta = 3.141593 rad/m (pi = 3.141593), lambda = 2.0000 m
+  (-z) x x = -y ; (-z) x (-y) = -x ; x x (-y) = -z ; (-y) x (-x) = -z
+  H amplitudes: 6/eta = 0.031831 (1/(10 pi) = 0.031831), 8/eta = 0.042441 (2/(15 pi) = 0.042441) A/m
+  [H = -y 0.0318 cos - x 0.0424 sin] [-0.04239483 -0.00148946  0.        ] vs [-0.04239483 -0.00148946 -0.        ] -> OK
+  [20.6 fields (mu0, 4 eps0 course)] Faraday rel.res 2.1e-10 | Ampere-Maxwell 2.1e-10 -> OK
+  (c) <E1 x H1>_z = -0.095493 W/m^2 ; 36/(2 eta) = 0.095493 ; 3/(10 pi) = 0.095493
+      y part alone: -0.169765 W/m^2 ; 8/(15 pi) = 0.169765
+  (d) <E x H>_z = -0.265258 W/m^2 ; 100/(2 eta) = 0.265258 ; 5/(6 pi) = 0.265258
+  [(c),(d) -z 0.0955 and -z 0.265, sum of parts] OK
+  (e) |S| at z = 0: min 0.19099 at wt = 0.0000 pi ; max 0.33953 at wt = 0.5000 pi
+      36/eta = 0.19099, 64/eta = 0.33953; single linear wave of amplitude 10: 0 .. 0.53052
+  [(e) min 36/eta, max 64/eta] OK
+      E at wt = 0: [6. 0. 0.] ; at wt = pi/2: [ 0. -8.  0.]
+  (f) window 0.5 m x 0.5 m: P = 66.315 mW ; 5/(24 pi) = 66.315 mW
+  check: <w> = 1.76839e-09 J/m^3 (50 eps = 1.76839e-09); v <w> = 0.265258 W/m^2
+  [v<w> = <S>] OK
+
+==============================================================================
+20.7 Leaky spherical capacitor: a = 1 cm, b = 3 cm, eps = 6 eps0, sigma = 2e-7 S/m, V0 = 1 kV
+==============================================================================
+  tau = eps/sigma = 265.63 us ; C = 4 pi eps ab/(b-a) = 10.0139 pF ; Q0 = 10.0139 nC
+  E(r,t) = r_hat K/r^2 e^(-t/tau), K = V0 ab/(b-a) = 15.0000 V m ; Q0/(4 pi eps) = 15.0000
+  E(a,0) = 1.5000e+05 V/m ; E(b,0) = 1.6667e+04 V/m
+  J = sigma E = r_hat 3.000e-06/r^2 e^(-t/tau) A/m^2 ; J(a,0) = 0.0300 A/m^2
+  at a test point: J = [ 0.00452258  0.00339194 -0.00188441], dD/dt = [-0.00452258 -0.00339194  0.00188441] -> J + dD/dt = [-4.02336067e-10 -3.92701521e-10 -1.05208382e-10]
+  [20.7 J + dD/dt = 0 (no source for curl H)] OK
+  w(a,0) = 0.5977 J/m^3 ; J.E(a,0) = sigma E^2 = 4500.00 W/m^3 ; 2w/tau = 4500.00
+  dw/dt (FD) = -1.775498e+02 ; -sigma E^2 = -1.775498e+02
+  [20.7 dw/dt = -J.E] OK
+  W(0) = 1/2 C V0^2 = 5.0069 uJ ; by integrating 1/2 eps E^2 dV: 5.0069 uJ
+  P(0) = int sigma E^2 dV = 37.6991 mW ; G V0^2 = 37.6991 mW (G = 3.7699e-08 S) ; 2W0/tau = 37.6991 mW
+  total heat int_0^inf P dt = 5.0069 uJ
+  [20.7 total heat = W(0)] OK
+  half the energy at 92.06 us ((tau/2) ln 2) ; half the charge at 184.12 us (tau ln 2)
+  H = 0 by symmetry and J + dD/dt = 0 -> S = 0
+
+==============================================================================
+20.8 Ramping solenoid: n = 1000 /m, a = 2 cm, I = k t, k = 50 A/s, t = 0.2 s
+==============================================================================
+  curl E = [ 0.          0.         -0.06283185] ; -mu0 dH/dt = [-0.         -0.         -0.06283185]
+  [20.8 Faraday inside] OK
+  curl H = [0. 0. 0.] ; eps0 dE/dt = [0. 0. 0.] (both 0: Ampere-Maxwell holds with J = 0)
+  E_phi(a) = -mu0 n k a/2 = -6.2832e-04 V/m ; I(0.2 s) = 10.0 A ; H = n I = 10000 A/m
+  S at r = a (on +x axis): [-6.28318531 -0.          0.        ] W/m^2 -> -x (inward), |S| = 6.2832 ; mu0 n^2 k^2 a t/2 = 6.2832
+  phi_hat x z_hat on +x axis: phi=+y: +x = r_hat
+  [20.8 point form at r = 1 cm] dw/dt = 628.319, div S = -628.319, J.E = 0, sum = 2.81e-11 (rel 4.5e-14) -> OK
+  mu0 n^2 k^2 t = 628.31853 W/m^3
+  H.(curl E) = -628.31853 ; E.(curl H) = 0.00e+00 ; H.curlE - E.curlH = -628.31853 vs div S = -628.31853
+  [20.8 identity] OK
+  power in through r = a per metre (surface integral) = 0.78957 W/m ; script-L = 1.57914e-03 H/m ; L I k = 0.78957 W/m
+  [20.8 inflow = d/dt(1/2 L I^2)] OK
+  winding: Js = phi_hat 10000 A/m, E(a) = [ 0.         -0.00062832 -0.        ] -> Js.E = -6.2832 W/m^2
+  [20.8 -Js.E = inward |S| at a] OK
+  electric energy density 1/2 eps0 E^2 at r = a: 1.75e-18 J/m^3 (constant in time)
+
+==============================================================================
+20.9 Coax with resistive inner conductor: a = 1 mm, b = 4 mm, R' = 1 Ohm/m, l = 10 m, V0 = 100 V, RL = 40 Ohm
+==============================================================================
+  sigma = 1/(pi a^2 R') = 3.1831e+05 S/m
+  I = 2.000 A ; V(z) = 100 - 2 z V ; V(l) = 80.0 V = I RL = 80.0 V
+  powers: battery 200.0 W ; inner conductor I^2 R' l = 40.0 W ; load 160.0 W
+  Laplacian of Phi at a test point (FD, h = 1 um): d2/dx2 6.7766e+06, d2/dy2 -6.7766e+06, d2/dz2 0.00e+00; sum -2.68e+00 V/m^2
+  [20.9 Phi satisfies Laplace] OK
+  E at r = a+, z = 0 (FD): [ 7.21346802e+04 -0.00000000e+00  1.99999860e+00] ; formulas E_r = 7.2135e+04, E_z = 2.000000 V/m
+  inside the inner conductor E_z = J/sigma = I/(sigma pi a^2) = 2.000000 V/m = I R' = 2.000
+  [20.9 E_z continuous at r = a] OK
+  E_z at r = b- (FD): 1.44e-09 V/m ; E_r(a, z=0) = 72.13 kV/m ; E_r(a, z=l) = 57.71 kV/m ; ln 4 = 1.3863
+  [20.9 tangential E = 0 at r = b] OK
+  H(a) = I/(2 pi a) = 318.31 A/m along phi_hat
+  r_hat x phi_hat = +z ; z_hat x phi_hat (phi=+y at +x axis) = -x
+  z =  0.0 m: power through cross-section = 200.0000 W (V I = 200.0) ; S at r = a+: [-6.36619648e+02 -0.00000000e+00  2.29612002e+07] W/m^2
+  z = 10.0 m: power through cross-section = 160.0000 W (V I = 160.0) ; S at r = a+: [-6.36619671e+02 -0.00000000e+00  1.83689602e+07] W/m^2
+  S_z(a, 0) = V I/(2 pi a^2 ln 4) = 2.2961e+07 W/m^2
+  S_r(a+) = -I^2 R'/(2 pi a) = -636.620 W/m^2 ; times 2 pi a = -4.0000 W/m (= -I^2 R')
+  S_r(b-) = -1.15e-07 W/m^2
+  [20.9 S_r(a) and S_r(b)] OK
+  ring 2 m < z < 3 m: out through z = 3: 188.00000 W ; through z = 2: -192.00000 W ; into the wire (r = a): 4.00000 W ; r = b: -2.89e-12 W
+  net outflow = 2.34e-09 W (no storage, J = 0 in the dielectric)
+  [20.9 ring ledger balances] OK
+  |S_r|/S_z at r = a: z = 0: 2.7726e-05 (0.00159 deg) ; z = l: 3.4657e-05 (0.00199 deg)
+
+==============================================================================
+20.10 Sheet on y = 0, Js = -x u(t) sin(wt) A/m, f = 2.5 MHz, mu_r = eps_r = 4
+==============================================================================
+  v = 7.5000e+07 m/s (75.0 m/us), eta = 376.9911 Ohm (120 pi = 376.9911), omega = 1.5708e+07 (5 pi e6 = 1.5708e+07)
+  beta = 0.209440 rad/m (pi/15 = 0.209440), lambda = 30.0000 m, T = 0.40 us
+  E amplitude eta J0/2 = 188.4956 V/m (60 pi = 188.4956) ; H amplitude J0/2 = 0.5
+  y>0: (-x) x y = -z ; y<0: (-x) x (-y) = +z ; E direction +x
+  E x H: y>0 +y, y<0 -y
+  [20.10 fields behind the front] Faraday rel.res 3.2e-09 | Ampere-Maxwell 3.2e-09 -> OK
+  jump y x (H+ - H-) at t = 0.37 us: [0.4539905 0.        0.       ] ; Js = [0.4539905 0.        0.       ]
+  [20.10 jump condition] OK
+  Js.E at wt = pi/2 (t = 4.10 us): -188.4956 W/m^2 (-60 pi = -188.4956)
+  <Js.E> = -94.2478 W/m^2 (-30 pi = -94.2478)
+  [20.10 <Js.E> = -30 pi] OK
+  <S_y> at y = +20 m: 47.1239 ; at y = -20 m: -47.1239 W/m^2 (15 pi = 47.1239)
+  [20.10 <S> = +-y 15 pi; balance] OK
+  instant check at the sheet: S(0+) - S(0-) = 91.8793 ; -Js.E = 91.8793 ; peak S per side 30 pi = 94.2478
+  [20.10 instantaneous sheet balance] OK
+  <w> behind the front = 6.28319e-07 J/m^3 (2 pi e-7 = 6.28319e-07) ; <S>/<w> = 7.50000e+07 m/s
+  [20.10 <S>/<w> = v] OK
+  vacuum, same current: E0 = 188.50, H0 = 0.5, <S> = 47.1239 (15 pi), <w> = 1.5708e-07 J/m^3, lambda = 120 m
+  ratios medium/vacuum: <w> 4.0000, lambda 0.2500
+  (f) two-frequency current: <-Js.E> = 117.8097 W/m^2 (37.5 pi = 117.8097 = 30 pi + 7.5 pi) ; each side 58.9049 (18.75 pi = 58.9049)
+      <sin wt sin 3wt> = -1.73e-17
+  [20.10(f) 37.5 pi and 18.75 pi] OK
+
+==============================================================================
+20.11 Two sheets in step: x J0 cos wt on z = 0 and on z = d, free space, f = 100 MHz
+==============================================================================
+  beta = 2.094395 rad/m (2 pi/3 = 2.094395), lambda = 3.0000 m
+  single sheet alone: injects eta0 J0^2/4 = 94.2478 (30 pi), per side 47.1239 (15 pi)
+  d = 0.75 m: <S_z> above 94.2478, below -94.2478, between 0.00e+00; <-JA.E> 94.2478, <-JB.E> 94.2478; 60 pi cos^2(beta d/2) = 94.2478
+  [20.11 d = 0.75: outflow = injection = formula] OK
+  [20.11 d = 0.75: <S> = 0 between the sheets] OK
+  [20.11 d = 0.75: single-cosine forms] OK
+    amplitude outside = 120 pi |cos(beta d/2)| = 266.573 V/m ; cos^2 = 0.5000
+  d = 1 m: <S_z> above 47.1239, below -47.1239, between 0.00e+00; <-JA.E> 47.1239, <-JB.E> 47.1239; 60 pi cos^2(beta d/2) = 47.1239
+  [20.11 d = 1: outflow = injection = formula] OK
+  [20.11 d = 1: <S> = 0 between the sheets] OK
+  [20.11 d = 1: single-cosine forms] OK
+    amplitude outside = 120 pi |cos(beta d/2)| = 188.496 V/m ; cos^2 = 0.2500
+  d = 1.5 m: <S_z> above 0.0000, below -0.0000, between 0.00e+00; <-JA.E> -0.0000, <-JB.E> -0.0000; 60 pi cos^2(beta d/2) = 0.0000
+  [20.11 d = 1.5: outflow = injection = formula] OK
+  [20.11 d = 1.5: <S> = 0 between the sheets] OK
+  [20.11 d = 1.5: single-cosine forms] OK
+    E on sheet A at several t: [np.float64(0.0), np.float64(0.0), np.float64(-0.0)] (zero at every instant)
+    amplitude outside = 120 pi |cos(beta d/2)| = 0.000 V/m ; cos^2 = 0.0000
+  d = 1e-07 m: <S_z> above 188.4956, below -188.4956, between nan; <-JA.E> 188.4956, <-JB.E> 188.4956; 60 pi cos^2(beta d/2) = 188.4956
+  [20.11 d = 1e-07: outflow = injection = formula] OK
+  [20.11 d = 1e-07: single-cosine forms] OK
+    amplitude outside = 120 pi |cos(beta d/2)| = 376.991 V/m ; cos^2 = 1.0000
+  60 pi = 188.4956, 30 pi = 94.2478, 120 pi = 376.9911 (d -> 0 total = 4 x 30 pi)
+
+==============================================================================
+20.12 Charging a leaky capacitor: a = 5 cm, d = 2 mm, eps = 4 eps0, R = 10 MOhm, I = 10 uA
+==============================================================================
+  A = 7.853982e-03 m^2 ; C = 139.081 pF ; sigma = d/(R A) = 2.5465e-08 S/m ; tau = RC = 1.3908 ms (eps/sigma = 1.3908 ms)
+  V(t) = I R (1 - e^-t/tau) = 100(1 - e^-t/tau) V ; V(tau) = 63.2121 V ; ODE: 63.2121 V
+  [20.12 V(t) from KCL ODE] OK
+  E(tau) = 3.16060e+04 V/m (E_inf = 50000 V/m)
+  J + dD/dt at t = 0+, tau, 3 tau: 1.273240e-03, 1.273240e-03, 1.273240e-03 A/m^2 ; I/A = 1.273240e-03
+  [20.12 J + dD/dt = I/A at all t] OK
+  conduction J(tau) = 8.0484e-04, displacement (tau) = 4.6840e-04 A/m^2 ; dE/dt(tau) = 1.3225e+07 V/(m s)
+  Ampere-Maxwell at r = a/2: circulation of H = 2.500000e-06 A ; enclosed J + dD/dt = 2.500000e-06 A
+  [20.12 H from Ampere-Maxwell] OK
+  H(a) = I/(2 pi a) = 3.1831e-05 A/m ; H(a/2) = 1.5915e-05 A/m
+  [20.12 gap fields (mu0, eps, J = sigma E)] Faraday rel.res 0.0e+00 | Ampere-Maxwell 3.2e-10 -> OK
+  S at r = a, t = tau: [-1.00605112 -0.          0.        ] W/m^2 -> -x ; |S| = 1.0061 W/m^2
+  power in through the side r = a (surface integral) = 0.63212 mW ; V(tau) I = 0.63212 mW ; side area 2 pi a d = 6.2832e-04 m^2
+  [20.12 inflow = V I] OK
+  [20.12 point form at r = a/2, t = tau] dw/dt = 14.8042, div S = -40.242, J.E = 25.4378, sum = 4.46e-11 (rel 1.1e-12) -> OK
+  formulas: eps E dE/dt = 14.8042 ; -E I/(pi a^2) = -40.2420 ; sigma E^2 = 25.4378 W/m^3
+  gap volume 1.5708e-05 m^3: dW/dt = 232.54 uW ; int J.E dV = 399.58 uW (V^2/R = 399.58) ; outward flux = -632.12 uW
+  -dW/dt = -232.54 uW ; flux + heat = -232.54 uW
+  [20.12 integral ledger] OK
+  fraction of inflow stored at t = 7.19004e-10 tau: 1.0000 (e^-t/tau = 1.0000)
+  fraction of inflow stored at t = 1 tau: 0.3679 (e^-t/tau = 0.3679)
+  fraction of inflow stored at t = 50 tau: 0.0000 (e^-t/tau = 0.0000)
+
+==============================================================================
+SUMMARY: 66/66 checks OK
+==============================================================================

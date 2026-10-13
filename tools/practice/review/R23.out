@@ -1,0 +1,353 @@
+23.1  six media at 3 MHz
+  PASS  f_c copper: computed 1.044e+18  page 1.04e18
+  PASS  p(3 MHz) copper: computed 3.48e+11  page 3.5e11
+  PASS  verdict copper = GC (GC)
+  PASS  verdict copper with CODATA eps0 
+  PASS  f_c seawater: computed 8.88889e+08  page 0.889e9
+  PASS  p(3 MHz) seawater: computed 296.296  page 296
+  PASS  verdict seawater = GC (GC)
+  PASS  verdict seawater with CODATA eps0 
+  PASS  f_c moist soil: computed 1.8e+07  page 18e6
+  PASS  p(3 MHz) moist soil: computed 6  page 6.0
+  PASS  verdict moist soil = neither (neither)
+  PASS  verdict moist soil with CODATA eps0 
+  PASS  f_c fresh water: computed 225000  page 225e3
+  PASS  p(3 MHz) fresh water: computed 0.075  page 0.075
+  PASS  verdict fresh water = ID (ID)
+  PASS  verdict fresh water with CODATA eps0 
+  PASS  f_c dry earth: computed 36000  page 36e3
+  PASS  p(3 MHz) dry earth: computed 0.012  page 0.012
+  PASS  verdict dry earth = ID (ID)
+  PASS  verdict dry earth with CODATA eps0 
+  PASS  f_c Bakelite: computed 3.67347  page 3.67
+  PASS  p(3 MHz) Bakelite: computed 1.22449e-06  page 1.2e-6
+  PASS  verdict Bakelite = ID (ID)
+  PASS  verdict Bakelite with CODATA eps0 
+  PASS  moist soil: GC alpha too high [%]: computed 8.649  page 8.6
+  PASS  moist soil: GC beta too low [%]: computed 7.96049  page 8.0
+  PASS  (c) fresh water with eps0 alone: computed 6  page 6
+  PASS  (c) verdict with eps0 alone is neither 
+  PASS  seawater ID above 10 f_c [GHz]: computed 8.88889  page 9
+  PASS  Bakelite GC below f_c/10 [Hz]: computed 0.367347  page 0.37
+23.2  good-conductor multiple choice (sample: seawater at 1 kHz)
+  PASS  tau seawater 1 kHz [deg]: computed 45  page 44.99997
+  PASS  tau seawater 1 kHz, CODATA eps0 [deg]: computed 45  page 44.99997
+  PASS  T/8 at 1 kHz [us]: computed 125  page 125
+  PASS  (a) v_p = w delta [m/s]: computed 50000  page 5e4
+  PASS  (a) exact v_p [m/s]: computed 50000  page 5e4
+  PASS  (a) lossless 1/sqrt(mu eps) [m/s]: computed 3.33333e+07  page 3.3e7
+  PASS  (a) false: v_p << 1/sqrt(mu eps) 
+  PASS  (b) delta(2f)/delta(f) [%]: computed 70.7107  page 71
+  PASS  (b) false: ratio != 0.5 
+  PASS  (c) true: H lags E by tau -> T/8 
+  PASS  (d) |eta| seawater [ohm]: computed 0.0444288  page 0.0444
+  PASS  (d) sqrt(mu/eps) [ohm]: computed 41.8879  page 41.9
+  PASS  (d) sqrt(mu/eps) CODATA [ohm]: computed 41.8589  page 41.9
+  PASS  (e) field over 1 lambda 1/e^{-2pi}: computed 535.492  page 535
+  PASS  (e) power over 1 lambda: computed 3.48739e-06  page 3.5e-6
+  PASS  (e) dB per wavelength: computed 54.575  page 54.6
+  PASS  (e) false: power factor is e^{-4pi}, not e^{-2pi} 
+23.3  true/false
+  PASS  (a) tan(lead of J_d over J_tot) = sigma/w eps  (f=1e+09) 
+  PASS  (a) tan(lead of J_d over J_tot) = sigma/w eps  (f=1e+06) 
+  PASS  (a) tan(lead of J_d over J_tot) = sigma/w eps  (f=3e+06) 
+  PASS  (b) fresh water 1 MHz p: computed 0.225  page 0.225
+  PASS  (b) false: neither regime 
+  PASS  (b) with eps0 only: computed 18  page 18
+  PASS  (c) seawater f_c [GHz]: computed 0.888889  page 0.89
+  PASS  (c) GC below [MHz]: computed 88.8889  page 89
+  PASS  (c) p at 1 GHz: computed 0.888889  page 0.89
+  PASS  (c) p at 10 GHz: computed 0.0888889  page 0.089
+  PASS  (d) alpha < beta strictly in random media with p < 1e12 (188463 media)
+  PASS  (d) alpha <= beta (1 + 1e-12) in all 200000 random media 
+  PASS  (d) tau < 45 deg in all random media 
+  PASS  (e) fresh water exact alpha at 1e+08 Hz: computed 0.0210744  page 0.0211
+  PASS  (e) fresh water exact beta at 1e+08 Hz: computed 18.7329  page 18.7
+  PASS  (e) fresh water exact alpha at 2e+08 Hz: computed 0.0210744  page 0.0211
+  PASS  (e) fresh water exact beta at 2e+08 Hz: computed 37.4657  page 37.5
+  PASS  (f) p at 100 MHz: computed 0.00225  page 0.00225
+  PASS  (f) penetration depth (2/sigma)sqrt(eps/mu) [m]: computed 47.4508  page 47
+  PASS  (f) exact 1/alpha [m]: computed 47.4509  page 47
+  PASS  (f) skin-depth formula [m]: computed 1.59155  page 1.6
+  PASS  (f) ratio: computed 29.8143  page 30
+23.4  gold sigma = 4.1e7 S/m
+  PASS  pi mu0 sigma: computed 161.862  page 161.9
+  PASS  delta sqrt(f) [m]: computed 0.078601  page 0.0786
+  PASS  delta 60 Hz [mm]: computed 10.1473  page 10.1
+  PASS  delta 1 MHz [um]: computed 78.601  page 78.6
+  PASS  delta 4 MHz [um]: computed 39.3005  page 39.3
+  PASS  delta 10 GHz [um]: computed 0.78601  page 0.786
+  PASS  exact delta 10 GHz [um]: computed 0.78601  page 0.786
+  PASS  sigma/(w eps0) at 10 GHz: computed 7.36979e+07  page 7e7
+  PASS  (c) plating in skin depths: computed 1.90837  page 1.91
+  PASS  (c) power left at back [%]: computed 2.19993  page 2.2
+  PASS  (c) power absorbed [%]: computed 97.8001  page 97.8
+  PASS  (c) field at back [%]: computed 14.8322  page 15
+  PASS  (c) f where delta = 1.5 um [GHz]: computed 2.74583  page 2.75
+23.5  E = x 0.5 e^{0.4z} e^{j0.4z}, z up, water z<0
+  PASS  (a) travel toward -z 
+  PASS  (a)/(b) H along -y 
+  PASS  (b) S along -z 
+  PASS  (b) |S| coefficient 0.25 cos45/2: computed 0.0883883  page 0.0884
+  PASS  (c) factor per metre: computed 0.449329  page 0.449
+  PASS  (c) dB/m: computed 3.47436  page 3.47
+  PASS  (d) 30 dB depth [m]: computed 8.63469  page 8.63
+  PASS  (d) field there [%]: computed 3.16228  page 3.2
+  PASS  (e) f [kHz]: computed 10.1321  page 10.1
+  PASS  (e) p with 81 eps0: computed 87729.8  page 8.8e4
+  PASS  (e) exact alpha at that f: computed 0.399998  page 0.4
+  PASS  (e) exact beta at that f: computed 0.400002  page 0.4
+  PASS  (e) |eta| [ohm]: computed 0.141421  page 0.141
+  PASS  (e) S_z(z=0.0) brute force vs -0.625 e^(0.8z): computed -0.625004  page -0.625
+  PASS  (e) S_z(z=-3.0) brute force vs -0.625 e^(0.8z): computed -0.0566998  page -0.0567
+  PASS  (e) <S>(0) magnitude [W/m^2]: computed 0.625  page 0.625
+23.6  measured lambda = 1000 m, delta = 159.2 m at 1 kHz
+  PASS  (a) alpha [1/m]: computed 0.00628141  page 6.28e-3
+  PASS  (a) beta [1/m]: computed 0.00628319  page 6.28e-3
+  PASS  (a) alpha/beta: computed 0.999717  page 0.9997
+  PASS  (a) tan(2 tau) in the thousands (3533)
+  PASS  (b) v_p [m/s]: computed 1e+06  page 1e6
+  PASS  (b) c/v_p: computed 300  page 300
+  PASS  (b) c/sqrt(10) [m/s]: computed 9.48683e+07  page 9.5e7
+  PASS  (b) slow-down factor: computed 94.8683  page 100
+  PASS  (c) sigma GC [S/m]: computed 0.00999434  page 9.99e-3
+  PASS  (c) Re{gamma/eta} equals 2 alpha beta/(w mu) 
+  PASS  (c) sigma exact route [S/m]: computed 0.00999717  page 1.0e-2
+  PASS  (d) |eta| with sigma=1e-2 [ohm]: computed 0.888577  page 0.889
+  PASS  (d) Re eta [ohm]: computed 0.628319  page 0.628
+  PASS  (d) 1/(sigma delta) [ohm]: computed 0.628141  page 0.628
+  PASS  (d) |eta| directly from data, j w mu/gamma [ohm]: computed 0.888702  page 0.889
+  PASS  (d) angle eta from data [deg]: computed 44.9919  page 45
+  PASS  (e) eps_r from delta=159.15: computed -5.59077  page -5.6
+  PASS  (e) eps_r from delta=159.15, CODATA: computed -5.58303  page -5.6
+  PASS  (e) eps_r from delta=159.2: computed 50.9365  page 51
+  PASS  (e) eps_r from delta=159.2, CODATA: computed 50.8661  page 51
+  PASS  (e) eps_r from delta=159.25: computed 107.411  page 107
+  PASS  (e) eps_r from delta=159.25, CODATA: computed 107.262  page 107
+  PASS  (e) 0.1 m change in delta [%]: computed 0.0628141  page 0.06
+  PASS  (e) eps bound sigma/(10 w) [F/m]: computed 1.59155e-07  page 1.6e-7
+  PASS  (e) eps_r bound: computed 18000  page 1.8e4
+  PASS  (e) eps_r bound CODATA: computed 17975.1  page 1.8e4
+  PASS  check eps_r=1 delta [m]: computed 159.155  page 159.2
+  PASS  check eps_r=1 lambda [m]: computed 999.997  page 1000
+  PASS  check eps_r=10 delta [m]: computed 159.159  page 159.2
+  PASS  check eps_r=10 lambda [m]: computed 999.972  page 1000
+  PASS  check eps_r=1000 delta [m]: computed 159.598  page 159.6
+  PASS  check eps_r=1000 lambda [m]: computed 997.226  page 997
+  PASS  check p for eps_r = 10: computed 18000  page 1.8e4
+  PASS  watch-out (c/v_p)^2: computed 90000  page 9e4
+23.7  fresh water 100 MHz, divers 10 m apart
+  PASS  (a) p: computed 0.00225  page 2.25e-3
+  PASS  (b) |eta| ID [ohm]: computed 42.1489  page 42.1
+  PASS  (b) tau [deg]: computed 0.0644578  page 0.064
+  PASS  (b) tau [rad]: computed 0.001125  page 1.125e-3
+  PASS  (b) alpha [Np/m]: computed 0.0210744  page 0.0211
+  PASS  (b) delta [m]: computed 47.4508  page 47.5
+  PASS  (b) beta [rad/m]: computed 18.7328  page 18.7
+  PASS  (b) lambda [m]: computed 0.33541  page 0.335
+  PASS  (b) v_p [m/s]: computed 3.3541e+07  page 3.35e7
+  PASS  (b) H along -y 
+  PASS  (b) E x H along +x 
+  PASS  (b) |H0| [mA/m]: computed 11.8627  page 11.9
+  PASS  check: exact vs ID alpha, beta, |eta| better than 1e-5 (same constants) (1.3e-06)
+  PASS  (c) <S>(0) [mW/m^2]: computed 2.96568  page 2.97
+  PASS  (c) heating at 0 [mW/m^3]: computed 0.125  page 0.125
+  PASS  (c) 2 alpha <S> [mW/m^3]: computed 0.125  page 0.125
+  PASS  (c) -dS/dx = 1/2 sigma |E|^2 at x=3 m (exact fields, FD) 
+  PASS  (c) alpha = sigma |eta|/(2 cos tau) exactly 
+  PASS  (d) fraction heated in 10 m [%]: computed 34.3931  page 34.4
+  PASS  (d) dB over 10 m: computed 1.8305  page 1.83
+  PASS  (d) heat per m^2 by quad [mW/m^2]: computed 1.01999  page 1.02
+  PASS  (d) drop in <S_x> [mW/m^2]: computed 1.01999  page 1.02
+  PASS  check: seawater 100 MHz p: computed 8.88889  page 8.9
+  PASS  check: seawater 100 MHz loss [dB/m]: computed 326.322  page 326
+23.8  distilled water 2e-4 S/m, eps_r 81, 100 kHz (CODATA constants, as the student)
+  PASS  student p with eps0: computed 35.9502  page 36
+  PASS  student delta [m]: computed 112.54  page 113
+  PASS  student lambda [m]: computed 707.107  page 707
+  PASS  student Re eta [ohm]: computed 44.4288  page 44.4
+  PASS  student |eta| [ohm]: computed 62.8319  page 62.8
+  PASS  true p: computed 0.44383  page 0.444
+  PASS  true regime neither 
+  PASS  theta [deg]: computed 23.9331  page 23.9
+  PASS  theta/2 [deg]: computed 11.9665  page 11.97
+  PASS  (1+p^2)^(1/4): computed 1.04598  page 1.046
+  PASS  w sqrt(mu eps) [rad/m]: computed 0.0188626  page 0.01886
+  PASS  sqrt(mu/eps) [ohm]: computed 41.8589  page 41.86
+  PASS  alpha [Np/m]: computed 0.00409079  page 4.09e-3
+  PASS  delta [m]: computed 244.451  page 244
+  PASS  beta [rad/m]: computed 0.0193011  page 0.0193
+  PASS  lambda [m]: computed 325.535  page 326
+  PASS  |eta| [ohm]: computed 40.019  page 40.0
+  PASS  tau [deg]: computed 11.9665  page 12.0
+  PASS  delta with 1e-9/36pi [m]: computed 244.297  page 244
+  PASS  lambda with 1e-9/36pi [m]: computed 325.741  page 326
+  PASS  |eta| with 1e-9/36pi [ohm]: computed 40.0421  page 40.0
+  PASS  delta factor: computed 2.17214  page 2.17
+  PASS  lambda factor: computed 2.17214  page 2.17
+  PASS  |eta| factor: computed 1.57005  page 1.57
+  PASS  check alpha/beta: computed 0.211946  page 0.212
+  PASS  check |gamma||eta|: computed 0.789568  page 0.790
+  PASS  check w mu0: computed 0.789568  page 0.790
+  PASS  ID delta [m]: computed 238.898  page 239
+  PASS  ID delta short [%]: computed 2.27187  page 2.3
+  PASS  ID lambda [m]: computed 333.103  page 333
+  PASS  ID lambda long [%]: computed 2.32468  page 2.3
+  PASS  ID |eta| [ohm]: computed 41.8589  page 41.9
+  PASS  ID |eta| high [%]: computed 4.59771  page 4.6
+  PASS  ID tau = p/2 [deg]: computed 12.7148  page 12.7
+23.9  fresh water 2.5 kHz, z down, H(0) = x 20 mA/m
+  PASS  (a) p: computed 90  page 90
+  PASS  (a) p with eps0: computed 7200  page 7200
+  PASS  (b) alpha/pi [1e-3/m]: computed 1  page 1
+  PASS  (b) delta [m]: computed 318.31  page 318
+  PASS  (b) lambda [m]: computed 2000  page 2000
+  PASS  (b) v_p [m/s]: computed 5e+06  page 5e6
+  PASS  (b) c/v_p: computed 60  page 60
+  PASS  (b) c/sqrt80 [m/s]: computed 3.3541e+07  page 3.35e7
+  PASS  (b) ratio: computed 6.7082  page 6.7
+  PASS  (c) Re eta / pi: computed 1  page 1
+  PASS  (c) |eta| [ohm]: computed 4.44288  page 4.44
+  PASS  (c) E = eta H x z along -y 
+  PASS  (c) |E0| [mV/m]: computed 88.8577  page 88.9
+  PASS  (c) E x H along +z 
+  PASS  (c) T/8 [us]: computed 50  page 50
+  PASS  (b) ODE (sigma only): delta [m]: computed 318.31  page 318
+  PASS  (b) ODE (sigma only): lambda [m]: computed 2000  page 2000
+  PASS  (d) ODE <S_z>(0) [mW/m^2]: computed 0.628319  page 0.628
+  PASS  (d) ODE <S_z>(500 m) [uW/m^2]: computed 27.1521  page 27.2
+  PASS  (d) exp(-pi): computed 0.0432139  page 0.0432
+  PASS  (d) dB/m: computed 0.0272875  page 0.0273
+  PASS  (d) dB over 500 m: computed 13.6438  page 13.6
+  PASS  (d) 1 % depth [m]: computed 732.936  page 733
+  PASS  (e) at 1000 m the phase of E differs from the surface by pi 
+  PASS  (e) field left [%]: computed 4.32139  page 4.3
+  PASS  (e) power left [%]: computed 0.186744  page 0.19
+  PASS  (e) dB: computed 27.2875  page 27.3
+  PASS  watch-out: field at 500 m [%]: computed 20.788  page 21
+  PASS  check exact delta (ODE) [m]: computed 320.083  page 320
+  PASS  check exact lambda (ODE) [m]: computed 1988.92  page 1989
+  PASS  check exact tau [deg]: computed 44.6817  page 44.7
+  PASS  check exact 1 % depth [m]: computed 737.019  page 737
+  info  exact vs shortcut: delta +0.56 %, lambda -0.55 %, tau -0.71 %
+  PASS  check: shortcut fields satisfy Faraday exactly (residual 3.5e-16)
+  PASS  check: shortcut fields Ampere-Maxwell residual [%] (page: only to 1.1 %): computed 1.11104  page 1.1
+  PASS  check: w eps/|sigma + j w eps| ~ 1/90: computed 0.0111104  page 0.0111
+  PASS  check: exact delta and lambda within 0.6 % of shortcuts 
+  PASS  check: tau differs from 45 deg by more than 0.6 % (page now says 44.7 instead of 45) 
+23.10  seawater, submarine, 80 dB budget
+  PASS  25000 Hz p: computed 35555.6  page 3.6e4
+  PASS  25000 Hz alpha: computed 0.628319  page 0.628
+  PASS  25000 Hz delta: computed 1.59155  page 1.59
+  PASS  25000 Hz lambda: computed 10  page 10
+  PASS  25000 Hz dB/m: computed 5.45751  page 5.46
+  PASS  25000 Hz depth for 80 dB (exact alpha): computed 14.6589  page 14.7
+  PASS  25000 Hz depth in wavelengths: computed 1.46587  page 1.47
+  info  25000 Hz: exact vs GC alpha/beta differ by 0.00141 %
+  PASS  check 25000 Hz: exact vs GC alpha, delta, lambda within 0.002 % (page) 
+  PASS  250 Hz p: computed 3.55556e+06  page 3.6e6
+  PASS  250 Hz alpha: computed 0.0628319  page 0.0628
+  PASS  250 Hz delta: computed 15.9155  page 15.9
+  PASS  250 Hz lambda: computed 100  page 100
+  PASS  250 Hz dB/m: computed 0.545751  page 0.546
+  PASS  250 Hz depth for 80 dB (exact alpha): computed 146.587  page 147
+  PASS  250 Hz depth in wavelengths: computed 1.46587  page 1.47
+  info  250 Hz: exact vs GC alpha/beta differ by 0.00001 %
+  PASS  check 250 Hz: exact vs GC alpha, delta, lambda within 0.002 % (page) 
+  PASS  (a) alpha/(0.2 pi): computed 1  page 1
+  PASS  (b) via ln(1e8)/(2 alpha): computed 14.6587  page 14.7
+  PASS  (c) frequency for 10x depth [Hz]: computed 250  page 250
+  PASS  (c) dB per wavelength: computed 54.5751  page 54.6
+  PASS  (d) lambda0 at 25 kHz [km]: computed 12  page 12
+  PASS  (d) lambda0 at 250 Hz [km]: computed 1200  page 1200
+  PASS  (d) quarter wave [km]: computed 3  page 3
+  PASS  (d) quarter wave [km]: computed 300  page 300
+  PASS  (e) alpha max [Np/m]: computed 4.60517  page 4.61
+  PASS  (e) f max [MHz]: computed 1.34299  page 1.34
+  PASS  (e) p there: computed 661.875  page 660
+  PASS  (e) exact loss over 2 m [dB]: computed 79.9396  page 79.94
+  PASS  (e) accuracy [%]: computed 0.0755144  page 0.1
+  PASS  check depth at 76 Hz [m]: computed 265.864  page 266
+  PASS  check depth at 24000 Hz [m]: computed 14.9612  page 15.0
+23.11  dry earth 1e-5 S/m, eps_r 5
+  PASS  (a) f_c [kHz]: computed 36  page 36
+  PASS  (a) sigma/eps [1/s]: computed 226195  page 2.26e5
+  PASS  (a) GC for w < [rad/s]: computed 22619.5  page 2.26e4
+  PASS  (a) ID for w > [rad/s]: computed 2.26195e+06  page 2.26e6
+  PASS  (b)(i) p at 1 kHz: computed 36  page 36
+  PASS  (b)(i) exact alpha/beta at 1 kHz: computed 0.972608  page 0.973
+  PASS  (b)(ii) p at 50 Hz: computed 720  page 720
+  PASS  (b)(ii) field after one wavelength [%]: computed 0.18838  page 0.19
+  PASS  (b)(ii) wavelength [km]: computed 141.323  page 141
+  PASS  (b)(iii) power left after 1 km [%]: computed 18.5268  page 18.5
+  PASS  (b)(iii) possible (>10 %) 
+  PASS  (c) p at 100 Hz: computed 360  page 360
+  PASS  (c) alpha/(2 pi 1e-5): computed 1  page 1
+  PASS  (c) delta [km]: computed 15.9155  page 15.9
+  PASS  (c) lambda [km]: computed 100  page 100
+  PASS  (d) p at 10 MHz: computed 0.0036  page 3.6e-3
+  PASS  (d) |eta| [ohm]: computed 168.596  page 168.6
+  PASS  (d) alpha [Np/m]: computed 0.000842978  page 8.43e-4
+  PASS  (d) exact alpha [Np/m]: computed 0.000842976  page 8.43e-4
+  PASS  (d) delta [m]: computed 1186.27  page 1186
+  PASS  (d) lambda [m]: computed 13.4164  page 13.4
+  PASS  (d) dB/km: computed 7.32201  page 7.32
+  PASS  (d) 100 MHz exact lambda [m]: computed 1.34164  page 1.34
+  PASS  (d) 100 MHz exact alpha unchanged [Np/m]: computed 0.000842978  page 8.43e-4
+  PASS  (d) 100 MHz exact |eta| unchanged [ohm]: computed 168.596  page 168.6
+  PASS  (e) p at f_c: computed 1  page 1
+  PASS  (e) w sqrt(mu eps): computed 0.00168596  page 1.686e-3
+  PASS  (e) alpha: computed 0.000767261  page 7.67e-4
+  PASS  (e) beta: computed 0.00185233  page 1.852e-3
+  PASS  (e) |eta|: computed 141.771  page 141.8
+  PASS  (e) tau [deg]: computed 22.5  page 22.5
+  PASS  (e) delta [m]: computed 1303.34  page 1303
+  PASS  (e) lambda [m]: computed 3392.04  page 3392
+  PASS  (e) ID alpha too high [%]: computed 9.86841  page 9.9
+  PASS  (e) GC alpha: computed 0.00119215  page 1.192e-3
+  PASS  (e) GC alpha too high [%]: computed 55.3774  page 55
+  PASS  (e) ID beta too low [%]: computed 8.98203  page 9.0
+  PASS  (e) GC beta too low [%]: computed 35.6406  page 36
+  PASS  check: delta(f) monotonically decreasing 10 Hz..1 GHz 
+  PASS  check: plateau delta at 1 GHz [m]: computed 1186.27  page 1186
+  PASS  check: exact delta 100 Hz [km]: computed 15.9376  page 15.94
+  PASS  check: exact lambda 100 Hz [km]: computed 99.8612  page 99.9
+  PASS  check: difference [%]: computed 0.138985  page 0.14
+23.12  copper wire a = 0.5 mm, I0 = 2 A, 10 MHz
+  PASS  setup sigma/(w eps0): computed 1.04256e+11  page 1.0e11
+  PASS  (a) 0.0661/sqrt(f) constant: computed 0.0660855  page 0.0661
+  PASS  (a) delta [um]: computed 20.8981  page 20.9
+  PASS  (a) a/delta: computed 23.9257  page 23.9
+  PASS  (b) H0 [A/m]: computed 636.62  page 637
+  PASS  (b) sigma delta [S]: computed 1212.09  page 1212
+  PASS  (b) Re eta [mohm]: computed 0.825023  page 0.825
+  PASS  (b) |eta| [mohm]: computed 1.16676  page 1.17
+  PASS  (b) phi x (-r) = +z 
+  PASS  (b) E x H ~ z x phi = -r (into the wire) 
+  PASS  (b) |E(a)| [V/m]: computed 0.742781  page 0.743
+  PASS  (b) phase of E relative to I [deg]: computed 45  page 45
+  PASS  (c) <S> in [W/m^2]: computed 167.185  page 167
+  PASS  (c) P' [W/m]: computed 0.525226  page 0.525
+  PASS  (c) R'ac [ohm/m]: computed 0.262613  page 0.263
+  PASS  (c) R'ac = 1/(2 pi a sigma delta): computed 0.262613  page 0.263
+  PASS  (c) R'dc [mohm/m]: computed 21.9524  page 22.0
+  PASS  (c) R'ac/R'dc: computed 11.9628  page 12.0
+  PASS  (c) a/(2 delta): computed 11.9628  page 12.0
+  PASS  (d) heat integral [W/m^2]: computed 167.185  page 167
+  PASS  (d) 1/2 sigma |E|^2 at surface [W/m^3]: computed 1.6e+07  page 1.60e7
+  PASS  (d) delta/2 [um]: computed 10.449  page 10.4
+  PASS  (d) fraction within delta [%]: computed 86.4665  page 86.5
+  PASS  (e) delta 60 Hz [mm]: computed 8.5316  page 8.53
+  PASS  (e) delta/a: computed 17.0632  page 17
+  PASS  (e) flat-model ratio a/2delta: computed 0.0293028  page 0.029
+  PASS  check: Bessel formula equals ODE integration at 10 MHz (1.5e-15)
+  PASS  check: exact R' at 10 MHz [ohm/m]: computed 0.268187  page 0.268
+  PASS  check: above flat value [%]: computed 2.12252  page 2.1
+  PASS  check: a/2delta + 1/4 times Rdc: computed 0.268101  page 0.268
+  PASS  check: 60 Hz exact R' = R'dc to < 1e-6 (2.5e-07)
+  PASS  check: flat-model L' = R'ac/w [nH/m]: computed 4.17961  page 4.2
+  PASS  check: exact L' at 10 MHz [nH/m]: computed 4.17819  page 4.2
+  PASS  check: DC internal inductance mu0/8pi [nH/m]: computed 50  page 50
+  PASS  check: exact L' at 60 Hz [nH/m]: computed 50  page 50
+
+TOTAL FAIL = 0

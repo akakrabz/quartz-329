@@ -1,6 +1,6 @@
 ---
 title: "Easy problems"
-description: "All 89 easy practice problems for Lectures 2–19, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
+description: "All 109 easy practice problems for Lectures 2–23, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
 tags: [practice]
 ---
 
@@ -150,3 +150,35 @@ tags: [practice]
 - [[practice/19-radiation-from-current-sheets#193-sheet-facts-true-or-false|19.3 Sheet facts, true or false]] — true or false · current sheet radiation
 - [[practice/19-radiation-from-current-sheets#194-reading-a-waves-parameters|19.4 Reading a wave's parameters]] — wave parameters · intrinsic impedance
 - [[practice/19-radiation-from-current-sheets#195-the-electric-field-that-flips|19.5 The electric field that flips]] — find the error · current sheet radiation · boundary conditions
+
+## Lecture 20 · Poynting's theorem and monochromatic waves
+
+- [[practice/20-poynting-theorem-and-power#201-reading-the-energy-ledger|20.1 Reading the energy ledger]] — true or false · Poynting's theorem
+- [[practice/20-poynting-theorem-and-power#202-joule-heating-at-a-point|20.2 Joule heating at a point]] — Joule heating · time average · *modelled on Summer 2019 HE3 #1b*
+- [[practice/20-poynting-theorem-and-power#203-a-laser-pointers-beam|20.3 A laser pointer's beam]] — Poynting vector · time-average power · energy density
+- [[practice/20-poynting-theorem-and-power#204-standing-waves-true-or-false|20.4 Standing waves, true or false]] — true or false · Poynting vector · energy density · *modelled on SP17 Exam 3 #1c*
+- [[practice/20-poynting-theorem-and-power#205-how-far-a-station-reaches|20.5 How far a station reaches]] — find the error · intensity · time-average power
+
+## Lecture 21 · Monochromatic waves and phasor notation
+
+- [[practice/21-phasors-and-monochromatic-waves#211-reading-two-waves|21.1 Reading two waves]] — wave parameters · monochromatic waves · dispersion relation
+- [[practice/21-phasors-and-monochromatic-waves#212-phasors-both-ways|21.2 Phasors both ways]] — phasors · sine to cosine · phasor fields
+- [[practice/21-phasors-and-monochromatic-waves#213-phasor-pitfalls-true-or-false|21.3 Phasor pitfalls, true or false]] — true or false · phasors · time average
+- [[practice/21-phasors-and-monochromatic-waves#214-which-electric-field|21.4 Which electric field]] — multiple choice · phasor fields · intrinsic impedance · *modelled on SP17 Exam 3 #2(iii)*
+- [[practice/21-phasors-and-monochromatic-waves#215-the-power-that-flowed-backward|21.5 The power that flowed backward]] — find the error · time average · phasor fields
+
+## Lecture 22 · Phasor Maxwell equations and damped waves
+
+- [[practice/22-damped-waves-in-conducting-media#221-phasor-maxwell-true-or-false|22.1 Phasor Maxwell, true or false]] — true or false · phasor Maxwell equations · complex permittivity
+- [[practice/22-damped-waves-in-conducting-media#222-which-phasors-are-allowed|22.2 Which phasors are allowed]] — multiple choice · Helmholtz equation · propagation constant
+- [[practice/22-damped-waves-in-conducting-media#223-reading-a-damped-wave|22.3 Reading a damped wave]] — damped waves · penetration depth · attenuation
+- [[practice/22-damped-waves-in-conducting-media#224-possible-or-not-possible|22.4 Possible or not possible]] — true or false · regimes · propagation constant · *modelled on Summer 2020 HE3 #3a*
+- [[practice/22-damped-waves-in-conducting-media#225-the-magnetic-field-that-leads|22.5 The magnetic field that leads]] — find the error · complex intrinsic impedance
+
+## Lecture 23 · Imperfect dielectrics and good conductors
+
+- [[practice/23-imperfect-dielectrics-and-good-conductors#231-six-media-at-one-frequency|23.1 Six media at one frequency]] — loss tangent · regimes
+- [[practice/23-imperfect-dielectrics-and-good-conductors#232-inside-a-good-conductor|23.2 Inside a good conductor]] — multiple choice · good conductor · *modelled on SP17 Exam 3 #2(i)*
+- [[practice/23-imperfect-dielectrics-and-good-conductors#233-regimes-true-or-false|23.3 Regimes, true or false]] — true or false · loss tangent · regimes
+- [[practice/23-imperfect-dielectrics-and-good-conductors#234-skin-depth-in-gold|23.4 Skin depth in gold]] — skin depth · good conductor
+- [[practice/23-imperfect-dielectrics-and-good-conductors#235-power-against-depth-in-seawater|23.5 Power against depth in seawater]] — attenuation · decibels · seawater · *modelled on FA23 Exam 3 #6*

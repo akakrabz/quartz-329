@@ -1,0 +1,287 @@
+=== A. constants
+ok   c: 299792458.000006 vs 299792458.0
+ok   eta0 [ohm]: 376.730314 vs 376.730313
+ok   120 pi: 376.991118 vs 376.991118
+ok   120 pi is 0.069 % high: 0.000692 vs 0.000692
+ok   exam constants: c = 3e8 exactly: 300000000.0 vs 300000000.0
+ok   exam constants: eta0 = 120 pi exactly: 376.991118 vs 376.991118
+ok   60 pi vs eta0/2 (W/m^2 per side in the notes' example): [188.495559 188.365157] vs [188.4956 188.3652]
+=== B. Poynting's theorem holds identically for any fields obeying Faraday + Ampere-Maxwell (finite differences)
+ok   point 0: dw/dt = -0.22333, div S = +0.33337, J.E = -0.11004, sum = -6.8e-07
+ok   point 0: div(E x H) = H.curl E - E.curl H (+0.33337 vs +0.33337)
+ok   point 1: dw/dt = -0.12757, div S = +0.12121, J.E = +0.00636, sum = +2.5e-07
+ok   point 1: div(E x H) = H.curl E - E.curl H (+0.12121 vs +0.12121)
+ok   point 2: dw/dt = -2.24583, div S = +2.09306, J.E = +0.15277, sum = +5.8e-07
+ok   point 2: div(E x H) = H.curl E - E.curl H (+2.09306 vs +2.09306)
+ok   point 3: dw/dt = -0.28538, div S = +0.35800, J.E = -0.07262, sum = +3.5e-07
+ok   point 3: div(E x H) = H.curl E - E.curl H (+0.35800 vs +0.35800)
+=== C. 1D (Rao) route: E = x Ex(z,t), H = y Hy(z,t), J = x Jx: d(ExHy)/dz = -d/dt(eps Ex^2/2 + mu Hy^2/2) - Jx Ex
+ok   constructed pair obeys Faraday's y-component: 0.009154 vs 0.009154
+ok   1D Poynting theorem: 0.690662 vs 0.690662
+=== D. J.E is the power the field delivers to moving charges; units
+ok   F.u = qE.u: the magnetic force does no work ((u x B).u = 0): 0.0 vs 0.0
+ok   eps E^2: (F/m)(V/m)^2 = J/m^3: [ 1. -1. -2.  0.] vs [ 1. -1. -2.  0.]
+ok   mu H^2: (H/m)(A/m)^2 = J/m^3: [ 1. -1. -2.  0.] vs [ 1. -1. -2.  0.]
+ok   E x H: (V/m)(A/m) = W/m^2: [ 1.  0. -3.  0.] vs [ 1.  0. -3.  0.]
+ok   J.E: (A/m^2)(V/m) = W/m^3: [ 1. -1. -3.  0.] vs [ 1. -1. -3.  0.]
+ok   Js.E: (A/m)(V/m) = W/m^2 (per unit area of sheet): [ 1.  0. -3.  0.] vs [ 1.  0. -3.  0.]
+ok   dw/dt: (J/m^3)/s = W/m^3: [ 1. -1. -3.  0.] vs [ 1. -1. -3.  0.]
+=== E. Notes' Example 1: Js = x 2 cos(wt) A/m on z = 0, vacuum
+ok   [eta0] E = -x eta cos(wt -+ bz) at z = 40.0: [-188.554344   -0.         -0.      ] vs [-188.554344   -0.         -0.      ]
+ok   [eta0] H = -+y cos(wt -+ bz) at z = 40.0: [ 0.       -0.500502  0.      ] vs [-0.       -0.500502 -0.      ]
+ok   [eta0] S = +-z eta cos^2 at z = 40.0: [-0.        0.       94.371861] vs [ 0.        0.       94.371861]
+ok   [eta0] E = -x eta cos(wt -+ bz) at z = -75.0: [364.792541   0.         0.      ] vs [364.792541   0.         0.      ]
+ok   [eta0] H = -+y cos(wt -+ bz) at z = -75.0: [ 0.       -0.968312  0.      ] vs [-0.       -0.968312 -0.      ]
+ok   [eta0] S = +-z eta cos^2 at z = -75.0: [   0.          0.       -353.233051] vs [  -0.         -0.       -353.233051]
+ok   Faraday dEx/dz = -mu0 dHy/dt at z = 37.0: -7.652766 vs -7.652766
+ok   Ampere -dHy/dz = eps0 dEx/dt at z = 37.0: 0.020314 vs 0.020314
+ok   Faraday dEx/dz = -mu0 dHy/dt at z = -52.0: 7.878659 vs 7.878659
+ok   Ampere -dHy/dz = eps0 dEx/dt at z = -52.0: 0.020913 vs 0.020913
+ok   [eta0] z x (H+ - H-) = Js: [ 1.431873  0.       -0.      ] vs [1.431873 0.       0.      ]
+ok   [eta0] E continuous at the sheet: [-269.714976   -0.         -0.      ] vs [-269.714976   -0.         -0.      ]
+ok   [eta0] Js.E = -2 eta cos^2(wt): -386.197582 vs -386.197582
+ok   [eta0] pillbox, t = 0.000 us: z.(S+ - S-) = -Js.E = 753.46: 753.460627 vs 753.460627
+ok   [eta0] pillbox, t = 0.167 us: z.(S+ - S-) = -Js.E = 188.37: 188.365157 vs 188.365157
+ok   [eta0] pillbox, t = 0.333 us: z.(S+ - S-) = -Js.E = 188.37: 188.365157 vs 188.365157
+ok   [eta0] pillbox, t = 0.500 us: z.(S+ - S-) = -Js.E = 753.46: 753.460627 vs 753.460627
+ok   [eta0] pillbox, t = 0.667 us: z.(S+ - S-) = -Js.E = 188.37: 188.365157 vs 188.365157
+ok   [eta0] pillbox, t = 0.833 us: z.(S+ - S-) = -Js.E = 188.37: 188.365157 vs 188.365157
+ok   [eta0] pillbox, t = 1.000 us: z.(S+ - S-) = -Js.E = 753.46: 753.460627 vs 753.460627
+ok   [eta0] <S_z> = +eta/2 (z>0), -eta/2 (z<0); <-Js.E> = eta: [ 188.365157 -188.365157  376.730314] vs [ 188.365157 -188.365157  376.730314]
+ok   [eta0] energy balance: |<S+>| + |<S->| = <-Js.E> = 376.73 W/m^2: 376.730314 vs 376.730314
+ok   [120 pi] E = -x eta cos(wt -+ bz) at z = 40.0: [-188.684878   -0.         -0.      ] vs [-188.684878   -0.         -0.      ]
+ok   [120 pi] H = -+y cos(wt -+ bz) at z = 40.0: [ 0.       -0.500502  0.      ] vs [-0.       -0.500502 -0.      ]
+ok   [120 pi] S = +-z eta cos^2 at z = 40.0: [-0.        0.       94.437193] vs [ 0.        0.       94.437193]
+ok   [120 pi] E = -x eta cos(wt -+ bz) at z = -75.0: [365.045082   0.         0.      ] vs [365.045082   0.         0.      ]
+ok   [120 pi] H = -+y cos(wt -+ bz) at z = -75.0: [ 0.       -0.968312  0.      ] vs [-0.       -0.968312 -0.      ]
+ok   [120 pi] S = +-z eta cos^2 at z = -75.0: [   0.          0.       -353.477589] vs [  -0.         -0.       -353.477589]
+ok   [120 pi] z x (H+ - H-) = Js: [ 1.431873  0.       -0.      ] vs [1.431873 0.       0.      ]
+ok   [120 pi] E continuous at the sheet: [-269.901695   -0.         -0.      ] vs [-269.901695   -0.         -0.      ]
+ok   [120 pi] Js.E = -2 eta cos^2(wt): -386.464941 vs -386.464941
+ok   [120 pi] pillbox, t = 0.000 us: z.(S+ - S-) = -Js.E = 753.98: 753.982237 vs 753.982237
+ok   [120 pi] pillbox, t = 0.167 us: z.(S+ - S-) = -Js.E = 188.50: 188.495559 vs 188.495559
+ok   [120 pi] pillbox, t = 0.333 us: z.(S+ - S-) = -Js.E = 188.50: 188.495559 vs 188.495559
+ok   [120 pi] pillbox, t = 0.500 us: z.(S+ - S-) = -Js.E = 753.98: 753.982237 vs 753.982237
+ok   [120 pi] pillbox, t = 0.667 us: z.(S+ - S-) = -Js.E = 188.50: 188.495559 vs 188.495559
+ok   [120 pi] pillbox, t = 0.833 us: z.(S+ - S-) = -Js.E = 188.50: 188.495559 vs 188.495559
+ok   [120 pi] pillbox, t = 1.000 us: z.(S+ - S-) = -Js.E = 753.98: 753.982237 vs 753.982237
+ok   [120 pi] <S_z> = +eta/2 (z>0), -eta/2 (z<0); <-Js.E> = eta: [ 188.495559 -188.495559  376.991118] vs [ 188.495559 -188.495559  376.991118]
+ok   [120 pi] energy balance: |<S+>| + |<S->| = <-Js.E> = 376.99 W/m^2: 376.991118 vs 376.991118
+ok   L19 cross-check: peak S per side for Js0 = 1 A/m is eta0/4 = 94.2 W/m^2: 94.182578 vs 94.18
+ok   slab beta d = 1.571, t = 0.10 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: 232.832139 vs 232.832138
+ok   slab beta d = 1.571, t = 0.37 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: -47.310184 vs -47.310184
+ok   slab beta d = 1.571, t = 0.80 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: -609.562453 vs -609.562452
+ok   slab beta d = 1.571: <dW/dt> = 0: -0.0 vs 0.0
+ok   slab beta d = 1.000, t = 0.10 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: -160.931582 vs -160.931582
+ok   slab beta d = 1.000, t = 0.37 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: 308.384857 vs 308.384857
+ok   slab beta d = 1.000, t = 0.80 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: -230.263309 vs -230.263309
+ok   slab beta d = 1.000: <dW/dt> = 0: -0.0 vs 0.0
+ok   slab beta d = 2.700, t = 0.10 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: 319.402815 vs 319.402814
+ok   slab beta d = 2.700, t = 0.37 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: -299.190716 vs -299.190715
+ok   slab beta d = 2.700, t = 0.80 T: dW/dt = 2 eta [cos^2 wt - cos^2(wt - beta d)]: -282.457035 vs -282.457034
+ok   slab beta d = 2.700: <dW/dt> = 0: -0.0 vs 0.0
+ok   beta d = pi/2 (quarter wavelength): dW/dt = 2 eta cos(2 wt): -47.310184 vs -47.310184
+=== F. General amplitude J0, energy density, energy speed
+ok   J0 = 1.0: <S> per side = eta J0^2/8: 47.091289 vs 47.091289
+ok   J0 = 1.0: <-Js.E> = eta J0^2/4: 94.182578 vs 94.182578
+ok   J0 = 2.0: <S> per side = eta J0^2/8: 188.365157 vs 188.365157
+ok   J0 = 2.0: <-Js.E> = eta J0^2/4: 376.730314 vs 376.730314
+ok   J0 = 3.0: <S> per side = eta J0^2/8: 423.821603 vs 423.821603
+ok   J0 = 3.0: <-Js.E> = eta J0^2/4: 847.643206 vs 847.643206
+ok   single wave (epsr=1, mur=1): w_e = w_m: 0.0 vs 0.0
+ok   S = v w for a single plane wave: 0.130067 vs 0.130067
+ok   eps eta^2 v = eta (used in the stored-energy integral): 376.730314 vs 376.730314
+ok   single wave (epsr=2.25, mur=1): w_e = w_m: 0.0 vs 0.0
+ok   S = v w for a single plane wave: 0.1951 vs 0.1951
+ok   eps eta^2 v = eta (used in the stored-energy integral): 251.153542 vs 251.153542
+ok   single wave (epsr=4, mur=3): w_e = w_m: 0.0 vs 0.0
+ok   S = v w for a single plane wave: 0.150188 vs 0.150188
+ok   eps eta^2 v = eta (used in the stored-energy integral): 326.258022 vs 326.258022
+ok   notes' example: <w> = eta0/(2c) = 6.28e-7 J/m^3: 1e-06 vs 1e-06
+ok   <w> = eps0 E0^2/2 with E0 = eta0 (J0 = 2 A/m): 1e-06 vs 1e-06
+ok   <S>/<w> = c: 299792458.000006 vs 299792458.000006
+=== G. time averages
+ok   <cos^2(wt + 0.0)> = 1/2: 0.5 vs 0.5
+ok   ... also over half a period (cos^2 has period T/2): 0.5 vs 0.5
+ok   <cos(wt + 0.0)> = 0: -0.0 vs 0.0
+ok   <cos^2(wt + 0.4)> = 1/2: 0.5 vs 0.5
+ok   ... also over half a period (cos^2 has period T/2): 0.5 vs 0.5
+ok   <cos(wt + 0.4)> = 0: 0.0 vs 0.0
+ok   <cos^2(wt + 1.3)> = 1/2: 0.5 vs 0.5
+ok   ... also over half a period (cos^2 has period T/2): 0.5 vs 0.5
+ok   <cos(wt + 1.3)> = 0: 0.0 vs 0.0
+ok   <cos^2(wt + -2.2)> = 1/2: 0.5 vs 0.5
+ok   ... also over half a period (cos^2 has period T/2): 0.5 vs 0.5
+ok   <cos(wt + -2.2)> = 0: 0.0 vs 0.0
+ok   <sin cos> = 0: 0.0 vs 0.0
+ok   <cos(wt+0.300) cos(wt+1.100)> = cos(diff)/2: 0.348353 vs 0.348353
+ok   <cos(wt+0.000) cos(wt+0.785)> = cos(diff)/2: 0.353553 vs 0.353553
+ok   <cos(wt+0.000) cos(wt+1.571)> = cos(diff)/2: 0.0 vs 0.0
+ok   <cos(wt+1.000) cos(wt+1.000)> = cos(diff)/2: 0.5 vs 0.5
+ok   <A cos B cos> = 1/2 Re(A B*) for phases 0.3, 1.1: 2.09012 vs 2.09012
+ok   <A cos B cos> = 1/2 Re(A B*) for phases -0.7, 2.0: -2.26018 vs -2.26018
+ok   <dw/dt> = 0 for periodic w: 0.0 vs 0.0
+ok   cos^2 x = 1/2 (1 + cos 2x) (max deviation on 50 points): 0.0 vs 0.0
+=== H. Two equal waves in opposite directions (standing wave): instantaneous S != 0, <S> = 0
+ok   E = 2E0 sin(wt) sin(bz) at (0.13,0.31): 1.355556 vs 1.355556
+ok   H = (2E0/eta) cos(wt) cos(bz) at (0.13,0.31): -0.001338 vs -0.001338
+ok   S_z = (E0^2/eta) sin(2wt) sin(2bz): -0.001813 vs -0.001813
+ok   S_z = (|E1|^2 - |E2|^2)/eta: cross terms cancel (as on the poynting-vector page): -0.001813 vs -0.001813
+ok   E = 2E0 sin(wt) sin(bz) at (0.41,0.77): -1.063203 vs -1.063203
+ok   H = (2E0/eta) cos(wt) cos(bz) at (0.41,0.77): -0.000562 vs -0.000562
+ok   S_z = (E0^2/eta) sin(2wt) sin(2bz): 0.000597 vs 0.000597
+ok   S_z = (|E1|^2 - |E2|^2)/eta: cross terms cancel (as on the poynting-vector page): 0.000597 vs 0.000597
+ok   <S_z> = 0 at z = 0.000 lambda: 0.0 vs 0.0
+ok   <S_z> = 0 at z = 0.125 lambda: 0.0 vs 0.0
+ok   <S_z> = 0 at z = 0.250 lambda: -0.0 vs 0.0
+ok   <S_z> = 0 at z = 0.375 lambda: 0.0 vs 0.0
+ok   <S_z> = 0 at z = 0.500 lambda: -0.0 vs 0.0
+ok   <S_z> = 0 at z = 0.625 lambda: 0.0 vs 0.0
+ok   <S_z> = 0 at z = 0.750 lambda: 0.0 vs 0.0
+ok   <S_z> = 0 at z = 0.875 lambda: 0.0 vs 0.0
+ok   <S_z> = 0 at z = 1.000 lambda: 0.0 vs 0.0
+ok   <w> = eps E0^2 (uniform) at z = 0.0: 0.002654 vs 0.002654
+ok   <w> = eps E0^2 (uniform) at z = 0.1: 0.002654 vs 0.002654
+ok   <w> = eps E0^2 (uniform) at z = 0.25: 0.002654 vs 0.002654
+ok   <w> = eps E0^2 (uniform) at z = 0.37: 0.002654 vs 0.002654
+ok   w = 0 at an E-node (z = 0) when wt = pi/2 (H is zero there then): 0.0 vs 0.0
+ok   energy in half a wavelength is constant (t = 0.0): 0.001327 vs 0.001327
+ok   energy in half a wavelength is constant (t = 0.1): 0.001327 vs 0.001327
+ok   energy in half a wavelength is constant (t = 0.25): 0.001327 vs 0.001327
+ok   energy in half a wavelength is constant (t = 0.4): 0.001327 vs 0.001327
+=== I. J.E in a conductor (exam style, new numbers): sea water sigma = 4 S/m, E = 0.5 cos(wt) V/m
+ok   peak J.E = sigma E0^2 = 1 W/m^3: 1.0 vs 1.0
+ok   <J.E> = 0.5 W/m^3: 0.5 vs 0.5
+ok   one litre: 0.5 mW average: 0.0005 vs 0.0005
+ok   relaxation time of sea water eps/sigma = 0.18 ns (eps_r = 81): 0.0 vs 0.0
+=== J. Leaky capacitor discharging (Lecture 10): S = 0, dw/dt = -J.E
+ok   tau = eps/sigma = 3.54 us: 4e-06 vs 4e-06
+ok   t = 0.0 us: conduction + displacement current density = 0 (so H = 0): 0.0 vs 0.0
+ok   t = 0.0 us: dw/dt = -sigma E^2 = -1000.00 W/m^3: -1000.0 vs -1000.0
+ok   t = 1.0 us: conduction + displacement current density = 0 (so H = 0): 0.0 vs 0.0
+ok   t = 1.0 us: dw/dt = -sigma E^2 = -568.53 W/m^3: -568.528103 vs -568.528103
+ok   t = 5.0 us: conduction + displacement current density = 0 (so H = 0): -0.0 vs 0.0
+ok   t = 5.0 us: dw/dt = -sigma E^2 = -59.40 W/m^3: -59.39634 vs -59.39634
+ok   w(0) = 1.77e-3 J/m^3: 0.001771 vs 0.001771
+ok   J.E(0) = 1000 W/m^3: 1000.0 vs 1000.0
+ok   energy halves in (tau/2) ln 2 = 1.23 us: 1e-06 vs 1e-06
+ok   charge (and E) halves in tau ln 2 = 2.45 us: the energy halves twice as fast: 2e-06 vs 2e-06
+ok   -dw/dt(0) = 2 w(0)/tau = sigma E0^2: 1000.0 vs 1000.0
+ok   w decays as exp(-2t/tau): 0.001007 vs 0.001007
+=== K. Resistive wire: power enters through the surface, total I^2 R (nichrome, rho = 1.10e-6 ohm m)
+ok   sigma = 9.09e5 S/m: 909090.909091 vs 909000.0
+ok   R = 11.2 ohm: 11.204508 vs 11.2
+ok   P = I^2 R = 101 W: 100.840572 vs 100.8
+ok   E = J/sigma = 16.8 V/m: 16.806762 vs 16.81
+ok   H(a) = I/(2 pi a) = 1.91 kA/m: 1909.859317 vs 1909.9
+ok   |S| at the surface = 32.1 kW/m^2: 32098.550978 vs 32090.0
+ok   |S| x side area 2 pi a l = I^2 R: 100.840572 vs 100.840572
+ok   E l = I R (voltage along the wire): 33.613524 vs 33.613524
+ok   about 24 times the solar flux: 23.584534 vs 23.6
+ok   phi = 0.0: S = E x H = -(EH) rho_hat (inward): [-32098.550978      0.            0.      ] vs [-32098.550978     -0.           -0.      ]
+ok   phi = 0.0: no S along the wire inside it (nothing through the end faces)
+ok   phi = 1.0: S = E x H = -(EH) rho_hat (inward): [-17342.921108 -27009.999302      0.      ] vs [-17342.921108 -27009.999302     -0.      ]
+ok   phi = 1.0: no S along the wire inside it (nothing through the end faces)
+ok   phi = 2.5: S = E x H = -(EH) rho_hat (inward): [ 25715.549184 -19210.088626      0.      ] vs [ 25715.549184 -19210.088626     -0.      ]
+ok   phi = 2.5: no S along the wire inside it (nothing through the end faces)
+ok   phi = 4.0: S = E x H = -(EH) rho_hat (inward): [20981.013086 24292.263476    -0.      ] vs [20981.013086 24292.263476    -0.      ]
+ok   phi = 4.0: no S along the wire inside it (nothing through the end faces)
+ok   inside: div S = -J.E = -sigma E^2 (steady state): -256788407.822933 vs -256788407.823141
+ok   power still flowing in at rho = 0.25 a: P (rho/a)^2: 6.302536 vs 6.302536
+ok   power still flowing in at rho = 0.5 a: P (rho/a)^2: 25.210143 vs 25.210143
+ok   power still flowing in at rho = 1.0 a: P (rho/a)^2: 100.840572 vs 100.840572
+ok   coax: integral of S over the annulus = VI = 2 W: 2.0 vs 2.0
+ok   coax: rho_hat x phi_hat = z (E outward from the + inner conductor, H by the right-hand rule): [     0.            0.       247851.274409] vs [     0.            0.       247851.274409]
+ok   battery: J along +z (- to +) and E along -z: J.E < 0, a source
+=== L. Integral form with a sphere: isotropic radiator, and sunlight
+ok   50 kW at 10 km: <S> = 3.98e-5 W/m^2: 4e-05 vs 4e-05
+ok   E0 = sqrt(2 eta0 <S>) = 0.173 V/m: 0.173145 vs 0.17318
+ok   E0 = sqrt(60 P)/r with eta0 = 120 pi: 0.173205 vs 0.173205
+ok   <S> = E0^2/(2 eta0) by quadrature: 4e-05 vs 4e-05
+ok   sunlight 1361 W/m^2: E0 = 1.01 kV/m: 1012.649946 vs 1012.6
+ok   E_rms = sqrt(eta0 S) = 716 V/m: 716.051644 vs 716.0
+ok   H0 = 2.69 A/m: 2.687997 vs 2.688
+ok   <w> = S/c = 4.54 uJ/m^3: 5e-06 vs 5e-06
+ok   H_rms = 1.90 A/m: 1.900701 vs 1.9
+=== M. Orthogonal components: powers add (any relative phase)
+ok   phi = 0.000: <S_z> = (E1^2 + E2^2)/(2 eta0): 0.03318 vs 0.03318
+ok   no transverse S
+ok   phi = 0.000, t = 0.3: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.065699 vs 0.065699
+ok   phi = 0.000, t = 1.7: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.000332 vs 0.000332
+ok   phi = 1.571: <S_z> = (E1^2 + E2^2)/(2 eta0): 0.03318 vs 0.03318
+ok   no transverse S
+ok   phi = 1.571, t = 0.3: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.024075 vs 0.024075
+ok   phi = 1.571, t = 1.7: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.042378 vs 0.042378
+ok   phi = 1.000: <S_z> = (E1^2 + E2^2)/(2 eta0): 0.03318 vs 0.03318
+ok   no transverse S
+ok   phi = 1.000, t = 0.3: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.03239 vs 0.03239
+ok   phi = 1.000, t = 1.7: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.027379 vs 0.027379
+ok   phi = 3.142: <S_z> = (E1^2 + E2^2)/(2 eta0): 0.03318 vs 0.03318
+ok   no transverse S
+ok   phi = 3.142, t = 0.3: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.065699 vs 0.065699
+ok   phi = 3.142, t = 1.7: S_z = (Ex^2 + Ey^2)/eta instantaneously: 0.000332 vs 0.000332
+ok   E1 = 3, E2 = 4 V/m in vacuum: <S> = 33 mW/m^2: 0.03318 vs 0.03318
+=== N. Worked problem: Js = -z J0 u(t) cos(wt) on x = 0, eps_r = 2.25, f = 2 MHz, J0 = 3 A/m (exam constants)
+ok   v = 2e8 m/s, eta = 80 pi, lambda = 100 m, beta = 0.02 pi rad/m, T = 0.5 us: [2.00000000e+00 2.51327412e+02 1.00000000e+02 6.28320000e-02
+ 5.00000000e-01] vs [2.00000000e+00 2.51327412e+02 1.00000000e+02 6.28320000e-02
+ 5.00000000e-01]
+ok   eta = 251 ohm: 251.327412 vs 251.327
+ok   E = +z (eta J0/2) cos(wt - b|x|) at x = 130.0: [  -0.         -0.       -116.496662] vs [  -0.         -0.       -116.496662]
+ok   H = -+y (J0/2) cos(wt -+ bx) at x = 130.0: [0.       0.463525 0.      ] vs [0.       0.463525 0.      ]
+ok   S = +-x (eta J0^2/4) cos^2 at x = 130.0: away from the sheet: [53.999173  0.        0.      ] vs [53.999173  0.        0.      ]
+ok   E = +z (eta J0/2) cos(wt - b|x|) at x = -245.0: [  0.        0.      358.53986] vs [  0.        0.      358.53986]
+ok   H = -+y (J0/2) cos(wt -+ bx) at x = -245.0: [0.       1.426585 0.      ] vs [0.       1.426585 0.      ]
+ok   S = +-x (eta J0^2/4) cos^2 at x = -245.0: away from the sheet: [-511.487505    0.          0.      ] vs [-511.487505   -0.         -0.      ]
+ok   E = +z (eta J0/2) cos(wt - b|x|) at x = 599.0: [  0.         0.       376.247213] vs [  0.         0.       376.247213]
+ok   H = -+y (J0/2) cos(wt -+ bx) at x = 599.0: [ 0.      -1.49704  0.     ] vs [-0.      -1.49704 -0.     ]
+ok   S = +-x (eta J0^2/4) cos^2 at x = 599.0: away from the sheet: [563.257162   0.        -0.      ] vs [563.257162   0.         0.      ]
+ok   E amplitude eta J0/2 = 120 pi = 377 V/m: 376.991118 vs 376.991118
+ok   nothing beyond the front |x| = v t = 600 m at 3 us
+ok   Faraday at x = 123.4: [  0.       -21.797578   0.      ] vs [ -0.       -21.797578  -0.      ]
+ok   Ampere-Maxwell at x = 123.4: [ 0.      -0.      -0.08673] vs [ 0.       0.      -0.08673]
+ok   Faraday at x = -311.1: [ 0.       22.078016  0.      ] vs [-0.       22.078016 -0.      ]
+ok   Ampere-Maxwell at x = -311.1: [ 0.       -0.       -0.087846] vs [ 0.        0.       -0.087846]
+ok   x x (H+ - H-) = Js at the sheet: [0.       0.       2.939565] vs [0.       0.       2.939565]
+ok   Js.E = -(eta J0^2/2) cos^2(wt) for t > 0: -1085.865528 vs -1085.865528
+ok   <Js.E> = -eta J0^2/4 = -180 pi W/m^2: -565.486678 vs -565.486678
+ok   = -565 W/m^2: 565.486678 vs 565.487
+ok   <S> = +-x 90 pi W/m^2 behind the front: [ 282.743339 -282.743339] vs [ 282.743339 -282.743339]
+ok   90 pi = 283 W/m^2: 282.743339 vs 282.743
+ok   pillbox t = 0.05 us: x.(S+ - S-) = -Js.E: 740.231671 vs 740.231671
+ok   pillbox t = 0.15 us: x.(S+ - S-) = -Js.E: 107.998345 vs 107.998345
+ok   pillbox t = 0.25 us: x.(S+ - S-) = -Js.E: 1130.973355 vs 1130.973355
+ok   pillbox t = 0.35 us: x.(S+ - S-) = -Js.E: 107.998345 vs 107.998345
+ok   pillbox t = 0.45 us: x.(S+ - S-) = -Js.E: 740.231671 vs 740.231671
+ok   energy delivered by 3 us = (eta J0^2/4)(3 us) = 540 pi uJ/m^2: 0.001696 vs 0.001696
+ok   = 1.70 mJ/m^2: 0.001696 vs 0.001696
+ok   stored energy in |x| < 600 m at 3 us = energy delivered (both sides): 0.001696 vs 0.001696
+ok   each side holds 0.848 mJ/m^2: 0.000848 vs 0.000848
+ok   <w> behind the front = <S>/v = 1.41 uJ/m^3: 1e-06 vs 1e-06
+ok   <w> = eps E0^2/2 (w_e = w_m, each averaging eps E0^2/4): 1e-06 vs 1e-06
+ok   <w> x 600 m = stored per side: 0.000848 vs 0.000848
+ok   stored per side at t = 0.31 us matches the injected half: 9.9e-05 vs 9.9e-05
+ok   stored per side at t = 1.17 us matches the injected half: 0.000321 vs 0.000321
+ok   stored per side at t = 2.875 us matches the injected half: 0.000813 vs 0.000813
+ok   energy first reaches x = 900 m at 4.5 us: 4e-06 vs 4e-06
+ok   average power through 1 m^2 there: 283 W: 282.743339 vs 282.743
+ok   vacuum variant: E0 = 180 pi, <S> = 135 pi, injected 270 pi: [565.486678 424.115008 848.230016] vs [565.486678 424.115008 848.230016]
+ok   = 565 V/m, 424 W/m^2, 848 W/m^2: [565.486678 424.115008 848.230016] vs [565.487 424.115 848.23 ]
+ok   worked problem's numbers (180 pi, 90 pi, 4 pi x 10^6 rad/s) differ from the S20 HE3 #2 key
+=== O. Figure arrow directions (screen frame X right, Y up, Z out)
+ok   wire, above: H along out of the page (odot): [0. 0. 1.] vs [0. 0. 1.]
+ok   wire, above: S = E x H points down, into the wire: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   wire, below: H along into the page (otimes): [ 0.  0. -1.] vs [-0. -0. -1.]
+ok   wire, below: S = E x H points up, into the wire: [-0.  1.  0.] vs [0. 1. 0.]
+ok   frame check: x cross y = z  <->  Y cross Z = X: [1. 0. 0.] vs [1. 0. 0.]
+ok   sheet, z > 0: E = -x (down), H = -y (otimes): S to the right, away: [1. 0. 0.] vs [1. 0. 0.]
+ok   sheet, z < 0: E = -x (down), H = +y (odot): S to the left, away: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   problem frame: y_hat = z_hat x x_hat is into the page: [ 0.  0. -1.] vs [-0. -0. -1.]
+ok   problem, x > 0: E = +z (up), H = -y (odot, out): S = +x (right): [1. 0. 0.] vs [1. 0. 0.]
+ok   problem, x < 0: E = +z (up), H = +y (otimes, in): S = -x (left): [-1.  0.  0.] vs [-1. -0. -0.]
+=== P. Handbook values behind the material numbers on the page
+ok   nichrome resistivity 1.10 uOhm m lies in the handbook range 1.08-1.12 uOhm m
+ok   sea water sigma = 4 S/m is within the handbook 4-5.5 S/m
+ok   solar constant 1361 W/m^2 matches 1360.8 +- 0.5 W/m^2
+ok   eps_r of water/sea water ~ 81 (static)
+
+ALL 267 CHECKS PASSED

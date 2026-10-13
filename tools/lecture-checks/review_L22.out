@@ -1,0 +1,464 @@
+
+====================================================================================================
+A. Constants and handbook values the pages lean on
+====================================================================================================
+PASS  c = 1/sqrt(mu0 eps0) with CODATA eps0   [got 2.99792e+08, want 2.99792e+08, |err| 8.16e-02]
+PASS  course eps0 = 1e-9/36pi gives c = 3e8 exactly   [got 3e+08, want 3e+08, |err| 0.00e+00]
+PASS  course eps0 gives eta0 = 120 pi exactly   [got 376.991, want 376.991, |err| 0.00e+00]
+PASS  eta0 (CODATA) = 376.73 ohm   [got 376.73, want 376.73, |err| 3.14e-04]
+PASS  120 pi approximates eta0 to 0.07 % (intrinsic-impedance trap)   [0.069 %]
+PASS  sea water eps/sigma = 0.18 ns (eps_r 81, sigma 4)   [0.179297 -> 0.18, page 0.18]
+PASS  Lecture 8 page states sea water tau ~ 0.2 ns (not 0.18): attribution on L22 p.3 is loose   [L8 rounds 0.179 ns to 0.2 ns]
+PASS  sea water crossover near 0.9 GHz (81: 0.888, 80: 0.899; Rao Table 5.3 0.9e9)   [0.8877, 0.8988 GHz]
+PASS  L10 medium eps/sigma = 8.85 us   [8.85419 -> 8.85, page 8.85]
+PASS  L10 medium crosses over near 18 kHz   [17975.1 Hz]
+PASS  copper nu = N e^2/(m sigma) ~ 4e13 1/s (L11, L22 sec 8)   [4.115e+13]
+PASS  Drude sigma(1 GHz)/sigma_DC within 1.6e-4 of 1 (nu = 4e13)   [|sigma/sigma_DC - 1| = 1.571e-04]
+PASS  f_p for N = 1e12 m^-3 is about 9 MHz; rule 8.98 sqrt(N) Hz   [8.9787 MHz]
+
+====================================================================================================
+B. Section 1: d/dt -> j omega, vanishing phasors, the divergence laws, rho~ = 0 in a uniform conductor
+====================================================================================================
+PASS  d/dt Re{A e^{jwt}} = Re{jw A e^{jwt}} (finite difference)   [got array, want array, |err| 1.23e-03]
+PASS  Re{A e^{jwt}} at wt = 0 and pi/2 gives Re A and -Im A (so vanishing at all t => A = 0)
+PASS  sigma + j w eps != 0 (sigma 4, f 1000 Hz) so rho~ = 0
+PASS  sigma + j w eps != 0 (sigma 1e-09, f 60 Hz) so rho~ = 0
+PASS  sigma + j w eps != 0 (sigma 5.8e+07, f 1e+09 Hz) so rho~ = 0
+PASS  relaxation rho(t) = rho0 e^{-t/(eps/sigma)} (ODE vs closed form at 5 relaxation times)   [got 0.00673795, want 0.00673795, |err| 7.22e-13]
+
+====================================================================================================
+C. Section 3: exact gamma and eta, the branch, gamma*eta = j w mu, gamma/eta = sigma + j w eps
+====================================================================================================
+PASS  principal roots: alpha >= 0, beta > 0, Re eta > 0 for s = 1e-6..1e6 (241 media)
+PASS  gamma*eta = j w mu and gamma/eta = sigma + j w eps hold with these roots   [worst rel err 4.4e-16]
+PASS  0 <= tau < 45 deg for every real sigma >= 0
+PASS  beta >= alpha for every real sigma >= 0
+PASS  complex permittivity form: gamma = j w sqrt(mu eps_c), eta = sqrt(mu/eps_c), eps_c = eps - j sigma/w
+PASS  the other root -gamma has negative real part (e^{-gamma z} would grow along the travel)
+PASS  mixing branches breaks the product rule: (-gamma) eta = -j w mu
+PASS  sigma = 0: gamma = +j w sqrt(mu eps) (= j 4pi/3 at 100 MHz, eps_r 4)   [got 0+4.18879j, want 0+4.18879j, |err| 0.00e+00]
+PASS  sigma = 0: eta = sqrt(mu/eps) = 60 pi   [got 188.496, want 188.496, |err| 0.00e+00]
+PASS  margin: mu = gamma eta / (j w)   [got 3.76991e-06-9.4739e-23j, want 3.76991e-06, |err| 8.52e-22]
+PASS  margin: sigma = Re{gamma/eta}   [got 0.0106103, want 0.0106103, |err| 0.00e+00]
+PASS  margin: eps = Im{gamma/eta}/w   [got 7.95775e-11, want 7.95775e-11, |err| 1.29e-26]
+
+====================================================================================================
+D. Section 5: closed forms and angle identities against the exact square roots
+====================================================================================================
+PASS  alpha closed form = Re{gamma} (s = 1e-3..1e3)   [worst 8.9e-11]
+PASS  beta closed form = Im{gamma} (s = 1e-3..1e3)   [worst 2.2e-16]
+PASS  |eta| = sqrt(mu/eps)/(1+s^2)^(1/4) (s = 1e-3..1e3)   [worst 2.2e-16]
+PASS  tau = (1/2) atan(s) = angle(eta) (s = 1e-3..1e3)   [worst 2.2e-16]
+PASS  angle(gamma) = 90 deg - tau (s = 1e-3..1e3)   [worst 2.2e-16]
+PASS  alpha/beta = tan(tau) (s = 1e-3..1e3)   [worst 2.2e-16]
+PASS  s = tan(2 tau) = 2 alpha beta/(beta^2 - alpha^2) (s = 1e-3..1e3)   [worst 8.9e-11]
+PASS  |gamma||eta| = w mu (s = 1e-3..1e3)   [worst 2.2e-16]
+PASS  beta^2 - alpha^2 = w^2 mu eps and 2 alpha beta = w mu sigma (s = 1e-3..1e3)   [worst 8.9e-11]
+PASS  alpha^2 + beta^2 = w^2 mu eps sqrt(1+s^2) (s = 1e-3..1e3)   [worst 4.4e-16]
+PASS  angle(sigma + j w eps) = 90 deg - atan(s) (s = 1e-3..1e3)   [worst 2.2e-16]
+PASS  tau -> 45 deg only as s -> inf (tau(1e6) < 45 deg)
+
+====================================================================================================
+E. Sections 2-4: the fields satisfy Maxwell's equations (finite differences, phasor and time domain)
+====================================================================================================
+PASS  Helmholtz d2E/dz2 + w^2 mu eps E = 0 for e^(-j beta z)   [got 3.18531e-06-7.95116e-07j, want 0, |err| 3.28e-06]
+PASS  H~y = -(1/jw mu) dE~x/dz = +E~x/eta   [got -0.00195495-0.00800044j, want -0.00195495-0.00800044j, |err| 2.39e-12]
+PASS  Helmholtz d2E/dz2 + w^2 mu eps E = 0 for e^(+j beta z)   [got 2.29681e-06-2.7392e-06j, want 0, |err| 3.57e-06]
+PASS  H~y = -(1/jw mu) dE~x/dz = -E~x/eta   [got -0.00228825-0.00791156j, want -0.00228825-0.00791156j, |err| 2.38e-12]
+PASS  phasor Faraday curl E~ = -j w mu H~ (w 3e+08, mu_r 1, s 0.75, +z)   [got array, want array, |err| 9.58e-09]
+PASS  phasor Ampere curl H~ = (sigma + j w eps) E~ (w 3e+08, mu_r 1, s 0.75, +z)   [got array, want array, |err| 8.04e-11]
+PASS  phasor Faraday curl E~ = -j w mu H~ (w 3e+08, mu_r 1, s 0.75, -z)   [got array, want array, |err| 1.16e-08]
+PASS  phasor Ampere curl H~ = (sigma + j w eps) E~ (w 3e+08, mu_r 1, s 0.75, -z)   [got array, want array, |err| 9.72e-11]
+PASS  phasor Faraday curl E~ = -j w mu H~ (w 1e+08, mu_r 3, s 1.33, +z)   [got array, want array, |err| 6.52e-09]
+PASS  phasor Ampere curl H~ = (sigma + j w eps) E~ (w 1e+08, mu_r 3, s 1.33, +z)   [got array, want array, |err| 3.87e-11]
+PASS  phasor Faraday curl E~ = -j w mu H~ (w 1e+08, mu_r 3, s 1.33, -z)   [got array, want array, |err| 8.52e-09]
+PASS  phasor Ampere curl H~ = (sigma + j w eps) E~ (w 1e+08, mu_r 3, s 1.33, -z)   [got array, want array, |err| 5.06e-11]
+PASS  phasor Faraday curl E~ = -j w mu H~ (w 6.28e+03, mu_r 1, s 8.88e+05, +z)   [got array, want array, |err| 4.79e-10]
+PASS  phasor Ampere curl H~ = (sigma + j w eps) E~ (w 6.28e+03, mu_r 1, s 8.88e+05, +z)   [got array, want array, |err| 1.08e-08]
+PASS  phasor Faraday curl E~ = -j w mu H~ (w 6.28e+03, mu_r 1, s 8.88e+05, -z)   [got array, want array, |err| 7.32e-10]
+PASS  phasor Ampere curl H~ = (sigma + j w eps) E~ (w 6.28e+03, mu_r 1, s 8.88e+05, -z)   [got array, want array, |err| 1.65e-08]
+PASS  time-domain Faraday dEx/dz = -mu dHy/dt (+z wave of the key)   [got -0.255211, want -0.255211, |err| 2.80e-10]
+PASS  time-domain Ampere -dHy/dz = sigma Ex + eps dEx/dt (+z)   [got 0.00866114, want 0.00866114, |err| 3.17e-12]
+PASS  damped wave equation d2E/dz2 = mu sigma dE/dt + mu eps d2E/dt2 (+z)   [got -7.24341, want -7.24341, |err| 7.88e-07]
+PASS  time-domain Faraday dEx/dz = -mu dHy/dt (-z wave of the key)   [got -3.81094, want -3.81094, |err| 3.13e-10]
+PASS  time-domain Ampere -dHy/dz = sigma Ex + eps dEx/dt (-z)   [got -0.0272818, want -0.0272818, |err| 1.26e-12]
+PASS  damped wave equation d2E/dz2 = mu sigma dE/dt + mu eps d2E/dt2 (-z)   [got -7.25438, want -7.25438, |err| 6.83e-09]
+PASS  phasor form: gamma^2 = j w mu sigma - w^2 mu eps   [got -8+6j, want -8+6j, |err| 1.78e-15]
+PASS  div(curl F) = 0 for a generic field (the identity behind the 'divergence laws come for free')   [0.0e+00]
+
+====================================================================================================
+F. Section 4: which field lags, by how much, in time and in a snapshot
+====================================================================================================
+PASS  H peaks tau/w after E at a fixed point (tau 18.43 deg, +z)   [got 1.07244e-09, want 1.0725e-09, |err| 6.68e-14]
+PASS  amplitude ratio |E|/|H| = |eta| (tau 18.43 deg, +z)   [got 119.215, want 119.215, |err| 1.04e-08]
+PASS  snapshot: enough node pairs found (tau 18.43 deg, +z)   [7 pairs]
+PASS  snapshot: H pattern sits tau/beta toward the source (tau 18.43 deg, +z)   [got -0.107248, want -0.10725, |err| 2.28e-06]
+PASS  H peaks tau/w after E at a fixed point (tau 18.43 deg, -z)   [got 1.07244e-09, want 1.0725e-09, |err| 6.68e-14]
+PASS  amplitude ratio |E|/|H| = |eta| (tau 18.43 deg, -z)   [got 119.215, want 119.215, |err| 7.02e-09]
+PASS  snapshot: enough node pairs found (tau 18.43 deg, -z)   [8 pairs]
+PASS  snapshot: H pattern sits tau/beta toward the source (tau 18.43 deg, -z)   [got 0.107248, want 0.10725, |err| 2.28e-06]
+PASS  H peaks tau/w after E at a fixed point (tau 26.57 deg, +z)   [got 4.63636e-09, want 4.63648e-09, |err| 1.14e-13]
+PASS  amplitude ratio |E|/|H| = |eta| (tau 26.57 deg, +z)   [got 168.596, want 168.596, |err| 1.78e-08]
+PASS  snapshot: enough node pairs found (tau 26.57 deg, +z)   [4 pairs]
+PASS  snapshot: H pattern sits tau/beta toward the source (tau 26.57 deg, +z)   [got -0.231826, want -0.231824, |err| 1.80e-06]
+PASS  H peaks tau/w after E at a fixed point (tau 26.57 deg, -z)   [got 4.63668e-09, want 4.63648e-09, |err| 2.01e-13]
+PASS  amplitude ratio |E|/|H| = |eta| (tau 26.57 deg, -z)   [got 168.596, want 168.596, |err| 2.80e-09]
+PASS  snapshot: enough node pairs found (tau 26.57 deg, -z)   [5 pairs]
+PASS  snapshot: H pattern sits tau/beta toward the source (tau 26.57 deg, -z)   [got 0.23182, want 0.231824, |err| 3.30e-06]
+
+====================================================================================================
+G. Section 4: time-average Poynting vector by quadrature; e^{-alpha z} for fields, e^{-2 alpha z} for power
+====================================================================================================
+PASS  <S> by quadrature = 1/2 Re{E x H*} (+z wave, z = 0.0)   [got array, want array, |err| 5.55e-17]
+PASS  <S> = u |E0|^2 cos(tau) e^{-2 alpha d}/(2|eta|) (+z wave, z = 0.0)   [got array, want array, |err| 5.55e-17]
+PASS  <S> points along the travel (+z wave, z = 0.0)
+PASS  <S> by quadrature = 1/2 Re{E x H*} (+z wave, z = 0.7)   [got array, want array, |err| 1.39e-17]
+PASS  <S> = u |E0|^2 cos(tau) e^{-2 alpha d}/(2|eta|) (+z wave, z = 0.7)   [got array, want array, |err| 6.94e-18]
+PASS  <S> points along the travel (+z wave, z = 0.7)
+PASS  E~ = eta H~ x u recovers E~ (+z)   [got array, want array, |err| 9.93e-16]
+PASS  <S> by quadrature = 1/2 Re{E x H*} (-z wave, z = 0.0)   [got array, want array, |err| 5.55e-17]
+PASS  <S> = u |E0|^2 cos(tau) e^{-2 alpha d}/(2|eta|) (-z wave, z = 0.0)   [got array, want array, |err| 5.55e-17]
+PASS  <S> points along the travel (-z wave, z = 0.0)
+PASS  <S> by quadrature = 1/2 Re{E x H*} (-z wave, z = 0.7)   [got array, want array, |err| 1.11e-16]
+PASS  <S> = u |E0|^2 cos(tau) e^{-2 alpha d}/(2|eta|) (-z wave, z = 0.7)   [got array, want array, |err| 1.11e-16]
+PASS  <S> points along the travel (-z wave, z = 0.7)
+PASS  E~ = eta H~ x u recovers E~ (-z)   [got array, want array, |err| 9.93e-16]
+PASS  field at z = delta is e^-1 = 37 %   [36.7879 -> 37, page 37]
+PASS  power at z = delta is e^-2 = 13.5 %   [13.5335 -> 13.5, page 13.5]
+PASS  one neper = 20 log10 e = 8.686 dB   [got 8.68589, want 8.686, |err| 1.10e-04]
+
+====================================================================================================
+H1. Section 2 example: E = y 2 cos(2pi 1e8 t + 4pi/3 x), eps_r 4, lossless
+====================================================================================================
+PASS  beta = w sqrt(mu0 4 eps0) = 4 pi/3   [got 4.18879, want 4.18879, |err| 0.00e+00]
+PASS  eta = eta0/2 = 60 pi   [got 188.496, want 188.496, |err| 0.00e+00]
+PASS  curl(y E~y(x)) = z dE~y/dx = z j beta E~y (finite difference)   [got array, want array, |err| 1.68e-10]
+PASS  H~ = -z (2/eta) e^{j beta x}   [got array, want array, |err| 2.12e-13]
+PASS  |H| = 2/(60 pi) = 10.6 mA/m   [10.6103 -> 10.6, page 10.6]
+PASS  rotation rule (-x) x y (2/eta) = -z (2/eta)   [got array, want array, |err| 0.00e+00]
+PASS  E x H* along y x (-z) = -x, the travel
+
+====================================================================================================
+H2. Section 5 example: decode E = y 6 e^{-x} cos(3e8 t - 3x), non-magnetic
+====================================================================================================
+PASS  f = 47.7 MHz   [47.7465 -> 47.7, page 47.7]
+PASS  |gamma| = sqrt 10 = 3.162   [3.16228 -> 3.162, page 3.162]
+PASS  angle(gamma) = 71.6 deg   [71.5651 -> 71.6, page 71.6]
+PASS  w mu0 = 120 pi   [got 376.991, want 376.991, |err| 5.68e-14]
+PASS  eta = j 120 pi/(1 + j3) = 12 pi (3 + j)   [got 113.097+37.6991j, want 113.097+37.6991j, |err| 0.00e+00]
+PASS  Re eta = 113.1   [113.097 -> 113.1, page 113.1]
+PASS  Im eta = 37.7   [37.6991 -> 37.7, page 37.7]
+PASS  |eta| = 119.2   [119.215 -> 119.2, page 119.2]
+PASS  tau = 18.4 deg   [18.4349 -> 18.4, page 18.4]
+PASS  tau = atan(alpha/beta) = atan(1/3)   [got 0.321751, want 0.321751, |err| 0.00e+00]
+PASS  H direction x x y = +z   [got array, want array, |err| 0.00e+00]
+PASS  |H| = 6/119.2 = 50.3 mA/m   [50.3292 -> 50.3, page 50.3]
+PASS  E x H: y x z = +x (travel)
+PASS  Faraday: curl E~ = -j w mu0 H~ for the decoded H~   [got array, want array, |err| 8.09e-10]
+PASS  gamma^2 = -8 + j6   [got -8+6j, want -8+6j, |err| 0.00e+00]
+PASS  gamma/eta = (6 + j8)/(120 pi)   [got 0.0159155+0.0212207j, want 0.0159155+0.0212207j, |err| 3.47e-18]
+PASS  gamma/eta = gamma/eta directly   [got 0.0159155+0.0212207j, want 0.0159155+0.0212207j, |err| 0.00e+00]
+PASS  sigma = 1/(20 pi)   [got 0.0159155, want 0.0159155, |err| 0.00e+00]
+PASS  sigma = 15.9 mS/m   [15.9155 -> 15.9, page 15.9]
+PASS  eps = 7.07e-11 F/m   [7.07355 -> 7.07, page 7.07]
+PASS  eps = 8 eps0 (course eps0)   [got 8, want 8, |err| 1.78e-15]
+PASS  sigma/(w eps) = 3/4   [got 0.75, want 0.75, |err| 0.00e+00]
+PASS  forward: exact gamma from (sigma, eps, mu0) = 1 + j3   [got 1+3j, want 1+3j, |err| 0.00e+00]
+PASS  forward: exact eta = 12 pi (3 + j)   [got 113.097+37.6991j, want 113.097+37.6991j, |err| 1.42e-14]
+PASS  lambda = 2 pi/3 = 2.09 m   [2.0944 -> 2.09, page 2.09]
+PASS  v_p = w/beta = 1.0e8   [got 1e+08, want 1e+08, |err| 0.00e+00]
+PASS  lossless eps_r 8: c/sqrt8 = 1.06e8   [1.06066 -> 1.06, page 1.06]
+PASS  general formulas return alpha = 1   [got 1, want 1, |err| 0.00e+00]
+PASS  general formulas return beta = 3   [got 3, want 3, |err| 0.00e+00]
+PASS  w sqrt(mu eps) = sqrt 8   [got 2.82843, want 2.82843, |err| 0.00e+00]
+
+====================================================================================================
+H3. Section 6 crossover example: eps_r 4, sigma 0.04, 180 MHz
+====================================================================================================
+PASS  w eps (course eps0) = 0.04 S/m   [got 0.04, want 0.04, |err| 0.00e+00]
+PASS  sigma/(w eps) with CODATA eps0 = 0.9986   [0.998617 -> 0.9986, page 0.9986]
+PASS  w sqrt(mu eps) = 2.4 pi = 7.540   [7.53982 -> 7.540, page 7.540]
+PASS  w sqrt(mu eps) = 2.4 pi   [got 7.53982, want 7.53982, |err| 0.00e+00]
+PASS  alpha = 3.43   [3.4313 -> 3.43, page 3.43]
+PASS  beta = 8.28   [8.28388 -> 8.28, page 8.28]
+PASS  |eta| = 158.5   [158.505 -> 158.5, page 158.5]
+PASS  |eta| = 60 pi / 2^(1/4)   [got 158.505, want 158.505, |err| 2.84e-14]
+PASS  tau = 22.5 deg   [got 22.5, want 22.5, |err| 0.00e+00]
+PASS  delta = 0.291 m   [0.291435 -> 0.291, page 0.291]
+PASS  lambda = 0.758 m   [0.758483 -> 0.758, page 0.758]
+PASS  v_p = 1.37e8   [1.36527 -> 1.37, page 1.37]
+PASS  ID shortcut alpha = 0.02 x 60 pi = 3.77   [3.76991 -> 3.77, page 3.77]
+PASS    ... 10 % high   [9.86841 -> 10, page 10]
+PASS  ID shortcut beta 7.54 is 9 % low   [8.98203 -> 9, page 9]
+PASS  ID shortcut tau = 0.5 rad = 28.6 deg   [28.6479 -> 28.6, page 28.6]
+PASS  GC shortcut sqrt(w mu sigma/2) = 5.33   [5.33146 -> 5.33, page 5.33]
+PASS    ... 55 % high for alpha   [55.3774 -> 55, page 55]
+PASS    ... 36 % low for beta   [35.6406 -> 36, page 36]
+
+====================================================================================================
+H4. Section 6 table (x = w eps/sigma) and the figure's normalizations
+====================================================================================================
+PASS  table delta/delta_inf at x = 0.01   [7.10651 -> 7.11, page 7.11]
+PASS  table delta/delta_inf at x = 0.1   [2.35052 -> 2.35, page 2.35]
+PASS  table delta/delta_inf at x = 1   [1.09868 -> 1.10, page 1.10]
+PASS  table delta/delta_inf at x = 10   [1.00125 -> 1.001, page 1.001]
+PASS  table delta/delta_inf at x = 100   [1.00001 -> 1.000, page 1.000]
+PASS  table lambda/(2 pi delta_inf) at x = 0.01   [7.0358 -> 7.04, page 7.04]
+PASS  table lambda/(2 pi delta_inf) at x = 0.1   [2.12719 -> 2.13, page 2.13]
+PASS  table lambda/(2 pi delta_inf) at x = 1   [0.45509 -> 0.455, page 0.455]
+PASS  table lambda/(2 pi delta_inf) at x = 10   [0.0499378 -> 0.050, page 0.050]
+PASS  table lambda/(2 pi delta_inf) at x = 100   [0.00499994 -> 0.005, page 0.005]
+PASS  table |eta|/sqrt(mu/eps) at x = 0.01   [0.0999975 -> 0.100, page 0.100]
+PASS  table |eta|/sqrt(mu/eps) at x = 0.1   [0.315442 -> 0.315, page 0.315]
+PASS  table |eta|/sqrt(mu/eps) at x = 1   [0.840896 -> 0.841, page 0.841]
+PASS  table |eta|/sqrt(mu/eps) at x = 10   [0.997516 -> 0.998, page 0.998]
+PASS  table |eta|/sqrt(mu/eps) at x = 100   [0.999975 -> 1.000, page 1.000]
+PASS  table tau [deg] at x = 0.01   [44.7135 -> 44.7, page 44.7]
+PASS  table tau [deg] at x = 0.1   [42.1447 -> 42.1, page 42.1]
+PASS  table tau [deg] at x = 1   [22.5 -> 22.5, page 22.5]
+PASS  table tau [deg] at x = 10   [2.8553 -> 2.86, page 2.86]
+PASS  table tau [deg] at x = 100   [0.286469 -> 0.29, page 0.29]
+PASS  figure: alpha/alpha_inf formula at x = 0.01   [got 0.140716, want 0.140716, |err| 0.00e+00]
+PASS  figure: beta/alpha_inf formula at x = 0.01   [got 0.14213, want 0.14213, |err| 0.00e+00]
+PASS  figure: alpha/alpha_inf formula at x = 0.3   [got 0.668145, want 0.668145, |err| 0.00e+00]
+PASS  figure: beta/alpha_inf formula at x = 0.3   [got 0.898008, want 0.898008, |err| 1.11e-16]
+PASS  figure: alpha/alpha_inf formula at x = 1   [got 0.91018, want 0.91018, |err| 1.11e-16]
+PASS  figure: beta/alpha_inf formula at x = 1   [got 2.19737, want 2.19737, |err| 0.00e+00]
+PASS  figure: alpha/alpha_inf formula at x = 7   [got 0.997471, want 0.997471, |err| 3.44e-15]
+PASS  figure: beta/alpha_inf formula at x = 7   [got 14.0355, want 14.0355, |err| 1.78e-15]
+PASS  figure asymptote: delta/delta_inf -> 1/sqrt(2x) for x << 1   [got 70.7142, want 70.7107, |err| 3.54e-03]
+PASS  figure asymptote: lambda/(2 pi delta_inf) -> 1/(2x) for x >> 1   [got 5e-05, want 5e-05, |err| 6.25e-14]
+PASS  figure bands: good conductor for x < 0.1 (s > 10), imperfect dielectric for x > 10 (s < 0.1) = L23 thresholds   [figs_l22.py shades log10 x in [-2,-1] and [1,2]]
+
+====================================================================================================
+H5. Section 6 'reading the regime': decay per wavelength and delta against lambda
+====================================================================================================
+PASS  e^(-alpha lambda) = e^(-2 pi tan tau) at s = 0.01   [got 0.969073, want 0.969073, |err| 0.00e+00]
+PASS  e^(-alpha lambda) = e^(-2 pi tan tau) at s = 0.3   [got 0.397653, want 0.397653, |err| 5.55e-17]
+PASS  e^(-alpha lambda) = e^(-2 pi tan tau) at s = 1   [got 0.0740822, want 0.0740822, |err| 2.78e-17]
+PASS  e^(-alpha lambda) = e^(-2 pi tan tau) at s = 30   [got 0.00229451, want 0.00229451, |err| 1.73e-18]
+PASS  e^(-alpha lambda) = e^(-2 pi tan tau) at s = 10000.0   [got 0.00186862, want 0.00186862, |err| 3.47e-18]
+PASS  good conductor: e^{-2pi} = 0.19 %   [0.186744 -> 0.19, page 0.19]
+PASS  imperfect dielectric: e^(-alpha lambda) ~ 1 - pi s (s = 0.01)   [got 0.969073, want 0.968584, |err| 4.89e-04]
+PASS  delta = lambda exactly at s* = tan(2 atan(1/2pi)) = 0.3266   [got 1859.64, want 1859.64, |err| 0.00e+00]
+PASS  FINDING: 'lambda is longer than delta' only means s > 0.33 - true at s = 0.5 (in between), so it does not name the regime   [page fixed to 'lambda ~ 2 pi delta' (the S20 HE3 #3b wording)]
+PASS  ... the threshold quoted on the page: sigma/(w eps) > 0.33   [0.326582 -> 0.33, page 0.33]
+PASS  lambda/delta = 2 pi tan(tau) < 2 pi, so lambda < 2 pi delta for every real sigma (s = 1e-6..1e6)
+PASS  good conductor: delta -> lambda/2pi   [got 4.23992, want 4.23949, |err| 4.24e-04]
+PASS  imperfect dielectric: delta >> lambda (s = 1e-3: delta/lambda = 1/(2 pi tan tau) ~ 318)   [318]
+
+====================================================================================================
+H6. Section 6 shortcuts: binomial derivation, error orders, the two limits, penetration-depth limits
+====================================================================================================
+PASS  imperfect-dielectric alpha: relative error falls as s^2 (ratio 100 for s/10)   [ratio 100.0]
+PASS  imperfect-dielectric beta: relative error falls as s^2 (ratio 100 for s/10)   [ratio 100.0]
+PASS  imperfect-dielectric |eta|: relative error falls as s^2 (ratio 100 for s/10)   [ratio 100.0]
+PASS  imperfect-dielectric tau (rad): relative error falls as s^2 (ratio 100 for s/10)   [ratio 100.0]
+PASS  notes' tan^-1(sigma/2 w eps) differs from the exact angle at O(s^3)   [ratio 1000]
+PASS  good conductor: gamma -> (1+j) sqrt(pi f mu sigma), error ~ 1/(2s)   [5.00e-03, 5.00e-04]
+PASS  good conductor: eta -> sqrt(w mu/sigma) e^{j pi/4}, error ~ 1/(2s)   [5.00e-03, 5.00e-04]
+PASS  binomial: (1 - js)^(1/2) ~ 1 - js/2 (p = 1/2 for gamma)   [got 1-5e-05j, want 1-5e-05j, |err| 1.25e-09]
+PASS  binomial: (1 - js)^(-1/2) ~ 1 + js/2 (p = -1/2 for eta; notes say p = 1/2)   [got 1+5e-05j, want 1+5e-05j, |err| 3.75e-09]
+PASS  sqrt(j) = e^{j pi/4} = (1+j)/sqrt2   [got 0.707107+0.707107j, want 0.707107+0.707107j, |err| 1.57e-16]
+PASS  high f: delta -> (2/sigma) sqrt(eps/mu)   [got 0.0130039, want 0.0130039, |err| 1.46e-12]
+PASS  low f: delta -> sqrt(2/(w mu sigma)) = 1/sqrt(pi f mu sigma)   [got 159.155, want 159.155, |err| 2.66e-07]
+PASS  sqrt(2/(w mu sigma)) = 1/sqrt(pi f mu sigma)   [got 225.079, want 225.079, |err| 0.00e+00]
+PASS  sigma -> inf: alpha -> inf, |eta| -> 0   [alpha 1.99e+06, |eta| 2.81e-06]
+
+====================================================================================================
+H7. Section 7: Lecture 19's sheet in a conducting medium (J0 = 2 A/m, medium of the section-5 example)
+====================================================================================================
+PASS  medium: gamma = 1 + j3   [got 1+3j, want 1+3j, |err| 4.58e-16]
+PASS  H(z>0) = z x E/eta   [got array, want array, |err| 1.24e-16]
+PASS  H(z<0) = (-z) x E/eta   [got array, want array, |err| 1.24e-16]
+PASS  jump: n x (H+ - H-) with n = z (from region 2 below into region 1 above) = J~s   [got array, want array, |err| 0.00e+00]
+PASS  E~ = -x eta J0/2 e^{-gamma|z|}   [got array, want array, |err| 0.00e+00]
+PASS  H~ (z>0) = -y J0/2 (= 1/2 J~s x n)   [got array, want array, |err| 0.00e+00]
+PASS  H~ (z<0) = +y J0/2 (= 1/2 J~s x n, n = -z)   [got array, want array, |err| 0.00e+00]
+PASS  E(z,t) = -x 119.2 e^{-|z|} cos(wt - 3|z| + 18.4 deg) V/m
+PASS  H(z>0,t) = -y e^{-|z|} cos(wt - 3|z|) A/m
+PASS  <-Js.E> by quadrature = 1/4 J0^2 Re{eta}   [got 113.097, want 113.097, |err| 4.26e-14]
+PASS  ... = 36 pi W/m^2   [got 113.097, want 113.097, |err| 2.84e-14]
+PASS  ... = 113 W/m^2   [113.097 -> 113, page 113]
+PASS  flux leaving the top face = half of it (+z)   [got array, want array, |err| 2.13e-14]
+PASS  flux leaving the bottom face = half of it (-z)   [got array, want array, |err| 2.13e-14]
+PASS  half = 56.5 W/m^2   [56.5487 -> 56.5, page 56.5]
+PASS  Re{eta} = |eta| cos(tau)   [got 113.097, want 113.097, |err| 0.00e+00]
+PASS  direction z>0: (-x) x (-y) = +z
+PASS  E leads H by tau: arg(E~x/(-1)) - arg(H~y/(-1)) at z>0 = +18.4 deg
+PASS  matches Rao (5.66) after J_s -> -J_s   [Rao: E = (|eta|J_S0/2)e^{-a|z|}cos(wt - b|z| + tau) a_x for J_S = -J_S0 cos wt a_x]
+
+====================================================================================================
+H8. Section 8: Drude sigma(w), collisionless plasma, ionosphere numbers
+====================================================================================================
+PASS  sigma + j w eps0 = j w eps0 (1 - wp^2/w^2) at 5 MHz   [got 0-0.000618816j, want -0-0.000618816j, |err| 1.08e-19]
+PASS  gamma^2 = -(w^2 - wp^2)/c^2 at 5 MHz   [got 0.0244299, want 0.0244299, |err| 1.33e-11]
+PASS  5 MHz: gamma real = 0.156 1/m   [0.156301 -> 0.156, page 0.156]
+PASS  5 MHz: beta = 0
+PASS  5 MHz: delta = 6.4 m   [6.39793 -> 6.4, page 6.4]
+PASS  5 MHz: eta purely imaginary (tau = 90 deg)
+PASS  5 MHz: <S> = 0 by quadrature (no average power)   [-5.4e-20]
+PASS  FINDING: below f_p alpha > beta (= 0): 'beta >= alpha in every passive medium' needs 'real sigma'   [page and concept page now say: for real sigma >= 0]
+PASS  sigma + j w eps0 = j w eps0 (1 - wp^2/w^2) at 20 MHz   [got 0+0.000888405j, want 0+0.000888405j, |err| 1.08e-19]
+PASS  gamma^2 = -(w^2 - wp^2)/c^2 at 20 MHz   [got -0.140291, want -0.140291, |err| 7.64e-11]
+PASS  20 MHz: beta = 0.375 rad/m   [0.374555 -> 0.375, page 0.375]
+PASS  20 MHz: alpha = 0
+PASS  20 MHz: vacuum beta = 0.419   [0.419169 -> 0.419, page 0.419]
+PASS  20 MHz: eta = w mu0/beta, real   [got 421.604, want 421.604, |err| 0.00e+00]
+PASS  20 MHz: eta > eta0   [421.6 ohm]
+PASS  matches Lecture 21's plasma dispersion relation beta = sqrt(w^2 - wp^2)/c   [got 0.374555, want 0.374555, |err| 1.02e-10]
+PASS  collisionless sigma is purely imaginary: Re sigma = 0, no Joule heating
+
+====================================================================================================
+H9. Section 9: the transmission-line twin (coax with a lossy filling)
+====================================================================================================
+PASS  LC = mu eps   [got 1.16828e-16, want 1.16828e-16, |err| 0.00e+00]
+PASS  G/C = sigma/eps   [got 3.22688e+08, want 3.22688e+08, |err| 0.00e+00]
+PASS  LG = mu sigma (concept page)   [got 3.76991e-08, want 3.76991e-08, |err| 0.00e+00]
+PASS  sqrt(jwL(G + jwC)) = gamma   [got 0.578927+0.613731j, want 0.578927+0.613731j, |err| 0.00e+00]
+PASS  sqrt(jwL/(G + jwC)) = eta ln(b/a)/2pi   [got 6.10798+5.7616j, want 6.10798+5.7616j, |err| 1.26e-15]
+
+====================================================================================================
+I. Worked problem: H = z 0.2 e^x cos(1e8 t + 2x + 60 deg) A/m, mu = 3 mu0, x < 0
+====================================================================================================
+PASS  (a) same signs on t and x: travel toward -x; e^x decays toward -x
+PASS  (a) f = 15.9 MHz   [15.9155 -> 15.9, page 15.9]
+PASS  (a) angle(gamma) = 63.43 deg   [63.4349 -> 63.43, page 63.43]
+PASS  (a) |gamma| = sqrt 5   [got 2.23607, want 2.23607, |err| 0.00e+00]
+PASS  (a) tan^-1 2 = 90 - 26.57   [got 63.4349, want 63.4349, |err| 0.00e+00]
+PASS  (a) lambda = pi   [got 3.14159, want 3.14159, |err| 0.00e+00]
+PASS  (a) v_p = 5e7   [got 5e+07, want 5e+07, |err| 0.00e+00]
+PASS  (a) delta = 1   [got 1, want 1, |err| 0.00e+00]
+PASS  (b) w mu = 120 pi   [got 376.991, want 376.991, |err| 0.00e+00]
+PASS  (b) eta = 24 pi (2 + j)   [got 150.796+75.3982j, want 150.796+75.3982j, |err| 0.00e+00]
+PASS  (b) Re eta = 150.8   [150.796 -> 150.8, page 150.8]
+PASS  (b) Im eta = 75.4   [75.3982 -> 75.4, page 75.4]
+PASS  (b) |eta| = 168.6   [168.596 -> 168.6, page 168.6]
+PASS  (b) |eta| = 120 pi/sqrt5   [got 168.596, want 168.596, |err| 2.84e-14]
+PASS  (b) tau = 26.57 deg   [26.5651 -> 26.57, page 26.57]
+PASS  (b) gamma eta = j 120 pi   [got 0+376.991j, want 0+376.991j, |err| 0.00e+00]
+PASS  (c) Re{H~ e^jwt} = given H at x = -0.3, t = 0
+PASS  (c) Re{H~ e^jwt} = given H at x = -0.3, t = 7e-09
+PASS  (c) Re{H~ e^jwt} = given H at x = -0.3, t = 2.1e-08
+PASS  (c) Re{H~ e^jwt} = given H at x = -1.1, t = 0
+PASS  (c) Re{H~ e^jwt} = given H at x = -1.1, t = 7e-09
+PASS  (c) Re{H~ e^jwt} = given H at x = -1.1, t = 2.1e-08
+PASS  (c) direction z x (-x) = -y   [got array, want array, |err| 0.00e+00]
+PASS  (c) |E| = 0.2 x 168.6 = 33.7 V/m   [33.7191 -> 33.7, page 33.7]
+PASS  (c) phase of E = 86.57 deg (in the -y direction)   [86.5651 -> 86.57, page 86.57]
+PASS  (c) E~ = -y 0.2 eta e^{j60} e^{gamma x}   [got array, want array, |err| 5.02e-15]
+PASS  (c) E x H* along (-y) x z = -x (travel)
+PASS  (c) <S> = 1/2 Re{E x H*} points along -x   [[-2.02163763  0.          0.        ]]
+PASS  (c) Faraday curl E~ = -j w mu H~ (finite difference)   [got array, want array, |err| 3.43e-09]
+PASS  (c) Ampere curl H~ = (sigma + j w eps) E~ (finite difference)   [got array, want array, |err| 1.72e-11]
+PASS  (c) time domain: dEy/dx = -mu dHz/dt with the answer's E   [got 22.0815, want 22.0809, |err| 5.44e-04]
+PASS  (c) time domain: -dHz/dx = sigma Ey + eps dEy/dt   [got 0.00386373, want 0.00386358, |err| 1.53e-07]
+PASS  (c) alternative form y 33.7 cos(... - 93.4 deg) is the same field
+PASS  (c) trap: wrong sign of tau gives 33.4 deg   [33.4349 -> 33.4, page 33.4]
+PASS  (d) gamma^2 = -3 + j4   [got -3+4j, want -3+4j, |err| 0.00e+00]
+PASS  (d) gamma/eta = (4 + j3)/(120 pi)   [got 0.0106103+0.00795775j, want 0.0106103+0.00795775j, |err| 0.00e+00]
+PASS  (d) sigma = 1/(30 pi)   [got 0.0106103, want 0.0106103, |err| 0.00e+00]
+PASS  (d) sigma = 10.6 mS/m   [10.6103 -> 10.6, page 10.6]
+PASS  (d) eps = 7.96e-11   [7.95775 -> 7.96, page 7.96]
+PASS  (d) eps = 9 eps0 (course eps0)   [got 9, want 9, |err| 0.00e+00]
+PASS  (d) sigma/(w eps) = 4/3 = tan(2 tau)   [got 1.33333, want 1.33333, |err| 2.22e-16]
+PASS  (d) tan^-1(4/3) = 53.13   [53.1301 -> 53.13, page 53.13]
+PASS  (d) ID shortcut alpha = 2/sqrt3   [got 1.1547, want 1.1547, |err| 0.00e+00]
+PASS  (d) ... 15 % high   [15.4701 -> 15, page 15]
+PASS  (d) GC shortcut = sqrt 2   [got 1.41421, want 1.41421, |err| 0.00e+00]
+PASS  (d) ... 41 % high for alpha   [41.4214 -> 41, page 41]
+PASS  (d) ... 29 % low for beta   [29.2893 -> 29, page 29]
+PASS  (e) w sqrt(mu eps) = sqrt 3   [got 1.73205, want 1.73205, |err| 0.00e+00]
+PASS  (e) alpha = 1   [got 1, want 1, |err| 0.00e+00]
+PASS  (e) beta = 2   [got 2, want 2, |err| 0.00e+00]
+PASS  (e) |eta| = 120 pi/sqrt5   [got 168.596, want 168.596, |err| 2.84e-14]
+PASS  (e) sqrt(mu/eps) = 120 pi/sqrt3   [got 217.656, want 217.656, |err| 0.00e+00]
+PASS  (e) tau = 26.57 deg   [got 26.5651, want 26.5651, |err| 3.55e-15]
+PASS  (e) exact square roots return gamma = 1 + j2   [got 1+2j, want 1+2j, |err| 0.00e+00]
+PASS  (e) exact square roots return eta = 24 pi (2 + j)   [got 150.796+75.3982j, want 150.796+75.3982j, |err| 0.00e+00]
+PASS  (f) e^x = 0.1 at x = -2.30 m   [-2.30259 -> -2.30, page -2.30]
+PASS  (f) 2.30/pi = 0.73 wavelengths   [0.732936 -> 0.73, page 0.73]
+PASS  (f) e^{-pi} = 4.3 %   [4.32139 -> 4.3, page 4.3]
+PASS  variant: eta with mu0 = 8 pi (2 + j)   [got 50.2655+25.1327j, want 50.2655+25.1327j, |err| 0.00e+00]
+PASS  variant: |eta| = 56.2   [56.1985 -> 56.2, page 56.2]
+PASS  variant: |E| = 11.2   [11.2397 -> 11.2, page 11.2]
+PASS  variant: sigma = 31.8 mS/m   [31.831 -> 31.8, page 31.8]
+PASS  variant: eps = 27 eps0   [got 27, want 27, |err| 0.00e+00]
+PASS  variant: sigma/(w eps) still 4/3   [got 1.33333, want 1.33333, |err| 0.00e+00]
+PASS  variant: tau still 26.6 deg   [got 0.463648, want 0.463648, |err| 0.00e+00]
+PASS  worked problem differs from SP17 #3: gamma, eta, sigma/(w eps) all different   [SP17 #3: gamma 3+4j, eta 5.053+3.79j, s 3.43]
+PASS  worked problem differs from S18 HE3 #1b: gamma, eta, sigma/(w eps) all different   [S18 HE3 #1b: gamma 1+1.73j, eta 13.68+7.896j, s 1.73]
+PASS  worked problem differs from SP19 #1: gamma, eta, sigma/(w eps) all different   [SP19 #1: gamma 1+1.73j, eta 68.38+39.48j, s 1.73]
+
+====================================================================================================
+J. Concept pages: propagation-constant and the new section of intrinsic-impedance
+====================================================================================================
+PASS  propagation-constant: eps_r 4 at 100 MHz, gamma = j4.19   [4.18879 -> 4.19, page 4.19]
+PASS  ... lambda = 1.5 m   [got 1.5, want 1.5, |err| 0.00e+00]
+PASS  propagation-constant: gamma = 1 + j3 example (H2) and crossover 3.43 + j8.28 (H3), 10 % / 55 % (H3)
+PASS  propagation-constant: worked problem gamma^2 = -3 + j4 (3-4-5)   [got -3+4j, want -3+4j, |err| 0.00e+00]
+PASS  propagation-constant: plasma 0.156 at 5 MHz, j0.375 at 20 MHz (H8)
+PASS  intrinsic-impedance: eta0/sqrt8 = 133.3 (course eta0)   [got 133.286, want 133.3, |err| 1.35e-02]
+PASS  intrinsic-impedance: lossless sqrt(3 mu0/9 eps0) = 217.7   [got 217.656, want 217.7, |err| 4.41e-02]
+PASS  intrinsic-impedance: crossover |eta| = 2^(-1/4) = 0.84   [got 0.840896, want 0.84, |err| 8.96e-04]
+PASS  |eta| < sqrt(mu/eps) for every sigma > 0
+PASS  vacuum: 1 V/m -> H = 2.65 mA/m   [2.65442 -> 2.65, page 2.65]
+PASS  vacuum: B = E/c = 3.34 nT   [3.33564 -> 3.34, page 3.34]
+PASS  eps_r 2.25 -> 251 ohm   [251.154 -> 251, page 251]
+PASS  eps_r 9 -> 126 ohm   [125.577 -> 126, page 126]
+PASS  v = 2e8 -> eta = mu0 v = 80 pi   [got 251.327, want 251.327, |err| 0.00e+00]
+PASS  mu_r 2, eps_r 8: eta = eta0/2, v = c/4   [got 0.5, want 0.5, |err| 0.00e+00]
+PASS  coax b/a 3.5: ln(3.5)/2pi = 0.199   [0.199383 -> 0.199, page 0.199]
+PASS  ... 0.199 x 251.3 = 50 ohm   [50.1105 -> 50, page 50]
+PASS  6/251.3 = 23.9 mA/m   [23.8732 -> 23.9, page 23.9]
+PASS  6/377 = 15.9 mA/m   [15.9151 -> 15.9, page 15.9]
+
+====================================================================================================
+K. Figures: every plotted quantity recomputed from the formulas
+====================================================================================================
+PASS  damped-wave: delta = 1/0.6 = 1.67 lambda   [1.66667 -> 1.67, page 1.67]
+PASS  damped-wave: tau = atan(0.6/2pi) = 5.5 deg   [5.4548 -> 5.5, page 5.5]
+PASS  damped-wave: t = 0 nodes at 0.25 + k/2 (2.75 marked)
+PASS  damped-wave: t = T/8 nodes at 0.375 + k/2 (2.875 marked): moved lambda/8 toward +z
+PASS  damped-wave: dimension line 0.25 -> 1.25 spans one lambda, two node spacings
+PASS  phasor-spiral: tau = 15 deg <-> s = tan 30 deg   [got 0.57735, want 0.57735, |err| 0.00e+00]
+PASS  phasor-spiral: radius per turn e^{-2 pi tan 15} = 0.19   [0.185709 -> 0.19, page 0.19]
+PASS  phasor-spiral: e^{-j beta z} turns clockwise (angle decreasing) as z grows
+PASS  phasor-spiral: H~ = E~/eta is E~ turned clockwise by tau (angle -tau)
+PASS  phasor-spiral: record panel |eta|H = cos(wt - tau) peaks tau/w after cos(wt)   [same as section F]
+PASS  phase-dial table row s = 0.25   [7.02, 82.98, 1.015, 0.985]
+PASS  phase-dial: eta_n = reflect45(invert(gamma_n)) at s = 0.25
+PASS  phase-dial: gamma/(w sqrt(mu eps)) = j sqrt(1 - js) and eta/sqrt(mu/eps) = 1/sqrt(1 - js) at s = 0.25
+PASS  phase-dial table row s = 1   [22.50, 67.50, 1.189, 0.841]
+PASS  phase-dial: eta_n = reflect45(invert(gamma_n)) at s = 1
+PASS  phase-dial: gamma/(w sqrt(mu eps)) = j sqrt(1 - js) and eta/sqrt(mu/eps) = 1/sqrt(1 - js) at s = 1
+PASS  phase-dial table row s = sqrt3   [30.00, 60.00, 1.414, 0.707]
+PASS  phase-dial: eta_n = reflect45(invert(gamma_n)) at s = sqrt3
+PASS  phase-dial: gamma/(w sqrt(mu eps)) = j sqrt(1 - js) and eta/sqrt(mu/eps) = 1/sqrt(1 - js) at s = sqrt3
+PASS  phase-dial table row s = 4   [37.98, 52.02, 2.031, 0.492]
+PASS  phase-dial: eta_n = reflect45(invert(gamma_n)) at s = 4
+PASS  phase-dial: gamma/(w sqrt(mu eps)) = j sqrt(1 - js) and eta/sqrt(mu/eps) = 1/sqrt(1 - js) at s = 4
+PASS  phase-dial table row s = 10   [42.14, 47.86, 3.170, 0.315]
+PASS  phase-dial: eta_n = reflect45(invert(gamma_n)) at s = 10
+PASS  phase-dial: gamma/(w sqrt(mu eps)) = j sqrt(1 - js) and eta/sqrt(mu/eps) = 1/sqrt(1 - js) at s = 10
+PASS  phase-dial: at s = 0 gamma_n = j (imaginary axis), eta_n = 1 (real axis)
+
+====================================================================================================
+L. Consistency with the Lecture 23 page (written by another writer)
+====================================================================================================
+PASS  L23 polar forms = L22 closed forms at p = 0.05
+PASS  L23 exact energy identity alpha = sigma |eta|/(2 cos tau) = Re{gamma/eta} form, p = 0.05   [got 4.71418, want 4.71418, |err| 8.88e-16]
+PASS  L23 polar forms = L22 closed forms at p = 0.89
+PASS  L23 exact energy identity alpha = sigma |eta|/(2 cos tau) = Re{gamma/eta} form, p = 0.89   [got 77.6229, want 77.6229, |err| 1.42e-14]
+PASS  L23 polar forms = L22 closed forms at p = 4.0
+PASS  L23 exact energy identity alpha = sigma |eta|/(2 cos tau) = Re{gamma/eta} form, p = 4.0   [got 235.711, want 235.711, |err| 0.00e+00]
+PASS  L23: at p = 0.1 ID alpha, beta within 0.13 %, |eta| 0.25 %, tau 0.33 %   [0.125, -0.124, 0.249, 0.332 %]
+PASS  L23: at p = 10 GC alpha 5 % high, beta 5 % low, tau 42.1 deg
+PASS  L23 and L22 agree at p = 1: ID alpha 10 % high, GC alpha 55 % high
+PASS  L23 thresholds 0.1 / 10 = L22 figure bands (x = 1/s: 10 / 0.1)
+PASS  L23 sea water f_c 0.89 GHz = L22 'near 0.9 GHz'
+PASS  L23 table rows = L22 overview: ID alpha (s/2)sqrt(mu/eps), tau s/2; GC alpha = beta = sqrt(pi f mu sigma), |eta| sqrt(w mu/sigma), 45 deg   [formulas identical (checked numerically in H6)]
+PASS  L23 good conductor lambda = 2 pi delta = L22 'delta = lambda/2pi'
+PASS  L23 imperfect-dielectric delta (2/sigma)sqrt(eps/mu) = L22 high-frequency limit (H6)
+
+TOTAL: 382 PASS, 0 FAIL

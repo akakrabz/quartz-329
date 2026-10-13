@@ -1,0 +1,420 @@
+=== A. constants
+ok   c: 2.99792e+08 vs 2.99792e+08
+ok   eta0 [ohm]: 376.73 vs 376.73
+ok   120 pi: 376.991 vs 376.991
+ok   60 pi = eta0/2 with eta0 = 120 pi: 188.496 vs 188.496
+=== B. Section 1 example: E = 12 cos(4pi e8 t - (8pi/3) y) z in a non-magnetic lossless medium
+ok   f = 200 MHz: 2e+08 vs 2e+08
+ok   T = 5 ns: 5e-09 vs 5e-09
+ok   beta = 8 pi/3 = 8.38 rad/m: 8.37758 vs 8.37758
+ok   lambda = 0.75 m: 0.75 vs 0.75
+ok   v_p = 1.5e8 m/s: 1.5e+08 vs 1.5e+08
+ok   lambda f = v_p: 1.5e+08 vs 1.5e+08
+ok   eps_r = (c/v_p)^2 = 4 with c = 3e8 (mu_r = 1): 4 vs 4
+ok   eps_r with exact c = 3.994 (page says 'taking c = 3e8'): 3.99447 vs 3.9945
+ok   eta = eta0/sqrt(4) = 60 pi = 188 ohm: 188.496 vs 188.496
+ok   probes 25 cm apart: phase lag beta*dy = 2pi/3 rad (120 deg): 2.0944 vs 2.0944
+ok   delay dy/v_p = 1.67 ns: 1.66667e-09 vs 1.6667e-09
+ok   delay = T/3: 1.66667e-09 vs 1.66667e-09
+ok   crest of cos(wt - beta y) moves toward +y
+=== C. spectrum table (notes p.4 chart), f = c/lambda with c = 3e8; memorized pairs
+ok   lambda = 1000 m -> f = 300000 Hz: 300000 vs 300000
+ok   lambda = 0.01 m -> f = 3e+10 Hz: 3e+10 vs 3e+10
+ok   lambda = 1e-05 m -> f = 3e+13 Hz: 3e+13 vs 3e+13
+ok   lambda = 5e-07 m -> f = 6e+14 Hz: 6e+14 vs 6e+14
+ok   lambda = 1e-08 m -> f = 3e+16 Hz: 3e+16 vs 3e+16
+ok   lambda = 1e-10 m -> f = 3e+18 Hz: 3e+18 vs 3e+18
+ok   lambda = 1e-12 m -> f = 3e+20 Hz: 3e+20 vs 3e+20
+ok   1e+06 Hz <-> 300 m: 300 vs 300
+ok   1e+08 Hz <-> 3 m: 3 vs 3
+ok   1e+09 Hz <-> 0.3 m: 0.3 vs 0.3
+ok   1e+10 Hz <-> 0.03 m: 0.03 vs 0.03
+ok   400 nm <-> 750 THz: 7.5e+14 vs 7.5e+14
+ok   700 nm <-> 430 THz: 4.28571e+14 vs 4.286e+14
+     px per decade between chart ticks: [65, 72, 91, 167, 110, 106]
+ok   chart frequency bar is not evenly spaced in decades (schematic): 65 to 167 px per decade
+ok   microwave label sits over ~2e9 Hz on the bar, not 3e10 Hz: 1.6681e+09 vs 1.7e+09
+=== D. dispersion relations
+ok   TEM eps_r=4: v_p = 1/sqrt(mu eps) at f = 1e+06 Hz: 1.49896e+08 vs 1.49896e+08
+ok   TEM eps_r=4: v_p = 1/sqrt(mu eps) at f = 1e+08 Hz: 1.49896e+08 vs 1.49896e+08
+ok   TEM eps_r=4: v_p = 1/sqrt(mu eps) at f = 1e+10 Hz: 1.49896e+08 vs 1.49896e+08
+ok   helium 300 K: 1019 m/s: 1019.13 vs 1019.1
+ok   argon 300 K: 323 m/s: 322.593 vs 322.6
+ok   helium 20 C: 1007 m/s (handbook 1007 m/s): 1007.43 vs 1007
+ok   argon 20 C: 319 m/s (handbook 319 m/s): 318.889 vs 319
+ok   air 20 C with gamma = 7/5: 343 m/s (handbook 343 m/s): 343.235 vs 343.2
+ok   air 20 C with the monatomic 5/3: 375 m/s (wrong for air): 374.5 vs 374.5
+ok   440 Hz in helium: lambda = 2.32 m: 2.31621 vs 2.32
+ok   440 Hz in argon: lambda = 0.73 m: 0.733165 vs 0.733
+ok   ratio = sqrt(m_Ar/m_He): 3.15919 vs 3.15919
+ok   sqrt(39.95/4.003) = 3.16: 3.15912 vs 3.159
+ok   acoustic v_p = w/beta independent of f (100 Hz): 1019.13 vs 1019.13
+ok   acoustic v_p = w/beta independent of f (440 Hz): 1019.13 vs 1019.13
+ok   acoustic v_p = w/beta independent of f (10000 Hz): 1019.13 vs 1019.13
+ok   f_p = 8.98 sqrt(N) Hz: 8.97866 vs 8.98
+ok   (f_p^2 = 80.6 N, Rao's form): 80.6164 vs 80.6
+ok   N = 1e12 m^-3: f_p = 8.98 MHz (about 9 MHz): 8.97866e+06 vs 8.98e+06
+ok   typical daytime N 3e11..2e12 m^-3 -> f_p 4.9..12.7 MHz (handbook foF2 range)
+ok   10 MHz: beta = 0.0923 rad/m: 0.0922734 vs 0.0923
+ok   10 MHz: lambda = 68.1 m: 68.0931 vs 68.1
+ok   10 MHz vacuum lambda = 30.0 m: 29.9792 vs 29.98
+ok   10 MHz: v_p = 6.81e8 m/s: 6.80931e+08 vs 6.81e+08
+ok   10 MHz: v_p = 2.27 c: 2.27134 vs 2.27
+ok   v_p = lambda f: 6.80931e+08 vs 6.80931e+08
+ok   10 MHz: v_g = 0.440 c: 0.440268 vs 0.44
+ok   v_p v_g = c^2: 8.98755e+16 vs 8.98755e+16
+ok   v_g = dw/dbeta numerically: 1.31989e+08 vs 1.31989e+08
+ok   100 MHz: v_p = 1.004 c: 1.00406 vs 1.004
+ok   below f_p (8 MHz): beta^2 < 0, no travelling wave
+ok   figure P: v_p = 1.34 c: 1.34164 vs 1.342
+ok   figure P: v_g = 0.75 c: 0.745356 vs 0.745
+ok   figure P: v_p v_g = c^2: 1 vs 1
+ok   plasma wave equation with the collisionless current holds for beta^2 = (w^2 - wp^2)/c^2: -0.00475643 vs -0.00475643
+ok   dJ/dt = (N e^2/m) E: [1801 values, max 2.818e+04] vs [1801 values, max 2.818e+04]
+ok   Drude sigma with nu = 0 is -j N e^2/(m w) (purely imaginary): 0-0.000448489j vs 0-0.000448489j
+ok   effective permittivity eps0 (1 - wp^2/w^2) (concept page): 1.71626e-12 vs 1.71626e-12
+=== E. phasor rules
+ok   Re{A e^(j th) e^(jwt)} = A cos(wt + th), A = 1.0, th = 0.0: [5001 values, max 1] vs [5001 values, max 1]
+ok   Re{A e^(j th) e^(jwt)} = A cos(wt + th), A = 2.5, th = 0.7: [5001 values, max 2.5] vs [5001 values, max 2.5]
+ok   Re{A e^(j th) e^(jwt)} = A cos(wt + th), A = 0.3, th = -2.2: [5001 values, max 0.3] vs [5001 values, max 0.3]
+ok   table row: A cos wt -> A: [5001 values, max 2] vs [5001 values, max 2]
+ok   table row: A sin wt -> -jA: [5001 values, max 2] vs [5001 values, max 2]
+ok   table row: -A cos wt -> -A: [5001 values, max 2] vs [5001 values, max 2]
+ok   table row: -A sin wt -> +jA: [5001 values, max 2] vs [5001 values, max 2]
+ok   table row: A cos(wt + th) -> A e^(j th): [5001 values, max 2] vs [5001 values, max 2]
+ok   table row: A sin(wt + th) -> -jA e^(j th): [5001 values, max 2] vs [5001 values, max 2]
+ok   table row: A cos(wt - beta z) -> A e^(-j beta z): [5001 values, max 2] vs [5001 values, max 2]
+ok   table row: A sin(wt + beta y) -> -jA e^(j beta y): [5001 values, max 2] vs [5001 values, max 2]
+ok   -jA e^(j th) = A e^(j(th - pi/2)): 1.43471-1.39341j vs 1.43471-1.39341j
+ok   Re{-j e^(jwt)} = sin wt: [5001 values, max 1] vs [5001 values, max 1]
+ok   |4 - 3j| = 5: 5 vs 5
+ok   angle(4 - 3j) = -36.9 deg: -36.8699 vs -36.87
+ok   Re{(4-3j) e^(j phi)} = 5 cos(phi - 36.9 deg): [400 values, max 5] vs [400 values, max 5]
+ok   = 4 cos phi + 3 sin phi: [400 values, max 5] vs [400 values, max 5]
+ok   Re{A} cos wt (the slip) differs: it loses the 3 sin part
+ok   -4 + 3j is at 143.1 deg (its own quadrant): 143.13 vs 143.13
+ok   tan^-1(3/(-4)) = -36.9 deg (wrong quadrant): -36.8699 vs -36.87
+ok   d/dt -> j w: [4991 values, max 534.1] vs [4991 values, max 534.1]
+ok   integral -> 1/(j w) (zero-mean antiderivative): [5001 values, max 0.005411] vs [5001 values, max 0.005411]
+ok   delay tau -> e^(-j w tau): [5001 values, max 1.7] vs [5001 values, max 1.7]
+ok   d/dt cos wt = -w sin wt: [4991 values, max 314.2] vs [4991 values, max 314.2]
+ok   Re{j w e^(jwt)} = -w sin wt: [5001 values, max 314.2] vs [5001 values, max 314.2]
+ok   d/dt(cos) peaks T/4 before cos
+ok   uniqueness: a(0) = Re{A}, a(pi/(2w)) = -Im{A} determine A
+ok   phasor of a sum = sum of phasors: [5001 values, max 1.432] vs [5001 values, max 1.432]
+ok   Re{A B e^(jwt)} is NOT a(t) b(t)
+ok   a b = 1/2 Re{A B*} + 1/2 Re{A B e^(j2wt)} (the 2w term): [5001 values, max 0.5506] vs [5001 values, max 0.5506]
+ok   cos^2 = 1/2 + 1/2 cos 2wt: [5001 values, max 1] vs [5001 values, max 1]
+ok   Re{z} = (z + z*)/2: 1.3 vs 1.3
+ok   z z* = |z|^2: 6.1 vs 6.1
+ok   products multiply lengths and add angles: 4.58905-3.86531j vs 4.58905-3.86531j
+ok   1/j = -j: 0-1j vs -0-1j
+ok   e^(j pi/2) = j: 6.12323e-17+1j vs 0+1j
+ok   e^(j pi) = -1: -1 vs -1
+=== F. rotations and the figures (screen frame X right, Y up, Z out of the screen)
+ok   multiplying by j = turning by +90 deg (counterclockwise): z_hat x (Re, Im, 0): [-0.5      0.86603  0.     ] vs [-0.5      0.86603  0.     ]
+ok   multiplying by -j = turning by -90 deg (clockwise): [ 0.5     -0.86603  0.     ] vs [ 0.5     -0.86603 -0.     ]
+ok   fig phas-rotating-arrow: A e^(j(wt+th)) turns counterclockwise as t grows
+ok   fig: the phasor at 30 deg is drawn up and to the right of the centre
+ok   fig: -jA (at -60 deg) is drawn below the Re axis
+ok   fig: jA (at 120 deg) is drawn up and to the left
+ok   fig: -jA coincides with position 6 (a quarter period earlier, mod 8): 0.5-0.866025j vs 0.5-0.866025j
+ok   fig: jA coincides with position 2 (a quarter period later): -0.5+0.866025j vs -0.5+0.866025j
+ok   fig: the -jA shadow is A sin(wt + th): [30001 values, max 1] vs [30001 values, max 1]
+ok   fig: the dashed (sine) curve peaks a quarter period later: 0.25 vs 0.25
+ok   fig: a(0) = A cos 30 deg = 0.866: 0.866025 vs 0.866
+ok   fig phas-direction-trap: dials of e^(-j beta z) turn clockwise as z grows
+ok   fig: e^(-j beta z): the crest near z = lambda moves +lambda/8 in T/8: 0.125 vs 0.125
+ok   fig phas-direction-trap: dials of e^(+j beta z) turn counterclockwise as z grows
+ok   fig: e^(+j beta z): the crest near z = lambda moves -lambda/8 in T/8: -0.125 vs -0.125
+ok   fig phas-snapshot-record: record at lambda/4 peaks T/4 later: 0.25 vs 0.25
+ok   fig: snapshot at T/8 is shifted +lambda/8: 0.125 vs 0.125
+ok   fig: dashed snapshot starts at cos(pi/4) at z = 0: 0.707107 vs 0.7071
+ok   fig phas-time-average: phi = 0 deg: <ab> = 0.4: 0.4 vs 0.4
+ok      = 1/2 Re{A B*} (phi = 0 deg): 0.4 vs 0.4
+ok   fig phas-time-average: phi = 60 deg: <ab> = 0.2: 0.2 vs 0.2
+ok      = 1/2 Re{A B*} (phi = 60 deg): 0.2 vs 0.2
+ok   fig phas-time-average: phi = 90 deg: <ab> = 0.0: 4.16334e-17 vs 0
+ok      = 1/2 Re{A B*} (phi = 90 deg): 4.16334e-17 vs 2.44929e-17
+ok   fig: in phase, the product never goes negative
+ok   fig: at 60 deg the product is negative for part of the period
+=== G. plane-wave phasors and the direction of travel
+ok   delay z/v -> e^(-j beta z) at z = 0.0: 1 vs 1
+ok   Re{E0 e^(-j beta z) e^(jwt)} = E0 cos(wt - beta z): [50 values, max 3] vs [50 values, max 3]
+ok   delay z/v -> e^(-j beta z) at z = 0.31: -0.975917-0.218143j vs -0.975917-0.218143j
+ok   Re{E0 e^(-j beta z) e^(jwt)} = E0 cos(wt - beta z): [50 values, max 2.928] vs [50 values, max 2.928]
+ok   delay z/v -> e^(-j beta z) at z = 1.7: -0.951057+0.309017j vs -0.951057+0.309017j
+ok   Re{E0 e^(-j beta z) e^(jwt)} = E0 cos(wt - beta z): [50 values, max 3] vs [50 values, max 3]
+ok   e^(-j beta z) travels toward +z
+ok   e^(+j beta z) travels toward -z
+ok   template (a,b,c) = -beta u for u = [ 0.  0. -1.]: -0.178246+0.983986j vs -0.178246+0.983986j
+ok   a^2 + b^2 + c^2 = beta^2: 2.5 vs 2.5
+ok   template (a,b,c) = -beta u for u = [0.707 0.707 0.   ]: -0.0201926+0.999796j vs -0.0201926+0.999796j
+ok   a^2 + b^2 + c^2 = beta^2: 2.5 vs 2.5
+ok   template (a,b,c) = -beta u for u = [0.6 0.  0.8]: -0.27559-0.961275j vs -0.27559-0.961275j
+ok   a^2 + b^2 + c^2 = beta^2: 2.5 vs 2.5
+ok   450 MHz, eps_r = 4: beta = 6 pi rad/m: 18.8496 vs 18.8496
+ok   toward -z: (a, b, c) = (0, 0, +6 pi)
+ok   toward (x+y)/sqrt2 with beta = 2 pi: a = b = -sqrt2 pi: [-4.44288 -4.44288 -0.     ] vs [-4.44288 -4.44288  0.     ]
+ok   -sqrt2 pi = -4.44 rad/m: -4.44288 vs -4.443
+ok   beta u.r = sqrt2 pi (x + y) at x = y = 1: 8.88577 vs 8.88577
+ok   z_hat and (x_hat - y_hat) are perpendicular to (x_hat + y_hat)/sqrt2
+=== H. E <-> H: divide by eta and rotate; Example 1; Example 2; the 200 MHz example
+ok   trial 0: E = eta H x u recovers E (round trip): [ 1.56091-0.70533j -0.5766 -0.67173j -0.17412-0.70974j] vs [ 1.56091-0.70533j -0.5766 -0.67173j -0.17412-0.70974j]
+ok   trial 0: E x H* = |E|^2/eta u (real, along u): [ 0.00258  0.01085 -0.01284] vs [ 0.00258  0.01085 -0.01284]
+ok   |E|^2 = sum of |components|^2: 4.25168 vs 4.25168
+ok   |E|/|H| = eta: 250 vs 250
+ok   trial 0: 1/2 Re{E x H} (no conjugate) varies along the travel
+ok   trial 1: E = eta H x u recovers E (round trip): [-0.92148-0.6801j  -1.02931+1.02824j  2.14574-0.05238j] vs [-0.92148-0.6801j  -1.02931+1.02824j  2.14574-0.05238j]
+ok   trial 1: E x H* = |E|^2/eta u (real, along u): [0.0223  0.01562 0.01707] vs [0.0223  0.01562 0.01707]
+ok   |E|^2 = sum of |components|^2: 8.03536 vs 8.03536
+ok   |E|/|H| = eta: 250 vs 250
+ok   trial 1: 1/2 Re{E x H} (no conjugate) varies along the travel
+ok   trial 2: E = eta H x u recovers E (round trip): [-0.20605+0.30825j -0.29181+0.32135j  0.26096-0.15477j] vs [-0.20605+0.30825j -0.29181+0.32135j  0.26096-0.15477j]
+ok   trial 2: E x H* = |E|^2/eta u (real, along u): [-0.00097  0.00122  0.0006 ] vs [-0.00097  0.00122  0.0006 ]
+ok   |E|^2 = sum of |components|^2: 0.417947 vs 0.417947
+ok   |E|/|H| = eta: 250 vs 250
+ok   trial 2: 1/2 Re{E x H} (no conjugate) varies along the travel
+ok   trial 3: E = eta H x u recovers E (round trip): [ 0.0693 +0.47682j -0.65441+0.77976j -1.30896-0.32207j] vs [ 0.0693 +0.47682j -0.65441+0.77976j -1.30896-0.32207j]
+ok   trial 3: E x H* = |E|^2/eta u (real, along u): [ 0.01071 -0.00524  0.00318] vs [ 0.01071 -0.00524  0.00318]
+ok   |E|^2 = sum of |components|^2: 3.08555 vs 3.08555
+ok   |E|/|H| = eta: 250 vs 250
+ok   trial 3: 1/2 Re{E x H} (no conjugate) varies along the travel
+ok   trial 4: E = eta H x u recovers E (round trip): [-0.52777+0.22342j  0.05632-0.11443j  1.03284-0.6939j ] vs [-0.52777+0.22342j  0.05632-0.11443j  1.03284-0.6939j ]
+ok   trial 4: E x H* = |E|^2/eta u (real, along u): [ 0.00365 -0.00625  0.00221] vs [ 0.00365 -0.00625  0.00221]
+ok   |E|^2 = sum of |components|^2: 1.89299 vs 1.89299
+ok   |E|/|H| = eta: 250 vs 250
+ok   trial 4: 1/2 Re{E x H} (no conjugate) varies along the travel
+ok   beta/(w mu) = 1/eta: 0.00530884 vs 0.00530884
+ok   beta/eta = w eps (Ampere is satisfied too): 0.022253 vs 0.022253
+ok   travel +z: dEx/dz = -j w mu Hy with Hy = +Ex/eta: -8.38173-0.166575j vs -8.38173-0.166575j
+ok   travel +z: -dHy/dz = j w eps Ex: 0.0444972+0.000884321j vs 0.0444972+0.000884321j
+ok   travel -z: dEx/dz = -j w mu Hy with Hy = -Ex/eta: -8.38173+0.166575j vs -8.38173+0.166575j
+ok   travel -z: -dHy/dz = j w eps Ex: -0.0444972+0.000884321j vs -0.0444972+0.000884321j
+ok   Ex.1 row 2: H = (1/eta)(-y) x z e^(j beta y) = -(e^(j beta y)/eta) x: [-0.00181-0.00194j  0.     +0.j       0.     +0.j     ] vs [-0.00181-0.00194j  0.     -0.j       0.     -0.j     ]
+ok   Ex.1 row 2 check: z x (-x) = -y (travel -y): [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   Ex.1: E x H* along -y: [ 0.      -0.00265  0.     ] vs [-0.      -0.00265 -0.     ]
+ok   Ex.1 row 1: cos(wt + beta y) <-> e^(j beta y): [9 values, max 0.9994] vs [9 values, max 0.9994]
+ok   Ex.1 row 3: sin(wt - beta z) <-> -j e^(-j beta z): [9 values, max 0.996] vs [9 values, max 0.996]
+ok   Ex.1 row 4: E = eta H x z = -j eta e^(-j beta z) x: [375.50104+33.5852j   0.      +0.j       0.      +0.j    ] vs [375.50104+33.5852j   0.      +0.j       0.      +0.j    ]
+ok   Ex.1 row 4: y x z = x: [1. 0. 0.] vs [1. 0. 0.]
+ok   Ex.1 row 4: E = eta sin(wt - beta z) x: [9 values, max 375.5] vs [9 values, max 375.5]
+ok   Ex.1 rows 3-4: E x H* = +eta z (travel +z): [  0.   0. 377.] vs [  0.   0. 377.]
+ok   Ex.2: E = eta H x u per wave reproduces the notes' E phasor at z = 0.0: [   0. +150.8j -263.9  +0.j     0.   +0.j ] vs [   0. +150.8j -263.9  +0.j     0.   +0.j ]
+ok   Ex.2: E = eta H x u per wave reproduces the notes' E phasor at z = 0.37: [-101.68262+111.36106j -194.88185+177.94458j    0.       +0.j     ] vs [-101.68262+111.36106j -194.88185+177.94458j    0.       +0.j     ]
+ok   Ex.2: E = eta H x u per wave reproduces the notes' E phasor at z = -1.1: [121.92126 -88.74597j 155.30544-213.3622j    0.       +0.j     ] vs [121.92126 -88.74597j 155.30544-213.3622j    0.       -0.j     ]
+ok   Ex.2: x x z = -y: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   Ex.2: y x (-z) = -x: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   Ex.2: Re{E e^(jwt)} = -y eta H+ cos(wt - bz) - x eta H- sin(wt + bz) at z = 0.0: [39 values, max 263.9] vs [39 values, max 263.9]
+ok   Ex.2: H phasor <-> the given H(z,t) at z = 0.0: [39 values, max 0.7] vs [39 values, max 0.7]
+ok   Ex.2: Re{E e^(jwt)} = -y eta H+ cos(wt - bz) - x eta H- sin(wt + bz) at z = 0.37: [39 values, max 257.7] vs [39 values, max 257.7]
+ok   Ex.2: H phasor <-> the given H(z,t) at z = 0.37: [39 values, max 0.6837] vs [39 values, max 0.6837]
+ok   Ex.2 FD setup: sqrt(mu/eps) = eta: 377 vs 377
+ok   Ex.2 FD setup: w sqrt(mu eps) = beta: 2 vs 2
+ok   Ex.2: Faraday holds for the notes' (E, H) (no sign error): [123.82548 -52.20872   0.     ] vs [123.82548 -52.20872  -0.     ]
+ok   Ex.2: Ampere-Maxwell holds for the notes' (E, H): [-0.13848  0.32845  0.     ] vs [-0.13848  0.32845  0.     ]
+ok   200 MHz example: H = (1/(5 pi)) x A/m: [0.06366 0.      0.     ] vs [0.06366 0.      0.     ]
+ok   1/(5 pi) = 63.7 mA/m: 63.662 vs 63.66
+ok   200 MHz example: z x x = +y: [0. 1. 0.] vs [0. 1. 0.]
+=== I. the current sheet in phasor form (notes' Example 3) and the sine variant
+ok   Ex.3: E = -eta e^(-+j beta z) x at z = 0.8: [39.4063+374.92592j  0.      +0.j       0.      +0.j     ] vs [39.4063+374.92592j  0.      +0.j       0.      +0.j     ]
+ok   Ex.3: H = -+ e^(-+j beta z) y at z = 0.8: [0.     -0.j      0.10453+0.99452j 0.     -0.j     ] vs [0.     +0.j      0.10453+0.99452j 0.     +0.j     ]
+ok   Ex.3: E x H* = +eta z (away from the sheet): [  0.        0.      376.99112] vs [  0.        0.      376.99112]
+ok   Ex.3: E = -eta e^(-+j beta z) x at z = -0.8: [39.4063+374.92592j  0.      +0.j       0.      +0.j     ] vs [39.4063+374.92592j  0.      +0.j       0.      +0.j     ]
+ok   Ex.3: H = -+ e^(-+j beta z) y at z = -0.8: [ 0.     -0.j      -0.10453-0.99452j  0.     -0.j     ] vs [ 0.     -0.j      -0.10453-0.99452j  0.     -0.j     ]
+ok   Ex.3: E x H* = -eta z (away from the sheet): [   0.         0.      -376.99112] vs [  -0.        -0.      -376.99112]
+ok   Ex.3: E = -eta e^(-+j beta z) x at z = 1e-12: [-376.99112+7.89568e-10j    0.     +0.00000e+00j    0.     +0.00000e+00j] vs [-376.99112+7.89568e-10j   -0.     +0.00000e+00j   -0.     +0.00000e+00j]
+ok   Ex.3: H = -+ e^(-+j beta z) y at z = 1e-12: [ 0.+0.0000e+00j -1.+2.0944e-12j  0.+0.0000e+00j] vs [-0.+0.0000e+00j -1.+2.0944e-12j -0.+0.0000e+00j]
+ok   Ex.3: E x H* = +eta z (away from the sheet): [  0.        0.      376.99112] vs [  0.        0.      376.99112]
+ok   Ex.3: E = -eta e^(-+j beta z) x at z = -1e-12: [-376.99112+7.89568e-10j    0.     +0.00000e+00j    0.     +0.00000e+00j] vs [-376.99112+7.89568e-10j   -0.     +0.00000e+00j   -0.     +0.00000e+00j]
+ok   Ex.3: H = -+ e^(-+j beta z) y at z = -1e-12: [0.+0.0000e+00j 1.-2.0944e-12j 0.+0.0000e+00j] vs [0.+0.0000e+00j 1.-2.0944e-12j 0.+0.0000e+00j]
+ok   Ex.3: E x H* = -eta z (away from the sheet): [   0.         0.      -376.99112] vs [  -0.        -0.      -376.99112]
+ok   (1/2)(2x) x z = -y: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   (1/2)(2x) x (-z) = +y: [0. 1. 0.] vs [0. 1. 0.]
+ok   Ex.3: Re{E} = -(eta/2) f(t - |z|/c) at z = 0.8: [11 values, max 368.8] vs [11 values, max 368.8]
+ok   Ex.3: Re{H} = -+(1/2) f(t - |z|/c) at z = 0.8: [11 values, max 0.9781] vs [11 values, max 0.9781]
+ok   Ex.3: Re{E} = -(eta/2) f(t - |z|/c) at z = -0.8: [11 values, max 368.8] vs [11 values, max 368.8]
+ok   Ex.3: Re{H} = -+(1/2) f(t - |z|/c) at z = -0.8: [11 values, max 0.9781] vs [11 values, max 0.9781]
+ok   Ex.3: tangential E continuous at z = 0: [-376.99112+7.89568e-13j    0.     +0.00000e+00j    0.     +0.00000e+00j] vs [-376.99112+7.89568e-13j    0.     +0.00000e+00j    0.     +0.00000e+00j]
+ok   Ex.3: z x (H+ - H-) = J_s: [ 2.  0. -0.] vs [2. 0. 0.]
+ok   sine sheet: Re{-2j x e^(jwt)} = 2 sin wt x: [33 values, max 1.902] vs [33 values, max 1.902]
+ok   sine sheet: E = j eta e^(-+j beta z) x at z = 0.8: [374.92592-39.4063j   0.      -0.j       0.      -0.j    ] vs [374.92592-39.4063j   0.      +0.j       0.      +0.j    ]
+ok   sine sheet: H = +-j e^(-+j beta z) y at z = 0.8: [0.     -0.j      0.99452-0.10453j 0.     -0.j     ] vs [0.     +0.j      0.99452-0.10453j 0.     +0.j     ]
+ok   sine sheet: Ex = -eta sin(wt -+ beta z) at z = 0.8: [11 values, max 374.9] vs [11 values, max 374.9]
+ok   sine sheet: Hy = -+ sin(wt -+ beta z) at z = 0.8: [11 values, max 0.9945] vs [11 values, max 0.9945]
+ok   sine sheet: E = j eta e^(-+j beta z) x at z = -0.8: [374.92592-39.4063j   0.      -0.j       0.      -0.j    ] vs [374.92592-39.4063j   0.      +0.j       0.      +0.j    ]
+ok   sine sheet: H = +-j e^(-+j beta z) y at z = -0.8: [ 0.     -0.j      -0.99452+0.10453j  0.     -0.j     ] vs [-0.     +0.j      -0.99452+0.10453j -0.     +0.j     ]
+ok   sine sheet: Ex = -eta sin(wt -+ beta z) at z = -0.8: [11 values, max 374.9] vs [11 values, max 374.9]
+ok   sine sheet: Hy = -+ sin(wt -+ beta z) at z = -0.8: [11 values, max 0.9945] vs [11 values, max 0.9945]
+=== J. time averages: <ab> = 1/2 Re{A B*}, <E x H>, <J.E>
+ok   trial 0: <ab> by quadrature = 1/2 Re{A B*}: -0.0391622 vs -0.0391622
+ok      = 1/2 AB cos(th_a - th_b): -0.0391622 vs -0.0391622
+ok      Re{A B*} = Re{A* B}: -0.0391622 vs -0.0391622
+ok      a common phase cancels: -0.0391622 vs -0.0391622
+ok      the 2w term averages to zero: -5.20417e-18 vs 0
+ok   trial 1: <ab> by quadrature = 1/2 Re{A B*}: -1.00515 vs -1.00515
+ok      = 1/2 AB cos(th_a - th_b): -1.00515 vs -1.00515
+ok      Re{A B*} = Re{A* B}: -1.00515 vs -1.00515
+ok      a common phase cancels: -1.00515 vs -1.00515
+ok      the 2w term averages to zero: -8.32667e-17 vs 0
+ok   trial 2: <ab> by quadrature = 1/2 Re{A B*}: 0.108644 vs 0.108644
+ok      = 1/2 AB cos(th_a - th_b): 0.108644 vs 0.108644
+ok      Re{A B*} = Re{A* B}: 0.108644 vs 0.108644
+ok      a common phase cancels: 0.108644 vs 0.108644
+ok      the 2w term averages to zero: -2.08167e-17 vs 0
+ok   trial 3: <ab> by quadrature = 1/2 Re{A B*}: 0.225913 vs 0.225913
+ok      = 1/2 AB cos(th_a - th_b): 0.225913 vs 0.225913
+ok      Re{A B*} = Re{A* B}: 0.225913 vs 0.225913
+ok      a common phase cancels: 0.225913 vs 0.225913
+ok      the 2w term averages to zero: -3.46945e-17 vs 0
+ok   trial 4: <ab> by quadrature = 1/2 Re{A B*}: 0.00906617 vs 0.00906617
+ok      = 1/2 AB cos(th_a - th_b): 0.00906617 vs 0.00906617
+ok      Re{A B*} = Re{A* B}: 0.00906617 vs 0.00906617
+ok      a common phase cancels: 0.00906617 vs 0.00906617
+ok      the 2w term averages to zero: -4.33681e-19 vs 0
+ok   trial 5: <ab> by quadrature = 1/2 Re{A B*}: -0.122123 vs -0.122123
+ok      = 1/2 AB cos(th_a - th_b): -0.122123 vs -0.122123
+ok      Re{A B*} = Re{A* B}: -0.122123 vs -0.122123
+ok      a common phase cancels: -0.122123 vs -0.122123
+ok      the 2w term averages to zero: 2.08167e-17 vs 0
+ok   <a^2> = 1/2 |A|^2 (|A| = 1.0): 0.5 vs 0.5
+ok   <a^2> = 1/2 |A|^2 (|A| = 2.0): 2 vs 2
+ok   <cos^2> = 1/2 (Lecture 20): 0.5 vs 0.5
+ok   quadrature: <ab> = 0: 2.22045e-16 vs 0
+ok   antiphase: <ab> = -1/2 AB: -3 vs -3
+ok   example: 3cos(wt+20) 2cos(wt-40) -> 1.5: 1.5 vs 1.5
+ok   trial 0: <E x H> by quadrature = 1/2 Re{E x H*}: [-0.79467 -0.52287  0.50748] vs [-0.79467 -0.52287  0.50748]
+ok   trial 0: <J . E> by quadrature = 1/2 Re{J . E*}: 0.914209 vs 0.914209
+ok   trial 1: <E x H> by quadrature = 1/2 Re{E x H*}: [ 0.06423 -0.03577  1.43366] vs [ 0.06423 -0.03577  1.43366]
+ok   trial 1: <J . E> by quadrature = 1/2 Re{J . E*}: 0.928563 vs 0.928563
+ok   trial 2: <E x H> by quadrature = 1/2 Re{E x H*}: [ 0.70741  0.02546 -4.16734] vs [ 0.70741  0.02546 -4.16734]
+ok   trial 2: <J . E> by quadrature = 1/2 Re{J . E*}: 0.758098 vs 0.758098
+ok   trial 3: <E x H> by quadrature = 1/2 Re{E x H*}: [ 0.47625 -0.15249  0.89179] vs [ 0.47625 -0.15249  0.89179]
+ok   trial 3: <J . E> by quadrature = 1/2 Re{J . E*}: -0.651716 vs -0.651716
+ok   200 MHz wave: <S> = 144/(120 pi) y: [0.      0.38197 0.     ] vs [0.      0.38197 0.     ]
+ok   = 0.382 W/m^2: 0.381972 vs 0.382
+ok   = 6/(5 pi): 0.381972 vs 0.381972
+ok   sheet: <S> = +(eta/2) z by phasors at z = 0.6: [  0.        0.      188.49556] vs [  0.        0.      188.49556]
+ok      = the time-domain average of +-eta cos^2(wt -+ beta z) z (Lecture 20): [  0.        0.      188.49556] vs [  0.        0.      188.49556]
+ok      +-eta <cos^2> = +-eta/2: 188.496 vs 188.496
+ok   sheet: <S> = -(eta/2) z by phasors at z = -0.6: [   0.         0.      -188.49556] vs [  -0.        -0.      -188.49556]
+ok      = the time-domain average of +-eta cos^2(wt -+ beta z) z (Lecture 20): [   0.         0.      -188.49556] vs [   0.         0.      -188.49556]
+ok      +-eta <cos^2> = +-eta/2: -188.496 vs -188.496
+ok   eta/2 = 60 pi: 188.496 vs 188.496
+ok   60 pi = 188 W/m^2: 188.496 vs 188.5
+ok   sheet: <-J_s . E(0,t)> = 1/2 Re{-J . E*(0)} = eta = 120 pi: 376.991 vs 376.991
+ok      = <2 eta cos^2 wt> (Lecture 20): 376.991 vs 376.991
+ok   120 pi = 377 W/m^2: 376.991 vs 377
+ok   energy balance: eta = eta/2 + eta/2: 376.991 vs 376.991
+ok   sine sheet: same <S> (the -j cancels against its conjugate): [  0.        0.      188.49556] vs [  0.        0.      188.49556]
+ok   sine sheet: same <-J.E> = eta: 376.991 vs 376.991
+ok   Ex.2 power: E x H* = eta (H+^2 - H-^2) z at z = 0.0: [  0.     0.   124.41] vs [  0.     0.   124.41]
+ok      time-domain average agrees: [ 0.     0.    62.205] vs [ 0.     0.    62.205]
+ok   Ex.2 power: E x H* = eta (H+^2 - H-^2) z at z = 0.41: [  0.     0.   124.41] vs [  0.     0.   124.41]
+ok      time-domain average agrees: [ 0.     0.    62.205] vs [ 0.     0.    62.205]
+ok   Ex.2 power: E x H* = eta (H+^2 - H-^2) z at z = -1.3: [  0.     0.   124.41] vs [  0.     0.   124.41]
+ok      time-domain average agrees: [ 0.     0.    62.205] vs [ 0.     0.    62.205]
+ok   Ex.2: -eta H+^2 (y x x) = +eta H+^2 z: [ -0.    -0.   184.73] vs [  0.     0.   184.73]
+ok   Ex.2: j*j eta H-^2 (x x y) = -eta H-^2 z: [ -0.    -0.   -60.32] vs [ -0.    -0.   -60.32]
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 0, z = 0.0): 0.00253231 vs 0.00253231
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 0, z = 0.33): 0.00253231 vs 0.00253231
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 0, z = 1.9): 0.00253231 vs 0.00253231
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 1, z = 0.0): 0.00726037 vs 0.00726037
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 1, z = 0.33): 0.00726037 vs 0.00726037
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 1, z = 1.9): 0.00726037 vs 0.00726037
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 2, z = 0.0): 0.00199644 vs 0.00199644
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 2, z = 0.33): 0.00199644 vs 0.00199644
+ok   parallel polarizations: Re{S~} = (|A|^2 - |B|^2)/eta (trial 2, z = 1.9): 0.00199644 vs 0.00199644
+ok   1/2 Re{E x H} (no conjugate) = cos(2 beta z)/(2 eta) for E = e^(-j beta z): not the average: [ 1.32626e-03  2.94489e-19 -1.32626e-03 -2.94489e-19  1.32626e-03] vs [ 1.32626e-03  8.12100e-20 -1.32626e-03 -2.43630e-19  1.32626e-03]
+ok   one wave: instantaneous S swings between 0 and 2 <S>: [9.94536e-36 2.65252e-03] vs [0.      0.00265]
+ok   <J.E> = 1/2 Re{sigma} |E|^2 for sigma = 5.0: 5.95 vs 5.95
+ok   <J.E> = 1/2 Re{sigma} |E|^2 for sigma = (2-3j): 2.38 vs 2.38
+ok   <J.E> = 1/2 Re{sigma} |E|^2 for sigma = (-0-4j): 0 vs -0
+ok   Drude: Re{sigma} = sigma_DC/(1 + w^2/nu^2) at 1e+09 Hz: 6e+07 vs 6e+07
+ok   Drude: Re{sigma} = sigma_DC/(1 + w^2/nu^2) at 1e+13 Hz: 1.7304e+07 vs 1.7304e+07
+ok   Drude: Re{sigma} = sigma_DC/(1 + w^2/nu^2) at 1e+14 Hz: 242189 vs 242189
+=== K. worked problem: H = 0.3 cos(wt + 2 pi z) x - 0.4 sin(wt + 2 pi z - pi/4) y, non-magnetic
+ok   (a) f = 100 MHz: 1e+08 vs 1e+08
+ok   (a) T = 10 ns: 1e-08 vs 1e-08
+ok   (a) lambda = 1 m: 1 vs 1
+ok   (a) v_p = 1e8 m/s = c/3: 1e+08 vs 1e+08
+ok   (a) eps_r = 9: 9 vs 9
+ok   (a) eta = 40 pi: 125.664 vs 125.664
+ok   (a) 40 pi = 125.7 ohm: 125.664 vs 125.66
+ok   (a) same signs of t and z terms: travel toward -z
+ok   (b) H phasor reproduces H(z,t) at z = 0.0: [123 values, max 0.3951] vs [123 values, max 0.3951]
+ok   (b) H phasor reproduces H(z,t) at z = 0.37: [123 values, max 0.3998] vs [123 values, max 0.3998]
+ok   (b) H phasor reproduces H(z,t) at z = -2.2: [123 values, max 0.3951] vs [123 values, max 0.3951]
+ok   (b) -0.4 (-j) e^(-j pi/4) = 0.4 e^(j pi/4): 0.282843+0.282843j vs 0.282843+0.282843j
+ok   (b) j e^(-j pi/4) = e^(j pi/4): 0.707107+0.707107j vs 0.707107+0.707107j
+ok   (b) trap: dropping the minus gives 0.4 e^(-j3pi/4): -0.282843-0.282843j vs -0.282843-0.282843j
+ok   (b) trap: forgetting the -j gives 0.4 e^(+j3pi/4): -0.282843+0.282843j vs -0.282843+0.282843j
+ok   (b) trap: forgetting both gives 0.4 e^(-j pi/4): 0.282843-0.282843j vs 0.282843-0.282843j
+ok   (b) trap: that answer is 180 deg off: 180 vs 180
+ok   (b) trap: that answer is 90 deg off: 90 vs 90
+ok   (b) trap: that answer is 90 deg off: 90 vs 90
+ok   (b) spot check: H_y(0,0) = 0.283 = Re{0.4 e^(j pi/4)}: 0.282843 vs 0.282843
+ok   (b) 0.4 cos 45 = 0.283: 0.282843 vs 0.283
+ok   (b) -0.4 sin(phi - pi/4) = 0.4 cos(phi + pi/4): y leads x by 45 deg: [50 values, max 0.3999] vs [50 values, max 0.3999]
+ok   (c) x x (-z) = +y: [0. 1. 0.] vs [0. 1. 0.]
+ok   (c) y x (-z) = -x: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   (c) E = (-16 pi e^(j pi/4) x + 12 pi y) e^(j2 pi z): [-35.54306-35.54306j  37.69911 +0.j        0.      +0.j     ] vs [-35.54306-35.54306j  37.69911 +0.j        0.      +0.j     ]
+ok   (c) 16 pi = 50.3, 12 pi = 37.7 V/m: [50.26548 37.69911] vs [50.27 37.7 ]
+ok   (c) E x H* = -10 pi z (along -z): [  0.        0.      -31.41593] vs [ -0.       -0.      -31.41593]
+ok   (c) 40 pi [0.09 y x x - 0.16 x x y] = -10 pi z: [  0.        0.      -31.41593] vs [ -0.       -0.      -31.41593]
+ok   (c) |E| = 20 pi: 62.8319 vs 62.8319
+ok   (c) |H| = 0.5: 0.5 vs 0.5
+ok   (c) |E|/|H| = eta: 125.664 vs 125.664
+ok   (d) E(z,t) at z = 0.0: [123 values, max 49.65] vs [123 values, max 49.65]
+ok   (d) time-domain cross-check eta H x (-z) at z = 0.0: [123 values, max 49.65] vs [123 values, max 49.65]
+ok   (d) E(z,t) at z = 0.37: [123 values, max 50.24] vs [123 values, max 50.24]
+ok   (d) time-domain cross-check eta H x (-z) at z = 0.37: [123 values, max 50.24] vs [123 values, max 50.24]
+ok   (check) w sqrt(mu0 9 eps0) = 2 pi rad/m with exact c: 6.28754 vs 6.28319
+ok   (check) sqrt(mu0/(9 eps0)) = 40 pi (120 pi approximation): 125.577 vs 125.664
+ok   (check) the pair's medium: v = 1e8 m/s: 1e+08 vs 1e+08
+ok   (check) the pair's medium: eta = 40 pi: 125.664 vs 125.664
+ok   (check) Faraday: curl E = -mu dH/dt for the worked problem's (E, H): [ -58.9073  -271.84587    0.     ] vs [ -58.9073  -271.84587   -0.     ]
+ok   (check) Ampere-Maxwell: curl H = eps dE/dt for the worked problem's (E, H): [-2.16328  0.46877  0.     ] vs [-2.16328  0.46877  0.     ]
+ok   (e) <S> = -5 pi z: [  0.        0.      -15.70796] vs [ -0.       -0.      -15.70796]
+ok   (e) 5 pi = 15.7 W/m^2: 15.708 vs 15.71
+ok   (e) x term alone: 1.8 pi: 5.65487 vs 5.65487
+ok   (e) 1.8 pi = 5.65 W/m^2: 5.65487 vs 5.655
+ok   (e) y term alone: 3.2 pi: 10.0531 vs 10.0531
+ok   (e) 3.2 pi = 10.05 W/m^2: 10.0531 vs 10.05
+ok   (e) the component powers add: 15.708 vs 15.708
+ok   (e) time-domain average of E x H = -5 pi z (Lecture 20 route): [  0.        0.      -15.70796] vs [ -0.       -0.      -15.70796]
+ok   (e) <|H|^2> = 0.125: 0.125 vs 0.125
+ok   (e) instantaneous S = -eta |H|^2 z at (z, t) = (0.3, 1.7e-09): [  0.       -0.      -24.66652] vs [ -0.       -0.      -24.66652]
+ok   (e) instantaneous S = -eta |H|^2 z at (z, t) = (-1.1, 4.4e-09): [  0.       -0.      -22.39655] vs [ -0.       -0.      -22.39655]
+ok   (e) trap: (0.3 + 0.4)^2 = 0.49 (wrong): 0.49 vs 0.49
+ok   (e) 0.3^2 + 0.4^2 = 0.25: 0.25 vs 0.25
+ok   (e) trap: eta |H|^2 = 10 pi is |S~|, not <S>: 31.4159 vs 31.4159
+ok   (f) window: 5 pi x 0.25 m^2 = 1.25 pi: 3.92699 vs 3.92699
+ok   (f) = 3.93 W: 3.92699 vs 3.93
+ok   (f) H(0,0) = 0.300 x + 0.283 y: [0.3     0.28284 0.     ] vs [0.3   0.283 0.   ]
+ok   (f) E(0,0) = -35.5 x + 37.7 y: [-35.54306  37.69911   0.     ] vs [-35.54  37.7    0.  ]
+ok   (f) S(0,0) = -21.4 z W/m^2: [  0.        0.      -21.36283] vs [  0.     0.   -21.36]
+ok   (f) the two pieces -10.05 and -11.31: [-10.0531  -11.30973] vs [-10.05 -11.31]
+ok   (f) instantaneous |S| between 4.2 and 27.2 W/m^2: [ 4.17357 27.24236] vs [ 4.17 27.24]
+ok   (f) S never reverses (always toward -z)
+ok   (f) |H|^2 never reaches zero (components not in phase)
+ok   variant: mu_r eps_r = 9, same v_p and beta: 9 vs 9
+ok   variant: eta = 160 pi: 502.655 vs 502.655
+ok   variant: 160 pi = 503 ohm: 502.655 vs 502.65
+ok   variant: <S> = 20 pi: 62.8319 vs 62.8319
+ok   variant: 20 pi = 62.8 W/m^2: 62.8319 vs 62.83
+ok   variant: eta four times larger: 4 vs 4
+=== L. concept pages
+ok   phasors: 3 sin(wt - 30) <-> 3 e^(-j120): [301 values, max 2.999] vs [301 values, max 2.999]
+ok   phasors: 3 e^(-j120) = -1.5 - 2.60j: -1.5-2.59808j vs -1.5-2.598j
+ok   phasors: 6 - 6j = 6 sqrt2 e^(-j45): 6-6j vs 6-6j
+ok   phasors: 6 sqrt2 = 8.49: 8.48528 vs 8.485
+ok   phasors: 6 cos + 6 sin = 8.49 cos(wt - 45): [301 values, max 8.481] vs [301 values, max 8.481]
+ok   dispersion: 200 MHz in eps_r = 4: beta = 8 pi/3: 8.37758 vs 8.37758
+ok   dispersion: mu_r eps_r = (c/v_p)^2 = 4: 4 vs 4
+ok   plane-waves: H amplitude 12/(60 pi) = 1/(5 pi) A/m: 0.063662 vs 0.063662
+=== M. Lecture 20 cross-check: the notes' sheet numbers
+ok   <E x H> = +-(eta/2) z = +-60 pi z W/m^2 (L20 and L21): 188.496 vs 188.496
+ok   <-J_s . E> = 2 eta <cos^2> = eta = 120 pi W/m^2: 376.991 vs 376.991
+
+ALL 404 CHECKS PASSED

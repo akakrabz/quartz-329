@@ -16,9 +16,12 @@ Lectures tell the story in order; **concept pages** are the glossary you consult
 [[concepts/divergence]] · [[concepts/curl]] · [[concepts/divergence-theorem]] · [[concepts/stokes-theorem]] · [[concepts/conservative-field]]
 
 ### Materials and circuit elements
-[[concepts/conductors]] · [[concepts/conductivity-and-susceptibility-models]] · [[concepts/capacitance]] · [[concepts/conductance]] · [[concepts/inductance]] · [[concepts/electrostatic-energy]] · [[concepts/magnetic-energy]]
+[[concepts/conductors]] · [[concepts/conductivity-and-susceptibility-models]] · [[concepts/capacitance]] · [[concepts/conductance]] · [[concepts/inductance]] · [[concepts/electrostatic-energy]] · [[concepts/magnetic-energy]] · [[concepts/magnetization]] · [[concepts/permeability]]
+
+### Waves
+[[concepts/wave-equation]] · [[concepts/plane-waves]] · [[concepts/intrinsic-impedance]] · [[concepts/current-sheet-radiation]] · [[concepts/poynting-vector]] · [[concepts/poynting-theorem]] · [[concepts/phasors]] · [[concepts/dispersion-relation]] · [[concepts/propagation-constant]] · [[concepts/loss-tangent]] · [[concepts/skin-depth]]
 
 ### Methods
 [[concepts/superposition]] · [[concepts/five-step-recipe]]
 
-The electrostatic ↔ magnetostatic pairs (Coulomb ↔ Biot–Savart, Gauss ↔ Ampère, $V$ ↔ $\mathbf{A}$, $C$ ↔ $L$, …) are collected in the [[2-magnetostatics/index#the-dictionary-electrostatics--magnetostatics|dictionary]] on the Unit 2 page. More arrive with each unit: magnetization, phasors, Poynting vector, characteristic impedance, reflection coefficient, Smith chart.
+The electrostatic ↔ magnetostatic pairs (Coulomb ↔ Biot–Savart, Gauss ↔ Ampère, $V$ ↔ $\mathbf{A}$, $C$ ↔ $L$, …) are collected in the [[2-magnetostatics/index#the-dictionary-electrostatics--magnetostatics|dictionary]] on the Unit 2 page. More arrive with each unit: polarization of waves, reflection coefficient, characteristic impedance, Smith chart.

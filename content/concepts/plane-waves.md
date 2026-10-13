@@ -1,6 +1,6 @@
 ---
 title: "Plane waves"
-description: "A uniform plane wave has the same field everywhere on each plane perpendicular to its direction of travel û: E = E₀ f(t − û·r/v) with E₀ ⊥ û, and H = û × E/η. E, H and û form a right-handed set, the waveform f is arbitrary, and the whole pattern travels without distortion at v = 1/√(με)."
+description: "A uniform plane wave has the same field everywhere on each plane perpendicular to its direction of travel û: E = E₀ f(t − û·r/v) with E₀ ⊥ û, and H = û × E/η. E, H and û form a right-handed set, the waveform f is arbitrary, and the whole pattern travels without distortion at v = 1/√(με). At a single frequency it is the phasor Ẽ₀e^(−jβû·r), which carries ⟨S⟩ = |Ẽ₀|²/2η along û."
 tags: [concept, waves]
 aliases: ["uniform plane wave", "plane TEM wave", "TEM wave", "travelling wave", "traveling wave", "polarization of a wave"]
 ---
@@ -8,8 +8,10 @@ aliases: ["uniform plane wave", "plane TEM wave", "TEM wave", "travelling wave",
 > [!key] Definition
 > $$
 > \begin{gathered}
-> \mathbf{E} = \hat x\,f\Big(t\mp\frac zv\Big),\qquad \mathbf{H} = \pm\hat y\,\frac1\eta\,f\Big(t\mp\frac zv\Big)\qquad(\text{travel toward }\pm z),\\[6pt]
-> \mathbf{E} = \mathbf{E}_0\,f\Big(t-\frac{\hat u\cdot\mathbf{r}}{v}\Big),\quad \mathbf{E}_0\perp\hat u,\qquad \mathbf{H} = \frac1\eta\,\hat u\times\mathbf{E}\qquad(\text{travel toward }\hat u),
+> \mathbf{E} = \hat x\,f\Big(t\mp\frac zv\Big),\qquad \mathbf{H} = \pm\hat y\,\frac1\eta\,f\Big(t\mp\frac zv\Big)\\
+> (\text{travel toward }\pm z),\\[6pt]
+> \mathbf{E} = \mathbf{E}_0\,f\Big(t-\frac{\hat u\cdot\mathbf{r}}{v}\Big),\qquad \mathbf{H} = \frac1\eta\,\hat u\times\mathbf{E}\\
+> (\mathbf{E}_0\perp\hat u;\ \text{travel toward }\hat u),
 > \end{gathered}
 > $$
 > with $v = 1/\sqrt{\mu\epsilon}$ and $\eta = \sqrt{\mu/\epsilon}$. *Plane* (uniform): the field has the same value at every point of each plane $\hat u\cdot\mathbf{r} = $ const. *TEM* (transverse electromagnetic): $\mathbf{E}$ and $\mathbf{H}$ are both perpendicular to $\hat u$. The direction of $\mathbf{E}$ is the wave's **polarization**: $\hat x\,f$ is "$x$-polarized".
@@ -24,11 +26,22 @@ No component can lie along $\hat u$: $\hat z f(t - z/v)$ has $\nabla\cdot\mathbf
 
 **Reading a plane wave.** $f(t - \hat u\cdot\mathbf{r}/v)$ travels toward $+\hat u$. The relative sign of the $t$ term and the position term gives the direction: opposite signs mean $+$, the same sign means $-$. The ratio of their coefficients gives the speed. A record at one place and a snapshot at one time are related by $E(z,t) = E(0, t\mp z/v) = E(z\mp vt, 0)$ for travel toward $\pm z$. Put $t = 0$: a $+z$ snapshot is the time record *mirrored*, and a $-z$ snapshot is not.
 
+**Monochromatic plane waves and phasors ([[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation|Lecture 21]]).** With the waveform $f = A\cos\omega t$ the wave is $A\cos(\omega t\mp\beta z)$, with wave-number $\beta = \omega/v = \omega\sqrt{\mu\epsilon}$, wavelength $\lambda = 2\pi/\beta$ and phase velocity $v_p = \omega/\beta = \lambda f$. At a single frequency it is written as a phasor, $\mathbf{E} = \text{Re}\{\tilde{\mathbf{E}}e^{j\omega t}\}$:
+$$
+\begin{gathered}
+\tilde{\mathbf{E}}(\mathbf{r}) = \tilde{\mathbf{E}}_0\,e^{-j\beta\hat u\cdot\mathbf{r}},\qquad \tilde{\mathbf{H}} = \frac1\eta\,\hat u\times\tilde{\mathbf{E}},\\[4pt]
+\langle\mathbf{S}\rangle = \tfrac12\text{Re}\{\tilde{\mathbf{E}}\times\tilde{\mathbf{H}}^*\} = \frac{\lvert\tilde{\mathbf{E}}_0\rvert^2}{2\eta}\,\hat u .
+\end{gathered}
+$$
+The factor $e^{-j\beta\hat u\cdot\mathbf{r}}$ is the travel delay $\hat u\cdot\mathbf{r}/v$ written as a phase lag. So $e^{-j\beta z}$ travels toward $+z$ and $e^{+j\beta z}$ toward $-z$, and in a template $e^{j(ax + by + cz)}$ the vector $(a, b, c) = -\beta\hat u$ points against the travel. $\tilde{\mathbf{E}}_0\perp\hat u$ may have complex components with different phases (the basis of polarization, Lecture 24); $\lvert\tilde{\mathbf{E}}_0\rvert^2$ adds the powers of perpendicular components whatever their phases. A $-j$ or any other complex factor on $\tilde{\mathbf{E}}$ rides along unchanged into $\tilde{\mathbf{H}}$, because $\eta$ is real in a lossless medium.
+
 **Examples.**
 - The four $z$-travelling cases: $\hat xf(t - z/v)$ with $+\hat y f/\eta$; $\hat xf(t + z/v)$ with $-\hat y f/\eta$; $\hat yf(t - z/v)$ with $-\hat x f/\eta$; $\hat yf(t + z/v)$ with $+\hat x f/\eta$. Each is checked by $\mathbf{E}\times\mathbf{H}$; for the third, $\hat y\times(-\hat x) = +\hat z$ matches travel toward $+z$.
 - Slide 24: $(0.05y - t)^2$ travels toward $+y$ at 20 m/s and $u(t + 0.02x)$ toward $-x$ at 50 m/s.
 - Slide 26: a $-z$ wave at 100 m/s has $E(200\ \text{m}, 0.2\ \text{s}) = E(0, 2.2\ \text{s}) = 0.9$.
 - Worked problem: a ramp pulse with $\mathbf{E}\parallel\hat z$ travelling toward $+y$ in polyethylene has $\mathbf{H} = \hat y\times\mathbf{E}/\eta\parallel+\hat x$, with 6 V/m paired with 23.9 mA/m.
+- Lecture 21: $\mathbf{E} = 12\cos(4\pi\times10^8t - \tfrac{8\pi}{3}y)\,\hat z$ V/m in a non-magnetic medium has $f = 200$ MHz, $\lambda = 0.75$ m, $v_p = c/2$ (so $\epsilon_r = 4$, $\eta = 60\pi\ \Omega$), phasor partner $\tilde{\mathbf{H}} = \tfrac{1}{5\pi}e^{-j(8\pi/3)y}\,\hat x$ A/m, and $\langle\mathbf{S}\rangle = 0.382\,\hat y$ W/m².
+- The notes' table: $\mathbf{H} = \sin(\omega t - \beta z)\,\hat y$ has $\tilde{\mathbf{H}} = -je^{-j\beta z}\hat y$ and partner $\tilde{\mathbf{E}} = -j\eta e^{-j\beta z}\hat x$, i.e. $\mathbf{E} = \eta\sin(\omega t - \beta z)\,\hat x$.
 
 > [!trap]
 > - "$x$-polarized" names the direction of $\mathbf{E}$, not the direction of travel.
@@ -36,9 +49,11 @@ No component can lie along $\hat u$: $\hat z f(t - z/v)$ has $\nabla\cdot\mathbf
 > - The $\pm z$ sign table carries over to another axis only by a cyclic relabelling ($x\to y\to z\to x$); swapping two letters reverses $\mathbf{H}$. For travel along $+y$ with $\mathbf{E}\parallel\hat z$, $\mathbf{H}\parallel\hat y\times\hat z = +\hat x$. Check $\mathbf{E}\times\mathbf{H}$ at the end.
 > - A snapshot is not a record. For $+z$ travel one is the other reversed left-to-right.
 > - $E/H = \pm\eta$ holds for one travelling wave, not for a superposition.
+> - In a phasor the $t$ term is hidden: $e^{+j\beta z}$ travels toward $-z$. Restore $e^{j\omega t}$ before using the sign rule.
+> - Phasor of a sine: $-j$. And for a sum of waves going opposite ways, rotate each one with its own $\hat u$.
 
-**Where it appears.** [[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves|Lecture 18]] (derived, the sign table, reading waves); [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|Lecture 19]] ("uniform plane TEM waves" named, launched by current sheets); Lecture 20 (Poynting vector, monochromatic waves); Lecture 24 (circular polarization); Lectures 25–26 (reflection and standing waves); [[problems/a-pulse-on-the-move]].
+**Where it appears.** [[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves|Lecture 18]] (derived, the sign table, reading waves); [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|Lecture 19]] ("uniform plane TEM waves" named, launched by current sheets); [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves|Lecture 20]] (Poynting vector, monochromatic waves); [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation|Lecture 21]] (monochromatic waves, phasors, $\tilde{\mathbf{E}}\leftrightarrow\tilde{\mathbf{H}}$, $\langle\mathbf{S}\rangle$); [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] (damped plane waves in conducting media); Lecture 24 (circular polarization); Lectures 25–26 (reflection and standing waves); [[problems/a-pulse-on-the-move]]; [[problems/phasors-e-and-power-from-a-given-h]].
 
-**Practice.** [[practice/topics#plane-waves-and-the-wave-equation|Plane waves and the wave equation]] (20 problems) — for example [[practice/18-wave-equation-and-plane-waves#181-which-way-and-how-fast|18.1 Which way and how fast]] (easy), [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] (medium), [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium|18.9 Triangle pulse in a magnetic medium]] (hard).
+**Practice.** [[practice/topics#plane-waves-and-the-wave-equation|Plane waves and the wave equation]] (24 problems) — for example [[practice/18-wave-equation-and-plane-waves#181-which-way-and-how-fast|18.1 Which way and how fast]] (easy), [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] (medium), [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium|18.9 Triangle pulse in a magnetic medium]] (hard).
 
-Related: [[concepts/current-sheet-radiation]] · [[concepts/poynting-vector]] · [[concepts/wave-equation]] · [[concepts/intrinsic-impedance]] · [[concepts/maxwells-equations]] · [[concepts/faradays-law]] · [[concepts/displacement-current]].
+Related: [[concepts/current-sheet-radiation]] · [[concepts/poynting-vector]] · [[concepts/wave-equation]] · [[concepts/intrinsic-impedance]] · [[concepts/maxwells-equations]] · [[concepts/faradays-law]] · [[concepts/displacement-current]] · [[concepts/phasors]] · [[concepts/dispersion-relation]].

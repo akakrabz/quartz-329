@@ -1,0 +1,469 @@
+=== A. constants
+ok   c: 299792458.000006 vs 299792458.0
+ok   eta0: 376.730314 vs 376.730313
+ok   exam constants: 1/sqrt(mu0 eps0) = 3e8 exactly with eps0 = 1e-9/36pi: 300000000.0 vs 300000000.0
+ok   exam constants: eta0 = 120 pi exactly: 376.991118 vs 376.991118
+ok   1 Np = 20 log10(e) = 8.686 dB (field): 8.68589 vs 8.686
+=== B. phasor rules (L21 tools used on this page)
+ok   d/dt Re{A e^jwt} = Re{jw A e^jwt}: -7616130.912935 vs -7616130.913254
+ok   <a(t) b(t)> = (1/2) Re{A B*} by quadrature: 0.054114 vs 0.054114
+ok   Re{A} = |A| cos(angle A): 1.565804 vs 1.565804
+=== C. phasor Maxwell: what is implied
+ok   sig=4: jw + sig/eps = 5.58e+09+6.28e+06j != 0, so rho~ = 0 in a homogeneous medium
+ok   sig=5.8e+07: jw + sig/eps = 6.55e+18+6.28e+06j != 0, so rho~ = 0 in a homogeneous medium
+ok   sig=0.001: jw + sig/eps = 2.82e+07+6.28e+06j != 0, so rho~ = 0 in a homogeneous medium
+ok   sig=0: jw + sig/eps = 0+6.28e+06j != 0, so rho~ = 0 in a homogeneous medium
+ok   eps (jw + sig/eps) = sig + jw eps (same combination as in Ampere): (4+0.004506j) vs (4+0.004506j)
+ok   seawater eps/sig = 0.18 ns (eps = 81 eps0, sig = 4 S/m): 0.179297 vs 0.179
+ok   seawater crossover sig/(2 pi eps) = 0.89 GHz: 887659436.272708 vs 888000000.0
+ok   Rao Table 5.3: f_q = 0.9 GHz with eps_r = 80: 898755179.226117 vs 900000000.0
+ok   L10 lossy medium (2 eps0, 2e-6 S/m): eps/sig = 8.85 us: 8.854188 vs 8.854
+ok   L10 lossy medium crossover = 18 kHz: 17975.103585 vs 17975
+=== D. lossless check: Helmholtz, H from phasor Faraday
+ok   sign +1: d2Ex/dz2 + w^2 mu eps Ex = 0: -1e-06j vs 0
+ok   sign +1: Hy = +-Ex/eta from phasor Faraday: (0.000105-0.005308j) vs (0.000105-0.005308j)
+ok   sign -1: d2Ex/dz2 + w^2 mu eps Ex = 0: 1e-06j vs 0
+ok   sign -1: Hy = +-Ex/eta from phasor Faraday: (-0.000105-0.005308j) vs (-0.000105-0.005308j)
+ok   w mu / beta = sqrt(mu/eps) = eta: 188.365157 vs 188.365157
+ok   div (x Ex(z)) = dEx/dx = 0 (Ex depends on z only)
+=== E. lossy medium: gamma, eta, and the phasor / time-domain field equations
+ok   trial 0: Re g, Im g > 0; Re eta > 0, Im eta >= 0 (principal roots)
+ok   trial 0: gamma eta = j w mu: 727.137871j vs 727.137871j
+ok   trial 0: gamma / eta = sig + j w eps: (0.00034+0.034797j) vs (0.00034+0.034797j)
+ok   trial 0: mu = gamma eta / (j w): 3e-06 vs 3e-06
+ok   trial 0: sig = Re(gamma/eta): 0.00034 vs 0.00034
+ok   trial 0: eps = Im(gamma/eta) / w: 0.0 vs 0.0
+ok   trial 0: gamma = j w sqrt(mu eps_c), eps_c = eps - j sig/w: (0.024567+5.030171j) vs (0.024567+5.030171j)
+ok   trial 0: eta = sqrt(mu / eps_c): (144.55186+0.705985j) vs (144.55186+0.705985j)
+ok   trial 0: notes' j w sqrt(mu eps)(1 - j s)^(1/2): (0.024567+5.030171j) vs (0.024567+5.030171j)
+ok   trial 0: closed-form alpha, beta: [0.024567 5.030171] vs [0.024567 5.030171]
+ok   trial 0: |eta| = sqrt(mu/eps)/(1+s^2)^(1/4), tau = (1/2) atan(s): [1.44553584e+02 4.88400000e-03] vs [1.44553584e+02 4.88400000e-03]
+ok   trial 0: angle(gamma) + angle(eta) = 90 deg: 1.570796 vs 1.570796
+ok   trial 0: alpha/beta = tan(tau): 0.004884 vs 0.004884
+ok   trial 0: |gamma||eta| = w mu: 727.137871 vs 727.137871
+ok   trial 0: sig/(w eps) = tan(2 tau): 0.009768 vs 0.009768
+ok   trial 0: sig/(w eps) = 2 alpha beta / (beta^2 - alpha^2): 0.009768 vs 0.009768
+ok   trial 0: sig = 2 alpha beta/(w mu): 0.00034 vs 0.00034
+ok   trial 0: eps = (beta^2 - alpha^2)/(w^2 mu): 0.0 vs 0.0
+ok   trial 0: alpha^2 + beta^2 = w^2 mu eps sqrt(1+s^2): 25.30322 vs 25.30322
+ok   trial 0: 45 <= angle(g) <= 90, 0 <= tau < 45, beta >= alpha
+ok   trial 0 sign +1: phasor Faraday dEx/dz = -jw mu Hy: (-9.253637-3.706291j) vs (-9.253637-3.706291j)
+ok   trial 0 sign +1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (0.06414+0.025327j) vs (0.06414+0.025327j)
+ok   trial 0 sign +1: E(z,t) = Re{Ex~ e^jwt}: 0.965402 vs 0.965402
+ok   trial 0 sign +1: H(z,t) carries the phase -tau: 0.00662 vs 0.00662
+ok   trial 0 sign +1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 0 sign +1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 0 sign +1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 0 sign -1: phasor Faraday dEx/dz = -jw mu Hy: (-5.40648-8.594397j) vs (-5.40648-8.594397j)
+ok   trial 0 sign -1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (-0.037691-0.059271j) vs (-0.037691-0.059271j)
+ok   trial 0 sign -1: E(z,t) = Re{Ex~ e^jwt}: -1.831672 vs -1.831672
+ok   trial 0 sign -1: H(z,t) carries the phase -tau: 0.012642 vs 0.012642
+ok   trial 0 sign -1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 0 sign -1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 0 sign -1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 1: Re g, Im g > 0; Re eta > 0, Im eta >= 0 (principal roots)
+ok   trial 1: gamma eta = j w mu: 16181.978799j vs 16181.978799j
+ok   trial 1: gamma / eta = sig + j w eps: (12.864959+3.17563j) vs (12.864959+3.17563j)
+ok   trial 1: mu = gamma eta / (j w): 4e-06 vs 4e-06
+ok   trial 1: sig = Re(gamma/eta): 12.864959 vs 12.864959
+ok   trial 1: eps = Im(gamma/eta) / w: 0.0 vs 0.0
+ok   trial 1: gamma = j w sqrt(mu eps_c), eps_c = eps - j sig/w: (285.518068+364.566245j) vs (285.518068+364.566245j)
+ok   trial 1: eta = sqrt(mu / eps_c): (27.512137+21.546735j) vs (27.512137+21.546735j)
+ok   trial 1: notes' j w sqrt(mu eps)(1 - j s)^(1/2): (285.518068+364.566245j) vs (285.518068+364.566245j)
+ok   trial 1: closed-form alpha, beta: [285.518068 364.566245] vs [285.518068 364.566245]
+ok   trial 1: |eta| = sqrt(mu/eps)/(1+s^2)^(1/4), tau = (1/2) atan(s): [34.945379  0.664395] vs [34.945379  0.664395]
+ok   trial 1: angle(gamma) + angle(eta) = 90 deg: 1.570796 vs 1.570796
+ok   trial 1: alpha/beta = tan(tau): 0.783172 vs 0.783172
+ok   trial 1: |gamma||eta| = w mu: 16181.978799 vs 16181.978799
+ok   trial 1: sig/(w eps) = tan(2 tau): 4.051152 vs 4.051152
+ok   trial 1: sig/(w eps) = 2 alpha beta / (beta^2 - alpha^2): 4.051152 vs 4.051152
+ok   trial 1: sig = 2 alpha beta/(w mu): 12.864959 vs 12.864959
+ok   trial 1: eps = (beta^2 - alpha^2)/(w^2 mu): 0.0 vs 0.0
+ok   trial 1: alpha^2 + beta^2 = w^2 mu eps sqrt(1+s^2): 214429.11409 vs 214429.11409
+ok   trial 1: 45 <= angle(g) <= 90, 0 <= tau < 45, beta >= alpha
+ok   trial 1 sign +1: phasor Faraday dEx/dz = -jw mu Hy: (-233.617794-645.094953j) vs (-233.617795-645.094953j)
+ok   trial 1 sign +1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (16.645395+10.411443j) vs (16.645395+10.411443j)
+ok   trial 1 sign +1: E(z,t) = Re{Ex~ e^jwt}: 1.340549 vs 1.340549
+ok   trial 1 sign +1: H(z,t) carries the phase -tau: 0.041335 vs 0.041335
+ok   trial 1 sign +1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 1 sign +1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 1 sign +1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 1 sign -1: phasor Faraday dEx/dz = -jw mu Hy: (-508.231978+1142.17404j) vs (-508.231978+1142.17404j)
+ok   trial 1 sign -1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (8.702712+34.699558j) vs (8.702712+34.699558j)
+ok   trial 1 sign -1: E(z,t) = Re{Ex~ e^jwt}: 0.963003 vs 0.963003
+ok   trial 1 sign -1: H(z,t) carries the phase -tau: -0.066196 vs -0.066196
+ok   trial 1 sign -1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 1 sign -1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 1 sign -1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 2: Re g, Im g > 0; Re eta > 0, Im eta >= 0 (principal roots)
+ok   trial 2: gamma eta = j w mu: 0.021362j vs 0.021362j
+ok   trial 2: gamma / eta = sig + j w eps: (0.441354+6e-06j) vs (0.441354+6e-06j)
+ok   trial 2: mu = gamma eta / (j w): 2e-06 vs 2e-06
+ok   trial 2: sig = Re(gamma/eta): 0.441354 vs 0.441354
+ok   trial 2: eps = Im(gamma/eta) / w: 0.0 vs 0.0
+ok   trial 2: gamma = j w sqrt(mu eps_c), eps_c = eps - j sig/w: (0.068659+0.068659j) vs (0.068659+0.068659j)
+ok   trial 2: eta = sqrt(mu / eps_c): (0.155565+0.155563j) vs (0.155565+0.155563j)
+ok   trial 2: notes' j w sqrt(mu eps)(1 - j s)^(1/2): (0.068659+0.068659j) vs (0.068659+0.068659j)
+ok   trial 2: closed-form alpha, beta: [0.068659 0.068659] vs [0.068659 0.068659]
+ok   trial 2: |eta| = sqrt(mu/eps)/(1+s^2)^(1/4), tau = (1/2) atan(s): [0.220001 0.785392] vs [0.220001 0.785392]
+ok   trial 2: angle(gamma) + angle(eta) = 90 deg: 1.570796 vs 1.570796
+ok   trial 2: alpha/beta = tan(tau): 0.999987 vs 0.999987
+ok   trial 2: |gamma||eta| = w mu: 0.021362 vs 0.021362
+ok   trial 2: sig/(w eps) = tan(2 tau): 78793.697454 vs 78793.697454
+ok   trial 2: sig/(w eps) = 2 alpha beta / (beta^2 - alpha^2): 78793.697454 vs 78793.697456
+ok   trial 2: sig = 2 alpha beta/(w mu): 0.441354 vs 0.441354
+ok   trial 2: eps = (beta^2 - alpha^2)/(w^2 mu): 0.0 vs 0.0
+ok   trial 2: alpha^2 + beta^2 = w^2 mu eps sqrt(1+s^2): 0.009428 vs 0.009428
+ok   trial 2: 45 <= angle(g) <= 90, 0 <= tau < 45, beta >= alpha
+ok   trial 2 sign +1: phasor Faraday dEx/dz = -jw mu Hy: (-0.054082-0.133312j) vs (-0.054082-0.133312j)
+ok   trial 2 sign +1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (0.602304+0.254656j) vs (0.602304+0.254656j)
+ok   trial 2 sign +1: E(z,t) = Re{Ex~ e^jwt}: 1.283581 vs 1.283581
+ok   trial 2 sign +1: H(z,t) carries the phase -tau: 6.504151 vs 6.504151
+ok   trial 2 sign +1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 2 sign +1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 2 sign +1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 2 sign -1: phasor Faraday dEx/dz = -jw mu Hy: (-0.055827+0.256125j) vs (-0.055827+0.256125j)
+ok   trial 2 sign -1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (0.643771+1.00265j) vs (0.643771+1.00265j)
+ok   trial 2 sign -1: E(z,t) = Re{Ex~ e^jwt}: 1.168915 vs 1.168915
+ok   trial 2 sign -1: H(z,t) carries the phase -tau: -11.578629 vs -11.578629
+ok   trial 2 sign -1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 2 sign -1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 2 sign -1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 3: Re g, Im g > 0; Re eta > 0, Im eta >= 0 (principal roots)
+ok   trial 3: gamma eta = j w mu: (-0+8715.596821j) vs 8715.596821j
+ok   trial 3: gamma / eta = sig + j w eps: (0.00199+0.570664j) vs (0.00199+0.570664j)
+ok   trial 3: mu = gamma eta / (j w): 4e-06 vs 4e-06
+ok   trial 3: sig = Re(gamma/eta): 0.00199 vs 0.00199
+ok   trial 3: eps = Im(gamma/eta) / w: 0.0 vs 0.0
+ok   trial 3: gamma = j w sqrt(mu eps_c), eps_c = eps - j sig/w: (0.122982+70.524436j) vs (0.122982+70.524436j)
+ok   trial 3: eta = sqrt(mu / eps_c): (123.582276+0.215505j) vs (123.582276+0.215505j)
+ok   trial 3: notes' j w sqrt(mu eps)(1 - j s)^(1/2): (0.122982+70.524436j) vs (0.122982+70.524436j)
+ok   trial 3: closed-form alpha, beta: [ 0.122982 70.524436] vs [ 0.122982 70.524436]
+ok   trial 3: |eta| = sqrt(mu/eps)/(1+s^2)^(1/4), tau = (1/2) atan(s): [1.23582464e+02 1.74400000e-03] vs [1.23582464e+02 1.74400000e-03]
+ok   trial 3: angle(gamma) + angle(eta) = 90 deg: 1.570796 vs 1.570796
+ok   trial 3: alpha/beta = tan(tau): 0.001744 vs 0.001744
+ok   trial 3: |gamma||eta| = w mu: 8715.596821 vs 8715.596821
+ok   trial 3: sig/(w eps) = tan(2 tau): 0.003488 vs 0.003488
+ok   trial 3: sig/(w eps) = 2 alpha beta / (beta^2 - alpha^2): 0.003488 vs 0.003488
+ok   trial 3: sig = 2 alpha beta/(w mu): 0.00199 vs 0.00199
+ok   trial 3: eps = (beta^2 - alpha^2)/(w^2 mu): 0.0 vs 0.0
+ok   trial 3: alpha^2 + beta^2 = w^2 mu eps sqrt(1+s^2): 4973.711198 vs 4973.711198
+ok   trial 3: 45 <= angle(g) <= 90, 0 <= tau < 45, beta >= alpha
+ok   trial 3 sign +1: phasor Faraday dEx/dz = -jw mu Hy: (-130.342713-52.680749j) vs (-130.342713-52.680749j)
+ok   trial 3 sign +1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (1.055444+0.42444j) vs (1.055444+0.42444j)
+ok   trial 3 sign +1: E(z,t) = Re{Ex~ e^jwt}: 0.971133 vs 0.971133
+ok   trial 3 sign +1: H(z,t) carries the phase -tau: 0.007834 vs 0.007834
+ok   trial 3 sign +1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 3 sign +1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 3 sign +1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 3 sign -1: phasor Faraday dEx/dz = -jw mu Hy: (-74.97578-120.019572j) vs (-74.97578-120.019572j)
+ok   trial 3 sign -1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (-0.608379-0.97011j) vs (-0.608379-0.97011j)
+ok   trial 3 sign -1: E(z,t) = Re{Ex~ e^jwt}: -1.820863 vs -1.820863
+ok   trial 3 sign -1: H(z,t) carries the phase -tau: 0.014722 vs 0.014722
+ok   trial 3 sign -1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 3 sign -1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 3 sign -1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 4: Re g, Im g > 0; Re eta > 0, Im eta >= 0 (principal roots)
+ok   trial 4: gamma eta = j w mu: (-0+53705.378782j) vs 53705.378782j
+ok   trial 4: gamma / eta = sig + j w eps: (0.016384+1.290417j) vs (0.016384+1.290417j)
+ok   trial 4: mu = gamma eta / (j w): 3e-06 vs 3e-06
+ok   trial 4: sig = Re(gamma/eta): 0.016384 vs 0.016384
+ok   trial 4: eps = Im(gamma/eta) / w: 0.0 vs 0.0
+ok   trial 4: gamma = j w sqrt(mu eps_c), eps_c = eps - j sig/w: (1.671201+263.258717j) vs (1.671201+263.258717j)
+ok   trial 4: eta = sqrt(mu / eps_c): (203.99406+1.294981j) vs (203.99406+1.294981j)
+ok   trial 4: notes' j w sqrt(mu eps)(1 - j s)^(1/2): (1.671201+263.258717j) vs (1.671201+263.258717j)
+ok   trial 4: closed-form alpha, beta: [  1.671201 263.258717] vs [  1.671201 263.258717]
+ok   trial 4: |eta| = sqrt(mu/eps)/(1+s^2)^(1/4), tau = (1/2) atan(s): [2.03998171e+02 6.34800000e-03] vs [2.03998171e+02 6.34800000e-03]
+ok   trial 4: angle(gamma) + angle(eta) = 90 deg: 1.570796 vs 1.570796
+ok   trial 4: alpha/beta = tan(tau): 0.006348 vs 0.006348
+ok   trial 4: |gamma||eta| = w mu: 53705.378782 vs 53705.378782
+ok   trial 4: sig/(w eps) = tan(2 tau): 0.012697 vs 0.012697
+ok   trial 4: sig/(w eps) = 2 alpha beta / (beta^2 - alpha^2): 0.012697 vs 0.012697
+ok   trial 4: sig = 2 alpha beta/(w mu): 0.016384 vs 0.016384
+ok   trial 4: eps = (beta^2 - alpha^2)/(w^2 mu): 0.0 vs 0.0
+ok   trial 4: alpha^2 + beta^2 = w^2 mu eps sqrt(1+s^2): 69307.94507 vs 69307.94507
+ok   trial 4: 45 <= angle(g) <= 90, 0 <= tau < 45, beta >= alpha
+ok   trial 4 sign +1: phasor Faraday dEx/dz = -jw mu Hy: (-483.249713-192.731871j) vs (-483.249713-192.731871j)
+ok   trial 4 sign +1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (2.374842+0.929716j) vs (2.374842+0.929716j)
+ok   trial 4 sign +1: E(z,t) = Re{Ex~ e^jwt}: 0.962741 vs 0.962741
+ok   trial 4 sign +1: H(z,t) carries the phase -tau: 0.004666 vs 0.004666
+ok   trial 4 sign +1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 4 sign +1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 4 sign +1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 4 sign -1: phasor Faraday dEx/dz = -jw mu Hy: (-284.397657-450.626744j) vs (-284.397657-450.626744j)
+ok   trial 4 sign -1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (-1.408113-2.20008j) vs (-1.408113-2.20008j)
+ok   trial 4 sign -1: E(z,t) = Re{Ex~ e^jwt}: -1.836734 vs -1.836734
+ok   trial 4 sign -1: H(z,t) carries the phase -tau: 0.008977 vs 0.008977
+ok   trial 4 sign -1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 4 sign -1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 4 sign -1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 5: Re g, Im g > 0; Re eta > 0, Im eta >= 0 (principal roots)
+ok   trial 5: gamma eta = j w mu: (-0+77.72436j) vs 77.72436j
+ok   trial 5: gamma / eta = sig + j w eps: (0.000251+0.003382j) vs (0.000251+0.003382j)
+ok   trial 5: mu = gamma eta / (j w): 3e-06 vs 3e-06
+ok   trial 5: sig = Re(gamma/eta): 0.000251 vs 0.000251
+ok   trial 5: eps = Im(gamma/eta) / w: 0.0 vs 0.0
+ok   trial 5: gamma = j w sqrt(mu eps_c), eps_c = eps - j sig/w: (0.019045+0.513056j) vs (0.019045+0.513056j)
+ok   trial 5: eta = sqrt(mu / eps_c): (151.28444+5.615761j) vs (151.28444+5.615761j)
+ok   trial 5: notes' j w sqrt(mu eps)(1 - j s)^(1/2): (0.019045+0.513056j) vs (0.019045+0.513056j)
+ok   trial 5: closed-form alpha, beta: [0.019045 0.513056] vs [0.019045 0.513056]
+ok   trial 5: |eta| = sqrt(mu/eps)/(1+s^2)^(1/4), tau = (1/2) atan(s): [1.51388634e+02 3.71040000e-02] vs [1.51388634e+02 3.71040000e-02]
+ok   trial 5: angle(gamma) + angle(eta) = 90 deg: 1.570796 vs 1.570796
+ok   trial 5: alpha/beta = tan(tau): 0.037121 vs 0.037121
+ok   trial 5: |gamma||eta| = w mu: 77.72436 vs 77.72436
+ok   trial 5: sig/(w eps) = tan(2 tau): 0.074344 vs 0.074344
+ok   trial 5: sig/(w eps) = 2 alpha beta / (beta^2 - alpha^2): 0.074344 vs 0.074344
+ok   trial 5: sig = 2 alpha beta/(w mu): 0.000251 vs 0.000251
+ok   trial 5: eps = (beta^2 - alpha^2)/(w^2 mu): 0.0 vs 0.0
+ok   trial 5: alpha^2 + beta^2 = w^2 mu eps sqrt(1+s^2): 0.263589 vs 0.263589
+ok   trial 5: 45 <= angle(g) <= 90, 0 <= tau < 45, beta >= alpha
+ok   trial 5 sign +1: phasor Faraday dEx/dz = -jw mu Hy: (-0.899795-0.327164j) vs (-0.899795-0.327164j)
+ok   trial 5 sign +1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (0.00602+0.001939j) vs (0.00602+0.001939j)
+ok   trial 5 sign +1: E(z,t) = Re{Ex~ e^jwt}: 0.908486 vs 0.908486
+ok   trial 5 sign +1: H(z,t) carries the phase -tau: 0.005598 vs 0.005598
+ok   trial 5 sign +1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 5 sign +1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 5 sign +1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+ok   trial 5 sign -1: phasor Faraday dEx/dz = -jw mu Hy: (-0.616105-0.912766j) vs (-0.616105-0.912766j)
+ok   trial 5 sign -1: phasor Ampere -dHy/dz = (sig + jw eps) Ex: (-0.004291-0.005874j) vs (-0.004291-0.005874j)
+ok   trial 5 sign -1: E(z,t) = Re{Ex~ e^jwt}: -1.946424 vs -1.946424
+ok   trial 5 sign -1: H(z,t) carries the phase -tau: 0.012627 vs 0.012627
+ok   trial 5 sign -1: time-domain Faraday dE/dz = -mu dH/dt
+ok   trial 5 sign -1: time-domain Ampere -dH/dz = sig E + eps dE/dt
+ok   trial 5 sign -1: d2E/dz2 = mu sig dE/dt + mu eps d2E/dt2
+=== F. directions of the damped plane wave (x-polarized, along z) and nodes vs peaks
+ok   upper signs: x cross y = +z (travel +z): [0. 0. 1.] vs [0. 0. 1.]
+ok   lower signs: x cross (-y) = -z (travel -z): [ 0.  0. -1.] vs [-0. -0. -1.]
+ok   tau = 0.0: (1/2)Re{x E0 x (y E0/eta)*} points +z (Re 1/eta* > 0)
+ok   tau = 0.3: (1/2)Re{x E0 x (y E0/eta)*} points +z (Re 1/eta* > 0)
+ok   tau = 0.7: (1/2)Re{x E0 x (y E0/eta)*} points +z (Re 1/eta* > 0)
+ok   wt = 0.000: zero crossings at (wt + pi/2 + n pi)/beta: [0.25001 0.75    1.25001] vs [0.25 0.75 1.25]
+ok   wt = 0.000: snapshot maximum at (wt - tau + 2pi)/beta, i.e. tau/beta toward the source: 0.98485 vs 0.984848
+ok   wt = 0.785: zero crossings at (wt + pi/2 + n pi)/beta: [0.375 0.875 1.375] vs [0.375 0.875 1.375]
+ok   wt = 0.785: snapshot maximum at (wt - tau + 2pi)/beta, i.e. tau/beta toward the source: 1.10985 vs 1.109848
+ok   1/e = 37 %: 0.367879 vs 0.3679
+ok   power over one delta: e^-2 = 13.5 %: 0.135335 vs 0.1353
+ok   good conductor: amplitude after one wavelength e^-2pi = 0.19 %: 0.001867 vs 0.001867
+=== G. the phase dial: gamma/(w sqrt(mu eps)) and eta/sqrt(mu/eps) against s = sig/(w eps)
+ok   s = 0: normalized gamma*eta = j: 1j vs 1j
+ok   s = 0: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 90.00 deg: [ 1. 90.] vs [ 1. 90.]
+ok   s = 0: |eta| = (1+s^2)^(-1/4), tau = 0.00 deg: [1. 0.] vs [1. 0.]
+ok   s = 0.25: normalized gamma*eta = j: (-0+1j) vs 1j
+ok   s = 0.25: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 82.98 deg: [ 1.015272 82.981878] vs [ 1.015272 82.981878]
+ok   s = 0.25: |eta| = (1+s^2)^(-1/4), tau = 7.02 deg: [0.984958 7.018122] vs [0.984958 7.018122]
+ok   s = 0.5: normalized gamma*eta = j: 1j vs 1j
+ok   s = 0.5: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 76.72 deg: [ 1.057371 76.717474] vs [ 1.057371 76.717474]
+ok   s = 0.5: |eta| = (1+s^2)^(-1/4), tau = 13.28 deg: [ 0.945742 13.282526] vs [ 0.945742 13.282526]
+ok   s = 1: normalized gamma*eta = j: (-0+1j) vs 1j
+ok   s = 1: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 67.50 deg: [ 1.189207 67.5     ] vs [ 1.189207 67.5     ]
+ok   s = 1: |eta| = (1+s^2)^(-1/4), tau = 22.50 deg: [ 0.840896 22.5     ] vs [ 0.840896 22.5     ]
+ok   s = 1.73: normalized gamma*eta = j: 1j vs 1j
+ok   s = 1.73: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 60.00 deg: [ 1.414214 60.      ] vs [ 1.414214 60.      ]
+ok   s = 1.73: |eta| = (1+s^2)^(-1/4), tau = 30.00 deg: [ 0.707107 30.      ] vs [ 0.707107 30.      ]
+ok   s = 2: normalized gamma*eta = j: 1j vs 1j
+ok   s = 2: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 58.28 deg: [ 1.495349 58.282526] vs [ 1.495349 58.282526]
+ok   s = 2: |eta| = (1+s^2)^(-1/4), tau = 31.72 deg: [ 0.66874  31.717474] vs [ 0.66874  31.717474]
+ok   s = 4: normalized gamma*eta = j: 1j vs 1j
+ok   s = 4: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 52.02 deg: [ 2.030543 52.018122] vs [ 2.030543 52.018122]
+ok   s = 4: |eta| = (1+s^2)^(-1/4), tau = 37.98 deg: [ 0.492479 37.981878] vs [ 0.492479 37.981878]
+ok   s = 10: normalized gamma*eta = j: 1j vs 1j
+ok   s = 10: |g| = (1+s^2)^(1/4), angle = 90 - atan(s)/2 = 47.86 deg: [ 3.170154 47.855297] vs [ 3.170154 47.855297]
+ok   s = 10: |eta| = (1+s^2)^(-1/4), tau = 42.14 deg: [ 0.315442 42.144703] vs [ 0.315442 42.144703]
+ok   s = sqrt(3): tau = 30 deg, angle(gamma) = 60 deg: 30.0 vs 30.0
+ok   s = 1: tau = 22.5 deg: 22.5 vs 22.5
+ok   s = 4/3: tau = (1/2) atan(4/3) = atan(1/2) = 26.57 deg: 26.565051 vs 26.565051
+ok   s = 3/4: tau = (1/2) atan(3/4) = atan(1/3) = 18.43 deg: 18.434949 vs 18.434949
+=== H. the four regimes (notes pp. 5-8) and the penetration-depth limits
+ok   imperfect dielectric s = 0.01: alpha ~ (sig/2)sqrt(mu/eps), beta ~ w sqrt(mu eps): [ 0.209582 41.917424] vs [ 0.209585 41.9169  ]
+ok   imperfect dielectric s = 0.01: eta ~ sqrt(mu/eps)(1 + j s/2): (188.358094+0.941767j) vs (188.365157+0.941826j)
+ok   imperfect dielectric s = 0.01: tau ~ s/2: 0.005 vs 0.005
+ok   imperfect dielectric s = 0.01: notes' sqrt(mu/eps) e^(j atan(s/2)): (188.362802+0.941814j) vs (188.358094+0.941767j)
+ok   (1 - j s)^(-1/2) ~ 1 + j s/2 (exponent -1/2): (0.999963+0.005j) vs (1+0.005j)
+ok   imperfect dielectric: delta ~ 2/(sig sqrt(mu/eps)), independent of frequency: 4.771405 vs 4.771345
+ok   imperfect dielectric s = 0.001: alpha ~ (sig/2)sqrt(mu/eps), beta ~ w sqrt(mu eps): [2.0958000e-02 4.1916906e+01] vs [2.09580e-02 4.19169e+01]
+ok   imperfect dielectric s = 0.001: eta ~ sqrt(mu/eps)(1 + j s/2): (188.365086+0.094183j) vs (188.365157+0.094183j)
+ok   imperfect dielectric s = 0.001: tau ~ s/2: 0.0005 vs 0.0005
+ok   imperfect dielectric s = 0.001: notes' sqrt(mu/eps) e^(j atan(s/2)): (188.365133+0.094183j) vs (188.365086+0.094183j)
+ok   (1 - j s)^(-1/2) ~ 1 + j s/2 (exponent -1/2): (1+0.0005j) vs (1+0.0005j)
+ok   imperfect dielectric: delta ~ 2/(sig sqrt(mu/eps)), independent of frequency: 47.713458 vs 47.713452
+ok   good conductor s = 100: alpha ~ beta ~ sqrt(pi f mu sig): [0.000295 0.000298] vs [0.000296 0.000296]
+ok   sqrt(j w mu sig) = (1+j) sqrt(w mu sig/2): (0.000296+0.000296j) vs (0.000296+0.000296j)
+ok   notes p.6: w sqrt(j mu sig / w) = (1+j) sqrt(w mu sig/2): (0.000296+0.000296j) vs (0.000296+0.000296j)
+ok   good conductor s = 100: eta ~ sqrt(w mu/sig) e^(j pi/4): (13.385522+13.252336j) vs (13.319428+13.319428j)
+ok   notes p.6: sqrt(mu/(-j sig/w)) = sqrt(j w mu/sig): (13.319428+13.319428j) vs (13.319428+13.319428j)
+ok   good conductor: delta ~ sqrt(2/(mu w sig)) = 1/sqrt(pi f mu sig): 3390.761731 vs 3373.850517
+ok   good conductor s = 1000: alpha ~ beta ~ sqrt(pi f mu sig): [0.000937 0.000938] vs [0.000937 0.000937]
+ok   sqrt(j w mu sig) = (1+j) sqrt(w mu sig/2): (0.000937+0.000937j) vs (0.000937+0.000937j)
+ok   notes p.6: w sqrt(j mu sig / w) = (1+j) sqrt(w mu sig/2): (0.000937+0.000937j) vs (0.000937+0.000937j)
+ok   good conductor s = 1000: eta ~ sqrt(w mu/sig) e^(j pi/4): (4.214077+4.209865j) vs (4.211973+4.211973j)
+ok   notes p.6: sqrt(mu/(-j sig/w)) = sqrt(j w mu/sig): (4.211973+4.211973j) vs (4.211973+4.211973j)
+ok   good conductor: delta ~ sqrt(2/(mu w sig)) = 1/sqrt(pi f mu sig): 1067.438798 vs 1066.905212
+ok   sig = 1e+08: delta = 5.03e-05 m, |eta| = 2.81e-04 ohm -> 0 (perfect conductor)
+ok   sig = 1e+12: delta = 5.03e-07 m, |eta| = 2.81e-06 ohm -> 0 (perfect conductor)
+ok   sig = 1e+16: delta = 5.03e-09 m, |eta| = 2.81e-08 ohm -> 0 (perfect conductor)
+ok   x = w eps/sig = 0.01: normalized alpha 0.1407, beta 0.1421: [0.140716 0.14213 ] vs [0.140716 0.14213 ]
+      x =   0.01: delta/delta_inf = 7.1065, lambda/(2 pi delta_inf) = 7.0358, tau = 44.71 deg, |eta|/sqrt(mu/eps) = 0.1000
+ok   x = w eps/sig = 0.1: normalized alpha 0.4254, beta 0.4701: [0.425438 0.470104] vs [0.425438 0.470104]
+      x =    0.1: delta/delta_inf = 2.3505, lambda/(2 pi delta_inf) = 2.1272, tau = 42.14 deg, |eta|/sqrt(mu/eps) = 0.3154
+ok   x = w eps/sig = 1: normalized alpha 0.9102, beta 2.1974: [0.91018  2.197368] vs [0.91018  2.197368]
+      x =      1: delta/delta_inf = 1.0987, lambda/(2 pi delta_inf) = 0.4551, tau = 22.50 deg, |eta|/sqrt(mu/eps) = 0.8409
+ok   x = w eps/sig = 10: normalized alpha 0.9988, beta 20.0249: [ 0.998755 20.024922] vs [ 0.998755 20.024922]
+      x =     10: delta/delta_inf = 1.0012, lambda/(2 pi delta_inf) = 0.0499, tau = 2.86 deg, |eta|/sqrt(mu/eps) = 0.9975
+ok   x = w eps/sig = 100: normalized alpha 1.0000, beta 200.0025: [  0.999988 200.0025  ] vs [  0.999988 200.0025  ]
+      x =    100: delta/delta_inf = 1.0000, lambda/(2 pi delta_inf) = 0.0050, tau = 0.29 deg, |eta|/sqrt(mu/eps) = 1.0000
+ok   x = 0.01: delta/delta_inf = 7.1: 7.106511 vs 7.107
+ok   x = 0.01: good-conductor asymptote 1/sqrt(2x) = 7.07: 7.071068 vs 7.071
+ok   x -> 0: alpha/alpha_inf -> sqrt(2x): 0.014141 vs 0.014142
+ok   x -> inf: beta/alpha_inf -> 2x: 20000.000025 vs 20000.0
+ok   x -> inf: alpha/alpha_inf -> 1: 1.0 vs 1.0
+=== I. Example: a medium exactly at the crossover (eps_r = 4, sig = 0.04 S/m, f = 180 MHz)
+ok   exam constants: sig/(w eps) = 1: 1.0 vs 1.0
+ok   exact eps0: sig/(w eps) = 0.9986: 0.998617 vs 0.99863
+ok   w sqrt(mu eps) = 2.4 pi = 7.540 rad/m: 7.539822 vs 7.539822
+ok   alpha = 3.431 Np/m, beta = 8.284 rad/m: [3.431297 8.283883] vs [3.4313 8.2838]
+ok   |eta| = 60 pi / 2^(1/4) = 158.5 ohm, tau = 22.5 deg: [158.50524  22.5    ] vs [158.51  22.5 ]
+ok   delta = 0.291 m, lambda = 0.758 m, v_p = 1.365e8 m/s: [2.91435000e-01 7.58483000e-01 1.36526958e+08] vs [2.9143e-01 7.5849e-01 1.3653e+08]
+ok   imperfect-dielectric shortcut: alpha 3.770, beta 7.540, tau 28.6 deg: [ 3.769911  7.539822 28.64789 ] vs [ 3.7699  7.5398 28.648 ]
+ok   shortcut errors: alpha +9.9 %, beta -9.0 %: [ 0.098684 -0.08982 ] vs [ 0.0987 -0.0898]
+ok   good-conductor shortcut: alpha = beta = 5.331: 5.33146 vs 5.3314
+ok   good-conductor shortcut errors: alpha +55 %, beta -36 %: [ 0.553774 -0.356406] vs [ 0.5538 -0.3564]
+ok   lossless v = c/2 = 1.5e8 m/s for comparison: 150000000.0 vs 150000000.0
+=== J. Page example: decode E = y 6 e^{-x} cos(3e8 t - 3x) V/m, mu = mu0 (exam constants)
+ok   gamma = 1 + j3 = sqrt(10) at 71.57 deg: [ 3.162278 71.565051] vs [ 3.162278 71.565   ]
+ok   eta = j w mu0 / gamma = 12 pi (3 + j) ohm: (113.097336+37.699112j) vs (113.097336+37.699112j)
+ok   eta = 113.1 + j37.7 = 119.2 ohm at 18.43 deg: [113.097336  37.699112 119.215059  18.434949] vs [113.097  37.699 119.21   18.435]
+ok   |eta| = 12 pi sqrt(10): 119.215059 vs 119.215059
+ok   gamma^2 = -8 + 6j: (-8+6j) vs (-8+6j)
+ok   sig = 1/(20 pi) = 15.9 mS/m, eps = 8 eps0: [0.015915 0.      ] vs [0.015915 0.      ]
+ok   sig = 0.0159 S/m: 0.015915 vs 0.015915
+ok   sig/(w eps) = 3/4: 0.75 vs 0.75
+ok   check: closed forms return alpha = 1, beta = 3: [1. 3.] vs [1 3]
+ok   delta = 1 m, lambda = 2.094 m, v_p = 1e8 m/s, f = 47.7 MHz: [1.00000000e+00 2.09439500e+00 1.00000000e+08 4.77464829e+07] vs [1.0000e+00 2.0944e+00 1.0000e+08 4.7746e+07]
+ok   lossless eps_r = 8 would give c/sqrt(8) = 1.06e8 m/s: 106066017.177982 vs 106070000.0
+ok   H amplitude 6/|eta| = 50.3 mA/m: 0.050329 vs 0.050331
+ok   H direction: x cross y = +z: [0. 0. 1.] vs [0. 0. 1.]
+ok   E x H: y cross z = +x (travel +x): [1. 0. 0.] vs [1. 0. 0.]
+ok   H(x=0.2, wt=0.5) = 50.3 e^-x cos(wt - 3x - 18.4 deg) mA/m: 0.037595 vs 0.037597
+ok   mu = 1 mu0: sig/(w eps) still 3/4 (mu cancels): 0.75 vs 0.75
+ok   mu = 2 mu0: sig/(w eps) still 3/4 (mu cancels): 0.75 vs 0.75
+ok   mu = 3 mu0: sig/(w eps) still 3/4 (mu cancels): 0.75 vs 0.75
+=== K. Lecture 19's sheet in this medium: J_s = x 2 cos(wt) A/m on z = 0 (eps 8 eps0, sig 1/(20 pi), w 3e8)
+ok   jump: z cross (H(0+) - H(0-)) = J_s (n from 2 = z<0 into 1 = z>0): [ 2.+0.j  0.+0.j -0.+0.j] vs [2. 0. 0.]
+ok   tangential E continuous at the sheet: [-113.097336-37.699112j    0.       +0.j          0.       +0.j      ] vs [-113.097336-37.699112j   -0.       +0.j         -0.       +0.j      ]
+ok   H(0+) = (1/2) J_s x n = (1/2)(2x) x z = -y: [ 0.  -0.5  0. ] vs [-0.  -0.5 -0. ]
+ok   H(0-) = (1/2)(2x) x (-z) = +y: [0.  0.5 0. ] vs [0.  0.5 0. ]
+ok   <S>(0+) = +z Re(eta)/2 = 18 pi = 56.5 W/m^2: [ 0.        0.       56.548668] vs [ 0.        0.       56.548668]
+ok   <S>(0-) = -z 56.5 W/m^2 (away from the sheet): [  0.         0.       -56.548668] vs [ -0.        -0.       -56.548668]
+ok   <-J_s . E> = (J0^2/4) Re(eta) = 36 pi = 113.1 W/m^2 (both sides together): 113.097336 vs 113.097336
+ok   = (J0^2/4)|eta| cos(tau): 113.097336 vs 113.097336
+ok   E amplitude at the sheet = |eta| J0/2 = 119.2 V/m: 119.215059 vs 119.21
+ok   z = 0.4: dEx/dz = -mu dHy/dt: 25.228374 vs 25.228374
+ok   z = 0.4: -dHy/dz = sig Ex + eps dEx/dt: -0.867732 vs -0.867732
+ok   z = -0.7: dEx/dz = -mu dHy/dt: -157.53031 vs -157.53031
+ok   z = -0.7: -dHy/dz = sig Ex + eps dEx/dt: -1.521893 vs -1.521893
+ok   E(0,t) = -x 119.2 cos(wt + 18.4 deg): E leads H by tau: -96.905162 vs -96.905162
+ok   quadrature: <-J_s(t) E_x(0,t)> = 113.1 W/m^2: 113.097336 vs 113.097336
+=== L. Drude sigma(w) and the collisionless plasma (L11, L21)
+ok   N = 1e12 m^-3: f_p = 8.98 MHz: 8978662.820487 vs 8980000.0
+ok   rule f_p ~ 9 sqrt(N) Hz: 8980000.0 vs 8978662.820487
+ok   f = 5 MHz: sig + jw eps0 = jw eps0 (1 - wp^2/w^2): -0.000619j vs (-0-0.000619j)
+ok   f = 5 MHz < f_p: gamma real = sqrt(wp^2 - w^2)/c (no oscillation, evanescent): (0.156301+0j) vs 0.156301
+ok   f = 5 MHz: eta purely imaginary (reactive)
+ok   f = 20 MHz: sig + jw eps0 = jw eps0 (1 - wp^2/w^2): 0.000888j vs 0.000888j
+ok   f = 20 MHz > f_p: gamma = j sqrt(w^2 - wp^2)/c (L21's dispersion relation): 0.374555j vs 0.374555j
+ok   f = 20 MHz: eta real and > eta0 (421.6 ohm)
+ok   f = 100 MHz: sig + jw eps0 = jw eps0 (1 - wp^2/w^2): 0.005518j vs 0.005518j
+ok   f = 100 MHz > f_p: gamma = j sqrt(w^2 - wp^2)/c (L21's dispersion relation): 2.08738j vs 2.08738j
+ok   f = 100 MHz: eta real and > eta0 (378.3 ohm)
+ok   5 MHz: alpha = 0.156 Np/m: 0.156301 vs 0.1562
+ok   5 MHz: delta = 6.4 m: 6.39793 vs 6.4
+ok   20 MHz: beta = 0.374 rad/m vs 0.419 in vacuum: [0.374555 0.419169] vs [0.3743 0.4192]
+ok   copper at 1 GHz: |sigma/sigma_DC - 1| = 1.6e-4 (Lecture 11's number): 0.000157 vs 0.000157
+=== M. Worked problem: H = z 0.2 e^{x} cos(1e8 t + 2x + 60 deg) A/m, x < 0, mu = 3 mu0 (exam constants)
+ok   argument 1e8 t + 2x: same signs -> travel toward -x; amplitude e^{x} decays toward -x (e^{-alpha |x|})
+ok   f = 15.9 MHz, lambda = pi m, v_p = 5e7 m/s, delta = 1 m: [1.59154943e+07 3.14159300e+00 5.00000000e+07 1.00000000e+00] vs [1.591500e+07 3.141593e+00 5.000000e+07 1.000000e+00]
+ok   gamma = 1 + j2 = sqrt(5) at 63.43 deg: [ 2.236068 63.434949] vs [ 2.236068 63.435   ]
+ok   w mu = 1e8 * 3 * 4 pi e-7 = 120 pi: 376.991118 vs 376.991118
+ok   eta = j 120 pi/(1 + j2) = 24 pi (2 + j) ohm: (150.796447+75.398224j) vs (150.796447+75.398224j)
+ok   eta = 150.8 + j75.4 = 168.6 ohm at 26.57 deg: [150.796447  75.398224 168.595554  26.565051] vs [150.8    75.398 168.6    26.565]
+ok   |eta| = 120 pi/sqrt(5) = 24 pi sqrt(5): 168.595554 vs 168.595554
+ok   gamma^2 = -3 + 4j (a 3-4-5 triangle): (-3+4j) vs (-3+4j)
+ok   gamma/eta = (4 + 3j)/(120 pi): (0.01061+0.007958j) vs (0.01061+0.007958j)
+ok   sig = 1/(30 pi) = 10.6 mS/m, eps = 9 eps0: [0.01061 9.     ] vs [0.01061 9.     ]
+ok   sig = 0.0106 S/m: 0.01061 vs 0.01061
+ok   sig/(w eps) = 4/3: 1.333333 vs 1.333333
+ok   tau = (1/2) atan(4/3) = 26.57 deg: 26.565051 vs 26.565
+ok   general formulas give back alpha 1, beta 2, |eta|, tau: [  1.         2.       168.595554  26.565051] vs [  1.         2.       168.595554  26.565   ]
+ok   w sqrt(mu eps) = sqrt(3): 1.732051 vs 1.732051
+ok   sqrt(1 + (4/3)^2) = 5/3: 1.666667 vs 1.666667
+ok   lossless sqrt(mu/eps) = 120 pi/sqrt(3) = 217.7 ohm: 217.655924 vs 217.655924
+ok   E direction: H x u = z x (-x) = -y: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   check: E x H = (-y) x z = -x (travel -x): [-1.  0.  0.] vs [-1. -0. -0.]
+ok   E~ = -y 33.7 e^{j86.6 deg} e^{(1+j2)x} V/m: [33.719111 86.565051] vs [33.719 86.565]
+ok   0.2 |eta| = 4.8 pi sqrt(5) = 33.7 V/m: 33.719111 vs 33.719111
+ok   0.2 eta e^{j60} = 4.8 pi (2 + j) e^{j60 deg}: (2.020289+33.658533j) vs (2.020289+33.658533j)
+ok   x = -0.3: E_y(x,t) = Re{E~ e^jwt}: 3.486957 vs 3.486957
+ok   x = -0.3: Faraday dEy/dx = -mu dHz/dt: 52.957277 vs 52.957277
+ok   x = -0.3: Ampere -dHz/dx = sig Ey + eps dEy/dt: 0.233834 vs 0.233834
+ok   x = -1.7: E_y(x,t) = Re{E~ e^jwt}: -2.85349 vs -2.85349
+ok   x = -1.7: Faraday dEy/dx = -mu dHz/dt: -13.771783 vs -13.771783
+ok   x = -1.7: Ampere -dHz/dx = sig Ey + eps dEy/dt: -0.073719 vs -0.073719
+ok   curl(y Ey(x)) = z dEy/dx; curl(z Hz(x)) = -y dHz/dx (Cartesian curl)
+ok   10 %: 2.30 m = 0.733 lambda; one wavelength: e^-pi = 4.3 %: [2.302585 0.732936 0.043214] vs [2.3026  0.7329  0.04321]
+ok   imperfect-dielectric shortcut alpha = 2/sqrt(3) = 1.155 (+15 %): 1.154701 vs 1.154701
+ok   good-conductor shortcut alpha = beta = sqrt(2) = 1.414: [4.       1.414214] vs [4.       1.414214]
+ok   trap mu = mu0: |eta| = 56.2 (3x small), sig = 31.8 mS/m and eps = 27 eps0 (3x big), ratio still 4/3: [5.6198518e+01 3.1831000e-02 2.7000000e+01 1.3333330e+00] vs [5.619900e+01 3.183100e-02 2.700000e+01 1.333333e+00]
+ok   trap mu = mu0: E amplitude 0.2 |eta| = 11.2 V/m (3x small): 11.239704 vs 11.24
+ok   trap mu = mu0: tau unchanged (26.6 deg): 26.565051 vs 26.565
+ok   check (b): (1 + j2)(2 + j) = 5j, so gamma eta = 24 pi * 5j = j 120 pi: 5j vs 5j
+ok   eps = 9 eps0 = 7.96e-11 F/m: 7.957747 vs 7.9577
+ok   wrong-sign phase 60 - 26.6 = 33.4 deg; alternate form -y cos(.. + 86.6) = +y cos(.. - 93.4): [ 33.434949 -93.434949] vs [ 33.435 -93.435]
+ok   -cos(u) = cos(u - 180 deg): 11.246441 vs 11.246441
+ok   tan^-1(4/3) = 53.13 deg = 2 tau: 53.130102 vs 53.13
+ok   phasor Faraday: dEy~/dx = gamma Ey~ = -j w mu Hz~ (wave along -x): (-6.298301-40.897286j) vs (-6.298301-40.897286j)
+ok   (-y) x z = -x: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   <S>(x=0) = -x (1/2)|H|^2 Re(eta) = -x 3.02 W/m^2: [-3.015929  0.        0.      ] vs [-3.015929 -0.       -0.      ]
+ok   (1/2)(0.2)^2 (48 pi) = 3.02 W/m^2: 3.015929 vs 3.0159
+=== N. figure helpers: phasor spiral and rotation senses
+ok   phasor e^{-gamma z}: angle decreases (clockwise), radius shrinks as z grows
+ok   H~ |eta| = E~ e^{-j tau}: rotated clockwise by tau (lags)
+ok   H peak at wt = tau: H lags E by tau/w: 0.523578 vs 0.523599
+ok   t = T/8: crossings shifted by lambda/8 toward +z: 0.125 vs 0.125
+=== O. Section 2 example: E = y 2 cos(2pi 1e8 t + (4pi/3) x) V/m, eps_r = 4, mu0 (exam constants)
+ok   beta = w sqrt(mu0 4 eps0) = 4 pi/3 rad/m: 4.18879 vs 4.18879
+ok   eta = 60 pi: 188.495559 vs 188.495559
+ok   curl: Hz = -(1/(jw mu)) dEy/dx = -Ey/eta: (-0.006763-0.008175j) vs (-0.006763-0.008175j)
+ok   amplitude 2/(60 pi) = 10.6 mA/m: 0.01061 vs 0.01061
+ok   E x H = y cross (-z) = -x: travel -x, as the + sign in (wt + beta x) says: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   rotation rule: H = u x E/eta with u = -x: (-x) cross y = -z: [ 0.  0. -1.] vs [-0. -0. -1.]
+=== P. the transmission-line twin (Unit 4 look-ahead): coax filled with a lossy medium
+ok   G = (sig/eps) C (Lecture 10), mu_r=1: 5019595.854991 vs 5019595.854991
+ok   L C / (mu eps) = 1 (Lecture 15): 1.0 vs 1.0
+ok   L G / (mu sig) = 1: 1.0 vs 1.0
+ok   line gamma = sqrt(jwL (G + jwC)) = plane-wave gamma: (0.011762+0.033566j) vs (0.011762+0.033566j)
+ok   line Z0 = eta ln(b/a)/(2 pi): (41.77216+14.63705j) vs (41.77216+14.63705j)
+ok   G = (sig/eps) C (Lecture 10), mu_r=2: 282352266.843255 vs 282352266.843255
+ok   L C / (mu eps) = 1 (Lecture 15): 1.0 vs 1.0
+ok   L G / (mu sig) = 1: 1.0 vs 1.0
+ok   line gamma = sqrt(jwL (G + jwC)) = plane-wave gamma: (1.30098+6.069026j) vs (1.30098+6.069026j)
+ok   line Z0 = eta ln(b/a)/(2 pi): (49.599584+10.632361j) vs (49.599584+10.632361j)
+=== Q. regime bookkeeping used in the text
+ok   s = 0.01: alpha lambda = 2 pi tan(tau) ~ pi s: 0.031415 vs 0.031416
+ok   s = 0.1: alpha lambda = 2 pi tan(tau) ~ pi s: 0.313378 vs 0.314159
+ok   tau = 15 deg: e^{-2 pi tan tau} = 0.19 per wavelength: 0.185709 vs 0.1857
+ok   figure 1: alpha/beta = 0.6/2pi -> tau = 5.5 deg: 0.095204 vs 0.095208
+ok   figure 1: alpha/beta = 0.095: 0.095493 vs 0.0955
+=== S. errata: the notes' angle form agrees with the exact angle to O(s^3)
+ok   s = 0.1: atan(s/2) - (1/2)atan(s) = s^3/8 + O(s^5): 0.000124 vs 0.000125
+ok   s = 0.1: (1/2) atan(s) = s/2 + O(s^3): 0.049834 vs 0.05
+ok   s = 0.05: atan(s/2) - (1/2)atan(s) = s^3/8 + O(s^5): 1.6e-05 vs 1.6e-05
+ok   s = 0.05: (1/2) atan(s) = s/2 + O(s^3): 0.024979 vs 0.025
+=== R. concept-page numbers (propagation-constant, intrinsic-impedance)
+ok   eps_r = 4 at 100 MHz: lambda = 2 pi / (4 pi/3) = 1.5 m: 1.5 vs 1.5
+ok   eta0/sqrt(8) = 133.3 ohm (the decode medium without sigma): 133.286488 vs 133.29
+ok   |eta| = (eta0/sqrt8)/(1 + (3/4)^2)^(1/4) = 119.2 ohm: 119.215059 vs 119.215059
+ok   2^(-1/4) = 0.84: 0.840896 vs 0.8409
+ok   worked problem lossless sqrt(mu/eps) = 217.7 ohm: 217.655924 vs 217.66
+ok   E(t)/H(t) = cos(wt + tau)/cos(wt) varies with t when tau != 0
+
+ALL 443 CHECKS PASSED

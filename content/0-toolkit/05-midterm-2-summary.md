@@ -5,7 +5,7 @@ tags: [toolkit, exam-2]
 aliases: ["Midterm 2", "Exam 2 summary", "Exam 2 formula sheet"]
 ---
 
-*Scope assumed here: Lectures 11–19, everything after Exam 1 — check the course page for the official list. Exam 1 tools (Gauss, potential, boundary conditions, capacitance) are still needed and are summarized in [[#9-what-you-still-need-from-unit-1|§9]]. Each section links to the lecture that derives it; this page only collects.*
+*Scope assumed here: Lectures 11–19, everything after Exam 1 — check the course page for the official list. If your exam also reaches Lectures 20–23 (Poynting's theorem, phasors, lossy media), their pages end with one-screen summaries: [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#9-summary|20]] · [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation#9-summary|21]] · [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves#10-summary|22]] · [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors#9-summary|23]]. Exam 1 tools (Gauss, potential, boundary conditions, capacitance) are still needed and are summarized in [[#9-what-you-still-need-from-unit-1|§9]]. Each section links to the lecture that derives it; this page only collects.*
 
 > [!recipe] How to use this page
 > Read a section, close the page, and rewrite its equations from memory on scrap paper — then check. The gaps you find are your study list. Every equation here has a sign or direction rule next to it; the rule is the part that costs points.

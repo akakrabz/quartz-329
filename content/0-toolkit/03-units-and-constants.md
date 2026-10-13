@@ -48,6 +48,14 @@ Wavelength–frequency: $\lambda f = c$. With $c = 300$ m/µs: 1 MHz ↔ 300 m, 
 | wave speed $v = 1/\sqrt{\mu\epsilon}$ | m/s | $c = 2.998\times10^8$ m/s $\approx 300$ m/µs in vacuum |
 | intrinsic impedance $\eta = \sqrt{\mu/\epsilon}$ | Ω | $E/H$ in a plane wave (V/m over A/m) |
 | energy density $w$ | J/m³ | $\tfrac12\epsilon E^2$, $\tfrac12\mu H^2$ |
+| Poynting vector $\mathbf{S} = \mathbf{E}\times\mathbf{H}$; $\langle\mathbf{S}\rangle$ | W/m² | (V/m)(A/m); a plane wave carries $\langle S\rangle = E_0^2/2\eta$ (Lectures 19–20) |
+| power density $\mathbf{J}\cdot\mathbf{E}$ | W/m³ | (A/m²)(V/m); $\mathbf{J}_s\cdot\mathbf{E}$ on a sheet in W/m² (Lecture 20) |
+| phasor $\tilde E$ | same unit as the field | complex amplitude: $E(t) = \text{Re}\{\tilde E e^{j\omega t}\}$ (Lecture 21) |
+| phase constant $\beta$ | rad/m | $\lambda = 2\pi/\beta$, $v_p = \omega/\beta$ (Lecture 21) |
+| attenuation constant $\alpha$ | Np/m | 1 Np/m = 8.686 dB/m for power and field alike (Lectures 22–23) |
+| propagation constant $\gamma = \alpha+j\beta$ | m⁻¹ | complex; $\gamma\eta = j\omega\mu$ (Lecture 22) |
+| penetration (skin) depth $\delta = 1/\alpha$ | m | good conductor: $1/\sqrt{\pi f\mu\sigma}$ (Lectures 22–23) |
+| loss tangent $\sigma/\omega\epsilon$ | dimensionless | conduction over displacement current (Lecture 23) |
 
 ## The dimension ladder of sources
 

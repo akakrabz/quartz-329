@@ -1,10 +1,10 @@
 ---
 title: "Worked problems"
-description: "Exam-style problems worked in full, with the trap at each step called out. Numbers differ from the actual exams and lecture examples; the structure is the point. Unit 1 (Exam 1) and Units 2–3 through Lecture 19."
+description: "Exam-style problems worked in full, with the trap at each step called out. Numbers differ from the actual exams and lecture examples; the structure is the point. Unit 1 (Exam 1) and Units 2–3 through Lecture 23."
 tags: [problem]
 ---
 
-Each problem page states the problem, works it the way a strong student would on the exam (structure first, then computation, then checks), and calls out the trap at each step. The problems are modelled on FA26 Exam 1 and the in-class challenge questions, **re-parameterized** so they are practice, not answer keys.
+Each problem page states the problem, works it the way a strong student would on the exam (structure first, then computation, then checks), and calls out the trap at each step. The problems are modelled on FA26 Exam 1, past Exam 2/Exam 3 papers and the in-class challenge questions, **re-parameterized** so they are practice, not answer keys.
 
 | problem | source | lectures |
 |---|---|---|
@@ -21,7 +21,11 @@ Each problem page states the problem, works it the way a strong student would on
 | [[problems/fields-across-a-magnetic-interface\|Fields across a magnetic interface]] | magnetic twin of FA26 Exam 1 #3 | 16, 17 |
 | [[problems/a-pulse-on-the-move\|A pulse on the move]] | SP18 Exam 2 #4 (re-parameterized) | 18 |
 | [[problems/a-current-sheet-launches-two-waves\|A current sheet launches two waves]] | SP18 Exam 2 #5 (re-parameterized) | 13, 16, 19 |
+| [[problems/energy-bookkeeping-for-a-radiating-sheet\|Energy bookkeeping for a radiating sheet]] | Summer 2020 HE3 #2(c)–(d) (re-parameterized) | 19, 20 |
+| [[problems/phasors-e-and-power-from-a-given-h\|Phasors, E and power from a given H]] | Summer 2019 HE3 #1a, SP17 Exam 3 #4 (re-parameterized) | 18, 20, 21 |
+| [[problems/decoding-a-damped-wave\|Decoding a damped wave]] | SP17 Exam 3 #3, Summer 2018 HE3 #1b, SP19 Exam 3 #1 (re-parameterized) | 21, 22 |
+| [[problems/a-radio-wave-into-moist-ground\|A radio wave into moist ground]] | Summer 2018/2019 HE3 #3b (re-parameterized) | 22, 23 |
 
-All four FA26 Exam 1 problems have a worked counterpart, and each Unit 2–3 lecture through Lecture 19 has one problem built on its central calculation — in every case the magnetic or dynamic twin of something already done in Unit 1, which is the point. A PrairieLearn version of these problems, with randomized parameters and auto-grading, lives in the `prairielearn/` folder of this repository.
+All four FA26 Exam 1 problems have a worked counterpart, and each Unit 2–3 lecture through Lecture 23 has one problem built on its central calculation — usually the magnetic or dynamic twin of something already done in Unit 1, which is the point. Randomized, auto-graded versions of many of these problems — plus one concept question per lecture and a timed Midterm 2 practice exam — live in the separate PrairieLearn course repository (`pl-ece329`).
 
-For many shorter problems to do yourself — twelve per lecture from Lecture 2 to Lecture 19, tagged easy, medium or hard, with folded hints and solutions — see the [[practice/index|practice bank]].
+For many shorter problems to do yourself — twelve per lecture from Lecture 2 to Lecture 23, tagged easy, medium or hard, with folded hints and solutions — see the [[practice/index|practice bank]].

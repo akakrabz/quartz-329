@@ -1,0 +1,306 @@
+
+==============================================================================
+21.1 Reading two waves
+==============================================================================
+  omega = 1.570796e+09 rad/s = 5pi e8; f = 250.0000 MHz; T = 4.0000 ns
+  beta = 7.85398 rad/m (2.5 pi); lambda = 0.8000 m; v_p = 2.0000e+08 m/s; lambda*f = 2.0000e+08
+  crest position y_c(t) moves with dy/dt = -2.0000e+08 m/s -> travel -y
+  [21.1a travel toward -y] OK
+  eps_r = (c/v_p)^2 = 2.2500 (course c);  exact c: 2.2469
+  [21.1a eps_r = 2.25] OK
+  snapshot t=0: crest nearest origin with y>0 (numerical) at y = 0.66667 m; formula (2n - 1/3)/2.5, n=1 -> 0.66667 m = 2/3 m
+  (n = 0 crest at y = -0.13333 m = -2/15 m, on the y<0 side)
+  record y=0: next crest after t=0 (numerical) at t = 3.33334 ns; formula (2 - 1/3)/(5e8) s = 3.33333 ns
+  crest at y = 2/3 m reaches y = 0 after (2/3)/v_p = 3.33333 ns
+  [21.1b snapshot/record agree] OK
+  sound: f = 500.0 Hz, lambda = 2.000 m, v_p = 1000.0 m/s, crest x_c(t) = 1000 t -> travel +x
+  given data: m_He = 6.65e-27 kg (6.65e-27), k_B = 1.381e-23 J/K (1.381e-23)
+  T_gas = 3 m v^2/(5 kB) = 288.92 K (given m, kB);  exact m_He, kB: 288.84 K;  15.8 C
+  [21.1c dispersion relation reproduces beta = pi] OK
+
+==============================================================================
+21.2 Phasors both ways
+==============================================================================
+  i(t) = 4 sin(wt + 60deg) -> I = 4 e^(-j30deg) = 3.4641-2.0000j  (4 at -30.0000 deg)
+  [21.2a sine] max |Re{A e^jwt} - f(t)| / max|f| = 5.0e-16 -> OK
+  v(t) = -10 cos(wt - 45deg) -> V = 10 e^(j135deg) = -7.0711+7.0711j
+  [21.2a minus cosine] max |Re{A e^jwt} - f(t)| / max|f| = 2.7e-16 -> OK
+  8 cos wt - 6 sin wt -> 8 + 6j = 10 at +36.8699 deg -> 10 cos(wt + 36.87 deg)
+  [21.2b sum] max |Re{A e^jwt} - f(t)| / max|f| = 0.0e+00 -> OK
+  [21.2b one cosine] max |Re{A e^jwt} - f(t)| / max|f| = 4.0e-16 -> OK
+  -5 + 12j = 13 at +112.6199 deg  (atan(12/-5) naive = -67.38 deg is the wrong quadrant)
+  [21.2c E at x=0.0] max |Re{A e^jwt} - f(t)| / max|f| = 7.5e-16 -> OK
+  [21.2c E as -5cos - 12sin, x=0.0] max |Re{A e^jwt} - f(t)| / max|f| = 1.4e-16 -> OK
+  [21.2c E at x=0.13] max |Re{A e^jwt} - f(t)| / max|f| = 1.2e-15 -> OK
+  [21.2c E as -5cos - 12sin, x=0.13] max |Re{A e^jwt} - f(t)| / max|f| = 6.1e-16 -> OK
+  [21.2c E at x=0.37] max |Re{A e^jwt} - f(t)| / max|f| = 1.6e-15 -> OK
+  [21.2c E as -5cos - 12sin, x=0.37] max |Re{A e^jwt} - f(t)| / max|f| = 1.0e-15 -> OK
+  E travels toward -x (e^{+j4 pi x})
+  [21.2c H vector, z=0.0] max |Re{A e^jwt} - f(t)| / max|f| = 0.0e+00 -> OK
+  [21.2c H vector, z=0.4] max |Re{A e^jwt} - f(t)| / max|f| = 3.0e-16 -> OK
+  ODE: A = 10/(3 + 4j) = 1.2000-1.6000j = 2 at -53.1301 deg -> a(t) = 2 cos(4t - 53.13 deg)
+  residual of the ODE for a(t) = Re{A e^(j4t)}: 1.2e-09
+  numerical ODE from a(0) = 0, after the transient e^(-3t) (t = 15..20 s): max deviation from 2cos(4t - 53.13deg) = 3.9e-11
+  [21.2d ODE steady state] OK
+
+==============================================================================
+21.3 True or false
+==============================================================================
+  [21.3a phasor of 5 sin wt is -5j] max |Re{A e^jwt} - f(t)| / max|f| = 0.0e+00 -> OK
+  Re{5j e^jwt} = -5 sin wt, differs from 5 sin wt by up to 10.000 -> (a) FALSE
+  [21.3a false] OK
+  a = 3cos(wt+40deg): max |a^2 - Re{A^2 e^jwt}| = 16.564 -> (b) FALSE
+  <a^2> by quad = 4.500000; 1/2|A|^2 = 4.500000; 1/2 Re{A^2} = 0.781417
+  [21.3b false, <a^2> = |A|^2/2] OK
+  e^(+j5y): crest y_c(t) = -wt/5 moves -y -> (c) TRUE
+  [21.3c true] OK
+  <ab> quad = 1.75e-15; 1/2 Re{A B*} = 8.88e-16 (90 deg apart) -> (d) TRUE
+  [21.3d true] OK
+  z=0.0: phasor 3.0000+0.0000j; field at t=0 = Re = 3.0000 = 3cos(bz) = 3.0000; at T/4 = -Im = 0.0000 = 3sin(bz) = 0.0000
+  z=0.3: phasor 2.4760-1.6939j; field at t=0 = Re = 2.4760 = 3cos(bz) = 2.4760; at T/4 = -Im = 1.6939 = 3sin(bz) = 1.6939
+  z=1.1: phasor -1.7655-2.4255j; field at t=0 = Re = -1.7655 = 3cos(bz) = -1.7655; at T/4 = -Im = 2.4255 = 3sin(bz) = 2.4255
+  -> (e) FALSE: the phasor is complex; only its real part is the t = 0 snapshot
+  (f) E0 = 20 V/m free space: <S> quad = 0.5305 W/m^2 = 400/(240 pi) = 0.5305; claimed 400/(120 pi) = 1.0610 -> FALSE
+  [21.3f false] OK
+  (g) lossless mu_r=1, eps_r=1: eta = 376.73 Ohm real -> H/E phase difference 0.0 deg -> TRUE
+  (g) lossless mu_r=1, eps_r=4: eta = 188.37 Ohm real -> H/E phase difference 0.0 deg -> TRUE
+  (g) lossless mu_r=9, eps_r=1: eta = 1130.19 Ohm real -> H/E phase difference 0.0 deg -> TRUE
+  (g) lossless mu_r=3, eps_r=12: eta = 188.37 Ohm real -> H/E phase difference 0.0 deg -> TRUE
+  [21.3g true] OK
+
+==============================================================================
+21.4 Which electric field (multiple choice)
+==============================================================================
+  eta = eta0 sqrt(mu_r/eps_r) = 3 eta0 = 360 pi = 1130.97 Ohm (course); exact 1130.19 Ohm; v_p = c/3
+  H(t) = Re{-0.4j e^(j(wt+bz))} y = 0.4 sin(wt + bz) y; travel -z (e^(+jbz))
+  [21.4 H is 0.4 sin(wt + bz)] max |Re{A e^jwt} - f(t)| / max|f| = 4.5e-16 -> OK
+  y x (-z) = [-1.  0.  0.]  -> E along -x for positive H_y phasor
+  E phasor at z=0: (0+452.076j, 0+0j, -0+0j) = j 0.4 eta x;  amplitude 0.4*360pi = 144 pi = 452.39 V/m
+  option (a): max deviation from eta H x u = 4.016e-13 V/m -> MATCH
+  option (b): max deviation from eta H x u = 9.042e+02 V/m -> no
+  option (c): max deviation from eta H x u = 6.393e+02 V/m -> no
+  option (d): max deviation from eta H x u = 3.014e+02 V/m -> no
+  [21.4 option (a) only] OK
+  [21.4 (a) with H] Faraday rel.res 3.4e-10 | Ampere-Maxwell 1.4e-11 | div/curl 0.0e+00 -> OK
+  <E x H> = [  0.           0.         -90.41527526] W/m^2 -> direction -z; 1/2 eta |H|^2 = 90.415
+  [21.4 power along -z] OK
+  distractors: (b) 144pi with wrong sign; (c) -144pi cos; (d) 0.4*120pi = 48 pi = 150.80 V/m
+
+==============================================================================
+21.5 Find the error: the missing conjugate
+==============================================================================
+  z x E0 / eta0: z x x = [0. 1. 0.], z x y = [-1.  0.  0.] -> H0*eta0 = (0-8j, 6+0j, 0+0j)
+  z=0.0: student 1/2Re(ExH) = -0.03714 z | -(14/eta0)cos(4pi z) = -0.03714 | correct 1/2Re(ExH*) = +0.13263 | quad of real fields = +0.13263
+  z=0.1: student 1/2Re(ExH) = -0.01148 z | -(14/eta0)cos(4pi z) = -0.01148 | correct 1/2Re(ExH*) = +0.13263 | quad of real fields = +0.13263
+  z=0.25: student 1/2Re(ExH) = +0.03714 z | -(14/eta0)cos(4pi z) = +0.03714 | correct 1/2Re(ExH*) = +0.13263 | quad of real fields = +0.13263
+  student at z=0: -14/eta0 = -0.03714 W/m^2 (exact eta0: -0.03716)
+  correct: 50/eta0 = 5/(12 pi) = 0.13263 W/m^2 (exact eta0 0.13272); parts 36/(2eta0) = 0.04775, 64/(2eta0) = 0.08488
+  E0 x conj(H0) * eta0 = (0+0j, 0+0j, 100+0j);  E0 x H0 * eta0 = (0+0j, 0+0j, -28+0j)
+  [21.5 correct <S> = 50/eta0 along +z] OK
+
+==============================================================================
+21.6 Radio waves in a plasma layer
+==============================================================================
+  N = 4.47e+11: omega_p = 3.77177e+07 rad/s, f_p = 6.00296 MHz;  8.98 sqrt(N) = 6.00385 MHz
+  [21.6a f_p = 6.00 MHz] OK
+  with the page's rounded constants (e = 1.602e-19, m = 9.109e-31, eps0 = 8.854e-12, N = 4.47e11): omega_p = 3.77147e+07, f_p = 6.0025 MHz
+  [21.6a with given constants] OK
+  f = 4 MHz: beta^2 = -8.7730e-03 < 0 -> no travelling wave (cut off)
+  f = 10 MHz: beta = 0.167552 rad/m, lambda = 37.5000 m (vacuum 30.0000 m), v_p = 3.75000e+08 m/s = 1.25000 c, sqrt(1 - fp^2/f^2) = 0.80000
+  f = 100 MHz: beta = 2.090622 rad/m, lambda = 3.0054 m (vacuum 3.0000 m), v_p = 3.00541e+08 m/s = 1.00180 c, sqrt(1 - fp^2/f^2) = 0.99820
+  omega/c at 10 MHz = 2pi 1e7/3e8 = pi/15 = 0.209440 rad/m; (f_p/f)^2 at 100 MHz = 0.0036
+  beta(10 MHz) = 0.8 * (2pi 1e7/3e8) = 4pi/75 = 0.167552 rad/m
+  [21.6c beta = 4pi/75, lambda = 37.5 m, v_p = 1.25c] OK
+  with the exact f_p and c: beta = 0.167621, lambda = 37.484 m, v_p = 1.2503 c
+  v_g = d omega/d beta (finite difference) = 2.400000e+08 m/s = 0.80000 c;  c sqrt(1 - fp^2/f^2) = 2.400000e+08
+  v_p v_g = 9.000000e+16 = c^2 = 9.000000e+16
+  [21.6d v_g = 0.8c, v_p v_g = c^2] OK
+  crossing 150 km: at v_g 0.6250 ms, in vacuum 0.5000 ms; 'at v_p' would be 0.4000 ms
+
+==============================================================================
+21.7 Partner fields on three axes
+==============================================================================
+  (a) u = +x; x x y = [0. 0. 1.];  H0 = 6/(120pi) z = 1/(20pi) = 15.915 mA/m along z
+      f = 300.0 MHz (free space, beta = 2pi)
+  [21.7a H(t)] max |Re{A e^jwt} - f(t)| / max|f| = 4.4e-16 -> OK
+      <S> (quad) = [0.04774648 0.         0.        ] W/m^2 -> +x, 36/(240pi) = 3/(20pi) = 0.04775
+  [21.7a] OK
+  [21.7a pair (exact eta0, c)] Faraday rel.res 2.8e-10 | Ampere-Maxwell 2.9e-10 | div/curl 0.0e+00 -> OK
+  (b) eta = 40pi = 125.664 Ohm, f = 50.0 MHz; u = -y; x x (-y) = [ 0.  0. -1.]
+      E phasor at y=0: (0+0j, 0+0j, 0-12.5664j)  (= -4 pi j z = -12.5664 j z)
+  [21.7b E(t) = 4pi sin(wt + pi y) z] max |Re{A e^jwt} - f(t)| / max|f| = 5.7e-16 -> OK
+  [21.7b H(t) = -0.1 sin(wt + pi y) x] max |Re{A e^jwt} - f(t)| / max|f| = 5.9e-16 -> OK
+      <S> (quad) = [ 0.         -0.62831853  0.        ] -> -y; 1/2 eta |H|^2 = 0.2 pi = 0.62832 W/m^2
+  [21.7b] OK
+  [21.7b pair (exact)] Faraday rel.res 1.0e-11 | Ampere-Maxwell 1.5e-11 | div/curl 0.0e+00 -> OK
+  (c) |(a,b,c)| = 6.283185 = 2pi -> u = -(a,b,c)/beta = [-0.6  0.8 -0. ]; f = 300.0 MHz
+      1.2^2 = 1.44, 1.6^2 = 2.56, pi sqrt(1.44 + 2.56) = 6.283185
+      u x z = [ 0.8  0.6 -0. ];  H0 = [10.61032954  7.95774715 -0.        ] mA/m = (0.8 x + 0.6 y)/(24 pi): 1/(24pi) = 13.2629 mA/m
+      components: 0.8/(24pi) = 10.6103 mA/m, 0.6/(24pi) = 7.9577 mA/m
+      <S> (quad) = [-0.01989437  0.02652582  0.        ] W/m^2, |<S>| = 0.03316 = 25/(240pi) = 5/(48pi) = 0.03316; direction (-0.6000, +0.8000, +0.0000)
+  [21.7c] OK
+  [21.7c H(t)] max |Re{A e^jwt} - f(t)| / max|f| = 5.7e-16 -> OK
+  [21.7c pair (exact)] Faraday rel.res 1.1e-09 | Ampere-Maxwell 1.0e-09 | div/curl 2.3e-10 -> OK
+
+==============================================================================
+21.8 A driven electron in phasors
+==============================================================================
+  omega = 1.256637e+08 rad/s; v phasor = -eE0/(j w m) = 0.0000+279.9249j = j*279.925 m/s -> v(t) = -279.92 sin(wt) m/s
+  [21.8a v(t)] max |Re{A e^jwt} - f(t)| / max|f| = 0.0e+00 -> OK
+  ODE integrated from v(0) = 0 (no transient without collisions): max |v - (-v0 sin wt)| = 7.74e-09 m/s (v0 = 279.92)
+  [21.8a] OK
+  J phasor = -N e v = -0.0000e+00-4.4849e-05j = -j 4.4849e-05 A/m^2 -> J(t) = 44.85 sin(wt) uA/m^2 (lags E by 90 deg)
+  [21.8b J(t)] max |Re{A e^jwt} - f(t)| / max|f| = 0.0e+00 -> OK
+  <J.E> = 1/2 Re{J E*} = 0.00e+00; quad = -1.10e-22 W/m^3
+  [21.8b <J.E> = 0] OK
+  displacement current amplitude w eps0 E0 = 2.2253e-04 A/m^2 = 222.5 uA/m^2; phasor j w eps0 E0 (leads by 90)
+  ratio J0/JD0 = 0.20154;  omega_p^2/omega^2 = 0.20154;  f_p = 8.9787 MHz
+  total J + j w eps0 E = 0.0000e+00+1.7768e-04j = j w eps0 (1 - wp^2/w^2) E0 = 0.0000e+00+1.7768e-04j
+  [21.8c effective permittivity] OK
+  eps_eff/eps0 = 0.79846; sqrt = 0.89357; beta = 0.37430 rad/m, lambda = 16.787 m, v_p = 3.3573e+08 m/s = 1.1191 c (c = 3e8)
+  eps_eff/eps0 = 0.79846; sqrt = 0.89357; beta = 0.37455 rad/m, lambda = 16.775 m, v_p = 3.3550e+08 m/s = 1.1191 c (exact c)
+  omega/c = 0.41888 rad/m (c = 3e8); omega = 1.2566e+08 rad/s
+  with the page's rounded constants: v0 = 279.91 m/s, J0 = 4.4841e-05 A/m^2 (44.84 uA/m^2), w eps0 E0 = 2.2253e-04 A/m^2, ratio = 0.2015, eps_eff = 0.7985, beta = 0.3743 rad/m, lambda = 16.79 m, v_p = 3.3573e+08 m/s
+  [21.8 with given constants (3 s.f.)] OK
+  dispersion relation (1/c)sqrt(w^2 - wp^2) = 0.37430 rad/m (same)
+  [21.8c beta agrees with the dispersion relation] OK
+
+==============================================================================
+21.9 Building a phasor from two snapshots (template)
+==============================================================================
+  v = 2.000e+08 m/s, beta = 3.141593 rad/m (pi), lambda = 2.0000 m, eta = 80pi = 251.327 Ohm, T = 10.00 ns
+  (a, b, c) = -beta u = [ 2.51327412 -1.88495559 -0.        ] = (0.80pi, -0.60pi, -0.00pi) rad/m
+  snapshots . u: 0.000, -0.000  (both perpendicular to u)
+  E0 = E(0,0) - j E(0,T/4) = (0-3j, 0-4j, 4+0j) -> A = -3j, B = -4j, C = 4 V/m; E0 . u = 0.00e+00+4.44e-16j
+  check: E(0,0) = [0. 0. 4.], E(0,T/4) = [3.0000000e+00 4.0000000e+00 2.4492936e-16]
+  [21.9b snapshots reproduced] OK
+  [21.9b E(0,t) = 3 sin x + 4 sin y + 4 cos z] max |Re{A e^jwt} - f(t)| / max|f| = 0.0e+00 -> OK
+  u x E0 = (2.4+0j, 3.2+0j, 0+5j) -> H0 = (9.5493+0j, 12.7324+0j, 0+19.8944j) mA/m
+  3/(100pi) = 9.5493 mA/m, 1/(25pi) = 12.7324 mA/m, 1/(16pi) = 19.8944 mA/m
+  [21.9c H0] OK
+  <S> at [0. 0. 0.] (quad) = [-6.52535267e-02  4.89401450e-02  2.95852616e-19] W/m^2, |<S>| = 0.08157, dir (-0.8000, +0.6000, +0.0000)
+  <S> at [ 0.7 -0.4  1.3] (quad) = [-6.52535267e-02  4.89401450e-02  1.01417765e-18] W/m^2, |<S>| = 0.08157, dir (-0.8000, +0.6000, +0.0000)
+  41/(160 pi) = 0.08157 W/m^2; vector = [-0.06525353  0.04894015  0.        ]
+  z part alone 16/(160pi) = 0.03183; xy part alone 25/(160pi) = 0.04974; sum 0.08157
+  1/2 Re(E0 x H0*) = [-0.06525353  0.04894015  0.        ]
+  [21.9d power] OK
+  P = (1, 0.5, 0): u.r = -0.500 m (= -lambda/4), phase factor e^(-j beta u.r) = 0.0000+1.0000j
+  E(P, 0) = [ 3.0000000e+00  4.0000000e+00 -6.4324906e-16] V/m  (= E(0, T/4))
+  [21.9e E(P,0) = 3x + 4y] OK
+  [21.9 full field (exact)] Faraday rel.res 8.0e-10 | Ampere-Maxwell 8.0e-10 | div/curl 2.3e-10 -> OK
+
+==============================================================================
+21.10 Two sheets, two current directions
+==============================================================================
+  v = 1.50e+08, beta = 3.141593 (pi), lambda = 2.000 m, d = 0.500 m, eta = 60pi = 188.496 Ohm
+  J_A = 2 cos wt x -> (2+0j, 0+0j, 0+0j);  J_B = sin wt y -> (0+0j, -0-1j, 0+0j)
+  [21.10a J_B phasor] max |Re{A e^jwt} - f(t)| / max|f| = 0.0e+00 -> OK
+  x x z = [ 0. -1.  0.], x x (-z) = [0. 1. 0.], y x z = [1. 0. 0.], y x (-z) = [-1.  0.  0.]
+  z=+1.3: E_A = (110.795-152.496j, 0-0j, 0-0j), H_A = (-0+0j, 0.587785-0.809017j, -0+0j), E_B = (0+0j, 55.3975-76.2481j, 0+0j), H_B = (-0.293893+0.404508j, 0-0j, 0-0j)
+  z=+0.2: E_A = (-152.496+110.795j, 0+0j, 0+0j), H_A = (0+0j, -0.809017+0.587785j, 0+0j), E_B = (0+0j, 76.2481+55.3975j, 0+0j), H_B = (0.404508+0.293893j, 0+0j, 0+0j)
+  z=-0.7: E_A = (110.795+152.496j, 0+0j, 0+0j), H_A = (0-0j, -0.587785-0.809017j, 0-0j), E_B = (0-0j, -55.3975-76.2481j, 0-0j), H_B = (-0.293893-0.404508j, -0+0j, 0-0j)
+  z=0.8 > d: E/e^(-j beta z) = (-188.496+1.14968e-14j, -94.2478+2.29936e-14j, -0-0j) -> P = -188.4956+0.0000j (= -60pi = -188.4956), Q = 0.5000-0.0000j
+  z=1.7 > d: E/e^(-j beta z) = (-188.496+1.14968e-14j, -94.2478+1.14968e-14j, 0+0j) -> P = -188.4956+0.0000j (= -60pi = -188.4956), Q = 0.5000-0.0000j
+  z=3.1 > d: E/e^(-j beta z) = (-188.496+6.75766e-15j, -94.2478+1.01365e-14j, -0-0j) -> P = -188.4956+0.0000j (= -60pi = -188.4956), Q = 0.5000-0.0000j
+  z=-0.3 < 0: E/e^(+j beta z) = (-188.496-0j, 94.2478+5.74841e-15j, -0+0j) (= -60pi (x - y/2))
+  z=-1.6 < 0: E/e^(+j beta z) = (-188.496+0j, 94.2478+6.75766e-15j, 0+0j) (= -60pi (x - y/2))
+  0<z=0.1<d: E = (-179.27+58.2483j, 89.635+29.1242j, 0+0j); formula -60pi e^(-jbz) x + 30pi e^(+jbz) y -> True
+           H = (0.475528+0.154508j, -0.951057+0.309017j, 0+0j); formula -e^(-jbz) y + 1/2 e^(+jbz) x -> True
+  0<z=0.35<d: E = (-85.5752+167.951j, 42.7876+83.9754j, 0+0j); formula -60pi e^(-jbz) x + 30pi e^(+jbz) y -> True
+           H = (0.226995+0.445503j, -0.45399+0.891007j, 0+0j); formula -e^(-jbz) y + 1/2 e^(+jbz) x -> True
+  z>d: H e^(+j beta z) = (0.5-2.34839e-17j, -1-1.82895e-17j, 0-0j) (= x/2 - y)
+  z<0: H e^(-j beta z) = (0.5+3.69003e-17j, 1+1.82895e-17j, 0+0j) (= x/2 + y)
+  z>d: <S>_z quad = +117.80972 W/m^2 = +37.5000 pi; phasor rule +117.80972
+  0<z<d: <S>_z quad = +70.68583 W/m^2 = +22.5000 pi; phasor rule +70.68583
+  z<0: <S>_z quad = -117.80972 W/m^2 = -37.5000 pi; phasor rule -117.80972
+  [21.10d region powers 37.5pi, 22.5pi, -37.5pi] OK
+  37.5 pi = 117.810, 22.5 pi = 70.686, 30 pi = 94.248, 7.5 pi = 23.562 W/m^2
+  E(0) phasor = (-188.496+5.92176e-10j, 94.2478+2.96084e-10j, 0+0j);  E(d) phasor = (5.92145e-10+188.496j, 2.96082e-10+94.2478j, 0+0j)
+  <-J_A.E> quad = 188.4956 = 60.0000 pi;  phasor 1/2Re(-J_A.E*) = 188.4956
+  <-J_B.E> quad = 47.1239 = 15.0000 pi;  phasor = 47.1239
+  supplied 235.6194 = 75.000 pi; carried out 235.6194
+  [21.10e energy balance] OK
+  [21.10e flux jumps: at A 22.5pi + 37.5pi = 60pi, at B 37.5pi - 22.5pi = 15pi] OK
+  [21.10 boundary conditions at both sheets] OK
+  [21.10 total field (exact)] Faraday rel.res 3.8e-12 | Ampere-Maxwell 4.7e-12 | div/curl 0.0e+00 -> OK
+  (f) parallel, z=1.4: E/e^(-jb|z|) = (-282.743-2.70307e-14j, 0-0j, 0-0j); <S>_z = +212.0575 = +67.500 pi W/m^2
+  (f) parallel, z=-0.9: E/e^(-jb|z|) = (-94.2478+6.75766e-15j, -0-0j, -0-0j); <S>_z = -23.5619 = -7.500 pi W/m^2
+  (f) E(0) = (-94.2478+8.8826e-10j, 0+0j, 0+0j), E(d) = (8.88226e-10+282.743j, 0+0j, 0+0j)
+  (f) supplies: A 30.000 pi, B 45.000 pi, total 75.000 pi;  67.5pi = 212.06, 7.5pi = 23.56
+  [21.10f parallel: 67.5pi and 7.5pi, total 75pi] OK
+  (f) parallel currents, spacing 0.25 m (beta d = 0.25 pi): total radiated 75.000 pi W/m^2
+  (f) parallel currents, spacing 0.5 m (beta d = 0.50 pi): total radiated 75.000 pi W/m^2
+  (f) parallel currents, spacing 0.75 m (beta d = 0.75 pi): total radiated 75.000 pi W/m^2
+  (f) parallel currents, spacing 1.0 m (beta d = 1.00 pi): total radiated 75.000 pi W/m^2
+  (f) the total is (eta/8)[2|JA|^2 + 2|JB|^2 + 4 Re(JA.JB*) cos(beta d)]; here Re(JA.JB*) = Re(2 * j) = 0 (quadrature),
+      so the total stays 75 pi at every spacing; for comparison, IN-PHASE currents JB = 1 x (cos wt):
+      spacing 0.25 m: total 117.426 pi (formula 117.426 pi)
+      spacing 0.5 m: total 75.000 pi (formula 75.000 pi)
+      spacing 1.0 m: total 15.000 pi (formula 15.000 pi)
+
+==============================================================================
+21.11 Two waves on one line
+==============================================================================
+  v = 1.00e+08, beta = 6.283185 rad/m (2pi), lambda = 1.000 m, eta = 40pi = 125.6637 Ohm
+  [21.11a E phasor z=0.0] max |Re{A e^jwt} - f(t)| / max|f| = 1.4e-16 -> OK
+  [21.11a E phasor z=0.21] max |Re{A e^jwt} - f(t)| / max|f| = 3.7e-16 -> OK
+  z x x = [0. 1. 0.], (-z) x x = [ 0. -1.  0.];  H phasor at z=0: (0+0j, 6+2j, 0+0j)/eta (= (6 + 2j) y/eta)
+  [21.11a H(t) z=0.0] max |Re{A e^jwt} - f(t)| / max|f| = 2.8e-16 -> OK
+  [21.11a H(t) z=0.33] max |Re{A e^jwt} - f(t)| / max|f| = 3.4e-16 -> OK
+  6/eta = 47.746 mA/m, 2/eta = 15.915 mA/m
+  z=0.000: E x H* = 0.25465-0.19099j (eta: 32.0000-24.0000j = 32 - 24j cos 2bz = 32.0000-24.0000j); <S>_z quad = 0.127324
+  z=0.070: E x H* = 0.25465-0.12174j (eta: 32.0000-15.2982j = 32 - 24j cos 2bz = 32.0000-15.2982j); <S>_z quad = 0.127324
+  z=0.125: E x H* = 0.25465-0.00000j (eta: 32.0000-0.0000j = 32 - 24j cos 2bz = 32.0000-0.0000j); <S>_z quad = 0.127324
+  z=0.300: E x H* = 0.25465+0.15451j (eta: 32.0000+19.4164j = 32 - 24j cos 2bz = 32.0000+19.4164j); <S>_z quad = 0.127324
+  z=0.375: E x H* = 0.25465+0.00000j (eta: 32.0000+0.0000j = 32 - 24j cos 2bz = 32.0000+0.0000j); <S>_z quad = 0.127324
+  <S> = 16/eta = 0.4/pi = 0.12732 W/m^2 (= 36/(2eta) - 4/(2eta) = 0.14324 - 0.01592)
+  |E| max 8.00000 V/m at z = 0.1250 m; min 4.00000 at z = 0.3750 m
+  |H| max 63.6620 mA/m at z = 0.3750 m; min 31.8310 mA/m at z = 0.1250 m
+  8/eta = 63.6620 mA/m, 4/eta = 31.8310 mA/m; |E|^2 = 40 + 24 sin(2bz) check at z=0.1: 62.82536 vs 62.82536
+  [21.11c extremes] OK
+  |E|/|H| at z = 0.125: 251.3274 Ohm = 2.000 eta
+  |E|/|H| at z = 0.375: 62.8319 Ohm = 0.500 eta
+  |E|/|H| at z = 0.0: 125.6637 Ohm = 1.000 eta
+  z=0.0: <w_e> quad = 7.96877e-10, 1/4 eps|E|^2 = 7.96877e-10; <w_m> = 7.96877e-10, 1/4 mu|H|^2 = 7.96877e-10; sum = 1.59375e-09 J/m^3 (20 eps = 1.59375e-09)
+  z=0.125: <w_e> quad = 1.27500e-09, 1/4 eps|E|^2 = 1.27500e-09; <w_m> = 3.18751e-10, 1/4 mu|H|^2 = 3.18751e-10; sum = 1.59375e-09 J/m^3 (20 eps = 1.59375e-09)
+  z=0.2: <w_e> quad = 1.07791e-09, 1/4 eps|E|^2 = 1.07791e-09; <w_m> = 5.15841e-10, 1/4 mu|H|^2 = 5.15841e-10; sum = 1.59375e-09 J/m^3 (20 eps = 1.59375e-09)
+  z=0.375: <w_e> quad = 3.18751e-10, 1/4 eps|E|^2 = 3.18751e-10; <w_m> = 1.27500e-09, 1/4 mu|H|^2 = 1.27500e-09; sum = 1.59375e-09 J/m^3 (20 eps = 1.59375e-09)
+  eps = 9 eps0 = 7.9688e-11 F/m; <w_e> range: 3.1875e-10 .. 1.2750e-09 J/m^3 (4 eps .. 16 eps); total 20 eps = 1.5938 nJ/m^3
+  exact constants: <S> = 0.127412 W/m^2 (16/eta_x = 0.127412); v<w> = 0.159265 (= 20/eta_x, the value if all 40 units travelled forward); <S>/<w> = 7.99447e+07 m/s = 0.800000 v
+  [21.11d <S>/<w> = 0.8 v] OK
+  course numbers: v = 1e8 m/s -> 0.8 v = 8e7 m/s; 16/eta = 0.4/pi = 0.12732 W/m^2
+  S_z(0,t) = (36 cos^2 - 4 sin^2)/eta: min -0.03183 (-4/eta = -0.03183), max 0.28648 (36/eta = 0.28648)
+  fraction of the period with S_z < 0: numerical 0.2049; 1 - (2/pi) atan 3 = 0.2048; |tan wt| > 3
+  negative intervals: wt in (71.57, 108.43) deg and +180 deg
+  [21.11e reversal fraction] OK
+  [21.11 two-wave field (exact)] Faraday rel.res 1.4e-11 | Ampere-Maxwell 3.5e-11 | div/curl 0.0e+00 -> OK
+
+==============================================================================
+21.12 A medium from phasor readings
+==============================================================================
+  E x H* at z=0 = (0+0j, 0+0j, -7.54+2.61048e-16j) -> travel -z
+  phase rises by 45 deg from z = 0 to z = 0.25 m -> phase lags toward -z -> travel -z
+  beta = 3.141593 rad/m (pi); lambda = 2.000 m; v_p = 5.0000e+07 m/s = c/6.000; half wavelength 1.0 m > 0.25 m
+  eta = 37.7/0.2 = 188.50 Ohm = 0.50001 eta0 (60 pi = 188.50)
+  mu_r eps_r = 36.0000, mu_r/eps_r = 0.25001 -> mu_r = 3.0001, eps_r = 11.9997
+  [21.12b mu_r = 3, eps_r = 12] OK
+  H from (1/eta)(-z) x E at z=0: (0.173209+0.100002j, 0+0j, 0+0j); (-z) x y = [1. 0. 0.]  (matches the reading 0.2 e^j30 x)
+  E at z = 0.25: 37.7 at +75.0000 deg
+  [21.12a data consistent] OK
+  [21.12c E(z,t) at z=0.6] max |Re{A e^jwt} - f(t)| / max|f| = 1.2e-15 -> OK
+  <S> at z=-4 m (quad) = [ 0.          0.         -3.77008882] W/m^2; 1/2 E0 H0 = 3.770; 1/2 eta H0^2 with eta = 60pi: 3.7699 (= 1.2 pi)
+  power through 2 m^2: 7.540 W (2.4 pi = 7.540 W) toward -z
+  (rounded data: E = 37.7 V/m with eta = 60pi gives H = 0.200005 A/m, so <S> = 3.77009; 1/2 x 37.7 x 0.2 = 3.77000)
+  [21.12d power 3.77 W/m^2 toward -z, 7.54 W] OK
+  probe z = -0.5 m: phasor 37.7 at -60.0000 deg -> E(t) = 37.7 cos(wt - 60 deg) y; delay T/4 = 10.0 ns (T = 40 ns)
+  [21.12e record at z=-0.5] max |Re{A e^jwt} - f(t)| / max|f| = 1.3e-15 -> OK
+  snapshot t=0: E_y(z,0) = 37.7 cos(pi z + 30deg): peak on (-2, 0) at z = -0.16667 m (-1/6 = -0.16667)
+  [21.12e snapshot peak] OK
+  that crest at t = T/4: z = -0.6667 m (moved lambda/4 toward -z)
+  [21.12 pair in mu_r=3, eps_r=12 (exact)] Faraday rel.res 8.7e-12 | Ampere-Maxwell 1.0e-11 | div/curl 0.0e+00 -> OK
+  exact eta for mu_r=3, eps_r=12: 188.37 Ohm; with E = 37.7 V/m, H = 0.2001 A/m
+  same speed, non-magnetic eps_r = 36: eta = eta0/6 = 20 pi = 62.83 Ohm (vs 60 pi = 188.50 Ohm)
+  lambda f = 5.000e+07 m/s = v_p
+
+==============================================================================
+ALL CHECKS: 112/112 passed

@@ -1,6 +1,6 @@
 ---
 title: "Problems by topic"
-description: "The 212 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
+description: "The 260 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
 tags: [practice]
 ---
 
@@ -49,6 +49,15 @@ Two-minute concept checks — every wrong option is explained in the solution. G
 - [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] <span class="diff easy">easy</span>
 - [[practice/19-radiation-from-current-sheets#191-which-one-is-a-plane-wave|19.1 Which one is a plane wave]] <span class="diff easy">easy</span>
 - [[practice/19-radiation-from-current-sheets#193-sheet-facts-true-or-false|19.3 Sheet facts, true or false]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#201-reading-the-energy-ledger|20.1 Reading the energy ledger]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#204-standing-waves-true-or-false|20.4 Standing waves, true or false]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#213-phasor-pitfalls-true-or-false|21.3 Phasor pitfalls, true or false]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#214-which-electric-field|21.4 Which electric field]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#221-phasor-maxwell-true-or-false|22.1 Phasor Maxwell, true or false]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#222-which-phasors-are-allowed|22.2 Which phasors are allowed]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#224-possible-or-not-possible|22.4 Possible or not possible]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#232-inside-a-good-conductor|23.2 Inside a good conductor]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#233-regimes-true-or-false|23.3 Regimes, true or false]] <span class="diff easy">easy</span>
 
 ## Find the error
 
@@ -72,6 +81,10 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/17-magnetization-and-maxwell-in-matter#173-ferrite-between-sheets-find-the-error|17.3 Ferrite between sheets, find the error]] <span class="diff easy">easy</span>
 - [[practice/18-wave-equation-and-plane-waves#185-the-backwards-magnetic-field|18.5 The backwards magnetic field]] <span class="diff easy">easy</span>
 - [[practice/19-radiation-from-current-sheets#195-the-electric-field-that-flips|19.5 The electric field that flips]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#205-how-far-a-station-reaches|20.5 How far a station reaches]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#215-the-power-that-flowed-backward|21.5 The power that flowed backward]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#225-the-magnetic-field-that-leads|22.5 The magnetic field that leads]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#238-the-missing-permittivity|23.8 The missing permittivity]] <span class="diff medium">medium</span>
 
 ## Coulomb's law and point charges
 
@@ -114,6 +127,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/18-wave-equation-and-plane-waves#186-which-fields-can-be-waves|18.6 Which fields can be waves]] <span class="diff medium">medium</span>
 - [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] <span class="diff hard">hard</span>
 - [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#2011-two-sheets-in-step|20.11 Two sheets in step]] <span class="diff hard">hard</span>
 
 ## Gauss's law and flux
 
@@ -204,6 +218,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/16-charge-conservation-and-displacement-current#1611-a-region-with-no-conduction-current|16.11 A region with no conduction current]] <span class="diff hard">hard</span>
 - [[practice/17-magnetization-and-maxwell-in-matter#179-electret-and-magnet-twins|17.9 Electret and magnet twins]] <span class="diff hard">hard</span>
 - [[practice/18-wave-equation-and-plane-waves#184-what-the-derivation-needs|18.4 What the derivation needs]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#2012-charging-a-leaky-capacitor|20.12 Charging a leaky capacitor]] <span class="diff hard">hard</span>
 
 ## Potential, work and the energy of charges
 
@@ -300,6 +315,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/16-charge-conservation-and-displacement-current#165-fields-just-outside-a-metal-ball|16.5 Fields just outside a metal ball]] <span class="diff easy">easy</span>
 - [[practice/16-charge-conservation-and-displacement-current#166-conduction-versus-displacement-in-soil|16.6 Conduction versus displacement in soil]] <span class="diff medium">medium</span>
 - [[practice/16-charge-conservation-and-displacement-current#168-charges-and-currents-on-a-coax|16.8 Charges and currents on a coax]] <span class="diff medium">medium</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] <span class="diff hard">hard</span>
 
 ## Polarization and bound charge
 
@@ -356,6 +372,8 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/10-capacitance-and-conductance#1011-two-lossy-layers-in-series|10.11 Two lossy layers in series]] <span class="diff hard">hard</span>
 - [[practice/10-capacitance-and-conductance#1012-lossy-coax-driven-through-a-resistor|10.12 Lossy coax driven through a resistor]] <span class="diff hard">hard</span>
 - [[practice/16-charge-conservation-and-displacement-current#169-a-leaky-capacitor-and-its-leads|16.9 A leaky capacitor and its leads]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#207-a-leaky-spherical-capacitor|20.7 A leaky spherical capacitor]] <span class="diff medium">medium</span>
+- [[practice/20-poynting-theorem-and-power#2012-charging-a-leaky-capacitor|20.12 Charging a leaky capacitor]] <span class="diff hard">hard</span>
 
 ## Drude and Lorentz models
 
@@ -490,6 +508,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core|15.9 Toroid with a two-layer core]] <span class="diff hard">hard</span>
 - [[practice/15-inductance-and-magnetic-energy#1511-wire-and-rectangular-loop|15.11 Wire and rectangular loop]] <span class="diff hard">hard</span>
 - [[practice/15-inductance-and-magnetic-energy#1512-coax-with-a-magnetic-sleeve|15.12 Coax with a magnetic sleeve]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#208-energy-flows-into-a-solenoid|20.8 Energy flows into a solenoid]] <span class="diff medium">medium</span>
 
 ## Magnetization and magnetic media
 
@@ -527,6 +546,10 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] <span class="diff hard">hard</span>
 - [[practice/19-radiation-from-current-sheets#1911-a-sheet-on-a-diagonal-plane|19.11 A sheet on a diagonal plane]] <span class="diff hard">hard</span>
 - [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#206-split-then-add|20.6 Split, then add]] <span class="diff medium">medium</span>
+- [[practice/21-phasors-and-monochromatic-waves#214-which-electric-field|21.4 Which electric field]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#217-partner-fields-on-three-axes|21.7 Partner fields on three axes]] <span class="diff medium">medium</span>
+- [[practice/21-phasors-and-monochromatic-waves#2112-a-medium-from-phasor-readings|21.12 A medium from phasor readings]] <span class="diff hard">hard</span>
 
 ## Current-sheet radiation and the Poynting vector
 
@@ -540,3 +563,89 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] <span class="diff hard">hard</span>
 - [[practice/19-radiation-from-current-sheets#1911-a-sheet-on-a-diagonal-plane|19.11 A sheet on a diagonal plane]] <span class="diff hard">hard</span>
 - [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#2010-a-sheet-in-a-magnetic-medium|20.10 A sheet in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#2011-two-sheets-in-step|20.11 Two sheets in step]] <span class="diff hard">hard</span>
+- [[practice/21-phasors-and-monochromatic-waves#2110-two-sheets-two-current-directions|21.10 Two sheets, two current directions]] <span class="diff hard">hard</span>
+- [[practice/22-damped-waves-in-conducting-media#2211-current-sheet-in-a-lossy-medium|22.11 Current sheet in a lossy medium]] <span class="diff hard">hard</span>
+
+## Poynting's theorem, energy flow and time-average power
+
+- [[practice/20-poynting-theorem-and-power#201-reading-the-energy-ledger|20.1 Reading the energy ledger]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#202-joule-heating-at-a-point|20.2 Joule heating at a point]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#203-a-laser-pointers-beam|20.3 A laser pointer's beam]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#204-standing-waves-true-or-false|20.4 Standing waves, true or false]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#205-how-far-a-station-reaches|20.5 How far a station reaches]] <span class="diff easy">easy</span>
+- [[practice/20-poynting-theorem-and-power#206-split-then-add|20.6 Split, then add]] <span class="diff medium">medium</span>
+- [[practice/20-poynting-theorem-and-power#207-a-leaky-spherical-capacitor|20.7 A leaky spherical capacitor]] <span class="diff medium">medium</span>
+- [[practice/20-poynting-theorem-and-power#208-energy-flows-into-a-solenoid|20.8 Energy flows into a solenoid]] <span class="diff medium">medium</span>
+- [[practice/20-poynting-theorem-and-power#209-a-coax-with-a-resistive-core|20.9 A coax with a resistive core]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#2010-a-sheet-in-a-magnetic-medium|20.10 A sheet in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#2011-two-sheets-in-step|20.11 Two sheets in step]] <span class="diff hard">hard</span>
+- [[practice/20-poynting-theorem-and-power#2012-charging-a-leaky-capacitor|20.12 Charging a leaky capacitor]] <span class="diff hard">hard</span>
+- [[practice/21-phasors-and-monochromatic-waves#213-phasor-pitfalls-true-or-false|21.3 Phasor pitfalls, true or false]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#215-the-power-that-flowed-backward|21.5 The power that flowed backward]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#218-a-driven-electron-in-phasors|21.8 A driven electron in phasors]] <span class="diff medium">medium</span>
+- [[practice/21-phasors-and-monochromatic-waves#219-a-phasor-from-two-snapshots|21.9 A phasor from two snapshots]] <span class="diff hard">hard</span>
+- [[practice/21-phasors-and-monochromatic-waves#2110-two-sheets-two-current-directions|21.10 Two sheets, two current directions]] <span class="diff hard">hard</span>
+- [[practice/21-phasors-and-monochromatic-waves#2111-two-waves-on-one-line|21.11 Two waves on one line]] <span class="diff hard">hard</span>
+- [[practice/22-damped-waves-in-conducting-media#227-microwave-heating-of-raw-meat|22.7 Microwave heating of raw meat]] <span class="diff medium">medium</span>
+- [[practice/22-damped-waves-in-conducting-media#228-power-soaking-into-lossy-ground|22.8 Power soaking into lossy ground]] <span class="diff medium">medium</span>
+- [[practice/22-damped-waves-in-conducting-media#2211-current-sheet-in-a-lossy-medium|22.11 Current sheet in a lossy medium]] <span class="diff hard">hard</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#237-divers-talking-through-a-lake|23.7 Divers talking through a lake]] <span class="diff medium">medium</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] <span class="diff hard">hard</span>
+
+## Monochromatic waves, phasors and dispersion
+
+- [[practice/21-phasors-and-monochromatic-waves#211-reading-two-waves|21.1 Reading two waves]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#212-phasors-both-ways|21.2 Phasors both ways]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#213-phasor-pitfalls-true-or-false|21.3 Phasor pitfalls, true or false]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#214-which-electric-field|21.4 Which electric field]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#215-the-power-that-flowed-backward|21.5 The power that flowed backward]] <span class="diff easy">easy</span>
+- [[practice/21-phasors-and-monochromatic-waves#216-radio-waves-in-a-plasma|21.6 Radio waves in a plasma]] <span class="diff medium">medium</span>
+- [[practice/21-phasors-and-monochromatic-waves#217-partner-fields-on-three-axes|21.7 Partner fields on three axes]] <span class="diff medium">medium</span>
+- [[practice/21-phasors-and-monochromatic-waves#218-a-driven-electron-in-phasors|21.8 A driven electron in phasors]] <span class="diff medium">medium</span>
+- [[practice/21-phasors-and-monochromatic-waves#219-a-phasor-from-two-snapshots|21.9 A phasor from two snapshots]] <span class="diff hard">hard</span>
+- [[practice/21-phasors-and-monochromatic-waves#2110-two-sheets-two-current-directions|21.10 Two sheets, two current directions]] <span class="diff hard">hard</span>
+- [[practice/21-phasors-and-monochromatic-waves#2111-two-waves-on-one-line|21.11 Two waves on one line]] <span class="diff hard">hard</span>
+- [[practice/21-phasors-and-monochromatic-waves#2112-a-medium-from-phasor-readings|21.12 A medium from phasor readings]] <span class="diff hard">hard</span>
+- [[practice/22-damped-waves-in-conducting-media#2210-two-components-in-a-magnetic-medium|22.10 Two components in a magnetic medium]] <span class="diff hard">hard</span>
+
+## Damped waves in lossy and conducting media
+
+- [[practice/22-damped-waves-in-conducting-media#221-phasor-maxwell-true-or-false|22.1 Phasor Maxwell, true or false]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#222-which-phasors-are-allowed|22.2 Which phasors are allowed]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#223-reading-a-damped-wave|22.3 Reading a damped wave]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#224-possible-or-not-possible|22.4 Possible or not possible]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#225-the-magnetic-field-that-leads|22.5 The magnetic field that leads]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#226-from-the-medium-to-the-wave|22.6 From the medium to the wave]] <span class="diff medium">medium</span>
+- [[practice/22-damped-waves-in-conducting-media#227-microwave-heating-of-raw-meat|22.7 Microwave heating of raw meat]] <span class="diff medium">medium</span>
+- [[practice/22-damped-waves-in-conducting-media#228-power-soaking-into-lossy-ground|22.8 Power soaking into lossy ground]] <span class="diff medium">medium</span>
+- [[practice/22-damped-waves-in-conducting-media#229-decoding-a-wave-toward-minus-y|22.9 Decoding a wave toward minus y]] <span class="diff hard">hard</span>
+- [[practice/22-damped-waves-in-conducting-media#2210-two-components-in-a-magnetic-medium|22.10 Two components in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/22-damped-waves-in-conducting-media#2211-current-sheet-in-a-lossy-medium|22.11 Current sheet in a lossy medium]] <span class="diff hard">hard</span>
+- [[practice/22-damped-waves-in-conducting-media#2212-three-probes-identify-a-medium|22.12 Three probes identify a medium]] <span class="diff hard">hard</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#231-six-media-at-one-frequency|23.1 Six media at one frequency]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#233-regimes-true-or-false|23.3 Regimes, true or false]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#235-power-against-depth-in-seawater|23.5 Power against depth in seawater]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground|23.6 Wavelength and depth measured underground]] <span class="diff medium">medium</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#238-the-missing-permittivity|23.8 The missing permittivity]] <span class="diff medium">medium</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf|23.11 Dry earth from ELF to VHF]] <span class="diff hard">hard</span>
+
+## Imperfect dielectrics, good conductors and skin depth
+
+- [[practice/22-damped-waves-in-conducting-media#223-reading-a-damped-wave|22.3 Reading a damped wave]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#224-possible-or-not-possible|22.4 Possible or not possible]] <span class="diff easy">easy</span>
+- [[practice/22-damped-waves-in-conducting-media#227-microwave-heating-of-raw-meat|22.7 Microwave heating of raw meat]] <span class="diff medium">medium</span>
+- [[practice/22-damped-waves-in-conducting-media#2210-two-components-in-a-magnetic-medium|22.10 Two components in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#231-six-media-at-one-frequency|23.1 Six media at one frequency]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#232-inside-a-good-conductor|23.2 Inside a good conductor]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#233-regimes-true-or-false|23.3 Regimes, true or false]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#234-skin-depth-in-gold|23.4 Skin depth in gold]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#235-power-against-depth-in-seawater|23.5 Power against depth in seawater]] <span class="diff easy">easy</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground|23.6 Wavelength and depth measured underground]] <span class="diff medium">medium</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#237-divers-talking-through-a-lake|23.7 Divers talking through a lake]] <span class="diff medium">medium</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#238-the-missing-permittivity|23.8 The missing permittivity]] <span class="diff medium">medium</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#239-down-into-a-deep-lake|23.9 Down into a deep lake]] <span class="diff hard">hard</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2310-calling-a-submarine|23.10 Calling a submarine]] <span class="diff hard">hard</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf|23.11 Dry earth from ELF to VHF]] <span class="diff hard">hard</span>
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] <span class="diff hard">hard</span>

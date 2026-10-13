@@ -1,11 +1,11 @@
 ---
 title: "Errata in the course materials"
-description: "Slips found in the lecture slides (Lectures 1–19), the course notes, the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
+description: "Slips found in the lecture slides (Lectures 1–19), the course notes (Lectures 1–23), the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
 tags: [toolkit, exam-1]
 aliases: ["errata", "known errors in the slides", "errors in the exam key"]
 ---
 
-Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–19, so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
+Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–23 (for Lectures 20–23 the notes only — their slides were not available), so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
 
 > [!tip] How to read this page
 > "Slide" means the annotated lecture decks (Shao, after Goddard and Cunningham); "notes" means Prof. Kudeki's lecture notes; "key" means the FA26 Exam 1 solutions; "HW sol." means the FA26 homework solution sets. Nothing here is a criticism of the materials — most of these are momentary hand slips that the authors corrected verbally or on the next line. They are listed because they are copied verbatim into notecards every semester.
@@ -90,6 +90,25 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L17 p. 4, footnote 6, p. 12 | "**M**called"; "dispacement", "chare"; an unclosed parenthesis | typos |
 | L18 p. 8, margin | shifted rectangle and triangle pulses labelled at $-\tau/2$ and $\tau/2$ | $t_o-\tau/2$ and $t_o+\tau/2$ |
 | L19 pp. 4–5, Example 3 | asks for $\mathbf{H}(z,t)$ but never gives it; margin plot ordinate "$f(t)$ (V)" | $\mathbf{H} = \hat y\,f(t-z/c)/\eta_o$; the unit is V/m |
+| L20 p. 4, Example 1 (a) | "we that an $x$-polarized surface current …" | "we see that …" |
+| L20 pp. 4 and 6, margin figure | the arrow above the sheet ($z>0$) is unlabelled | it is $\mathbf{H}^+ = -\hat y\,\tfrac12f(t-z/v)$; the drawn direction is right |
+| L20 pp. 6–7 | $\langle\mathbf{E}\times\mathbf{H}\rangle = \pm60\pi\,\hat z$ and $\langle-\mathbf{J}_s\cdot\mathbf{E}\rangle = 120\pi$ W/m², written as equalities | $\approx$: with $\eta_0 = 376.73\ \Omega$ they are 188.4 and 376.7 W/m² ($120\pi$ is 0.07 % high) |
+| L20 p. 1 | the stored-energy step $\mathbf{E}\cdot\partial_t\mathbf{D} = \partial_t(\tfrac12\epsilon E^2)$ is used without its condition | it needs $\mathbf{D} = \epsilon\mathbf{E}$, $\mathbf{B} = \mu\mathbf{H}$ with $\epsilon$, $\mu$ constant in time (not a hysteretic core) |
+| L21 p. 5, Example 1 table, last row | "(see the right column)" | the field is in the left column |
+| L21 p. 2, items 2–3 | $K$ for both kelvin and Boltzmann's constant; $T$ for both temperature and period; $N$, $e$, $m$ in $\omega_p$ not defined | $k_B$ for Boltzmann's constant; $N$ = free-electron density, $e$ and $m$ the electron's charge and mass |
+| L21 pp. 2–3 | "$v = \omega/\beta$ … for all types of wave motions" | $\omega/\beta$ is the *phase* velocity; in a plasma it exceeds $c$ while energy travels at $v_g = d\omega/d\beta<c$ |
+| L21 p. 2, item 3 | $\beta = \sqrt{\omega^2-\omega_p^2}/c$ given without its range | valid for $\omega>\omega_p$; below $\omega_p$ no wave propagates |
+| L21 p. 4, spectrum chart | drawn as if to scale | schematic: compute $f = c/\lambda$ from its wavelength labels |
+| L21 pp. 2, 3, 8 | "wave-wavenumber"; a stray second "$z$" axis label; "For, instance"; "The proof of these are"; the margin $\mathbf{H}$ above the sheet unlabelled | typos; that arrow is $\mathbf{H}^+ = -\hat y\,\tfrac12f(t-z/v)$ |
+| L22 pp. 2, 6, 8 | "and and"; "Maxwell's equation take"; "so small that are justified"; "Snaphot"; "making low frequencies to be preferable" | typos |
+| L22 p. 6 | the binomial rule is introduced "with $p = \tfrac12$" | $\tfrac12$ is used for $\gamma$, but the step for $\eta$ uses $-\tfrac12$ |
+| L22 p. 7 | good conductor "$\lvert\eta\rvert = \sqrt{\omega\mu/\sigma}$, $\tau = 45^\circ$" as equalities | $\approx$; exactly $\tau = \tfrac12\tan^{-1}(\sigma/\omega\epsilon)<45^\circ$ |
+| L22 p. 1 | $\epsilon$, $\mu$, $\sigma$ all depend on frequency "as seen in Lecture 11" | Lecture 11 derives $\sigma(\omega)$ (and remarks on $\chi_e$); $\mu(\omega)$ is not treated there |
+| L23 p. 1, table | approximate entries written as equalities | $\approx$ in the imperfect-dielectric and good-conductor rows |
+| L23 p. 2, Example 1 | $\lvert\eta\rvert$ "for a perfect dielectric" | the imperfect-dielectric row (same value) |
+| L23 p. 4, Example 2 | seawater keeps Example 1's $\epsilon = 4\epsilon_0$: $\sigma/\omega\epsilon = 18\times10^6$ | with seawater's $81\epsilon_0$, $8.9\times10^5$; no result changes |
+| L23 pp. 3, 5 | Examples 1–2 change the medium and the frequency together, then conclude that low frequencies are better | compare seawater at both: 673 dB/m at 1 GHz against 1.09 dB/m at 1 kHz — the conclusion stands |
+| L23 p. 6, Example 3 | "$25/\pi\approx7.95$ m"; "$\approx10^6$"; a missing $\times$ before the last factor | 7.96 m; $8.9\times10^5$ |
 
 ## FA26 Exam 1 solution key
 
@@ -131,5 +150,6 @@ None of these changes a boxed answer; all of them are exactly the slips graders 
 - Boundary-condition sides: Kudeki's $\pm$ superscripts ($\hat n$ from $-$ to $+$) and the slides' subscripts 1/2 ($\hat a_n$ from 2 into 1) are the same convention with different labels.
 - Magnetic constants: $\mu_o$ (notes) vs $\mu_0$ (slides, this site); the slides call magnetization "magnetic polarization" once (Lecture 17, slide 10). $\chi_m$ has no $\mu_0$: $\mathbf{M} = \chi_m\mathbf{H}$, unlike $\mathbf{P} = \epsilon_0\chi_e\mathbf{E}$.
 - Lectures 18–19: the slides switch between $J_s(t)$ and $J_x(t)$ for the sheet current (L18 slides 11–13, L19 slide 2), and L19 slides 15 and 22 use $f$ for both the waveform and the frequency. Both sources write $v$ for the speed in a general medium and $c$ for vacuum, as this site does.
+- Lectures 20–23: the notes use $\tau$ for the angle of $\eta$ (a fourth $\tau$, after the collision, relaxation and circuit times); $\eta_o$, $E_o$, $\epsilon_o$ with a subscript o; and $p$ in Lecture 22 for a binomial exponent where this site's Lecture 23 uses $p = \sigma/\omega\epsilon$.
 
 *If you find another one, it belongs here — the pages that quote a slide slip also say so inline, but this is the list to check against before an exam.*

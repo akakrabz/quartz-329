@@ -1,6 +1,6 @@
 ---
 title: "Hard problems"
-description: "All 70 hard practice problems for Lectures 2–19, by lecture. Hard = exam length, in several parts; about 20–40 min each."
+description: "All 86 hard practice problems for Lectures 2–23, by lecture. Hard = exam length, in several parts; about 20–40 min each."
 tags: [practice]
 ---
 
@@ -32,7 +32,7 @@ tags: [practice]
 ## Lecture 5 · The electrostatic potential
 
 - [[practice/05-electrostatic-potential#59-circulation-and-two-voltmeters|5.9 Circulation and two voltmeters]] — circulation · Stokes' theorem · voltmeters
-- [[practice/05-electrostatic-potential#510-charged-slab-sheet-and-staircase|5.10 Charged slab, sheet and staircase]] — V from E · charge slabs · exact differentials · *modelled on FA26 Exam 1 #1(b),(d)*
+- [[practice/05-electrostatic-potential#510-charged-slab-sheet-and-staircase|5.10 Charged slab, sheet and staircase]] — V from E · charge slabs · exact differentials · *modelled on FA26 Exam 1 #1(b)*
 - [[practice/05-electrostatic-potential#511-charged-washer-on-its-axis|5.11 Charged washer on its axis]] — scalar superposition · disk on axis · electron-volts
 - [[practice/05-electrostatic-potential#512-square-of-charges-zero-energy|5.12 Square of charges, zero energy]] — energy of charges · Coulomb force · scaling
 
@@ -131,3 +131,31 @@ tags: [practice]
 - [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] — current sheet radiation · superposition · moving pulses
 - [[practice/19-radiation-from-current-sheets#1911-a-sheet-on-a-diagonal-plane|19.11 A sheet on a diagonal plane]] — current sheet radiation · Poynting vector · plane waves
 - [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] — current sheet radiation · boundary conditions · intrinsic impedance
+
+## Lecture 20 · Poynting's theorem and monochromatic waves
+
+- [[practice/20-poynting-theorem-and-power#209-a-coax-with-a-resistive-core|20.9 A coax with a resistive core]] — Poynting vector · Joule heating · power flow
+- [[practice/20-poynting-theorem-and-power#2010-a-sheet-in-a-magnetic-medium|20.10 A sheet in a magnetic medium]] — current sheet radiation · energy balance · time-average power · *modelled on Summer 2020 HE3 #2c–d*
+- [[practice/20-poynting-theorem-and-power#2011-two-sheets-in-step|20.11 Two sheets in step]] — current sheet radiation · superposition · energy balance
+- [[practice/20-poynting-theorem-and-power#2012-charging-a-leaky-capacitor|20.12 Charging a leaky capacitor]] — Poynting's theorem · displacement current · conductance
+
+## Lecture 21 · Monochromatic waves and phasor notation
+
+- [[practice/21-phasors-and-monochromatic-waves#219-a-phasor-from-two-snapshots|21.9 A phasor from two snapshots]] — phasor fields · wave parameters · time-average power · *modelled on Summer 2019 HE3 #3a*
+- [[practice/21-phasors-and-monochromatic-waves#2110-two-sheets-two-current-directions|21.10 Two sheets, two current directions]] — current sheet radiation · phasor fields · energy balance · *modelled on Summer 2020 final #4a*
+- [[practice/21-phasors-and-monochromatic-waves#2111-two-waves-on-one-line|21.11 Two waves on one line]] — phasor fields · time average · energy density
+- [[practice/21-phasors-and-monochromatic-waves#2112-a-medium-from-phasor-readings|21.12 A medium from phasor readings]] — phasor fields · wave parameters · intrinsic impedance
+
+## Lecture 22 · Phasor Maxwell equations and damped waves
+
+- [[practice/22-damped-waves-in-conducting-media#229-decoding-a-wave-toward-minus-y|22.9 Decoding a wave toward minus y]] — damped waves · propagation constant · complex intrinsic impedance · *modelled on SP17 Exam 3 #3*
+- [[practice/22-damped-waves-in-conducting-media#2210-two-components-in-a-magnetic-medium|22.10 Two components in a magnetic medium]] — damped waves · phasor fields · regimes · *modelled on SP19 Exam 3 #1*
+- [[practice/22-damped-waves-in-conducting-media#2211-current-sheet-in-a-lossy-medium|22.11 Current sheet in a lossy medium]] — current sheet radiation · damped waves · time-average power
+- [[practice/22-damped-waves-in-conducting-media#2212-three-probes-identify-a-medium|22.12 Three probes identify a medium]] — lossy media · complex intrinsic impedance · damped waves
+
+## Lecture 23 · Imperfect dielectrics and good conductors
+
+- [[practice/23-imperfect-dielectrics-and-good-conductors#239-down-into-a-deep-lake|23.9 Down into a deep lake]] — good conductor · skin depth · decibels · *modelled on Summer 2018 HE3 #3b*
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2310-calling-a-submarine|23.10 Calling a submarine]] — seawater · skin depth · decibels
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf|23.11 Dry earth from ELF to VHF]] — regimes · imperfect dielectric · good conductor · *modelled on Summer 2020 HE3 #3*
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] — skin depth · Joule heating · resistance

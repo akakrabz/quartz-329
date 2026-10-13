@@ -12,4 +12,4 @@ Reference pages, not lectures. Come here when a lecture says "recall from MATH 2
 - [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]] — every slip found in the slides, notes, exam key and homework solutions, with the correction and the page here that has it right.
 - [[0-toolkit/05-midterm-2-summary|Midterm 2 — equation summary]] — Lectures 11–19 on one page: the equations, the canonical fields, the sign rules, the traps, and a study plan.
 
-Planned additions as the course reaches them: phasors and complex arithmetic (Lecture 21), the Smith chart as a coordinate transformation (Lecture 34).
+Phasors and the complex arithmetic they need are on the [[concepts/phasors]] page (Lecture 21). Planned addition as the course reaches it: the Smith chart as a coordinate transformation (Lecture 34).
