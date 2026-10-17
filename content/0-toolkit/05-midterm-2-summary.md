@@ -270,7 +270,7 @@ Exams reuse the homework's *moves*, not its numbers. For each problem: what it a
 > 5. *Morning, Lectures 18–20 and HW7.* Read a wave's direction and speed, $\mathbf{H} = \hat u\times\mathbf{E}/\eta$, the sheet fields, then §9; redo HW7 cold.
 > 6. *Early afternoon, one past paper under exam time, closed notes.* SP18 Exam 2 is the closest to this exam (it has the waves problems, #4–#5). Grade it honestly.
 > 7. *Mid-afternoon, fix what you missed* with the lecture page and one practice problem on the same idea.
-> 8. *Late afternoon, a second timed paper:* Summer 2018 or 2019 HE2.
+> 8. *Late afternoon, a second timed paper:* Summer 2018 or 2019 HE2, or the timed Midterm 2 practice exam on [pl.vops.ch](https://pl.vops.ch) (see the [[0-toolkit/06-prairielearn-guide|PrairieLearn guide]]).
 > 9. *Evening, light:* §11's traps, and the Lecture 20 items from past papers listed below. Stop by 11 pm — sleep is worth more than a fourth paper.
 >
 > **Monday morning (45 min at most):** write this page's equations from memory once, reread §11, redo two or three problems you got wrong. Nothing new.

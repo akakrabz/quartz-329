@@ -14,7 +14,7 @@ Understanding a lecture and being able to *do* its problems are different skills
 > 5. A day later, redo every problem you got wrong, without looking.
 
 > [!tip] If you are behind
-> Go lecture by lecture: read the lecture's *key* and *recipe* boxes, then do its easy problems and one medium — about forty minutes per lecture. Leave the hard problems for a second pass before the exam, starting with the ones [[practice/index#modelled-on-past-exams|modelled on past exams]]. For Midterm 2 (Lectures 11–20), the [[0-toolkit/05-midterm-2-summary#13-how-to-study-for-it-exam-monday-october-19|summary's practice list]] picks two to five problems per lecture; keep the [[0-toolkit/05-midterm-2-summary|equation summary]] open while you do the easy problems, then close it for the mediums.
+> Go lecture by lecture: read the lecture's *key* and *recipe* boxes, then do its easy problems and one medium — about forty minutes per lecture. Leave the hard problems for a second pass before the exam, starting with the ones [[practice/index#modelled-on-past-exams|modelled on past exams]]. For Midterm 2 (Lectures 11–20), the [[0-toolkit/05-midterm-2-summary#13-how-to-study-for-it-exam-monday-october-19|summary's practice list]] picks two to five problems per lecture; keep the [[0-toolkit/05-midterm-2-summary|equation summary]] open while you do the easy problems, then close it for the mediums. For randomized versions with instant grading, and a timed practice exam, see the [[0-toolkit/06-prairielearn-guide|PrairieLearn guide]] ([pl.vops.ch](https://pl.vops.ch)).
 
 ## The tag system
 
