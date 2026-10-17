@@ -381,6 +381,8 @@ The electric and magnetic energy densities are equal at every instant, because $
 Concept pages: [[concepts/poynting-theorem]] · [[concepts/poynting-vector]] · [[concepts/continuity-equation]] · [[concepts/electrostatic-energy]] · [[concepts/magnetic-energy]] · [[concepts/conductors]] · [[concepts/current-sheet-radiation]] · [[concepts/plane-waves]] · [[concepts/divergence-theorem]].
 
 > [!exam] On exams
+> **Fall 2026:** Lecture 20 is the last lecture on Midterm 2 (October 19); the [[0-toolkit/05-midterm-2-summary#9-energy-and-power-poyntings-theorem-lecture-20|Midterm 2 summary, §9]] collects it with Lectures 11–19. Expect it as the closing part of a sheet or plane-wave problem: $\mathbf{S} = \mathbf{E}\times\mathbf{H}$, its time average with the ½, and $\mathbf{J}_s\cdot\mathbf{E}$ at the sheet.
+>
 > Lecture 20 rarely stands alone: it is usually the closing part of a problem from Lectures 19, 21, 23 or 24. The Exam 3 papers on hand ask the following.
 > 1. **Time-averaged power of a stated wave.** $\langle S\rangle = E_0^2/(2\eta)$ along the direction of travel, with $E_0$ read off the given field (Summer 2017/2018 HE3, SP17 #4b, Summer 2020 FE #4c). When the wave is given as a phasor, Lecture 21's rule is the same computation. Answers are usually wanted in exact form with $\eta_0 = 120\pi$.
 > 2. **Split, then add.** First $\langle S\rangle$ for one linear component, then for the whole circularly polarized wave. Perpendicular components carry power independently (the example in §7).

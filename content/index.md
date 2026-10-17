@@ -31,7 +31,7 @@ Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written t
 10. [[1-electrostatics/10-capacitance-and-conductance|Capacitance and conductance]]
 11. [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Where σ and χe come from: the Lorentz–Drude models]] (not on Exam 1)
 
-### [[2-magnetostatics/index|Unit 2 · Magnetostatics and induction]] — Lectures 12–15
+### [[2-magnetostatics/index|Unit 2 · Magnetostatics and induction]] — Lectures 12–15 (Midterm 2)
 12. [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law|Magnetic force, Biot–Savart, and Ampère's law]]
 13. [[2-magnetostatics/13-current-sheets-solenoids-and-the-vector-potential|Current sheets, solenoids, and the vector potential]]
 14. [[2-magnetostatics/14-faradays-law-and-induced-emf|Faraday's law and induced emf]]
@@ -39,7 +39,7 @@ Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written t
 
 The unit page carries the **[[2-magnetostatics/index#the-dictionary-electrostatics--magnetostatics|electrostatics ↔ magnetostatics dictionary]]** — every Unit 2 result beside its Unit 1 twin.
 
-### [[3-maxwell-and-waves/index|Unit 3 · Maxwell's equations and waves]] — Lectures 16–26
+### [[3-maxwell-and-waves/index|Unit 3 · Maxwell's equations and waves]] — Lectures 16–26 (Midterm 2: L16–20)
 16. [[3-maxwell-and-waves/16-charge-conservation-displacement-current-and-maxwells-equations|Charge conservation, displacement current, and Maxwell's equations]]
 17. [[3-maxwell-and-waves/17-magnetization-and-maxwells-equations-in-matter|Magnetization current and Maxwell's equations in matter]]
 18. [[3-maxwell-and-waves/18-the-wave-equation-and-plane-tem-waves|The wave equation and plane TEM waves]]

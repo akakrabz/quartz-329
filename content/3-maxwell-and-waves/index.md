@@ -5,7 +5,7 @@ tags: [waves]
 ---
 
 > [!tip] Studying for Midterm 2?
-> The [[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]] collects Lectures 11–19 on one page, with a study plan.
+> Midterm 2 (Monday, October 19) covers **Lectures 11–20 and Homeworks 5–7**. The [[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]] has them on one page, with what each homework problem drilled, a practice list and a weekend study plan.
 
 > [!note] Lectures 20–23 were written from the course notes alone
 > The slides for these lectures were not available when the pages were written, so their examples are the notes' own and the site's (all checked numerically). Compare them with the slides once those are posted.
