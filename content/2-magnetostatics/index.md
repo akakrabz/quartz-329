@@ -5,7 +5,7 @@ tags: [magnetostatics]
 ---
 
 > [!tip] Studying for Midterm 2?
-> Midterm 2 (Monday, October 19) covers **Lectures 11–20 and Homeworks 5–7**. The [[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]] has them on one page, with what each homework problem drilled, a practice list and a weekend study plan.
+> The [[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]] has Lectures 11–20 on one page, with what Homeworks 5–7 drilled and a practice list.
 
 Steady current → static magnetic field. The unit is built exactly like Unit 1 with the roles of divergence and curl swapped: the electric field was *curl-free with sources* ($\nabla\times\mathbf{E} = 0$, $\nabla\cdot\mathbf{D} = \rho$); the magnetic field is *divergence-free with sources in its curl* ($\nabla\cdot\mathbf{B} = 0$, $\nabla\times\mathbf{H} = \mathbf{J}$). Ampère's law plays the part Gauss's law played, Biot–Savart the part of Coulomb's law, the vector potential $\mathbf{A}$ the part of $V$, and the inductor is the circuit element that falls out at the end, just as the capacitor did. Then, in Lecture 14, time enters for the first time: a changing magnetic flux drives an electric field around a loop, and "voltage" stops being a number between two points.
 

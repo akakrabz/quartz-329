@@ -1,0 +1,124 @@
+== A. constants
+PASS c = 1/sqrt(mu0 eps0)
+PASS eta0 = 376.73 ohm  | 376.7303
+PASS exam constants give c = 3e8 and eta0 = 120 pi
+== B. finite differences
+PASS dEx/dz = -mu dHy/dt (lossless, forward)
+PASS -dHy/dz = eps dEx/dt (lossless, forward)
+PASS lossy: dEx/dz = -mu dHy/dt
+PASS lossy: -dHy/dz = sigma Ex + eps dEx/dt
+PASS lossy telegrapher 1: -dV/dz = L dI/dt
+PASS lossy telegrapher 2: -dI/dz = C dV/dt + G V
+PASS G/C = sigma/eps and LC = mu eps
+PASS forward V = f(t - z/v), I = +f/Z0 satisfies telegrapher
+PASS backward V = g(t + z/v), I = -g/Z0 satisfies telegrapher
+PASS control: backward with I = +g/Z0 violates telegrapher
+PASS V = f + g, I = (f - g)/Z0 satisfies telegrapher
+PASS d2V/dz2 = LC d2V/dt2
+PASS quadrature antiderivative gives I = +C v f = f/Z0 (forward)
+PASS quadrature antiderivative gives I = -f/Z0 (backward)
+PASS C v = 1/Z0 and L/Z0 = sqrt(LC)
+PASS Z0 = Ex d/(Hy W) = eta d/W
+== C. directions (np.cross)
+PASS plate 2 (x=0): rho_s = n.D = +1 eps Ex
+PASS plate 2 (x=0): J_s = n x H = +z Hy
+PASS plate 1 (x=d): rho_s = n.D = -1 eps Ex
+PASS plate 1 (x=d): J_s = n x H = -z Hy
+PASS forward: E x H along +z
+PASS backward (V>0, I<0): E x (-y) along -z
+PASS loop up at z, back down at z+dz has right-hand normal -y
+PASS emf V(z)-V(z+dz) = -dPsi/dt (Psi along -y) = +mu d dz dHy/dt  | emf=-9.4503e-07, -dPsi/dt=-9.4503e-07
+PASS plate-2 charge per metre rho_s W = eps Ex W = C V
+== D. geometrical factors
+PASS coax C = eps GF, GF = 2pi/ln(b/a)
+PASS coax L = mu/GF
+PASS coax LC = mu eps
+PASS twin-lead: wire surfaces are equipotentials (images at +-s)
+PASS twin-lead C = pi eps / acosh(D/2a)  | C/eps=2.00510, GF=2.00510
+PASS twin-lead L = (mu/pi) acosh(D/2a)
+PASS twin-lead LC = mu eps
+PASS twin-lead thin-wire limit ln(D/a) vs acosh(D/2a) differ at D/2a = 2.5  | ln(D/a)=1.6094, acosh=1.5668
+PASS Rao Table 6.1 (wire spacing 2d): pi eps/acosh(d/a) == page form
+PASS Z0 = eta/GF = sqrt(L/C) for coax
+PASS Z0 = eta/GF = sqrt(L/C) for twin-lead
+== E. lecture numbers
+PASS polyethylene eta = 251 ohm  | 251.15
+PASS coax b/a = 3.5 in PE: 50 ohm  | 50.08
+PASS 75 ohm needs b/a = e^(2pi 75/251) = 6.5  | 6.537
+PASS twin-lead 300 ohm: acosh(D/2a) = 300pi/377 = 2.50  | 2.4999
+PASS D = 12.3 a  | 12.264
+PASS plates in air 50 ohm: W/d = 377/50 = 7.5
+PASS PE speed c/1.5 = 2e8
+PASS air plates 1 cm: c/2d = 15 GHz  | 14.990 GHz
+PASS PE coax a=0.5, b=1.75 mm: rule f = v/(pi(a+b)) = 28 GHz  | 28.27 GHz
+PASS exact TE11 cutoff of that coax = 29 GHz  | k_c a = 0.4571, f_c = 29.08 GHz, rule/exact = 0.972
+PASS parallel-plate first non-TEM cutoff: k d = pi -> d = lambda/2  | TE1/TM1: k_x = pi/d
+PASS battery on 50 ohm: I = 60 mA, VI = 0.18 W
+PASS energy split: L I^2 = C V^2
+PASS storage rate C V^2 v = V^2/Z0 = VI
+PASS 60 Hz: lambda = c/f = 5000 km  | (exact c: 4997 km)
+PASS 3 GHz on PE coax: lambda = 6.7 cm
+== F. power
+PASS VI = (f^2 - g^2)/Z0 (cross terms cancel)
+PASS p = Wd Ex Hy = V I
+PASS <P> = 1/2 Re{V I*} by quadrature
+PASS one phasor wave: <P> = |V+|^2/2Z0
+PASS phasor f+g: <P> = (|V+|^2 - |V-|^2)/2Z0 at every z
+== G. ladder
+PASS L- and T-section same phase per section (dz = 0.01 m)
+PASS ladder beta -> omega sqrt(LC) for dz << lambda (dz = 0.01 m)  | beta_ladder/beta = 1.000041, dz/lambda = 0.0050
+PASS L- and T-section same phase per section (dz = 0.001 m)
+PASS ladder beta -> omega sqrt(LC) for dz << lambda (dz = 0.001 m)  | beta_ladder/beta = 1.000000, dz/lambda = 0.0005
+PASS series dz L (inductive drop along I), shunt dz C (current from wire 2 to wire 1)  | matches -dV/dz = L dI/dt, -dI/dz = C dV/dt term by term
+== H. battery FDTD
+PASS FDTD: V = 3 V behind the front z = vt
+PASS FDTD: V = 0 ahead of the front
+PASS FDTD: I = 3/Z0 = 60 mA behind the front
+PASS FDTD: stored energy = VI t  | 4.5000e-10 vs 4.5000e-10
+== I. worked problem
+PASS (a) L = 62.8 nH/m  | 62.832
+PASS (a) C = 398 pF/m  | 397.89
+PASS (a) v = 2e8 m/s
+PASS (a) Z0 = 4 pi = 12.6 ohm = eta d/W
+PASS (a) delay 150 ns
+PASS (b) V = -Z0 I = 2 pi V
+PASS (b) Ex = 1000 pi V/m, Hy = -12.5 A/m
+PASS (b) |Ex/Hy| = 80 pi = eta
+PASS (b) E x H along -z
+PASS (b) top plate J_s = n x H = +z 12.5 A/m, x W = 0.5 A
+PASS (b) rho_s(x=0) = +62.5 nC/m^2
+PASS (b) rho_s W = 2.5 nC/m = C V
+PASS (b) pulse length vT = 0.4 m; p = VI = -pi W; energy 6.28 nJ
+PASS (b) energy check: C V^2 x 0.4 m = 6.28 nJ
+PASS (b) FD: pulse with V = -Z0 I(plate 2) satisfies telegrapher
+PASS (b) trap: one sign fixed but not the other gives V = -2 pi  | and both habits together give +2 pi (right by accident)
+PASS (c) lambda = 13.3 cm, beta = 15 pi
+PASS (c) I = 3/pi = 0.955 A
+PASS (c) E = 6000 V/m, H = 23.9 A/m
+PASS (c) <S> = 71.6 kW/m^2, x Wd = 5.73 W
+PASS (c) 1/2 Re{V I*} = 18/pi = 5.73 W
+PASS (c) TEM only: lambda/2 = 6.7 cm, v/2d = 50 GHz
+PASS (d) v = 1.5e8, eps_r = 4, Z0 = 3 pi
+== J. concept pages
+PASS 50 ohm, v = 2e8: L = 250 nH/m, C = 100 pF/m
+PASS twin-lead D/2a = 6.14 in air: 300 ohm  | 299.9
+PASS air plates d/W = 0.2: 75.3 ohm  | 75.35
+PASS PE coax b/a = 6.5: 75 ohm  | 74.82
+PASS Z0 = 1/(C v) = L v
+PASS Z0 trends (gap up, a down raise; eps_r up lowers)
+== K. exam keys
+PASS SP19 #2 keys (1.2pi ohm, 240pi delta V/m, 2.4pi W) differ from the problem's
+PASS FA23 #4(d) key eps_r = 36 differs from (d)'s 4
+== L. figure frames (screen X right, Y up, Z out)
+PASS side view right-handed: x(Y) x y(Z) = z(X)
+PASS side view: E up x H out = right (+z)
+PASS side view: plate 2 (bottom) n=+x(up): n x H(out) = right
+PASS cross-section frame right-handed: x(Y) x y(X) = z(-Z)
+PASS plates: E up x H right = into page
+PASS coax: current into page, H at top moves right
+PASS coax at top: E (radial up) x H (right) = into page
+PASS twin-lead left wire (into page): H at top moves right
+PASS twin-lead right wire (out of page): H at top moves left
+PASS twin-lead midpoint: H down, E right, E x H into page
+
+110 PASS, 0 FAIL

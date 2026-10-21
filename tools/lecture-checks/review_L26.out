@@ -1,0 +1,128 @@
+== A. standing wave in front of a PEC (region 1: eps_r=2.25, mu_r=1)
+PASS A1 H_i = +y E0/eta1 e^{-jbz} (np.cross)
+PASS A2 H_r = +y E0/eta1 e^{+jbz} (keeps incident sign)
+PASS A3 E~ = -j x 2E0 sin(bz)
+PASS A4 H~ = y (2E0/eta1) cos(bz)
+PASS A5 real forms = Re{phasor e^{jwt}}
+PASS A6 2 sin bz sin wt = cos(wt-bz) - cos(wt+bz)
+PASS A7 Faraday curl E = -mu dH/dt (FD)
+PASS A8 Ampere curl H = eps dE/dt (FD)
+PASS A9 PEC boundary: E_x(0,t) = 0 for all t
+PASS A10 E nodes at -m lam/2
+PASS A11 H nodes at -(2m+1) lam/4
+PASS A12 E antinodes |E~|=2E0 at -(2m+1)lam/4
+PASS A13 |E~| period lam/2
+PASS A14 mirror at d: E~ = -j2E0 e^{-jbd} sin b(z-d) (phase factor needed)
+PASS A15 ... and without e^{-jbd} it is NOT equal (so 'z-d for z' needs E0 at mirror)
+== B. power and energy of the standing wave
+PASS B1 <S> = 1/2 Re{E x H*} = 0 (np.cross)
+PASS B2 <S_z> by quadrature = 0
+PASS B3 S = z (E0^2/eta1) sin2bz sin2wt
+PASS B4 w = 2 eps E0^2 [sin^2 sin^2 + cos^2 cos^2]
+PASS B5 <w> = eps1 E0^2 at every z (quadrature)
+PASS B6 S = 0 at multiples of lam/4, all t
+PASS B7 energy per lam/4 cell constant = eps E0^2 lam/4
+PASS B8 Poynting theorem dS/dz + dw/dt = 0 (FD)
+PASS B9 wt=0 all magnetic (w_E=0), wt=pi/2 all electric (w_H=0)
+PASS B10 w = 0 only at E node with cos wt = 0 or H node with sin wt = 0
+== C. partial reflection (site's addition)
+PASS C1 decomposition travelling+standing, Gamma=-0.500
+PASS C2 |E| between (1-|G|)E0 and (1+|G|)E0
+PASS C3 period lam/2
+PASS C4 <S> = (1-|G|^2)E0^2/2eta1 (quadrature)
+PASS C1 decomposition travelling+standing, Gamma=0.500
+PASS C2 |E| between (1-|G|)E0 and (1+|G|)E0
+PASS C3 period lam/2
+PASS C4 <S> = (1-|G|^2)E0^2/2eta1 (quadrature)
+PASS C1 decomposition travelling+standing, Gamma=-0.151+0.259j
+PASS C2 |E| between (1-|G|)E0 and (1+|G|)E0
+PASS C3 period lam/2
+PASS C4 <S> = (1-|G|^2)E0^2/2eta1 (quadrature)
+PASS C1 decomposition travelling+standing, Gamma=0.612-0.515j
+PASS C2 |E| between (1-|G|)E0 and (1+|G|)E0
+PASS C3 period lam/2
+PASS C4 <S> = (1-|G|^2)E0^2/2eta1 (quadrature)
+PASS C5 eps_r=9: Gamma=-1/2, |E| 0.5..1.5 E0, min at interface
+   negative real Gamma -> min at z=0; positive -> max: 0.5 1.5
+== D. surface current on the mirror; sheet check
+PASS D1 J_s = n x H with n = -z (2 into 1) = +x (2E0/eta1) cos wt
+PASS D2 J_s in phase with incident E at mirror (along +x when E_i(0,0)=+x E0)
+PASS D3 J_s phasor = x 2E0/eta1 (L25)
+PASS D4 sheet field into z>0 = -x E0 cos(wt-bz) (cancels incident)
+PASS D5 sheet field into z<0 = -x E0 cos(wt+bz) = reflected wave
+PASS D6 sheet H: z>0 along -y (cancels H_i), z<0 along +y (= H_r)
+== E. good conductor: copper at 10 GHz (sigma = 5.8e7 S/m handbook, mu=mu0, eps=eps0)
+   delta = 0.6609 um, Rs = 26.090 mOhm, Re eta2 = 26.090 mOhm, 4Rs/eta0 = 2.7701e-04, 1-|G|^2 = 2.7697e-04
+PASS E1 delta = 0.661 um
+PASS E2 Rs = 26.1 mOhm
+PASS E3 Rs = sqrt(pi f mu/sigma) = alpha/sigma (approx) = Re eta2
+PASS E4 gamma2 = (1+j)/delta (good-conductor approx, rel 1e-6)
+PASS E5 4Rs/eta0 = 2.77e-4
+PASS E6 1-|Gamma|^2 (exact) = 2.77e-4, reflects 99.97 %
+PASS E7 dissipation 1/2 Rs (2E0/eta0)^2 = (4Rs/eta0)<S_i>
+PASS E8 sigma*eta2 ~ gamma2 (good conductor)
+PASS E9 int J_t dz = 2E0/eta0 (rel 3e-4)  ratio-1 = 9.79e-05
+PASS E10 int Js gamma e^{-gamma z} dz = Js
+PASS E11 <J.E> = 1/2 |Js gamma|^2 e^{-2az}/sigma
+PASS E12 int <J.E> dz = 1/2 Rs |Js|^2 (Rs = alpha/sigma)
+PASS E13 depth integral ~ 2/eta0, Al 1 MHz  rel err 1.3e-06
+PASS E13 depth integral ~ 2/eta0, Fe-free brass 100 MHz  rel err 1.9e-05
+PASS E13 depth integral ~ 2/eta0, seawater 1 kHz  rel err 1.2e-04
+PASS E13 depth integral ~ 2/eta0, graphite 1 GHz  rel err 8.9e-04
+== F. radiation pressure
+PASS F1 J x B* along +z only (x cross y = z)
+   <P_rad>/(2<S_i>/c) - 1 = -1.385e-04;  vs (1+|G|^2)<S_i>/c: 3.33e-09
+PASS F2 <P_rad> = 2<S_i>/c within 2e-4 (copper, exact fields)
+PASS F3 <P_rad> = (1+|G|^2)<S_i>/c (copper, exact)
+PASS F4 (1+|G|^2)<S_i>/c for sigma = 0.01 S/m at 10 GHz  |G|^2 = 0.0000
+PASS F4 (1+|G|^2)<S_i>/c for sigma = 1 S/m at 10 GHz  |G|^2 = 0.1057
+PASS F4 (1+|G|^2)<S_i>/c for sigma = 100 S/m at 10 GHz  |G|^2 = 0.8096
+PASS F4 (1+|G|^2)<S_i>/c for sigma = 100000 S/m at 10 GHz  |G|^2 = 0.9934
+PASS F5 P_rad(t) = 1/2 mu0 H_y(0,t)^2 (exact copper fields)  max dev / (4<S_i>/c) = 7.9e-09
+PASS F6 1/2 mu0 (2E0/eta0)^2 cos^2 wt = (4<S_i>/c) cos^2 wt
+PASS F7 sheet in mean field: Js x (B/2) = 1/2 mu0 H^2 along +z
+PASS F8 <P_rad> = eps0 E0^2 = <w> of standing wave
+PASS F9 mu0/eta0 = 1/c
+PASS F10 absorber <S_i>/c, mirror 2<S_i>/c as limits of (1+|G|^2)
+PASS F11 momentum per photon = hbar w / c
+PASS F12 spin per photon = hbar
+PASS F13 photon density = energy density / (hbar w)
+== G. numbers: sunlight (solar constant 1361 W/m^2, Kopp & Lean 2011), sail, laser
+   E0 = 1012.6 V/m, 2S/c = 9.080 uPa, S/c = 4.540 uPa, sail = 0.0908 N, Js = 5.376 A/m, laser = 6.671 nN
+PASS G1 E0 = 1.01 kV/m
+PASS G2 mirror 9.08 uPa
+PASS G3 absorber 4.54 uPa
+PASS G4 100 m x 100 m sail 0.091 N
+PASS G5 mirror current peak 2E0/eta0 = 5.4 A/m
+PASS G6 1 W laser reflected: 6.7 nN
+PASS G7 copper: |G|^2 = 0.99972, 1+|G|^2 = 1.99972, within 0.014 % of 2
+== H. worked problem: circular wave on a mirror (y<0 PEC), f = 1.5 GHz, eta0 = 120 pi, c = 3e8
+PASS H1 beta = 10 pi rad/m, lambda = 20 cm
+PASS H2 phasor E~_i = 60pi (x - j z) e^{j beta y}
+PASS H3 incident travels along -y (crest tracking)
+PASS H4 incident hand by numeric rotation (thumb along -y): right-circular  right
+PASS H5 E~_r(0) = -E~_i(0) (Gamma=-1 per component)
+PASS H6 reflected hand (thumb along +y): left-circular  left
+PASS H7 hands same at y = 3.7 cm
+PASS H8 H~_i = 1/2 (z + j x) e^{j b y}
+PASS H9 H~_r = 1/2 (z + j x) e^{-j b y}
+PASS H10 E~ = 120pi sin(by) (z + j x)
+PASS H11 H~ = cos(by) (z + j x)
+PASS H12 E = 120pi sin(by) a(t), H = cos(by) a(t), a = z cos wt - x sin wt
+PASS H13 E nodes y = 0,10,20 cm; H nodes 5,15,25 cm
+PASS H14 Faraday curl E = -mu0 dH/dt (FD)  2.2e-10
+PASS H15 Ampere curl H = eps0 dE/dt (FD)  2.1e-10
+PASS H16 page's Faraday: curl E = 120 pi beta cos(by) b(t), 120 pi beta = mu0 w
+PASS H17 S = E x H = 0 at every y, t
+PASS H18 w = mu0/2 = 2 pi e-7 J/m^3 constant
+PASS H19 trap: Ex,Hz gives +30pi sin2by sin2wt y; Ez,Hx gives the negative
+PASS H20 J_s = y x H(0,t) = x cos wt + z sin wt (n = +y out of conductor)
+PASS H21 J_s = 2 E_i(0,t)/eta0
+PASS H22 J_s x B/2 = -y 2pi e-7 N/m^2 at every instant
+PASS H23 <S_i> = 30 pi = 94.2 W/m^2; 2<S_i>/c = 2 pi e-7
+PASS H24 concept page: w = 2 eps0 E0^2 with E0 = 60 pi
+PASS H25 Ex and Ez standing waves 90 deg apart in time (<ExEz> = 0, equal rms)
+== I. concept-page example: 1.5 GHz in air
+PASS I1 lambda = 20 cm (c = 3e8), E nodes 0,10,20 cm, H nodes 5,15,25 cm
+
+TOTAL: 113 PASS, 0 FAIL

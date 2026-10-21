@@ -1,0 +1,245 @@
+=== 24.1 ===
+PASS  v_p: page=[5e+08] computed=[5e+08]
+PASS  v_g (FD dw/dbeta): page=[1.8e+08] computed=[1.8e+08]
+PASS  v_p v_g: page=[9e+16] computed=[9e+16]
+PASS  pulse time L/v_g: page=[5e-09] computed=[5e-09]
+PASS  vacuum time: page=[3e-09] computed=[3e-09]
+PASS  crest time: page=[1.8e-09] computed=[1.8e-09]
+PASS  pulse sim delay (FFT): page=[5e-09] computed=[5.0045e-09]
+=== 24.2 ===
+(a) v_g, v_p dielectric: 0.4999999999737385 0.5 -> crests not c/4: statement false
+PASS  (a) false: page=True computed=True
+PASS  (b) false: v_p varies on straight non-origin line: page=True computed=True
+PASS  (b) v_g = u: page=[2e+08] computed=[2e+08]
+PASS  (c) v_p v_g = c^2 (all w): page=[9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16
+ 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16] computed=[9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16
+ 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16 9e+16]
+PASS  (c) true: never both < c: page=True computed=True
+PASS  (d) false: v_g < c always: page=True computed=True
+PASS  (e) dbeta/dw = 1/v_g (s/m): page=[5.5556e-09] computed=[5.5556e-09]
+=== 24.3 ===
+PASS  (a) travel: page='+z' computed='+z'
+PASS  (a) polarization: page='left circular' computed='left circular'
+PASS  (b) travel: page='-x' computed='-x'
+PASS  (b) polarization: page='right circular' computed='right circular'
+PASS  (c) travel: page='+y' computed='+y'
+PASS  (c) polarization: page='linear' computed='linear'
+    linear along [-0.7071  0.      0.7071] (page z - x)
+PASS  (c) direction || z-x: page=[0] computed=[0]
+PASS  (d) travel: page='+z' computed='+z'
+PASS  (d) polarization: page='right elliptical' computed='right elliptical'
+PASS  (d) u.(E0 x E(T/4)): page=[13.856] computed=[13.856]
+PASS  (b) u.(E0 x E(T/4)): page=[9] computed=[9]
+PASS  (a) u.(E0 x E(T/4)): page=[-4] computed=[-4]
+=== 24.4 ===
+PASS  travel: page='-x' computed='-x'
+PASS  (i) phi=pi linear all B: page=True computed=True
+PASS  (ii) B=0 linear all phi: page=True computed=True
+PASS  (iii) (pi/2,6): page='right circular' computed='right circular'
+PASS  (iv) (3pi/2,6) [page: F, left]: page='left circular' computed='left circular'
+PASS  (v) (pi/2,3) [page: F, right ell.]: page='right elliptical' computed='right elliptical'
+PASS  (vi) B=6 not always circular: page=True computed=True
+    (vi) phi=0: linear  phi=pi/4: right elliptical
+PASS  watch out: +x travel swaps (iii): page='left circular' computed='left circular'
+=== 24.5 ===
+PASS  travel: page='-z' computed='-z'
+PASS  polarization: page='right circular' computed='right circular'
+PASS  H~ (curl) vs page 5(jx-y)e^{jbz}/eta0: page=[-0.0092796+0.009476j -0.009476-0.0092796j 0] computed=[-0.0092796+0.009476j -0.009476-0.0092796j -0]
+PASS  student H~ = -correct: page=[0.0092796-0.009476j 0.009476+0.0092796j 0] computed=[0.0092796-0.009476j 0.009476+0.0092796j 0]
+PASS  <S> (time avg): page=[-0 -0 -0.066315] computed=[0 0 -0.066315]
+PASS  -25/eta0: page=[-0.0663] computed=[-0.066315]
+PASS  check: student <S> +z: page=[0 0 0.066315] computed=[0 0 0.066315]
+=== 24.6 ===
+PASS  T: page=[2e-08] computed=[2e-08]
+PASS  lambda: page=[3] computed=[3]
+PASS  beta: page=[2.0944] computed=[2.0944]
+PASS  eta: page=[188.5] computed=[188.5]
+PASS  snapshot t=0: page=[0 0 3] computed=[0 0 3]
+PASS  snapshot T/4: page=[3 0 0] computed=[3 0 1.837e-16]
+PASS  travel: page='-y' computed='-y'
+PASS  polarization: page='left circular' computed='left circular'
+PASS  time-domain E vs Re{E~ e^jwt}: page=[-2.9344 0 -0.62374] computed=[-2.9344 -0 -0.62374]
+PASS  H~ (curl): page=[-0.0016636-0.015828j 0 0.015828-0.0016636j] computed=[-0.0016636-0.015828j -0 0.015828-0.0016636j]
+PASS  <S>: page=[-0 -0.047746 -0] computed=[0 -0.047746 0]
+PASS  3/(20pi): page=[0.0477] computed=[0.047746]
+=== 24.7 ===
+PASS  (a) a,b: page=[0+2j -0-2j] computed=[0+2j 0-2j]
+    basis x-jy: travel +z, right circular
+    basis x+jy: travel +z, left circular
+PASS  (a) each part: page=[0.01061] computed=[0.01061]
+PASS  (a) total: page=[0.021221] computed=[0.021221]
+PASS  (a) linear: page=[0.021221] computed=[0.021221]
+PASS  0.0212: page=[0.0212] computed=[0.021221]
+PASS  (b) sum: page=[4 -0-2j] computed=[4 0-2j]
+PASS  (b) polarization: page='right elliptical' computed='right elliptical'
+PASS  (b) |E| max,min: page=[4 2] computed=[4 2]
+PASS  (c) <S> brute: page=[0 0 0.026526] computed=[0 0 0.026526]
+PASS  (c) circular parts: page=[0.026526] computed=[0.026526]
+PASS  (c) 1/(12pi): page=[0.0265] computed=[0.026526]
+=== 24.8 ===
+PASS  v: page=[1.5e+08] computed=[1.5e+08]
+PASS  eta: page=[753.98] computed=[753.98]
+PASS  f: page=[1.5e+08] computed=[1.5e+08]
+PASS  H~ reproduces H(x,t): page=[0 0.096029 -0.027899] computed=[0 0.096029 -0.027899]
+PASS  E~ (Ampere) vs page: page=[0 -54.963+51.614j 51.614+54.963j] computed=[0 -54.963+51.614j 51.614+54.963j]
+PASS  E(x,t) page vs Re: page=[-0 -21.035 -72.404] computed=[-0 -21.035 -72.404]
+PASS  travel: page='+x' computed='+x'
+PASS  E polarization: page='right circular' computed='right circular'
+PASS  H polarization: page='right circular' computed='right circular'
+PASS  S(t) const = 2.4pi x: page=[[7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]
+ [7.5398 0 0]] computed=[[7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 -0 0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]
+ [7.5398 0 -0]]
+PASS  <S>: page=[7.5398 0 0] computed=[7.5398 0 0]
+PASS  7.54: page=[7.54] computed=[7.5398]
+PASS  check E x H at 0,0: page=[7.5398 0 0] computed=[7.5398 -0 0]
+=== 24.9 ===
+PASS  lambda: page=[4] computed=[4]
+PASS  beta: page=[1.5708] computed=[1.5708]
+PASS  T: page=[1.333e-08] computed=[1.3333e-08]
+PASS  (b) A,B,C (brute force): page=[-0-6j 6 0] computed=[0-6j 6 0]
+PASS  unique: page=1 computed=1
+PASS  (a) (a,b,c): exponent j(cz) with c=+beta: page=[0 0 1.5708] computed=[0 0 1.5708]
+PASS  E(z,t) page vs Re: page=[1.5832 5.7873 0] computed=[1.5832 5.7873 0]
+PASS  H~ (curl): page=[0.014181+0.0072255j -0.0072255+0.014181j 0] computed=[0.014181+0.0072255j -0.0072255+0.014181j -0]
+PASS  <S>: page=[-0 -0 -0.095493] computed=[0 0 -0.095493]
+PASS  0.0955: page=[0.0955] computed=[0.095493]
+PASS  one component: page=[0.047746] computed=[0.047746]
+PASS  (d) E(z=-1,0): page=[-6 -0 -0] computed=[-6 3.6739e-16 0]
+PASS  (d) E(z=+1,0): page=[6 0 0] computed=[6 3.6739e-16 0]
+PASS  (d) first t>=0 probe reads 6y: page=[3.33e-09] computed=[3.3333e-09]
+PASS  check E x H at origin along -z: page=[-0 -0 -0.095493] computed=[0 0 -0.095493]
+=== 24.10 ===
+PASS  E~ reproduces E(x,t): page=[-0 -3.0821 -2.7527] computed=[-0 -3.0821 -2.7527]
+PASS  travel: page='-x' computed='-x'
+PASS  (a) H~ page form (4, 3, 1.1): page=[0 -0.0028551+0.0074279j -0.0070997-0.007885j] computed=[-0 -0.0028551+0.0074279j -0.0070997-0.007885j]
+PASS  (a) H~ page form (2, 5, 4.0): page=[0 0.0016584-0.013159j -0.0035498-0.0039425j] computed=[-0 0.0016584-0.013159j -0.0035498-0.0039425j]
+PASS  (b) <S> indep of phi: page=[[-0.033157 -0 -0]
+ [-0.033157 -0 -0]
+ [-0.033157 -0 -0]
+ [-0.033157 -0 -0]
+ [-0.033157 -0 -0]] computed=[[-0.033157 0 0]
+ [-0.033157 0 0]
+ [-0.033157 0 0]
+ [-0.033157 0 0]
+ [-0.033157 0 0]]
+PASS  (c) page rule vs rotation, 144 cases: page=0 computed=0
+PASS  (d) polarization: page='right elliptical' computed='right elliptical'
+PASS  (d) |E| max,min: page=[4 3] computed=[4 3]
+PASS  (d) H~: page=[0 -0.0059138+0.0053248j -0.0070997-0.007885j] computed=[-0 -0.0059138+0.0053248j -0.0070997-0.007885j]
+PASS  (d) <S>: page=[-0.033157 -0 -0] computed=[-0.033157 0 0]
+PASS  0.0332: page=[0.0332] computed=[0.033157]
+=== 24.11 ===
+PASS  f_p: page=[1.2e+07] computed=[1.2e+07]
+PASS  L: page=[1.8e+05] computed=[1.8e+05]
+PASS  tau2 consistency: page=[0.00075] computed=[0.00075]
+PASS  s1,s2: page=[0.6 0.8] computed=[0.6 0.8]
+PASS  N: page=[1.79e+12] computed=[1.7865e+12]
+PASS  (c) crest time 15 MHz: page=[0.00036] computed=[0.00036]
+PASS  (c) crest time 20 MHz: page=[0.00048] computed=[0.00048]
+PASS  (c) vacuum: page=[0.0006] computed=[0.0006]
+PASS  (d) tau(19.95): page=[0.00075106] computed=[0.00075106]
+PASS  (d) tau(20.05): page=[0.00074895] computed=[0.00074895]
+PASS  (d) spread: page=[2.1e-06] computed=[2.1094e-06]
+PASS  (d) derivative formula: page=[2.1094e-11] computed=[2.1094e-11]
+PASS  (d) fp^2/f^3: page=[1.8e-08] computed=[1.8e-08]
+    feature 1/df = 10 us; spread/feature = 0.21
+PASS  pulse sim delays: page=[0.001 0.00075] computed=[0.00099995 0.00074995]
+PASS  (e) 10 MHz below f_p: beta^2<0: page=True computed=True
+PASS  check vp*vg: page=[9e+16 9e+16] computed=[9e+16 9e+16]
+=== 24.12 ===
+PASS  beta: page=[3.1416] computed=[3.1416]
+PASS  J~ reproduces J(t): page=[0 0.067748 -0.094088] computed=[0 0.067748 -0.094088]
+PASS  E page vs sheet formula x=0.37: page=[-0 -20.2 15.915] computed=[0 -20.2 15.915]
+PASS  E page vs sheet formula x=-0.81: page=[-0 -35.052 -6.939] computed=[-0 -35.052 -6.939]
+PASS  H~ (curl) x=0.37: page=[0 0.045888+0.019857j -0.039715+0.091775j] computed=[-0 0.045888+0.019857j -0.039715+0.091775j]
+PASS  <S> x=0.37: page=[2.3562 0 0] computed=[2.3562 0 0]
+PASS  travel x=0.37: page='+x' computed='+x'
+PASS  polarization x=0.37: page='left elliptical' computed='left elliptical'
+PASS  semi-axes: page=[37.699 18.85] computed=[37.699 18.85]
+PASS  H~ (curl) x=-0.81: page=[0 -0.028104+0.041354j -0.082708-0.056208j] computed=[-0 -0.028104+0.041354j -0.082708-0.056208j]
+PASS  <S> x=-0.81: page=[-2.3562 -0 -0] computed=[-2.3562 0 0]
+PASS  travel x=-0.81: page='-x' computed='-x'
+PASS  polarization x=-0.81: page='right elliptical' computed='right elliptical'
+PASS  n x (H1-H2) = J_s: page=[0 0.2 0+0.1j] computed=[-0 0.2 0+0.1j]
+PASS  1/2 J x n: page=[0 0+0.05j -0.1] computed=[0 0+0.05j -0.1]
+PASS  supplied <-J.E>: page=[4.7124] computed=[4.7124]
+PASS  4.71: page=[4.71] computed=[4.7124]
+PASS  2.36: page=[2.36] computed=[2.3562]
+PASS  (d) a,b: page=[-9.4248 -28.274] computed=[-9.4248 -28.274]
+    y-jz, +x travel: right circular
+    y+jz, +x travel: left circular
+PASS  (d) powers: page=[0.23562 2.1206] computed=[0.23562 2.1206]
+PASS  check: equal amps, x>0: page='left circular' computed='left circular'
+PASS  check: equal amps, x<0: page='right circular' computed='right circular'
+
+0 FAIL(s)

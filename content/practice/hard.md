@@ -1,6 +1,6 @@
 ---
 title: "Hard problems"
-description: "All 86 hard practice problems for Lectures 2–23, by lecture. Hard = exam length, in several parts; about 20–40 min each."
+description: "All 114 hard practice problems for Lectures 2–30, by lecture. Hard = exam length, in several parts; about 20–40 min each."
 tags: [practice]
 ---
 
@@ -159,3 +159,52 @@ tags: [practice]
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2310-calling-a-submarine|23.10 Calling a submarine]] — seawater · skin depth · decibels
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf|23.11 Dry earth from ELF to VHF]] — regimes · imperfect dielectric · good conductor · *modelled on Summer 2020 HE3 #3*
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] — skin depth · Joule heating · resistance
+
+## Lecture 24 · Signal transmission and circular polarization
+
+- [[practice/24-group-velocity-and-polarization#249-building-a-right-circular-wave|24.9 Building a right-circular wave]] — circular polarization · phasor fields · time-average power · *modelled on Summer 2018 HE3 #3a*
+- [[practice/24-group-velocity-and-polarization#2410-a-wave-with-a-free-phase|24.10 A wave with a free phase]] — elliptical polarization · phasor fields · time-average power · *modelled on SP17 Exam 3 #4*
+- [[practice/24-group-velocity-and-polarization#2411-reading-the-ionosphere-from-two-delays|24.11 Reading the ionosphere from two delays]] — group velocity · signal transmission · plasma frequency
+- [[practice/24-group-velocity-and-polarization#2412-an-elliptically-rotating-sheet-current|24.12 An elliptically rotating sheet current]] — current sheet radiation · elliptical polarization · energy balance
+
+## Lecture 25 · Wave reflection and transmission
+
+- [[practice/25-reflection-and-transmission#259-out-of-the-glass|25.9 Out of the glass]] — transmission coefficient · phasors · power balance · *modelled on Summer 2017 HE3 #3c–f*
+- [[practice/25-reflection-and-transmission#2510-into-lossy-ground|25.10 Into lossy ground]] — lossy media · transmission · Joule heating · *modelled on SP19 Exam 3 #1*
+- [[practice/25-reflection-and-transmission#2511-a-circular-wave-on-a-mirror|25.11 A circular wave on a mirror]] — perfect conductor · circular polarization · handedness · *modelled on SP19 Exam 3 #3b*
+- [[practice/25-reflection-and-transmission#2512-identifying-a-material|25.12 Identifying a material]] — reflection coefficient · intrinsic impedance · power balance · *modelled on SP18 Exam 3 #2a*
+
+## Lecture 26 · Standing waves and radiation pressure
+
+- [[practice/26-standing-waves-and-radiation-pressure#269-is-it-a-standing-wave|26.9 Is it a standing wave]] — standing waves · nodes and antinodes · perfect conductor · *modelled on SP17 Exam 3 #1b*
+- [[practice/26-standing-waves-and-radiation-pressure#2610-a-good-conductor-mirror|26.10 A good-conductor mirror]] — good conductor · skin depth · radiation pressure
+- [[practice/26-standing-waves-and-radiation-pressure#2611-pushing-a-sail-with-a-laser|26.11 Pushing a sail with a laser]] — radiation pressure · intensity
+- [[practice/26-standing-waves-and-radiation-pressure#2612-trapped-between-two-mirrors|26.12 Trapped between two mirrors]] — standing waves · radiation pressure · perfect conductor
+
+## Lecture 27 · Guided TEM waves on transmission lines
+
+- [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax|27.9 A pulse on a coax]] — transmission lines · coax · Poynting vector · *modelled on SP19 Exam 3 #2*
+- [[practice/27-transmission-line-basics#2710-splitting-a-snapshot-into-two-waves|27.10 Splitting a snapshot into two waves]] — transmission lines · moving pulses · energy
+- [[practice/27-transmission-line-basics#2711-the-battery-and-the-front|27.11 The battery and the front]] — transmission lines · surface charge · telegrapher's equations
+- [[practice/27-transmission-line-basics#2712-telegraphers-equations-for-a-leaky-coax|27.12 Telegrapher's equations for a leaky coax]] — telegrapher's equations · coax · conductance
+
+## Lecture 28 · Distributed circuits and bounce diagrams
+
+- [[practice/28-bounce-diagrams#289-voltage-and-current-diagrams|28.9 Voltage and current diagrams]] — bounce diagram · generator reflection coefficient · steady state · *modelled on SP18 Exam 3 #3a*
+- [[practice/28-bounce-diagrams#2810-a-pulse-into-a-resistive-load|28.10 A pulse into a resistive load]] — bounce diagram · transients · steady state · *modelled on FA23 Exam 3 #5*
+- [[practice/28-bounce-diagrams#2811-impulse-response-at-a-third-point|28.11 Impulse response at a third point]] — impulse response · bounce diagram · steady state · *modelled on Summer 2020 final #5*
+- [[practice/28-bounce-diagrams#2812-open-line-charges-like-a-capacitor|28.12 Open line charges like a capacitor]] — bounce diagram · steady state · capacitance
+
+## Lecture 29 · Bounce diagram examples
+
+- [[practice/29-bounce-diagram-examples#299-one-sine-cycle-on-a-mismatched-line|29.9 One sine cycle on a mismatched line]] — bounce diagram · generator reflection coefficient · *modelled on SP17 Exam 3 #5c*
+- [[practice/29-bounce-diagram-examples#2910-a-ramp-into-an-open-line|29.10 A ramp into an open line]] — bounce diagram · transients · *modelled on FA23 Exam 3 #5(c)*
+- [[practice/29-bounce-diagram-examples#2911-a-ramped-step-off-centre|29.11 A ramped step off-centre]] — impulse response · steady state
+- [[practice/29-bounce-diagram-examples#2912-a-partial-standing-wave-builds-up|29.12 A partial standing wave builds up]] — standing waves · bounce diagram
+
+## Lecture 30 · Multi-line circuits
+
+- [[practice/30-multi-line-circuits#309-two-lines-and-a-mismatched-source|30.9 Two lines and a mismatched source]] — bounce diagram · line junction · steady state · *modelled on SP19 Exam 3 #4*
+- [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes|30.10 Locating a splice by its echoes]] — line junction · bounce diagram · load reflection coefficient · *modelled on FA23 Exam 3 #4*
+- [[practice/30-multi-line-circuits#3011-a-tap-resistor-and-an-open-stub|30.11 A tap resistor and an open stub]] — line junction · transients · steady state
+- [[practice/30-multi-line-circuits#3012-a-switched-on-sine-across-a-step-down|30.12 A switched-on sine across a step-down]] — impulse response · line junction · steady state

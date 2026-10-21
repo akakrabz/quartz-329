@@ -19,7 +19,10 @@ Lectures tell the story in order; **concept pages** are the glossary you consult
 [[concepts/conductors]] · [[concepts/conductivity-and-susceptibility-models]] · [[concepts/capacitance]] · [[concepts/conductance]] · [[concepts/inductance]] · [[concepts/electrostatic-energy]] · [[concepts/magnetic-energy]] · [[concepts/magnetization]] · [[concepts/permeability]]
 
 ### Waves
-[[concepts/wave-equation]] · [[concepts/plane-waves]] · [[concepts/intrinsic-impedance]] · [[concepts/current-sheet-radiation]] · [[concepts/poynting-vector]] · [[concepts/poynting-theorem]] · [[concepts/phasors]] · [[concepts/dispersion-relation]] · [[concepts/propagation-constant]] · [[concepts/loss-tangent]] · [[concepts/skin-depth]]
+[[concepts/wave-equation]] · [[concepts/plane-waves]] · [[concepts/intrinsic-impedance]] · [[concepts/current-sheet-radiation]] · [[concepts/poynting-vector]] · [[concepts/poynting-theorem]] · [[concepts/phasors]] · [[concepts/dispersion-relation]] · [[concepts/propagation-constant]] · [[concepts/loss-tangent]] · [[concepts/skin-depth]] · [[concepts/group-velocity]] · [[concepts/wave-polarization]] · [[concepts/reflection-and-transmission]] · [[concepts/standing-waves]] · [[concepts/radiation-pressure]]
+
+### Transmission lines
+[[concepts/telegraphers-equations]] · [[concepts/characteristic-impedance]] · [[concepts/bounce-diagram]]
 
 ### Methods
 [[concepts/superposition]] · [[concepts/five-step-recipe]]

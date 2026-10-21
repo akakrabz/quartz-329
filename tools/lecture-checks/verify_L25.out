@@ -1,0 +1,164 @@
+=== A. constants
+ok   eta0 = 376.73 ohm: 376.730314 vs 376.73
+ok   eta0 ~ 120 pi (0.07 %): computed 376.991, page 376.73 (tol 0.1%)
+=== B. three waves, Maxwell's equations, boundary conditions, Gamma and tau (random media)
+ok   300 random media: Gamma, tau solve the 2x2 system; Maxwell's equations hold in both regions; E_x, H_y continuous at 0
+ok   |Gamma| <= 1 with Re eta2 >= 0; H_t/H_i = 1 - Gamma = tau eta1/eta2; real eta: -1<Gamma<1, 0<tau<2, sign rule, swap flips sign
+ok   reflected wave: (-z) x x = -y, so H_r carries -Gamma: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   incident and transmitted: x x y = +z: [0. 0. 1.] vs [0. 0. 1.]
+ok   reflected E x H along -z (for Gamma > 0): [ 0.  0. -1.] vs [-0. -0. -1.]
+ok   H_r(0)/H_i(0) = -Gamma: 0.2 vs 0.2
+ok   H_t(0)/H_i(0) = 1 - Gamma: 1.2 vs 1.2
+ok   Gamma = (n1 - n2)/(n1 + n2), n1 = 1, n2 = 1.5: -0.2 vs -0.2
+ok   Gamma = (n1 - n2)/(n1 + n2), n1 = 1.5, n2 = 1: 0.2 vs 0.2
+ok   Gamma = (n1 - n2)/(n1 + n2), n1 = 1.33, n2 = 2.4: -0.286863 vs -0.286863
+ok   Gamma = (n1 - n2)/(n1 + n2), n1 = 3, n2 = 1: 0.5 vs 0.5
+ok   lossy region 1: tangential E continuous with the same formula: (1.92915-0.065534j) vs (1.92915-0.065534j)
+ok   lossy region 1: tangential H continuous with the same formula: (0.005121-0.000174j) vs (0.005121-0.000174j)
+ok   Rao Ex. 5.4 |eta2| = 104.559 ohm: computed 104.559, page 104.559 (tol 0.0%)
+ok   Rao Ex. 5.4 angle eta2 = 33.69 deg: computed 33.6901, page 33.69 (tol 0.0%)
+ok   Rao Ex. 5.4 |Gamma| = 0.6325: computed 0.632462, page 0.6325 (tol 0.0%)
+ok   Rao Ex. 5.4 angle Gamma = 161.565 deg: computed 161.566, page 161.565 (tol 0.0%)
+ok   Rao Ex. 5.4 |tau| = 0.4472: computed 0.447205, page 0.4472 (tol 0.0%)
+ok   Rao Ex. 5.4 angle tau = 26.565 deg: computed 26.5652, page 26.565 (tol 0.0%)
+=== C. power balance
+ok   200 random cases: Si = Sr + St(0+); 1 = |G|^2 + |tau|^2 eta1 Re{1/eta2}; Re{1/eta2} = cos(angle)/|eta2|; lossless 1 = G^2 + tau^2 eta1/eta2
+ok   quadrature: net region-1 flux = (1 - |G|^2)|E0|^2/2 eta1 at every z (no cross term); equals St at 0+; St decays as e^{-2 alpha2 z}
+ok   tau^2 eta1/eta2 = (1 + G)(1 - G), G = -0.900: 0.19 vs 0.19
+ok   tau^2 eta1/eta2 = (1 + G)(1 - G), G = -0.200: 0.96 vs 0.96
+ok   tau^2 eta1/eta2 = (1 + G)(1 - G), G = 0.000: 1.0 vs 1.0
+ok   tau^2 eta1/eta2 = (1 + G)(1 - G), G = 0.143: 0.979592 vs 0.979592
+ok   tau^2 eta1/eta2 = (1 + G)(1 - G), G = 0.600: 0.64 vs 0.64
+ok   w - w* has zero real part: 0.0 vs 0.0
+=== D. perfect-conductor limit
+ok   sigma2 = 1e+02: |Gamma + 1| = 1.48e-02, |tau| = 1.48e-02 -> 0
+ok   sigma2 = 1e+04: |Gamma + 1| = 1.49e-03, |tau| = 1.49e-03 -> 0
+ok   sigma2 = 1e+06: |Gamma + 1| = 1.49e-04, |tau| = 1.49e-04 -> 0
+ok   sigma2 = 1e+08: |Gamma + 1| = 1.49e-05, |tau| = 1.49e-05 -> 0
+ok   PEC: total E at z = 0 is E0(1 + Gamma) = 0: 0.0 vs 0.0
+ok   PEC: total H at z = 0 is 2 E0/eta1 (along y): 0.013263 vs 0.013263
+ok   J_s = (-z) x y 2E0/eta1 = +x 2E0/eta1 (along the incident E): [0.013263 0.       0.      ] vs [0.013263 0.       0.      ]
+ok   (-z) x y = +x: [1. 0. 0.] vs [1. 0. 0.]
+ok   sigma2 = 1e+05: integral of sigma2 E_t dz -> 2E0/eta1: computed 0.0132607, page 0.0132629 (tol 0.3%)
+ok   sigma2 = 1e+07: integral of sigma2 E_t dz -> 2E0/eta1: computed 0.0132627, page 0.0132629 (tol 0.0%)
+ok   sigma2 = 1e+09: integral of sigma2 E_t dz -> 2E0/eta1: computed 0.0132629, page 0.0132629 (tol 0.0%)
+=== E. special cases and the coating example
+ok   matched: mu_r = eps_r = 1.0 against vacuum gives Gamma = 0: 0.0 vs 0.0
+ok   matched: mu_r = eps_r = 2.0 against vacuum gives Gamma = 0: 0.0 vs 0.0
+ok   matched: mu_r = eps_r = 7.5 against vacuum gives Gamma = 0: 0.0 vs 0.0
+ok   glass n = 1.5 in air: Gamma = -0.2: -0.2 vs -0.2
+ok   4 % of the power reflects: 0.04 vs 0.04
+ok   eta_c = sqrt(eta0 * eta0/1.5) = eta0/sqrt(1.5): 307.811959 vs 307.811959
+ok   n_c = sqrt(1.5) = 1.22: computed 1.22474, page 1.22 (tol 0.4%)
+ok   lambda0/(4 n_c) = 112 nm at 550 nm: computed 112.268, page 112 (tol 0.5%)
+ok   quarter-wave coating: zero reflection: 0.0 vs 0.0
+ok   zero-thickness coating: back to |Gamma| = 0.2: 0.2 vs 0.2
+ok   direct three-layer field solution: quarter-wave layer reflects nothing: 0.0 vs 0.0
+ok   and transmits all the power: 1.0 vs 1.0
+=== F. the notes' Example 1 (vacuum onto mu0, 9/4 eps0)
+ok   eta2 = (2/3) eta0: 251.327412 vs 251.327412
+ok   Gamma = -1/5: -0.2 vs -0.2
+ok   tau = 4/5: 0.8 vs 0.8
+ok   E_r = -(1/5) x sqrt(120 pi) e^{j b1 z}: [-3.883252 -0.       -0.      ] vs [-3.883252 -0.       -0.      ]
+ok   H_r = +(1/5) y sqrt(120 pi)/eta0 e^{j b1 z}: [0.       0.010301 0.      ] vs [0.       0.010301 0.      ]
+ok   H_t = (4/5) sqrt(120 pi)/((2/3) eta0): 0.061804 vs 0.061804
+ok   beta2 = 1.5 beta1: 1.5 vs 1.5
+ok   <S_i> = 1/2 W/m^2 (eta0 = 120 pi): 0.5 vs 0.5
+ok   <S_r> = 1/50 = 0.02 W/m^2: 0.02 vs 0.02
+ok   <S_t> = (1/2)(16/25)(3/2) = 0.48 W/m^2: 0.48 vs 0.48
+ok   0.02 + 0.48 = 0.5: 0.5 vs 0.5
+ok   notes: (1/2)(1/25 + 24/25) = 1/2: 0.5 vs 0.5
+ok   notes: (16/25)(3/2) = 24/25: 0.96 vs 0.96
+ok   4 % reflects: 0.04 vs 0.04
+ok   96 % transmitted: 0.96 vs 0.96
+ok   with eta0 = 376.73 the notes' 'approximately 1/2' holds (0.5003): computed 0.500346, page 0.5 (tol 0.1%)
+ok   <S_i>, <S_t> along +z: [0. 0. 1.] vs [0. 0. 1.]
+ok   E_r along -x, H_r along +y: <S_r> along -z: [ 0.  0. -1.] vs [-0. -0. -1.]
+=== G. air onto seawater at 1 kHz
+ok   delta = 7.96 m: computed 7.95775, page 7.96 (tol 0.1%)
+ok   eta2 real part 0.0314 ohm: computed 0.0314159, page 0.0314 (tol 0.3%)
+ok   eta2 imaginary part 0.0314 ohm: computed 0.0314159, page 0.0314 (tol 0.3%)
+ok   eta2 ~ (1 + j)/(sigma delta): (0.031416+0.031416j) vs (0.031416+0.031416j)
+ok   Gamma real part -0.99983: computed -0.999833, page -0.99983 (tol 0.0%)
+ok   Gamma imaginary part +0.00017: computed 0.000166754, page 0.00017 (tol 2.0%)
+ok   1 - |Gamma|^2 = 3.3e-4 (0.033 %): computed 0.000333509, page 0.00033 (tol 2.0%)
+ok   small-eta2 approximation 4 Re(eta2)/eta1: computed 0.000333509, page 0.000333564 (tol 0.2%)
+ok   same with eta0 = 120 pi: computed 0.000333278, page 0.00033 (tol 2.0%)
+ok   power decays as e^{-2z/delta}: 0.135335 vs 0.135335
+ok   concept page: Gamma ~ -0.9998: computed 0.999833, page 0.9998 (tol 0.0%)
+=== H. figures
+ok   physics -> screen map is a proper rotation: 1.0 vs 1.0
+ok   E along +x -> screen up: [0. 1. 0.] vs [0. 1. 0.]
+ok   H along +y -> out of the screen (odot): [0. 0. 1.] vs [0. 0. 1.]
+ok   +z -> screen right: [1. 0. 0.] vs [1. 0. 0.]
+ok   screen: up x out = right: incident and transmitted travel right: [1. 0. 0.] vs [1. 0. 0.]
+ok   screen: up x in (otimes) = left: reflected (H along -y for Gamma > 0) travels left: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   n = -z drawn pointing left (from region 2 into region 1): [-1.  0.  0.] vs [-1. -0. -0.]
+ok   fig 2 dot at eta2/eta1 = 0.667: Gamma = -0.2: -0.2 vs -0.2
+ok   fig 2 dot: tau = 0.8: 0.8 vs 0.8
+ok   fig 2 dot at eta2/eta1 = 1.000: Gamma = 0.0: 0.0 vs 0.0
+ok   fig 2 dot: tau = 1.0: 1.0 vs 1.0
+ok   fig 2 dot at eta2/eta1 = 1.500: Gamma = 0.2: 0.2 vs 0.2
+ok   fig 2 dot: tau = 1.2: 1.2 vs 1.2
+ok   fig 2: Gamma odd in log(eta2/eta1): max |diff| 3.3e-16 over 801 values
+ok   fig 2: Gamma^2 even: max |diff| 4.4e-16 over 801 values
+ok   fig 2: limits -1, 0 and +1, 2 at the ends
+ok   fig 3: total E and eta1 H continuous at z = 0 at every instant; E slope continuous (mu1 = mu2); H slope jumps by eps2/eps1 = 2.25
+ok   fig 3 caption: E scales by tau = 0.8: 0.8 vs 0.8
+ok   fig 3 caption: H scales by 1 - Gamma = 1.2: 1.2 vs 1.2
+=== I. worked problem
+ok   beta1 = pi/3 rad/m: 1.047198 vs 1.047198
+ok   eta2 = (4/3) eta0 = 160 pi ohm: 502.654825 vs 502.654825
+ok   beta2 = 3 beta1 = pi rad/m (matches the pi x in H_t): 3.141593 vs 3.141593
+ok   Gamma = 1/7: 0.142857 vs 0.142857
+ok   tau = 8/7: 1.142857 vs 1.142857
+ok   1/7 = 0.143: computed 0.142857, page 0.143 (tol 0.2%)
+ok   8/7 = 1.14: computed 1.14286, page 1.14 (tol 0.3%)
+ok   E_t = eta2 H_t x u = -16 y V/m: [  0. -16.   0.] vs [ -0. -16.  -0.]
+ok   z x (-x) = -y: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   (-y) x z = -x: E_t x H_t* along the travel: [-1.  0.  0.] vs [-1. -0. -0.]
+ok   E_i(0) = -14 y V/m: [  0. -14.   0.] vs [ -0. -14.  -0.]
+ok   E_r(0) = -2 y V/m: [ 0. -2.  0.] vs [-0. -2. -0.]
+ok   H_i = +z 7/(60 pi): [-0.        0.        0.037136] vs [0.       0.       0.037136]
+ok   H_r = -z 1/(60 pi): [ 0.        0.       -0.005305] vs [-0.       -0.       -0.005305]
+ok   (-x) x (-y) = +z: [0. 0. 1.] vs [0. 0. 1.]
+ok   x x (-y) = -z: [ 0.  0. -1.] vs [-0. -0. -1.]
+ok   |H_i| = 37.1 mA/m: computed 37.1362, page 37.1 (tol 0.2%)
+ok   |H_r| = 5.31 mA/m: computed 5.30516, page 5.31 (tol 0.2%)
+ok   H_i(0) + H_r(0) = H_t(0) = z/(10 pi): [0.       0.       0.031831] vs [0.       0.       0.031831]
+ok   H_r/H_i = -1/7 = -Gamma: -0.142857 vs -0.142857
+ok   H_t/H_i = 6/7 = 1 - Gamma: 0.857143 vs 0.857143
+ok   incident (y, z) phasors satisfy Faraday: (5.539435-13.573972j) vs (5.539435-13.573972j)
+ok   incident phasors satisfy Ampere (eps0 = 1e-9/36 pi): (0.014694-0.036006j) vs (0.014694-0.036006j)
+ok   reflected phasors satisfy Faraday: (0.791348+1.939139j) vs (0.791348+1.939139j)
+ok   transmitted phasors satisfy Faraday (mu = 4 mu0): (-46.131379-19.96283j) vs (-46.131379-19.96283j)
+ok   transmitted phasors satisfy Ampere (eps = 2.25 eps0): (-0.091775-0.039715j) vs (-0.091775-0.039715j)
+ok   phasor of cos(wt + pi x) at x = -0.3: 0.970746 vs 0.970746
+ok   phasor of cos(wt + pi x) at x = -1.1: 0.114791 vs 0.114791
+ok   <S_i> = 49/(60 pi): 0.259953 vs 0.259953
+ok   <S_t> = 4/(5 pi): 0.254648 vs 0.254648
+ok   49/60pi - 1/60pi = 48/60pi = 4/5pi: 0.254648 vs 0.254648
+ok   <S_i> = 260 mW/m^2: computed 259.953, page 260 (tol 0.2%)
+ok   <S_r> = 5.31 mW/m^2: computed 5.30516, page 5.31 (tol 0.2%)
+ok   <S_t> = 255 mW/m^2: computed 254.648, page 255 (tol 0.2%)
+ok   <S_i> along -x (E -y, H +z): [-1.  0.  0.] vs [-1. -0. -0.]
+ok   <S_r> along +x (E -y, H -z): [1. 0. 0.] vs [1. 0. 0.]
+ok   Gamma^2 = 1/49: 0.020408 vs 0.020408
+ok   2.0 % reflects: computed 2.04082, page 2 (tol 3.0%)
+ok   tau^2 eta1/eta2 = (64/49)(3/4) = 48/49: 0.979592 vs 0.979592
+ok   PEC: E_r(0) = +14 y: [-0. 14. -0.] vs [ 0. 14.  0.]
+ok   PEC: H_r = x x y 14/(120 pi) = +z 7/(60 pi): [-0.        0.        0.037136] vs [0.       0.       0.037136]
+ok   PEC: total E(0) = 0: [0. 0. 0.] vs [0. 0. 0.]
+ok   PEC: total H(0) = z 28/(120 pi) = z 7/(30 pi): [-0.        0.        0.074272] vs [0.       0.       0.074272]
+ok   J_s = x x z 7/(30 pi) = -y 7/(30 pi) A/m: [ 0.       -0.074272  0.      ] vs [-0.       -0.074272 -0.      ]
+ok   |J_s| = 74.3 mA/m: computed 74.2723, page 74.3 (tol 0.2%)
+ok   |J_s| = 2|E_i(0)|/eta1: 0.074272 vs 0.074272
+ok   J_s parallel to the incident E at the surface
+=== J. concept page
+ok   out of glass into vacuum: Gamma = +1/5: 0.2 vs 0.2
+ok   tau = 6/5: 1.2 vs 1.2
+ok   again 4 %: 0.04 vs 0.04
+ok   transmitted fraction (36/25)(2/3) = 0.96: 0.96 vs 0.96
+ok   |J_s| = 2|E0|/eta1: 0.015915 vs 0.015915
+
+ALL 152 CHECKS PASSED

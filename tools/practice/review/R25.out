@@ -1,0 +1,188 @@
+=== 25.1 ===
+PASS  25.1a Gamma: got (-0.333333+0j) want (-0.333333+0j)
+PASS  25.1a tau: got (0.666667+0j) want (0.666667+0j)
+PASS  25.1a refl %: got (11.111111+0j) want (11.1+0j)
+PASS  25.1a balance: got (1+0j) want (1+0j)
+PASS  25.1b Gamma: got (0.333333+0j) want (0.333333+0j)
+PASS  25.1b tau: got (1.333333+0j) want (1.333333+0j)
+PASS  25.1b refl %: got (11.111111+0j) want (11.1+0j)
+PASS  25.1b balance: got (1+0j) want (1+0j)
+PASS  25.1c Gamma: got (0.333333+0j) want (0.333333+0j)
+PASS  25.1c tau: got (1.333333+0j) want (1.333333+0j)
+PASS  25.1c refl %: got (11.111111+0j) want (11.1+0j)
+PASS  25.1c balance: got (1+0j) want (1+0j)
+PASS  25.1d Gamma: got (-1+0j) want (-1+0j)
+PASS  25.1d tau: got 0j want 0j
+=== 25.2 ===
+(a) Er.Ei<0: True  (b) Hr.Hi<0: False
+PASS  25.2a key T: got (1+0j) want (1+0j)
+PASS  25.2b key F: got 0j want 0j
+PASS  25.2c eta2/eta1: got (2+0j) want (2+0j)
+PASS  25.2c tau: got (1.333333+0j) want (1.333333+0j)
+PASS  25.2c transmitted frac: got (0.888889+0j) want (0.888889+0j)
+PASS  25.2d E continuity: got (0.461538+0j) want (0.461538+0j)
+PASS  25.2e Gamma: got 0j want 0j
+PASS  25.2e speed/c: got (0.333333+0j) want (0.333333+0j)
+=== 25.3 ===
+w=1e+06: eta2=4.4484+4.4373j Gamma=-0.97641+0.02299j
+w=1e+09: eta2=4.4484+4.4373j Gamma=-0.97641+0.02299j
+PASS  25.3 loss tangent: got (400+0j) want (400+0j)
+PASS  25.3 |eta2| approx eta0/60: got (6.283185+0j) want (6.3+0j)
+PASS  25.3 eta2 approx: got (4.442883+4.442883j) want (4.442883+4.442883j)
+PASS  25.3 Gamma exact: got (-0.976408+0.022992j) want (-0.976+0.023j)
+PASS  25.3 |Gamma|: got (0.976679+0j) want (0.977+0j)
+PASS  25.3 |Gamma|^2 %: got (95.390145+0j) want (95.4+0j)
+PASS  25.3 (b) lossless: got (-0.5+0j) want (-0.5+0j)
+PASS  25.3 (c) swapped lossless: got (0.5+0j) want (0.5+0j)
+PASS  25.3 (e) leaving conductor ~+1: got (0.976408-0.022992j) want (1+0j)
+=== 25.4 ===
+PASS  25.4 eta2/pi: got (30+0j) want (30+0j)
+PASS  25.4 student Gamma: got (0.6+0j) want (0.6+0j)
+PASS  25.4 Er(0): got [-3.+0.j  0.+0.j  0.+0.j] want [-3.+0.j -0.+0.j -0.+0.j]
+PASS  25.4 Et(0): got [2.+0.j 0.+0.j 0.+0.j] want [2.+0.j 0.+0.j 0.+0.j]
+PASS  25.4 Gamma: got (-0.6+0j) want (-0.6+0j)
+PASS  25.4 tau: got (0.4+0j) want (0.4+0j)
+PASS  25.4 correct balance: got (1+0j) want (1+0j)
+PASS  25.4 student balance: got (10.6+0j) want (10.6+0j)
+PASS  25.4 trans %: got (64+0j) want (64+0j)
+=== 25.5 ===
+PASS  25.5a eps_r: got (9+0j) want (9+0j)
+PASS  25.5b enter %: got (75+0j) want (75+0j)
+PASS  25.5c mu_r: got (9+0j) want (9+0j)
+=== 25.6 ===
+PASS  25.6 eta1/pi: got (60+0j) want (60+0j)
+PASS  25.6 eta2/pi: got (240+0j) want (240+0j)
+PASS  25.6 beta1: got (4.18879+0j) want (4.18879+0j)
+PASS  25.6 beta2: got (4.18879+0j) want (4.18879+0j)
+PASS  25.6 Gamma: got (0.6+0j) want (0.6+0j)
+PASS  25.6 tau: got (1.6+0j) want (1.6+0j)
+PASS  25.6 Er: got [0.+0.j 6.+0.j 0.+0.j] want [0.+0.j 6.+0.j 0.+0.j]
+PASS  25.6 Hr: got [-0.031831+0.j  0.      +0.j  0.      +0.j] want [-0.031831+0.j -0.      +0.j -0.      +0.j]
+PASS  25.6 Et: got [ 0.+0.j 16.+0.j  0.+0.j] want [ 0.+0.j 16.+0.j  0.+0.j]
+PASS  25.6 Ht: got [0.021221+0.j 0.      +0.j 0.      +0.j] want [0.021221+0.j 0.      +0.j 0.      +0.j]
+PASS  25.6 Hi: got [0.053052+0.j 0.      +0.j 0.      +0.j] want [0.053052+0.j 0.      +0.j 0.      +0.j]
+  reflected u=+z => e^{-j b z}; transmitted u=-z => e^{+j b z} (page: same)
+PASS  25.6 |Si|: got (0.265258+0j) want (0.265+0j)
+PASS  25.6 |Sr|: got (0.095493+0j) want (0.095+0j)
+PASS  25.6 |St|: got (0.169765+0j) want (0.17+0j)
+PASS  25.6 refl %: got (36+0j) want (36+0j)
+PASS  25.6 enter %: got (64+0j) want (64+0j)
+  Si dir [ 0.  0. -1.] Sr dir [0. 0. 1.]
+=== 25.7 ===
+PASS  25.7 beta: got (6.283185+0j) want (6.283185+0j)
+PASS  25.7 Ei phasor at y0: got [0.      +0.j       0.      +0.j       2.186906-2.053641j] want [0.      +0.j       0.      +0.j       2.186906-2.053641j]
+PASS  25.7 Hi at y0: got [-0.005801+0.005447j  0.      +0.j        0.      +0.j      ] want [-0.005801+0.005447j  0.      +0.j        0.      +0.j      ]
+PASS  25.7 Er at y0: got [0.      +0.j       0.      +0.j       2.186906+2.053641j] want [0.      +0.j       0.      +0.j       2.186906+2.053641j]
+PASS  25.7 Hr at y0: got [0.005801+0.005447j 0.      +0.j       0.      +0.j      ] want [0.005801+0.005447j 0.      +0.j       0.      +0.j      ]
+PASS  25.7 Er(t): got [-0.     +0.j -0.     +0.j -2.99408+0.j] want [-0.     +0.j -0.     +0.j -2.99408+0.j]
+PASS  25.7 H total y=0: got [0.+0.015915j 0.+0.j       0.+0.j      ] want [0.+0.015915j 0.+0.j       0.+0.j      ]
+PASS  25.7 Js phasor: got [0.+0.j       0.+0.j       0.-0.015915j] want [ 0.+0.j        0.+0.j       -0.-0.015915j]
+PASS  25.7 Js(t): got [0.      +0.j 0.      +0.j 0.009355+0.j] want [0.      +0.j 0.      +0.j 0.009355+0.j]
+PASS  25.7 Js(t): got [-0.      +0.j -0.      +0.j  0.013947+0.j] want [0.      +0.j 0.      +0.j 0.013947+0.j]
+PASS  25.7 |Js| mA/m: got (15.915494+0j) want (15.9+0j)
+PASS  25.7 2*3/eta0: got (0.015915+0j) want (0.015915+0j)
+=== 25.8 ===
+PASS  25.8 sig/(w e0): got (104257812.280663+0j) want (100000000+0j)
+PASS  25.8 delta um: got (0.660855+0j) want (0.661+0j)
+PASS  25.8 eta2: got (0.02609+0.02609j) want (0.0261+0.0261j)
+  exact vs approx eta rel diff: 4.795803696025219e-09
+PASS  25.8 absorbed frac: got (0.000277+0j) want (0.000277+0j)
+PASS  25.8 formula: got (0.000277+0j) want (0.000277+0j)
+PASS  25.8 approx 4Re/eta1: got (0.000277+0j) want (0.000277+0j)
+PASS  25.8 Gamma: got (-0.999862+0.000138j) want (-0.99986+0.00014j)
+PASS  25.8 absorbed mW/m2: got (27.677996+0j) want (27.7+0j)
+PASS  25.8 reflected W/m2: got (99.972322+0j) want (99.97+0j)
+PASS  25.8 trans side: got (0.000277+0j) want (0.000277+0j)
+=== 25.9 ===
+PASS  25.9 eta1/pi: got (40+0j) want (40+0j)
+PASS  25.9 beta2: got (1.047198+0j) want (1.047198+0j)
+PASS  25.9 beta1: got (3.141593+0j) want (3.141593+0j)
+PASS  25.9 Gamma: got (0.5+0j) want (0.5+0j)
+PASS  25.9 tau: got (1.5+0j) want (1.5+0j)
+PASS  25.9 Et phasor z0: got [ 0.      +0.j       -1.248842-2.727708j  0.      +0.j      ] want [ 0.      -0.j       -1.248842-2.727708j  0.      -0.j      ]
+PASS  25.9 Ht(0): got [0.-0.007958j 0.+0.j       0.+0.j      ] want [-0.-0.007958j  0.+0.j        0.+0.j      ]
+PASS  25.9 Ei(0): got [0.-0.j 0.-2.j 0.-0.j] want [0.-0.j 0.-2.j 0.-0.j]
+PASS  25.9 Er(0): got [0.+0.j 0.-1.j 0.+0.j] want [0.-0.j 0.-1.j 0.-0.j]
+PASS  25.9 Hi(0): got [0.-0.015915j 0.+0.j       0.+0.j      ] want [-0.-0.015915j  0.+0.j        0.+0.j      ]
+PASS  25.9 Hr(0): got [0.+0.007958j 0.+0.j       0.+0.j      ] want [0.+0.007958j 0.+0.j       0.+0.j      ]
+PASS  25.9 H tangential: got [0.-0.007958j 0.+0.j       0.+0.j      ] want [0.-0.007958j 0.+0.j       0.+0.j      ]
+PASS  25.9 Si: got [ 0.      +0.j  0.      +0.j -0.015915+0.j] want [-0.      +0.j -0.      +0.j -0.015915+0.j]
+PASS  25.9 Sr: got [0.      +0.j 0.      +0.j 0.003979+0.j] want [0.      +0.j 0.      +0.j 0.003979+0.j]
+PASS  25.9 St: got [ 0.      +0.j  0.      +0.j -0.011937+0.j] want [-0.      +0.j -0.      +0.j -0.011937+0.j]
+PASS  25.9 Si mW: got (-15.915494+0j) want (-15.9+0j)
+PASS  25.9 Sr mW: got (3.978874+0j) want (3.98+0j)
+PASS  25.9 St mW: got (-11.936621+0j) want (-11.9+0j)
+PASS  25.9 trans frac: got (0.75+0j) want (0.75+0j)
+PASS  25.9 Er(z,t): got [0.     +0.j 0.45399+0.j 0.     +0.j] want [0.     +0.j 0.45399+0.j 0.     +0.j]
+=== 25.10 ===
+PASS  25.10 sigma: got (0.009189+0j) want (0.009189+0j)
+PASS  25.10 sigma mS: got (9.188815+0j) want (9.19+0j)
+PASS  25.10 beta1: got (1+0j) want (1+0j)
+PASS  25.10 eta2: got (163.241943+94.24778j) want (163.241943+94.24778j)
+PASS  25.10 gamma2: got (1+1.732051j) want (1+1.732051j)
+PASS  25.10 Gamma: got (-0.354438+0.236292j) want (-0.354438+0.236292j)
+PASS  25.10 Gamma rect: got (-0.354438+0.236292j) want (-0.354+0.236j)
+PASS  25.10 |Gamma|: got (0.425982+0j) want (0.426+0j)
+PASS  25.10 arg Gamma: got (146.309932+0j) want (146.3+0j)
+PASS  25.10 tau rect: got (0.645562+0.236292j) want (0.646+0.236j)
+PASS  25.10 |tau|: got (0.687448+0j) want (0.687+0j)
+PASS  25.10 arg tau: got (20.103909+0j) want (20.1+0j)
+PASS  25.10 |Ht| mA: got (36.470225+0j) want (36.5+0j)
+PASS  25.10 arg Ht: got (-9.896091+0j) want (-9.9+0j)
+PASS  25.10 |Gamma|^2: got (0.18146+0j) want (0.18146+0j)
+PASS  25.10 refl %: got (18.14603+0j) want (18.1+0j)
+PASS  25.10 enter %: got (81.85397+0j) want (81.9+0j)
+PASS  25.10 Si: got (0.132629+0j) want (0.1326+0j)
+PASS  25.10 |tau E0|^2: got (47.258412+0j) want (47.26+0j)
+PASS  25.10 St(0+): got (0.108562+0j) want (0.1086+0j)
+PASS  25.10 St/Si: got (0.81854+0j) want (0.819+0j)
+PASS  25.10 Joule: got (0.108562+0j) want (0.108562+0j)
+PASS  25.10 H check: got (0.035928-0.006268j) want (0.0359-0.0063j)
+PASS  25.10 H check2: got (0.035928-0.006268j) want (0.035928-0.006268j)
+=== 25.11 ===
+PASS  25.11 f MHz: got (150+0j) want (150+0j)
+PASS  25.11 lambda: got (2+0j) want (2+0j)
+PASS  25.11 Ei phasor: got [-3.236068+2.351141j  0.      +0.j        2.351141+3.236068j] want [-3.236068+2.351141j  0.      +0.j        2.351141+3.236068j]
+  incident hand: left
+PASS  25.11a left: got (1+0j) want (1+0j)
+PASS  L24 sanity right: got (1+0j) want (1+0j)
+PASS  25.11 Er(0): got [ 0.-4.j  0.+0.j -4.+0.j] want [-0.-4.j -0.+0.j -4.+0.j]
+  reflected hand: right
+PASS  25.11b right: got (1+0j) want (1+0j)
+PASS  25.11 Er(y,t): got [ 0.125643+0.j  0.      +0.j -3.998026+0.j] want [ 0.125643+0.j  0.      +0.j -3.998026+0.j]
+PASS  25.11 Hi(0): got [0.01061+0.j      0.     +0.j      0.     -0.01061j] want [0.01061+0.j      0.     +0.j      0.     -0.01061j]
+PASS  25.11 Hr(0): got [ 0.01061-0.j       0.     +0.j      -0.     -0.01061j] want [0.01061+0.j      0.     +0.j      0.     -0.01061j]
+PASS  25.11 Js phasor: got [ 0.      +0.021221j -0.      +0.j        0.021221+0.j      ] want [0.      +0.021221j 0.      +0.j       0.021221+0.j      ]
+PASS  25.11 Js(t): got [-0.009035+0.j -0.      +0.j  0.019201+0.j] want [-0.009035+0.j  0.      +0.j  0.019201+0.j]
+PASS  25.11 Js(t): got [ 0.012473+0.j  0.      +0.j -0.017168+0.j] want [ 0.012473+0.j  0.      +0.j -0.017168+0.j]
+PASS  25.11 |Js| mA: got (21.220659+0j) want (21.2+0j)
+PASS  25.11 Js=2Ei/eta0: got [ 0.      +0.021221j -0.      +0.j        0.021221+0.j      ] want [0.      +0.021221j 0.      +0.j       0.021221+0.j      ]
+  Js hand about -n (into conductor? n=-y): left
+PASS  25.11 Si: got [0.      +0.j 0.042441+0.j 0.      +0.j] want [0.      +0.j 0.042441+0.j 0.      +0.j]
+PASS  25.11 Si mW: got (42.441318+0j) want (42.4+0j)
+PASS  25.11 Sr: got [-0.      +0.j -0.042441+0.j  0.      +0.j] want [-0.      +0.j -0.042441+0.j -0.      +0.j]
+PASS  25.11 chk Gamma: got (-0.5+0j) want (-0.5+0j)
+PASS  25.11 chk |Er|: got (2+0j) want (2+0j)
+PASS  25.11 chk |Et|: got (2+0j) want (2+0j)
+  eps9 reflected hand: right  transmitted hand: left
+=== 25.12 ===
+PASS  25.12 Gamma: got (0.2+0j) want (0.2+0j)
+PASS  25.12 eta2/pi: got (180+0j) want (180+0j)
+PASS  25.12 b0: got (2.094395+0j) want (2.094395+0j)
+PASS  25.12 b2: got (4.18879+0j) want (4.18879+0j)
+PASS  25.12 mu_r: got (3+0j) want (3+0j)
+PASS  25.12 eps_r: got (1.333333+0j) want (1.333333+0j)
+PASS  25.12 tau: got (1.2+0j) want (1.2+0j)
+PASS  25.12 Et amp: got (12+0j) want (12+0j)
+PASS  25.12 Ht: got [0.      +0.j 0.021221+0.j 0.      +0.j] want [0.      +0.j 0.021221+0.j 0.      +0.j]
+PASS  25.12 Ht mA: got (21.220659+0j) want (21.2+0j)
+PASS  25.12 Si: got (0.132629+0j) want (0.132629+0j)
+PASS  25.12 Sr: got (0.005305+0j) want (0.005305+0j)
+PASS  25.12 St: got (0.127324+0j) want (0.127324+0j)
+PASS  25.12 mW: got [132.629119+0.j   5.305165+0.j 127.323954+0.j] want [132.6+0.j   5.3+0.j 127.3+0.j]
+PASS  25.12 balance: got (0.127324+0j) want (0.127324+0j)
+PASS  25.12d mu_r: got (1.333333+0j) want (1.333333+0j)
+PASS  25.12 swapped mu_r: got (1.333333+0j) want (1.333333+0j)
+PASS  25.12 swapped eps_r: got (3+0j) want (3+0j)
+
+TOTAL FAILS: 0

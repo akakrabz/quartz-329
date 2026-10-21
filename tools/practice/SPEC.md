@@ -231,8 +231,15 @@ Files (read what helps; images are readable with the Read tool):
 | 21 | `practice/21-phasors-and-monochromatic-waves.md` | `3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation` |
 | 22 | `practice/22-damped-waves-in-conducting-media.md` | `3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves` |
 | 23 | `practice/23-imperfect-dielectrics-and-good-conductors.md` | `3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors` |
+| 24 | `practice/24-group-velocity-and-polarization.md` | `3-maxwell-and-waves/24-signal-transmission-and-circular-polarization` |
+| 25 | `practice/25-reflection-and-transmission.md` | `3-maxwell-and-waves/25-wave-reflection-and-transmission` |
+| 26 | `practice/26-standing-waves-and-radiation-pressure.md` | `3-maxwell-and-waves/26-standing-waves-and-radiation-pressure` |
+| 27 | `practice/27-transmission-line-basics.md` | `4-transmission-lines/27-guided-tem-waves-on-transmission-lines` |
+| 28 | `practice/28-bounce-diagrams.md` | `4-transmission-lines/28-distributed-circuits-and-bounce-diagrams` |
+| 29 | `practice/29-bounce-diagram-examples.md` | `4-transmission-lines/29-bounce-diagram-examples` |
+| 30 | `practice/30-multi-line-circuits.md` | `4-transmission-lines/30-multi-line-circuits` |
 
-Frontmatter tags for Lectures 16–23: `[practice, waves]`.
+Frontmatter tags for Lectures 16–26: `[practice, waves]`; Lectures 27–30: `[practice, transmission-lines]`.
 
 ## 10. Coverage checklists (cover every bullet at least once; ideas are suggestions)
 
@@ -393,3 +400,60 @@ Frontmatter tags for Lectures 16–23: `[practice, waves]`.
   Helmholtz equation, penetration depth, AC conductivity, loss tangent, skin depth, good conductor, imperfect
   dielectric, decibels, seawater, regimes — plus every older tag. Use 1–3 per problem.
 - No Fall 2026 homework beyond HW5 is available; do not base anything on open homework.
+
+## 15. Lectures 24–25 (build 9)
+
+- Built from the course notes only (`/mnt/user-data/uploads/ECE 329/Notes/329lect24.pdf`, `329lect25.pdf`; page
+  renders `/home/claude/work/digest9/img24/`, `img25/`; coverage maps `digest9/COVERAGE-L24.md`, `-L25.md`). Scope and
+  notation come from the site pages `3-maxwell-and-waves/24-…md`, `25-…md` and their concept pages
+  (`concepts/group-velocity`, `wave-polarization`, `reflection-and-transmission`).
+- **Concision:** the student finds the site verbose. Statements ≤ 120 words; solutions keep Setup → Work → Answer →
+  Check but with no narration — equations and one-line reasons. A solution longer than ~250 words needs a reason.
+- **L24 Group velocity, polarization.** Envelope vs carrier: v_g = dω/dβ vs v_p = ω/β for given dispersion
+  relations (plasma ω² = ω_p² + β²c² with v_pv_g = c²; others the page gives); group delay over a distance and the
+  spread between two frequencies; when a medium is non-dispersive; polarization of given time-domain or phasor
+  fields (linear / circular / elliptical; handedness by the page's convention — rotate the vector at a fixed
+  point, check numerically); writing a field with a stated polarization and direction; H̃ of a circular wave;
+  ⟨S⟩ of circular and elliptical waves as the sum of perpendicular components; decomposing linear into two
+  circulars and the reverse; MC/TF on polarization facts. Exam families (Exam 3 catalogue L24 index): SP17 E3 #4c,
+  Summer 2017/2018/2019 HE3 #2a/#3a/#1a, SP18 E3 #1(iii)–(iv), SP19 E3 #3a, FA23 E3 #2, Summer 2020 FE #4b–c —
+  re-parameterize.
+- **L25 Reflection and transmission at normal incidence.** Γ = (η₂ − η₁)/(η₂ + η₁), τ = 1 + Γ (the page's symbols);
+  reflected and transmitted phasors (E and H, directions by û × E), for dielectric–dielectric, dielectric–magnetic,
+  into a lossy medium (complex η₂ — use exact γ, η), and the PEC limit (Γ = −1, J_s = n̂ × H with the total H at
+  the wall); power balance ⟨S⟩_i = ⟨S⟩_r + ⟨S⟩_t, fraction transmitted 1 − |Γ|² (lossless region 2) and why it
+  is not |τ|²; matching η₂ = η₁ (no reflection), ε_r from a measured Γ; incidence from the denser side; MC/TF on
+  signs (E reflected inverted when η₂ < η₁) and on what is continuous. The standing wave in region 1 and radiation
+  pressure are Lecture 26 — out of scope beyond "the fields add". Exam families: SP17 E3 #2(iv), Summer 2017 HE3
+  #3c–f, SP18 E3 #2d–e, SP19 E3 #3b — re-parameterize.
+- New topic tags (rules exist in build_practice.py): group velocity, dispersion, signal transmission,
+  polarization of waves, circular polarization, elliptical polarization, handedness, reflection, transmission,
+  reflection coefficient, transmission coefficient, normal incidence, power balance, perfect conductor — plus every
+  older tag. Use 1–3 per problem.
+- Do not duplicate the site's worked problems for these lectures (`problems/` files linked from the two pages).
+
+## 16. Lectures 26–30 (build 11)
+
+- Built from the course notes only (renders `/home/claude/work/digest10/img26/` … `img30/`; coverage maps
+  `digest10/COVERAGE-L2N.md`, `-L30.md`). Scope and notation come from the site pages
+  (`3-maxwell-and-waves/26-…md`, `4-transmission-lines/27-…md` … `30-…md`) and their concept pages (`concepts/standing-waves`,
+  `radiation-pressure`, `telegraphers-equations`, `characteristic-impedance`, `bounce-diagram`). Line sign conventions
+  (z direction, generator end, Γ_L, Γ_g, how V and I are read off a bounce diagram) **exactly as the L28 page states them**.
+- Concision as §15 (statements ≤ 120 words; solutions without narration).
+- **Verify every bounce-diagram number by an independent simulation** in your check script (FDTD of the telegrapher's
+  equations, or exact wave bookkeeping): V(z,t) and I(z,t) at the quoted points and times, and the t → ∞ DC limit.
+- **L26** standing waves from a PEC mirror (E and H nodes/antinodes, time quadrature, ⟨S⟩ = 0, energy exchange), J_s on
+  the mirror, partial reflection (as the page treats it), radiation pressure numbers (sunlight, lasers, absorbing vs
+  reflecting). **L27** parallel-plate and coax lines: V and I from E and H, 𝓛, 𝓒, v, Z₀ for given geometries and media,
+  telegrapher's equations, d'Alembert V and I waves (direction and I = ±V/Z₀), power on a line. **L28** generator with
+  R_g, injected wave, Γ_L and Γ_g, bounce diagrams for step and pulse sources with resistive loads (matched, open, short,
+  general), V(z,t) and I(z,t) at a point, the DC steady state. **L29** problems in the style of the notes' examples (new
+  numbers/loads/sources). **L30** junctions of two lines (and a load at a junction), junction Γ and τ = 1 + Γ, two-line
+  bounce diagrams. Exam families: `/home/claude/stage/EXAM-CATALOGUE.md` Part 2 index L26–L30 (re-parameterize; ~3
+  exam-modelled per lecture where families exist).
+- New topic tags (rules exist in build_practice.py): standing waves, nodes and antinodes, radiation pressure, partial
+  reflection, transmission lines, telegrapher's equations, characteristic impedance, line parameters, parallel-plate
+  line, bounce diagram, transients, load reflection coefficient, generator reflection coefficient, steady state,
+  impulse response, multi-line circuits, line junction — plus every older tag.
+- Do not duplicate the site's worked problems for these lectures (`problems/` files linked from each page).
+

@@ -1,6 +1,6 @@
 ---
 title: "Medium problems"
-description: "All 65 medium practice problems for Lectures 2–23, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
+description: "All 86 medium practice problems for Lectures 2–30, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
 tags: [practice]
 ---
 
@@ -138,3 +138,45 @@ tags: [practice]
 - [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground|23.6 Wavelength and depth measured underground]] — regimes · good conductor · penetration depth · *modelled on Summer 2017 HE3 #2b*
 - [[practice/23-imperfect-dielectrics-and-good-conductors#237-divers-talking-through-a-lake|23.7 Divers talking through a lake]] — imperfect dielectric · Joule heating · energy balance
 - [[practice/23-imperfect-dielectrics-and-good-conductors#238-the-missing-permittivity|23.8 The missing permittivity]] — find the error · loss tangent · regimes
+
+## Lecture 24 · Signal transmission and circular polarization
+
+- [[practice/24-group-velocity-and-polarization#246-from-two-snapshots-to-a-phasor|24.6 From two snapshots to a phasor]] — circular polarization · handedness · phasor fields · *modelled on Summer 2019 HE3 #3a*
+- [[practice/24-group-velocity-and-polarization#247-linear-and-circular-building-blocks|24.7 Linear and circular building blocks]] — circular polarization · elliptical polarization · time-average power
+- [[practice/24-group-velocity-and-polarization#248-starting-from-h|24.8 Starting from H]] — circular polarization · phasor fields · time-average power
+
+## Lecture 25 · Wave reflection and transmission
+
+- [[practice/25-reflection-and-transmission#256-same-speed-different-impedance|25.6 Same speed, different impedance]] — normal incidence · intrinsic impedance · power balance
+- [[practice/25-reflection-and-transmission#257-a-plane-mirror-and-its-current|25.7 A plane mirror and its current]] — perfect conductor · phasors
+- [[practice/25-reflection-and-transmission#258-how-good-a-mirror-is-copper|25.8 How good a mirror is copper]] — good conductor · reflection coefficient · power balance
+
+## Lecture 26 · Standing waves and radiation pressure
+
+- [[practice/26-standing-waves-and-radiation-pressure#266-a-mirror-off-the-origin|26.6 A mirror off the origin]] — standing waves · perfect conductor
+- [[practice/26-standing-waves-and-radiation-pressure#267-energy-in-a-quarter-wave-cell|26.7 Energy in a quarter-wave cell]] — energy density · Poynting vector · standing waves
+- [[practice/26-standing-waves-and-radiation-pressure#268-ripple-in-front-of-a-dielectric|26.8 Ripple in front of a dielectric]] — partial reflection · reflection coefficient
+
+## Lecture 27 · Guided TEM waves on transmission lines
+
+- [[practice/27-transmission-line-basics#276-reading-a-line-from-v-and-i|27.6 Reading a line from V and I]] — telegrapher's equations · line parameters · time-average power
+- [[practice/27-transmission-line-basics#277-two-bench-measurements|27.7 Two bench measurements]] — line parameters · transmission lines · conductance · *modelled on FA23 Exam 3 #4(d)*
+- [[practice/27-transmission-line-basics#278-an-artificial-line|27.8 An artificial line]] — telegrapher's equations · transmission lines
+
+## Lecture 28 · Distributed circuits and bounce diagrams
+
+- [[practice/28-bounce-diagrams#286-ideal-source-mismatched-load|28.6 Ideal source, mismatched load]] — bounce diagram · steady state
+- [[practice/28-bounce-diagrams#287-reflectometry-with-a-matched-source|28.7 Reflectometry with a matched source]] — load reflection coefficient · transients
+- [[practice/28-bounce-diagrams#288-snapshots-along-a-shorted-line|28.8 Snapshots along a shorted line]] — bounce diagram · transients · *modelled on SP17 Exam 3 #5c*
+
+## Lecture 29 · Bounce diagram examples
+
+- [[practice/29-bounce-diagram-examples#296-both-ends-of-a-short-line|29.6 Both ends of a short line]] — bounce diagram · generator reflection coefficient · *modelled on SP18 Exam 3 #3c*
+- [[practice/29-bounce-diagram-examples#297-a-triangle-meets-a-short|29.7 A triangle meets a short]] — bounce diagram · transients
+- [[practice/29-bounce-diagram-examples#298-one-pulse-and-nothing-else|29.8 One pulse and nothing else]] — load reflection coefficient · generator reflection coefficient · *modelled on SP17 Exam 3 #2(v)*
+
+## Lecture 30 · Multi-line circuits
+
+- [[practice/30-multi-line-circuits#306-a-shunt-resistor-that-matches|30.6 A shunt resistor that matches]] — line junction · power balance
+- [[practice/30-multi-line-circuits#307-a-series-resistor-in-the-splice|30.7 A series resistor in the splice]] — line junction · transmission coefficient · power balance
+- [[practice/30-multi-line-circuits#308-three-sections-and-the-first-echoes|30.8 Three sections and the first echoes]] — line junction · bounce diagram · impulse response · *modelled on FA23 Exam 3 #3(a)*

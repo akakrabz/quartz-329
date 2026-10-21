@@ -1,10 +1,10 @@
 ---
 title: "Practice problems"
-description: "260 practice problems for Lectures 2–23 — 109 easy, 65 medium, 86 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
+description: "344 practice problems for Lectures 2–30 — 144 easy, 86 medium, 114 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
 tags: [practice]
 ---
 
-Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **260 problems for Lectures 2–23**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 49 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
+Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **344 problems for Lectures 2–30**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 79 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
 
 > [!recipe] How to use the bank
 > 1. Pick a lecture you have read and do its **easy** problems first — a few minutes each, one idea per problem.
@@ -29,7 +29,7 @@ Every problem's title bar carries one **difficulty tag** and one to three **topi
 | <span class="diff medium">medium</span> | a standard exam sub-problem: one modelling decision (which surface, path, coordinates or region), a real integral, or a three- or four-step chain | 8–15 min |
 | <span class="diff hard">hard</span> | exam length, in several parts: superposition of several pieces, several regions with matching conditions, a non-trivial integral, a sign-heavy direction analysis, or two lectures combined | 20–40 min |
 
-Browse: [[practice/easy|all 109 easy]] · [[practice/medium|all 65 medium]] · [[practice/hard|all 86 hard]] · [[practice/topics|by topic]] — 35 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
+Browse: [[practice/easy|all 144 easy]] · [[practice/medium|all 86 medium]] · [[practice/hard|all 114 hard]] · [[practice/topics|by topic]] — 40 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
 
 ## By lecture
 
@@ -57,7 +57,14 @@ Browse: [[practice/easy|all 109 easy]] · [[practice/medium|all 65 medium]] · [
 | 21 | [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation\|Monochromatic waves and phasor notation]] | [[practice/21-phasors-and-monochromatic-waves\|12 problems]] | [[practice/easy#lecture-21--monochromatic-waves-and-phasor-notation\|5]] | [[practice/medium#lecture-21--monochromatic-waves-and-phasor-notation\|3]] | [[practice/hard#lecture-21--monochromatic-waves-and-phasor-notation\|4]] |
 | 22 | [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves\|Phasor Maxwell equations and damped waves]] | [[practice/22-damped-waves-in-conducting-media\|12 problems]] | [[practice/easy#lecture-22--phasor-maxwell-equations-and-damped-waves\|5]] | [[practice/medium#lecture-22--phasor-maxwell-equations-and-damped-waves\|3]] | [[practice/hard#lecture-22--phasor-maxwell-equations-and-damped-waves\|4]] |
 | 23 | [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors\|Imperfect dielectrics and good conductors]] | [[practice/23-imperfect-dielectrics-and-good-conductors\|12 problems]] | [[practice/easy#lecture-23--imperfect-dielectrics-and-good-conductors\|5]] | [[practice/medium#lecture-23--imperfect-dielectrics-and-good-conductors\|3]] | [[practice/hard#lecture-23--imperfect-dielectrics-and-good-conductors\|4]] |
-| | **total** | **260** | **109** | **65** | **86** |
+| 24 | [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization\|Signal transmission and circular polarization]] | [[practice/24-group-velocity-and-polarization\|12 problems]] | [[practice/easy#lecture-24--signal-transmission-and-circular-polarization\|5]] | [[practice/medium#lecture-24--signal-transmission-and-circular-polarization\|3]] | [[practice/hard#lecture-24--signal-transmission-and-circular-polarization\|4]] |
+| 25 | [[3-maxwell-and-waves/25-wave-reflection-and-transmission\|Wave reflection and transmission]] | [[practice/25-reflection-and-transmission\|12 problems]] | [[practice/easy#lecture-25--wave-reflection-and-transmission\|5]] | [[practice/medium#lecture-25--wave-reflection-and-transmission\|3]] | [[practice/hard#lecture-25--wave-reflection-and-transmission\|4]] |
+| 26 | [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure\|Standing waves and radiation pressure]] | [[practice/26-standing-waves-and-radiation-pressure\|12 problems]] | [[practice/easy#lecture-26--standing-waves-and-radiation-pressure\|5]] | [[practice/medium#lecture-26--standing-waves-and-radiation-pressure\|3]] | [[practice/hard#lecture-26--standing-waves-and-radiation-pressure\|4]] |
+| 27 | [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines\|Guided TEM waves on transmission lines]] | [[practice/27-transmission-line-basics\|12 problems]] | [[practice/easy#lecture-27--guided-tem-waves-on-transmission-lines\|5]] | [[practice/medium#lecture-27--guided-tem-waves-on-transmission-lines\|3]] | [[practice/hard#lecture-27--guided-tem-waves-on-transmission-lines\|4]] |
+| 28 | [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams\|Distributed circuits and bounce diagrams]] | [[practice/28-bounce-diagrams\|12 problems]] | [[practice/easy#lecture-28--distributed-circuits-and-bounce-diagrams\|5]] | [[practice/medium#lecture-28--distributed-circuits-and-bounce-diagrams\|3]] | [[practice/hard#lecture-28--distributed-circuits-and-bounce-diagrams\|4]] |
+| 29 | [[4-transmission-lines/29-bounce-diagram-examples\|Bounce diagram examples]] | [[practice/29-bounce-diagram-examples\|12 problems]] | [[practice/easy#lecture-29--bounce-diagram-examples\|5]] | [[practice/medium#lecture-29--bounce-diagram-examples\|3]] | [[practice/hard#lecture-29--bounce-diagram-examples\|4]] |
+| 30 | [[4-transmission-lines/30-multi-line-circuits\|Multi-line circuits]] | [[practice/30-multi-line-circuits\|12 problems]] | [[practice/easy#lecture-30--multi-line-circuits\|5]] | [[practice/medium#lecture-30--multi-line-circuits\|3]] | [[practice/hard#lecture-30--multi-line-circuits\|4]] |
+| | **total** | **344** | **144** | **86** | **114** |
 
 Exam 1 covered Lectures 1–10. Lecture 1 has no practice page: its content (fields defined by force, the Maxwell roadmap) is exercised from Lecture 2 on.
 
@@ -116,6 +123,36 @@ These follow a past ECE 329 exam problem (Spring 2018 midterms, Summer 2017–20
 | [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground\|23.6 Wavelength and depth measured underground]] | <span class="diff medium">medium</span> | Summer 2017 HE3 #2b |
 | [[practice/23-imperfect-dielectrics-and-good-conductors#239-down-into-a-deep-lake\|23.9 Down into a deep lake]] | <span class="diff hard">hard</span> | Summer 2018 HE3 #3b |
 | [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf\|23.11 Dry earth from ELF to VHF]] | <span class="diff hard">hard</span> | Summer 2020 HE3 #3 |
+| [[practice/24-group-velocity-and-polarization#244-true-or-false-on-one-wave\|24.4 True or false on one wave]] | <span class="diff easy">easy</span> | SP18 Exam 3 #1(iii) |
+| [[practice/24-group-velocity-and-polarization#246-from-two-snapshots-to-a-phasor\|24.6 From two snapshots to a phasor]] | <span class="diff medium">medium</span> | Summer 2019 HE3 #3a |
+| [[practice/24-group-velocity-and-polarization#249-building-a-right-circular-wave\|24.9 Building a right-circular wave]] | <span class="diff hard">hard</span> | Summer 2018 HE3 #3a |
+| [[practice/24-group-velocity-and-polarization#2410-a-wave-with-a-free-phase\|24.10 A wave with a free phase]] | <span class="diff hard">hard</span> | SP17 Exam 3 #4 |
+| [[practice/25-reflection-and-transmission#253-into-a-good-conductor\|25.3 Into a good conductor]] | <span class="diff easy">easy</span> | SP17 Exam 3 #2(iv) |
+| [[practice/25-reflection-and-transmission#259-out-of-the-glass\|25.9 Out of the glass]] | <span class="diff hard">hard</span> | Summer 2017 HE3 #3c–f |
+| [[practice/25-reflection-and-transmission#2510-into-lossy-ground\|25.10 Into lossy ground]] | <span class="diff hard">hard</span> | SP19 Exam 3 #1 |
+| [[practice/25-reflection-and-transmission#2511-a-circular-wave-on-a-mirror\|25.11 A circular wave on a mirror]] | <span class="diff hard">hard</span> | SP19 Exam 3 #3b |
+| [[practice/25-reflection-and-transmission#2512-identifying-a-material\|25.12 Identifying a material]] | <span class="diff hard">hard</span> | SP18 Exam 3 #2a |
+| [[practice/26-standing-waves-and-radiation-pressure#262-standing-waves-true-or-false\|26.2 Standing waves true or false]] | <span class="diff easy">easy</span> | SP17 Exam 3 #1c |
+| [[practice/26-standing-waves-and-radiation-pressure#263-travelling-standing-or-both\|26.3 Travelling, standing or both]] | <span class="diff easy">easy</span> | SP19 Exam 3 #3c |
+| [[practice/26-standing-waves-and-radiation-pressure#269-is-it-a-standing-wave\|26.9 Is it a standing wave]] | <span class="diff hard">hard</span> | SP17 Exam 3 #1b |
+| [[practice/27-transmission-line-basics#272-telegraphers-equations-true-or-false\|27.2 Telegrapher's equations, true or false]] | <span class="diff easy">easy</span> | SP18 Exam 3 #1(ii) |
+| [[practice/27-transmission-line-basics#273-charges-and-currents-on-turned-plates\|27.3 Charges and currents on turned plates]] | <span class="diff easy">easy</span> | SP17 Exam 3 #2(ii) |
+| [[practice/27-transmission-line-basics#277-two-bench-measurements\|27.7 Two bench measurements]] | <span class="diff medium">medium</span> | FA23 Exam 3 #4(d) |
+| [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax\|27.9 A pulse on a coax]] | <span class="diff hard">hard</span> | SP19 Exam 3 #2 |
+| [[practice/28-bounce-diagrams#281-three-coefficients\|28.1 Three coefficients]] | <span class="diff easy">easy</span> | SP17 Exam 3 #5a |
+| [[practice/28-bounce-diagrams#282-line-conventions\|28.2 Line conventions]] | <span class="diff easy">easy</span> | SP18 Exam 3 #1(v) |
+| [[practice/28-bounce-diagrams#288-snapshots-along-a-shorted-line\|28.8 Snapshots along a shorted line]] | <span class="diff medium">medium</span> | SP17 Exam 3 #5c |
+| [[practice/28-bounce-diagrams#289-voltage-and-current-diagrams\|28.9 Voltage and current diagrams]] | <span class="diff hard">hard</span> | SP18 Exam 3 #3a |
+| [[practice/28-bounce-diagrams#2810-a-pulse-into-a-resistive-load\|28.10 A pulse into a resistive load]] | <span class="diff hard">hard</span> | FA23 Exam 3 #5 |
+| [[practice/28-bounce-diagrams#2811-impulse-response-at-a-third-point\|28.11 Impulse response at a third point]] | <span class="diff hard">hard</span> | Summer 2020 final #5 |
+| [[practice/29-bounce-diagram-examples#296-both-ends-of-a-short-line\|29.6 Both ends of a short line]] | <span class="diff medium">medium</span> | SP18 Exam 3 #3c |
+| [[practice/29-bounce-diagram-examples#298-one-pulse-and-nothing-else\|29.8 One pulse and nothing else]] | <span class="diff medium">medium</span> | SP17 Exam 3 #2(v) |
+| [[practice/29-bounce-diagram-examples#299-one-sine-cycle-on-a-mismatched-line\|29.9 One sine cycle on a mismatched line]] | <span class="diff hard">hard</span> | SP17 Exam 3 #5c |
+| [[practice/29-bounce-diagram-examples#2910-a-ramp-into-an-open-line\|29.10 A ramp into an open line]] | <span class="diff hard">hard</span> | FA23 Exam 3 #5(c) |
+| [[practice/30-multi-line-circuits#303-no-echo-toward-the-source\|30.3 No echo toward the source]] | <span class="diff easy">easy</span> | SP18 Exam 3 #1(vii) |
+| [[practice/30-multi-line-circuits#308-three-sections-and-the-first-echoes\|30.8 Three sections and the first echoes]] | <span class="diff medium">medium</span> | FA23 Exam 3 #3(a) |
+| [[practice/30-multi-line-circuits#309-two-lines-and-a-mismatched-source\|30.9 Two lines and a mismatched source]] | <span class="diff hard">hard</span> | SP19 Exam 3 #4 |
+| [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes\|30.10 Locating a splice by its echoes]] | <span class="diff hard">hard</span> | FA23 Exam 3 #4 |
 
 ## How the answers were checked
 

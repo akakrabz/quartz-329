@@ -1,0 +1,73 @@
+PASS  A1 tau_g = 1/2, Gamma_g = 0, Gamma_L = 1/3 (Z0 = 50)
+PASS  A1 tau_g = 1/2, Gamma_g = 0, Gamma_L = 1/3 (Z0 = 75)
+PASS  A1 tau_g = 1/2, Gamma_g = 0, Gamma_L = 1/3 (Z0 = 300)
+PASS  A1 2T = 6 us
+PASS  A2 lambda = 300 m, l = 3 lambda
+PASS  A3 page V(z,t) (two terms) = MoC at t = 1, 2, 4.5, 6, 7, 10, 10.25 us  [max err 8.3e-15]
+PASS  A3 page Z0 I(z,t) (same with -1/6) = MoC  [max err 8.3e-15]
+PASS  A4 t = 1 us: front at 300 m, amplitude 1/2 behind it, 1 wavelength(s)  [max|V| beyond 0e+00, amp 0.5000]
+PASS  A4 t = 2 us: front at 600 m, amplitude 1/2 behind it, 2 wavelength(s)  [max|V| beyond 0e+00, amp 0.5000]
+PASS  A4b notes' margin plot: V(75 m, 1 us) = -1/2 (negative next to z = 0), V(225 m, 1 us) = +1/2
+PASS  A5 V(l,t) = (2/3) sin w(t-3) for t > 3 us
+PASS  A5 V(l,t) = 0 for t < 3 us
+PASS  A5 V(l)/I(l) = RL = 100 ohm where I != 0
+PASS  A6 t = 4.5 us: echo front at z = 450 m (V = incident alone for z < 450, echo added for z > 450)
+PASS  A7 for t >= 6 us the line holds 1/2 sin(wt - bz) + 1/6 sin(wt + bz) (w 6 us = 12 pi)
+PASS  A7 envelope between 1/3 and 2/3
+PASS  A7 maxima every 150 m incl. the load (z = 0,150,...,900)  [interior maxima at [150. 300. 450. 600. 750.]]
+PASS  A7 MoC amplitude at z = 450 m (a maximum, 1.5 lambda) = 2/3 and at load = 2/3
+PASS  A8 FDTD (Yee, S = 1, dz = 0.5 m) agrees with the page's V(z,t)  [max err 6.9e-06]
+PASS  B1 tau_g = 1, Gamma_g = -1, Gamma_L = 1/3, T = 8 us
+PASS  B2 levels 1, 4/3, 1, 8/9, 1, 28/27, 1 V  [[1.     1.3333 1.     0.8889 1.     1.037  1.     0.9877]]
+PASS  B3 I levels 20, 13.3, 6.7, 8.9, 11.1, 10.4, 9.6 mA  [[20.   13.33  6.67  8.89 11.11 10.37  9.63  9.88]]
+PASS  B3 V = 0 and I = 0 before 4 us
+PASS  B4 h_1200 weights 1, 1/3, -1/3, -1/9, 1/9, 1/27, -1/27 at t = 4, 12, ..., 52 us
+PASS  B5 page Z0 I: +1, -1/3, -1/3, +1/9, +1/9, -1/27, ... (backward steps flipped)
+PASS  B6 DC limit: V(1200, 400 us) = 1 V, I = 10 mA  [V 1.000000, I 10.000000 mA]
+PASS  B7 lumped divider V0 RL/(Rg+RL) = 1 V, V0/(Rg+RL) = 10 mA
+PASS  B8 error ratio per round trip = Gamma_L Gamma_g = -1/3
+PASS  B9 on 12-20 us V = 4/3 V, I = 13.3 mA, V/Z0 = 26.7 mA
+PASS  B10 FDTD agrees with the levels (V and I)  [V err 3.8e-14, I err 0.00 mA]
+PASS  C1 f_i: 1 V on (-0.5, 0.5), 2 V on (0.5, 1.5), 0 outside
+PASS  C2 page series V and 50 I vs MoC at t = 3, 9, 11, 20, 27, 30 us  [max err 0.0e+00]
+PASS  C3 t = 3: 2 V on 450-750 m, 1 V on 750-1050 m, 0 elsewhere; I = 40, 20 mA
+PASS  C4 t = 11: 1/3 V on 1350-1650, 2/3 V on 1650-1950, I = -V/50
+PASS  C5 t = 9: 0 below 1950; 1/3 V, -6.7 mA on 1950-2250; 8/3 V, 26.7 mA on 2250-2400
+PASS  C5 V/I = 100 ohm = RL on 2250-2400 m at 9 us
+PASS  C6 t = 3: jumps at (450, 750, 1050) m
+PASS  C6 t = 11: jumps at (1350, 1650, 1950) m
+PASS  C6 t = 9: jumps at (1950, 2250) m
+PASS  C7 pulse length = v x 2 us = 600 m (450-1050)
+PASS  C8 t = 11: only the first echo (1/3) f_i(z/c - 5)
+PASS  C9 t = 3: 1 V part (sent first) at larger z; t = 11: 1 V part at smaller z (1/3 V on the left)
+PASS  C10 notes' Example 3 numbers (tau_g = 1, Gamma_g = -1, 2l/c = 16 us) are Example 2's, not Example 1's
+PASS  D1 page series (forward w f_i(t-z/v-2nT), backward w f_i(t+z/v-2(n+1)T)) = MoC, generic circuit  [Z0 75.0, Rg 30.0, RL 400.0, err 1.1e-15]
+PASS  D2 Example 3, t = 9 us: forward segment 0 (ended at 8 us, not crossed by the cut) still contributes 2 V near the load
+PASS  D3 Example 1, t = 4.5 us: forward segment 0 (0-3 us) not crossed but V != 0 for z < 450 m
+PASS  E1 tau_g = 2/3, Gamma_g = -1/3, Gamma_L = 1/2, T = 3 us, pulse 200 m
+PASS  E1 segment weights 2/3, 1/3, -1/9; launched peak 2 V
+PASS  E2 t = 2: V = 4 - z/100 on 200-400 m, 0 elsewhere
+PASS  E2 t = 2: I = V/50, 40 mA peak at z -> 200+
+PASS  E3 t = 5: V = z/200 - 1 on 200-400 m, 0 elsewhere
+PASS  E3 t = 5: I = -V/50, down to -20 mA at z -> 400-
+PASS  E4 t = 3.5: V = 4.5 - z/200 on 500-600 m
+PASS  E4 t = 3.5: I = (9.5 - 0.015 z)/50 A on 500-600 m
+PASS  E4 zero for z < 500 m
+PASS  E4 endpoints: V 2 -> 1.5 V, I 40 -> 10 mA
+PASS  E4 load check V/I = 150 ohm, V+(l) = 1 V
+PASS  E5 V(0,t), I(0,t) on 0-1, 1-6, 6-7, 7-12 us as on the page
+PASS  E5 -26.7 mA/us slope: (4/3)/50 = 26.67 mA
+PASS  E5 next echo returns at 12 us (V(0,t) != 0 just after 12)  [V(0,12.5) = -0.0556 V]
+PASS  E6 KVL for t > 1: V(0) = -Rg I(0); at t -> 7-: V -> 0.667 V, I -> -26.7 mA
+PASS  E7 t = 2: forward ramp falls toward +z (0 V start leads)
+PASS  E7 t = 5: echo V > 0, I < 0
+PASS  E8 FDTD (S = 0.5, dz = 0.1 m) agrees at mid-ramp points of (b), (c) and at z = 0 in (d)  [max err 2.1e-03, 5.6e-06]
+PASS  F1 bex-example1 snapshot curves = MoC  [3.6e-15]
+PASS  F2 bex-example2 V and Z0 I curves = MoC
+PASS  F2 right-axis labels: Z0 I = 1 V <-> 20 mA
+PASS  F3 bex-example3 curves = MoC  [0.0e+00]
+PASS  F4 bex-ramp-problem curves = MoC  [1.2e-15]
+PASS  F5 Example 2 diagram weights 1, 1/3, -1/3, -1/9, 1/9, 1/27, -1/27
+PASS  F5 Example 1 diagram weights 1/2, 1/6 and nothing after 6 us
+PASS  F5 worked-problem diagram weights 2/3, 1/3, -1/9
+72 PASS, 0 FAIL

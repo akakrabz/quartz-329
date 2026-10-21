@@ -56,6 +56,11 @@ Wavelength–frequency: $\lambda f = c$. With $c = 300$ m/µs: 1 MHz ↔ 300 m, 
 | propagation constant $\gamma = \alpha+j\beta$ | m⁻¹ | complex; $\gamma\eta = j\omega\mu$ (Lecture 22) |
 | penetration (skin) depth $\delta = 1/\alpha$ | m | good conductor: $1/\sqrt{\pi f\mu\sigma}$ (Lectures 22–23) |
 | loss tangent $\sigma/\omega\epsilon$ | dimensionless | conduction over displacement current (Lecture 23) |
+| group velocity $v_g = d\omega/d\beta$ | m/s | speed of an envelope (signal); $v_g = v_p$ only without dispersion (Lecture 24) |
+| reflection and transmission coefficients $\Gamma$, $\tau$ | dimensionless (complex if $\eta$ is) | $\tilde E_r/\tilde E_i$ and $\tilde E_t/\tilde E_i$ at the interface (Lecture 25) |
+| radiation pressure $p$ | Pa = N/m² | $2\langle S_i\rangle/c$ on a mirror, $\langle S_i\rangle/c$ on an absorber (Lecture 26) |
+| characteristic impedance $Z_0 = \sqrt{\mathcal{L}/\mathcal{C}}$ | Ω | ratio $V/I$ of a single forward wave on a line (Lecture 27) |
+| line reflection coefficients $\Gamma_L$, $\Gamma_g$ | dimensionless | $(R-Z_0)/(R+Z_0)$, ratio of reflected to incident voltage (Lecture 28) |
 
 ## The dimension ladder of sources
 

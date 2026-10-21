@@ -1,0 +1,348 @@
+
+==== A. Standing-wave phasors and real forms (notes pp. 1-2; page section 1)
+ok   [vacuum] sigma2 -> infinity gives Gamma -> -1 (|Gamma + 1| = 2.6e-07)
+ok   [vacuum] H_r = (-z) x (Gamma E0 x)/eta1 = +y E0/eta1 for Gamma = -1 (the -Gamma = +1 rule): [-0.        0.002654 -0.      ] vs [0.       0.002654 0.      ]
+ok   [vacuum] E~ = -j x 2E0 sin(beta1 z): max |diff| 0.0e+00 over 2001 values
+ok   [vacuum] H~ = y (2E0/eta1) cos(beta1 z): max |diff| 0.0e+00 over 2001 values
+ok   identity e^-jth - e^jth = -2j sin th: max |diff| 0.0e+00 over 13 values
+ok   identity e^-jth + e^jth = 2 cos th: max |diff| 0.0e+00 over 13 values
+ok   [vacuum] E(z,t) = x 2E0 sin(beta1 z) sin(wt): max |diff| 0.0e+00 over 60501 values
+ok   [vacuum] H(z,t) = y (2E0/eta1) cos(beta1 z) cos(wt): max |diff| 0.0e+00 over 60501 values
+ok   2 sin(bz) sin(wt) = cos(wt - bz) - cos(wt + bz): two counter-travelling waves: max |diff| 1.1e-15 over 60501 values
+ok   [vacuum] Faraday: dEx/dz = -mu dHy/dt (finite differences): max |diff| 1.4e-09 over 40 values
+ok   [vacuum] Ampere-Maxwell: dHy/dz = -eps dEx/dt (finite differences): max |diff| 4.5e-12 over 40 values
+ok   [vacuum] E(0,t) = 0: tangential E vanishes at the mirror: max |diff| 0.0e+00 over 40 values
+ok   [dielectric eps_r = 2.25] sigma2 -> infinity gives Gamma -> -1 (|Gamma + 1| = 3.9e-07)
+ok   [dielectric eps_r = 2.25] H_r = (-z) x (Gamma E0 x)/eta1 = +y E0/eta1 for Gamma = -1 (the -Gamma = +1 rule): [-0.        0.011945 -0.      ] vs [0.       0.011945 0.      ]
+ok   [dielectric eps_r = 2.25] E~ = -j x 2E0 sin(beta1 z): max |diff| 0.0e+00 over 2001 values
+ok   [dielectric eps_r = 2.25] H~ = y (2E0/eta1) cos(beta1 z): max |diff| 0.0e+00 over 2001 values
+ok   identity e^-jth - e^jth = -2j sin th: max |diff| 0.0e+00 over 13 values
+ok   identity e^-jth + e^jth = 2 cos th: max |diff| 0.0e+00 over 13 values
+ok   [dielectric eps_r = 2.25] E(z,t) = x 2E0 sin(beta1 z) sin(wt): max |diff| 0.0e+00 over 60501 values
+ok   [dielectric eps_r = 2.25] H(z,t) = y (2E0/eta1) cos(beta1 z) cos(wt): max |diff| 0.0e+00 over 60501 values
+ok   2 sin(bz) sin(wt) = cos(wt - bz) - cos(wt + bz): two counter-travelling waves: max |diff| 1.1e-15 over 60501 values
+ok   [dielectric eps_r = 2.25] Faraday: dEx/dz = -mu dHy/dt (finite differences): max |diff| 4.7e-09 over 40 values
+ok   [dielectric eps_r = 2.25] Ampere-Maxwell: dHy/dz = -eps dEx/dt (finite differences): max |diff| 3.1e-11 over 40 values
+ok   [dielectric eps_r = 2.25] E(0,t) = 0: tangential E vanishes at the mirror: max |diff| 0.0e+00 over 40 values
+ok   [mu_r = 4, eps_r = 9] sigma2 -> infinity gives Gamma -> -1 (|Gamma + 1| = 3.9e-07)
+ok   [mu_r = 4, eps_r = 9] H_r = (-z) x (Gamma E0 x)/eta1 = +y E0/eta1 for Gamma = -1 (the -Gamma = +1 rule): [-0.        0.002787 -0.      ] vs [0.       0.002787 0.      ]
+ok   [mu_r = 4, eps_r = 9] E~ = -j x 2E0 sin(beta1 z): max |diff| 0.0e+00 over 2001 values
+ok   [mu_r = 4, eps_r = 9] H~ = y (2E0/eta1) cos(beta1 z): max |diff| 0.0e+00 over 2001 values
+ok   identity e^-jth - e^jth = -2j sin th: max |diff| 0.0e+00 over 13 values
+ok   identity e^-jth + e^jth = 2 cos th: max |diff| 0.0e+00 over 13 values
+ok   [mu_r = 4, eps_r = 9] E(z,t) = x 2E0 sin(beta1 z) sin(wt): max |diff| 0.0e+00 over 60501 values
+ok   [mu_r = 4, eps_r = 9] H(z,t) = y (2E0/eta1) cos(beta1 z) cos(wt): max |diff| 0.0e+00 over 60501 values
+ok   2 sin(bz) sin(wt) = cos(wt - bz) - cos(wt + bz): two counter-travelling waves: max |diff| 1.1e-15 over 60501 values
+ok   [mu_r = 4, eps_r = 9] Faraday: dEx/dz = -mu dHy/dt (finite differences): max |diff| 4.5e-09 over 40 values
+ok   [mu_r = 4, eps_r = 9] Ampere-Maxwell: dHy/dz = -eps dEx/dt (finite differences): max |diff| 2.9e-11 over 40 values
+ok   [mu_r = 4, eps_r = 9] E(0,t) = 0: tangential E vanishes at the mirror: max |diff| 0.0e+00 over 40 values
+
+==== B. Nodes, antinodes, quadrature (notes p. 2 margin; page section 2)
+ok   E nodes at z = -m lambda/2 (m = 0..6), the mirror included: max |diff| 0.0e+00 over 7 values
+ok   H nodes at z = -(2m+1) lambda/4: [-2.75 -2.25 -1.75 -1.25 -0.75 -0.25] vs [-2.75 -2.25 -1.75 -1.25 -0.75 -0.25]
+ok   E antinodes (amplitude 2E0) at the H nodes: [-2.75 -2.25 -1.75 -1.25 -0.75 -0.25] vs [-2.75 -2.25 -1.75 -1.25 -0.75 -0.25]
+ok   H antinode (amplitude 2E0/eta1) at the mirror z = 0
+ok   adjacent E nodes lambda/2 apart
+ok   E node to nearest H node: lambda/4
+ok   |E~| repeats every lambda/2: max |diff| 1.0e-15 over 100 values
+ok   ... while E itself changes sign over lambda/2
+ok   E~ and H~ are 90 degrees apart in time phase (the -j): [1.570796 1.570796 1.570796 1.570796] vs [1.570796 1.570796 1.570796 1.570796]
+ok   mirror at z = d: z - d replaces z (E node at z = d)
+
+==== C. <S> = 0, instantaneous S and w (notes p. 2; page section 3)
+ok   x x y = z: S = E x H along z: [0. 0. 1.] vs [0. 0. 1.]
+ok   <S> = 0 at every z (quadrature over a period): max |diff| 6.5e-18 over 241 values
+ok   notes' phasor check: (1/2)Re{E~ H~*} = (2E0^2/eta1) sin cos Re{-j} = 0: max |diff| 0.0e+00 over 241 values
+ok   (1/2) E~ H~* = (2E0^2/eta1) sin(b z) cos(b z) (-j): max |diff| 2.8e-17 over 241 values
+ok   S = z (E0^2/eta1) sin(2 beta1 z) sin(2wt): max |diff| 6.9e-17 over 964241 values
+ok   w = 2 eps1 E0^2 [sin^2 bz sin^2 wt + cos^2 bz cos^2 wt]: max |diff| 8.3e-25 over 964241 values
+ok   <w> = eps1 E0^2 at every z: max |diff| 3.1e-25 over 241 values
+ok   Poynting theorem dw/dt + dS/dz = 0 (max residual 1.4e-10 of w*eps E0^2)
+ok   S = 0 at z = -0 lambda/4 for all t
+ok   S = 0 at z = -1 lambda/4 for all t
+ok   S = 0 at z = -2 lambda/4 for all t
+ok   S = 0 at z = -3 lambda/4 for all t
+ok   S = 0 at z = -4 lambda/4 for all t
+ok   energy in cell 1 (lambda/4 long) constant = eps1 E0^2 lambda/4: max |diff| 6.5e-27 over 9 values
+ok   energy in cell 2 (lambda/4 long) constant = eps1 E0^2 lambda/4: max |diff| 6.5e-27 over 9 values
+ok   energy in cell 3 (lambda/4 long) constant = eps1 E0^2 lambda/4: max |diff| 1.9e-26 over 9 values
+ok   energy in cell 4 (lambda/4 long) constant = eps1 E0^2 lambda/4: max |diff| 1.6e-26 over 9 values
+ok   at wt = 0: w_E = 0 (all magnetic): max |diff| 0.0e+00 over 241 values
+ok   at wt = pi/2: w_H = 0 (all electric): max |diff| 3.7e-42 over 241 values
+ok   at wt = pi/4: w = eps1 E0^2, uniform (figure stand-energy row 2): max |diff| 2.1e-25 over 241 values
+ok   w = 0 at an E node when cos wt = 0 and at an H node when sin wt = 0
+ok   w > 0 everywhere else on the grid
+
+==== D. Surface current (notes p. 3), sheet-radiation check, partial reflection (page sections 2 and 4)
+ok   J_s = (-z) x H(0,t) = x (2E0/eta1) cos wt at wt = 0.00: [0.010618 0.       0.      ] vs [0.010618 0.       0.      ]
+ok   J_s = (-z) x H(0,t) = x (2E0/eta1) cos wt at wt = 1.05: [0.005309 0.       0.      ] vs [0.005309 0.       0.      ]
+ok   J_s = (-z) x H(0,t) = x (2E0/eta1) cos wt at wt = 2.09: [-0.005309  0.        0.      ] vs [-0.005309 -0.       -0.      ]
+ok   J_s = (-z) x H(0,t) = x (2E0/eta1) cos wt at wt = 3.14: [-0.010618  0.        0.      ] vs [-0.010618 -0.       -0.      ]
+ok   J_s = (-z) x H(0,t) = x (2E0/eta1) cos wt at wt = 4.19: [-0.005309  0.        0.      ] vs [-0.005309 -0.       -0.      ]
+ok   J_s = (-z) x H(0,t) = x (2E0/eta1) cos wt at wt = 5.24: [0.005309 0.       0.      ] vs [0.005309 0.       0.      ]
+ok   J_s = (-z) x H(0,t) = x (2E0/eta1) cos wt at wt = 6.28: [0.010618 0.       0.      ] vs [0.010618 0.       0.      ]
+ok   (-z) x y = +x: J_s flows along the incident E
+ok   sheet radiates -x E0 cos(wt - beta z) into z > 0: max |diff| 6.9e-15 over 200 values
+ok   ... which cancels the incident wave in z > 0: max |diff| 6.9e-15 over 200 values
+ok   sheet radiates -x E0 cos(wt + beta z) into z < 0 = the reflected wave: max |diff| 6.9e-15 over 200 values
+ok   sheet radiates -x E0 cos(wt - beta z) into z > 0: max |diff| 6.6e-15 over 200 values
+ok   ... which cancels the incident wave in z > 0: max |diff| 6.6e-15 over 200 values
+ok   sheet radiates -x E0 cos(wt + beta z) into z < 0 = the reflected wave: max |diff| 6.7e-15 over 200 values
+ok   sheet radiates -x E0 cos(wt - beta z) into z > 0: max |diff| 1.1e-14 over 200 values
+ok   ... which cancels the incident wave in z > 0: max |diff| 1.1e-14 over 200 values
+ok   sheet radiates -x E0 cos(wt + beta z) into z < 0 = the reflected wave: max |diff| 8.8e-15 over 200 values
+ok   Gamma = -0.500: E0 e^-jbz (1 + Gamma e^j2bz) = incident + reflected: max |diff| 4.5e-16 over 40001 values
+ok   Gamma = -0.500: travelling (1-|G|) e^-jbz + standing 2|G| e^(j th/2) cos(bz + th/2): max |diff| 4.7e-16 over 40001 values
+ok   Gamma = -0.500: the second term has one phase at all z (a pure standing wave)
+ok   Gamma = -0.500: |E~x| between (1+|G|) and (1-|G|) E0: [1.5 0.5] vs [1.5 0.5]
+ok   Gamma = -0.500: period lambda/2: max |diff| 2.2e-15 over 40001 values
+ok   Gamma = -0.500: <S> = (1 - |G|^2) E0^2 / 2 eta1 at every z: max |diff| 1.7e-16 over 40001 values
+ok   Gamma = 0.500: E0 e^-jbz (1 + Gamma e^j2bz) = incident + reflected: max |diff| 2.8e-16 over 40001 values
+ok   Gamma = 0.500: travelling (1-|G|) e^-jbz + standing 2|G| e^(j th/2) cos(bz + th/2): max |diff| 2.8e-16 over 40001 values
+ok   Gamma = 0.500: the second term has one phase at all z (a pure standing wave)
+ok   Gamma = 0.500: |E~x| between (1+|G|) and (1-|G|) E0: [1.5 0.5] vs [1.5 0.5]
+ok   Gamma = 0.500: period lambda/2: max |diff| 2.2e-15 over 40001 values
+ok   Gamma = 0.500: <S> = (1 - |G|^2) E0^2 / 2 eta1 at every z: max |diff| 1.7e-16 over 40001 values
+ok   Gamma = 0.136+0.267j: E0 e^-jbz (1 + Gamma e^j2bz) = incident + reflected: max |diff| 3.1e-16 over 40001 values
+ok   Gamma = 0.136+0.267j: travelling (1-|G|) e^-jbz + standing 2|G| e^(j th/2) cos(bz + th/2): max |diff| 6.9e-16 over 40001 values
+ok   Gamma = 0.136+0.267j: the second term has one phase at all z (a pure standing wave)
+ok   Gamma = 0.136+0.267j: |E~x| between (1+|G|) and (1-|G|) E0: [1.3 0.7] vs [1.3 0.7]
+ok   Gamma = 0.136+0.267j: period lambda/2: max |diff| 1.8e-15 over 40001 values
+ok   Gamma = 0.136+0.267j: <S> = (1 - |G|^2) E0^2 / 2 eta1 at every z: max |diff| 2.2e-16 over 40001 values
+ok   Gamma = -0.641-0.479j: E0 e^-jbz (1 + Gamma e^j2bz) = incident + reflected: max |diff| 5.0e-16 over 40001 values
+ok   Gamma = -0.641-0.479j: travelling (1-|G|) e^-jbz + standing 2|G| e^(j th/2) cos(bz + th/2): max |diff| 1.5e-15 over 40001 values
+ok   Gamma = -0.641-0.479j: the second term has one phase at all z (a pure standing wave)
+ok   Gamma = -0.641-0.479j: |E~x| between (1+|G|) and (1-|G|) E0: [1.8 0.2] vs [1.8 0.2]
+ok   Gamma = -0.641-0.479j: period lambda/2: max |diff| 3.2e-15 over 40001 values
+ok   Gamma = -0.641-0.479j: <S> = (1 - |G|^2) E0^2 / 2 eta1 at every z: max |diff| 2.5e-16 over 40001 values
+ok   Gamma = -0.333: E0 e^-jbz (1 + Gamma e^j2bz) = incident + reflected: max |diff| 4.5e-16 over 40001 values
+ok   Gamma = -0.333: travelling (1-|G|) e^-jbz + standing 2|G| e^(j th/2) cos(bz + th/2): max |diff| 4.7e-16 over 40001 values
+ok   Gamma = -0.333: the second term has one phase at all z (a pure standing wave)
+ok   Gamma = -0.333: |E~x| between (1+|G|) and (1-|G|) E0: [1.333333 0.666667] vs [1.333333 0.666667]
+ok   Gamma = -0.333: period lambda/2: max |diff| 1.6e-15 over 40001 values
+ok   Gamma = -0.333: <S> = (1 - |G|^2) E0^2 / 2 eta1 at every z: max |diff| 2.2e-16 over 40001 values
+ok   real negative Gamma: minimum (1 - |G|) at the interface: [0.5] vs [0.5]
+ok   real positive Gamma: maximum (1 + |G|) at the interface: [1.5] vs [1.5]
+ok   Gamma = -1/2 <-> eta2 = eta1/3 <-> eps_r = 9 behind vacuum (concept page, figure): [-0.5] vs [-0.5]
+
+==== E. Effective surface current and surface resistance (notes pp. 4-5; page section 5)
+ok   sigma 5.8e+07, f 1e+10: sqrt(j w mu sigma) = (1+j)/delta: [1513191.40265+1513191.40265j] vs [1513191.40265+1513191.40265j]
+ok   sigma * eta = gamma (good-conductor forms): sqrt(j w mu sigma): [1513191.40265+1513191.40265j] vs [1513191.40265+1513191.40265j]
+ok      sigma2 tau ~ 2 gamma2/eta0 (rel. error 9.8e-05, of order |eta2|/eta0 = 9.8e-05)
+ok      depth integral of J~_t (trapezoid) = sigma2 tau E0 / gamma2: [0.005308-3.676413e-07j] vs [0.005308-3.676501e-07j]
+ok      ... = 2E0/eta0 to 9.8e-05 (independent of sigma2)
+ok      int J(z) dz = J~_s for J = J~_s gamma e^-gamma z: [0.37+0.2j] vs [0.37+0.2j]
+ok      <J.E> = (1/2)|J_s gamma|^2 e^-2 alpha z / sigma: max |diff| 4.5e-12 over 400001 values
+ok      int <J.E> dz = (1/2) R_s |J_s|^2: [0.002308] vs [0.002308]
+ok      R_s = alpha/sigma = sqrt(pi f mu/sigma) = 1/(sigma delta): [0.02609 0.02609 0.02609] vs [0.02609 0.02609 0.02609]
+ok      R_s = Re(eta2) to 4.8e-09
+ok   sigma 5.8e+07, f 1e+06: sqrt(j w mu sigma) = (1+j)/delta: [15131.914026+15131.914026j] vs [15131.914026+15131.914026j]
+ok   sigma * eta = gamma (good-conductor forms): sqrt(j w mu sigma): [15131.914026+15131.914026j] vs [15131.914026+15131.914026j]
+ok      sigma2 tau ~ 2 gamma2/eta0 (rel. error 9.8e-07, of order |eta2|/eta0 = 9.8e-07)
+ok      depth integral of J~_t (trapezoid) = sigma2 tau E0 / gamma2: [0.005309-3.667653e-09j] vs [0.005309-3.676501e-09j]
+ok      ... = 2E0/eta0 to 9.8e-07 (independent of sigma2)
+ok      int J(z) dz = J~_s for J = J~_s gamma e^-gamma z: [0.37+0.2j] vs [0.37+0.2j]
+ok      <J.E> = (1/2)|J_s gamma|^2 e^-2 alpha z / sigma: max |diff| 5.6e-16 over 400001 values
+ok      int <J.E> dz = (1/2) R_s |J_s|^2: [2.307617e-05] vs [2.307617e-05]
+ok      R_s = alpha/sigma = sqrt(pi f mu/sigma) = 1/(sigma delta): [0.000261 0.000261 0.000261] vs [0.000261 0.000261 0.000261]
+ok      R_s = Re(eta2) to 4.8e-13
+ok   sigma 3.5e+07, f 1e+09: sqrt(j w mu sigma) = (1+j)/delta: [371718.255693+371718.255693j] vs [371718.255693+371718.255693j]
+ok   sigma * eta = gamma (good-conductor forms): sqrt(j w mu sigma): [371718.255693+371718.255693j] vs [371718.255693+371718.255693j]
+ok      sigma2 tau ~ 2 gamma2/eta0 (rel. error 4.0e-05, of order |eta2|/eta0 = 4.0e-05)
+ok      depth integral of J~_t (trapezoid) = sigma2 tau E0 / gamma2: [0.005309-1.496542e-07j] vs [0.005309-1.496631e-07j]
+ok      ... = 2E0/eta0 to 4.0e-05 (independent of sigma2)
+ok      int J(z) dz = J~_s for J = J~_s gamma e^-gamma z: [0.37+0.2j] vs [0.37+0.2j]
+ok      <J.E> = (1/2)|J_s gamma|^2 e^-2 alpha z / sigma: max |diff| 4.5e-13 over 400001 values
+ok      int <J.E> dz = (1/2) R_s |J_s|^2: [0.000939] vs [0.000939]
+ok      R_s = alpha/sigma = sqrt(pi f mu/sigma) = 1/(sigma delta): [0.010621 0.010621 0.010621] vs [0.010621 0.010621 0.010621]
+ok      R_s = Re(eta2) to 7.9e-10
+ok   sigma 4.0e+00, f 1e+03: sqrt(j w mu sigma) = (1+j)/delta: [0.125664+0.125664j] vs [0.125664+0.125664j]
+ok   sigma * eta = gamma (good-conductor forms): sqrt(j w mu sigma): [0.125664+0.125664j] vs [0.125664+0.125664j]
+ok      sigma2 tau ~ 2 gamma2/eta0 (rel. error 1.2e-04, of order |eta2|/eta0 = 1.2e-04)
+ok      depth integral of J~_t (trapezoid) = sigma2 tau E0 / gamma2: [0.005308-4.427005e-07j] vs [0.005308-4.427094e-07j]
+ok      ... = 2E0/eta0 to 1.2e-04 (independent of sigma2)
+ok      int J(z) dz = J~_s for J = J~_s gamma e^-gamma z: [0.37+0.2j] vs [0.37+0.2j]
+ok      <J.E> = (1/2)|J_s gamma|^2 e^-2 alpha z / sigma: max |diff| 4.3e-19 over 400001 values
+ok      int <J.E> dz = (1/2) R_s |J_s|^2: [0.002779] vs [0.002779]
+ok      R_s = alpha/sigma = sqrt(pi f mu/sigma) = 1/(sigma delta): [0.031416 0.031416 0.031416] vs [0.031416 0.031416 0.031416]
+ok      R_s = Re(eta2) to 7.0e-09
+ok   sigma 1.0e+05, f 1e+08: sqrt(j w mu sigma) = (1+j)/delta: [6283.185307+6283.185307j] vs [6283.185307+6283.185307j]
+ok   sigma * eta = gamma (good-conductor forms): sqrt(j w mu sigma): [6283.185307+6283.185307j] vs [6283.185307+6283.185307j]
+ok      sigma2 tau ~ 2 gamma2/eta0 (rel. error 2.4e-04, of order |eta2|/eta0 = 2.4e-04)
+ok      depth integral of J~_t (trapezoid) = sigma2 tau E0 / gamma2: [0.005308-8.854099e-07j] vs [0.005308-8.854188e-07j]
+ok      ... = 2E0/eta0 to 2.4e-04 (independent of sigma2)
+ok      int J(z) dz = J~_s for J = J~_s gamma e^-gamma z: [0.37+0.2j] vs [0.37+0.2j]
+ok      <J.E> = (1/2)|J_s gamma|^2 e^-2 alpha z / sigma: max |diff| 5.7e-14 over 400001 values
+ok      int <J.E> dz = (1/2) R_s |J_s|^2: [0.005557] vs [0.005557]
+ok      R_s = alpha/sigma = sqrt(pi f mu/sigma) = 1/(sigma delta): [0.062832 0.062832 0.062832] vs [0.062832 0.062832 0.062832]
+ok      R_s = Re(eta2) to 2.8e-08
+ok   copper 10 GHz: delta [um]: computed 0.660855, page 0.661 (tol 0.1%)
+ok   copper 10 GHz: R_s [mOhm]: computed 26.0895, page 26.1 (tol 0.2%)
+ok   copper 10 GHz: absorbed fraction 4 R_s/eta0: computed 0.00027701, page 0.000277 (tol 0.2%)
+ok   copper 10 GHz: 1 - |Gamma|^2 from Lecture 25's exact Gamma: computed 0.000276972, page 0.000277 (tol 0.2%)
+ok   copper 10 GHz: reflects 99.97 %: computed 99.9723, page 99.97 (tol 0.0%)
+ok   (1/2) R_s (2E0/eta0)^2 = (4 R_s/eta0) <S_i>: [3.676501e-07] vs [3.676501e-07]
+
+==== F. Radiation pressure (notes p. 6; page section 6)
+ok   J along x, B along y: J x B along +z, into the mirror: [0. 0. 1.] vs [0. 0. 1.]
+ok   sigma 5.8e+07, f 1e+10: int (1/2)Re(J x B*) dz = 2<S_i>/c to 1.4e-04
+ok   sigma 3.5e+07, f 1e+09: int (1/2)Re(J x B*) dz = 2<S_i>/c to 5.6e-05
+ok   sigma 1.0e+05, f 1e+08: int (1/2)Re(J x B*) dz = 2<S_i>/c to 3.3e-04
+ok   sigma/(w eps0) = 0.1: int <J x B> dz = (1 + |Gamma|^2)<S_i>/c (|Gamma|^2 = 0.0006): [4.429851e-12] vs [4.429851e-12]
+ok   sigma/(w eps0) = 1: int <J x B> dz = (1 + |Gamma|^2)<S_i>/c (|Gamma|^2 = 0.0470): [4.635264e-12] vs [4.635264e-12]
+ok   sigma/(w eps0) = 10: int <J x B> dz = (1 + |Gamma|^2)<S_i>/c (|Gamma|^2 = 0.4031): [6.211556e-12] vs [6.211556e-12]
+ok   sigma/(w eps0) = 1000: int <J x B> dz = (1 + |Gamma|^2)<S_i>/c (|Gamma|^2 = 0.9144): [8.475348e-12] vs [8.475348e-12]
+ok   sigma/(w eps0) = 1e+06: int <J x B> dz = (1 + |Gamma|^2)<S_i>/c (|Gamma|^2 = 0.9972): [8.841684e-12] vs [8.841684e-12]
+ok   copper 10 GHz: (1 + |Gamma|^2) (concept page): computed 1.99972, page 1.99972 (tol 0.0%)
+ok   copper 10 GHz: differs from the mirror value by 0.014 %: computed 0.0138486, page 0.014 (tol 2.0%)
+ok   notes: sigma2 tau ~ 2 sigma2 eta2/eta0 = 2 gamma2/eta0 (approximate forms, exact identity): [8033.287199+8033.287199j] vs [8033.287199+8033.287199j]
+ok   tau/eta2 ~ 2/eta0 is real: [0.005309+0.j] vs [0.005309]
+ok   notes' line 3 = z 2 (|E0|^2/2 eta0) (Re gamma2/alpha2)(mu2/eta0): [8.854188e-12] vs [8.854188e-12]
+ok   ... = 2<S_i>/c since mu0/eta0 = sqrt(mu0 eps0) = 1/c: [8.854188e-12] vs [8.854188e-12]
+ok   mu0/eta0 = 1/c: [3.335641e-09] vs [3.335641e-09]
+ok   erratum check: unconjugated B~ gives the same Re{} with the approximate tau (tau/eta2 real): [5.359232e-05] vs [5.359232e-05]
+ok   erratum check: with the exact tau the two differ by 1.4e-04 (negligible, but the conjugate belongs)
+ok   instantaneous int J x B dz = (1/2) mu0 H_y(0,t)^2 (exact copper fields): max |diff| 3.5e-19 over 17 values
+ok   ... = (4<S_i>/c) cos^2 wt to 1.7e-04 (phase of tau/eta2 ~ 0)
+ok   pulses at 2w between 0 and twice the mean 2<S_i>/c
+ok   J_s x (1/2) B(0,t) = z (1/2) mu0 H(0,t)^2 (sheet in the mean field): [0.000000e+00 0.000000e+00 1.770838e-11] vs [0.000000e+00 0.000000e+00 1.770838e-11]
+ok   J_s x (1/2) B(0,t) = z (1/2) mu0 H(0,t)^2 (sheet in the mean field): [0.000000e+00 0.000000e+00 1.511504e-11] vs [0.000000e+00 0.000000e+00 1.511504e-11]
+ok   J_s x (1/2) B(0,t) = z (1/2) mu0 H(0,t)^2 (sheet in the mean field): [0.000000e+00 0.000000e+00 8.854188e-12] vs [0.000000e+00 0.000000e+00 8.854188e-12]
+ok   J_s x (1/2) B(0,t) = z (1/2) mu0 H(0,t)^2 (sheet in the mean field): [0.000000e+00 0.000000e+00 2.593332e-12] vs [0.000000e+00 0.000000e+00 2.593332e-12]
+ok   J_s x (1/2) B(0,t) = z (1/2) mu0 H(0,t)^2 (sheet in the mean field): [0.000000e+00 0.000000e+00 6.639577e-44] vs [0.000000e+00 0.000000e+00 6.639577e-44]
+ok   (n x H) x (mu0 H/2) = -(mu0/2)|H|^2 n: push into the conductor, any tangential H: [-0.000000e+00 -2.861098e-07  0.000000e+00] vs [-0.000000e+00 -2.861098e-07 -0.000000e+00]
+ok   (n x H) x (mu0 H/2) = -(mu0/2)|H|^2 n: push into the conductor, any tangential H: [ 0.000000e+00 -2.012161e-06  0.000000e+00] vs [-0.000000e+00 -2.012161e-06 -0.000000e+00]
+ok   (n x H) x (mu0 H/2) = -(mu0/2)|H|^2 n: push into the conductor, any tangential H: [-0.000000e+00 -1.692823e-06  0.000000e+00] vs [-0.000000e+00 -1.692823e-06 -0.000000e+00]
+ok   (n x H) x (mu0 H/2) = -(mu0/2)|H|^2 n: push into the conductor, any tangential H: [-0.000000e+00 -2.581122e-07  0.000000e+00] vs [-0.000000e+00 -2.581122e-07 -0.000000e+00]
+ok   (n x H) x (mu0 H/2) = -(mu0/2)|H|^2 n: push into the conductor, any tangential H: [-0.000000e+00 -1.661728e-06  0.000000e+00] vs [-0.000000e+00 -1.661728e-06 -0.000000e+00]
+ok   <P_rad> = 2<S_i>/c = eps0 E0^2 = <w> of the standing wave (vacuum): [8.854188e-12] vs [8.854188e-12]
+ok   momentum density <S>/c^2 over photon density |S|/(w c hbar) = hbar w / c per photon: [1.215621e-27] vs [1.215621e-27]
+ok   spin density <S>/(w c) over photon density = hbar per photon: [1.054572e-34] vs [1.054572e-34]
+ok   momentum flux = momentum density x c = <S>/c: [4.539807e-06] vs [4.539807e-06]
+ok   units: <S>/(w c) [W m^-2 / (s^-1 m s^-1)] = J s/m^3 = N s/m^2; <S>/c^2 = kg/(m^2 s) = N s/m^3 (by dimensional bookkeeping)
+ok   sunlight: E0 = sqrt(2 eta0 S) [kV/m]: computed 1.01265, page 1.01 (tol 0.5%)
+ok   sunlight on a mirror [uPa]: computed 9.07961, page 9.08 (tol 0.1%)
+ok   sunlight on a black surface [uPa]: computed 4.53981, page 4.54 (tol 0.1%)
+ok   100 m x 100 m mirror sail [N]: computed 0.0907961, page 0.091 (tol 0.5%)
+ok   sunlight: mirror current peak 2E0/eta0 [A/m]: computed 5.37599, page 5.4 (tol 0.5%)
+ok   1 W laser reflected [nN]: computed 6.67128, page 6.7 (tol 0.5%)
+
+==== G. Errata items (digest10/ERRATA-L26.md)
+ok   erratum 1: for Gamma = -1 the reflected E points along -x (figure draws +x): [-1. -0. -0.] vs [-1. -0. -0.]
+ok   erratum 1: ... and the reflected H along +y (figure draws -y), as the notes' own equation says: [0. 1. 0.] vs [0. 1. 0.]
+ok   erratum 1: the figure's -y H_r with +x E_r belongs to Gamma > 0: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   erratum 2 (missing conjugate) checked in section F; erratum 3 (citation year) is bibliographic
+
+==== H. Figures (figs_l26.py)
+ok   screen mapping is a proper rotation: right x up = out <-> z x x = y: [0 0 1] vs [0 0 1]
+ok   J (up) x B (out, odot) = right: the J x B arrow points right, into the mirror: [1 0 0] vs [1 0 0]
+ok   stand-snapshots: E = 0 everywhere at wt = 0: max |diff| 0.0e+00 over 11 values
+ok   stand-snapshots: H = 0 everywhere at wt = pi/2: max |diff| 6.1e-17 over 11 values
+ok   stand-snapshots: H peaks (normalized 1) at the mirror at wt = 0: [1.] vs [1.]
+ok   stand-energy: S at z = -0.125 lambda during 0 < wt < pi/2 points -z (left)
+ok   stand-energy: S at z = -0.375 lambda during 0 < wt < pi/2 points +z (right)
+ok   stand-energy: S at z = -0.625 lambda during 0 < wt < pi/2 points -z (left)
+ok   stand-energy: S at z = -0.875 lambda during 0 < wt < pi/2 points +z (right)
+ok   stand-energy: left arrow at -lambda/8 runs from the H antinode at 0 to the E antinode at -lambda/4
+ok   stand-partial: Gamma = -1/2 has 0.5 at the interface and 1.5 at -3lambda/4 (and -lambda/4): [ 0.5   1.5  -0.75] vs [ 0.5   1.5  -0.75]
+ok   stand-partial: Gamma = +1/2 has its maximum 1.5 at the interface: [1.5 0.5] vs [1.5 0.5]
+ok   stand-partial: Gamma = -1 curve = 2|sin bz|: max |diff| 4.4e-16 over 40001 values
+ok   stand-skin-layer: J(z,t) curve at wt = 0.00 is Re(gamma e^-gamma z e^jwt)/|gamma|: max |diff| 2.2e-16 over 400001 values
+ok   stand-skin-layer: its depth integral is J_s(t) ~ cos wt (wt = 0.00): [1.] vs [1.]
+ok   stand-skin-layer: J(z,t) curve at wt = 1.57 is Re(gamma e^-gamma z e^jwt)/|gamma|: max |diff| 4.4e-16 over 400001 values
+ok   stand-skin-layer: its depth integral is J_s(t) ~ cos wt (wt = 1.57): [-1.666667e-09] vs [6.123234e-17]
+ok   stand-skin-layer: J(z,t) curve at wt = 3.14 is Re(gamma e^-gamma z e^jwt)/|gamma|: max |diff| 3.3e-16 over 400001 values
+ok   stand-skin-layer: its depth integral is J_s(t) ~ cos wt (wt = 3.14): [-1.] vs [-1.]
+ok   stand-skin-layer: J(z,t) curve at wt = 4.71 is Re(gamma e^-gamma z e^jwt)/|gamma|: max |diff| 4.4e-16 over 400001 values
+ok   stand-skin-layer: its depth integral is J_s(t) ~ cos wt (wt = 4.71): [1.666666e-09] vs [-1.83697e-16]
+ok   stand-skin-layer: <f_z> ~ e^(-2z/delta), integral delta/2 (times (1/2)mu0(2E0/eta0)^2/delta = 2<S_i>/c): [0.5] vs [0.5]
+ok   ... = mu0 E0^2/eta0^2 = 2<S_i>/c: [8.854188e-12] vs [8.854188e-12]
+
+==== I. Worked problem: a circular wave meets a mirror
+ok   beta = w/c = 10 pi rad/m: [31.415927] vs [31.415927]
+ok   lambda = 20 cm: [0.2] vs [0.2]
+ok   eps0 (120 pi)^2 = mu0 with the course's constants: [1.256637e-06] vs [1.256637e-06]
+ok   eta0/c = mu0 (so 120 pi beta = mu0 w): [1.256637e-06] vs [1.256637e-06]
+ok   (a) x component of Re{60pi(x - jz) e^(j beta y) e^(jwt)}: max |diff| 0.0e+00 over 80901 values
+ok   (a) z component: -j <-> sin: max |diff| 0.0e+00 over 80901 values
+ok   (a) incident (x - jz) e^(+j beta y), travel -y: right-circular
+ok   (a) E(0) x E(T/4) = x x z = -y: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   (a) reflected -(x - jz) e^(-j beta y), travel +y: left-circular
+ok   (a) (-x) x (-z) = -y: [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   (b) H_i = (-y) x E_i/eta0 = (1/2)(z + jx) e^(j beta y): [0. +0.5j 0. +0.j  0.5+0.j ] vs [0. +0.5j 0. +0.j  0.5+0.j ]
+ok   (b) H_r = y x E_r/eta0 = (1/2)(z + jx) e^(-j beta y): [0. +0.5j 0. -0.j  0.5+0.j ] vs [0. +0.5j 0. +0.j  0.5+0.j ]
+ok   (b) E~ = 120 pi sin(beta y)(z + jx): max |diff| 0.0e+00 over 2403 values
+ok   (b) H~ = cos(beta y)(z + jx): max |diff| 0.0e+00 over 2403 values
+ok   (b) E(y,t) = 120 pi sin(beta y) a(t) at wt = 0.00: max |diff| 0.0e+00 over 2403 values
+ok   (b) H(y,t) = cos(beta y) a(t) at wt = 0.00: max |diff| 0.0e+00 over 2403 values
+ok   (b) total = statement's E_i + reflected, in the time domain: max |diff| 0.0e+00 over 2403 values
+ok   (c) S = E x H = 0 at wt = 0.00: max |diff| 0.0e+00 over 2403 values
+ok   (c) w = (1/2)mu0 = 2 pi x 10^-7 J/m^3 at every y: max |diff| 3.2e-22 over 801 values
+ok   (c) trap: pair E_x, H_z gives S_y = +30 pi sin(2 beta y) sin(2wt): max |diff| 0.0e+00 over 801 values
+ok   (c) trap: pair E_z, H_x gives -30 pi sin(2 beta y) sin(2wt): max |diff| 0.0e+00 over 801 values
+ok   (b) E(y,t) = 120 pi sin(beta y) a(t) at wt = 0.82: max |diff| 0.0e+00 over 2403 values
+ok   (b) H(y,t) = cos(beta y) a(t) at wt = 0.82: max |diff| 0.0e+00 over 2403 values
+ok   (b) total = statement's E_i + reflected, in the time domain: max |diff| 2.0e-13 over 2403 values
+ok   (c) S = E x H = 0 at wt = 0.82: max |diff| 2.8e-14 over 2403 values
+ok   (c) w = (1/2)mu0 = 2 pi x 10^-7 J/m^3 at every y: max |diff| 3.2e-22 over 801 values
+ok   (c) trap: pair E_x, H_z gives S_y = +30 pi sin(2 beta y) sin(2wt): max |diff| 2.8e-14 over 801 values
+ok   (c) trap: pair E_z, H_x gives -30 pi sin(2 beta y) sin(2wt): max |diff| 2.8e-14 over 801 values
+ok   (b) E(y,t) = 120 pi sin(beta y) a(t) at wt = 2.58: max |diff| 0.0e+00 over 2403 values
+ok   (b) H(y,t) = cos(beta y) a(t) at wt = 2.58: max |diff| 0.0e+00 over 2403 values
+ok   (b) total = statement's E_i + reflected, in the time domain: max |diff| 2.0e-13 over 2403 values
+ok   (c) S = E x H = 0 at wt = 2.58: max |diff| 2.8e-14 over 2403 values
+ok   (c) w = (1/2)mu0 = 2 pi x 10^-7 J/m^3 at every y: max |diff| 2.1e-22 over 801 values
+ok   (c) trap: pair E_x, H_z gives S_y = +30 pi sin(2 beta y) sin(2wt): max |diff| 4.3e-14 over 801 values
+ok   (c) trap: pair E_z, H_x gives -30 pi sin(2 beta y) sin(2wt): max |diff| 2.8e-14 over 801 values
+ok   (b) E(y,t) = 120 pi sin(beta y) a(t) at wt = 4.84: max |diff| 0.0e+00 over 2403 values
+ok   (b) H(y,t) = cos(beta y) a(t) at wt = 4.84: max |diff| 0.0e+00 over 2403 values
+ok   (b) total = statement's E_i + reflected, in the time domain: max |diff| 3.4e-13 over 2403 values
+ok   (c) S = E x H = 0 at wt = 4.84: max |diff| 7.1e-15 over 2403 values
+ok   (c) w = (1/2)mu0 = 2 pi x 10^-7 J/m^3 at every y: max |diff| 2.1e-22 over 801 values
+ok   (c) trap: pair E_x, H_z gives S_y = +30 pi sin(2 beta y) sin(2wt): max |diff| 1.1e-14 over 801 values
+ok   (c) trap: pair E_z, H_x gives -30 pi sin(2 beta y) sin(2wt): max |diff| 1.1e-14 over 801 values
+ok   x x z = -y (pair E_x, H_z): [ 0. -1.  0.] vs [-0. -1. -0.]
+ok   z x x = +y (pair E_z, H_x): [0. 1. 0.] vs [0. 1. 0.]
+ok   (c) w = 6.28e-7 J/m^3: computed 6.28319e-07, page 6.28e-07 (tol 0.1%)
+ok   (b) E nodes at y = 0, 10, 20 cm: [ 0.000000e+00  1.224647e-16 -2.449294e-16] vs [0 0 0]
+ok   (b) H nodes at y = 5, 15, 25 cm: [ 6.123234e-17 -1.071875e-15  1.194340e-15] vs [0 0 0]
+ok   (b) Faraday: curl E = -mu0 dH/dt (finite differences): max |diff| 8.6e-07 over 60 values
+ok   (b) curl E = 120 pi beta cos(beta y)(x cos wt + z sin wt): max |diff| 7.8e-07 over 60 values
+ok   (b) Ampere-Maxwell: curl H = eps0 dE/dt (finite differences): max |diff| 4.9e-09 over 60 values
+ok   (d) J_s = y x a(t) = x cos wt + z sin wt at wt = 0.00: [1. 0. 0.] vs [1. 0. 0.]
+ok   (d) J_s = 2 E_i(0,t)/eta0: [1. 0. 0.] vs [1. 0. 0.]
+ok   (d) J_s x (1/2)B(0,t) = -y 2 pi x 10^-7 N/m^2, constant: [ 0.000000e+00 -6.283185e-07  0.000000e+00] vs [-0.000000e+00 -6.283185e-07 -0.000000e+00]
+ok   (d) J_s = y x a(t) = x cos wt + z sin wt at wt = 1.26: [ 0.309017 -0.        0.951057] vs [0.309017 0.       0.951057]
+ok   (d) J_s = 2 E_i(0,t)/eta0: [ 0.309017 -0.        0.951057] vs [0.309017 0.       0.951057]
+ok   (d) J_s x (1/2)B(0,t) = -y 2 pi x 10^-7 N/m^2, constant: [-0.000000e+00 -6.283185e-07  0.000000e+00] vs [-0.000000e+00 -6.283185e-07 -0.000000e+00]
+ok   (d) J_s = y x a(t) = x cos wt + z sin wt at wt = 3.77: [-0.809017  0.       -0.587785] vs [-0.809017 -0.       -0.587785]
+ok   (d) J_s = 2 E_i(0,t)/eta0: [-0.809017  0.       -0.587785] vs [-0.809017  0.       -0.587785]
+ok   (d) J_s x (1/2)B(0,t) = -y 2 pi x 10^-7 N/m^2, constant: [ 0.000000e+00 -6.283185e-07 -0.000000e+00] vs [-0.000000e+00 -6.283185e-07 -0.000000e+00]
+ok   (d) each component carries 15 pi W/m^2: [47.12389] vs [47.12389]
+ok   (d) <S_i> = 30 pi W/m^2: [94.24778] vs [94.24778]
+ok   (d) <S_i> = 94.2 W/m^2: computed 94.2478, page 94.2 (tol 0.1%)
+ok   (d) 2<S_i>/c = 60 pi/3e8 = 2 pi x 10^-7 N/m^2: [6.283185e-07] vs [6.283185e-07]
+ok   (d) 0.628 uPa: computed 0.628319, page 0.628 (tol 0.1%)
+ok   (d) a linear wave with the same <S_i> gives the same average pressure: [6.283185e-07] vs [6.283185e-07]
+
+==== J. Concept pages
+ok   standing-waves: 1.5 GHz in air, lambda = 19.99 cm ~ 20 cm; E nodes 0, 10, 20 cm; H nodes 5, 15, 25 cm
+ok   standing-waves: Gamma = -1/2 (eps_r = 9) -> 0.5 and 1.5 E0, minimum at interface (section D)
+ok   radiation-pressure: sunlight, laser, sail (section F); copper 1.99972 (section F); 94.2 W/m^2 -> 2 pi x 10^-7 N/m^2 (section I)
+
+==== K. Concision limits of the brief
+ok   lecture page 2131 words <= 3000
+ok   concepts/standing-waves.md: 466 words <= 500
+ok   concepts/radiation-pressure.md: 398 words <= 500
+ok   problems/a-circular-wave-meets-a-mirror.md: 899 words <= 900
+ok   In one breath: 94 words <= 100
+ok   On exams: 103 words <= 120
+ok   example callout: 55 words <= 120
+ok   example callout: 79 words <= 120
+ok   Sources: 92 words <= 100
+ok   caption 45 words <= 50: The standing wave in front of a mirror a...
+ok   caption 39 words <= 50: Energy density of the standing wave, sta...
+ok   caption 39 words <= 50: The field magnitude in region 1 for four...
+ok   caption 41 words <= 50: Where the push acts. Left: J along x̂ an...
+
+ALL 324 CHECKS PASSED

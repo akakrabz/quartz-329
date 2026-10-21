@@ -1,6 +1,6 @@
 ---
 title: "Problems by topic"
-description: "The 260 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
+description: "The 344 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
 tags: [practice]
 ---
 
@@ -58,6 +58,20 @@ Two-minute concept checks — every wrong option is explained in the solution. G
 - [[practice/22-damped-waves-in-conducting-media#224-possible-or-not-possible|22.4 Possible or not possible]] <span class="diff easy">easy</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#232-inside-a-good-conductor|23.2 Inside a good conductor]] <span class="diff easy">easy</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#233-regimes-true-or-false|23.3 Regimes, true or false]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#242-which-velocity-carries-the-message|24.2 Which velocity carries the message]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#244-true-or-false-on-one-wave|24.4 True or false on one wave]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#252-signs-at-the-interface|25.2 Signs at the interface]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#253-into-a-good-conductor|25.3 Into a good conductor]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#262-standing-waves-true-or-false|26.2 Standing waves true or false]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#263-travelling-standing-or-both|26.3 Travelling, standing or both]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#272-telegraphers-equations-true-or-false|27.2 Telegrapher's equations, true or false]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#273-charges-and-currents-on-turned-plates|27.3 Charges and currents on turned plates]] <span class="diff easy">easy</span>
+- [[practice/28-bounce-diagrams#282-line-conventions|28.2 Line conventions]] <span class="diff easy">easy</span>
+- [[practice/28-bounce-diagrams#284-arrival-times-at-a-point|28.4 Arrival times at a point]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#291-which-way-round|29.1 Which way round]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#292-four-statements|29.2 Four statements]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#302-junction-facts|30.2 Junction facts]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#303-no-echo-toward-the-source|30.3 No echo toward the source]] <span class="diff easy">easy</span>
 
 ## Find the error
 
@@ -85,6 +99,13 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/21-phasors-and-monochromatic-waves#215-the-power-that-flowed-backward|21.5 The power that flowed backward]] <span class="diff easy">easy</span>
 - [[practice/22-damped-waves-in-conducting-media#225-the-magnetic-field-that-leads|22.5 The magnetic field that leads]] <span class="diff easy">easy</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#238-the-missing-permittivity|23.8 The missing permittivity]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#245-the-forgotten-travel-direction|24.5 The forgotten travel direction]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#254-an-amplifying-dielectric|25.4 An amplifying dielectric]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#264-a-laser-on-a-small-mirror|26.4 A laser on a small mirror]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#274-plane-wave-power-on-a-line|27.4 Plane-wave power on a line]] <span class="diff easy">easy</span>
+- [[practice/28-bounce-diagrams#285-a-launched-wave-too-big|28.5 A launched wave too big]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#294-the-echos-current|29.4 The echo's current]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#305-the-returning-echo|30.5 The returning echo]] <span class="diff easy">easy</span>
 
 ## Coulomb's law and point charges
 
@@ -282,6 +303,8 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/19-radiation-from-current-sheets#195-the-electric-field-that-flips|19.5 The electric field that flips]] <span class="diff easy">easy</span>
 - [[practice/19-radiation-from-current-sheets#197-which-current-made-this-field|19.7 Which current made this field]] <span class="diff medium">medium</span>
 - [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#273-charges-and-currents-on-turned-plates|27.3 Charges and currents on turned plates]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#2711-the-battery-and-the-front|27.11 The battery and the front]] <span class="diff hard">hard</span>
 
 ## Poisson's and Laplace's equations
 
@@ -363,6 +386,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/10-capacitance-and-conductance#108-diode-junction-capacitance|10.8 Diode junction capacitance]] <span class="diff medium">medium</span>
 - [[practice/10-capacitance-and-conductance#1010-pulling-capacitor-plates-apart|10.10 Pulling capacitor plates apart]] <span class="diff hard">hard</span>
 - [[practice/10-capacitance-and-conductance#1012-lossy-coax-driven-through-a-resistor|10.12 Lossy coax driven through a resistor]] <span class="diff hard">hard</span>
+- [[practice/28-bounce-diagrams#2812-open-line-charges-like-a-capacitor|28.12 Open line charges like a capacitor]] <span class="diff hard">hard</span>
 
 ## Conductance and lossy capacitors
 
@@ -374,6 +398,8 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/16-charge-conservation-and-displacement-current#169-a-leaky-capacitor-and-its-leads|16.9 A leaky capacitor and its leads]] <span class="diff hard">hard</span>
 - [[practice/20-poynting-theorem-and-power#207-a-leaky-spherical-capacitor|20.7 A leaky spherical capacitor]] <span class="diff medium">medium</span>
 - [[practice/20-poynting-theorem-and-power#2012-charging-a-leaky-capacitor|20.12 Charging a leaky capacitor]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#277-two-bench-measurements|27.7 Two bench measurements]] <span class="diff medium">medium</span>
+- [[practice/27-transmission-line-basics#2712-telegraphers-equations-for-a-leaky-coax|27.12 Telegrapher's equations for a leaky coax]] <span class="diff hard">hard</span>
 
 ## Drude and Lorentz models
 
@@ -550,6 +576,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/21-phasors-and-monochromatic-waves#214-which-electric-field|21.4 Which electric field]] <span class="diff easy">easy</span>
 - [[practice/21-phasors-and-monochromatic-waves#217-partner-fields-on-three-axes|21.7 Partner fields on three axes]] <span class="diff medium">medium</span>
 - [[practice/21-phasors-and-monochromatic-waves#2112-a-medium-from-phasor-readings|21.12 A medium from phasor readings]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#2710-splitting-a-snapshot-into-two-waves|27.10 Splitting a snapshot into two waves]] <span class="diff hard">hard</span>
 
 ## Current-sheet radiation and the Poynting vector
 
@@ -567,6 +594,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/20-poynting-theorem-and-power#2011-two-sheets-in-step|20.11 Two sheets in step]] <span class="diff hard">hard</span>
 - [[practice/21-phasors-and-monochromatic-waves#2110-two-sheets-two-current-directions|21.10 Two sheets, two current directions]] <span class="diff hard">hard</span>
 - [[practice/22-damped-waves-in-conducting-media#2211-current-sheet-in-a-lossy-medium|22.11 Current sheet in a lossy medium]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2412-an-elliptically-rotating-sheet-current|24.12 An elliptically rotating sheet current]] <span class="diff hard">hard</span>
 
 ## Poynting's theorem, energy flow and time-average power
 
@@ -593,6 +621,27 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/22-damped-waves-in-conducting-media#2211-current-sheet-in-a-lossy-medium|22.11 Current sheet in a lossy medium]] <span class="diff hard">hard</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#237-divers-talking-through-a-lake|23.7 Divers talking through a lake]] <span class="diff medium">medium</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#247-linear-and-circular-building-blocks|24.7 Linear and circular building blocks]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#248-starting-from-h|24.8 Starting from H]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#249-building-a-right-circular-wave|24.9 Building a right-circular wave]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2410-a-wave-with-a-free-phase|24.10 A wave with a free phase]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2412-an-elliptically-rotating-sheet-current|24.12 An elliptically rotating sheet current]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#254-an-amplifying-dielectric|25.4 An amplifying dielectric]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#256-same-speed-different-impedance|25.6 Same speed, different impedance]] <span class="diff medium">medium</span>
+- [[practice/25-reflection-and-transmission#258-how-good-a-mirror-is-copper|25.8 How good a mirror is copper]] <span class="diff medium">medium</span>
+- [[practice/25-reflection-and-transmission#259-out-of-the-glass|25.9 Out of the glass]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#2510-into-lossy-ground|25.10 Into lossy ground]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#2512-identifying-a-material|25.12 Identifying a material]] <span class="diff hard">hard</span>
+- [[practice/26-standing-waves-and-radiation-pressure#262-standing-waves-true-or-false|26.2 Standing waves true or false]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#265-sunlight-at-mars|26.5 Sunlight at Mars]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#267-energy-in-a-quarter-wave-cell|26.7 Energy in a quarter-wave cell]] <span class="diff medium">medium</span>
+- [[practice/26-standing-waves-and-radiation-pressure#2611-pushing-a-sail-with-a-laser|26.11 Pushing a sail with a laser]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#274-plane-wave-power-on-a-line|27.4 Plane-wave power on a line]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#276-reading-a-line-from-v-and-i|27.6 Reading a line from V and I]] <span class="diff medium">medium</span>
+- [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax|27.9 A pulse on a coax]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#2710-splitting-a-snapshot-into-two-waves|27.10 Splitting a snapshot into two waves]] <span class="diff hard">hard</span>
+- [[practice/30-multi-line-circuits#306-a-shunt-resistor-that-matches|30.6 A shunt resistor that matches]] <span class="diff medium">medium</span>
+- [[practice/30-multi-line-circuits#307-a-series-resistor-in-the-splice|30.7 A series resistor in the splice]] <span class="diff medium">medium</span>
 
 ## Monochromatic waves, phasors and dispersion
 
@@ -609,6 +658,15 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/21-phasors-and-monochromatic-waves#2111-two-waves-on-one-line|21.11 Two waves on one line]] <span class="diff hard">hard</span>
 - [[practice/21-phasors-and-monochromatic-waves#2112-a-medium-from-phasor-readings|21.12 A medium from phasor readings]] <span class="diff hard">hard</span>
 - [[practice/22-damped-waves-in-conducting-media#2210-two-components-in-a-magnetic-medium|22.10 Two components in a magnetic medium]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#241-crests-and-envelope-in-a-plasma|24.1 Crests and envelope in a plasma]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#245-the-forgotten-travel-direction|24.5 The forgotten travel direction]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#246-from-two-snapshots-to-a-phasor|24.6 From two snapshots to a phasor]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#248-starting-from-h|24.8 Starting from H]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#249-building-a-right-circular-wave|24.9 Building a right-circular wave]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2410-a-wave-with-a-free-phase|24.10 A wave with a free phase]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2411-reading-the-ionosphere-from-two-delays|24.11 Reading the ionosphere from two delays]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#257-a-plane-mirror-and-its-current|25.7 A plane mirror and its current]] <span class="diff medium">medium</span>
+- [[practice/25-reflection-and-transmission#259-out-of-the-glass|25.9 Out of the glass]] <span class="diff hard">hard</span>
 
 ## Damped waves in lossy and conducting media
 
@@ -630,6 +688,11 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground|23.6 Wavelength and depth measured underground]] <span class="diff medium">medium</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#238-the-missing-permittivity|23.8 The missing permittivity]] <span class="diff medium">medium</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf|23.11 Dry earth from ELF to VHF]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#253-into-a-good-conductor|25.3 Into a good conductor]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#255-permittivity-from-a-reflection|25.5 Permittivity from a reflection]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#256-same-speed-different-impedance|25.6 Same speed, different impedance]] <span class="diff medium">medium</span>
+- [[practice/25-reflection-and-transmission#2510-into-lossy-ground|25.10 Into lossy ground]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#2512-identifying-a-material|25.12 Identifying a material]] <span class="diff hard">hard</span>
 
 ## Imperfect dielectrics, good conductors and skin depth
 
@@ -649,3 +712,116 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2310-calling-a-submarine|23.10 Calling a submarine]] <span class="diff hard">hard</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf|23.11 Dry earth from ELF to VHF]] <span class="diff hard">hard</span>
 - [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#258-how-good-a-mirror-is-copper|25.8 How good a mirror is copper]] <span class="diff medium">medium</span>
+- [[practice/26-standing-waves-and-radiation-pressure#2610-a-good-conductor-mirror|26.10 A good-conductor mirror]] <span class="diff hard">hard</span>
+
+## Group velocity and wave polarization
+
+- [[practice/24-group-velocity-and-polarization#241-crests-and-envelope-in-a-plasma|24.1 Crests and envelope in a plasma]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#242-which-velocity-carries-the-message|24.2 Which velocity carries the message]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#243-name-four-polarizations|24.3 Name four polarizations]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#244-true-or-false-on-one-wave|24.4 True or false on one wave]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#245-the-forgotten-travel-direction|24.5 The forgotten travel direction]] <span class="diff easy">easy</span>
+- [[practice/24-group-velocity-and-polarization#246-from-two-snapshots-to-a-phasor|24.6 From two snapshots to a phasor]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#247-linear-and-circular-building-blocks|24.7 Linear and circular building blocks]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#248-starting-from-h|24.8 Starting from H]] <span class="diff medium">medium</span>
+- [[practice/24-group-velocity-and-polarization#249-building-a-right-circular-wave|24.9 Building a right-circular wave]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2410-a-wave-with-a-free-phase|24.10 A wave with a free phase]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2411-reading-the-ionosphere-from-two-delays|24.11 Reading the ionosphere from two delays]] <span class="diff hard">hard</span>
+- [[practice/24-group-velocity-and-polarization#2412-an-elliptically-rotating-sheet-current|24.12 An elliptically rotating sheet current]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#2511-a-circular-wave-on-a-mirror|25.11 A circular wave on a mirror]] <span class="diff hard">hard</span>
+
+## Reflection and transmission at an interface
+
+- [[practice/25-reflection-and-transmission#251-four-interfaces|25.1 Four interfaces]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#252-signs-at-the-interface|25.2 Signs at the interface]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#253-into-a-good-conductor|25.3 Into a good conductor]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#254-an-amplifying-dielectric|25.4 An amplifying dielectric]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#255-permittivity-from-a-reflection|25.5 Permittivity from a reflection]] <span class="diff easy">easy</span>
+- [[practice/25-reflection-and-transmission#256-same-speed-different-impedance|25.6 Same speed, different impedance]] <span class="diff medium">medium</span>
+- [[practice/25-reflection-and-transmission#257-a-plane-mirror-and-its-current|25.7 A plane mirror and its current]] <span class="diff medium">medium</span>
+- [[practice/25-reflection-and-transmission#258-how-good-a-mirror-is-copper|25.8 How good a mirror is copper]] <span class="diff medium">medium</span>
+- [[practice/25-reflection-and-transmission#259-out-of-the-glass|25.9 Out of the glass]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#2510-into-lossy-ground|25.10 Into lossy ground]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#2511-a-circular-wave-on-a-mirror|25.11 A circular wave on a mirror]] <span class="diff hard">hard</span>
+- [[practice/25-reflection-and-transmission#2512-identifying-a-material|25.12 Identifying a material]] <span class="diff hard">hard</span>
+- [[practice/26-standing-waves-and-radiation-pressure#263-travelling-standing-or-both|26.3 Travelling, standing or both]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#266-a-mirror-off-the-origin|26.6 A mirror off the origin]] <span class="diff medium">medium</span>
+- [[practice/26-standing-waves-and-radiation-pressure#268-ripple-in-front-of-a-dielectric|26.8 Ripple in front of a dielectric]] <span class="diff medium">medium</span>
+- [[practice/26-standing-waves-and-radiation-pressure#269-is-it-a-standing-wave|26.9 Is it a standing wave]] <span class="diff hard">hard</span>
+- [[practice/26-standing-waves-and-radiation-pressure#2612-trapped-between-two-mirrors|26.12 Trapped between two mirrors]] <span class="diff hard">hard</span>
+- [[practice/30-multi-line-circuits#301-coefficients-both-ways|30.1 Coefficients both ways]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#306-a-shunt-resistor-that-matches|30.6 A shunt resistor that matches]] <span class="diff medium">medium</span>
+- [[practice/30-multi-line-circuits#307-a-series-resistor-in-the-splice|30.7 A series resistor in the splice]] <span class="diff medium">medium</span>
+
+## Standing waves and radiation pressure
+
+- [[practice/26-standing-waves-and-radiation-pressure#261-nodes-in-front-of-a-mirror|26.1 Nodes in front of a mirror]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#262-standing-waves-true-or-false|26.2 Standing waves true or false]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#263-travelling-standing-or-both|26.3 Travelling, standing or both]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#264-a-laser-on-a-small-mirror|26.4 A laser on a small mirror]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#265-sunlight-at-mars|26.5 Sunlight at Mars]] <span class="diff easy">easy</span>
+- [[practice/26-standing-waves-and-radiation-pressure#266-a-mirror-off-the-origin|26.6 A mirror off the origin]] <span class="diff medium">medium</span>
+- [[practice/26-standing-waves-and-radiation-pressure#267-energy-in-a-quarter-wave-cell|26.7 Energy in a quarter-wave cell]] <span class="diff medium">medium</span>
+- [[practice/26-standing-waves-and-radiation-pressure#268-ripple-in-front-of-a-dielectric|26.8 Ripple in front of a dielectric]] <span class="diff medium">medium</span>
+- [[practice/26-standing-waves-and-radiation-pressure#269-is-it-a-standing-wave|26.9 Is it a standing wave]] <span class="diff hard">hard</span>
+- [[practice/26-standing-waves-and-radiation-pressure#2610-a-good-conductor-mirror|26.10 A good-conductor mirror]] <span class="diff hard">hard</span>
+- [[practice/26-standing-waves-and-radiation-pressure#2611-pushing-a-sail-with-a-laser|26.11 Pushing a sail with a laser]] <span class="diff hard">hard</span>
+- [[practice/26-standing-waves-and-radiation-pressure#2612-trapped-between-two-mirrors|26.12 Trapped between two mirrors]] <span class="diff hard">hard</span>
+- [[practice/29-bounce-diagram-examples#2912-a-partial-standing-wave-builds-up|29.12 A partial standing wave builds up]] <span class="diff hard">hard</span>
+
+## Transmission lines: telegrapher's equations and characteristic impedance
+
+- [[practice/27-transmission-line-basics#271-strip-line-parameters|27.1 Strip-line parameters]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#272-telegraphers-equations-true-or-false|27.2 Telegrapher's equations, true or false]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#273-charges-and-currents-on-turned-plates|27.3 Charges and currents on turned plates]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#274-plane-wave-power-on-a-line|27.4 Plane-wave power on a line]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#275-from-a-datasheet-to-a-cross-section|27.5 From a datasheet to a cross-section]] <span class="diff easy">easy</span>
+- [[practice/27-transmission-line-basics#276-reading-a-line-from-v-and-i|27.6 Reading a line from V and I]] <span class="diff medium">medium</span>
+- [[practice/27-transmission-line-basics#277-two-bench-measurements|27.7 Two bench measurements]] <span class="diff medium">medium</span>
+- [[practice/27-transmission-line-basics#278-an-artificial-line|27.8 An artificial line]] <span class="diff medium">medium</span>
+- [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax|27.9 A pulse on a coax]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#2710-splitting-a-snapshot-into-two-waves|27.10 Splitting a snapshot into two waves]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#2711-the-battery-and-the-front|27.11 The battery and the front]] <span class="diff hard">hard</span>
+- [[practice/27-transmission-line-basics#2712-telegraphers-equations-for-a-leaky-coax|27.12 Telegrapher's equations for a leaky coax]] <span class="diff hard">hard</span>
+- [[practice/28-bounce-diagrams#282-line-conventions|28.2 Line conventions]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#304-line-parameters-of-a-splice|30.4 Line parameters of a splice]] <span class="diff easy">easy</span>
+
+## Transients on lines and bounce diagrams
+
+- [[practice/10-capacitance-and-conductance#1011-two-lossy-layers-in-series|10.11 Two lossy layers in series]] <span class="diff hard">hard</span>
+- [[practice/28-bounce-diagrams#281-three-coefficients|28.1 Three coefficients]] <span class="diff easy">easy</span>
+- [[practice/28-bounce-diagrams#283-a-step-meets-four-loads|28.3 A step meets four loads]] <span class="diff easy">easy</span>
+- [[practice/28-bounce-diagrams#284-arrival-times-at-a-point|28.4 Arrival times at a point]] <span class="diff easy">easy</span>
+- [[practice/28-bounce-diagrams#285-a-launched-wave-too-big|28.5 A launched wave too big]] <span class="diff easy">easy</span>
+- [[practice/28-bounce-diagrams#286-ideal-source-mismatched-load|28.6 Ideal source, mismatched load]] <span class="diff medium">medium</span>
+- [[practice/28-bounce-diagrams#287-reflectometry-with-a-matched-source|28.7 Reflectometry with a matched source]] <span class="diff medium">medium</span>
+- [[practice/28-bounce-diagrams#288-snapshots-along-a-shorted-line|28.8 Snapshots along a shorted line]] <span class="diff medium">medium</span>
+- [[practice/28-bounce-diagrams#289-voltage-and-current-diagrams|28.9 Voltage and current diagrams]] <span class="diff hard">hard</span>
+- [[practice/28-bounce-diagrams#2810-a-pulse-into-a-resistive-load|28.10 A pulse into a resistive load]] <span class="diff hard">hard</span>
+- [[practice/28-bounce-diagrams#2811-impulse-response-at-a-third-point|28.11 Impulse response at a third point]] <span class="diff hard">hard</span>
+- [[practice/28-bounce-diagrams#2812-open-line-charges-like-a-capacitor|28.12 Open line charges like a capacitor]] <span class="diff hard">hard</span>
+- [[practice/29-bounce-diagram-examples#291-which-way-round|29.1 Which way round]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#292-four-statements|29.2 Four statements]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#293-a-switched-on-sine|29.3 A switched-on sine]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#294-the-echos-current|29.4 The echo's current]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#295-inputs-that-settle|29.5 Inputs that settle]] <span class="diff easy">easy</span>
+- [[practice/29-bounce-diagram-examples#296-both-ends-of-a-short-line|29.6 Both ends of a short line]] <span class="diff medium">medium</span>
+- [[practice/29-bounce-diagram-examples#297-a-triangle-meets-a-short|29.7 A triangle meets a short]] <span class="diff medium">medium</span>
+- [[practice/29-bounce-diagram-examples#298-one-pulse-and-nothing-else|29.8 One pulse and nothing else]] <span class="diff medium">medium</span>
+- [[practice/29-bounce-diagram-examples#299-one-sine-cycle-on-a-mismatched-line|29.9 One sine cycle on a mismatched line]] <span class="diff hard">hard</span>
+- [[practice/29-bounce-diagram-examples#2910-a-ramp-into-an-open-line|29.10 A ramp into an open line]] <span class="diff hard">hard</span>
+- [[practice/29-bounce-diagram-examples#2911-a-ramped-step-off-centre|29.11 A ramped step off-centre]] <span class="diff hard">hard</span>
+- [[practice/29-bounce-diagram-examples#2912-a-partial-standing-wave-builds-up|29.12 A partial standing wave builds up]] <span class="diff hard">hard</span>
+- [[practice/30-multi-line-circuits#301-coefficients-both-ways|30.1 Coefficients both ways]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#302-junction-facts|30.2 Junction facts]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#303-no-echo-toward-the-source|30.3 No echo toward the source]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#304-line-parameters-of-a-splice|30.4 Line parameters of a splice]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#305-the-returning-echo|30.5 The returning echo]] <span class="diff easy">easy</span>
+- [[practice/30-multi-line-circuits#306-a-shunt-resistor-that-matches|30.6 A shunt resistor that matches]] <span class="diff medium">medium</span>
+- [[practice/30-multi-line-circuits#307-a-series-resistor-in-the-splice|30.7 A series resistor in the splice]] <span class="diff medium">medium</span>
+- [[practice/30-multi-line-circuits#308-three-sections-and-the-first-echoes|30.8 Three sections and the first echoes]] <span class="diff medium">medium</span>
+- [[practice/30-multi-line-circuits#309-two-lines-and-a-mismatched-source|30.9 Two lines and a mismatched source]] <span class="diff hard">hard</span>
+- [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes|30.10 Locating a splice by its echoes]] <span class="diff hard">hard</span>
+- [[practice/30-multi-line-circuits#3011-a-tap-resistor-and-an-open-stub|30.11 A tap resistor and an open stub]] <span class="diff hard">hard</span>
+- [[practice/30-multi-line-circuits#3012-a-switched-on-sine-across-a-step-down|30.12 A switched-on sine across a step-down]] <span class="diff hard">hard</span>

@@ -1,0 +1,264 @@
+
+==============================================================================
+30.1 Coefficients both ways: 50 ohm -> 75 ohm
+==============================================================================
+  50->75: Gamma = 0.200000 (1/5), tau = 1.200000 (6/5); current refl -Gamma = -0.200000, current transm (tau*Zj/Zk) = 0.800000
+     power fractions: reflected 0.040000 (1/25), transmitted 0.960000 (24/25), resistor 0.000000 (0), sum 1.000000000000
+  [50->75 formula vs KVL/KCL solve] array([0.2, 1.2]) vs array([0.2, 1.2]) -> OK
+  [50->75 power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  75->50: Gamma = -0.200000 (-1/5), tau = 0.800000 (4/5); current refl -Gamma = 0.200000, current transm (tau*Zj/Zk) = 1.200000
+     power fractions: reflected 0.040000 (1/25), transmitted 0.960000 (24/25), resistor 0.000000 (0), sum 1.000000000000
+  [75->50 formula vs KVL/KCL solve] array([-0.2,  0.8]) vs array([-0.2,  0.8]) -> OK
+  [75->50 power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  10 V wave: V- = 2.0000 V, V++ = 12.0000 V; I_inc = 0.2000 A, I_refl = -0.0400 A, I_trans = 0.1600 A
+  [V continuity 10+2=12] np.float64(12.0) vs np.float64(12.0) -> OK
+  [I continuity 0.2-0.04=0.16] np.float64(0.16) vs np.float64(0.16) -> OK
+  power: incident 2.0000 W, reflected 0.0800 W, transmitted 1.9200 W
+  [power balance] np.float64(2.0) vs np.float64(2.0) -> OK
+  [FDTD line 1 at 1.9 us (V+ + V-) = 12 V] np.float64(12.0) vs np.float64(12.0) -> OK
+  [FDTD line 2 at 1.9 us (V++) = 12 V] np.float64(12.0) vs np.float64(12.0) -> OK
+
+==============================================================================
+30.2 True or false
+==============================================================================
+  (a) Gamma(Z1=Z2) = 0.0
+  (b) Z2 = 2Z1: tau = 1.333333, transmitted power fraction = 0.888889 = 8/9
+  [(b) 8/9] np.float64(0.888889) vs np.float64(0.888889) -> OK
+  [(c) 50/75: G21=-G12, t12+t21=2] array([-0.2,  2. ]) vs array([-0.2,  2. ]) -> OK
+  [(c) 50/200: G21=-G12, t12+t21=2] array([-0.6,  2. ]) vs array([-0.6,  2. ]) -> OK
+  [(c) 300/75: G21=-G12, t12+t21=2] array([0.6, 2. ]) vs array([0.6, 2. ]) -> OK
+  (d) Zeq = 50.0, Gamma = 0.0, tau = 1.0, power per branch = 0.5
+  [(d) FDTD: line 1 voltage stays 1 V after the junction echo time (no reflection)] np.float64(1.0) vs np.float64(1.0) -> OK
+  (e) 50->200: tau = 1.6, current ratio = 0.4 = tau*Z1/Z2 = 0.4
+  [(f) FDTD junction V for 1<t<3 us equals tau*1 (line 2 acts as 150 ohm)] np.float64(1.5) vs np.float64(1.5) -> OK
+  (f) junction V for 3<t<... after the open-end echo: 2.2500 (changes at 2T2 after arrival)
+
+==============================================================================
+30.3 No echo back to the source (shunt R at the junction) -- symbolic checks at numbers
+==============================================================================
+  ZA=50.0, ZB=75.0, R=150.0, RL=75.0, Rg=20.0: R||ZB = 50.0, backward segments on A: 0
+  [(d) no backward wave on line A] OK
+     FDTD max |V - tau_g|, |Z_A I - tau_g| on line A after the front (0-8 us): 0.00e+00
+  [(d) FDTD: only the forward wave on line A] OK
+  ZA=60.0, ZB=100.0, R=150.0, RL=100.0, Rg=200.0: R||ZB = 60.0, backward segments on A: 0
+  [(d) no backward wave on line A] OK
+     FDTD max |V - tau_g|, |Z_A I - tau_g| on line A after the front (0-8 us): 8.33e-17
+  [(d) FDTD: only the forward wave on line A] OK
+  (b) ZB = ZA = 50, R = 150: Gamma = -0.1429 (nonzero)
+  (c) R||ZA = 37.5, tau_BA = 0.6667 (nonzero)
+  [(c) mismatched load: some backward wave on A] OK
+  [(a) Rg = ZA alone: backward waves still exist] OK
+
+==============================================================================
+30.4 Line parameters: Z2 = Z1/2, v2 = v1/3
+==============================================================================
+  L1=2.500e-07, C1=1.000e-10: L2/L1 = 1.500000, C2/C1 = 6.000000
+  [L2 = 1.5 L1, C2 = 6 C1] array([1.5, 6. ]) vs array([1.5, 6. ]) -> OK
+  L1=4.000e-07, C1=4.000e-11: L2/L1 = 1.500000, C2/C1 = 6.000000
+  [L2 = 1.5 L1, C2 = 6 C1] array([1.5, 6. ]) vs array([1.5, 6. ]) -> OK
+  Gamma12 = -0.333333, tau12 = 0.666667
+  [Gamma12 = -1/3, tau12 = 2/3] array([-0.333333,  0.666667]) vs array([-0.333333,  0.666667]) -> OK
+  [v2/v1 = 1/sqrt(mur er) = 1/3, Z2/Z1 = sqrt(mur/er) = 1/2] array([0.333333, 0.5     ]) vs array([0.333333, 0.5     ]) -> OK
+
+==============================================================================
+30.5 Find the error: echo from line 2 (Z1 = 50, Z2 = 200), 25 V arriving from the right
+==============================================================================
+  50->200: Gamma = 0.600000 (3/5), tau = 1.600000 (8/5); current refl -Gamma = -0.600000, current transm (tau*Zj/Zk) = 0.400000
+     power fractions: reflected 0.360000 (9/25), transmitted 0.640000 (16/25), resistor 0.000000 (0), sum 1.000000000000
+  [50->200 formula vs KVL/KCL solve] array([0.6, 1.6]) vs array([0.6, 1.6]) -> OK
+  [50->200 power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  200->50: Gamma = -0.600000 (-3/5), tau = 0.400000 (2/5); current refl -Gamma = 0.600000, current transm (tau*Zj/Zk) = 1.600000
+     power fractions: reflected 0.360000 (9/25), transmitted 0.640000 (16/25), resistor 0.000000 (0), sum 1.000000000000
+  [200->50 formula vs KVL/KCL solve] array([-0.6,  0.4]) vs array([-0.6,  0.4]) -> OK
+  [200->50 power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  student: into line 1 tau12*25 = 40.0, back G12*25 = 15.0
+  correct: into line 1 tau21*25 = 10.0, back G21*25 = -15.0
+  correct: V line2 side 10.0000, line1 side 10.0000; I line2 side -0.2000 A, line1 side -0.2000 A
+  student: V line2 side 40.0000, line1 side 40.0000; I line2 side -0.0500 A, line1 side -0.8000 A
+  [correct: I continuous (-0.2 A)] array([-0.2, -0.2]) vs array([-0.2, -0.2]) -> OK
+  [student: I discontinuous] OK
+  [FDTD (mirror): transmitted 10 V] np.float64(10.0) vs np.float64(10.0) -> OK
+  [FDTD (mirror): reflected -15 V (total 10 V on the arriving side)] np.float64(-15.0) vs np.float64(-15.0) -> OK
+
+==============================================================================
+30.6 Shunt resistor that matches: Z1 = 50, Z2 = 75
+==============================================================================
+  R = 150.000000 ohm
+  [R = 150] np.float64(150.0) vs np.float64(150.0) -> OK
+  from line 1 (shunt 150): Gamma = 0.000000 (0), tau = 1.000000 (1); current refl -Gamma = -0.000000, current transm (tau*Zj/Zk) = 0.666667
+     power fractions: reflected 0.000000 (0), transmitted 0.666667 (2/3), resistor 0.333333 (1/3), sum 1.000000000000
+  [from line 1 (shunt 150) formula vs KVL/KCL solve] array([0., 1.]) vs array([0., 1.]) -> OK
+  [from line 1 (shunt 150) power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  Zeq from the right = 150||50 = 37.5
+  from line 2 (shunt 150): Gamma = -0.333333 (-1/3), tau = 0.666667 (2/3); current refl -Gamma = 0.333333, current transm (tau*Zj/Zk) = 1.000000
+     power fractions: reflected 0.111111 (1/9), transmitted 0.666667 (2/3), resistor 0.222222 (2/9), sum 1.000000000000
+  [from line 2 (shunt 150) formula vs KVL/KCL solve] array([-0.333333,  0.666667]) vs array([-0.333333,  0.666667]) -> OK
+  [from line 2 (shunt 150) power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  [from right: Gamma21 = -1/3, tau21 = 2/3] array([-0.333333,  0.666667]) vs array([-0.333333,  0.666667]) -> OK
+  [from right: 1/9, 2/3, 2/9] array([0.111111, 0.666667, 0.222222]) vs array([0.111111, 0.666667, 0.222222]) -> OK
+  [from left: 0, 2/3, 1/3] array([0.      , 0.666667, 0.333333]) vs array([0.      , 0.666667, 0.333333]) -> OK
+  [FDTD from left: line-a V = 1+Gamma, line-b V = tau] array([1., 1.]) vs array([1., 1.]) -> OK
+  [FDTD from right: line-a V = 1+Gamma, line-b V = tau] array([0.666667, 0.666667]) vs array([0.666667, 0.666667]) -> OK
+
+==============================================================================
+30.7 Series resistor in the splice: Z1 = 50, Z2 = 75, R = 25
+==============================================================================
+  from line 1 (series 25): Gamma = 0.333333 (1/3), tau = 1.000000 (1); current refl -Gamma = -0.333333, current transm (tau*Zj/Zk) = 0.666667
+     power fractions: reflected 0.111111 (1/9), transmitted 0.666667 (2/3), resistor 0.222222 (2/9), sum 1.000000000000
+  [from line 1 (series 25) formula vs KVL/KCL solve] array([0.333333, 1.      ]) vs array([0.333333, 1.      ]) -> OK
+  [from line 1 (series 25) power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  from line 2 (series 25): Gamma = 0.000000 (0), tau = 0.666667 (2/3); current refl -Gamma = -0.000000, current transm (tau*Zj/Zk) = 1.000000
+     power fractions: reflected 0.000000 (0), transmitted 0.666667 (2/3), resistor 0.333333 (1/3), sum 1.000000000000
+  [from line 2 (series 25) formula vs KVL/KCL solve] array([0.      , 0.666667]) vs array([0.      , 0.666667]) -> OK
+  [from line 2 (series 25) power sums to 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  [from left Gamma=1/3 tau=1] array([0.333333, 1.      ]) vs array([0.333333, 1.      ]) -> OK
+  [from right Gamma=0 tau=2/3] array([0.      , 0.666667]) vs array([0.      , 0.666667]) -> OK
+  [left: 1/9, 2/3, 2/9] array([0.111111, 0.666667, 0.222222]) vs array([0.111111, 0.666667, 0.222222]) -> OK
+  [right: 0, 2/3, 1/3] array([0.      , 0.666667, 0.333333]) vs array([0.      , 0.666667, 0.333333]) -> OK
+  1+Gamma12 = 1.333333 vs tau12 = 1 ; divider Z2/(R+Z2) = 0.75
+  current through R = (1-Gamma12)V+/Z1 = 0.013333 V+ ; = tau12 V+/Z2 = 0.013333 V+
+  [series current continuity] np.float64(0.013333) vs np.float64(0.013333) -> OK
+  [FDTD from left: line-a V = 1+Gamma, line-b V = tau] array([1.333333, 1.      ]) vs array([1.333333, 1.      ]) -> OK
+  [FDTD from right: line-a V = 1+Gamma, line-b V = tau] array([1.      , 0.666667]) vs array([1.      , 0.666667]) -> OK
+
+==============================================================================
+30.8 Three sections (FA23 E3 #3a style): Rg 25; 75 (2 us), 150 (1 us), 50 (3 us); RL 50; f_i = delta
+==============================================================================
+  tau_g = 0.750000, Gamma_g = -0.500000, Gamma_L = 0.0
+  junction 1-2 right: Gamma = 0.333333, tau = 1.333333; left: Gamma = -0.333333, tau = 0.666667
+  junction 2-3 right: Gamma = -0.500000, tau = 0.500000; current refl = 0.500000
+  [tau_g 3/4, Gamma_g -1/2, G12 1/3, G23 -1/2, current refl +1/2] array([ 0.75    , -0.5     ,  0.333333, -0.5     ,  0.5     ]) vs array([ 0.75    , -0.5     ,  0.333333, -0.5     ,  0.5     ]) -> OK
+  backward arrivals at z = 0 (time us, weight): [(4.0, Fraction(-1, 8)), (4.0, Fraction(1, 4))]
+  impulses in V(0,t) incl. (1+Gamma_g) (time us, weight): [(0.0, Fraction(3, 4)), (4.0, Fraction(1, 8)), (6.0, Fraction(-1, 6)), (8.0, Fraction(-7, 144))]
+  [V(0,t) impulses: 3/4 @0, 1/8 @4, -1/6 @6] array([ 0.75    ,  0.125   , -0.166667]) vs array([ 0.75    ,  0.125   , -0.166667]) -> OK
+  2-3 echo arriving at z=0: tau_g*tau12*G23*tau21 = -0.333333 at t = 2(T1+T2) = 6 us
+  [2-3 echo arrival -1/3] np.float64(-0.333333) vs np.float64(-0.333333) -> OK
+  load impulses (time us, weight): [(6.0, Fraction(1, 2)), (8.0, Fraction(1, 12)), (10.0, Fraction(-1, 12)), (10.0, Fraction(1, 72))]
+  [first load impulse 1/2 at 6 us] array([6. , 0.5]) vs array([6. , 0.5]) -> OK
+  [FDTD area of V(0,t) near 0.0 us] np.float64(0.75) vs np.float64(0.75) -> OK
+  [FDTD area of V(0,t) near 4.0 us] np.float64(0.125) vs np.float64(0.125) -> OK
+  [FDTD area of V(0,t) near 6.0 us] np.float64(-0.166667) vs np.float64(-0.166667) -> OK
+  [FDTD: nothing at z=0 between 1 and 3.8 us] np.float64(-0.0) vs np.float64(0.0) -> OK
+  [FDTD load impulse at 6 us] np.float64(0.5) vs np.float64(0.5) -> OK
+  [FDTD: nothing at load before 6 us] np.float64(0.0) vs np.float64(0.0) -> OK
+
+==============================================================================
+30.9 SP19 E3 #4 style: 80u(t) V, Rg 50; line1 150 ohm 400 m 2e8; line2 50 ohm 300 m 3e8; RL 50
+==============================================================================
+  T1 = 2.0 us, T2 = 1.0 us
+  tau_g = 0.75, Gamma_g = -0.5, Gamma_L = 0.0
+  Gamma12 = -0.5, tau12 = 0.5, current refl = 0.5, current transm = 1.5
+  Gamma21 = 0.5, tau21 = 1.5; round trip Gamma12*Gamma_g = 0.25
+  segments (line, dir, start us, end us, weight V):
+     line 1 ->   0.00 ->   2.00 :   60.0000
+     line 1 <-   2.00 ->   4.00 :  -30.0000
+     line 2 ->   2.00 ->   3.00 :   30.0000
+     line 1 ->   4.00 ->   6.00 :   15.0000
+     line 1 <-   6.00 ->   8.00 :   -7.5000
+     line 2 ->   6.00 ->   7.00 :    7.5000
+     line 1 ->   8.00 ->  10.00 :    3.7500
+     line 1 <-  10.00 ->  12.00 :   -1.8750
+     line 2 ->  10.00 ->  11.00 :    1.8750
+  crossings at z = 100 m (t us, V weight): [(0.5, 60.0), (3.5, -30.0), (4.5, 15.0), (7.5, -7.5), (8.5, 3.75)]
+  V(100 m, 5 us) = 45.0000 V, I = 0.7000 A
+  [V = 45 V, I = 0.7 A] array([45. ,  0.7]) vs array([45. ,  0.7]) -> OK
+  load: (t us, arriving V, V_L after): [(3.0, 30.0, np.float64(30.0)), (7.0, 7.5, np.float64(37.5)), (11.0, 1.875, np.float64(39.375))]
+  [V_L = 30 (3-7 us), 37.5 (7-11 us)] array([30. , 37.5]) vs array([30. , 37.5]) -> OK
+  V_L(inf) = 40.000000 V, I_L(inf) = 0.800000 A; lumped 40.0 V, 0.8 A
+  [DC] array([40. ,  0.8]) vs array([40. ,  0.8]) -> OK
+  line-1 forward sum 80.0, backward sum -40.0, V = 40.0, I = 0.8
+  [FDTD V,I at 100 m, t = 1.0 us] array([60. ,  0.4]) vs array([60. ,  0.4]) -> OK
+  [FDTD V,I at 100 m, t = 4.0 us] array([30. ,  0.6]) vs array([30. ,  0.6]) -> OK
+  [FDTD V,I at 100 m, t = 5.0 us] array([45. ,  0.7]) vs array([45. ,  0.7]) -> OK
+  [FDTD V,I at 100 m, t = 6.0 us] array([45. ,  0.7]) vs array([45. ,  0.7]) -> OK
+  [FDTD V,I at 100 m, t = 8.0 us] array([37.5 ,  0.75]) vs array([37.5 ,  0.75]) -> OK
+  [FDTD V,I at 100 m, t = 9.0 us] array([41.25 ,  0.775]) vs array([41.25 ,  0.775]) -> OK
+  [FDTD V_L at 2.0 us] np.float64(0.0) vs np.float64(0.0) -> OK
+  [FDTD V_L at 5.0 us] np.float64(30.0) vs np.float64(30.0) -> OK
+  [FDTD V_L at 9.0 us] np.float64(37.5) vs np.float64(37.5) -> OK
+  [FDTD V_L at 12.0 us] np.float64(39.375) vs np.float64(39.375) -> OK
+  [FDTD V_L, I at 100 m at 60 us -> 40 V, 0.8 A] array([40. ,  0.8]) vs array([40. ,  0.8]) -> OK
+
+==============================================================================
+30.10 Locating a splice: Rg = 50, Z1 = 50 (v 2e8), splice, Z2 = ?, air line, short; 18 V 10 ns pulse
+==============================================================================
+  launched: 9.0 V
+  Gamma12 = 3/9 = 0.333333 -> Z2 = 100.000000 ohm
+  splice at 100.0 m, line-2 length 120.0 m
+  tau12 tau21 = 0.888889; second echo 9*tau12*GL*tau21 = -8 -> GL = -1.000000
+  ratio of later echoes Gamma21*GL = 0.333333; next echo = -0.888889 V at 3.4000000000000004 us
+  V(0,t) impulses (t us, V): [(0.0, 9.0), (1.0, 3.0), (1.8, -8.0), (2.6, -2.666667), (3.4, -0.888889)]
+  [echoes 9, 3, -8, -8/3, -8/9] array([ 9.      ,  3.      , -8.      , -2.666667, -0.888889]) vs array([ 9.      ,  3.      , -8.      , -2.666667, -0.888889]) -> OK
+  [times 0, 1.0, 1.8, 2.6, 3.4 us] array([0. , 1. , 1.8, 2.6, 3.4]) vs array([0. , 1. , 1.8, 2.6, 3.4]) -> OK
+  Rg=25: tau_g = 0.666667, Gamma_g = -0.333333; V(0) impulses: [(0.0, 12.0), (1.0, -1.333333), (1.0, 4.0)]
+  [Rg = 25: 12 V at 0, 8/3 V at 1 us] array([12.      ,  2.666667]) vs array([12.      ,  2.666667]) -> OK
+  [FDTD Rg=50.0: pulse height near 0.0 us] np.float64(9.0) vs np.float64(9.0) -> OK
+  [FDTD Rg=50.0: pulse height near 1.0 us] np.float64(3.0) vs np.float64(3.0) -> OK
+  [FDTD Rg=50.0: pulse height near 1.8 us] np.float64(-8.0) vs np.float64(-8.0) -> OK
+  [FDTD Rg=50.0: pulse height near 2.6 us] np.float64(-2.666667) vs np.float64(-2.666667) -> OK
+  [FDTD Rg=50.0: pulse height near 3.4 us] np.float64(-0.888889) vs np.float64(-0.888889) -> OK
+  [FDTD Rg=25.0: pulse height near 0.0 us] np.float64(12.0) vs np.float64(12.0) -> OK
+  [FDTD Rg=25.0: pulse height near 1.0 us] np.float64(2.666667) vs np.float64(2.666667) -> OK
+
+==============================================================================
+30.11 Tap resistor and open stub: 100u(t), Rg 50, Z1 50 (1 us), shunt 50, Z2 50 (0.5 us), open
+==============================================================================
+  tau_g = 0.5, Gamma_g = 0.0, Gamma_L = 1.0
+  right: Gamma12 = -0.333333, tau12 = 0.666667; left: Gamma21 = -0.333333, tau21 = 0.666667
+  [coefs -1/3, 2/3 both ways] array([-0.333333,  0.666667, -0.333333,  0.666667]) vs array([-0.333333,  0.666667, -0.333333,  0.666667]) -> OK
+  segments (line, dir, start us, end us, weight V):
+     line 1 ->   0.00 ->   1.00 :   50.0000  (50)
+     line 1 <-   1.00 ->   2.00 :  -16.6667  (-50/3)
+     line 2 ->   1.00 ->   1.50 :   33.3333  (100/3)
+     line 2 <-   1.50 ->   2.00 :   33.3333  (100/3)
+     line 1 <-   2.00 ->   3.00 :   22.2222  (200/9)
+     line 2 ->   2.00 ->   2.50 :  -11.1111  (-100/9)
+     line 2 <-   2.50 ->   3.00 :  -11.1111  (-100/9)
+     line 1 <-   3.00 ->   4.00 :   -7.4074  (-200/27)
+     line 2 ->   3.00 ->   3.50 :    3.7037  (100/27)
+     line 2 <-   3.50 ->   4.00 :    3.7037  (100/27)
+     line 1 <-   4.00 ->   5.00 :    2.4691  (200/81)
+     line 2 ->   4.00 ->   4.50 :   -1.2346  (-100/81)
+  V_J steps (t us, V after): [(1.0, np.float64(33.3333), Fraction(100, 3)), (2.0, np.float64(55.5556), Fraction(500, 9)), (3.0, np.float64(48.1481), Fraction(1300, 27)), (4.0, np.float64(50.6173), Fraction(4100, 81)), (5.0, np.float64(49.7942), Fraction(12100, 243))]
+  [V_J: 100/3, 500/9, 1300/27, 4100/81] array([33.333333, 55.555556, 48.148148, 50.617284]) vs array([33.333333, 55.555556, 48.148148, 50.617284]) -> OK
+  current in R at 2.5 us = 1.111111 A
+  V_open steps (t us, V after): [(1.5, np.float64(66.6667), Fraction(200, 3)), (2.5, np.float64(44.4444), Fraction(400, 9)), (3.5, np.float64(51.8519), Fraction(1400, 27)), (4.5, np.float64(49.3827), Fraction(4000, 81))]
+  I(0,t) steps (t us, A after): [(0.0, np.float64(1.0), Fraction(1, 1)), (2.0, np.float64(1.3333), Fraction(4, 3)), (3.0, np.float64(0.8889), Fraction(8, 9)), (4.0, np.float64(1.037), Fraction(28, 27))]
+  V_J(inf) by series = 50.000000; lumped 100*50/(50+50) = 50.0; I_R(inf) = 1.0
+  [V_J inf 50] np.float64(50.0) vs np.float64(50.0) -> OK
+  [FDTD V_J at 1.5 us] np.float64(33.333333) vs np.float64(33.333333) -> OK
+  [FDTD V_J at 2.5 us] np.float64(55.555556) vs np.float64(55.555556) -> OK
+  [FDTD V_J at 3.5 us] np.float64(48.148148) vs np.float64(48.148148) -> OK
+  [FDTD V_J at 4.5 us] np.float64(50.617284) vs np.float64(50.617284) -> OK
+  [FDTD V_open at 2.0 us] np.float64(66.666667) vs np.float64(66.666667) -> OK
+  [FDTD V_open at 3.0 us] np.float64(44.444444) vs np.float64(44.444444) -> OK
+  [FDTD V_open at 4.0 us] np.float64(51.851852) vs np.float64(51.851852) -> OK
+  [FDTD I(0) at 1.5 us] np.float64(1.0) vs np.float64(1.0) -> OK
+  [FDTD I(0) at 2.5 us] np.float64(1.333333) vs np.float64(1.333333) -> OK
+  [FDTD I(0) at 3.5 us] np.float64(0.888889) vs np.float64(0.888889) -> OK
+  [FDTD 40 us: V_J, V_open -> 50 V; I(0) -> 1 A] array([50., 50.,  1.]) vs array([50., 50.,  1.]) -> OK
+
+==============================================================================
+30.12 Switched-on sine: Rg 150; line1 50 ohm 600 m 2e8; line2 25 ohm 450 m 3e8; RL 25; 14 sin(2 pi f t)
+==============================================================================
+  T1 = 3.0 us, T2 = 1.5 us
+  tau_g = 0.25, Gamma_g = 0.5, Gamma12 = -0.333333, tau12 = 0.666667, Gamma_L = 0.0
+  impulse response at the load (t us, weight): [(4.5, Fraction(1, 6)), (10.5, Fraction(-1, 36)), (16.5, Fraction(1, 216)), (22.5, Fraction(-1, 1296))]
+  [weights 1/6, -1/36, 1/216 at 4.5, 10.5, 16.5] array([ 0.166667, -0.027778,  0.00463 ]) vs array([ 0.166667, -0.027778,  0.00463 ]) -> OK
+  [times] array([ 4.5, 10.5, 16.5]) vs array([ 4.5, 10.5, 16.5]) -> OK
+  wavelengths at 1 MHz: line 1 200.0 m, line 2 300.0 m
+  [f=1.0 MHz: FDTD V_L vs impulse-response sum at sample times] 41 samples, max |diff| = 2.30e-04 -> OK
+  f = 1.0 MHz: late amplitude FDTD 2.00000 V, series 2.000000 V
+  [late amplitude f=1.0 MHz] array([2., 2.]) vs array([2., 2.]) -> OK
+  [f=1.25 MHz: FDTD V_L vs impulse-response sum at sample times] 41 samples, max |diff| = 5.15e-04 -> OK
+  f = 1.25 MHz: late amplitude FDTD 2.80000 V, series 2.800000 V
+  [late amplitude f=1.25 MHz] array([2.8, 2.8]) vs array([2.8, 2.8]) -> OK
+  [V_L = -2.333333 sin(2 pi t) on (4.5,10.5) us] 50 samples, max |diff| = 1.08e-14 -> OK
+  [V_L = -1.944444 sin(2 pi t) on (10.5,16.5) us] 50 samples, max |diff| = 2.31e-14 -> OK
+  [V_L = -(434/216) sin(2 pi t) on (16.5,22.5) us] 50 samples, max |diff| = 3.51e-14 -> OK
+  amplitudes per epoch: 7/3 = 2.3333, 35/18 = 1.9444, next 2.0093 -> 2
+  DC divider 14*25/175 = 2.0; 1.25 MHz period 0.8 us, 2T1 = 7.5 periods
+
+==============================================================================
+SUMMARY: 111/111 checks OK
+==============================================================================

@@ -1,6 +1,6 @@
 ---
 title: "PrairieLearn guide"
-description: "How to use the course's randomized practice questions on pl.vops.ch: signing in, how variants, tries and points work, how to enter answers, the seven assessments and when to use each, and a short note on how to approach each of the 41 questions."
+description: "How to use the course's randomized practice questions on pl.vops.ch: signing in, how variants, tries and points work, how to enter answers, the eight assessments and when to use each, and a short note on how to approach each of the 52 questions."
 tags: [toolkit, practice, prairielearn]
 aliases: ["PrairieLearn", "PL", "pl.vops.ch", "practice exam"]
 ---
@@ -14,7 +14,7 @@ The site's practice problems are fixed and printed. The PrairieLearn questions a
 
 1. Open [pl.vops.ch](https://pl.vops.ch) and choose **Sign in with Google**.
 2. On the home page, open **ECE 329 Fields and Waves I**, course instance **Fall 2026**. If it isn't listed, use **Add or remove courses** on the home page to enrol. If it isn't there either, the server's owner has to add your account.
-3. The **Assessments** page lists seven sets (§3). Open one, then open a question.
+3. The **Assessments** page lists eight sets (§3). Open one, then open a question.
 
 ## 2. How a question works
 
@@ -27,8 +27,8 @@ The site's practice problems are fixed and printed. The PrairieLearn questions a
 - **Select all that apply.** Each statement is marked separately, so partial credit counts. Judge every statement on its own; the number of true statements changes from variant to variant.
 - **Matching.** Each item on the left has exactly one partner; partners can repeat.
 
-> [!warning] What PrairieLearn does not cover yet
-> The questions stop at **Lecture 19**. For **Lecture 20 (Poynting's theorem)**, which is on Midterm 2, use the site's [[practice/20-poynting-theorem-and-power|Lecture 20 practice set]] and §9 of the [[0-toolkit/05-midterm-2-summary|Midterm 2 summary]].
+> [!note] Coverage
+> Lectures 1–30: one concept question per lecture (Practice 4, 5, 7) plus the exam-style sets. Lectures 31 onward are not on the server yet; use the site's practice sets.
 
 ## 3. The assessments
 
@@ -41,6 +41,7 @@ The site's practice problems are fixed and printed. The PrairieLearn questions a
 | Practice 5 · Concept checks L12–19 | one concept question per lecture | 12–19 | **Midterm 2**: do all eight |
 | Practice 6 · Midterm 2 exam-style | nine multi-part problems modelled on past Exam 2 papers | 11–19 | **Midterm 2**, untimed |
 | Practice Exam 1 · Midterm 2 practice exam | five problems drawn from pools, **75-minute timer** | 11–19 | **Midterm 2**, timed, last |
+| Practice 7 · Concept checks L20–30 | one question per lecture: power, phasors, lossy media, polarization, reflection, standing waves, lines, bounce diagrams | 20–30 | **Exam 3**: one variant per lecture as each is taught |
 
 **The practice exam** is set up like a real exam: one quick-fire set plus one problem from each of four pools (Ampère and the vector potential, Faraday, inductance, waves), with a 75-minute timer. Each question is worth 20 points if your first submission is right, 14 on the second and 8 on the third. You can start a fresh instance (different draws and numbers) as often as you like. Take it with the page closed and a sheet of scrap paper, then compare its draws with the [[0-toolkit/05-midterm-2-summary#11-the-traps-that-cost-the-most-points|traps list]].
 
@@ -108,9 +109,23 @@ Each note says what the question exercises and the route through it: which law t
 - **A current-sheet pulse launches two waves** (Lecture 19). Fix the field directions from $\mathbf{J}_s$ and the side you are on. At a given point and time, evaluate the source waveform at the delayed time. Compare the two sides: $\mathbf{E}$ behaves one way across the sheet and $\mathbf{H}$ the other. A probe record is the waveform delayed; a snapshot is the waveform laid out in space.
 - *Pool alternates in the practice exam:* **Mutual inductance and RL** (above, Practice 5) can be drawn in place of the parallel-plate line.
 
-## 5. A way to use it before Midterm 2
+### Practice 7 · Concept checks, Lectures 20–30
+
+- **Poynting's theorem: a power ledger** (Lecture 20). Decide each statement from the theorem's three terms and their signs. For the wire, get $\mathbf{E}$ from $\mathbf{J}/\sigma$ and $\mathbf{H}$ at the surface from Ampère, then $\mathbf{S} = \mathbf{E}\times\mathbf{H}$ and the power through the side; compare it with $I^2R$. For the wave, $\langle S\rangle$ from the amplitude and this medium's $\eta$, then the power through the window; mind its tilt.
+- **Phasors: conversion and power** (Lecture 21). Put every field in cosine form before matching it to a phasor. Get $\tilde{\mathbf{H}}$ from $\hat u\times\tilde{\mathbf{E}}/\eta$ component by component, keeping each $j$, then $\langle\mathbf{S}\rangle = \tfrac12\text{Re}\{\tilde{\mathbf{E}}\times\tilde{\mathbf{H}}^*\}$. Read a template's direction from the signs in its exponent. For the plasma, compare $f$ with $f_p$ first.
+- **Decoding a damped wave** (Lecture 22). Read $\alpha$, $\beta$ and the direction from the exponent, then $\lambda$ and $1/\alpha$. Build $\eta$ from $\gamma$ and $\omega\mu$, then $\sigma$ and $\epsilon_r$ from $\gamma/\eta$. For the other field, combine $\lvert\eta\rvert$, $\angle\eta$ and the right-hand rule.
+- **Good conductors and skin depth** (Lecture 23). Classify each medium by its loss tangent at that frequency, using its own $\epsilon$. Then use the good-conductor formulas for $\delta$ and $\lvert\eta\rvert$. Power falls twice as fast as the field; convert to dB only at the end.
+- **Polarization and group velocity** (Lecture 24). For each field, find the travel direction first, then the shape and hand from the two components at a fixed point (Lecture 24's rule). Add the components' powers for $\langle S\rangle$. For the plasma, find $f_p$, then $v_p$ and $v_g$, and ask which one carries a signal.
+- **Reflection at an interface** (Lecture 25). Both $\eta$'s first, then $\Gamma$ and $\tau$. Give each wave's $\mathbf{H}$ with its own travel direction. Use the power fractions for real $\eta$'s. For the perfect conductor, take the total $\mathbf{H}$ at the wall and the normal out of the conductor.
+- **Standing waves at a mirror** (Lecture 26). Build the reflected wave from tangential $\mathbf{E} = 0$ at the mirror, then add. Locate nulls from the mirror outward; get the surface current from the total $\mathbf{H}$ there, and the pressure from the incident intensity.
+- **Line parameters and V, I waves** (Lecture 27). $\mathcal L$ and $\mathcal C$ from the geometry, then $v$ and $Z_0$; check $v$ against the filling alone. For the pulse: direction from the argument, then $I$ from $V$ with the sign for that direction. For the rebuilt line, ask which of $v$ and $Z_0$ depends on the geometry.
+- **Step response and bounce diagrams** (Lecture 28). Injection, then both reflection coefficients. Draw the diagram up to the latest time asked; add the segments crossed at the probe, with the sign rule for currents. Check the late-time answer against the DC circuit.
+- **Pulses: records and snapshots** (Lecture 29). Draw the diagram with the pulse's duration. A snapshot holds every segment started by that instant, reflected pieces reversed in space; where pieces overlap, add them.
+- **Junctions of two lines** (Lecture 30). Find the impedance a wave sees at the junction from each side, then $\Gamma$ and $\tau = 1 + \Gamma$ both ways. Run the diagram across both lines with their own transit times. For the late-time value, treat the lines as wires.
+
+## 5. A way to use it before an exam
 
 1. **Practice 5** first: one variant of each of the eight concept questions, to find your weak lectures.
 2. **Practice 6** untimed: one variant of each problem. Redo the ones you missed with **New variant** until one is right first try.
 3. **Practice Exam 1** last, timed. Afterwards, sort every lost point as the [[0-toolkit/05-midterm-2-summary#13-how-to-study-for-it-exam-monday-october-19|Midterm 2 plan]] describes, and fix the cheapest pile first.
-4. Lecture 20 is not on the server. Do the site's [[practice/20-poynting-theorem-and-power|Lecture 20 set]] instead.
+4. For Exam 3, do **Practice 7**'s question for each lecture right after it is taught, then again before the exam with a new variant.

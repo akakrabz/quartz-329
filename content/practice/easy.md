@@ -1,6 +1,6 @@
 ---
 title: "Easy problems"
-description: "All 109 easy practice problems for Lectures 2–23, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
+description: "All 144 easy practice problems for Lectures 2–30, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
 tags: [practice]
 ---
 
@@ -182,3 +182,59 @@ tags: [practice]
 - [[practice/23-imperfect-dielectrics-and-good-conductors#233-regimes-true-or-false|23.3 Regimes, true or false]] — true or false · loss tangent · regimes
 - [[practice/23-imperfect-dielectrics-and-good-conductors#234-skin-depth-in-gold|23.4 Skin depth in gold]] — skin depth · good conductor
 - [[practice/23-imperfect-dielectrics-and-good-conductors#235-power-against-depth-in-seawater|23.5 Power against depth in seawater]] — attenuation · decibels · seawater · *modelled on FA23 Exam 3 #6*
+
+## Lecture 24 · Signal transmission and circular polarization
+
+- [[practice/24-group-velocity-and-polarization#241-crests-and-envelope-in-a-plasma|24.1 Crests and envelope in a plasma]] — group velocity · plasma frequency
+- [[practice/24-group-velocity-and-polarization#242-which-velocity-carries-the-message|24.2 Which velocity carries the message]] — multiple choice · group velocity · dispersion
+- [[practice/24-group-velocity-and-polarization#243-name-four-polarizations|24.3 Name four polarizations]] — polarization of waves · handedness
+- [[practice/24-group-velocity-and-polarization#244-true-or-false-on-one-wave|24.4 True or false on one wave]] — true or false · circular polarization · elliptical polarization · *modelled on SP18 Exam 3 #1(iii)*
+- [[practice/24-group-velocity-and-polarization#245-the-forgotten-travel-direction|24.5 The forgotten travel direction]] — find the error · handedness · phasor fields
+
+## Lecture 25 · Wave reflection and transmission
+
+- [[practice/25-reflection-and-transmission#251-four-interfaces|25.1 Four interfaces]] — reflection coefficient · transmission coefficient
+- [[practice/25-reflection-and-transmission#252-signs-at-the-interface|25.2 Signs at the interface]] — true or false · reflection
+- [[practice/25-reflection-and-transmission#253-into-a-good-conductor|25.3 Into a good conductor]] — multiple choice · reflection coefficient · lossy media · *modelled on SP17 Exam 3 #2(iv)*
+- [[practice/25-reflection-and-transmission#254-an-amplifying-dielectric|25.4 An amplifying dielectric]] — find the error · reflection coefficient · power balance
+- [[practice/25-reflection-and-transmission#255-permittivity-from-a-reflection|25.5 Permittivity from a reflection]] — reflection coefficient · intrinsic impedance
+
+## Lecture 26 · Standing waves and radiation pressure
+
+- [[practice/26-standing-waves-and-radiation-pressure#261-nodes-in-front-of-a-mirror|26.1 Nodes in front of a mirror]] — standing waves · nodes and antinodes
+- [[practice/26-standing-waves-and-radiation-pressure#262-standing-waves-true-or-false|26.2 Standing waves true or false]] — true or false · standing waves · energy density · *modelled on SP17 Exam 3 #1c*
+- [[practice/26-standing-waves-and-radiation-pressure#263-travelling-standing-or-both|26.3 Travelling, standing or both]] — multiple choice · standing waves · partial reflection · *modelled on SP19 Exam 3 #3c*
+- [[practice/26-standing-waves-and-radiation-pressure#264-a-laser-on-a-small-mirror|26.4 A laser on a small mirror]] — find the error · radiation pressure
+- [[practice/26-standing-waves-and-radiation-pressure#265-sunlight-at-mars|26.5 Sunlight at Mars]] — radiation pressure · intensity
+
+## Lecture 27 · Guided TEM waves on transmission lines
+
+- [[practice/27-transmission-line-basics#271-strip-line-parameters|27.1 Strip-line parameters]] — line parameters · parallel-plate line · characteristic impedance
+- [[practice/27-transmission-line-basics#272-telegraphers-equations-true-or-false|27.2 Telegrapher's equations, true or false]] — true or false · telegrapher's equations · characteristic impedance · *modelled on SP18 Exam 3 #1(ii)*
+- [[practice/27-transmission-line-basics#273-charges-and-currents-on-turned-plates|27.3 Charges and currents on turned plates]] — multiple choice · parallel-plate line · boundary conditions · *modelled on SP17 Exam 3 #2(ii)*
+- [[practice/27-transmission-line-basics#274-plane-wave-power-on-a-line|27.4 Plane-wave power on a line]] — find the error · power · characteristic impedance
+- [[practice/27-transmission-line-basics#275-from-a-datasheet-to-a-cross-section|27.5 From a datasheet to a cross-section]] — line parameters · characteristic impedance
+
+## Lecture 28 · Distributed circuits and bounce diagrams
+
+- [[practice/28-bounce-diagrams#281-three-coefficients|28.1 Three coefficients]] — generator reflection coefficient · load reflection coefficient · *modelled on SP17 Exam 3 #5a*
+- [[practice/28-bounce-diagrams#282-line-conventions|28.2 Line conventions]] — true or false · characteristic impedance · *modelled on SP18 Exam 3 #1(v)*
+- [[practice/28-bounce-diagrams#283-a-step-meets-four-loads|28.3 A step meets four loads]] — load reflection coefficient · transients
+- [[practice/28-bounce-diagrams#284-arrival-times-at-a-point|28.4 Arrival times at a point]] — multiple choice · bounce diagram
+- [[practice/28-bounce-diagrams#285-a-launched-wave-too-big|28.5 A launched wave too big]] — find the error · bounce diagram
+
+## Lecture 29 · Bounce diagram examples
+
+- [[practice/29-bounce-diagram-examples#291-which-way-round|29.1 Which way round]] — multiple choice · bounce diagram
+- [[practice/29-bounce-diagram-examples#292-four-statements|29.2 Four statements]] — true or false · steady state
+- [[practice/29-bounce-diagram-examples#293-a-switched-on-sine|29.3 A switched-on sine]] — transients · load reflection coefficient
+- [[practice/29-bounce-diagram-examples#294-the-echos-current|29.4 The echo's current]] — find the error · bounce diagram
+- [[practice/29-bounce-diagram-examples#295-inputs-that-settle|29.5 Inputs that settle]] — steady state · transients
+
+## Lecture 30 · Multi-line circuits
+
+- [[practice/30-multi-line-circuits#301-coefficients-both-ways|30.1 Coefficients both ways]] — line junction · transmission coefficient
+- [[practice/30-multi-line-circuits#302-junction-facts|30.2 Junction facts]] — true or false · line junction
+- [[practice/30-multi-line-circuits#303-no-echo-toward-the-source|30.3 No echo toward the source]] — multiple choice · line junction · *modelled on SP18 Exam 3 #1(vii)*
+- [[practice/30-multi-line-circuits#304-line-parameters-of-a-splice|30.4 Line parameters of a splice]] — line parameters · line junction
+- [[practice/30-multi-line-circuits#305-the-returning-echo|30.5 The returning echo]] — find the error · line junction

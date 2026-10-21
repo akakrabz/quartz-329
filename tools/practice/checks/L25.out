@@ -1,0 +1,273 @@
+
+==============================================================================
+25.1 Four interfaces
+==============================================================================
+  (a) air -> er=4: eta1 = 120 pi, eta2 = 60 pi, Gamma = -0.333333, tau = 0.666667, reflected 11.11 %, transmitted 88.89 %
+  [(a) Gamma, tau] array([-0.33333333,  0.66666667]) vs array([-0.33333333,  0.66666667]) -> OK
+  [(a) power balance G^2 + t^2 e1/e2 = 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  [(a) BC solve agrees] array([-0.33333333+0.j,  0.66666667+0.j]) vs array([-0.33333333,  0.66666667]) -> OK
+  (b) er=4 -> air: eta1 = 60 pi, eta2 = 120 pi, Gamma = 0.333333, tau = 1.333333, reflected 11.11 %, transmitted 88.89 %
+  [(b) Gamma, tau] array([0.33333333, 1.33333333]) vs array([0.33333333, 1.33333333]) -> OK
+  [(b) power balance G^2 + t^2 e1/e2 = 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  [(b) BC solve agrees] array([0.33333333+0.j, 1.33333333+0.j]) vs array([0.33333333, 1.33333333]) -> OK
+  (c) air -> mur=16, er=4: eta1 = 120 pi, eta2 = 240 pi, Gamma = 0.333333, tau = 1.333333, reflected 11.11 %, transmitted 88.89 %
+  [(c) Gamma, tau] array([0.33333333, 1.33333333]) vs array([0.33333333, 1.33333333]) -> OK
+  [(c) power balance G^2 + t^2 e1/e2 = 1] np.float64(1.0) vs np.float64(1.0) -> OK
+  [(c) BC solve agrees] array([0.33333333+0.j, 1.33333333+0.j]) vs array([0.33333333, 1.33333333]) -> OK
+  (d) air -> PEC: eta1 = 120 pi, eta2 = 0 pi, Gamma = -1.000000, tau = 0.000000, reflected 100 %, transmitted 0 %
+  [(d) Gamma, tau] array([-1.,  0.]) vs array([-1,  0]) -> OK
+  [(d) BC solve agrees] array([-1.,  0.]) vs array([-1.,  0.]) -> OK
+  (a) and (b): same |Gamma|, opposite sign; (b) and (c) identical Gamma since eta2/eta1 = 2 in both
+
+==============================================================================
+25.2 True or false
+==============================================================================
+  [(i) eta2<eta1: Gamma = -0.5000 < 0 (E_r inverted)] OK
+     H_i(0) = [0.+0.j 1.+0.j 0.+0.j]/eta1, H_r(0) = [0. +0.j 0.5+0.j 0. +0.j]/eta1, ratio = 0.5000-0.0000j = -Gamma
+  [(ii) reflected H along incident H (statement false)] OK
+  [(i) eta2<eta1: Gamma = -0.4286 < 0 (E_r inverted)] OK
+     H_i(0) = [0.+0.j 1.+0.j 0.+0.j]/eta1, H_r(0) = [0.      +0.j 0.428571+0.j 0.      +0.j]/eta1, ratio = 0.4286-0.0000j = -Gamma
+  [(ii) reflected H along incident H (statement false)] OK
+  (iii) eta2 = 2 eta1: tau = 1.333333, transmitted fraction tau^2 eta1/eta2 = 0.888889 = 1 - Gamma^2 = 0.888889
+  [(iii) transmitted power < incident (statement false)] OK
+  [(iv) Re{(1+G)e^{jwt}} = Re{tau e^{jwt}} for all t] OK
+  (v) mur = er = 3: eta2 = 120 pi, Gamma = 0.0, v = c/3
+  [(v) Gamma = 0 (statement true)] OK
+
+==============================================================================
+25.3 Free space onto a good conductor (multiple choice)
+==============================================================================
+  w = 1e+06: sigma/(w eps) = 400, eta2 = 4.44843+4.43732j Ohm = 6.28318 angle 44.9284 deg; |eta2|/eta0 = 1/60.0001
+     Gamma = -0.97641+0.02299j, |Gamma| = 0.97668, reflected 95.39 %
+  [     Gamma close to -1 (option d)] OK
+  w = 6.28e+09: sigma/(w eps) = 400, eta2 = 4.44843+4.43732j Ohm = 6.28318 angle 44.9284 deg; |eta2|/eta0 = 1/60.0001
+     Gamma = -0.97641+0.02299j, |Gamma| = 0.97668, reflected 95.39 %
+  [     Gamma close to -1 (option d)] OK
+  distractor (b): ignore sigma, eta2 = eta0/3 -> Gamma = -0.500000
+  [(b) value -1/2] np.float64(-0.5) vs np.float64(-0.5) -> OK
+  distractor (e): leaving the conductor into air gives Gamma = 0.97641-0.02299j (close to +1)
+  |eta2| = eta0/60 approx: eta0/60 = 6.2832 = 2 pi = 6.2832
+  first-order Gamma = -1 + 2 eta2/eta0 = -0.97640+0.02354j
+
+==============================================================================
+25.4 Find the error: air onto er = 16
+==============================================================================
+  student: Gamma = 0.6000, tau = 1.6000, E_t(0) = 8.0000 V/m; power sum G^2 + t^2 e1/e2 = 10.6000
+  correct: Gamma = -0.6000, tau = 0.4000, E_r(0) = -3.0000 V/m, E_t(0) = 2.0000 V/m; power sum = 1.000000
+  [correct Gamma, tau] array([-0.6,  0.4]) vs array([-0.6,  0.4]) -> OK
+  [BC solve] array([-0.6+0.j,  0.4+0.j]) vs array([-0.6,  0.4]) -> OK
+  beta2/beta1 = sqrt(16) = 4; reflected 36 %, transmitted 64 %
+
+==============================================================================
+25.5 Permittivity from a measured Gamma
+==============================================================================
+  Gamma = -1/2 -> eta2/eta1 = 0.333333, n = 3.000000, er = 9.000000; transmitted 75 %
+  [er = 9] np.float64(9.0) vs np.float64(9.0) -> OK
+  [forward check Gamma(er=9) = -1/2] np.float64(-0.5) vs np.float64(-0.5) -> OK
+  [transmitted fraction t^2 eta1/eta2 = 0.75] np.float64(0.75) vs np.float64(0.75) -> OK
+  [mur = 9 with er = 9 gives Gamma = 0] np.float64(0.0) vs np.float64(0.0) -> OK
+
+==============================================================================
+25.6 Same speed, different impedance (glass er=4 z>0 onto mur=4 z<0, travel -z)
+==============================================================================
+  beta0 = 2.094395 = 0.666667 pi; beta1 = 1.333333 pi, beta2 = 1.333333 pi rad/m
+  eta1 = 60.000000 pi, eta2 = 240.000000 pi Ohm; v1 = v2 = 1.5e+08 m/s
+  [Gamma, tau = 0.6, 1.6] array([0.6+0.j, 1.6+0.j]) vs array([0.6, 1.6]) -> OK
+  [BC solve] array([0.6+0.j, 1.6+0.j]) vs array([0.6+0.j, 1.6+0.j]) -> OK
+  H_i(0) = [0.05305165 0.         0.        ] A/m; times 6 pi = [1. 0. 0.]
+  H_r(0) = [-0.03183099  0.          0.        ] A/m; times 10 pi = [-1.  0.  0.]
+  H_t(0) = [0.02122066 0.         0.        ] A/m; times 15 pi = [1. 0. 0.]
+  [H_i(0) = +x 1/(6pi)] array([0.05305165+0.j, 0.        +0.j, 0.        +0.j]) vs array([0.05305165, 0.        , 0.        ]) -> OK
+  [H_r(0) = -x 1/(10pi)] array([-0.03183099+0.j,  0.        +0.j,  0.        +0.j]) vs array([-0.03183099, -0.        , -0.        ]) -> OK
+  [H_t(0) = +x 1/(15pi)] array([0.02122066+0.j, 0.        +0.j, 0.        +0.j]) vs array([0.02122066, 0.        , 0.        ]) -> OK
+  [E_r(0) = 6 y, E_t(0) = 16 y] array([[ 0.+0.j,  6.+0.j,  0.+0.j],
+       [ 0.+0.j, 16.+0.j,  0.+0.j]]) vs array([[ 0.,  6.,  0.],
+       [ 0., 16.,  0.]]) -> OK
+  [E_r exponent e^{-j 4pi z/3}] np.complex128(5.4812727459-2.4404198585j) vs np.complex128(5.4812727459-2.4404198585j) -> OK
+  [E_t exponent e^{+j 4pi z/3}] np.complex128(14.6167273223-6.5077862892j) vs np.complex128(14.6167273223-6.5077862892j) -> OK
+  [region 1 (i + r): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  [region 2 (t): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  [tangential E continuous at z=0] OK
+  [tangential H continuous at z=0] OK
+  <S_i> = [ 0.        0.       -0.265258], <S_r> = [0.       0.       0.095493], <S_t> = [ 0.        0.       -0.169765] W/m^2
+  exact forms: 100/(120pi) = 0.265258, 36/(120pi) = 0.095493, 256/(480pi) = 0.169765
+  [quadrature <S_i>] array([ 0.        ,  0.        , -0.26525824]) vs array([ 0.        ,  0.        , -0.26525824]) -> OK
+  [quadrature <S_t>] array([ 0.        ,  0.        , -0.16976527]) vs array([ 0.        ,  0.        , -0.16976527]) -> OK
+  [balance |Si| = |Sr| + |St|] np.float64(0.2652582385) vs np.float64(0.2652582385) -> OK
+  reflected 36+0j %, transmitted 64+0j %
+  [E x H directions: inc -z, ref +z, tra -z] OK
+
+==============================================================================
+25.7 A mirror at y = 0 (PEC in y<0, wave in air travelling -y)
+==============================================================================
+  beta = 6.283185 = 2.000000 pi rad/m
+  [phasor of z 3 sin(wt + beta y)] OK
+  H_i(0) = [0.+0.00795775j 0.+0.j         0.+0.j        ] ; 1/(40pi) = 0.00795775
+  [H_i = x j/(40pi) e^{j2pi y}] array([-0.00580095+0.00544745j,  0.        +0.j        ,
+        0.        +0.j        ]) vs array([-0.00580095+0.00544745j,  0.        +0.j        ,
+        0.        +0.j        ]) -> OK
+  [H_r = x j/(40pi) e^{-j2pi y}] array([0.00580095+0.00544745j, 0.        +0.j        ,
+       0.        +0.j        ]) vs array([0.00580095+0.00544745j, 0.        +0.j        ,
+       0.        +0.j        ]) -> OK
+  [E_r(y,t) = -z 3 sin(wt - 2pi y)] OK
+  [H_r(y,t) = -x (1/40pi) sin(wt - 2pi y)] OK
+  [air (i + r): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  total at y=0: E = [0.+0.j 0.+0.j 0.+0.j], H = [0.+0.01591549j 0.+0.j         0.+0.j        ]; 1/(20pi) = 0.01591549 A/m
+  [total E(0) = 0] array([0.+0.j, 0.+0.j, 0.+0.j]) vs array([0., 0., 0.]) -> OK
+  J_s phasor = n x H = [0.+0.j         0.+0.j         0.-0.01591549j] ; |J_s| = 15.91549 mA/m = 2*3/eta0 = 15.91549 mA/m
+  [J_s(t) = z (1/20pi) sin wt] OK
+  [J_s along incident E at y=0] OK
+  net <S> in air: [0. 0. 0.] (each wave [ 0.         -0.01193662  0.        ], [0.         0.01193662 0.        ])
+
+==============================================================================
+25.8 How good a mirror is copper (10 GHz)
+==============================================================================
+  sigma/(w eps0) = 1.044e+08; delta = 0.66085 um; sigma delta = 38.32959 S; 1/(sigma delta) = 0.026090 Ohm
+  eta2 (good conductor) = 0.026090+0.026090j; exact = 0.026090+0.026090j
+  [good-conductor eta vs exact] np.complex128(0.0260895069+0.0260895069j) vs np.complex128(0.0260895071+0.0260895068j) -> OK
+  Gamma = -0.999862 + j1.384e-04; |Gamma| = 0.99986160
+  1 - |Gamma|^2 = 2.76780e-04; 4 eta1 Re eta2/|eta1+eta2|^2 = 2.76780e-04; 4 Re eta2/eta1 = 2.76818e-04
+  [identity 1-|G|^2 = 4 e1 Re e2/|e1+e2|^2] np.float64(0.00027678) vs np.float64(0.00027678) -> OK
+  [approximation 4 Re eta2/eta0] np.float64(0.0002768183) vs np.float64(0.00027678) -> OK
+  [power balance |t|^2 eta1 Re(1/eta2) = 1 - |G|^2] np.float64(0.00027678) vs np.float64(0.00027678) -> OK
+  of 100 W/m^2 incident: absorbed 27.6780 mW/m^2; reflected 99.97232 W/m^2
+  percent absorbed = 0.0277 %
+  [identity with eta2 = (3+4j)] np.float64(0.031326895) vs np.float64(0.031326895) -> OK
+  [identity with eta2 = (50+10j)] np.float64(0.4133189275) vs np.float64(0.4133189275) -> OK
+
+==============================================================================
+25.9 Out of the glass (er=9 in z>0, air z<0, travel -z, E_t given)
+==============================================================================
+  beta1 = 1.000000 pi, beta2 = 0.333333 pi rad/m; eta1 = 40.000000 pi, eta2 = 120.000000 pi
+  [Gamma, tau = 1/2, 3/2] array([0.5+0.j, 1.5+0.j]) vs array([0.5, 1.5]) -> OK
+  [BC solve] array([0.5+0.j, 1.5+0.j]) vs array([0.5+0.j, 1.5+0.j]) -> OK
+  [phasor of y 3 sin(wt + pi z/3)] OK
+  E_i(0) = [0.-0.j 0.-2.j 0.-0.j], E_r(0) = [0.+0.j 0.-1.j 0.+0.j]
+  [E_i(0) = -2j y, E_r(0) = -j y] array([[0.-0.j, 0.-2.j, 0.-0.j],
+       [0.+0.j, 0.-1.j, 0.+0.j]]) vs array([[0.-0.j, 0.-2.j, 0.-0.j],
+       [0.-0.j, 0.-1.j, 0.-0.j]]) -> OK
+  [H_t = x (-j/40pi) e^{j pi z/3}] array([-0.00323671-0.00726976j,  0.        +0.j        ,
+        0.        +0.j        ]) vs array([-0.00323671-0.00726976j,  0.        -0.j        ,
+        0.        -0.j        ]) -> OK
+  [H_i = x (-j/20pi) e^{j pi z}] array([0.01287591-0.00935489j, 0.        +0.j        ,
+       0.        +0.j        ]) vs array([0.01287591-0.00935489j, 0.        +0.j        ,
+       0.        +0.j        ]) -> OK
+  [H_r = x (+j/40pi) e^{-j pi z}] array([0.00643795+0.00467745j, 0.        +0.j        ,
+       0.        -0.j        ]) vs array([0.00643795+0.00467745j, 0.        +0.j        ,
+       0.        +0.j        ]) -> OK
+  [tangential E continuous] OK
+  [tangential H continuous] OK
+  [glass (i + r): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  [air (t): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  <S_i> = -15.91549 z, <S_r> = 3.97887 z, <S_t> = -11.93662 z mW/m^2
+  [<S_i> = -z 1/(20pi)] array([ 0.        ,  0.        , -0.01591549]) vs array([-0.        , -0.        , -0.01591549]) -> OK
+  [<S_r> = +z 1/(80pi)] array([0.        , 0.        , 0.00397887]) vs array([0.        , 0.        , 0.00397887]) -> OK
+  [<S_t> = -z 3/(80pi)] array([ 0.        ,  0.        , -0.01193662]) vs array([-0.        , -0.        , -0.01193662]) -> OK
+  [quadrature <S_t>] array([ 0.        ,  0.        , -0.01193662]) vs array([ 0.        ,  0.        , -0.01193662]) -> OK
+  [balance] np.float64(0.0159154943) vs np.float64(0.0159154943) -> OK
+  reflected 25+0j %, transmitted 75+0j % (tau^2 eta1/eta2 = 0.750000+0.000000j)
+  [E_r(z,t) = y sin(wt - pi z)] OK
+  [E_i(z,t) = y 2 sin(wt + pi z)] OK
+
+==============================================================================
+25.10 Into lossy ground (er=2, sigma/(w eps) = sqrt3, w = 3e8)
+==============================================================================
+  sigma = sqrt3 w eps = 9.188815e-03 S/m; sqrt3/(60pi) = 9.188815e-03; with exact eps0: 9.201542e-03
+  [sigma = sqrt3/(60pi)] np.float64(0.0091888149) vs np.float64(0.0091888149) -> OK
+  beta0 = 1.000000 rad/m
+  gamma2 = 1.000000+1.732051j; 1 + j sqrt3 = 1.000000+1.732051j
+  eta2 = 163.241943+94.247780j = 60.000000 pi angle 30.000000 deg
+  [gamma2 = 1 + j sqrt3] np.complex128(1+1.7320508076j) vs np.complex128(1+1.7320508076j) -> OK
+  [eta2 = 60 pi e^{j30}] np.complex128(163.2419427811+94.2477796077j) vs np.complex128(163.2419427811+94.2477796077j) -> OK
+  [gamma eta = j w mu0] np.complex128(376.9911184308j) vs np.complex128(376.9911184308j) -> OK
+  [gamma/eta = sigma + j w eps] np.complex128(0.0091888149+0.0053051648j) vs np.complex128(0.0091888149+0.0053051648j) -> OK
+  Gamma = -0.354438+0.236292j = 0.425982 angle 146.3099 deg
+  tau = 0.645562+0.236292j = 0.687448 angle 20.1039 deg
+  [Gamma exact form (-3+2j)/(5+2sqrt3)] np.complex128(-0.3544380888+0.2362920592j) vs np.complex128(-0.3544380888+0.2362920592j) -> OK
+  [tau exact form] np.complex128(0.6455619112+0.2362920592j) vs np.complex128(0.6455619112+0.2362920592j) -> OK
+  [BC solve] array([-0.35443809+0.23629206j,  0.64556191+0.23629206j]) vs array([-0.35443809+0.23629206j,  0.64556191+0.23629206j]) -> OK
+  |Gamma|^2 = 0.181460 = 13/(5+2sqrt3)^2 = 0.181460; 1-|G|^2 = 0.818540; |tau|^2 = 0.472584
+  E_t(0) = 6.45562+2.36292j = 6.87448 angle 20.1039 deg V/m
+  H_t(0) = 0.035928-0.006268j = 36.47022 mA/m angle -9.8961 deg
+  E_r(0) = -3.54438+2.36292j = 4.25982 angle 146.3099 deg; H_r(0) = 0.009402-0.006268j = 11.29951 mA/m angle -33.6901
+  [H_t along +y (E x H along +z)] OK
+  [air (i + r): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  [ground (t): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  [tangential E continuous] OK
+  [tangential H continuous] OK
+  <S_i> = 0.132629, <S_r> = -0.024067, <S_t>(0+) = 0.108562 W/m^2; 100/(240pi) = 0.132629
+  [balance] np.float64(0.1326291192) vs np.float64(0.1326291192) -> OK
+  [quadrature <S_t>(0.2)] array([0.        , 0.        , 0.07277142]) vs array([0.        , 0.        , 0.07277142]) -> OK
+  [<S_t> decays e^{-2z}] np.float64(0.0399378015) vs np.float64(0.0399378015) -> OK
+  [net <S> in air at z=-0.3] np.float64(0.1085622) vs np.float64(0.1085622) -> OK
+  [net <S> in air at z=-1.1] np.float64(0.1085622) vs np.float64(0.1085622) -> OK
+  Joule heating int 1/2 sigma |E_t|^2 dz = 0.108562 W/m^2; sigma|tau E0|^2/(4 alpha) = 0.108562
+  [Joule = <S_t>(0+)] np.float64(0.1085622) vs np.float64(0.1085622) -> OK
+  [Re(1/eta2) = sigma/(2 alpha) = sqrt3/(120pi)] array([0.00459441, 0.00459441]) vs array([0.00459441, 0.00459441]) -> OK
+  depth 1 m: power fraction e^-2 = 0.13534; <S_t>(1 m) = 14.6923 mW/m^2
+  regime: sigma/(w eps) = 1.732051 (neither: between 0.1 and 10)
+
+==============================================================================
+25.11 A circular wave on a mirror (travel +y in air, PEC in y>0)
+==============================================================================
+  beta = 1.000000 pi rad/m, lambda = 2.000000 m
+  [phasor 4(z + jx) e^{-j pi y} reproduces the given real field] OK
+  incident at y=0: E(0) = [0. 0. 4.], E(T/4) = [-4.  0.  0.]; u.[E0 x E(T/4)] = -16.0
+  incident hand: recipe left, brute left
+  [incident left-circular] OK
+  [E_r(y,t) = -z 4 cos(wt + pi y) + x 4 sin(wt + pi y)] OK
+  reflected at y=0: E(0) = [-0. -0. -4.], E(T/4) = [4. 0. 0.]; (-y).[..] = 16.0
+  reflected hand: recipe right, brute right
+  [reflected right-circular] OK
+  H_i(0) = [1.+0.j 0.+0.j 0.-1.j]/(30pi), H_r(0) = [1.+0.j 0.+0.j 0.-1.j]/(30pi)
+  [H_i = (x - jz)/(30pi) e^{-j pi y}] array([0.00421387+0.00973768j, 0.        +0.j        ,
+       0.00973768-0.00421387j]) vs array([0.00421387+0.00973768j, 0.        +0.j        ,
+       0.00973768-0.00421387j]) -> OK
+  [H_r = (x - jz)/(30pi) e^{+j pi y}] array([ 0.00421387-0.00973768j,  0.        +0.j        ,
+       -0.00973768-0.00421387j]) vs array([ 0.00421387-0.00973768j,  0.        +0.j        ,
+       -0.00973768-0.00421387j]) -> OK
+  [air (i + r): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  [total E at wall = 0] array([0.+0.j, 0.+0.j, 0.+0.j]) vs array([0., 0., 0.]) -> OK
+  [total H at wall = (x - jz)/(15pi)] array([0.02122066+0.j        , 0.        +0.j        ,
+       0.        -0.02122066j]) vs array([0.02122066+0.j        , 0.        +0.j        ,
+       0.        -0.02122066j]) -> OK
+  J_s phasor = [ 0.+1.j -0.+0.j  1.+0.j]/(15pi); |J_s| = 21.22066 mA/m = 1/(15pi) = 21.22066
+  [J_s = (z + jx)/(15pi) = 2 E_i(0)/eta0] array([ 0.        +0.02122066j, -0.        +0.j        ,
+        0.02122066+0.j        ]) vs array([0.        +0.02122066j, 0.        +0.j        ,
+       0.02122066+0.j        ]) -> OK
+  [J_s(t) = (1/15pi)[z cos wt - x sin wt]] OK
+  [|J_s(t)| constant] OK
+  <S_i> = [ 0.      42.44132  0.     ] mW/m^2 = y 2/(15pi) = 42.44132; <S_r> = [ -0.      -42.44132  -0.     ]
+  [<S_i> = y 2/(15pi)] array([0.        , 0.04244132, 0.        ]) vs array([0.        , 0.04244132, 0.        ]) -> OK
+  [quadrature <S_i>] array([0.        , 0.04244132, 0.        ]) vs array([0.        , 0.04244132, 0.        ]) -> OK
+  [net <S> in air = 0] array([0., 0., 0.]) vs array([0., 0., 0.]) -> OK
+  each component alone: 16/(240pi) = 21.22066 mW/m^2 (= 1/(15pi))
+  (e) er=9: Gamma = -0.5000000000000001, tau = 0.4999999999999999; reflected amplitude 2.0000000000000004, hand right; transmitted amplitude 1.9999999999999996, hand left
+  [(e) reflected right, transmitted left] OK
+
+==============================================================================
+25.12 Identifying a material from reflection data
+==============================================================================
+  beta0 = 0.666667 pi rad/m, lambda0 = 3.000000 m
+  Gamma = 0.2, tau = 1.2, eta2 = 180.000000 pi Ohm, beta2 = 1.333333 pi rad/m, n = 2.000000
+  mu2 = gamma eta/(jw) -> mur = 3.000000; eps2 = gamma/(jw eta) -> er = 1.333333
+  [mur = 3, er = 4/3] array([3.        , 1.33333333]) vs array([3.        , 1.33333333]) -> OK
+  [forward: eta2 = 180pi, beta2 = 4pi/3] array([565.48667765+0.j       ,   0.        +4.1887902j]) vs array([565.48667765+0.j       ,   0.        +4.1887902j]) -> OK
+  [forward Gamma = 0.2] np.complex128(0.2+0j) vs np.float64(0.2) -> OK
+  [E_r(z,t) = x 2 cos(wt + beta0 z)] OK
+  E_t(0) = 12.0 V/m; H_t(0) = [0.        +0.j 0.02122066+0.j 0.        +0.j] = y 1/(15pi) = 0.02122066 A/m = 21.2207 mA/m
+  [H_t = y (1/15pi) e^{-j 4pi z/3}] array([0.        +0.j        , 0.01419939-0.01577002j,
+       0.        +0.j        ]) vs array([0.        +0.j        , 0.01419939-0.01577002j,
+       0.        +0.j        ]) -> OK
+  [tangential E, H continuous] OK
+  [material (t): curl E = -jw mu H, curl H = (sig + jw eps) E] OK
+  <S_i> = 132.62912 z, <S_r> = -5.30516 z, <S_t> = 127.32395 z mW/m^2
+  [<S_i> = 5/(12pi), <S_r> = -1/(60pi), <S_t> = 2/(5pi)] array([ 0.13262912, -0.00530516,  0.12732395]) vs array([ 0.13262912, -0.00530516,  0.12732395]) -> OK
+  [balance] np.float64(0.1326291192) vs np.float64(0.1326291192) -> OK
+  reflected 4 %, transmitted 96 %
+  [(d) mur = 4/3 with er = 4/3 matched] np.float64(0.0) vs np.float64(0.0) -> OK
+  (d) n = 4/3, lambda inside = 2.2500 m
+  if E_r were inverted (Gamma = -0.2): eta2 = 0.666667 eta0 -> mur = 1.333333, er = 3.000000
+
+==============================================================================
+TOTAL CHECKS: 122, FAILED: 0

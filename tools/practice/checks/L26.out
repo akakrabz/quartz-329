@@ -1,0 +1,221 @@
+
+==============================================================================
+26.1 Nodes in front of a mirror
+==============================================================================
+  lambda0 = 24.0000 cm, lambda1 = 12.0000 cm, beta1 = 52.3599 rad/m = 16.6667 pi, eta1 = 60.0000 pi
+  [lambda1 = 12 cm] [0.12] vs [0.12] -> OK
+  [beta1 = 50pi/3] [52.3598776] vs [52.3598776] -> OK
+  [E construction = x 2E0 sin(bz) sin(wt)] [-7.07106781, -5.22498565, -13.202821, -9.75588866] vs [-7.07106781, -5.22498565, -13.202821, -9.75588866] -> OK
+  [H construction = y (2E0/eta1) cos(bz) cos(wt)] [0.0649747334, -0.0783475267, -0.0268870427, 0.032420807] vs [0.0649747334, -0.0783475267, -0.0268870427, 0.032420807] -> OK
+  [PEC: E(0,t) = 0] OK
+  [26.1: Faraday and Ampere-Maxwell by finite differences (worst rel err 5.0e-11)] OK
+  E nodes in [-15, 0] cm: [np.float64(0.0), np.float64(-6.0), np.float64(-12.0)]; H nodes: [np.float64(-3.0), np.float64(-9.0), np.float64(-15.0)]; |cos(beta*(-15cm))| = 3.1e-16
+  [E nodes 0, -6, -12 cm] [0, -6, -12] vs [0, -6, -12] -> OK
+  [H nodes -3, -9, -15 cm] [-3, -9, -15] vs [-3, -9, -15] -> OK
+  at z = -1 cm: beta z = -0.1667 pi; |E| = 10.000000 V/m, |H| = 91.8881 mA/m = sqrt3/(6pi) = 91.8881
+  [|E(-1cm)| = E0 = 10 V/m (numeric max over t)] [10] vs [10] -> OK
+  [|H(-1cm)| = sqrt3/6pi A/m (numeric max over t)] [0.0918881492] vs [0.0918881492] -> OK
+
+==============================================================================
+26.2 True or false (free space, page's standing wave)
+==============================================================================
+  (a) <S_z> at z = [-0.03, -0.11, -0.2, -0.27]: [-0.  0. -0.  0.]
+  [(a) <S> = 0 at every z (quadrature)] OK
+  (b) S at z = -lambda/8, wt = pi/4: [ 0.          0.         -0.00265258] ; formula (E0^2/eta) sin2bz sin2wt = -0.002653
+  [(b) S != 0 somewhere: FALSE statement] OK
+  [(b) S formula] [-0.00265258238] vs [-0.00265258238] -> OK
+  (c) min over t of max over z of w = 8.8419e-12 J/m^3 (2 eps0 E0^2 * 1/2... ; 2eps0E0^2 = 1.7684e-11)
+  [(c) w never zero everywhere at once: FALSE statement] OK
+  [(c) w formula] [1.58389057e-11] vs [1.58389057e-11] -> OK
+  (d) E zeros t1 [-0.45 -0.3  -0.15] t2 [-0.45 -0.3  -0.15]; H zeros t1 [-0.525 -0.375 -0.225 -0.075] t2 [-0.525 -0.375 -0.225 -0.075]; travelling t1 [-0.486 -0.336 -0.186 -0.036] t2 [-0.552 -0.402 -0.252 -0.102]
+  [(d) standing E and H zeros fixed in time, travelling zeros move: TRUE] OK
+  [(d) E and H zero sets are both lambda/2-spaced (same shape, shifted lambda/4)] OK
+  (e) E at E antinode peaks at wt/pi = [0.5 1.5]; H at H antinode peaks at wt/pi = [0. 1.]
+  (e) E peak at E antinode at wt = 0.5000 pi; H peak at H antinode at wt = 0.0000 pi
+  [(e) peaks a quarter period apart (E at pi/2, 3pi/2; H at 0, pi): FALSE statement] OK
+  (f) incident x - jy along +z: right / brute right; reflected -(x - jy) along -z: left / brute left
+  [(f) right-circular returns left-circular: FALSE statement] OK
+
+==============================================================================
+26.3 Travelling, standing or both (wave from z > 0 toward -z)
+==============================================================================
+  (i) PEC: Gamma = -1.000000; |E| from 0.000000 to 2.000000 E0; |E(0)| = 0.000000 E0; net <S> = 0.0000e+00 W/m^2 (E0 = 1) -> all standing
+  (ii) er = 4: Gamma = -0.333333; |E| from 0.666667 to 1.333333 E0; |E(0)| = 0.666667 E0; net <S> = 1.1789e-03 W/m^2 (E0 = 1) -> part travelling, part standing
+  (iii) mur = er = 5: Gamma = +0.000000; |E| from 1.000000 to 1.000000 E0; |E(0)| = 1.000000 E0; net <S> = 1.3263e-03 W/m^2 (E0 = 1) -> all travelling
+  [(ii) Gamma = -1/3, |E| in [2/3, 4/3] E0, min at interface] [-0.333333333, 0.666666667, 1.33333333, 0.666666667] vs [-0.333333333, 0.666666667, 1.33333333, 0.666666667] -> OK
+  [(i) Gamma = -1 -> standing; (iii) Gamma = 0 -> travelling] OK
+
+==============================================================================
+26.4 A laser on a small mirror (find the error)
+==============================================================================
+  <S_i> = 1.5000e+06 W/m^2, 2<S>/c = 1.0000e-02 Pa; student F = p * A_mirror = 4.0000e-06 N
+  correct F = p * A_beam = 2P/c = 2.0000e-08 N = 20.0000 nN; absorber P/c = 10.0000 nN; ratio student/correct = 200.0
+  [student 4 uN] [4e-06] vs [4e-06] -> OK
+  [2P/c = 20 nN] [2e-08] vs [2e-08] -> OK
+  [absorber 10 nN] [1e-08] vs [1e-08] -> OK
+
+==============================================================================
+26.5 Sunlight at Mars
+==============================================================================
+  mirror 4.0000 uPa, absorber 2.0000 uPa; forces 1.6000 mN, 0.8000 mN
+  E0 = 672.5989 V/m, J_s peak = 2E0/eta0 = 3.5682 A/m; eps0 E0^2 = 4.0000 uPa
+  [4 uPa, 2 uPa] [4e-06, 2e-06] vs [4e-06, 2e-06] -> OK
+  [1.6 mN, 0.8 mN] [0.0016, 0.0008] vs [0.0016, 0.0008] -> OK
+  [E0 = 672.6 V/m] [672.598946] vs [672.6] -> OK
+  [J_s = 3.57 A/m] [3.56824823] vs [3.57] -> OK
+  [eps0 E0^2 = 2<S>/c] [4e-06] vs [4e-06] -> OK
+
+==============================================================================
+26.6 A mirror off the origin
+==============================================================================
+  beta = 2.000000 pi rad/m, lambda = 1.000000 m, beta d = 0.750000 pi
+  [(a) E_r = y 5 sin(wt + 2pi z)] 185 values, max abs diff 3.11e-15 -> OK
+  [(a) H_r = +x (1/24pi) sin(wt + 2pi z)] 185 values, max abs diff 7.81e-18 -> OK
+  [(b) E = y 10 sin(2pi z - 3pi/4) sin(wt - 3pi/4)] 185 values, max abs diff 4.11e-15 -> OK
+  [(b) H = -x (1/12pi) cos(2pi z - 3pi/4) cos(wt - 3pi/4)] 185 values, max abs diff 1.21e-17 -> OK
+  [PEC: tangential E(d,t) = 0] OK
+  [E, H have no x/z resp. y/z components] OK
+  [26.6: Faraday and Ampere-Maxwell by finite differences (worst rel err 5.1e-10)] OK
+  (c) E nodes (excl. mirror) [-0.125  0.375] + mirror 0.375; H nodes [-0.375  0.125]
+  [(c) E nodes -0.125 (and mirror 0.375); H nodes -0.375, 0.125] [-0.124999999, -0.374999999, 0.125] vs [-0.125, -0.375, 0.125] -> OK
+  [(d) J_s = y (1/12pi) cos(wt - 3pi/4)] 111 values, max abs diff 1.04e-17 -> OK
+  (d) 1/12pi = 26.5258 mA/m; 2E0/eta0 = 26.5258 mA/m; along incident E (y) at the wall: E_i(d,t) = y 5 cos(wt - 3pi/4)
+  [(d) J_s = 2 E_i(d,t)/eta0 (along the incident E at the wall)] 111 values, max abs diff 6.94e-18 -> OK
+  (e) at z = 0: |E| amplitude = 7.071068 V/m (5 sqrt2 = 7.071068), |H| amplitude = 18.7566 mA/m
+  [(e) 7.07 V/m, 18.8 mA/m] [7.07106781, 18.7565899] vs [7.07106781, 18.7565899] -> OK
+  (e) first |E(0,t)| peak at wt = 0.25000 pi, t = 0.41667 ns, E_y = +7.07107 V/m
+  [(e) peak at wt = pi/4, t = 0.417 ns, E_y = +7.07] [0.785398163, 0.416666667, 7.07106781] vs [0.785398163, 0.416666667, 7.07106781] -> OK
+
+==============================================================================
+26.7 Energy in a quarter-wave cell
+==============================================================================
+  eta1 = 80.0000 pi Ohm, lambda1 = 10.0000 cm, beta1 = 20.0000 pi rad/m
+  [26.7: Faraday and Ampere-Maxwell by finite differences (worst rel err 2.8e-11)] OK
+  [(a) S = z (E0^2/eta1) sin2bz sin2wt] [-1.64071826, 1.64071826, 2.33137596, -2.33137596] vs [-1.64071826, 1.64071826, 2.33137596, -2.33137596] -> OK
+  (a) max |S| = E0^2/eta1 = 3.580986 W/m^2; S at z = -lambda/8, wt = pi/4: -3.580986; at wt = 3pi/4: +3.580986
+  (a) numeric max |S| = 3.580986 at z = -1.2500 cm, wt = 0.2500 pi
+  [(a) max |S| = 3.58 W/m^2 at z = -1.25 cm] [3.58098622, 3.58098622] vs [3.58, 3.58] -> OK
+  [(a) at z=-1.25 cm, wt=pi/4: S along -z (away from mirror)] OK
+  (b) <w> = eps1 E0^2 = 1.790493e-08 J/m^3; quadrature at z=-1.7 cm: 1.790493e-08
+  [(b) <w> uniform = eps1 E0^2] [1.79049311e-08, 1.79049311e-08, 1.79049311e-08] vs [1.79049311e-08, 1.79049311e-08, 1.79049311e-08] -> OK
+  [(b) 1.79e-8 J/m^3] [1.79049311e-08] vs [1.79e-08] -> OK
+  (c) cell energy at 7 instants: [4.47623277 4.47623277 4.47623277 4.47623277 4.47623277 4.47623277
+ 4.47623277] x 1e-10 J/m^2; eps1 E0^2 lambda/4 = 4.476233e-10
+  [(c) cell energy constant = eps1 E0^2 lambda/4] [4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10] vs [4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10, 4.47623277e-10] -> OK
+  [(c) 4.48e-10 J/m^2] [4.47623277e-10] vs [4.48e-10] -> OK
+  [(c) S = 0 at z = 0 and z = -lambda/4 at all t] OK
+  [Poynting theorem dw/dt = -dS/dz (rel err 2.8e-11)] OK
+  (d) wt = 0: magnetic 4.4762e-10, electric 0.0000e+00; wt = pi/2: magnetic 1.1569e-41, electric 4.4762e-10
+  [(d) all magnetic at wt=0, all electric at wt=pi/2] OK
+  (d) w peaks at z = 0.0000 cm (wt=0) and z = -2.5000 cm (wt=pi/2)
+  [(d) peaks at mirror and at -2.5 cm] [0, -0.025] vs [0, -0.025] -> OK
+
+==============================================================================
+26.8 Ripple in front of a dielectric
+==============================================================================
+  E0 = 7.5 V/m, |Gamma| = 0.333333, Gamma = -0.333333, eta2 = 0.500000 eta0, er = 4.000000, lambda0 = 20.0 cm, f = 1.500000 GHz
+  [E0 = 7.5, Gamma = -1/3, er = 4, f = 1.5 GHz] [7.5, -0.333333333, 4, 1.5e+09] vs [7.5, -0.333333333, 4, 1.5e+09] -> OK
+  forward check: |E| range [5.000000, 10.000000]; |E(0)| = 5.000000; interior minima [-20. -10.] cm; maxima [-15.  -5.] cm
+  [forward: min 5 at z = 0, -10, -20; max 10 at -5, -15 (and -25 edge)] [5, 10, 5, -0.2, -0.1, -0.15, -0.05] vs [5, 10, 5, -0.2, -0.1, -0.15, -0.05] -> OK
+  (c) net <S> = 66.314560 mW/m^2 (= 50/240pi = 66.314560); quadrature [66.31456 66.31456]; transmitted fraction 0.888889
+  [(c) net <S> = 66.3 mW/m^2 by quadrature] [0.0663145596, 0.0663145596] vs [0.0663145596, 0.0663145596] -> OK
+  [(c) 66.3 mW/m^2, 8/9] [66.3145596, 0.888888889] vs [66.3, 0.888888889] -> OK
+  [(c) transmitted <S> in the dielectric equals net <S>] [0.0663145596] vs [0.0663145596] -> OK
+  (d) Gamma = +1/3 needs eta2 = 2.0000 eta0 -> er = 0.2500 < 1 for mu_r = 1
+  [(d) er = 1/4] [0.25] vs [0.25] -> OK
+  E0^2 = 56.25 (V/m)^2; transmitted |tau E0|^2/(2 eta2) = 25.0000/(2*60.0pi) = 66.3146 mW/m^2
+  watch-out: reading 10 cm as lambda gives f = c/0.1 m = 3.0000 GHz
+
+==============================================================================
+26.9 Is it a standing wave (SP17 E3 #1b style)
+==============================================================================
+  (a) from Faraday H0 = -0.636620 A/m (-2/pi = -0.636620); from Ampere eps = 3.536777e-11 -> er = 4.000000
+  (a) 120*20pi = 2400.0 pi; mu0*w = 1200.0000 pi^2; eps = 1/(9pi) e-9 = 3.536777e-11; 2 beta = 40.0 pi
+  [(a) H0 = -2/pi, er = 4] [-0.636619773, 4.00000001] vs [-0.636619772, 4] -> OK
+  [26.9: Faraday and Ampere-Maxwell by finite differences (worst rel err 3.5e-11)] OK
+  [divergences zero (E_x indep of x, H_z indep of z)] OK
+  check beta = w sqrt(mu0 eps1) = 20.000000 pi; |H0|/E_peak = 5.305165e-03 vs 1/eta1 = 5.305165e-03
+  [beta consistent, |H0|/120 = 1/eta1] [62.8318531, 0.00530516477] vs [62.8318531, 0.00530516477] -> OK
+  [(b) E = x60cos(wt-20pi y) + x60cos(wt+20pi y)] 27 values, max abs diff 3.11e-14 -> OK
+  [(b) H = sum of -z(1/pi)cos(wt-by) and +z(1/pi)cos(wt+by)] 27 values, max abs diff 1.94e-16 -> OK
+  (b) +y wave H at (y=0,t=0): [ 0.          0.         -0.31830989] (=-z/pi = -0.318310); -y wave H: [0.         0.         0.31830989]; lambda = 10.0000 cm; 60/eta1 = 0.318310 = 1/pi
+  [(b) H amplitudes 1/pi, lambda 10 cm] [-0.318309886, 0.318309886, 0.1] vs [-0.318309886, 0.318309886, 0.1] -> OK
+  [(c) S = y (60/pi) sin(2by) sin(2wt)] [4.81281869, -0.820916137, 4.80326804e-15, 4.81281869, -0.820916137, 4.80326804e-15] vs [4.81281869, -0.820916137, 4.80326804e-15, 4.81281869, -0.820916137, 4.80326804e-15] -> OK
+  (c) <S_y> = [-0. -0. -0.]; <w> = [1.27323955e-07 1.27323955e-07 1.27323955e-07] ; 4e-7/pi = 1.273240e-07
+  [(c) <S> = 0] OK
+  [(c) <w> = (4/pi)e-7 = 1.27e-7 J/m^3 at every y] [1.27323954e-07, 1.27323954e-07, 1.27323954e-07] vs [1.27323954e-07, 1.27323954e-07, 1.27323954e-07] -> OK
+  (d) smallest y1 > 0 with E_x = 0: 2.500000 cm
+  [(d) y1 = 2.5 cm] [0.025] vs [0.025] -> OK
+  [(d) J_s = x (2/pi) sin(wt)] 9 values, max abs diff 0.00e+00 -> OK
+  [(d) J_s = 2 E_(+y)(y1,t)/eta1 (incident on the wall)] 9 values, max abs diff 1.11e-16 -> OK
+  (d) 2/pi = 0.636620 A/m
+  (e) E_x(0,t) = 120 cos wt: amplitude 120.0000 V/m; H_z(0,t) = 0.0e+00
+  [(e) y = 0 is an E antinode / H node] OK
+
+==============================================================================
+26.10 A good-conductor mirror (aluminium, 1 GHz) -- exact fields
+==============================================================================
+  (a) sigma/(w eps0) = 6.3000e+08; delta = 2.690210 um (exact 1/alpha = 2.690210); R_s = 10.620522 mOhm; Re eta2 = 10.620522 mOhm
+  [(a) delta = 2.69 um, R_s = 10.6 mOhm] [2.69020955, 10.6205216] vs [2.69, 10.6] -> OK
+  (a) 1/(w eps0) = 18.000000 Ohm.m (w eps0 = 1/18)
+  [(a) R_s = Re eta2 = alpha/sigma (exact, to 1e-6)] [0.0106205216, 0.0106205216] vs [0.0106205216, 0.0106205216] -> OK
+  (b) depth integral of J = 0.530502-0.000015j A/m; 2E0/eta0 = 0.530516 = 5/(3pi) = 0.530516; |H_tan(0)| = |tau E0/eta2| = 0.530502
+  [(b) |J_s| = 2E0/eta0 = 0.531 A/m] [0.530501532, 0.530516477] vs [0.530516477, 0.531] -> OK
+  (b) |J(0)| exact 2.788788e+05 A/m^2, |J_s| sqrt2/delta = 2.788867e+05
+  [(b) |J(0)| = 2.79e5 A/m^2] [278878.819, 278886.676] vs [279000, 279000] -> OK
+  (c) heat: quadrature of <J.E> = 1.494477 mW/m^2; 0.5 R_s |J_s|^2 = 1.494561; (1-|G|^2)<S_i> = 1.494477
+  (c) <S_i> = 13.262912 W/m^2; absorbed fraction 4R_s/eta0 = 1.126872e-04; exact 1-|G|^2 = 1.126809e-04
+  [(c) heat 1.49 mW/m^2 (three routes)] [1.49447665, 1.49456086, 1.49447665] vs [1.495, 1.495, 1.495] -> OK
+  [(c) <S_i> = 13.26 W/m^2, fraction 1.13e-4] [13.2629119, 0.000112687234] vs [13.26, 0.0001127] -> OK
+  (d) <P_rad> quadrature = 88.414431 nPa; 2<S_i>/c = 88.419413; (1+|G|^2)<S_i>/c = 88.414431
+  (d) instantaneous P(t): max 176.828862 nPa, min 0.000000 nPa; 4<S_i>/c = 176.838826; mean over samples 88.414431
+  [(d) <P_rad> = 88.4 nPa] [88.4144312, 88.4194128] vs [88.4, 88.4] -> OK
+  [(d) peak 177 nPa, min ~0] [176.828862, 176.838826] vs [176.8, 176.8] -> OK
+  (d) exact <P_rad> differs from 2<S_i>/c by 0.0056 %
+  [(d) push along +z (into the wall)] OK
+
+==============================================================================
+26.11 Pushing a sail with a laser
+==============================================================================
+  (a) <S_i> = 10000.0 W/m^2; E0 = 2745.8737 V/m; J_s peak = 14.5673 A/m
+  [(a) E0 = 2746 V/m, J_s = 14.6 A/m] [2745.8737, 14.5673124] vs [2746, 14.57] -> OK
+  (b) mirror F = 0.200000 mN, a = 0.200000 m/s^2; 90% sail F = 0.190000 mN, a = 0.190000 m/s^2
+  [(b) 0.2 mN, 0.2 m/s^2, 0.19 mN, 0.19 m/s^2] [0.0002, 0.2, 0.00019, 0.19] vs [0.0002, 0.2, 0.00019, 0.19] -> OK
+  [(b) momentum bookkeeping (1+R)P/c] [0.00019] vs [0.00019] -> OK
+  (c) absorbed power 3000.0 W = 1000.0 W/m^2
+  [(c) 3 kW] [3000] vs [3000] -> OK
+  (d) photon energy hc/lambda = 1.989000e-19 J (with h = 6.63e-34); rate = 1.508296e+23 /s; momentum h/lambda = 6.630000e-28 N s; 2 rate p = 0.200000 mN
+      with CODATA h: 1.987821e-19 J, rate 1.509190e+23 /s
+  [(d) 1.99e-19 J, 1.51e23 /s, 6.63e-28 N s, 2 rate p = 2P/c] [1.989e-19, 1.50829563e+23, 6.63e-28, 0.0002] vs [1.989e-19, 1.508e+23, 6.63e-28, 0.0002] -> OK
+  (e) speed after 1 h: mirror 720.000 m/s, 90% sail 684.000 m/s; KE mirror 259.200 J vs beam energy 1.080e+08 J
+  [(e) 720 m/s, 684 m/s] [720, 684] vs [720, 684] -> OK
+  absorbing 10 % loses 5.00 % of the push
+
+==============================================================================
+26.12 Trapped between two mirrors
+==============================================================================
+  (a) f_m = m c/2L: [1. 2. 3.] GHz
+  [(a) 1, 2, 3 GHz] [1e+09, 2e+09, 3e+09] vs [1e+09, 2e+09, 3e+09] -> OK
+  [(e) E = x E0 cos(wt-bz) - x E0 cos(wt+bz)] 27 values, max abs diff 4.26e-14 -> OK
+  [(e) H = y (E0/eta0)[cos(wt-bz) + cos(wt+bz)]] 27 values, max abs diff 9.71e-17 -> OK
+  [26.12: Faraday and Ampere-Maxwell by finite differences (worst rel err 4.9e-11)] OK
+  [PEC at both walls: E(0,t) = E(L,t) = 0] OK
+  (b) beta = 20.000000 pi rad/m, w = 6.000000 pi x 1e9 rad/s, lambda = 10.0000 cm; 2E0/eta0 = 0.265258 A/m = 5/6pi = 0.265258
+  (b) interior E nodes [ 5. 10.] cm (+ walls 0, 15); H nodes [ 2.5  7.5 12.5] cm
+  [(b) E nodes 5, 10; H nodes 2.5, 7.5, 12.5 cm] [0.0500000003, 0.1000001, 0.0250000007, 0.0750001, 0.125000099] vs [0.05, 0.1, 0.025, 0.075, 0.125] -> OK
+  [(c) J_s(z=0) = -x (5/6pi) cos wt] 9 values, max abs diff 5.55e-17 -> OK
+  [(c) J_s(z=L) = -x (5/6pi) cos wt] 9 values, max abs diff 5.55e-17 -> OK
+  (d) <F/A> on z=0 wall [ 0.00000000e+00  0.00000000e+00 -2.21048532e-08] Pa; on z=L wall [0.00000000e+00 0.00000000e+00 2.21048532e-08] Pa; eps0 E0^2 = 2.210485e-08; 1/4 mu0 (5/6pi)^2 = 2.210485e-08; 2<S_i>/c = 2.210485e-08
+  [(d) 2.21e-8 Pa outward on each wall] [-2.21048532e-08, 2.21048532e-08] vs [-2.21048532e-08, 2.21048532e-08] -> OK
+  [(d) value 2.21e-8] [2.21048532e-08] vs [2.21e-08] -> OK
+  (d) stored energy per m^2 at 7 instants: [3.31572798 3.31572798 3.31572798 3.31572798 3.31572798 3.31572798
+ 3.31572798] nJ/m^2; eps0 E0^2 L = 3.315728 nJ/m^2
+  [(d) W = eps0 E0^2 L = 3.32 nJ/m^2, constant] [3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09] vs [3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09, 3.31572798e-09] -> OK
+  [(d) 3.32 nJ/m^2] [3.31572798] vs [3.32] -> OK
+  (e) each travelling wave: amplitude 50.0 V/m, <S> = E0^2/(2 eta0) = 3.3157 W/m^2; 2<S>/c = 2.2105e-08 Pa
+  (e) m = 2 at t = 0: J_s(0) = [-0.26525824  0.          0.        ], J_s(L) = [0.26525824 0.         0.        ]
+  [(e) m = 2: currents opposite; m = 3: same] OK
+  (e) round trip 2L/c = 1.0000 ns = 1/f1 = 1.0000 ns
+
+==============================================================================
+TOTAL CHECKS: 101, FAILED: 0

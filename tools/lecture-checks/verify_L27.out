@@ -1,0 +1,204 @@
+
+== A. plate charges/currents; L, C, G; LC = mu eps; G/C = sigma/eps
+ok   plate 2 (x=0): rho_s = n.D = +eps Ex
+ok   plate 2 (x=0): J_s = n x (y Hy) = +z Hy
+ok   plate 1 (x=d): rho_s = n.D = -eps Ex
+ok   plate 1 (x=d): J_s = n x (y Hy) = -z Hy
+ok   plates: LC = mu eps, G/C = sigma/eps
+ok   plates: Z0 = sqrt(L/C) = eta/GF
+ok   plates: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   coax: LC = mu eps, G/C = sigma/eps
+ok   coax: Z0 = sqrt(L/C) = eta/GF
+ok   coax: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   twin-lead: LC = mu eps, G/C = sigma/eps
+ok   twin-lead: Z0 = sqrt(L/C) = eta/GF
+ok   twin-lead: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   plates: LC = mu eps, G/C = sigma/eps
+ok   plates: Z0 = sqrt(L/C) = eta/GF
+ok   plates: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   coax: LC = mu eps, G/C = sigma/eps
+ok   coax: Z0 = sqrt(L/C) = eta/GF
+ok   coax: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   twin-lead: LC = mu eps, G/C = sigma/eps
+ok   twin-lead: Z0 = sqrt(L/C) = eta/GF
+ok   twin-lead: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   plates: LC = mu eps, G/C = sigma/eps
+ok   plates: Z0 = sqrt(L/C) = eta/GF
+ok   plates: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   coax: LC = mu eps, G/C = sigma/eps
+ok   coax: Z0 = sqrt(L/C) = eta/GF
+ok   coax: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   twin-lead: LC = mu eps, G/C = sigma/eps
+ok   twin-lead: Z0 = sqrt(L/C) = eta/GF
+ok   twin-lead: v = 1/sqrt(LC) = 1/sqrt(mu eps)
+ok   coax C' from integrating E_r = q/(2 pi eps r): computed 9.99176e-11, page 9.99176e-11 (tol 0.0%)
+ok   coax L' from the flux of B_phi = mu I/(2 pi r): computed 2.50553e-07, page 2.50553e-07 (tol 0.0%)
+ok   twin-lead D/2a = 2.0: both wire surfaces equipotential
+ok   twin-lead D/2a = 2.0: C' = pi eps / arccosh(D/2a): computed 2.11216e-11, page 2.11216e-11 (tol 0.0%)
+ok   twin-lead D/2a = 2.0: L' = (mu/pi) arccosh(D/2a) from the flux: computed 5.26783e-07, page 5.26783e-07 (tol 0.0%)
+ok   twin-lead D/2a = 6.14: both wire surfaces equipotential
+ok   twin-lead D/2a = 6.14: C' = pi eps / arccosh(D/2a): computed 1.11208e-11, page 1.11208e-11 (tol 0.0%)
+ok   twin-lead D/2a = 6.14: L' = (mu/pi) arccosh(D/2a) from the flux: computed 1.00051e-06, page 1.00051e-06 (tol 0.0%)
+
+== B. telegrapher's equations from Maxwell's fields (finite differences)
+ok   plane wave toward +z: dEx/dz = -mu dHy/dt: residual 4.74e-09 (tol 1e-06)
+ok   plane wave toward +z: -dHy/dz = eps dEx/dt: residual 4.74e-09 (tol 1e-06)
+ok   V = Ex d, I = Hy W toward +z: -dV/dz = L dI/dt: residual 4.75e-09 (tol 1e-06)
+ok   V = Ex d, I = Hy W toward +z: -dI/dz = C dV/dt: residual 4.74e-09 (tol 1e-06)
+ok   toward +z: V/I = +eta d/W = +Z0
+ok   plane wave toward -z: dEx/dz = -mu dHy/dt: residual 3.20e-08 (tol 1e-06)
+ok   plane wave toward -z: -dHy/dz = eps dEx/dt: residual 3.20e-08 (tol 1e-06)
+ok   V = Ex d, I = Hy W toward -z: -dV/dz = L dI/dt: residual 3.20e-08 (tol 1e-06)
+ok   V = Ex d, I = Hy W toward -z: -dI/dz = C dV/dt: residual 3.20e-08 (tol 1e-06)
+ok   toward -z: V/I = -eta d/W = -Z0
+ok   lossy filling: -dV/dz = L dI/dt: residual 1.45e-10 (tol 1e-05)
+ok   lossy filling: -dI/dz = C dV/dt + G V, G = sigma W/d: residual 1.42e-10 (tol 1e-05)
+ok   loop up at z then along +z: circulation normal = x x z = -y (into the side view)
+ok   Faraday on the xz loop: V(z) - V(z+dz) = mu d dz dHy/dt: residual 3.93e-10 (tol 1e-05)
+ok   plate-2 charge per metre rho_s W = eps Ex W = C V: residual 0.00e+00 (tol 1e-12)
+ok   charge conservation on plate 2: dq/dt = -dI/dz: residual 4.66e-10 (tol 1e-06)
+
+== C. wave equation and d'Alembert solutions
+ok   V = f + g, I = (f - g)/Z0 at z = 0.1: first equation: residual 6.40e-09 (tol 1e-06)
+ok   ... second equation: residual 4.10e-09 (tol 1e-06)
+ok   ... wave equation V_zz = LC V_tt: residual 2.04e-07 (tol 1e-04)
+ok   V = f + g, I = (f - g)/Z0 at z = 0.6: first equation: residual 3.20e-09 (tol 1e-06)
+ok   ... second equation: residual 3.21e-09 (tol 1e-06)
+ok   ... wave equation V_zz = LC V_tt: residual 1.40e-07 (tol 1e-04)
+ok   V = f + g, I = (f - g)/Z0 at z = -0.3: first equation: residual 7.56e-10 (tol 1e-06)
+ok   ... second equation: residual 7.56e-10 (tol 1e-06)
+ok   ... wave equation V_zz = LC V_tt: residual 4.73e-07 (tol 1e-04)
+ok   Z0 = 1/(C v) = sqrt(L/C); C v = 1/Z0
+ok   plates: Z0 = eta d/W
+ok   I = C v f(t - z/v) by integrating -dI/dz = C f'
+
+== D. the battery example: FDTD of the telegrapher's equations and an LC ladder
+ok   50 ohm, 2e8 m/s line: L = 250 nH/m, C = 100 pF/m
+ok   L' = Z0/v: computed 2.5e-07, page 2.5e-07 (tol 0.0%)
+ok   C' = 1/(Z0 v): computed 1e-10, page 1e-10 (tol 0.0%)
+ok   FDTD: V = 3 V behind the front z = vt = 1.20 m, 0 ahead
+ok   FDTD: I = V0/Z0 = 60 mA behind the front
+ok   battery power V I = V0^2/Z0: computed 0.18, page 0.18 (tol 0.0%)
+ok   stored electric = magnetic energy behind the front: computed 1, page 1 (tol 1.0%)
+ok   stored energy = (V0^2/Z0) t, the battery's VI times t: computed 1.08e-09, page 1.08e-09 (tol 1.0%)
+ok   C V^2 v = V^2/Z0: computed 0.18, page 0.18 (tol 0.0%)
+ok   LC ladder: the 1.5 V point sits at z = v t (front speed 1/sqrt(LC)): computed 1.19353, page 1.19975 (tol 2.0%)
+ok   LC ladder: V ~ 3 V well behind the front (ringing averages out)
+
+== E. power
+ok   p = W d Ex Hy = V I at z = 0.1
+ok   V I = (f^2 - g^2)/Z0: no cross term
+ok   p = W d Ex Hy = V I at z = 0.6
+ok   V I = (f^2 - g^2)/Z0: no cross term
+ok   <P> = 1/2 Re(V I*) at z = 0.0 (quadrature): computed 0.0529557, page 0.0529557 (tol 0.0%)
+ok   ... = (|V+|^2 - |V-|^2)/(2 Z0): computed 0.0529557, page 0.0529557 (tol 0.0%)
+ok   <P> = 1/2 Re(V I*) at z = 0.037 (quadrature): computed 0.0529557, page 0.0529557 (tol 0.0%)
+ok   ... = (|V+|^2 - |V-|^2)/(2 Z0): computed 0.0529557, page 0.0529557 (tol 0.0%)
+ok   <P> = 1/2 Re(V I*) at z = 0.11 (quadrature): computed 0.0529557, page 0.0529557 (tol 0.0%)
+ok   ... = (|V+|^2 - |V-|^2)/(2 Z0): computed 0.0529557, page 0.0529557 (tol 0.0%)
+
+== F. non-TEM cutoffs; examples on the lecture page
+ok   plates: lowest non-TEM kc = pi/d, i.e. cutoff at d = lambda/2: computed 314.159, page 314.159 (tol 0.0%)
+ok   air plates d = 1 cm: TEM-only below c/2d (GHz): computed 14.9896, page 15 (tol 1.0%)
+ok   coax b/a = 2.0: exact TE11 lambda_c vs pi(a+b): -1.58% (the notes' rule is approximate)
+ok   coax b/a = 3.5: exact TE11 lambda_c vs pi(a+b): -2.77% (the notes' rule is approximate)
+ok   coax b/a = 6.5: exact TE11 lambda_c vs pi(a+b): -1.28% (the notes' rule is approximate)
+ok   coax a = 0.5, b = 1.75 mm: pi(a+b) in mm: computed 7.06858, page 7.07 (tol 0.2%)
+ok   ... TEM-only below v/(pi(a+b)) GHz (approx. rule): computed 28.2746, page 28.3 (tol 0.5%)
+ok   ... exact TE11 cutoff in polyethylene (GHz): computed 29.0807, page 28.3 (tol 3.0%)
+ok   eta in polyethylene (eps_r 2.25): computed 251.154, page 251 (tol 0.2%)
+ok   coax b/a = 3.5 in polyethylene: Z0 (ohm): computed 50.0759, page 50 (tol 0.3%)
+ok   75-ohm polyethylene coax: b/a: computed 6.52929, page 6.5 (tol 1.0%)
+ok   300-ohm twin-lead in air: arccosh(D/2a): computed 2.50173, page 2.5 (tol 0.2%)
+ok   ... D/a: computed 12.2855, page 12.3 (tol 0.5%)
+ok   50-ohm air plates: W/d: computed 7.53461, page 7.5 (tol 1.0%)
+ok   60 Hz wavelength in vacuum (km): computed 4996.54, page 5000 (tol 0.1%)
+ok   3 GHz in polyethylene: lambda (cm): computed 6.66205, page 6.7 (tol 1.0%)
+ok   battery: I = 3 V/50 ohm (mA): computed 60, page 60 (tol 0.0%)
+
+== H. figure directions (screen frame: X right, Y up, Z out)
+ok   side view: (x up, y out, z right) is a proper rotation
+ok   side view: E (up) x H (out, odot) = screen right = +z, the travel
+ok   plate 2 below the gap: n = up, J_s = n x H = up x out = right (+z)
+ok   ... i.e. Y x Z = X: current on the bottom plate points right
+ok   plate 1 above the gap: n = down, J_s = down x out = left (-z)
+ok   cross-section view: (x up, y right, z into page) is a proper rotation
+ok   plates: E up x H right = into the page (+z)
+ok   coax at 0 deg: H clockwise on screen (r x H into page)
+ok   coax at 0 deg: E (outward) x H = into page
+ok   coax at 45 deg: E (outward) x H = into page
+ok   coax at 90 deg: E (outward) x H = into page
+ok   coax at 135 deg: E (outward) x H = into page
+ok   coax at 180 deg: E (outward) x H = into page
+ok   coax at 225 deg: E (outward) x H = into page
+ok   coax at 270 deg: E (outward) x H = into page
+ok   coax at 315 deg: E (outward) x H = into page
+ok   twin-lead midpoint: H points down (screen)
+ok   twin-lead midpoint: E (left to right) x H (down) = into page (+z)
+ok   twin-lead: H clockwise around wire 2, counterclockwise around wire 1
+ok   tl-ladder: forward step with V0 > 0 has I > 0: rightward arrow on wire 2, leftward on wire 1
+ok   twin-lead lines: E circle (yc = 0.8) meets H circle (h = 2.0) at right angles
+ok   twin-lead lines: E circle (yc = 0.8) meets H circle (h = 3.0) at right angles
+ok   twin-lead lines: E circle (yc = 2.5) meets H circle (h = 2.0) at right angles
+ok   twin-lead lines: E circle (yc = 2.5) meets H circle (h = 3.0) at right angles
+
+== I. worked problem: a backward pulse on a parallel-plate line
+ok   eta = 80 pi ohm: computed 80, page 80 (tol 1.0%)
+ok   L' (nH/m): computed 62.8319, page 62.8 (tol 0.1%)
+ok   L' = 2 pi x 10^-8 H/m: computed 1, page 1 (tol 0.0%)
+ok   C' (pF/m): computed 397.887, page 398 (tol 0.1%)
+ok   v (m/s): computed 2e+08, page 2e+08 (tol 0.0%)
+ok   Z0 = 4 pi ohm: computed 12.5664, page 12.5664 (tol 0.0%)
+ok   Z0 (ohm): computed 12.5664, page 12.57 (tol 0.1%)
+ok   Z0 = eta d/W: computed 12.5664, page 12.5664 (tol 0.0%)
+ok   one-way delay (ns): computed 150, page 150 (tol 0.0%)
+ok   (b) V = -Z0 I = 2 pi V: computed 6.28319, page 6.28319 (tol 0.0%)
+ok   (b) V (V): computed 6.28319, page 6.28 (tol 0.1%)
+ok   (b) Ex = V/d = 1000 pi V/m: computed 3141.59, page 3141.59 (tol 0.0%)
+ok   (b) Ex (kV/m): computed 3.14159, page 3.14 (tol 0.1%)
+ok   (b) Hy = I/W = -12.5 A/m: computed -12.5, page -12.5 (tol 0.0%)
+ok   (b) |Ex/Hy| = eta: computed 251.327, page 251.327 (tol 0.0%)
+ok   (b) E x H along -z: the pulse travels toward -z
+ok   (b) top plate J_s = (-x) x H = +z I_top/W (consistent with the given current)
+ok   (b) rho_s on the x = 0 plate (nC/m^2), positive: computed 62.5, page 62.5 (tol 0.0%)
+ok   (b) charge per metre on the x = 0 plate (nC/m) = C V: computed 2.5, page 2.5 (tol 0.0%)
+ok   (b) C V (nC/m): computed 2.5, page 2.5 (tol 0.0%)
+ok   (b) pulse length v T (m): computed 0.4, page 0.4 (tol 0.0%)
+ok   (b) power during the pulse V^2/Z0 = pi W: computed 3.14159, page 3.14159 (tol 0.0%)
+ok   (b) p = V I = -pi W (toward -z): computed -3.14159, page -3.14159 (tol 0.0%)
+ok   (b) pulse energy (nJ): computed 6.28319, page 6.28 (tol 0.1%)
+ok   (c) lambda (cm): computed 13.3333, page 13.3 (tol 0.3%)
+ok   (c) beta = 15 pi rad/m: computed 47.1239, page 47.1239 (tol 0.0%)
+ok   (c) beta (rad/m): computed 47.1239, page 47.1 (tol 0.1%)
+ok   (c) |I| = 12/(4 pi) A: computed 0.95493, page 0.955 (tol 0.1%)
+ok   (c) I = 3/pi A: computed 0.95493, page 0.95493 (tol 0.0%)
+ok   (c) |E| (V/m): computed 6000, page 6000 (tol 0.0%)
+ok   (c) |H| (A/m): computed 23.8732, page 23.9 (tol 0.2%)
+ok   (c) H = 75/pi A/m: computed 23.8732, page 23.8732 (tol 0.0%)
+ok   (c) <S> (kW/m^2): computed 71.6197, page 71.6 (tol 0.1%)
+ok   (c) cross-section W d (m^2): computed 8e-05, page 8e-05 (tol 0.0%)
+ok   (c) <P> = <S> W d = 18/pi W: computed 5.72958, page 5.72958 (tol 0.0%)
+ok   (c) <P> (W): computed 5.72958, page 5.73 (tol 0.1%)
+ok   (c) <P> = |V|^2/(2 Z0): computed 5.72958, page 5.72958 (tol 0.0%)
+ok   (c) time average of V(t) I(t) by quadrature: computed 5.72958, page 5.72958 (tol 0.0%)
+ok   (c) lambda/2 (cm): computed 6.66667, page 6.7 (tol 1.0%)
+ok   (c) d = 2 mm < lambda/2 = 6.7 cm: only TEM propagates
+ok   (c) first non-TEM cutoff v/2d (GHz): computed 50, page 50 (tol 0.0%)
+ok   (d) v = 30 m / 200 ns: computed 1.5e+08, page 1.5e+08 (tol 0.0%)
+ok   (d) eps_r = (c/v)^2 = 4: computed 4, page 4 (tol 0.0%)
+ok   (d) Z0 = 60 pi x 0.05 = 3 pi ohm: computed 9.42478, page 9.42478 (tol 0.0%)
+ok   (d) Z0 (ohm): computed 9.42478, page 9.42 (tol 0.1%)
+
+== J. concept pages
+ok   twin-lead D/2a = 6.14 in air: Z0 (ohm): computed 299.945, page 300 (tol 0.2%)
+ok   air plates d/W = 0.2: Z0 (ohm): computed 75.3461, page 75.3 (tol 0.2%)
+
+== K. L-section vs T-section ladders (erratum on p. 8)
+ok   dz = 0.01 m: L- and T-section ladders have the same Bloch phase per metre
+ok   ... and it tends to w sqrt(LC) (rel. error 4.2e-03, O(dz^2))
+ok   dz = 0.001 m: L- and T-section ladders have the same Bloch phase per metre
+ok   ... and it tends to w sqrt(LC) (rel. error 4.1e-05, O(dz^2))
+ok   dz = 0.0001 m: L- and T-section ladders have the same Bloch phase per metre
+ok   ... and it tends to w sqrt(LC) (rel. error 4.1e-07, O(dz^2))
+
+All 182 checks passed.

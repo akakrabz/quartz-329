@@ -38,7 +38,18 @@ every such error and fix it, independently of the author's own checks.
 20 Poynting's theorem (derivation, the three terms, integral form as a power ledger), J·E as Joule heating and negative J·E as a source, instantaneous S, time averages by cos² with real cosines only, ⟨S⟩ = E₀²/(2η), w = ½εE² + ½μH², ⟨S⟩ = v⟨w⟩, energy balance of a radiating sheet (no phasors) ·
 21 monochromatic waves cos(ωt ∓ βz + φ), β, λ, f, T, v_p, dispersion relations (dielectric, acoustic, collisionless plasma ω² = ω_p² + β²c²), phasors (Re{Ãe^{jωt}}, sines → −j, d/dt → jω), plane-wave phasors e^{∓jβz}, Ẽ ↔ H̃ by η and rotation, ⟨ab⟩ = ½Re{ÃB̃*}, ⟨S⟩ = ½Re{Ẽ×H̃*}; lossless media only ·
 22 phasor Maxwell equations and continuity, Helmholtz, σ + jωε (complex conductivity) / ε − jσ/ω, γ = α + jβ = √(jωμ(σ+jωε)), η = √(jωμ/(σ+jωε)) in polar form, γη = jωμ, γ/η = σ + jωε, damped waves e^{−αz}cos(ωt − βz + φ), penetration depth 1/α, field vs power decay, ⟨S⟩ with cos∠η, regimes overview (exact formulas) ·
-23 loss tangent σ/ωε and crossover frequency, imperfect-dielectric and good-conductor approximations, δ = 1/√(πfμσ), η = (1+j)/(σδ), 45° lag, λ inside = 2πδ, power decay e^{−2αz} and dB/m, where the lost power goes, frequency choice for submarines.
+23 loss tangent σ/ωε and crossover frequency, imperfect-dielectric and good-conductor approximations, δ = 1/√(πfμσ), η = (1+j)/(σδ), 45° lag, λ inside = 2πδ, power decay e^{−2αz} and dB/m, where the lost power goes, frequency choice for submarines ·
+24 narrowband AM, group velocity v_g = dω/dβ vs v_p (plasma v_pv_g = c²), polarization (linear, circular, elliptical) and handedness by the Lecture 24 page's convention, ⟨S⟩ of perpendicular components ·
+25 normal incidence: Γ = (η₂ − η₁)/(η₂ + η₁), τ = 1 + Γ, reflected/transmitted phasors, power balance, lossy region 2, PEC limit Γ = −1 and J_s = n̂×H (standing waves and radiation pressure are Lecture 26) ·
+26 standing waves (PEC mirror, nodes, ⟨S⟩ = 0), partial reflection, radiation pressure ·
+27 TEM lines: V, I from fields, 𝓛, 𝓒, v = 1/√(𝓛𝓒), Z₀ = √(𝓛/𝓒), telegrapher's equations, V/I waves ·
+28 generator + R_g, Γ_L, Γ_g, bounce diagrams, V(z,t), I(z,t), DC limit (conventions of the L28 page) ·
+29 bounce-diagram examples ·
+30 junctions of lines, junction Γ and τ, multi-line bounce diagrams.
+
+For L28–30 verify bounce-diagram values with an independent time-domain simulation.
+
+Build 9: the student wants concise pages — while fixing, keep solutions tight (no narration).
 
 ## Procedure (aim for at most ~25 tool calls; do not rewrite the page wholesale)
 1. Read the page in full (2–3 Read calls with offset/limit).

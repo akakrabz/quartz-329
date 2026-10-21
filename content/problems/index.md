@@ -25,7 +25,14 @@ Each problem page states the problem, works it the way a strong student would on
 | [[problems/phasors-e-and-power-from-a-given-h\|Phasors, E and power from a given H]] | Summer 2019 HE3 #1a, SP17 Exam 3 #4 (re-parameterized) | 18, 20, 21 |
 | [[problems/decoding-a-damped-wave\|Decoding a damped wave]] | SP17 Exam 3 #3, Summer 2018 HE3 #1b, SP19 Exam 3 #1 (re-parameterized) | 21, 22 |
 | [[problems/a-radio-wave-into-moist-ground\|A radio wave into moist ground]] | Summer 2018/2019 HE3 #3b (re-parameterized) | 22, 23 |
+| [[problems/two-sheets-a-quarter-wave-apart\|Two crossed sheets a quarter wave apart]] | Summer 2020 FE #4 (re-parameterized) | 19, 21, 24 |
+| [[problems/working-back-from-a-transmitted-wave\|Working back from a transmitted wave]] | Summer 2017 HE3 #3, SP18 Exam 3 #2, SP19 Exam 3 #3b (re-parameterized) | 21, 25 |
+| [[problems/a-circular-wave-meets-a-mirror\|A circular wave meets a mirror]] | SP19 Exam 3 #3 (re-parameterized) | 24, 26 |
+| [[problems/a-backward-pulse-on-a-parallel-plate-line\|A backward pulse on a parallel-plate line]] | SP19 Exam 3 #2, SP17 #2(ii), FA23 #4(d) (re-parameterized) | 27 |
+| [[problems/reading-a-line-from-two-pulses\|Reading a line from two pulses]] | FA23 Exam 3 #4–#5, SP17 #2(v)–(vi) (re-parameterized) | 28 |
+| [[problems/a-ramp-pulse-meets-its-echo\|A ramp pulse meets its echo]] | SP17 Exam 3 #5c (re-parameterized) | 28, 29 |
+| [[problems/echoes-trapped-on-the-second-line\|Echoes trapped on the second line]] | SP19 Exam 3 #4, FA23 #3(a) (re-parameterized) | 30 |
 
-All four FA26 Exam 1 problems have a worked counterpart, and each Unit 2–3 lecture through Lecture 23 has one problem built on its central calculation — usually the magnetic or dynamic twin of something already done in Unit 1, which is the point. Randomized, auto-graded versions of many of these problems — plus one concept question per lecture and a timed Midterm 2 practice exam — live in the separate PrairieLearn course repository (`pl-ece329`).
+All four FA26 Exam 1 problems have a worked counterpart, and each Unit 2–3 lecture through Lecture 30 has one problem built on its central calculation — usually the magnetic or dynamic twin of something already done in Unit 1, which is the point. Randomized, auto-graded versions of many of these problems — plus one concept question per lecture and a timed Midterm 2 practice exam — live in the separate PrairieLearn course repository (`pl-ece329`).
 
 For many shorter problems to do yourself — twelve per lecture from Lecture 2 to Lecture 23, tagged easy, medium or hard, with folded hints and solutions — see the [[practice/index|practice bank]].

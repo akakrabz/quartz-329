@@ -1,0 +1,182 @@
+A. Narrowband AM in a non-dispersive medium (notes p. 1-2)
+ok   non-dispersive: record at z = 5.0 is m(t - z/v) cos(w t - beta z), undistorted: max |diff| = 4.55e-13 over 12384 values
+ok   non-dispersive: record at z = 17.3 is m(t - z/v) cos(w t - beta z), undistorted: max |diff| = 4.47e-13 over 12384 values
+ok   Field 1: E along x, H along y, E x H along +z (travel): [0.0, 0.0, 1.0] vs [0.0, 0.0, 1.0]
+ok   Field 3: sin(wt) = cos(w(t - T/4)): carrier a quarter period late: [0.0, 0.866025, 0.866025, 0.0, -0.866025, -0.866025, -0.0] vs [0.0, 0.866025, 0.866025, 0.0, -0.866025, -0.866025, -0.0]
+B. Group velocity (notes p. 2 footnote; page section 2; concept page)
+ok   figure title v_g = 0.87c at omega = 2 omega_p: computed 0.866025, page 0.87 (tol 0.5%)
+ok   concept page v_g = 0.866c: computed 0.866025, page 0.866 (tol 0.1%)
+ok   figure title v_p = 1.15c: computed 1.1547, page 1.15 (tol 0.5%)
+ok   concept page v_p = 1.155c: computed 1.1547, page 1.155 (tol 0.1%)
+ok   plasma: v_p v_g = c^2: 1.0 vs 1.0
+ok   v_g = d omega/d beta numerically (central difference) = c^2 beta/omega: 0.866025 vs 0.866025
+ok   sigma = 6, z = 10.0: envelope peak at z/v_g + beta3 z/(2 sigma^2) = 11.5470 + 0.0535: computed 11.6044, page 11.6005 (tol 0.1%)
+ok   sigma = 6, z = 10.0: envelope delay within 0.60 % of z/v_g (narrower band, closer)
+ok   sigma = 6, z = 10.0: envelope delay 11.60 is not the phase delay z/v_p = 8.66
+ok   sigma = 6, z = 10.0: carrier phase at the peak is omega0 t - beta0 z (crests at v_p), up to the small spreading phase 0.027 rad
+ok   sigma = 6, z = 30.0: envelope peak at z/v_g + beta3 z/(2 sigma^2) = 34.6410 + 0.1604: computed 34.8011, page 34.8014 (tol 0.1%)
+ok   sigma = 6, z = 30.0: envelope delay within 0.60 % of z/v_g (narrower band, closer)
+ok   sigma = 6, z = 30.0: envelope delay 34.80 is not the phase delay z/v_p = 25.98
+ok   sigma = 6, z = 30.0: carrier phase at the peak is omega0 t - beta0 z (crests at v_p), up to the small spreading phase 0.080 rad
+ok   sigma = 6, z = 60.0: envelope peak at z/v_g + beta3 z/(2 sigma^2) = 69.2820 + 0.3208: computed 69.5409, page 69.6028 (tol 0.1%)
+ok   sigma = 6, z = 60.0: envelope delay within 0.60 % of z/v_g (narrower band, closer)
+ok   sigma = 6, z = 60.0: envelope delay 69.54 is not the phase delay z/v_p = 51.96
+ok   sigma = 6, z = 60.0: carrier phase at the peak is omega0 t - beta0 z (crests at v_p), up to the small spreading phase 0.155 rad
+ok   sigma = 24, z = 10.0: envelope peak at z/v_g + beta3 z/(2 sigma^2) = 11.5470 + 0.0033: computed 11.5504, page 11.5503 (tol 0.1%)
+ok   sigma = 24, z = 10.0: envelope delay within 0.04 % of z/v_g (narrower band, closer)
+ok   sigma = 24, z = 10.0: envelope delay 11.55 is not the phase delay z/v_p = 8.66
+ok   sigma = 24, z = 10.0: carrier phase at the peak is omega0 t - beta0 z (crests at v_p), up to the small spreading phase 0.002 rad
+ok   sigma = 24, z = 30.0: envelope peak at z/v_g + beta3 z/(2 sigma^2) = 34.6410 + 0.0100: computed 34.6511, page 34.651 (tol 0.1%)
+ok   sigma = 24, z = 30.0: envelope delay within 0.04 % of z/v_g (narrower band, closer)
+ok   sigma = 24, z = 30.0: envelope delay 34.65 is not the phase delay z/v_p = 25.98
+ok   sigma = 24, z = 30.0: carrier phase at the peak is omega0 t - beta0 z (crests at v_p), up to the small spreading phase 0.005 rad
+ok   sigma = 24, z = 60.0: envelope peak at z/v_g + beta3 z/(2 sigma^2) = 69.2820 + 0.0200: computed 69.3022, page 69.3021 (tol 0.1%)
+ok   sigma = 24, z = 60.0: envelope delay within 0.04 % of z/v_g (narrower band, closer)
+ok   sigma = 24, z = 60.0: envelope delay 69.30 is not the phase delay z/v_p = 51.96
+ok   sigma = 24, z = 60.0: carrier phase at the peak is omega0 t - beta0 z (crests at v_p), up to the small spreading phase 0.010 rad
+ok   plasma beta'' = -1/beta^3 (units c = omega_p = 1): -0.19245 vs -0.19245
+ok   figure: second-order (spreading) phase over z = 54 is small (< 0.2 rad)
+ok   Taylor: residual at Omega = 0.05 is (1/2) beta'' Omega^2 (+ beta3 Omega^3/6): -0.000233 vs -0.000233
+ok   Taylor: at Omega = 0.05 the first-order term carries > 99 % of beta - beta0
+ok   Taylor: residual at Omega = 0.1 is (1/2) beta'' Omega^2 (+ beta3 Omega^3/6): -0.000902 vs -0.000898
+ok   Taylor: at Omega = 0.1 the first-order term carries > 99 % of beta - beta0
+ok   dielectric: v_g = v_p = 1/sqrt(mu eps): 149896229.061743 vs 149896229.040803
+ok   sound, monatomic gas: v_g = v_p = sqrt(5kT/3m): 322.592729 vs 322.592729
+ok   ionosphere: N = 1e12 m^-3 gives f_p = 8.98 MHz: computed 8.97866, page 8.98 (tol 0.1%)
+ok   f_p ~ 8.98 sqrt(N) Hz: computed 8.97866, page 8.98 (tol 0.1%)
+ok   10 MHz: sqrt(1 - f_p^2/f^2) = v_g/c = 0.440: computed 0.440268, page 0.44 (tol 0.2%)
+ok   10 MHz: v_p = 2.27c: computed 2.27134, page 2.27 (tol 0.2%)
+ok   300 km at v_g: 2.27 ms: computed 2.27291, page 2.27 (tol 0.2%)
+ok   300 km in vacuum: 1.00 ms: computed 1.00069, page 1 (tol 0.2%)
+ok   300 km at v_p: 0.44 ms: computed 0.440573, page 0.44 (tol 1.0%)
+ok   100 MHz: v_g = 0.996c: computed 0.995961, page 0.996 (tol 0.1%)
+ok   good conductor (seawater, 1 kHz, exact beta): v_g = 2 v_p: computed 2, page 2 (tol 0.0%)
+ok   good conductor: amplitude e^{-2 pi} = 0.19 % after one wavelength (alpha = beta): computed 0.00186744, page 0.0019 (tol 2.0%)
+C. Circular carrier (notes p. 2-3; page section 3)
+ok   z = 0.0: H = z_hat x E / eta, = cos y - sin x (notes p. 3), eta factored: max |diff| = 0.00e+00 over 6000 values
+ok   z = 0.0: |E| constant: the vector rotates, not oscillates: max |diff| = 1.11e-16 over 2000 values
+ok   z = 0.0: angle advances 2 pi per period: rotation frequency = wave frequency: 6.283185 vs 6.283185
+ok   z = 0.3: H = z_hat x E / eta, = cos y - sin x (notes p. 3), eta factored: max |diff| = 0.00e+00 over 6000 values
+ok   z = 0.3: |E| constant: the vector rotates, not oscillates: max |diff| = 1.11e-16 over 2000 values
+ok   z = 0.3: angle advances 2 pi per period: rotation frequency = wave frequency: 6.283185 vs 6.283185
+ok   phasor x - jy <-> cos wt x + sin wt y: max |diff| = 0.00e+00 over 6000 values
+ok   phasor x + jy <-> cos wt x - sin wt y: max |diff| = 0.00e+00 over 6000 values
+D. Handedness (notes p. 3-5; page section 4; Example 1)
+ok   x - jy, travel +z: right-circular (rotates x -> y)
+ok   x + jy, travel +z: left-circular
+ok   trap: x - jy travelling -z is left-circular
+ok   x + jy travelling -z is right-circular
+ok   x - jy: points along x at t = 0, along y at t = T/4 (x leads y)
+ok   x - jy: rotation vector along +z = clockwise seen looking along +z
+ok   Example 1: E(x=0) = z cos wt - y sin wt: max |diff| = 0.00e+00 over 6000 values
+ok   Example 1: y peaks a quarter period before z (y leads z by 90 deg)
+ok   Example 1: turns from y toward z (rotation vector +x = y x z)
+ok   Example 1: travel -x, LEFT-circular (notes)
+ok   Example 1 recipe line: z_hat x (-y_hat) = +x_hat: [1.0, 0.0, 0.0] vs [1.0, 0.0, 0.0]
+ok   Example 1 recipe: (-x) . x < 0 -> left
+ok   recipe sign u.[Re E x (-Im E)] = numerical rotation sense for 300 random (elliptical) phasors, and an overall complex factor never changes it
+ok   identity: <E x dE/dt>/omega = E(0) x E(T/4) = Re E x (-Im E) (50 random phasors)
+ok   ellipse semi-axes from (1/2)Re{E E^H} = sampled max/min |E| (2000 samples): [1.0, 0.5] vs [1.0, 0.5]
+ok   ellipse semi-axes from (1/2)Re{E E^H} = sampled max/min |E| (2000 samples): [2.154626, 0.597986] vs [2.154626, 0.597986]
+ok   ellipse semi-axes from (1/2)Re{E E^H} = sampled max/min |E| (2000 samples): [1.414214, 0.0] vs [1.414212, 0.00219]
+E. Linear / circular / elliptical (page section 5; concept page table; figure pol-phase-family)
+ok   section 5 rule (linear phi = 0, pi or A or B = 0; circular A = B, phi = -/+ pi/2; elliptical otherwise; right iff sin phi < 0 for +z, swapped for -z) agrees with the traced ellipse and the rotation for 5 x 25 cases
+ok   phi = -pi/2 right-circular, +pi/2 left-circular
+F. Bases (notes p. 5-6)
+ok   right = 1*x + (-j)*y: [(1+0j), -1j, 0j] vs [(1+0j), -1j, 0j]
+ok   left = 1*x + j*y: [(1+0j), 1j, 0j] vs [(1+0j), 1j, 0j]
+ok   x = 1/2 R + 1/2 L: [(1+0j), 0j, 0j] vs [1.0, 0.0, 0.0]
+ok   y = -1/(2j) R + 1/(2j) L: [0j, (1+0j), 0j] vs [0.0, 1.0, 0.0]
+ok   R and L are orthogonal (Hermitian product): 0j vs 0
+G. Example 2: rotating sheet current (notes p. 8)
+ok   E+ = -(eta/2) m(t - z/v)[cos(wt - bz) x + sin(wt - bz) y] at z = 0.0 (w = b = v = 1): max |diff| = 2.84e-14 over 1200 values
+ok   E- = -(eta/2) m(t + z/v)[cos(wt + bz) x + sin(wt + bz) y] at z = -0.0: max |diff| = 2.84e-14 over 1200 values
+ok   E+ = -(eta/2) m(t - z/v)[cos(wt - bz) x + sin(wt - bz) y] at z = 0.7 (w = b = v = 1): max |diff| = 2.84e-14 over 1200 values
+ok   E- = -(eta/2) m(t + z/v)[cos(wt + bz) x + sin(wt + bz) y] at z = -0.7: max |diff| = 5.68e-14 over 1200 values
+ok   z = 0: n x (H+ - H-) = J_s with n = +z (Lecture 16 jump condition): max |diff| = 1.11e-16 over 1200 values
+ok   z = 0: E tangential continuous (E+ = E- at the sheet): max |diff| = 0.00e+00 over 1200 values
+ok   E+ carrier -(x - jy) e^{-jbz}: right-circular (minus sign adds 180 deg only)
+ok   E- carrier -(x - jy) e^{+jbz}, travel -z: left-circular
+ok   margin: H+ = z x E+/eta = -y (1/2) f: [0.0, -0.5, 0.0] vs [-0.0, -0.5, -0.0]
+ok   margin: H- = (-z) x E-/eta = +y (1/2) f (as printed): [0.0, 0.5, 0.0] vs [0.0, 0.5, 0.0]
+ok   margin: S+ = E+ x H+ along +z: [0.0, 0.0, 1.0] vs [0.0, 0.0, 1.0]
+ok   margin: S- = E- x H- along -z: [0.0, 0.0, -1.0] vs [-0.0, -0.0, -1.0]
+H. Example 3 and power (notes p. 9; page section 8; concept page)
+ok   H_c = z x E_c / eta0 = (y + jx)/eta0  [A/m]: [0.002654j, (0.002654+0j), 0j] vs [0.002654j, (0.002654+0j), 0j]
+ok   (-j y) x (-j x) = j^2 (y x x) = +z: [0j, 0j, (1+0j)] vs [0.0, 0.0, 1.0]
+ok   (x - jy) x (y + jx)* = 2 z: [-0j, 0j, (2+0j)] vs [0.0, 0.0, 2.0]
+ok   <S> = z/eta0 (phasor): [0.0, 0.0, 0.002654] vs [0.0, 0.0, 0.002654]
+ok   <S> = z/eta0 (time average by quadrature): [0.0, 0.0, 0.002654] vs [0.0, 0.0, 0.002654]
+ok   1/eta0 = 2.65 mW/m^2: computed 2.65442, page 2.65 (tol 0.2%)
+ok   1/(120 pi) = 2.65 mW/m^2: computed 2.65258, page 2.65 (tol 0.2%)
+ok   circular <S> is twice the linear 1/(2 eta0) of equal amplitude: [0.0, 0.0, 0.002654] vs [0.0, 0.0, 0.002654]
+ok   circular: instantaneous S constant = <S>: max |diff| = 8.67e-19 over 2000 values
+ok   linear: instantaneous S swings 0 .. 2<S> (pulses at 2 omega): [0.002654, 0.0] vs [0.002654, 0.0]
+ok   <S> = (|E_x|^2 + |E_y|^2) u/(2 eta) for 100 random plane waves (any phase between components)
+I. Worked problem: two crossed sheets a quarter wave apart
+ok   lambda = 1 m, beta = 2 pi rad/m (c = 3e8): [1.0, 6.283185] vs [1.0, 6.283185]
+ok   eta0/2 x 0.1 A/m = 6 pi V/m: 18.849556 vs 18.849556
+ok   P = -6 pi = -18.8 V/m (3 s.f.): computed -18.8496, page -18.8 (tol 0.3%)
+ok   (a) z > lambda/4: E = -6 pi e^{-j beta z}(x + j e^{j phi} y); (c) z < 0: -6 pi [x + e^{j(phi - pi/2)} y] e^{j beta z}
+ok   e^{+j beta lambda/4} = j (sheet B's phase advance): 1j vs 1j
+ok   (b) phi = 0.50 pi: linear in z > lambda/4 (numerical rotation)
+ok   (b) phi = 1.50 pi: linear in z > lambda/4 (numerical rotation)
+ok   (b) phi = 1.00 pi: right in z > lambda/4 (numerical rotation)
+ok   (b) phi = 0.00 pi: left in z > lambda/4 (numerical rotation)
+ok   (b) phi = pi/2: Q = -1, linear along x - y: (-1+0j) vs -1
+ok   (b) phi = 3pi/2: Q = +1, linear along x + y: (1-0j) vs 1
+ok   (b) only phi = pi is right-circular and only phi = 0 left-circular in [0, 2 pi): [3.141593, 0.0] vs [3.141593, 0.0]
+ok   (b) only phi = pi/2, 3pi/2 are linear in [0, 2 pi): [1.570796, 4.712389] vs [1.570796, 4.712389]
+ok   (b) phi = pi: E = -6 pi (x - jy) e^{-j beta z}: [(-18.849556+0j), 18.849556j, (-0+0j)] vs [(-18.849556+0j), 18.849556j, (-0+0j)]
+ok   (b) E(0) = -6 pi x, E(T/4) = -6 pi y: [[-18.849556, 0.0, -0.0], [-0.0, -18.849556, -0.0]] vs [[-18.849556, -0.0, -0.0], [-0.0, -18.849556, -0.0]]
+ok   (b) E(0) x E(T/4) = 36 pi^2 z, along the travel: right: [-0.0, 0.0, 355.305758] vs [0.0, 0.0, 355.305758]
+ok   (b) time domain -6 pi [cos x + sin y] at z = 0: max |diff| = 3.55e-15 over 6000 values
+ok   (c) phi = pi, z < 0: E = -6 pi (x + jy) e^{j beta z}: [(-18.849556+0j), (-0-18.849556j), (-0+0j)] vs [(-18.849556+0j), (-0-18.849556j), (-0+0j)]
+ok   (c) E(0) = -6 pi x, E(T/4) = +6 pi y: [[-18.849556, -0.0, -0.0], [-0.0, 18.849556, -0.0]] vs [[-18.849556, -0.0, -0.0], [0.0, 18.849556, 0.0]]
+ok   (c) E(0) x E(T/4) = -36 pi^2 z, along u = -z: [0.0, 0.0, -355.305758] vs [-0.0, -0.0, -355.305758]
+ok   (c) right-circular in z < 0 too (numerical rotation)
+ok   (c, aside) phi = 0: left-circular on both sides
+ok   (d) phi = 0.50 pi: <S> = 0.3 pi z W/m^2: [0.0, 0.0, 0.942478] vs [0.0, 0.0, 0.942478]
+ok   (d) phi = 1.50 pi: <S> = 0.3 pi z W/m^2: [0.0, 0.0, 0.942478] vs [0.0, 0.0, 0.942478]
+ok   (d) phi = 1.00 pi: <S> = 0.3 pi z W/m^2: [0.0, 0.0, 0.942478] vs [0.0, 0.0, 0.942478]
+ok   (d) phi = 0.00 pi: <S> = 0.3 pi z W/m^2: [0.0, 0.0, 0.942478] vs [0.0, 0.0, 0.942478]
+ok   (d) 0.3 pi = 0.94 W/m^2: computed 0.942478, page 0.94 (tol 0.5%)
+ok   (d) each sheet alone: 0.15 pi W/m^2: 0.471239 vs 0.471239
+ok   sheet at z = 0.0: z x (H(z0+) - H(z0-)) = J_s (phasor): [(0.1-0j), 0j, (-0+0j)] vs [0.1, 0.0, 0.0]
+ok   sheet at z = 0.25: z x (H(z0+) - H(z0-)) = J_s (phasor): [0j, (0.076484+0.064422j), 0j] vs [0j, (0.076484+0.064422j), 0j]
+J. Figures (figs_l24.py): screen frame and arrow senses
+ok   views: x_hat (up) x y_hat (right) = into the page: +z points into the page (otimes), frame right-handed: [0, 0, -1] vs [0, 0, -1]
+ok   pol-handedness panel s = -1: t=0 -> t=T/8 is clockwise on the page = right
+ok   pol-handedness panel s = -1: drawn T/8 arrow matches the field: [0.707107, 0.707107] vs [0.707107, 0.707107]
+ok   pol-handedness panel s = -1: right-circular by the numerical rotation
+ok   pol-handedness arc for s = -1 drawn CW
+ok   pol-handedness panel s = 1: t=0 -> t=T/8 is counterclockwise on the page = left
+ok   pol-handedness panel s = 1: drawn T/8 arrow matches the field: [-0.707107, 0.707107] vs [-0.707107, 0.707107]
+ok   pol-handedness panel s = 1: left-circular by the numerical rotation
+ok   pol-handedness arc for s = 1 drawn CCW
+ok   pol-phase-family phi = −π/4: drawn sense CW = right-elliptical
+ok   pol-phase-family phi = −π/4: t = 0 dot at screen (cos phi, 1): [0.707107, 1.0] vs [0.707107, 1.0]
+ok   pol-phase-family phi = −π/2: drawn sense CW = right-circular
+ok   pol-phase-family phi = −π/2: t = 0 dot at screen (cos phi, 1): [0.0, 1.0] vs [0.0, 1.0]
+ok   pol-phase-family phi = −3π/4: drawn sense CW = right-elliptical
+ok   pol-phase-family phi = −3π/4: t = 0 dot at screen (cos phi, 1): [-0.707107, 1.0] vs [-0.707107, 1.0]
+ok   pol-phase-family phi = 0: linear (no arrow)
+ok   pol-phase-family phi = 0: t = 0 dot at screen (cos phi, 1): [1.0, 1.0] vs [1.0, 1.0]
+ok   pol-phase-family phi = π/4: drawn sense CCW = left-elliptical
+ok   pol-phase-family phi = π/4: t = 0 dot at screen (cos phi, 1): [0.707107, 1.0] vs [0.707107, 1.0]
+ok   pol-phase-family phi = π/2: drawn sense CCW = left-circular
+ok   pol-phase-family phi = π/2: t = 0 dot at screen (cos phi, 1): [0.0, 1.0] vs [0.0, 1.0]
+ok   pol-phase-family phi = 3π/4: drawn sense CCW = left-elliptical
+ok   pol-phase-family phi = 3π/4: t = 0 dot at screen (cos phi, 1): [-0.707107, 1.0] vs [-0.707107, 1.0]
+ok   pol-phase-family phi = π: linear (no arrow)
+ok   pol-phase-family phi = π: t = 0 dot at screen (cos phi, 1): [-1.0, 1.0] vs [-1.0, 1.0]
+ok   pol-am-group-delay t = 20.0: envelope peak at v_g t: computed 17.23, page 17.3205 (tol 1.0%)
+ok   pol-am-group-delay t = 40.0: envelope peak at v_g t: computed 34.47, page 34.641 (tol 1.0%)
+ok   pol-am-group-delay t = 20.0: marked crest z = 15.839 is within 2 % of a wavelength of the exact field's crest 15.879 (< 0.5 px; the envelope slope shifts the maximum slightly)
+ok   pol-am-group-delay t = 40.0: marked crest z = 38.933 is within 2 % of a wavelength of the exact field's crest 38.899 (< 0.5 px; the envelope slope shifts the maximum slightly)
+ok   pol-am-group-delay: the crest has moved ahead of the envelope peak
+K. Notes slips (ERRATA-L24.md)
+ok   Example 3: [E]/[eta] = (V/m)/(V/A) = A/m; the notes print V/m for H_c
+ok   Example 3 algebra (x - jy) x (y + jx)* = 2z and <S> = z/eta0: no sign error (section H)
+
+ALL 169 CHECKS PASSED

@@ -1,0 +1,183 @@
+== 30.1
+PASS  G12: computed 0.2, page 0.2
+PASS  tau12: computed 1.2, page 1.2
+PASS  I refl ratio: computed -0.2, page -0.2
+PASS  I trans ratio: computed 0.8, page 0.8
+PASS  G21: computed -0.2, page -0.2
+PASS  tau21: computed 0.8, page 0.8
+PASS  I refl ratio 21: computed 0.2, page 0.2
+PASS  I trans ratio 21: computed 1.2, page 1.2
+PASS  sim V- (V): computed 2, page 2
+PASS  sim I- (A): computed -0.04, page -0.04
+PASS  sim V++ (V): computed 12, page 12
+PASS  sim I++ (A): computed 0.16, page 0.16
+PASS  sim I line1 total: computed 0.16, page 0.16
+PASS  P in (W): computed 2, page 2
+PASS  P refl (W): computed 0.08, page 0.08
+PASS  P trans (W): computed 1.92, page 1.92
+== 30.2
+PASS  (b) tau=4/3 -> Z2/Z1: computed 2, page 2
+PASS  (b) Pt: computed 0.888889, page 0.888889
+PASS  (c) G21+G12: computed 1.11022e-16, page 0
+PASS  (c) tau12+tau21: computed 2, page 2
+PASS  (d) G: computed 0, page 0
+PASS  (d) tau: computed 1, page 1
+PASS  (d) power per branch: computed 0.5, page 0.5
+PASS  (e) It != tau: computed 0.4, page 0.4
+PASS  (f) V/I into open line 2 before echo: computed 100, page 100
+== 30.3
+PASS  (d) RZB/(R+ZB)=ZA, RL=ZB, Rg mismatched -> no backward wave
+PASS  (c) only (RL != ZB) -> backward wave appears
+PASS  (b) ZB=ZA with R -> backward wave
+PASS  (a) Rg=ZA only -> backward wave
+PASS  (c) tau_BA = 2Z'/(Z'+ZB): computed 0.5, page 0.5
+== 30.4
+PASS  L2/L1: computed 1.5, page 1.5
+PASS  C2/C1: computed 6, page 6
+PASS  G12: computed -0.333333, page -0.333333
+PASS  tau12: computed 0.666667, page 0.666667
+PASS  mu_r: computed 1.5, page 1.5
+PASS  eps_r: computed 6, page 6
+== 30.5
+PASS  G21: computed -0.6, page -0.6
+PASS  tau21: computed 0.4, page 0.4
+PASS  into line 1 (V): computed 10, page 10
+PASS  back to load (V): computed -15, page -15
+PASS  I line-2 side: computed -0.2, page -0.2
+PASS  I line-1 side: computed -0.2, page -0.2
+PASS  student I line-2 side: computed -0.05, page -0.05
+PASS  student I line-1 side: computed -0.8, page -0.8
+PASS  sim transmitted (V): computed 10, page 10
+PASS  sim reflected (V): computed -15, page -15
+== 30.6
+PASS  R (ohm): computed 150, page 150
+PASS  tau12: computed 1, page 1
+PASS  frac line 2: computed 0.666667, page 0.666667
+PASS  frac R: computed 0.333333, page 0.333333
+PASS  G21: computed -0.333333, page -0.333333
+PASS  tau21: computed 0.666667, page 0.666667
+PASS  refl frac: computed 0.111111, page 0.111111
+PASS  line1 frac: computed 0.666667, page 0.666667
+PASS  R frac: computed 0.222222, page 0.222222
+PASS  sim G21: computed -0.333333, page -0.333333
+PASS  sim tau21: computed 0.666667, page 0.666667
+PASS  sim G12 (shunt 150): computed 1.60982e-15, page 0
+== 30.7
+PASS  G12: computed 0.333333, page 0.333333
+PASS  tau12: computed 1, page 1
+PASS  refl: computed 0.111111, page 0.111111
+PASS  trans: computed 0.666667, page 0.666667
+PASS  R: computed 0.222222, page 0.222222
+PASS  I line 1 = I line 2: computed 0.666667, page 0.666667
+PASS  G21: computed 0, page 0
+PASS  tau21: computed 0.666667, page 0.666667
+PASS  R share of line-1 side V: computed 0.25, page 0.25
+PASS  sim G from 50: computed 0.333333, page 0.333333
+PASS  sim tau from 50: computed 1, page 1
+PASS  sim G from 75: computed 2.22045e-16, page 0
+PASS  sim tau from 75: computed 0.666667, page 0.666667
+== 30.8
+PASS  tau_g: computed 0.75, page 0.75
+PASS  Gamma_g (KVL: 75-line into 25 ohm): computed -0.5, page -0.5
+PASS  G12: computed 0.333333, page 0.333333
+PASS  current refl 2-3: computed 0.5, page 0.5
+PASS  V(0) step 0<t<4: computed 0.75, page 0.75
+PASS  V(0) const until 4: computed 0, page 0
+PASS  impulse at 4 us: computed 0.125, page 0.125
+PASS  impulse at 6 us: computed -0.166667, page -0.166667
+PASS  nothing else before 8 us: computed -4.77396e-15, page 0
+PASS  something at 8 us
+PASS  load first impulse (t=6): computed 0.5, page 0.5
+PASS  load nothing before 6: computed 0, page 0
+== 30.9
+PASS  tau_g: computed 0.75, page 0.75
+PASS  Gamma_g: computed -0.5, page -0.5
+PASS  G12: computed -0.5, page -0.5
+PASS  tau12: computed 0.5, page 0.5
+PASS  I refl: computed 0.5, page 0.5
+PASS  I trans: computed 1.5, page 1.5
+PASS  fwd line1 launch: computed 60, page 60
+PASS  fwd line1 gen echo 1: computed 15, page 15
+PASS  fwd line1 gen echo 2: computed 3.75, page 3.75
+PASS  bwd line1 at 3.5: computed -30, page -30
+PASS  bwd line1 at 7.5: computed -7.5, page -7.5
+PASS  bwd line1 at 11.5: computed -1.875, page -1.875
+PASS  line2 fwd at 2.5: computed 30, page 30
+PASS  line2 fwd at 6.5: computed 7.5, page 7.5
+PASS  line2 fwd at 10.5: computed 1.875, page 1.875
+PASS  line2 no backward (plateaus): computed 5.04485e-13, page 0
+PASS  V(100 m, 5 us): computed 45, page 45
+PASS  I(100 m, 5 us): computed 0.7, page 0.7
+PASS  VL t<3: computed 0, page 0
+PASS  VL 3-7: computed 30, page 30
+PASS  VL 7-11: computed 37.5, page 37.5
+PASS  VL(inf): computed 40, page 40
+PASS  IL(inf): computed 0.8, page 0.8
+PASS  line1 V(inf): computed 40, page 40
+PASS  line1 I(inf): computed 0.8, page 0.8
+PASS  line1 fwd sum: computed 80, page 80
+PASS  line1 bwd sum: computed -40, page -40
+== 30.10
+PASS  splice d (m): computed 100, page 100
+PASS  Z2: computed 100, page 100
+PASS  Gamma_L: computed -1, page -1
+PASS  air line (m): computed 120, page 120
+PASS  scope pulse at 0.0 us (V): computed 9, page 9
+PASS  scope pulse at 1.0 us (V): computed 3, page 3
+PASS  scope pulse at 1.8 us (V): computed -8, page -8
+PASS  scope pulse at 2.6 us (V): computed -2.66667, page -2.66667
+PASS  scope pulse at 3.4 us (V): computed -0.888889, page -0.888889
+PASS  nothing between pulses: computed -1.77636e-15, page 0
+PASS  direct pulse mid at 0.0: computed 9, page 9
+PASS  direct pulse mid at 1.0: computed 3, page 3
+PASS  direct pulse mid at 1.8: computed -8, page -8
+PASS  direct pulse mid at 2.6: computed -2.66667, page -2.66667
+PASS  direct pulse mid at 3.4: computed -0.888889, page -0.888889
+PASS  (e) launched (V): computed 12, page 12
+PASS  (e) scope at 1.0 us (V): computed 2.66667, page 2.66667
+== 30.11
+PASS  G12: computed -0.333333, page -0.333333
+PASS  tau12: computed 0.666667, page 0.666667
+PASS  Gamma_g: computed 0, page 0
+PASS  VJ at 0.5: computed 0, page 0
+PASS  VJ at 1.5: computed 33.3333, page 33.3333
+PASS  VJ at 2.5: computed 55.5556, page 55.5556
+PASS  VJ at 3.5: computed 48.1481, page 48.1481
+PASS  I_R(2.5): computed 1.11111, page 1.11111
+PASS  open end at 2.0: computed 66.6667, page 66.6667
+PASS  open end at 3.0: computed 44.4444, page 44.4444
+PASS  open end at 4.0: computed 51.8519, page 51.8519
+PASS  VJ(inf): computed 50, page 50
+PASS  open(inf): computed 50, page 50
+PASS  I_R(inf): computed 1, page 1
+PASS  line1 launch (V): computed 50, page 50
+PASS  line1 bwd jump at 1.5: computed -16.6667, page -16.6667
+PASS  line1 bwd jump at 2.5: computed 22.2222, page 22.2222
+PASS  line1 bwd jump at 3.5: computed -7.40741, page -7.40741
+PASS  line2 fwd jump at 1.25: computed 33.3333, page 33.3333
+PASS  line2 fwd jump at 2.25: computed -11.1111, page -11.1111
+PASS  line2 fwd jump at 3.25: computed 3.7037, page 3.7037
+PASS  line2 bwd jump at 1.75: computed 33.3333, page 33.3333
+PASS  line2 bwd jump at 2.75: computed -11.1111, page -11.1111
+PASS  line2 bwd jump at 3.75: computed 3.7037, page 3.7037
+== 30.12
+PASS  tau_g: computed 0.25, page 0.25
+PASS  Gamma_g: computed 0.5, page 0.5
+PASS  G12: computed -0.333333, page -0.333333
+PASS  tau12: computed 0.666667, page 0.666667
+PASS  T1: computed 3, page 3
+PASS  T2: computed 1.5, page 1.5
+PASS  h_L weight at 4.5: computed 0.166667, page 0.166667
+PASS  h_L weight at 10.5: computed -0.0277778, page -0.0277778
+PASS  h_L weight at 16.5: computed 0.00462963, page 0.00462963
+PASS  h_L nothing else 5-10: computed 0, page 0
+PASS  (c) 4.5-10.5 max err vs -7/3 sin: computed 4.4964e-13, page 0
+PASS  (c) 10.5-16.5 max err vs -35/18 sin: computed 4.73399e-13, page 0
+PASS  (check) third amplitude: computed 2.00926, page 2.00926
+PASS  wavelength line 1 (m): computed 200, page 200
+PASS  wavelength line 2 (m): computed 300, page 300
+PASS  (d) settled amplitude at 1.0 MHz: computed 2, page 2
+PASS  (d) settled amplitude at 1.25 MHz: computed 2.8, page 2.8
+PASS  DC divider: computed 2, page 2
+
+0 FAIL(s)

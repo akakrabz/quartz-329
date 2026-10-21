@@ -1,0 +1,197 @@
+== 27.1
+PASS  L nH/m: computed 104.72, page 104.7
+PASS  C pF/m: computed 238.732, page 239
+PASS  v: computed 2e+08, page 2e+08
+PASS  Z0: computed 20.944, page 20.944
+PASS  Z0 20.9: computed 20.944, page 20.9
+PASS  LC = mu eps: computed 2.5e-17, page 2.5e-17
+PASS  (b) ns: computed 1.5, page 1.5
+PASS  (c) W/d: computed 5.02655, page 5.03
+PASS  (c) W mm: computed 2.51327, page 2.51
+PASS  (c) Z0 back: computed 50, page 50
+PASS  check L v: computed 20.944, page 20.9
+== 27.2
+PASS  (e) Z0 a=1.0 mm: computed 75.1658, page 75.2
+PASS  (e) v a=1.0 mm: computed 3e+08, page 3e+08
+PASS  (e) Z0 a=0.5 mm: computed 116.755, page 116.8
+PASS  (e) v a=0.5 mm: computed 3e+08, page 3e+08
+  swapped ladder |gain| low, high: 1.000390081812256e-100 1.254367102253664
+  telegrapher residuals for V=f+g, I=(f-g)/Z0: 3.08e-10, -1.45e-10
+  V/I for f+g at two z: [100.41213444 150.        ] (varies)
+PASS  (d) V/I backward: computed -50, page -50
+== 27.3
+PASS  H = -x Ey/eta: computed 0, page 0
+PASS  rho_s(y=0) sign: computed 1, page 1
+PASS  rho_s(y=d) sign: computed -1, page -1
+PASS  Js(y=0) = +z: computed 0, page 0
+PASS  Js(y=d) = -z: computed 0, page 0
+PASS  S along +z: computed 0, page 0
+  key (c): only (c) true -> PASS by the above
+== 27.4
+PASS  Z0: computed 25.1327, page 25.1327
+PASS  Z0 25.1: computed 25.1327, page 25.1
+PASS  <P>: computed 1.98944, page 1.99
+PASS  <P> exact: computed 1.98944, page 1.98944
+PASS  student: computed 0.132629, page 0.133
+PASS  Ex: computed 10000, page 10000
+PASS  Hy: computed 26.5258, page 26.5
+PASS  <S> kW/m2: computed 132.629, page 132.6
+PASS  <S>Wd: computed 1.98944, page 1.99
+PASS  I = Hy W: computed 0.397887, page 0.398
+PASS  ratio W/d: computed 15, page 15
+== 27.5
+PASS  v: computed 2.5e+08, page 2.5e+08
+PASS  Z0: computed 100, page 100
+PASS  er: computed 1.44, page 1.44
+PASS  delay ns: computed 40, page 40
+PASS  coax b/a: computed 7.38906, page 7.39
+PASS  coax L back: computed 4e-07, page 4e-07
+PASS  coax C back: computed 4e-11, page 4e-11
+PASS  twin D/2a: computed 1.54308, page 1.54
+PASS  twin LC = mu eps: computed 1.6e-17, page 1.6e-17
+PASS  LC = mu0*1.44eps0: computed 1.6e-17, page 1.6e-17
+== 27.6
+PASS  L nH/m: computed 300, page 300
+PASS  C pF/m: computed 83.3333, page 83.3
+PASS  v: computed 2e+08, page 2e+08
+  phase point moves -0.2 m in 1 ns (negative = -z)
+PASS  Z0: computed 60, page 60
+PASS  V/I: computed -60, page -60
+PASS  er: computed 2.25, page 2.25
+PASS  <P>: computed -1.2, page -1.2
+PASS  60 sin coef: computed 60, page 60
+PASS  2e8 coef: computed 2e+08, page 2e+08
+PASS  1.2e10 coef: computed 1.2e+10, page 1.2e+10
+PASS  LC: computed 2.5e-17, page 2.5e-17
+== 27.7
+PASS  C: computed 8e-11, page 8e-11
+PASS  v: computed 2e+08, page 2e+08
+PASS  er: computed 2.25, page 2.25
+PASS  L nH: computed 312.5, page 312.5
+PASS  Z0: computed 62.5, page 62.5
+PASS  lambda km: computed 200, page 200
+PASS  l/lambda: computed 0.0001, page 0.0001
+PASS  G nS/m: computed 0.1, page 0.1
+PASS  sigma: computed 2.4868e-11, page 2.5e-11
+  sigma exact 2.487e-11 S/m
+PASS  sqrt(L/C): computed 62.5, page 62.5
+PASS  LC: computed 2.5e-17, page 2.5e-17
+  open-line Yin vs lumped rel diff 1.32e-07
+PASS  Yin = lumped to 6 digits: computed 1.31595e-07, page 0
+== 27.8
+PASS  Z0: computed 50, page 50
+PASS  delay/section ns: computed 10, page 10
+PASS  total ns: computed 300, page 300
+PASS  coax length: computed 60, page 60
+PASS  I: computed 0.04, page 0.04
+PASS  charge count: computed 0.04, page 0.04
+PASS  f max MHz: computed 10, page 10
+  ladder delay 301.37 ns, Iin at 250 ns 39.997 mA
+PASS  sim delay ~300 ns (2%): computed 301.37, page 300
+PASS  sim Iin ~40 mA (1%): computed 0.0399967, page 0.04
+  ladder cutoff 31.8 MHz
+== 27.9
+PASS  b mm: computed 2.1178, page 2.12
+PASS  L: computed 333.333, page 333
+PASS  C: computed 133.333, page 133
+PASS  v: computed 1.5e+08, page 1.5e+08
+PASS  Z0: computed 50, page 50
+PASS  V: computed -15, page -15
+PASS  E r coeff: computed -9, page -9
+PASS  H r coeff: computed -0.0477465, page -0.0477
+PASS  V = int E dr: computed -15, page -15
+PASS  ExH dir +z: computed 0, page 0
+PASS  rho_s(a) uC: computed -0.795775, page -0.796
+PASS  rho_s(b) uC: computed 0.150302, page 0.15
+PASS  E(a) kV/m: computed -22.5, page -22.5
+PASS  Q/m inner nC: computed -2, page -2
+PASS  Q/m outer nC: computed 2, page 2
+PASS  P: computed 4.5, page 4.5
+PASS  VI: computed 4.5, page 4.5
+PASS  Sz coeff: computed 0.429718, page 0.429718
+PASS  energy nJ: computed 18, page 18
+PASS  length: computed 0.6, page 0.6
+PASS  W' v: computed 4.5, page 4.5
+PASS  Lv: computed 50, page 50
+PASS  (d) V: computed 10, page 10
+PASS  (d) beta: computed 12.5664, page 12.5664
+PASS  (d) lambda: computed 0.5, page 0.5
+PASS  (d) <P>: computed 1, page 1
+PASS  (d) a+b mm: computed 2.5178, page 2.52
+PASS  (d) lambda/pi mm: computed 159.155, page 159
+PASS  (d) fc GHz: computed 18.9636, page 19
+== 27.10
+PASS  f: computed 8, page 8
+PASS  g: computed 4, page 4
+PASS  sim V t=2.5 z=-1.0: computed 3.99997, page 4
+PASS  sim I t=2.5 z=-1.0: computed -0.05, page -0.05
+PASS  sim V t=2.5 z=0.0: computed 12, page 12
+PASS  sim I t=2.5 z=0.0: computed 0.05, page 0.05
+PASS  sim V t=2.5 z=1.0: computed 8.00003, page 8
+PASS  sim I t=2.5 z=1.0: computed 0.1, page 0.1
+PASS  sim V t=10 z=-2.0: computed 3.99903, page 4
+PASS  sim I t=10 z=-2.0: computed -0.0499939, page -0.05
+PASS  sim V t=10 z=2.0: computed 7.99806, page 8
+PASS  sim I t=10 z=2.0: computed 0.0999878, page 0.1
+PASS  sim V t=10 z=0.0: computed 0.00291036, page 0
+PASS  sim I t=10 z=0.0: computed 6.11612e-06, page 0
+PASS  sim V t=10 z=4.0: computed 7.36637e-270, page 0
+PASS  sim I t=10 z=4.0: computed 1.34778e-271, page 0
+PASS  VI z=-1.0: computed -0.199999, page -0.2
+PASS  VI z=0.0: computed 0.6, page 0.6
+PASS  VI z=1.0: computed 0.800003, page 0.8
+PASS  (f^2-g^2)/Z0 mid: computed 0.6, page 0.6
+PASS  C pF: computed 62.5, page 62.5
+PASS  L nH: computed 400, page 400
+PASS  W0 nJ (smoothed): computed 9.98, page 10
+PASS  W0 exact: computed 10, page 10
+PASS  sim forward pulse nJ: computed 7.984, page 8
+PASS  sim backward pulse nJ: computed 1.996, page 2
+PASS  pass time ns: computed 10, page 10
+PASS  (e) I: computed 0.15, page 0.15
+== 27.11
+PASS  v: computed 1.5e+08, page 1.5e+08
+PASS  er: computed 4, page 4
+PASS  v from LC: computed 1.5e+08, page 1.5e+08
+PASS  L nH: computed 41.8879, page 41.9
+PASS  C nF: computed 1.06103, page 1.06
+PASS  Z0: computed 6.28319, page 6.28319
+PASS  FDTD arrival ns: computed 200.067, page 200
+PASS  FDTD V behind: computed -12, page -12
+PASS  FDTD I behind: computed -1.90986, page -1.91
+PASS  I: computed -1.90986, page -1.90986
+PASS  I -1.91: computed -1.90986, page -1.91
+PASS  Ex kV: computed -12, page -12
+PASS  Hy: computed -63.662, page -63.7
+PASS  ExH dir: computed 0, page 0
+PASS  rho_s nC: computed -424.413, page -424
+PASS  Js z: computed -63.662, page -63.7
+PASS  Js x,y zero: computed 0, page 0
+PASS  rho_s nC: computed 424.413, page 424
+PASS  Js z: computed 63.662, page 63.7
+PASS  Js x,y zero: computed 0, page 0
+PASS  1.91 A on + plate: computed 1.90986, page 1.91
+PASS  loop normal -y: computed 0, page 0
+PASS  C v: computed 0.159155, page 0.159
+PASS  L v: computed 6.28319, page 6.28
+PASS  CvV: computed -1.90986, page -1.91
+PASS  VI W: computed 22.9183, page 22.9
+PASS  1/2CV^2 nJ: computed 76.3944, page 76.4
+PASS  1/2LI^2 nJ: computed 76.3944, page 76.4
+PASS  storage rate: computed 22.9183, page 22.9
+PASS  plate-2 charge/m = CV: computed -1.27324e-08, page -1.27324e-08
+== 27.12
+PASS  L nH: computed 200, page 200
+PASS  C pF: computed 125, page 125
+PASS  G uS: computed 62.8319, page 62.8
+PASS  G/C = sig/eps: computed 502655, page 502655
+PASS  LC = mu0 eps: computed 2.5e-17, page 2.5e-17
+PASS  v: computed 2e+08, page 2e+08
+PASS  Z0: computed 40, page 40
+PASS  crossover kHz: computed 80, page 80
+PASS  ratio at 10 MHz: computed 0.008, page 0.008
+  worst FD curl residual 1.8e-07
+PASS  Maxwell curls satisfied (<1e-5): computed 1.7544e-07, page 0
+PASS  (a) inner current: computed 1, page 1
+
+TOTAL PASS 173  FAIL 0

@@ -60,8 +60,15 @@ LECTURES = {
     21: ("3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation", "Monochromatic waves and phasor notation"),
     22: ("3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves", "Phasor Maxwell equations and damped waves"),
     23: ("3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors", "Imperfect dielectrics and good conductors"),
+    24: ("3-maxwell-and-waves/24-signal-transmission-and-circular-polarization", "Signal transmission and circular polarization"),
+    25: ("3-maxwell-and-waves/25-wave-reflection-and-transmission", "Wave reflection and transmission"),
+    26: ("3-maxwell-and-waves/26-standing-waves-and-radiation-pressure", "Standing waves and radiation pressure"),
+    27: ("4-transmission-lines/27-guided-tem-waves-on-transmission-lines", "Guided TEM waves on transmission lines"),
+    28: ("4-transmission-lines/28-distributed-circuits-and-bounce-diagrams", "Distributed circuits and bounce diagrams"),
+    29: ("4-transmission-lines/29-bounce-diagram-examples", "Bounce diagram examples"),
+    30: ("4-transmission-lines/30-multi-line-circuits", "Multi-line circuits"),
 }
-UNIT_INDEXES = ["1-electrostatics/index.md", "2-magnetostatics/index.md", "3-maxwell-and-waves/index.md"]
+UNIT_INDEXES = ["1-electrostatics/index.md", "2-magnetostatics/index.md", "3-maxwell-and-waves/index.md", "4-transmission-lines/index.md"]
 LEVELS = ["easy", "medium", "hard"]
 EXPECT = {L: (5, 3, 4) for L in LECTURES}
 EXPECT[11] = (4, 2, 2)
@@ -104,6 +111,11 @@ TOPICS = [
     ("phasors", "Monochromatic waves, phasors and dispersion"),
     ("lossy", "Damped waves in lossy and conducting media"),
     ("goodcond", "Imperfect dielectrics, good conductors and skin depth"),
+    ("polar", "Group velocity and wave polarization"),
+    ("reflect", "Reflection and transmission at an interface"),
+    ("standing", "Standing waves and radiation pressure"),
+    ("tlines", "Transmission lines: telegrapher's equations and characteristic impedance"),
+    ("bounce", "Transients on lines and bounce diagrams"),
 ]
 TOPIC_TITLE = dict(TYPES + TOPICS)
 
@@ -195,6 +207,18 @@ RULES = {
     "loss tangent": ["goodcond"], "skin depth": ["goodcond"], "good conductor": ["goodcond"],
     "imperfect dielectric": ["goodcond"], "decibels": ["goodcond"], "seawater": ["goodcond"],
     "regimes": ["lossy", "goodcond"],
+    "group velocity": ["polar"], "dispersion": ["polar"], "signal transmission": ["polar"],
+    "polarization of waves": ["polar"], "circular polarization": ["polar"], "elliptical polarization": ["polar"],
+    "handedness": ["polar"], "reflection": ["reflect"], "transmission": ["reflect"],
+    "reflection coefficient": ["reflect"], "transmission coefficient": ["reflect"], "normal incidence": ["reflect"],
+    "power balance": ["reflect", "poynting"], "perfect conductor": ["reflect"],
+    "standing waves": ["standing"], "nodes and antinodes": ["standing"], "radiation pressure": ["standing"],
+    "partial reflection": ["standing", "reflect"],
+    "transmission lines": ["tlines"], "telegrapher's equations": ["tlines"], "characteristic impedance": ["tlines"],
+    "line parameters": ["tlines"], "parallel-plate line": ["tlines"],
+    "bounce diagram": ["bounce"], "transients": ["bounce"], "load reflection coefficient": ["bounce"],
+    "generator reflection coefficient": ["bounce"], "steady state": ["bounce"], "impulse response": ["bounce"],
+    "multi-line circuits": ["bounce"], "line junction": ["bounce"],
     "multiple choice": ["mc"], "true or false": ["mc"], "find the error": ["fte"],
 }
 # geometry words that carry no topic of their own (the problem's other tags place it)
@@ -219,6 +243,9 @@ CONCEPT_TOPICS = {
     "current-sheet-radiation": ["radiation"], "poynting-vector": ["radiation", "poynting"],
     "poynting-theorem": ["poynting"], "phasors": ["phasors"], "dispersion-relation": ["phasors"],
     "propagation-constant": ["lossy"], "loss-tangent": ["goodcond"], "skin-depth": ["goodcond"],
+    "group-velocity": ["polar"], "wave-polarization": ["polar"], "reflection-and-transmission": ["reflect"],
+    "standing-waves": ["standing"], "radiation-pressure": ["standing"],
+    "telegraphers-equations": ["tlines"], "characteristic-impedance": ["tlines"], "bounce-diagram": ["bounce"],
 }
 
 # lecture to draw a concept page's example problems from (default: where its topic has most problems)

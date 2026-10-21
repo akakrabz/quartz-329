@@ -1,0 +1,66 @@
+====================================================================================================
+[A] Algebra: load condition, KVL at z = 0, recursion, tau_g, Gamma_g, DC limit (random circuits)
+PASS A1 load: g(t+T)/f(t-T) = (R_L - Z0)/(R_L + Z0) from V/I = R_L (200 random circuits)
+PASS A2 KVL expansion f_i = (Rg/Z0)[f - G_L f(t-2T)] + f + G_L f(t-2T) and regrouped form
+PASS A3 recursion f = tau_g f_i + Gamma_g Gamma_L f(t-2T)
+PASS A4 tau_g = (1 - Gamma_g)/2
+PASS A5 DC limit tau_g(1+G_L)/(1-G_L G_g) = R_L/(R_g+R_L), tau_g(1-G_L)/(1-G_L G_g)/Z0 = 1/(R_g+R_L)
+PASS A6 derivation-box identities (1-G_L G_g, tau_g(1+G_L), tau_g(1-G_L))
+PASS A7 backward term = forward delayed by round trip 2(l-z)/v
+PASS A8 erratum 1: backward delay T_z = 2l/v - z/v (>0 for 0<z<l), notes' z/v - 2l/v < 0
+PASS A9 |Gamma| <= 1 for 0 <= R <= inf
+PASS A10 L25 mapping eta1->Z0, eta2->R_L gives Gamma_L
+====================================================================================================
+[B] Frequency domain: page's impulse-response series vs direct phasor solution of the terminated line
+PASS B1 Fourier transform of the series V(z,t), I(z,t) = phasor solution (6 circuits x 4 freqs x 5 z)  | 120/120
+====================================================================================================
+[C] Lattice (exact characteristics) vs FDTD vs page, impulse and step: page example Z0=60, Rg=180, RL=20
+    (review re-parameterized it from Z0=50, Rg=150, RL=50/3, whose Z0, RL equal S20 FE #5; all voltages unchanged)
+PASS C1 tau_g = 1/4, Gamma_g = 1/2, Gamma_L = -1/2
+PASS C2 impulse at l/2: times T/2, 3T/2, 5T/2, 7T/2, 9T/2, 11T/2  | [np.float64(0.5), np.float64(1.5), np.float64(2.5), np.float64(3.5), np.float64(4.5), np.float64(5.5)]
+PASS C3 V weights 1/4, -1/8, -1/16, 1/32, 1/64, -1/128  | [ 0.25     -0.125    -0.0625    0.03125   0.015625 -0.007812]
+PASS C4 Z0*I weights 1/4, +1/8, -1/16, -1/32, +1/64, +1/128 (page writes '- ...' after -1/32: next is +)  | [ 0.25      0.125    -0.0625   -0.03125   0.015625  0.007812]
+PASS C5 section-4 series (V and I, n = 0..7) = lattice at z = 0, 0.125l, ..., l (ends: arrival + reflection add)  | 57 impulses
+PASS C6 V(l,t) impulse at T = (1+G_L) tau_g = 1/8; I(l,t) = (1-G_L) tau_g/Z0
+PASS C7 V(l,t) on (T,3T),(3T,5T),(5T,7T),(7T,9T) = 1.5, 1.125, 1.219, 1.195  | [1.5     1.125   1.21875 1.19531]
+PASS C8 V(l/2,t) steps 3, 1.5, 0.75, 1.125, 1.3125 at T/2 + kT  | [np.float64(2.9999999999999996), np.float64(1.4999999999999996), np.float64(0.75), np.float64(1.125), np.float64(1.3125)]
+PASS C9 DC: V = 1.2 V and I = 60 mA at every z (t = 60T)  | V 1.200000000..1.200000000
+PASS C10 12*20/(180+20) = 1.2, 12/200 = 0.060
+PASS C11 load staircase alternates about 1.2 V (G_L G_g = -1/4 < 0)  | [1.5    1.125  1.2187 1.1953 1.2012 1.1997 1.2001 1.2    1.2   ]
+PASS C12 midpoint staircase both over- and undershoots 1.2 V  | [3.     1.5    0.75   1.125  1.3125 1.2187 1.1719 1.1953 1.207  1.2012
+ 1.1982 1.1997 1.2004]
+PASS C13 FDTD step: load 1.5, 1.125, 1.219, 1.195; midpoint 3, 1.5, 0.75, 1.125, 1.3125 (1e-3)  | [1.5    1.125  1.2187 1.1953] [3.     1.5    0.75   1.125  1.3125]
+PASS C14 FDTD step current at l/2: running sum of current weights (backward flipped)  | [0.05    0.075   0.0625  0.05625] vs [0.05    0.075   0.0625  0.05625]
+PASS C15 FDTD Gaussian (area 1): V areas at l/2 = 1/4, -1/8, -1/16, 1/32; Z0*I = 1/4, 1/8, -1/16, -1/32  | [ 0.25   -0.125  -0.0625  0.0312] [ 0.25    0.125  -0.0625 -0.0313]
+PASS C16 old example (Z0=50, RL=50/3) shared Gamma_L = -1/2 with S20 FE #5a (same Z0, RL); new Z0, Rg, RL match no exam setup
+====================================================================================================
+[D] Section 6 terminations (lattice, impulse and step)
+PASS D1 matched load: one impulse at each z, nothing after
+PASS D2 open load: I(l,t) = 0 always; V(l,T) = 2 x arriving tau_g
+PASS D3 short load: V(l,t) = 0 always; I(l,T) = 2 x arriving current
+PASS D4 matched generator: tau_g = 1/2, nothing on the line after t = 2T
+PASS D5 ideal source R_g = 0: V(0,t) = f_i(t) at all times, tau_g = 1
+PASS D6 ideal source + open load: echoes never decay (|weights| all 1)  | 20 impulses
+====================================================================================================
+[E] Worked problem: 120 m line, v = 150 m/us, Z0 = 75, observe at 30 m (lattice in physical units + FDTD)
+PASS E1 v = 150 m/us, T = 0.8 us, eps_r = 4, echo at (2l - z)/v = 1.4 us
+PASS E2 R_L = 37.5 ohm from Gamma_L = -1/3; A = 24*75/150 = 12
+PASS E3 R_g = 75: exactly two impulses at 30 m, 12 at 0.2 us and -4 at 1.4 us  | [(np.float64(0.2), np.float64(12.0)), (np.float64(1.4), np.float64(-4.0))]
+PASS E4 current: 0.16 and +0.05333 A.us  | [np.float64(0.16), np.float64(0.05333)]
+PASS E5 R_g = 76 ohm would add a pulse at 1.8 us (so R_g = Z0 is forced)
+PASS E6 R_g = 25: tau_g = 3/4, Gamma_g = -1/2, G_L G_g = 1/6
+PASS E7 impulses at 30 m for t < 3.5: 18@0.2, -6@1.4, 3@1.8, -1@3.0, 0.5@3.4  | [(np.float64(0.2), np.float64(18.0)), (np.float64(1.4), np.float64(-6.0)), (np.float64(1.8), np.float64(3.0)), (np.float64(3.0), np.float64(-1.0)), (np.float64(3.4), np.float64(0.5))]
+PASS E8 next impulse after the window: -1/6 at 4.6 us (so 14.5 holds on (3.4, 4.6))
+PASS E9 step 24u(t) at 30 m: 18, 12, 15, 14, 14.5  | [18.  12.  15.  14.  14.5]
+PASS E10 steady state V_L = 14.4 V, I_L = 0.384 A (t = 200 us)  | 14.400000000 0.384000000
+PASS E11 series check 18*(2/3)/(5/6) = 14.4
+PASS E12 FDTD Gaussian (R_g = 25): areas at 30 m = 18, -6, 3, -1, 0.5 V.us (2e-2)  | [18.  -6.   3.  -1.   0.5]
+PASS E13 FDTD Gaussian (R_g = 75): 12, -4, then nothing; I areas 0.16, 0.0533  | [12. -4. -0.  0.  0.] [ 0.16    0.0533 -0.     -0.      0.    ]
+====================================================================================================
+[F] Figures: figs_l28.py data vs lattice
+PASS F1 example_weights = 3, -1.5, -0.75, 0.375, 0.1875, -0.09375
+PASS F2 step_curves(z = l/2, l) = lattice staircase (t < 8T)
+PASS F3 bounce-diagram crossing times at z_p = 0.3l: 0.3, 1.7, 2.3, 3.7, 4.3, 5.7 T
+PASS F4 bounce-diagram segment labels tau_g G_L^{(k+1)//2} G_g^{k//2}
+====================================================================================================
+TOTAL PASS 50  FAIL 0

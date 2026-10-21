@@ -1,0 +1,75 @@
+== A. junction coefficients from KVL/KCL (linear solve) vs closed forms
+PASS  Gamma_jk=(Zk-Zj)/(Zk+Zj), tau=1+Gamma; Gamma_I=-Gamma, tau_I=1-Gamma=tau Zj/Zk; G^2+tau^2 Zj/Zk=1; G_kj=-G_jk  
+   notes' circuit: tau_g=0.333333 Gamma_g=0.333333 Gamma_12=0.333333 tau_12=1.333333 Gamma_L=0.0 Gamma_21=-0.333333 tau_21=0.666667
+PASS  notes' circuit: tau_g = Gamma_g = Gamma_12 = 1/3, tau_12 = 4/3, Gamma_L = 0; Gamma_21 = -1/3, tau_21 = 2/3  
+PASS  notes' circuit power at junction: 1/9 + (16/9)(1/2) = 1  
+PASS  Rao Ex 7.3: Gamma_V=1/5, Gamma_I=-1/5, tau_V=6/5, tau_I=4/5, P_t/P_i=24/25  
+== B. Example 1: Z2 = 2 Z1 and v2 = 2 v1  =>  L2 = L1, C2 = C1/4
+PASS  Z2/Z1 = 2 and v2/v1 = 2 with L2 = L1, C2 = C1/4  
+PASS  same geometry, eps_r = 4 vs air gives L2 = L1, C2 = C1/4  
+== C. notes' two-line circuit, impulse response from the lattice
+   forward weights leaving z=0 (t: w): {np.float64(0.0): np.float64(0.333333), np.float64(16.0): np.float64(0.037037), np.float64(32.0): np.float64(0.004115), np.float64(48.0): np.float64(0.000457)}
+   backward weights leaving junction: {np.float64(8.0): np.float64(0.111111), np.float64(24.0): np.float64(0.012346), np.float64(40.0): np.float64(0.001372)}
+   weights entering line 2: {np.float64(8.0): np.float64(0.444444), np.float64(24.0): np.float64(0.049383), np.float64(40.0): np.float64(0.005487)}
+PASS  forward: 1/3 at 0, 1/27 at 16 us, 1/243 at 32 us  
+PASS  backward from junction: 1/9 at 8 us, 1/81 at 24 us  
+PASS  into line 2: 4/9 at 8 us, 4/81 at 24 us  
+PASS  nothing returns from the matched load (line-2 leftward waves = 0)  
+PASS  first load arrival at t = 12 us (T1 = 8, T2 = 4 us)  t = 12.00
+== D. Example 2: f(t) = sin(2 pi t) u(t), t in us; series formula vs lattice
+PASS  notes' V(z,t) and I(z,t) series (both lines) match the lattice  max |dV| = 2.8e-14, max |dI| = 8.1e-16
+PASS  l/v1 = 16 us; lambda1 = 150 m, lambda2 = 300 m at 1 MHz  
+PASS  at t = 3 us the front is at z = 450 m (so the notes' 'V(z,3 us)' label cannot be the plotted instant)  last nonzero z = 448.5 m
+PASS  t = 48.5 us: line 1 = (1/4) sin(2 pi z/150), line 2 = (1/2) sin(2 pi (z-1200)/300) (notes' plot)  max dev 3.4e-04, 6.9e-04
+PASS  t = 56.5 us: line 1 = (1/4) sin(2 pi z/150), line 2 = (1/2) sin(2 pi (z-1200)/300) (notes' plot)  max dev 1.1e-04, 6.9e-04
+PASS  late-time amplitudes: (1/3)/(1-1/9) = 3/8, (1/9)/(1-1/9) = 1/8, (4/9)/(1-1/9) = 1/2  
+PASS  t = 40.25 us: line-1 snapshot amplitude 1/2 (forward and backward in phase)  max |V| = 0.4993
+   snapshot t = 6.0: front at 898 m, max|V| line1 = 0.3333, line2 = 0.0000
+   snapshot t = 12.0: front at 2397 m, max|V| line1 = 0.3333, line2 = 0.4444
+PASS  t = 6 us: front at 900 m; t = 12 us: front reaches the load (2400 m)  
+PASS  t = 12 us: reflected burst occupies 600 m < z < 1200 m  from z = 601.5 m
+== E. DC limit with f = u(t)
+PASS  V -> R_L/(R_g+R_L) = 1/2 at both ends (bounce sums 3/8 + 1/8 and (4/9)/(8/9))  V_L = 0.50000000, V(0) = 0.50000000
+PASS  junction voltage just after 8 us = 1/3 + 1/9 = 4/9 = tau_12/3  0.444444
+== F. FDTD: Example 1's per-length L, C; smooth step; plateaus vs bounce sums
+PASS  FDTD V(600 m, t) plateaus 1/3, 4/9, 13/27  [0.3333 0.4444 0.4815]
+PASS  FDTD load plateaus 4/9 (from 13 us), 40/81 (from 29 us)  [0.4444 0.4938]
+PASS  FDTD DC limit 1/2  0.4993
+PASS  FDTD: front reaches load at 13 us (v2 = 2 v1 from L2 = L1, C2 = C1/4)  13.005
+== G. resistive junctions
+PASS  shunt R: Gamma_12 = (Zeq-Z1)/(Zeq+Z1), tau_12 = 1+Gamma, Zeq = R||Z2; from the right Zeq = R||Z1  
+PASS  series R (exercise): Gamma_12 = (R+Z2-Z1)/(R+Z2+Z1), tau_12 = (1+Gamma) Z2/(R+Z2) = 2Z2/(R+Z1+Z2) != 1+Gamma  
+PASS  shunt R = Z1 = Z2 = 50: Gamma = -1/3, tau = 2/3; reflected 1/9, line 2 4/9, resistor 4/9 of incident power  
+PASS  Z1 = 25, Z2 = 50, shunt R = 50: Gamma = 0, tau = 1; line 2 gets tau^2 Z1/Z2 = 1/2, R gets tau^2 Z1/R = 1/2  
+PASS  splitter (three equal lines): Gamma = -1/3, tau = 2/3 into each branch, powers 1/9 + 2*(4/9) = 1  
+PASS  splitter = shunt formula with Zeq = Z||Z = Z/2  
+PASS  shunt R -> infinity recovers (Z2-Z1)/(Z2+Z1) = 1/2  
+PASS  series R -> 0 recovers Gamma = 1/2, tau = 3/2  
+PASS  FDTD shunt junction (25 -> 50 ohm, R = 100): V(600 m) = 1 + Gamma after the echo, load = tau  Gamma = 0.1429; 1.1429, 1.1429
+== H. worked problem: Z1 = 60, Z2 = 180, Rg = 60, RL = 540, f = 120 u(t); T1 = 1.5 us, T2 = 1 us
+   tau_g=0.5 Gamma_g=0.0 G12=0.5 T12=1.5 G21=-0.5 T21=0.5 GL=0.5  G12_I=-0.5 T12_I=0.5 T21_I=1.5
+PASS  coefficients 1/2, 0, 1/2, 3/2, -1/2, 1/2, 1/2; current: -1/2, 1/2 (12), 3/2 (21)  
+PASS  line lengths: 300 m at 2e8 m/s -> 1.5 us; 300 m at 3e8 m/s -> 1 us  
+   line 1 rightward (from z=0): [(np.float64(0.0), np.float64(60.0))]
+   line 1 leftward (from junction): [(np.float64(1.5), np.float64(30.0)), (np.float64(3.5), np.float64(22.5)), (np.float64(5.5), np.float64(-5.625)), (np.float64(7.5), np.float64(1.40625))]
+   line 2 rightward (from junction): [(np.float64(1.5), np.float64(90.0)), (np.float64(3.5), np.float64(-22.5)), (np.float64(5.5), np.float64(5.625)), (np.float64(7.5), np.float64(-1.40625))]
+   line 2 leftward (from load): [(np.float64(2.5), np.float64(45.0)), (np.float64(4.5), np.float64(-11.25)), (np.float64(6.5), np.float64(2.8125))]
+PASS  bounce labels: line1 -> 60 @0; line1 <- 30 @1.5, 22.5 @3.5, -5.625 @5.5; line2 -> 90 @1.5, -22.5 @3.5, 5.625 @5.5; line2 <- 45 @2.5, -11.25 @4.5, 2.8125 @6.5  
+PASS  V(150 m, t): 0 (t<0.75), 60, 90 (from 2.25), 112.5 (from 4.25), 106.875 (from 6.25 us)  [  0.     60.     90.    112.5   112.5   106.875]
+PASS  I(150 m, t): 1 A, 0.5 A, 0.125 A, 0.21875 A  [1.      0.5     0.125   0.21875]
+PASS  V_L: 0 before 2.5 us, 135 V (2.5-4.5), 101.25 V (4.5-6.5), 109.6875 V (6.5-8.5)  [np.float64(0.0), np.float64(135.0), np.float64(101.25), np.float64(109.6875)]
+PASS  V_L sum 135/(1+1/4) = 108 V; ratio Gamma_L Gamma_21 = -1/4  
+PASS  DC limit: V -> 120*540/600 = 108 V, I -> 0.2 A (lattice at 40 us)  V_L = 108.000000, I = 0.200000
+PASS  V(0,t): 60, then 90 at 3 us, 112.5 at 5 us, 106.875 at 7 us; sum 60 + 30 + 22.5/(1+1/4) = 108  
+PASS  V(450 m, t): 0 before 2 us, 90 (2-3), 135 (3-4), 112.5 (4-5), 101.25 (5-6)  [  0.    90.   135.   112.5  101.25]
+PASS  power at junction: G^2 + tau^2 Z1/Z2 = 1/4 + (9/4)(1/3) = 1  
+PASS  FDTD: V(150 m) 60, 90, 112.5; V_L 135, 101.25, then -> 108  [ 60.     90.    112.5   135.    101.263 108.107]
+== I. extra page claims
+PASS  line-1 late snapshot amplitude ranges over [1/4, 1/2]  [0.2500, 0.5000]
+PASS  line-2 delay: T1 + (z-l/2)/v2 + 2n T1 = z/v2 + (4n+1)(l/2)/v2, with T1 = 8 us = 2 T2  
+PASS  shunt R -> 0: Gamma = -1, tau = 0  
+PASS  half the power = 3.01 dB  
+PASS  problem (e): R_L = 180 -> V_L = 0, 90, 90, 90; line 1 all 90 V after 3 us; lumped 120*180/240 = 90  [np.float64(0.0), np.float64(90.0), np.float64(90.0), np.float64(90.0)]
+PASS  problem (d): 135 - 33.75 = 101.25; 101.25 + 1.5*5.625 = 109.6875; 0.21875 -> 0.219  
+
+ALL PASS

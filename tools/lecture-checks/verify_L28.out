@@ -1,0 +1,171 @@
+=== A. notes' derivation (pp. 2-5), symbolic steps checked with random values
+ok   load: Z0(f+g)/(f-g) = RL with g = Gamma_L f (Z0=171.8, RL=155.5): 155.48462 vs 155.48462
+ok   first epoch KVL: fi = Rg f/Z0 + f with f = tau_g fi: 0.291338 vs 0.291338
+ok   second epoch KVL holds with f = tau_g fi + Gamma_g Gamma_L f(t-2T): 0.92838 vs 0.92838
+ok   -(1 - Rg/Z0)/(1 + Rg/Z0) = Gamma_g: 0.017947 vs 0.017947
+ok   tau_g = (1 - Gamma_g)/2: 0.491026 vs 0.491026
+ok   the notes' p. 3 KVL form, R_g I(0,t) + V(0,t) = f_i: 0.92838 vs 0.92838
+ok   load: Z0(f+g)/(f-g) = RL with g = Gamma_L f (Z0=190.7, RL=159.2): 159.174777 vs 159.174777
+ok   first epoch KVL: fi = Rg f/Z0 + f with f = tau_g fi: -0.336003 vs -0.336003
+ok   second epoch KVL holds with f = tau_g fi + Gamma_g Gamma_L f(t-2T): 0.705134 vs 0.705134
+ok   -(1 - Rg/Z0)/(1 + Rg/Z0) = Gamma_g: -0.263268 vs -0.263268
+ok   tau_g = (1 - Gamma_g)/2: 0.631634 vs 0.631634
+ok   the notes' p. 3 KVL form, R_g I(0,t) + V(0,t) = f_i: 0.705134 vs 0.705134
+ok   load: Z0(f+g)/(f-g) = RL with g = Gamma_L f (Z0=192.9, RL=43.7): 43.724254 vs 43.724254
+ok   first epoch KVL: fi = Rg f/Z0 + f with f = tau_g fi: 2.340708 vs 2.340708
+ok   second epoch KVL holds with f = tau_g fi + Gamma_g Gamma_L f(t-2T): -0.065472 vs -0.065472
+ok   -(1 - Rg/Z0)/(1 + Rg/Z0) = Gamma_g: -0.438433 vs -0.438433
+ok   tau_g = (1 - Gamma_g)/2: 0.719217 vs 0.719217
+ok   the notes' p. 3 KVL form, R_g I(0,t) + V(0,t) = f_i: -0.065472 vs -0.065472
+ok   load: Z0(f+g)/(f-g) = RL with g = Gamma_L f (Z0=75.4, RL=124.6): 124.586766 vs 124.586766
+ok   first epoch KVL: fi = Rg f/Z0 + f with f = tau_g fi: 1.739754 vs 1.739754
+ok   second epoch KVL holds with f = tau_g fi + Gamma_g Gamma_L f(t-2T): -1.662356 vs -1.662356
+ok   -(1 - Rg/Z0)/(1 + Rg/Z0) = Gamma_g: -0.18211 vs -0.18211
+ok   tau_g = (1 - Gamma_g)/2: 0.591055 vs 0.591055
+ok   the notes' p. 3 KVL form, R_g I(0,t) + V(0,t) = f_i: -1.662356 vs -1.662356
+ok   load: Z0(f+g)/(f-g) = RL with g = Gamma_L f (Z0=194.3, RL=181.1): 181.074284 vs 181.074284
+ok   first epoch KVL: fi = Rg f/Z0 + f with f = tau_g fi: -0.811769 vs -0.811769
+ok   second epoch KVL holds with f = tau_g fi + Gamma_g Gamma_L f(t-2T): -0.749221 vs -0.749221
+ok   -(1 - Rg/Z0)/(1 + Rg/Z0) = Gamma_g: 0.007463 vs 0.007463
+ok   tau_g = (1 - Gamma_g)/2: 0.496269 vs 0.496269
+ok   the notes' p. 3 KVL form, R_g I(0,t) + V(0,t) = f_i: -0.749221 vs -0.749221
+ok   |Gamma| <= 1 for R = 0 (passive)
+ok   |Gamma| <= 1 for R = 1 (passive)
+ok   |Gamma| <= 1 for R = 50 (passive)
+ok   |Gamma| <= 1 for R = 1000 (passive)
+ok   |Gamma| <= 1 for R = 1e+09 (passive)
+ok   backward-term delay 2l/v - z/v = 1.7 > 0 (the notes print z/v - 2l/v, an advance)
+=== B. series (page section 4) = Laplace-domain line solution at complex s (independent algebra)
+ok   V(z,s)/F(s): ABCD vs bounce series (z/l = 0.13): (0.187216-0.194021j) vs (0.187216-0.194021j)
+ok   I(z,s)/F(s): ABCD vs bounce series (backward weights with minus sign): (0.001865-0.001944j) vs (0.001865-0.001944j)
+ok   s -> 0: V = RL/(Rg+RL) at every z: 0.369601 vs 0.369601
+ok   s -> 0: I = 1/(Rg+RL): 0.003363 vs 0.003363
+ok   tau_g (1+G_L)/(1 - G_L G_g) = RL/(Rg+RL): 0.369601 vs 0.369601
+ok   tau_g (1-G_L)/(Z0 (1 - G_L G_g)) = 1/(Rg+RL): 0.003363 vs 0.003363
+ok   V(z,s)/F(s): ABCD vs bounce series (z/l = 0.07): (0.205516-0.604224j) vs (0.205516-0.604224j)
+ok   I(z,s)/F(s): ABCD vs bounce series (backward weights with minus sign): (0.001825-0.005348j) vs (0.001825-0.005348j)
+ok   s -> 0: V = RL/(Rg+RL) at every z: 0.788857 vs 0.788857
+ok   s -> 0: I = 1/(Rg+RL): 0.00453 vs 0.00453
+ok   tau_g (1+G_L)/(1 - G_L G_g) = RL/(Rg+RL): 0.788857 vs 0.788857
+ok   tau_g (1-G_L)/(Z0 (1 - G_L G_g)) = 1/(Rg+RL): 0.00453 vs 0.00453
+ok   V(z,s)/F(s): ABCD vs bounce series (z/l = 0.98): (0.050467+0.270663j) vs (0.050467+0.270663j)
+ok   I(z,s)/F(s): ABCD vs bounce series (backward weights with minus sign): (0.000442+0.001362j) vs (0.000442+0.001362j)
+ok   s -> 0: V = RL/(Rg+RL) at every z: 0.641975 vs 0.641975
+ok   s -> 0: I = 1/(Rg+RL): 0.003224 vs 0.003224
+ok   tau_g (1+G_L)/(1 - G_L G_g) = RL/(Rg+RL): 0.641975 vs 0.641975
+ok   tau_g (1-G_L)/(Z0 (1 - G_L G_g)) = 1/(Rg+RL): 0.003224 vs 0.003224
+ok   V(z,s)/F(s): ABCD vs bounce series (z/l = 0.70): (-0.06357+0.074705j) vs (-0.06357+0.074705j)
+ok   I(z,s)/F(s): ABCD vs bounce series (backward weights with minus sign): (-0.000604+0.001448j) vs (-0.000604+0.001448j)
+ok   s -> 0: V = RL/(Rg+RL) at every z: 0.637431 vs 0.637431
+ok   s -> 0: I = 1/(Rg+RL): 0.003292 vs 0.003292
+ok   tau_g (1+G_L)/(1 - G_L G_g) = RL/(Rg+RL): 0.637431 vs 0.637431
+ok   tau_g (1-G_L)/(Z0 (1 - G_L G_g)) = 1/(Rg+RL): 0.003292 vs 0.003292
+ok   V(z,s)/F(s): ABCD vs bounce series (z/l = 0.23): (-0.085501+0.109004j) vs (-0.085501+0.109004j)
+ok   I(z,s)/F(s): ABCD vs bounce series (backward weights with minus sign): (-0.002423+0.002745j) vs (-0.002423+0.002745j)
+ok   s -> 0: V = RL/(Rg+RL) at every z: 0.345343 vs 0.345343
+ok   s -> 0: I = 1/(Rg+RL): 0.004203 vs 0.004203
+ok   tau_g (1+G_L)/(1 - G_L G_g) = RL/(Rg+RL): 0.345343 vs 0.345343
+ok   tau_g (1-G_L)/(Z0 (1 - G_L G_g)) = 1/(Rg+RL): 0.004203 vs 0.004203
+ok   V(z,s)/F(s): ABCD vs bounce series (z/l = 0.16): (-0.289122+0.225444j) vs (-0.289122+0.225444j)
+ok   I(z,s)/F(s): ABCD vs bounce series (backward weights with minus sign): (-0.002178+0.001676j) vs (-0.002178+0.001676j)
+ok   s -> 0: V = RL/(Rg+RL) at every z: 0.452986 vs 0.452986
+ok   s -> 0: I = 1/(Rg+RL): 0.003896 vs 0.003896
+ok   tau_g (1+G_L)/(1 - G_L G_g) = RL/(Rg+RL): 0.452986 vs 0.452986
+ok   tau_g (1-G_L)/(Z0 (1 - G_L G_g)) = 1/(Rg+RL): 0.003896 vs 0.003896
+=== C. impulse weights by FDTD (narrow Gaussian input of unit area), generic circuit
+ok   V(0.3l, t): FDTD impulse areas = tau_g (G_LG_g)^n, tau_g G_L (G_LG_g)^n at z/v + 2nT, (2l - z)/v + 2nT: max |diff| 1.8e-07 over 7 values
+ok   I(0.3l, t): FDTD areas = +w/Z0 forward, -w/Z0 backward: max |diff| 3.6e-09 over 7 values
+ok   nothing else arrives at 0.3l (total area = sum of the weights): 0.943903 vs 0.943903
+=== D. page example (sections 4-5): Z0 = 60, Rg = 180, RL = 20, 12 V (review: re-parameterized from 50/150/50/3)
+ok   tau_g = 1/4, Gamma_g = 1/2, Gamma_L = -1/2: [ 0.25  0.5  -0.5 ] vs [ 0.25  0.5  -0.5 ]
+ok   Gamma_L Gamma_g = -1/4: -0.25 vs -0.25
+ok   12 V weights: 3, -1.5, -0.75, 0.375, 0.1875, -0.09375: [ 3.      -1.5     -0.75     0.375    0.1875  -0.09375] vs [ 3.      -1.5     -0.75     0.375    0.1875  -0.09375]
+ok   h_{l/2}: 1/4, -1/8, -1/16, +1/32: [ 0.25    -0.125   -0.0625   0.03125] vs [ 0.25    -0.125   -0.0625   0.03125]
+ok   Z0 I(l/2): +1/4, +1/8, -1/16, -1/32: [ 0.25     0.125   -0.0625  -0.03125] vs [ 0.25     0.125   -0.0625  -0.03125]
+ok   2nd and 4th impulses at l/2 are backward: [ 1 -1  1 -1] vs [ 1 -1  1 -1]
+ok   crossings of z = l/2 at T/2, 3T/2, 5T/2, 7T/2: [0.5 1.5 2.5 3.5] vs [0.5 1.5 2.5 3.5]
+ok   I(l/2): 3/60, +1.5/60, -0.75/60, -0.375/60 A (backward weights flip sign): [ 0.05     0.025   -0.0125  -0.00625] vs [ 0.05     0.025   -0.0125  -0.00625]
+ok   FDTD V(l,t) on (1T, 3T) = 1.5 V: 1.499998 vs 1.5
+ok   FDTD V(l,t) on (3T, 5T) = 1.125 V: 1.124999 vs 1.125
+ok   FDTD V(l,t) on (5T, 7T) = 1.21875 V: 1.218748 vs 1.21875
+ok   FDTD V(l,t) on (7T, 9T) = 1.1953125 V: 1.195311 vs 1.195312
+ok   FDTD V(l/2,t) on (0.5T, 1.5T) = 3.0 V: 2.999992 vs 3.0
+ok   FDTD V(l/2,t) on (1.5T, 2.5T) = 1.5 V: 1.499996 vs 1.5
+ok   FDTD V(l/2,t) on (2.5T, 3.5T) = 0.75 V: 0.749998 vs 0.75
+ok   FDTD V(l/2,t) on (3.5T, 4.5T) = 1.125 V: 1.124997 vs 1.125
+ok   FDTD V(l/2,t) on (4.5T, 5.5T) = 1.3125 V: 1.312497 vs 1.3125
+ok   FDTD V(l/2,t) on (5.5T, 6.5T) = 1.21875 V: 1.21875 vs 1.21875
+ok   FDTD V(l/2,t) on (6.5T, 7.5T) = 1.171875 V: 1.171875 vs 1.171875
+ok   bounce running sums at z = l/2 match the same list: max |diff| 0.0e+00 over 7 values
+ok   bounce I(l/2,t) running sums: 50, 75, 62.5, 56.25, 59.38, 60.94, 60.16 mA: max |diff| 2.1e-17 over 7 values
+ok   FDTD I(l/2,t) on (0.5T, 1.5T) = 50 mA: 0.05 vs 0.05
+ok   FDTD I(l/2,t) on (1.5T, 2.5T) = 75 mA: 0.075 vs 0.075
+ok   FDTD I(l/2,t) on (2.5T, 3.5T) = 62.5 mA: 0.0625 vs 0.0625
+ok   FDTD I(l/2,t) on (3.5T, 4.5T) = 56.25 mA: 0.05625 vs 0.05625
+ok   FDTD I(l/2,t) on (4.5T, 5.5T) = 59.38 mA: 0.059375 vs 0.059375
+ok   FDTD I(l/2,t) on (5.5T, 6.5T) = 60.94 mA: 0.060938 vs 0.060938
+ok   FDTD I(l/2,t) on (6.5T, 7.5T) = 60.16 mA: 0.060156 vs 0.060156
+ok   FDTD V(0,t) = tau_g 12 = 3 V for 0 < t < 2T: 3.0 vs 3.0
+ok   FDTD V(0,t) = 3 + (-1.5)(1 + Gamma_g) = 0.75 V on (2T, 4T): 0.75 vs 0.75
+ok   DC: V = 12*20/200 = 1.2 V, I = 60 mA: [1.2  0.06] vs [1.2  0.06]
+ok   FDTD t = 40T: V = 1.2 V at z = 0, 0.37l, l: [1.2 1.2 1.2] vs [1.2 1.2 1.2]
+ok   FDTD t = 40T: I = 60 mA: 0.06 vs 0.06
+ok   series form: 12 (1/4)(1/2)/(5/4) = 1.2 V: 1.2 vs 1.2
+ok   page rounds 1.21875 -> 1.219, 1.1953125 -> 1.195: [1.219 1.195] vs [1.219 1.195]
+ok   first wave 12 tau_g = 3 V: 3.0 vs 3.0
+ok   load jumps (1+G_L) w: +1.5, -0.375 -> 1.5, 1.125: [ 1.5   -0.375] vs [ 1.5   -0.375]
+=== E. special terminations (section 6)
+ok   matched load: Gamma_L = 0: 0.0 vs 0.0
+ok   open load: Gamma_L = +1: 1.0 vs 1.0
+ok   short load: Gamma_L = -1: -1.0 vs -1.0
+ok   matched generator: tau_g = 1/2, Gamma_g = 0: [0.5 0. ] vs [0.5 0. ]
+ok   ideal source: tau_g = 1, Gamma_g = -1: [ 1. -1.] vs [ 1. -1.]
+ok   open load, matched generator, 1 V step: V(l) = (1+Gamma_L)/2 = 1.0: 0.99999 vs 1.0
+ok   open load: I near the load = (1-Gamma_L)/(2 Z0) = 0 mA: -0.0 vs 0.0
+ok   open load: V(0) settles after one echo at 2T (Gamma_g = 0): 0.999979 vs 1.0
+ok   short load, matched generator, 1 V step: V(l) = (1+Gamma_L)/2 = 0.0: 0.0 vs 0.0
+ok   short load: I near the load = (1-Gamma_L)/(2 Z0) = 20 mA: 0.02 vs 0.02
+ok   short load: V(0) settles after one echo at 2T (Gamma_g = 0): 0.0 vs 0.0
+ok   matched both ends: V(0) = 1/2 forever, no echo: 0.499996 vs 0.5
+ok   ideal source: V(0,t) = f_i(t) at all times: [1. 1. 1. 1.] vs [1 1 1 1]
+ok   Rg = 0 with open load: |Gamma_L Gamma_g| = 1, echoes never decay: 1.0 vs 1.0
+=== F. arrival-time formulas (section 4 recipe)
+ok   z_p/v + 2nT and (2l - z_p)/v + 2nT at z_p = 30 m, l = 120 m, v = 150 m/us: [0.2 1.4 1.8 3.  3.4 4.6] vs [0.2 1.4 1.8 3.  3.4 4.6]
+=== G. worked problem
+ok   (a) v = 30 m / 0.2 us = 150 m/us: 150.0 vs 150.0
+ok   (a) check: (240 - 30)/150 = 1.4 us: 1.4 vs 1.4
+ok   (a) eps_r = (c/v)^2 = 4: 4.0 vs 4.0
+ok   (c) R_L = 75 (2/3)/(4/3) = 37.5 ohm: 37.5 vs 37.5
+ok   (b) Rg = Z0: tau_g = 1/2, Gamma_g = 0; Gamma_L = -1/3: [ 0.5       0.       -0.333333] vs [ 0.5       0.       -0.333333]
+ok   (d) A = 24 tau_g = 12: 12.0 vs 12.0
+ok   FDTD: V(30 m) = 12 delta(t-0.2) - 4 delta(t-1.4), nothing at 1.8 or 3.0 us: [11.999997 -3.999999  0.       -0.      ] vs [12 -4  0  0]
+ok   (e) FDTD: I(30 m) = 0.16 delta(t-0.2) + 0.0533 delta(t-1.4) A: [0.16     0.053333] vs [0.16     0.053333]
+ok   (e) 12/75 = 0.16 A, 4/75 = 53.3 mA: [0.16     0.053333] vs [0.16     0.053333]
+ok   (f) tau_g = 3/4, Gamma_g = -1/2, Gamma_L Gamma_g = 1/6: [ 0.75     -0.5       0.166667] vs [ 0.75     -0.5       0.166667]
+ok   (f) impulse times 0.2, 1.4, 1.8, 3.0, 3.4 us: [0.2 1.4 1.8 3.  3.4] vs [0.2 1.4 1.8 3.  3.4]
+ok   (f) weights 18, -6, 3, -1, 0.5: [18.  -6.   3.  -1.   0.5] vs [18.  -6.   3.  -1.   0.5]
+ok   (f) FDTD areas at z = 30 m: [17.999996 -5.999999  2.999999 -1.        0.5     ] vs [18.  -6.   3.  -1.   0.5]
+ok   (g) V(30 m, t) staircase: 18, 12, 15, 14, 14.5 V: [18.  12.  15.  14.  14.5] vs [18.  12.  15.  14.  14.5]
+ok   (g) FDTD V(30 m) on (0.2, 1.4) us = 18 V: 18.0 vs 18
+ok   (g) FDTD V(30 m) on (1.4, 1.8) us = 12 V: 12.0 vs 12
+ok   (g) FDTD V(30 m) on (1.8, 3.0) us = 15 V: 15.0 vs 15
+ok   (g) FDTD V(30 m) on (3.0, 3.4) us = 14 V: 14.0 vs 14
+ok   (g) FDTD V(30 m) on (3.4, 4.5) us = 14.5 V: 14.5 vs 14.5
+ok   (g) V_L(inf) = 24 (37.5/62.5) = 14.4 V: 14.4 vs 14.4
+ok   (g) I_L(inf) = 24/62.5 = 0.384 A: 0.384 vs 0.384
+ok   (g) next steps 14.333, 14.417, ... -> 14.4 (closing in from both sides): [14.333333 14.416667 14.4     ] vs [14.333333 14.416667 14.4     ]
+ok   (b) generator re-reflection would pass 30 m at 0.2 + 2T = 1.8 us: 1.8 vs 1.8
+ok   (a) T = 120/150 = 0.8 us: 0.8 vs 0.8
+ok   (g) series: 24 (3/4)(2/3)/(5/6) = 14.4 V: 14.4 vs 14.4
+ok   (g) FDTD t = 30 us: V(l) = 14.4 V: 14.4 vs 14.4
+ok   (g) FDTD t = 30 us: I_L = 0.384 A: 0.384 vs 0.384
+=== H. concept page
+ok   concept example: 1.2 V: 1.2 vs 1.2
+ok   concept example from the worked problem: Gamma_g = -1/2, Gamma_L = -1/3: [-0.5      -0.333333] vs [-0.5      -0.333333]
+=== I. figure numbers (figs_l28.py)
+ok   figure circuit = page example: [ 60. 180.  20.  12.] vs [ 60 180  20  12]
+ok   bounce-step labels: [ 3.      -1.5     -0.75     0.375    0.1875  -0.09375] vs [ 3.      -1.5     -0.75     0.375    0.1875  -0.09375]
+ok   figure V(l/2,t) curve = bounce running sum: max |diff| 0.0e+00 over 800 values
+ok   figure V(l,t) curve = bounce running sum: max |diff| 0.0e+00 over 800 values
+
+ALL 160 CHECKS PASSED

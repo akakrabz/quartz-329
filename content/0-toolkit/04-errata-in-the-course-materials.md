@@ -1,11 +1,11 @@
 ---
 title: "Errata in the course materials"
-description: "Slips found in the lecture slides (Lectures 1–19), the course notes (Lectures 1–23), the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
+description: "Slips found in the lecture slides (Lectures 1–19), the course notes (Lectures 1–30), the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
 tags: [toolkit, exam-1]
 aliases: ["errata", "known errors in the slides", "errors in the exam key"]
 ---
 
-Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–23 (for Lectures 20–23 the notes only — their slides were not available), so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
+Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–30 (for Lectures 20–30 the notes only — their slides were not available), so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
 
 > [!tip] How to read this page
 > "Slide" means the annotated lecture decks (Shao, after Goddard and Cunningham); "notes" means Prof. Kudeki's lecture notes; "key" means the FA26 Exam 1 solutions; "HW sol." means the FA26 homework solution sets. Nothing here is a criticism of the materials — most of these are momentary hand slips that the authors corrected verbally or on the next line. They are listed because they are copied verbatim into notecards every semester.
@@ -109,6 +109,28 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L23 p. 4, Example 2 | seawater keeps Example 1's $\epsilon = 4\epsilon_0$: $\sigma/\omega\epsilon = 18\times10^6$ | with seawater's $81\epsilon_0$, $8.9\times10^5$; no result changes |
 | L23 pp. 3, 5 | Examples 1–2 change the medium and the frequency together, then conclude that low frequencies are better | compare seawater at both: 673 dB/m at 1 GHz against 1.09 dB/m at 1 kHz — the conclusion stands |
 | L23 p. 6, Example 3 | "$25/\pi\approx7.95$ m"; "$\approx10^6$"; a missing $\times$ before the last factor | 7.96 m; $8.9\times10^5$ |
+| L24 p. 9, Example 3 | $\tilde{\mathbf{H}}_c$ printed in V/m; $\langle\mathbf{S}\rangle = \hat z/\eta_o$ without a unit | A/m; W/m² |
+| L24 p. 2, footnote 1 | dispersive when "$\beta$ is a non-linear function of $\omega$" | when $\beta$ is not *proportional* to $\omega$ (an affine $\beta(\omega)$ is linear yet dispersive) |
+| L24 pp. 3, 4, 9 | "fields vectors"; an unclosed quote around "handedness"; "$\mathbf{E}_c$ and is given as" | typos |
+| L25 pp. 1, 4 | the $\sigma_2\to\infty$ case is promised "at the end", then deferred | $\mathbf{J}_s = \hat x\,2E_0/\eta_1$ and the standing wave are in Lecture 26 |
+| L25 p. 4, footnote 1 | "a $\lambda/4$ thick layer" | $\lambda$ inside the coating, $\lambda_0/n_c$ |
+| L25 p. 5, margin figure | drawn for $\Gamma>0$, reused for Example 1 where $\Gamma = -1/5$ | there $\mathbf{E}_r$ is along $-\hat x$, $\mathbf{H}_r$ along $+\hat y$ |
+| L25 p. 6, Example 1 | $\tilde{\mathbf{H}}_t$ denominator "$5\tfrac23\eta_o$" (reads as a mixed number) | $5\cdot\tfrac23\eta_o$ |
+| L25 pp. 4–6 | "a 'anti-glare'"; "An plane-wave"; "add up the that of" | typos |
+| L26 p. 1, margin figure | Lecture 25's $\Gamma>0$ picture reused for $\Gamma = -1$ | $\mathbf{E}_r$ along $-\hat x$, $\mathbf{H}_r$ along $+\hat y$ |
+| L26 p. 6, radiation-pressure box | $\tfrac12\text{Re}\{(\sigma_2\tau E_o)(\mu_2\tau E_o/\eta_2)\}$ without the conjugate on $\tilde B_t$ | conjugate the second factor; the result is unchanged |
+| L26 p. 6 | "Rothman and Boughn, Am. J. Phys. 77, 122, 1977" | volume 77 is 2009 |
+| L26 pp. 2, 3 | "taking the real time"; "see of how" | "real part"; "see how" |
+| L27 p. 3, footnote 1 | Heaviside "of close-up method" | cover-up method |
+| L27 p. 8 | the cell is called a "T-network" | drawn as an L-section (one series, one shunt arm); both give the same equations as $\Delta z\to0$ |
+| L27 pp. 3, 5 | "known as known as"; "a 3 V battery makes contact" | typos |
+| L28 p. 8, last bullet | backward-wave delays listed as $z/v - 2\ell/v$ | $2\ell/v - z/v$ (and $+2nT$) |
+| L28 p. 6 | $h_z(t)$ used without definition; the margin diagram's dashed line unexplained | $h_z(t) = V(z,t)$ for an impulse source; the dashed line is presumably an observation point (the site's figure draws one at $z_p$) |
+| L29 p. 3 | "$V(1200,t)\to1$ V in Example 1" | Example 2 |
+| L29 p. 4, Example 3 | "the circuit described in Example 1" | the numbers are Example 2's ($\Gamma_g = -1$, $\Gamma_L = \tfrac13$) |
+| L29 pp. 2–3, margin plot | vertical axis "v(4,t)" | the curve is $V(1200,t)$ |
+| L30 p. 1 | "$Z_2 = 2Z_2$" | $Z_2 = 2Z_1$ |
+| L30 p. 4, margin plot | labelled "$V(z, 3\,\mu\text{s})$" | at 3 µs the front is only at 450 m; the curve is a late snapshot |
 
 ## FA26 Exam 1 solution key
 
