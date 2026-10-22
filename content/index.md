@@ -66,7 +66,7 @@ Then: sinusoidal steady state and input impedance · quarter-wave transformers �
 Twelve problems per lecture (eight for Lecture 11), from two-minute checks to exam length, each with a folded hint and a worked solution: by difficulty — [[practice/easy|easy]] · [[practice/medium|medium]] · [[practice/hard|hard]] — or [[practice/topics|by topic]] across lectures. Every lecture page links to its own set.
 
 ### Cross-cutting
-[[concepts/index|Concept glossary]] · [[problems/index|Worked problems]] · [[practice/index|Practice problems]] · [[demos/index|Interactive demos]]
+[[concepts/index|Concept glossary]] · [[problems/index|Worked problems]] · [[practice/index|Practice problems]] · [[demos/index|Interactive demos]] · [[homework/index|Homework companions]]
 
 ## Conventions used throughout
 

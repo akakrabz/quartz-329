@@ -1,0 +1,40 @@
+== constants
+PASS  c = 1/sqrt(mu0 eps0)  [m/s]: computed 2.99792e+08, shown 3e+08
+PASS  eta0 = sqrt(mu0/eps0) [ohm]: computed 376.73, shown 377
+PASS  c in m per microsecond: computed 299.792, shown 300
+== version A worked example (100 MHz, E0 = 3 V/m)
+PASS  lambda = c/f [m]: computed 2.99792, shown 3
+PASS  beta = 2 pi / lambda [rad/m]: computed 2.09585, shown 2.094
+PASS  beta = omega / c agrees: computed 2.09585, shown 2.09585
+PASS  omega = 2 pi f [rad/s]: computed 6.28319e+08, shown 6.283e+08
+PASS  H0 = E0/eta0 [mA/m]: computed 7.96326, shown 7.96
+PASS  <S> = E0^2 / 2 eta0 [mW/m^2]: computed 11.9449, shown 11.9
+PASS  <S> = E0 H0 / 2 agrees [mW/m^2]: computed 11.9449, shown 11.9449
+PASS  period T = 1/f [ns]: computed 10, shown 10
+PASS  snapshot crest spacing [m]: computed 2.99792, shown 2.99792
+== version B worked example (50 kW isotropic, r = 10 km)
+PASS  <S> = P / 4 pi r^2 [uW/m^2]: computed 39.7887, shown 39.8
+PASS  E0 = sqrt(2 eta0 <S>) [V/m]: computed 0.173145, shown 0.173
+PASS  H0 = E0/eta0 [mA/m]: computed 0.4596, shown 0.459
+PASS  delay r/c [us]: computed 33.3564, shown 33.3
+PASS  sphere area 4 pi r^2 [km^2]: computed 1256.64, shown 1257
+PASS  doubling r quarters <S>: S(20 km)/S(10 km): computed 0.25, shown 0.25
+PASS  1 us of travel [m]: computed 299.792, shown 300
+PASS  sheet: |E| = eta0 Js/2 for Js = 1 mA/m [V/m]: computed 0.188365, shown 0.188
+PASS  sheet: |H| = Js/2 [mA/m]: computed 0.5, shown 0.5
+PASS  v in eps_r = 2.25 is c/n, n = 1.5: computed 0.666667, shown 0.666667
+PASS  peak power density / average = 2: computed 2, shown 2
+== directions
+PASS  x_hat x y_hat = z_hat  (E x H -> +z travel): [0.0, 0.0, 1.0] == [0.0, 0.0, 1.0]
+PASS  z_hat x x_hat = y_hat  (H = z x E/eta0 is along +y): [0.0, 1.0, 0.0] == [0.0, 1.0, 0.0]
+PASS  (-z) x x = -y  (H of a -z wave): [0.0, -1.0, 0.0] == [-0.0, -1.0, -0.0]
+PASS  E x H for the -z wave points to -z: [0.0, 0.0, -1.0] == [-0.0, -0.0, -1.0]
+PASS  sheet: E direction = -Js direction: [-1.0, -0.0, -0.0] == [-1.0, -0.0, -0.0]
+PASS  sheet: Ampere jump z x (H+ - H-) = Js: [0.001, 0.0, -0.0] == [0.001, 0.0, 0.0]
+PASS  sheet: E x H for z>0 points to +z (away): [-0.0, 0.0, 1.0] == [0.0, 0.0, 1.0]
+PASS  sheet: E x H for z<0 points to -z (away): [0.0, 0.0, -1.0] == [-0.0, -0.0, -1.0]
+PASS  screen frame right-handed: R x U = O: [0.0, 0.0, 1.0] == [0.0, 0.0, 1.0]
+PASS  drawn frame: x_draw x y_draw = z_draw (right-handed): [1.0, 0.0, 0.0] == [1.0, 0.0, 0.0]
+PASS  journey sketch: up x out = right  (E x H along travel): [1.0, 0.0, 0.0] == [1.0, 0.0, 0.0]
+== summary
+PASS  0 failures

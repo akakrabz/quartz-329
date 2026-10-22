@@ -1,0 +1,14 @@
+PASS ex1: er=9.0, mr=1.0
+PASS ex1 g(t)=1200pi t
+PASS y E with -x H travels +z
+PASS ex2 energy/area = 9.048e-15 J/m2
+PASS ex2: x Js, n=+z -> H along -y for z>0
+PASS ex3 mr=2.0, eta=377.0
+PASS ex3 lam=1.0, beta=6.283
+PASS ex3 +z wave: H along +y
+  S_z at z= 0.25 : 0.0026525823848649226
+  S_z at z= 0.5 : 9.945590952544221e-36
+PASS ex4 directions
+PASS ex4 S_z constant = -1508.0 W/m2 (circular)
+PASS 
+PASS ex4 <S_z> by phasors = -1508.0
