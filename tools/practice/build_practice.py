@@ -245,6 +245,12 @@ CONCEPT_TOPICS = {
     "propagation-constant": ["lossy"], "loss-tangent": ["goodcond"], "skin-depth": ["goodcond"],
     "group-velocity": ["polar"], "wave-polarization": ["polar"], "reflection-and-transmission": ["reflect"],
     "standing-waves": ["standing"], "radiation-pressure": ["standing"],
+    "symmetric-charge-distributions": ["gauss", "symmetry"], "helmholtz-theorem": ["divcurl"],
+    "static-fields-in-dielectrics": ["dielectrics"], "pn-junction": ["laplace", "capacitance"],
+    "current-distributions": ["ampere"], "current-sheets-and-slabs": ["sheets"], "solenoids-and-toroids": ["ampere", "inductance"],
+    "magnetic-dipole": ["dipole"], "motional-emf": ["motional"], "transmission-line-parameters": ["inductance", "capacitance"],
+    "magnetic-materials": ["magmedia"], "time-average-power": ["poynting"], "monochromatic-waves": ["phasors", "waves"],
+    "phasor-maxwell-equations": ["lossy"],
     "telegraphers-equations": ["tlines"], "characteristic-impedance": ["tlines"], "bounce-diagram": ["bounce"],
 }
 

@@ -9,6 +9,12 @@ tags: [magnetostatics]
 
 Steady current → static magnetic field. The unit is built exactly like Unit 1 with the roles of divergence and curl swapped: the electric field was *curl-free with sources* ($\nabla\times\mathbf{E} = 0$, $\nabla\cdot\mathbf{D} = \rho$); the magnetic field is *divergence-free with sources in its curl* ($\nabla\cdot\mathbf{B} = 0$, $\nabla\times\mathbf{H} = \mathbf{J}$). Ampère's law plays the part Gauss's law played, Biot–Savart the part of Coulomb's law, the vector potential $\mathbf{A}$ the part of $V$, and the inductor is the circuit element that falls out at the end, just as the capacitor did. Then, in Lecture 14, time enters for the first time: a changing magnetic flux drives an electric field around a loop, and "voltage" stops being a number between two points.
 
+> [!key] Topics in this unit
+> Two themes of the [[concepts/index|topic index]]. Each topic page carries the full treatment; the lecture pages below map onto them.
+>
+> - **[[concepts/index#magnetostatics|Magnetostatics]]** — [[concepts/magnetic-field|Magnetic field]] · [[concepts/biot-savart-law|Biot–Savart law]] · [[concepts/amperes-law|Ampère's law]] · [[concepts/current-sheets-and-slabs|Current sheets and slabs]] · [[concepts/solenoids-and-toroids|Solenoids and toroids]] · [[concepts/vector-potential|Vector potential]] · [[concepts/magnetic-dipole|Magnetic dipole]] · [[concepts/magnetic-flux|Magnetic flux Ψ]]
+> - **[[concepts/index#induction-and-inductance|Induction and inductance]]** — [[concepts/faradays-law|Faraday's law]] · [[concepts/electromotive-force|Electromotive force]] · [[concepts/motional-emf|Motional emf]] · [[concepts/inductance|Inductance]] · [[concepts/magnetic-energy|Magnetic energy]] · [[concepts/transmission-line-parameters|Line parameters 𝓛, 𝓒, 𝓖]]
+
 | # | page | one line | practice |
 |---|---|---|---|
 | 12 | [[2-magnetostatics/12-magnetic-force-biot-savart-and-amperes-law\|Magnetic force, Biot–Savart, and Ampère's law]] | why parallel currents attract (relativity); $\mathbf{F} = q\mathbf{v}\times\mathbf{B}$; $\mathbf{B} = \mu_0I/(2\pi r)\,\hat\phi$; Biot–Savart; $\oint\mathbf{H}\cdot d\mathbf{l} = I_{\text{enc}}$; $\nabla\times\mathbf{H} = \mathbf{J}$; δ-function currents | [[practice/12-magnetic-force-biot-savart-and-ampere\|12 problems]] |

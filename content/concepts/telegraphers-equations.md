@@ -18,7 +18,7 @@ aliases: ["transmission-line equations", "telegrapher equations", "distributed-c
 
 **Consequences.**
 - Wave equation $\partial^2V/\partial z^2 = \mathcal{L}\mathcal{C}\,\partial^2V/\partial t^2$, speed $v = 1/\sqrt{\mathcal{L}\mathcal{C}} = 1/\sqrt{\mu\epsilon}$.
-- d'Alembert solutions $V = f(t-z/v) + g(t+z/v)$ and $I = (f-g)/Z_0$, with $Z_0 = \sqrt{\mathcal{L}/\mathcal{C}}$ ([[concepts/characteristic-impedance]]).
+- d'Alembert solutions $V = f(t-z/v) + g(t+z/v)$ and $I = (f-g)/Z_0$, with $Z_0 = \sqrt{\mathcal{L}/\mathcal{C}}$ ([[concepts/characteristic-impedance|Characteristic impedance]]).
 - Distributed-circuit model: each $\Delta z\ll\lambda$ is a series inductor $\Delta z\,\mathcal{L}$ and a shunt capacitor $\Delta z\,\mathcal{C}$.
 - Power $p = VI$.
 - Phasor form (sinusoidal steady state): $-d\tilde V/dz = j\omega\mathcal{L}\tilde I$, $-d\tilde I/dz = j\omega\mathcal{C}\tilde V$.
@@ -26,7 +26,7 @@ aliases: ["transmission-line equations", "telegrapher equations", "distributed-c
 **Examples.**
 - 50 Ω at $v = 2\times10^8$ m/s: $\mathcal{L} = Z_0/v = 250$ nH/m, $\mathcal{C} = 1/(Z_0v) = 100$ pF/m.
 - A 3 V battery connected to that line at $t = 0$: $V = 3\,u(t-z/v)$ V and $I = 60\,u(t-z/v)$ mA, until a reflection returns.
-- [[problems/a-backward-pulse-on-a-parallel-plate-line]]: a pulse toward $-z$, with $V = -Z_0I$.
+- [[problems/a-backward-pulse-on-a-parallel-plate-line|Worked problem — A backward pulse on a parallel-plate line]]: a pulse toward $-z$, with $V = -Z_0I$.
 
 > [!trap]
 > - Mind the minus signs: where $I$ grows in time, $V$ falls along $+z$.
@@ -37,4 +37,4 @@ aliases: ["transmission-line equations", "telegrapher equations", "distributed-c
 
 **Practice.** [[practice/topics#transmission-lines-telegraphers-equations-and-characteristic-impedance|Transmission lines: telegrapher's equations and characteristic impedance]] (14 problems) — for example [[practice/27-transmission-line-basics#271-strip-line-parameters|27.1 Strip-line parameters]] (easy), [[practice/27-transmission-line-basics#276-reading-a-line-from-v-and-i|27.6 Reading a line from V and I]] (medium), [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax|27.9 A pulse on a coax]] (hard).
 
-Related: [[concepts/inductance]] · [[concepts/capacitance]] · [[concepts/wave-equation]] · [[concepts/faradays-law]] · [[concepts/continuity-equation]].
+Related: [[concepts/inductance|Inductance]] · [[concepts/capacitance|Capacitance]] · [[concepts/wave-equation|Wave equation]] · [[concepts/faradays-law|Faraday's law]] · [[concepts/continuity-equation|Continuity equation (charge conservation)]].

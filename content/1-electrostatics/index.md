@@ -6,6 +6,13 @@ tags: [electrostatics]
 
 Static charge → static electric field. The unit builds one idea at a time: force defines the field (L1–2); symmetry plus Gauss's law computes it (L3); divergence and curl describe it locally (L4); zero curl gives a potential (L5–7); materials respond to it (L8–9); and the whole thing packages into a circuit element, the capacitor (L10). Lecture 11 then explains, from Newton's law for one charge, where the two material constants $\sigma$ and $\chi_e$ come from. Exam 1 covers Lectures 1–10.
 
+> [!key] Topics in this unit
+> Three themes of the [[concepts/index|topic index]]. Each topic page carries the full treatment; the lecture pages below map onto them.
+>
+> - **[[concepts/index#fields-and-the-toolkit|Fields and the toolkit]]** — [[concepts/electric-field|Electric field]] · [[concepts/lorentz-force|Lorentz force]] · [[concepts/maxwells-equations|Maxwell's equations]] · [[concepts/differential-elements|Differential elements]] · [[concepts/superposition|Superposition]] · [[concepts/five-step-recipe|5-step recipe]] · [[concepts/charge-density|Charge densities, δ]] · [[concepts/current-distributions|Current distributions]] · [[concepts/helmholtz-theorem|Helmholtz's theorem]]
+> - **[[concepts/index#electrostatics|Electrostatics]]** — [[concepts/coulombs-law|Coulomb's law]] · [[concepts/flux|Flux]] · [[concepts/gauss-law|Gauss's law]] · [[concepts/symmetric-charge-distributions|Symmetric charge distributions]] · [[concepts/divergence|Divergence]] · [[concepts/curl|Curl]] · [[concepts/divergence-theorem|Divergence theorem]] · [[concepts/stokes-theorem|Stokes' theorem]] · [[concepts/conservative-field|Conservative fields]] · [[concepts/electrostatic-potential|Electrostatic potential]] · [[concepts/boundary-conditions|Boundary conditions]] · [[concepts/poissons-equation|Poisson and Laplace]] · [[concepts/pn-junction|The pn junction]]
+> - **[[concepts/index#materials-capacitors-and-conduction|Materials, capacitors and conduction]]** — [[concepts/conductors|Conductors]] · [[concepts/polarization|Polarization]] · [[concepts/electric-flux-density|Electric flux density D]] · [[concepts/permittivity|Permittivity]] · [[concepts/static-fields-in-dielectrics|Static fields in dielectrics]] · [[concepts/capacitance|Capacitance]] · [[concepts/conductance|Conductance]] · [[concepts/electrostatic-energy|Electrostatic energy]] · [[concepts/conductivity-and-susceptibility-models|Lorentz–Drude models]]
+
 | # | page | one line | practice |
 |---|---|---|---|
 | 1 | [[1-electrostatics/01-fields-forces-and-the-maxwell-roadmap\|Fields, forces, and the Maxwell roadmap]] | Lorentz force defines $\mathbf{E},\mathbf{B}$; the four equations previewed; $d\mathbf{l}$ and $d\mathbf{S}$ | — |

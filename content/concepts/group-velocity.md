@@ -2,41 +2,76 @@
 title: "Group velocity"
 description: "The envelope of a narrowband signal travels at the group velocity v_g = dω/dβ, its carrier crests at the phase velocity v_p = ω/β. They agree in a non-dispersive medium; in a collisionless plasma v_p v_g = c², so crests outrun light while signals do not."
 tags: [concept, waves]
-aliases: ["envelope velocity", "signal velocity", "narrowband AM"]
+aliases: ["envelope velocity", "signal velocity", "narrowband AM", "carrier frequency", "amplitude modulation on a plane wave"]
 ---
 
-> [!key] Definition
-> A narrowband signal $m(t)\cos\omega t$ launched at $z = 0$ into a medium with dispersion relation $\beta(\omega)$ arrives as
+> [!key] Field 1: AM with an x-polarized carrier (non-dispersive medium)
+> In a perfect dielectric $v$ and $\eta$ do not depend on frequency, so any waveform travels unchanged as $\mathbf{E} = \hat x f(t - z/v)$, $\mathbf{H} = \hat y f(t - z/v)/\eta$ ([[concepts/plane-waves|Plane waves]]). Take
+> $$
+> f(t) = m(t)\cos\omega t ,
+> $$
+> with $\omega(t - z/v) = \omega t - \beta z$ and $\beta = \omega\sqrt{\mu\epsilon}$:
+> $$
+> \begin{gathered}
+> \mathbf{E} = m\Big(t-\frac zv\Big)\cos(\omega t-\beta z)\,\hat x,\\[4pt]
+> \mathbf{H} = \frac{m(t-z/v)}{\eta}\cos(\omega t-\beta z)\,\hat y .
+> \end{gathered}
+> $$
+> Envelope and crests move together at $v$. The message arrives undistorted, delayed by $z/v$.
+
+> [!key] Group velocity (dispersive medium)
 > $$
 > \begin{gathered}
 > \mathbf{E}\approx m\Big(t-\frac{z}{v_g}\Big)\cos(\omega t-\beta z)\,\hat x,\\[4pt]
-> v_g = \frac{d\omega}{d\beta},\qquad v_p = \frac\omega\beta,
+> v_g\equiv\frac{d\omega}{d\beta},\qquad v_p = \frac\omega\beta .
 > \end{gathered}
 > $$
-> both evaluated at the carrier $\omega$. The envelope (the message) moves at $v_g$ [m/s], the crests at $v_p$.
+> Both evaluated at the carrier $\omega$. The envelope (the message) moves at $v_g$ [m/s], the crests at $v_p$. The notes write $\partial\omega/\partial\beta$ and leave the details to ECE 450.
 
-**Physics.** A signal is a group of nearby frequencies. Expanding $\beta(\omega)$ to first order about the carrier gives every frequency in the envelope the same delay $z/v_g$, while the carrier phase lags by $\beta z$. The derivation is folded on the [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization#2-dispersive-media-group-velocity|Lecture 24 page]]. If $\beta\propto\omega$ the medium is non-dispersive, $v_g = v_p$, and any waveform keeps its shape. Otherwise the second-order term, $\tfrac12\beta''(\Delta\omega)^2z$, slowly spreads the envelope. On an $\omega$–$\beta$ diagram $v_g$ is the slope of the tangent and $v_p$ the slope of the chord from the origin.
+**Physics.** A message $m(t)$ (voice, data) that changes slowly compared with the period $T = 2\pi/\omega$ riding a carrier $\cos\omega t$ is **narrowband AM**; $\omega$ is the **carrier frequency**. The notes' other carriers: **Field 2**, $m(t - z/v)\cos(\omega t - \beta z)\,\hat y$, a $y$-polarized carrier; **Field 3**, $m(t - z/v)\sin(\omega t - \beta z)\,\hat y$, also $y$-polarized, with the carrier a quarter period late: $\sin(\omega t - \beta z) = \cos(\omega(t - T/4) - \beta z)$. Fields 1 and 3 together make a [[concepts/wave-polarization|circularly polarized]] carrier. When $\beta(\omega)$ is not a straight line through the origin ([[concepts/dispersion-relation|Dispersion relation and phase velocity]]), $v_p$ depends on frequency and the medium is dispersive. A signal is a group of nearby frequencies: expanding $\beta(\omega)$ to first order about the carrier gives every frequency in the envelope the same delay $z/v_g$, while the carrier phase lags by $\beta z$. If $\beta\propto\omega$, $v_g = v_p$ and any waveform keeps its shape. Otherwise the second-order term slowly spreads the envelope. On an $\omega$–$\beta$ diagram $v_p$ is the slope of the chord from the origin and $v_g$ the slope of the tangent. A pure cosine carries no message; signals and energy travel at $v_g$.
 
-| medium | $v_p$ | $v_g$ |
-|---|---|---|
-| dielectric | $1/\sqrt{\mu\epsilon}$ | $v_p$ |
-| gas (sound; $m$ atomic mass) | $\sqrt{5k_BT/3m}$ | $v_p$ |
-| plasma | $c/\sqrt{1-\omega_p^2/\omega^2}$ | $c^2/v_p$ |
+> [!derivation]- Why the envelope moves at dω/dβ (this site's; Rao §8.3)
+> Write the source as $\text{Re}\{m(t)e^{j\omega_0t}\}$, and $m(t)$ as a sum of slow tones $e^{j\Omega t}$ with $\lvert\Omega\rvert\ll\omega_0$. Each frequency $\omega_0 + \Omega$ travels with its own $\beta(\omega_0 + \Omega)$. Expand about the carrier:
+> $$
+> \beta(\omega_0+\Omega)\approx\beta_0+\frac{\Omega}{v_g},\qquad \frac1{v_g} = \frac{d\beta}{d\omega}\Big|_{\omega_0}.
+> $$
+> Each tone then becomes
+> $$
+> e^{j(\omega_0+\Omega)t - j\beta(\omega_0+\Omega)z}\approx e^{j(\omega_0t-\beta_0z)}\,e^{j\Omega(t - z/v_g)} .
+> $$
+> The first factor is the same for every tone: the carrier, with phase speed $\omega_0/\beta_0$. The second delays every tone of $m$ by the same $z/v_g$. Summing gives $m(t - z/v_g)\cos(\omega_0t - \beta_0z)$. The next term of the expansion, $\tfrac12\beta''\Omega^2z$, spreads the envelope; it is negligible while $\tfrac12\lvert\beta''\rvert\Omega^2z\ll1$.
 
-The plasma relation is $\omega^2 = \omega_p^2 + c^2\beta^2$, so $v_g = c\sqrt{1-\omega_p^2/\omega^2}$ and $v_pv_g = c^2$.
+> [!key] Group velocity for the notes' dispersion relations (this site's table)
+> The relations of [[concepts/dispersion-relation|Lecture 21]]: $\beta = \omega\sqrt{\mu\epsilon}$ (dielectric), $\omega\sqrt{m/(\tfrac53k_BT)}$ (sound in a monatomic gas, $m$ the atomic mass), $\tfrac1c\sqrt{\omega^2-\omega_p^2}$ (collisionless plasma).
+>
+> | medium | $v_p$ | $v_g$ |
+> |---|---|---|
+> | dielectric | $1/\sqrt{\mu\epsilon}$ | $v_p$ |
+> | gas (sound) | $\sqrt{5k_BT/3m}$ | $v_p$ |
+> | plasma | $c/\sqrt{1-\omega_p^2/\omega^2}$ | $c^2/v_p$ |
+>
+> Plasma: differentiating $\omega^2 = \omega_p^2 + c^2\beta^2$ gives $d\omega/d\beta = c^2\beta/\omega$, so $v_pv_g = c^2$ and $v_g = c\sqrt{1-\omega_p^2/\omega^2}<c<v_p$.
+
+<figure class="ece-fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 352" width="640" height="352" role="img" style="font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;font-size:14px"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs><text x="20.0" y="22.0" text-anchor="start" fill="currentColor" style="font-size:12.5px;font-weight:600;">An AM pulse in a plasma, carrier ω = 2ω<tspan baseline-shift="sub" style="font-size:9px">p</tspan>:  v<tspan baseline-shift="sub" style="font-size:9px">g</tspan> = 0.87c,  v<tspan baseline-shift="sub" style="font-size:9px">p</tspan> = 1.15c</text><line x1="56.0" y1="108.0" x2="606.0" y2="108.0" stroke="currentColor" stroke-width="1.1" marker-end="url(#ah)" stroke-linecap="round"/><text x="610.0" y="112.0" text-anchor="start" fill="currentColor" style="font-size:12px;font-family:'STIX Two Math','Latin Modern Math','Cambria Math','Times New Roman',serif;font-style:italic;">z</text><text x="20.0" y="58.0" text-anchor="start" fill="currentColor" style="font-size:11.5px;font-weight:600;">t = t<tspan baseline-shift="sub" style="font-size:9px">1</tspan></text><path d="M60.0,107.8 L84.3,107.2 L102.8,106.0 L118.7,104.0 L132.6,101.0 L144.9,97.1 L157.7,91.9 L169.2,86.3 L194.3,73.0 L206.7,67.4 L213.2,65.1 L219.8,63.4 L226.0,62.5 L232.2,62.1 L238.3,62.4 L244.9,63.4 L251.5,65.1 L258.8,67.7 L271.1,73.1 L303.6,89.6 L312.8,93.6 L322.1,97.1 L339.1,101.9 L357.6,105.1 L379.6,106.9 L409.7,107.8 L600.0,108.0" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/><path d="M60.0,108.2 L84.3,108.8 L102.8,110.0 L118.7,112.0 L132.6,115.0 L144.9,118.9 L157.7,124.1 L169.2,129.7 L194.3,143.0 L206.7,148.6 L213.2,150.9 L219.8,152.6 L226.0,153.5 L232.2,153.9 L238.3,153.6 L244.9,152.6 L251.5,150.9 L258.8,148.3 L271.1,142.9 L303.6,126.4 L312.8,122.4 L322.1,118.9 L339.1,114.1 L357.6,110.9 L379.6,109.1 L409.7,108.2 L600.0,108.0" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/><path d="M60.0,108.1 L77.0,107.6 L94.0,109.1 L99.0,108.3 L107.9,105.6 L111.7,105.3 L114.0,105.8 L116.7,107.0 L125.6,113.1 L127.5,113.8 L129.5,113.8 L131.8,112.9 L134.5,110.5 L143.4,98.4 L145.3,97.0 L147.2,96.7 L149.5,98.2 L152.3,102.4 L161.1,123.8 L163.1,126.5 L165.0,127.2 L166.1,126.6 L167.3,125.2 L170.0,118.8 L177.0,91.7 L179.3,84.1 L181.2,80.2 L182.4,79.3 L183.1,79.3 L184.3,80.3 L185.4,82.4 L187.8,90.1 L194.7,127.7 L197.0,138.5 L199.0,144.2 L200.1,145.8 L200.9,146.0 L202.0,145.1 L203.2,142.7 L205.5,133.5 L212.9,84.7 L215.2,72.1 L217.1,65.6 L218.3,63.9 L219.0,63.7 L220.2,65.0 L221.3,68.0 L223.7,78.8 L230.6,129.9 L232.9,143.9 L234.9,151.2 L236.0,153.3 L236.8,153.7 L237.9,152.7 L239.1,149.9 L241.4,139.5 L248.4,89.6 L250.7,76.0 L252.6,68.8 L253.8,66.7 L254.5,66.2 L255.3,66.5 L256.5,68.3 L258.8,76.5 L266.1,121.9 L268.4,133.6 L270.4,139.8 L271.5,141.6 L272.3,142.1 L273.1,141.9 L274.2,140.5 L276.5,133.9 L283.5,100.1 L285.8,90.7 L288.1,84.8 L288.9,83.8 L290.1,83.1 L290.8,83.3 L292.0,84.4 L294.3,89.2 L300.9,111.8 L303.6,119.5 L305.9,123.3 L307.8,124.3 L309.7,123.4 L311.7,120.8 L318.6,105.6 L320.9,101.5 L323.2,99.1 L325.2,98.3 L327.1,98.8 L329.0,100.3 L335.6,108.6 L338.3,111.3 L340.6,112.8 L342.5,113.2 L344.5,112.9 L346.4,112.2 L355.3,106.6 L357.6,105.7 L359.9,105.5 L363.8,106.0 L372.3,108.6 L376.9,109.1 L394.3,107.5 L411.3,108.2 L600.0,108.0" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><line x1="233.2" y1="56.0" x2="233.2" y2="158.0" stroke="var(--accent2)" stroke-width="1.4" stroke-dasharray="3 3" stroke-linecap="round"/><circle cx="218.4" cy="63.8" r="4.2" fill="var(--hi)" stroke="none" stroke-width="1.5"/><line x1="56.0" y1="250.0" x2="606.0" y2="250.0" stroke="currentColor" stroke-width="1.1" marker-end="url(#ah)" stroke-linecap="round"/><text x="610.0" y="254.0" text-anchor="start" fill="currentColor" style="font-size:12px;font-family:'STIX Two Math','Latin Modern Math','Cambria Math','Times New Roman',serif;font-style:italic;">z</text><text x="20.0" y="200.0" text-anchor="start" fill="currentColor" style="font-size:11.5px;font-weight:600;">t = t<tspan baseline-shift="sub" style="font-size:9px">1</tspan> + Δt</text><path d="M60.0,250.0 L236.0,249.8 L263.4,249.0 L283.9,247.2 L293.9,245.6 L303.2,243.5 L312.4,240.8 L321.3,237.6 L337.1,230.5 L368.0,214.4 L381.1,208.8 L393.1,205.5 L398.9,204.7 L404.7,204.5 L410.9,204.8 L417.0,205.7 L423.6,207.2 L430.6,209.5 L443.3,214.9 L470.3,228.3 L483.0,234.1 L497.3,239.4 L511.6,243.4 L527.8,246.4 L546.3,248.4 L568.7,249.5 L600.0,249.9" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/><path d="M60.0,250.0 L236.0,250.2 L263.4,251.0 L283.9,252.8 L293.9,254.4 L303.2,256.5 L312.4,259.2 L321.3,262.4 L337.1,269.5 L368.0,285.6 L381.1,291.2 L393.1,294.5 L398.9,295.3 L404.7,295.5 L410.9,295.2 L417.0,294.3 L423.6,292.8 L430.6,290.5 L443.3,285.1 L470.3,271.7 L483.0,265.9 L497.3,260.6 L511.6,256.6 L527.8,253.6 L546.3,251.6 L568.7,250.5 L600.0,250.1" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/><path d="M60.0,250.0 L231.8,249.9 L249.9,250.4 L268.0,248.8 L273.1,249.4 L282.3,252.5 L286.2,253.0 L288.9,252.6 L291.2,251.6 L300.5,244.7 L302.8,243.6 L304.7,243.4 L307.0,244.1 L309.3,246.0 L312.1,249.5 L318.6,259.9 L320.9,262.1 L322.9,262.7 L325.2,261.6 L327.5,258.3 L329.8,253.1 L337.1,233.1 L339.5,229.5 L340.6,228.8 L341.4,228.7 L343.3,230.4 L345.6,235.4 L347.9,243.5 L355.3,274.2 L357.6,279.7 L358.8,280.9 L359.5,281.0 L360.7,280.2 L361.8,278.1 L364.5,268.6 L371.5,228.9 L373.8,217.8 L375.7,212.0 L376.9,210.5 L377.7,210.3 L378.8,211.3 L380.0,214.0 L382.3,223.6 L389.6,273.7 L392.0,286.5 L393.9,293.0 L395.0,294.7 L395.8,294.8 L397.0,293.5 L398.1,290.4 L400.4,279.5 L407.0,231.1 L409.3,216.5 L411.6,207.4 L412.8,205.4 L413.6,205.1 L414.3,205.6 L415.5,207.8 L417.4,215.2 L419.7,229.0 L426.3,275.2 L428.6,285.7 L429.8,288.7 L430.9,290.1 L431.7,290.0 L432.9,288.6 L434.8,282.9 L437.1,271.5 L444.1,229.9 L446.4,221.3 L447.5,218.9 L448.7,217.8 L449.5,217.9 L450.6,219.1 L452.9,225.1 L459.9,257.2 L462.2,266.2 L464.5,271.8 L465.3,272.8 L466.4,273.4 L467.2,273.2 L468.4,272.2 L470.7,267.5 L477.3,246.0 L479.6,239.7 L481.9,235.8 L483.8,234.6 L485.7,235.4 L487.7,237.8 L494.6,252.2 L496.9,256.1 L498.9,258.3 L500.8,259.2 L502.3,259.1 L504.3,258.0 L513.2,247.6 L515.9,245.6 L518.2,245.0 L521.6,245.7 L530.1,251.1 L534.8,252.5 L538.2,252.3 L547.1,249.5 L551.8,248.8 L568.3,250.5 L584.6,249.8 L600.0,250.1" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><line x1="406.4" y1="198.0" x2="406.4" y2="300.0" stroke="var(--accent2)" stroke-width="1.4" stroke-dasharray="3 3" stroke-linecap="round"/><circle cx="449.3" cy="217.8" r="4.2" fill="var(--hi)" stroke="none" stroke-width="1.5"/><line x1="233.2" y1="318.0" x2="406.4" y2="318.0" stroke="var(--accent2)" stroke-width="1.8" marker-end="url(#ahs)" stroke-linecap="round"/><text x="227.2" y="322.0" text-anchor="end" fill="var(--accent2)" style="font-size:11px;">envelope peak: v<tspan baseline-shift="sub" style="font-size:9px">g</tspan>Δt</text><line x1="218.4" y1="336.0" x2="449.3" y2="336.0" stroke="var(--hi)" stroke-width="1.8" marker-end="url(#ahs)" stroke-linecap="round"/><text x="212.4" y="340.0" text-anchor="end" fill="var(--hi)" style="font-size:11px;">one crest: v<tspan baseline-shift="sub" style="font-size:9px">p</tspan>Δt</text><line x1="218.4" y1="160.0" x2="218.4" y2="336.0" stroke="var(--hi)" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.6" stroke-linecap="round"/><line x1="233.2" y1="160.0" x2="233.2" y2="318.0" stroke="var(--accent2)" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.6" stroke-linecap="round"/></svg><figcaption><strong>Envelope at v<sub>g</sub>, crests at v<sub>p</sub>.</strong> Two snapshots of a narrowband AM pulse propagated through a plasma (exact β(ω), numpy). The envelope (dashed) and its peak advance v<sub>g</sub>Δt; a marked crest advances v<sub>p</sub>Δt and slides forward through the envelope.</figcaption></figure>
 
 **Examples.**
+
+> [!example] Example — 10 MHz through an ionospheric plasma (this site's numbers)
+> $N = 10^{12}$ electrons/m³ gives $f_p\approx8.98$ MHz. At $f = 10$ MHz, $\sqrt{1 - f_p^2/f^2} = 0.440$, so $v_g = 0.440c$ and $v_p = 2.27c$. Across 300 km of such plasma a voice-band message arrives after 2.27 ms, against 1.00 ms in vacuum; a crest would need only 0.44 ms. Higher carriers are delayed less: at 100 MHz, $v_g = 0.996c$.
+
 - Plasma at $\omega = 2\omega_p$: $v_g = 0.866c$, $v_p = 1.155c$. Each crest slides forward through the envelope.
-- Ionosphere, $N = 10^{12}$ m⁻³ ($f_p = 8.98$ MHz), at 10 MHz: $v_g = 0.440c$ and $v_p = 2.27c$. A voice-band message needs 2.27 ms to cross 300 km of such plasma, against 1.00 ms in vacuum.
-- Good conductor ([[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors|Lecture 23]]): $\beta\approx\sqrt{\omega\mu\sigma/2}$ gives $v_g = 2v_p$. This is formal, since the wave dies within about a wavelength.
+- Good conductor ([[concepts/skin-depth|Skin depth]]): $\beta\approx\sqrt{\omega\mu\sigma/2}$ gives $v_g = 2v_p$. Formal, since the wave dies within about a wavelength.
 
 > [!trap]
-> - $\omega/\beta$ is a signal speed only when $\beta\propto\omega$.
+> - "Propagation velocity" $\omega/\beta$ is the signal speed only when $\beta\propto\omega$.
+> - $v_p>c$ in a plasma breaks no law: crests carry no information.
 > - $v_g = d\omega/d\beta$, the inverse of $d\beta/d\omega$; not $\omega/\beta$.
-> - $v_p>c$ in a plasma violates nothing; a pure cosine carries no information.
 
-**Where it appears.** [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization|Lecture 24]] (the notes' footnote, with the derivation, table and examples); [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation|Lecture 21]] (the dispersion relations). The notes leave the details to ECE 450. No Exam 3 paper on hand asks about it.
+> [!exam] On exams
+> No Exam 3 paper on hand asks about group velocity; every Lecture 24 item is about [[concepts/wave-polarization|polarization]]. If asked: $v_g$ from the dispersion relation by differentiation; plasma $v_pv_g = c^2$.
+
+**Where it appears.** [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization#1-narrowband-am-in-a-non-dispersive-medium|Lecture 24 §1–2]] (Fields 1–3, $v_g$, the table and examples); [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation|Lecture 21]] (the dispersion relations); [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] (frequency-dependent $v_p$ in conductors).
+
+**Related.** [[concepts/dispersion-relation|Dispersion relation and phase velocity]] · [[concepts/monochromatic-waves|Monochromatic waves: ω, β, λ, v_p]] · [[concepts/plane-waves|Plane waves]] · [[concepts/wave-polarization|Wave polarization]].
 
 **Practice.** [[practice/topics#group-velocity-and-wave-polarization|Group velocity and wave polarization]] (13 problems) — for example [[practice/24-group-velocity-and-polarization#241-crests-and-envelope-in-a-plasma|24.1 Crests and envelope in a plasma]] (easy), [[practice/24-group-velocity-and-polarization#246-from-two-snapshots-to-a-phasor|24.6 From two snapshots to a phasor]] (medium), [[practice/24-group-velocity-and-polarization#249-building-a-right-circular-wave|24.9 Building a right-circular wave]] (hard).
-
-Related: [[concepts/dispersion-relation]] · [[concepts/plane-waves]] · [[concepts/wave-polarization]].

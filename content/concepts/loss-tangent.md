@@ -1,51 +1,162 @@
 ---
 title: "Loss tangent"
-description: "σ/ωε, conduction over displacement current: below about 0.1 an imperfect dielectric, above about 10 a good conductor."
+description: "σ/ωε, conduction over displacement current: below 0.1 an imperfect dielectric, above 10 a good conductor; the four regimes and the crossover frequency."
 tags: [concept, waves]
-aliases: ["σ/ωε", "sigma over omega epsilon", "loss angle", "tan delta", "dissipation factor", "crossover frequency"]
+aliases: ["σ/ωε", "sigma over omega epsilon", "loss angle", "tan delta", "dissipation factor", "crossover frequency", "imperfect dielectric", "lousy conductor", "four regimes", "regime table"]
 ---
 
-> [!key] Definition
+> [!key] The loss tangent, and the four regimes
+> Ampère's law at one frequency ([[concepts/phasor-maxwell-equations|Maxwell's equations in phasor form]]):
 > $$
-> \tan\theta\equiv\frac{\sigma}{\omega\epsilon} = \frac{\lvert\sigma\tilde{\mathbf{E}}\rvert}{\lvert j\omega\epsilon\tilde{\mathbf{E}}\rvert}\qquad(\text{dimensionless}),
+> \nabla\times\tilde{\mathbf{H}} = \underbrace{\sigma\tilde{\mathbf{E}}}_{\text{conduction}} + \underbrace{j\omega\epsilon\tilde{\mathbf{E}}}_{\text{displacement}} = (\sigma + j\omega\epsilon)\,\tilde{\mathbf{E}} .
 > $$
-> conduction over displacement current density at $\omega = 2\pi f$, with the medium's $\epsilon$. **Loss angle** $\theta$: the lead of the displacement current $j\omega\epsilon\tilde{\mathbf{E}}$ over the total $(\sigma + j\omega\epsilon)\tilde{\mathbf{E}}$.
-> - $\ll1$ (below 0.1): **imperfect dielectric**.
-> - $\gg1$ (above 10): **good conductor**.
-> - $= 1$ at the **crossover frequency** $f_c = \sigma/2\pi\epsilon$.
+> $$
+> \frac{\lvert\sigma\tilde{\mathbf{E}}\rvert}{\lvert j\omega\epsilon\tilde{\mathbf{E}}\rvert} = \frac{\sigma}{\omega\epsilon}\equiv\tan\theta\qquad(\text{dimensionless}),
+> $$
+> with $\omega = 2\pi f$ and the medium's own $\epsilon$. **Loss angle** $\theta$ (the name is Rao's and the exams', not the notes'): the lead of the displacement current over the total current; its tangent is the ratio.
+> - $\sigma = 0$: **perfect dielectric**, no decay: $\alpha = \tau = 0$.
+> - $\sigma/\omega\epsilon\ll1$ (below 0.1): **imperfect dielectric** (notes: also "lousy" conductor); displacement current dominates: $\gamma\approx\tfrac\sigma2\sqrt{\mu/\epsilon} + j\omega\sqrt{\mu\epsilon}$, $\eta\approx\sqrt{\mu/\epsilon}\,(1 + j\sigma/2\omega\epsilon)$; many wavelengths, $\tau\approx\sigma/2\omega\epsilon$ rad.
+> - $\sigma/\omega\epsilon\gg1$ (above 10): **good conductor**; conduction dominates: $\alpha\approx\beta$, gone within a wavelength, $\tau\approx45^\circ$; $\gamma$, $\eta$, $\delta$ on [[concepts/skin-depth|Skin depth]].
+> - $\sigma\to\infty$: **perfect conductor**, $\alpha\to\infty$, $\eta\to0$; no field inside ([[concepts/conductors|Conductors in electrostatics]]).
+>
+> Between 0.1 and 10 use the exact forms below. The currents are equal at the **crossover frequency**
+> $$
+> f_c = \frac{\sigma}{2\pi\epsilon}.
+> $$
 
-**Physics.** With $\tilde{\mathbf{E}}$ real, $\sigma\tilde{\mathbf{E}}$ is in phase and $j\omega\epsilon\tilde{\mathbf{E}}$ 90° ahead; the total sits at $90^\circ - \theta$. Only the in-phase part dissipates, $\langle\mathbf{J}\cdot\mathbf{E}\rangle = \tfrac12\sigma\lvert\tilde{\mathbf{E}}\rvert^2$; per radian, against the peak stored $\tfrac12\epsilon\lvert\tilde{\mathbf{E}}\rvert^2$, the loss is $\sigma/\omega\epsilon$: $1/Q$ of the medium-filled leaky capacitor of [[1-electrostatics/10-capacitance-and-conductance#6-conductance-the-leaky-capacitor|Lecture 10]] ($C$ parallel to $G = (\sigma/\epsilon)C$, $G/\omega C = \sigma/\omega\epsilon$). With $\tau_r = \epsilon/\sigma$ ([[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]]), $\sigma/\omega\epsilon = 1/(\omega\tau_r)$: a medium conducts when its charges rearrange many times per period.
+**Physics.** Conduction current is in phase with $\tilde{\mathbf{E}}$ and dissipates (Joule heating, [[concepts/poynting-theorem|Poynting's theorem]]); displacement current leads by 90° and only stores and returns energy. With the relaxation time $\tau_r = \epsilon/\sigma$ ([[concepts/conductors|Lecture 8]]'s $\tau$; here $\tau = \angle\eta$), $\sigma/\omega\epsilon = 1/(\omega\tau_r)$ and $f_c = 1/(2\pi\tau_r)$: a good conductor's charges rearrange, cancelling the field, many times a period. Seawater, $\tau_r = 0.18$ ns: a millisecond per cycle at 1 kHz, 0.1 ns at 10 GHz. The leaky capacitor ([[concepts/conductance|Conductance and the leaky capacitor]]), $C$ parallel to $G = (\sigma/\epsilon)C$, has the same ratio $G/\omega C$: resistor-like for $\omega\ll\sigma/\epsilon$, capacitor-like above; loss per radian over the peak stored $\tfrac12\epsilon\lvert\tilde{\mathbf{E}}\rvert^2$ is $\sigma/\omega\epsilon$, its $1/Q$. A decade below $f_c$: good conductor; a decade above: imperfect dielectric. "Conductor" describes a material *at a frequency*.
 
-For a plane wave, with $p = \sigma/\omega\epsilon$ and $\theta = \tan^{-1}p$, the exact results of [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] become
+**Real dielectrics.** Lagging polarization (the damped Lorentz oscillator of [[concepts/conductivity-and-susceptibility-models|Lecture 11]], or sluggish rotating molecules) makes $\epsilon = \epsilon' - j\epsilon''$, dissipating like a conductivity $\omega\epsilon''$. Datasheets lump both into **tan δ** $= (\sigma + \omega\epsilon'')/\omega\epsilon'$; for good insulators it varies slowly with $f$, while $\sigma/\omega\epsilon$ falls as $1/f$. The notes: a microwave oven uses such heating (in food mostly water's lagging polarization); for communication it is waste.
 
-$$
-\begin{gathered}
-\tau = \angle\eta = \frac\theta2,\qquad \frac\alpha\beta = \tan\frac\theta2,\\[4pt]
-\lvert\eta\rvert = \sqrt{\frac\mu\epsilon}\,(1+p^2)^{-1/4},\\[4pt]
-\lvert\gamma\rvert = \omega\sqrt{\mu\epsilon}\,(1+p^2)^{1/4}.
-\end{gathered}
-$$
+Typical values (constant $\sigma$, $\epsilon$):
 
-So $\angle\eta$ lies in 0–45° and $\alpha\le\beta$. Small $p$: $\alpha\approx\tfrac12\beta p = (\sigma/2)\sqrt{\mu/\epsilon}$; large $p$: $\alpha\approx\beta\approx\sqrt{\pi f\mu\sigma}$ ([[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors|Lecture 23]]).
+| medium | $\sigma$ [S/m] | $\epsilon_r$ | $f_c = \sigma/2\pi\epsilon$ | good conductor below | imperfect dielectric above |
+|---|---|---|---|---|---|
+| copper | $5.8\times10^{7}$ | 1 | $1.0\times10^{18}$ Hz | every radio and microwave frequency | — |
+| seawater | 4 | 81 | 0.89 GHz | 89 MHz | 8.9 GHz |
+| moist soil (loam) | $10^{-2}$ | 10 | 18 MHz | 1.8 MHz | 180 MHz |
+| the notes' Example 1 medium | $10^{-3}$ | 4 | 4.5 MHz | 450 kHz | 45 MHz |
+| fresh water | $10^{-3}$ | 80 | 225 kHz | 22 kHz | 2.2 MHz |
+| dry earth | $10^{-5}$ | 5 | 36 kHz | 3.6 kHz | 360 kHz |
+| Bakelite | $10^{-9}$ | 4.9 | 3.7 Hz | 0.37 Hz | 37 Hz |
+| mica | $10^{-11}$ | 6 | 0.03 Hz | — | 0.3 Hz |
 
-**Real dielectrics.** A lagging polarization (the damped Lorentz oscillator of [[1-electrostatics/11-lorentz-drude-models-for-conductivity-and-susceptibility|Lecture 11]], or sluggish rotating molecules) makes $\epsilon = \epsilon' - j\epsilon''$, dissipating like a conductivity $\omega\epsilon''$. Datasheets lump both as **tan δ** $= (\sigma + \omega\epsilon'')/\omega\epsilon'$. For good insulators it varies slowly with $f$; $\sigma/\omega\epsilon$ falls as $1/f$.
+Rao Tables 5.1–5.2 (mica: top of range; moist soil = "wet earth"), Problem 5.25 and Table 5.3 ($3.6\times10^4$ Hz dry earth, $0.9\times10^9$ Hz seawater with $\epsilon_r = 80$; the notes use 81); loam from ITU-R P.527 ($10^{-2}$ S/m moist, $10^{-4}$ dried). Soil and water vary widely.
 
-**Examples** (σ and ε from Rao Tables 5.1–5.2 and the notes).
-- Seawater (4 S/m, $\epsilon_r = 81$): $8.9\times10^{5}$ at 1 kHz, 888 at 1 MHz, 0.89 at 1 GHz, 0.089 at 10 GHz; $f_c = 0.89$ GHz, $\tau_r = 0.18$ ns.
-- Notes' Example 1 ($10^{-3}$ S/m, $\epsilon_r = 4$), 1 GHz: $4.5\times10^{-3}$, $\angle\eta = 0.13^\circ$.
-- Fresh water ($10^{-3}$ S/m, $\epsilon_r = 80$), 1 MHz: 0.22, in between; $f_c = 225$ kHz.
-- Copper, 1 GHz: $1.0\times10^{9}$; formal $f_c = 10^{18}$ Hz.
-- No calculator ($\epsilon_0\approx10^{-9}/36\pi$): $\sigma/\omega\epsilon = 18\times10^{9}\,\sigma/(f\epsilon_r)$. A past exam's dry earth ($10^{-3}$ S/m, $\epsilon_0$): $1.8\times10^{4}$ at 1 kHz, $f_c = 18$ MHz.
+<figure class="ece-fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 452" width="640" height="452" role="img" style="font-family:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;font-size:14px"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs><text x="320.0" y="20.0" text-anchor="middle" fill="currentColor" style="font-size:13px;font-weight:600;">Conductor or dielectric? Compare σ with ωε at the frequency you use</text><line x1="252.5" y1="55.0" x2="252.5" y2="365.0" stroke="var(--hi)" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.75" stroke-linecap="round"/><rect x="225.2" y="41.0" width="54.6" height="13.0" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="252.5" y="50.0" text-anchor="middle" fill="var(--hi)" style="font-size:10px;font-weight:600;">ELF 76 Hz</text><line x1="296.9" y1="71.0" x2="296.9" y2="365.0" stroke="var(--hi)" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.75" stroke-linecap="round"/><rect x="250.7" y="57.0" width="92.4" height="13.0" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="296.9" y="66.0" text-anchor="middle" fill="var(--hi)" style="font-size:10px;font-weight:600;">1 kHz (Ex. 2, 3)</text><line x1="351.6" y1="55.0" x2="351.6" y2="365.0" stroke="var(--hi)" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.75" stroke-linecap="round"/><rect x="321.6" y="41.0" width="60.0" height="13.0" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="351.6" y="50.0" text-anchor="middle" fill="var(--hi)" style="font-size:10px;font-weight:600;">VLF 24 kHz</text><line x1="534.7" y1="55.0" x2="534.7" y2="365.0" stroke="var(--hi)" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.75" stroke-linecap="round"/><rect x="496.6" y="41.0" width="76.2" height="13.0" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="534.7" y="50.0" text-anchor="middle" fill="var(--hi)" style="font-size:10px;font-weight:600;">1 GHz (Ex. 1)</text><rect x="178.0" y="95.0" width="436.0" height="14.0" rx="0" fill="var(--accent)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="95.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><rect x="537.2" y="82.5" width="77.8" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="612.0" y="91.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> ≈ 10¹⁸ Hz →</text><text x="170.0" y="101.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">copper</text><text x="170.0" y="114.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 5.8×10⁷ S/m, εr = 1</text><rect x="178.0" y="131.0" width="315.0" height="14.0" rx="0" fill="var(--accent)" fill-opacity="0.55" stroke="none"/><rect x="493.0" y="131.0" width="79.3" height="14.0" rx="0" fill="var(--muted)" fill-opacity="0.55" stroke="none"/><rect x="572.3" y="131.0" width="41.7" height="14.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="131.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><line x1="532.7" y1="129.0" x2="532.7" y2="147.0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="496.3" y="118.5" width="72.7" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="532.7" y="127.0" text-anchor="middle" fill="currentColor" style="font-size:9.5px;font-weight:600;">f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> = 0.89 GHz</text><text x="170.0" y="137.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">seawater</text><text x="170.0" y="150.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 4 S/m, εr = 81</text><rect x="178.0" y="167.0" width="247.9" height="14.0" rx="0" fill="var(--accent)" fill-opacity="0.55" stroke="none"/><rect x="425.9" y="167.0" width="79.3" height="14.0" rx="0" fill="var(--muted)" fill-opacity="0.55" stroke="none"/><rect x="505.2" y="167.0" width="108.8" height="14.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="167.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><line x1="465.5" y1="165.0" x2="465.5" y2="183.0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="434.3" y="154.5" width="62.4" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="465.5" y="163.0" text-anchor="middle" fill="currentColor" style="font-size:9.5px;font-weight:600;">f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> = 18 MHz</text><text x="170.0" y="173.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">moist soil</text><text x="170.0" y="186.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 10⁻² S/m, εr = 10</text><rect x="178.0" y="203.0" width="224.0" height="14.0" rx="0" fill="var(--accent)" fill-opacity="0.55" stroke="none"/><rect x="402.0" y="203.0" width="79.3" height="14.0" rx="0" fill="var(--muted)" fill-opacity="0.55" stroke="none"/><rect x="481.3" y="203.0" width="132.7" height="14.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="203.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><line x1="441.7" y1="201.0" x2="441.7" y2="219.0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="407.9" y="190.5" width="67.6" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="441.7" y="199.0" text-anchor="middle" fill="currentColor" style="font-size:9.5px;font-weight:600;">f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> = 4.5 MHz</text><text x="170.0" y="209.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">notes' Ex. 1 medium</text><text x="170.0" y="222.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 10⁻³ S/m, εr = 4</text><rect x="178.0" y="239.0" width="172.5" height="14.0" rx="0" fill="var(--accent)" fill-opacity="0.55" stroke="none"/><rect x="350.5" y="239.0" width="79.3" height="14.0" rx="0" fill="var(--muted)" fill-opacity="0.55" stroke="none"/><rect x="429.8" y="239.0" width="184.2" height="14.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="239.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><line x1="390.1" y1="237.0" x2="390.1" y2="255.0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="356.3" y="226.5" width="67.6" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="390.1" y="235.0" text-anchor="middle" fill="currentColor" style="font-size:9.5px;font-weight:600;">f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> = 225 kHz</text><text x="170.0" y="245.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">fresh water</text><text x="170.0" y="258.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 10⁻³ S/m, εr = 80</text><rect x="178.0" y="275.0" width="140.9" height="14.0" rx="0" fill="var(--accent)" fill-opacity="0.55" stroke="none"/><rect x="318.9" y="275.0" width="79.3" height="14.0" rx="0" fill="var(--muted)" fill-opacity="0.55" stroke="none"/><rect x="398.2" y="275.0" width="215.8" height="14.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="275.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><line x1="358.6" y1="273.0" x2="358.6" y2="291.0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="327.4" y="262.5" width="62.4" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="358.6" y="271.0" text-anchor="middle" fill="currentColor" style="font-size:9.5px;font-weight:600;">f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> = 36 kHz</text><text x="170.0" y="281.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">dry earth</text><text x="170.0" y="294.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 10⁻⁵ S/m, εr = 5</text><rect x="178.0" y="311.0" width="62.0" height="14.0" rx="0" fill="var(--muted)" fill-opacity="0.55" stroke="none"/><rect x="240.0" y="311.0" width="374.0" height="14.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="311.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><line x1="200.4" y1="309.0" x2="200.4" y2="327.0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="177.0" y="298.5" width="62.4" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="180.0" y="307.0" text-anchor="start" fill="currentColor" style="font-size:9.5px;font-weight:600;">f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> = 3.7 Hz</text><text x="170.0" y="317.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">Bakelite</text><text x="170.0" y="330.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 10⁻⁹ S/m, εr = 4.9</text><rect x="178.0" y="347.0" width="436.0" height="14.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><rect x="178.0" y="347.0" width="436.0" height="14.0" rx="0" fill="none" stroke="var(--muted)" stroke-width="0.6"/><rect x="177.0" y="334.5" width="77.8" height="12.5" rx="0" fill="var(--paper)" stroke="none" stroke-width="1.5" opacity="0.85"/><text x="180.0" y="343.0" text-anchor="start" fill="var(--muted)" style="font-size:9.5px;">← f<tspan baseline-shift="sub" style="font-size:9px">c</tspan> = 0.03 Hz</text><text x="170.0" y="353.0" text-anchor="end" fill="currentColor" style="font-size:12px;font-weight:600;">mica</text><text x="170.0" y="366.0" text-anchor="end" fill="var(--muted)" style="font-size:9.5px;">σ = 10⁻¹¹ S/m, εr = 6</text><line x1="178.0" y1="375.0" x2="614.0" y2="375.0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="178.0" y1="372.0" x2="178.0" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="217.6" y1="372.0" x2="217.6" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="257.3" y1="372.0" x2="257.3" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="296.9" y1="372.0" x2="296.9" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="336.5" y1="372.0" x2="336.5" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="376.2" y1="372.0" x2="376.2" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="415.8" y1="372.0" x2="415.8" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="455.5" y1="372.0" x2="455.5" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="495.1" y1="372.0" x2="495.1" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="534.7" y1="372.0" x2="534.7" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="574.4" y1="372.0" x2="574.4" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="614.0" y1="372.0" x2="614.0" y2="378.0" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><text x="178.0" y="390.0" text-anchor="middle" fill="var(--muted)" style="font-size:10px;">1 Hz</text><text x="296.9" y="390.0" text-anchor="middle" fill="var(--muted)" style="font-size:10px;">1 kHz</text><text x="415.8" y="390.0" text-anchor="middle" fill="var(--muted)" style="font-size:10px;">1 MHz</text><text x="534.7" y="390.0" text-anchor="middle" fill="var(--muted)" style="font-size:10px;">1 GHz</text><text x="614.0" y="390.0" text-anchor="middle" fill="var(--muted)" style="font-size:10px;">100 GHz</text><text x="620.0" y="379.0" text-anchor="start" fill="currentColor" style="font-size:12px;font-family:'STIX Two Math','Latin Modern Math','Cambria Math','Times New Roman',serif;font-style:italic;">f</text><rect x="40.0" y="407.0" width="22.0" height="12.0" rx="0" fill="var(--accent)" fill-opacity="0.55" stroke="none"/><text x="68.0" y="417.0" text-anchor="start" fill="currentColor" style="font-size:11px;">good conductor: σ/ωε &gt; 10</text><rect x="258.0" y="407.0" width="22.0" height="12.0" rx="0" fill="var(--muted)" fill-opacity="0.55" stroke="none"/><text x="286.0" y="417.0" text-anchor="start" fill="currentColor" style="font-size:11px;">in between</text><rect x="366.0" y="407.0" width="22.0" height="12.0" rx="0" fill="var(--accent2)" fill-opacity="0.55" stroke="none"/><text x="394.0" y="417.0" text-anchor="start" fill="currentColor" style="font-size:11px;">imperfect dielectric: σ/ωε &lt; 0.1</text></svg><figcaption><strong>Whether a medium acts as a conductor depends on the frequency.</strong> Each bar is one medium, with handbook values of σ and ε (constant with frequency, as in the notes). The tick marks the crossover frequency f<sub>c</sub> = σ/2πε, where the conduction current σE and the displacement current ωεE are equally large. More than a decade below it (σ/ωε &gt; 10, blue) the medium is a good conductor; more than a decade above it (σ/ωε &lt; 0.1, green) it is an imperfect dielectric; within a decade of f<sub>c</sub> (grey) use the exact formulas. Seawater is a good conductor for the 76 Hz and 24 kHz signals sent to submarines and for the notes' 1 kHz examples, but not at 1 GHz. Copper is a good conductor at every radio and microwave frequency; its formal f<sub>c</sub> of 10¹⁸ Hz means nothing, because its σ stops being constant long before that (Lecture 11). Mica and Bakelite act as dielectrics at any frequency above a few tens of hertz. Soil and water values vary a lot with moisture, salt and temperature, so treat these bars as typical.</figcaption></figure>
 
-> [!trap]
-> - The medium's $\epsilon$, not $\epsilon_0$ (water: ×80).
-> - $\omega$, not $f$: $\sigma/(2\pi f\epsilon)$.
-> - A medium *at a frequency*: seawater conducts at 1 kHz, not at 10 GHz.
-> - $\angle\eta$ is *half* the loss angle; small $p$: $\sigma/2\omega\epsilon$.
-> - The δ in tan δ is an angle, not a skin depth.
+**The notes' regime table** ($\eta = \lvert\eta\rvert e^{j\tau}$, $\lambda = 2\pi/\beta$, $\delta = 1/\alpha$):
 
-**Where it appears.** Lecture 23 (§1 classifying media, crossover table, regime map; §2 exact forms); Lecture 22 ($\sigma + j\omega\epsilon$ in $\gamma$, $\eta$); [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]]; Lecture 8; [[problems/a-radio-wave-into-moist-ground]] (180, then 1.8). Exams: SP19 Exam 3 #1d (find it), FA23 Exam 3 #1(b) (what it represents).
+| regime | condition | $\alpha$ [Np/m] | $\beta$ [rad/m] | $\lvert\eta\rvert$ [Ω] | $\tau = \angle\eta$ | $\lambda$ | $\delta = 1/\alpha$ |
+|---|---|---|---|---|---|---|---|
+| perfect dielectric | $\sigma = 0$ | $0$ | $\omega\sqrt{\mu\epsilon}$ | $\sqrt{\mu/\epsilon}$ | $0$ | $2\pi/\omega\sqrt{\mu\epsilon}$ | $\infty$ |
+| imperfect dielectric | $\sigma/\omega\epsilon\ll1$ | ${\approx\dfrac\sigma2\sqrt{\mu/\epsilon}}$ | ${\approx\omega\sqrt{\mu\epsilon}}$ | ${\approx\sqrt{\mu/\epsilon}}$ | ${\approx\dfrac{\sigma}{2\omega\epsilon}}$ | ${\approx2\pi/\omega\sqrt{\mu\epsilon}}$ | ${\approx\dfrac2\sigma\sqrt{\epsilon/\mu}}$ |
+| good conductor | $\sigma/\omega\epsilon\gg1$ | ${\approx\sqrt{\pi f\mu\sigma}}$ | ${\approx\sqrt{\pi f\mu\sigma}}$ | ${\approx\sqrt{\omega\mu/\sigma}}$ | ${\approx45^\circ}$ | ${\approx2\pi\delta}$ | ${\approx1/\sqrt{\pi f\mu\sigma}}$ |
+| perfect conductor | $\sigma\to\infty$ | $\infty$ | $\infty$ | $0$ | — | $0$ | $0$ |
+
+The notes write the imperfect-dielectric $\alpha$ as $\beta\cdot\tfrac12\sigma/\omega\epsilon$ (the same).
+
+> [!key] Exact forms for any medium (this site's packaging of Lecture 22)
+> Polar form gives the limits and the exact values at once:
+> $$
+> \begin{gathered}
+> \gamma = j\omega\sqrt{\mu\epsilon}\,\big(1 - jp\big)^{1/2},\\[4pt]
+> \eta = \sqrt{\frac\mu\epsilon}\,\big(1 - jp\big)^{-1/2},\qquad p\equiv\frac{\sigma}{\omega\epsilon}.
+> \end{gathered}
+> $$
+> In polar form $1 - jp = \sqrt{1+p^2}\,e^{-j\theta}$, with loss angle $\theta = \tan^{-1}p$, between 0 and 90°:
+> $$
+> \begin{gathered}
+> \alpha = \omega\sqrt{\mu\epsilon}\,(1+p^2)^{1/4}\sin\frac\theta2,\\[4pt]
+> \beta = \omega\sqrt{\mu\epsilon}\,(1+p^2)^{1/4}\cos\frac\theta2,\\[4pt]
+> \lvert\eta\rvert = \sqrt{\frac\mu\epsilon}\,(1+p^2)^{-1/4},\\[4pt]
+> \tau = \angle\eta = \frac\theta2 = \frac12\tan^{-1}\frac{\sigma}{\omega\epsilon},\qquad \frac\alpha\beta = \tan\tau .
+> \end{gathered}
+> $$
+> $\tau$ is half the loss angle (0 to 45°); $\alpha/\beta = \tan\tau\le1$. $\lvert\gamma\rvert = \omega\sqrt{\mu\epsilon}\,(1+p^2)^{1/4}$ ([[concepts/propagation-constant|Propagation constant]], [[concepts/intrinsic-impedance|Intrinsic impedance]]).
+
+> [!derivation]- The polar-form derivation, and the notes' binomial route
+> $(1 - jp)^{1/2} = (1+p^2)^{1/4}e^{-j\theta/2}$ (positive real part), so
+> $$
+> \begin{gathered}
+> \gamma = j\omega\sqrt{\mu\epsilon}\,(1+p^2)^{1/4}e^{-j\theta/2}\\[4pt]
+> = \omega\sqrt{\mu\epsilon}\,(1+p^2)^{1/4}\,e^{j(\pi/2 - \theta/2)},
+> \end{gathered}
+> $$
+> real part $\omega\sqrt{\mu\epsilon}(1+p^2)^{1/4}\cos(\pi/2 - \theta/2) = \ldots\sin(\theta/2) = \alpha$, imaginary part $\ldots\cos(\theta/2) = \beta$. $0\le\theta<\pi/2$ gives $\beta>0$, $\alpha\ge0$ ($\alpha = 0$ only for $\sigma = 0$): $e^{-\gamma z}$ travels toward $+z$ and decays. $(1 - jp)^{-1/2} = (1+p^2)^{-1/4}e^{+j\theta/2}$ gives $\lvert\eta\rvert = \sqrt{\mu/\epsilon}\,(1+p^2)^{-1/4}$, $\tau = \theta/2$; dividing, $\alpha/\beta = \tan(\theta/2)$. (The notes' small-$p$ phase $\tan^{-1}(\sigma/2\omega\epsilon)$ agrees to first order.)
+>
+> **The two limits.** $p\ll1$: $\theta\approx p$, $(1+p^2)^{1/4}\approx1$, so $\alpha\approx\omega\sqrt{\mu\epsilon}\cdot p/2 = (\sigma/2)\sqrt{\mu/\epsilon}$, $\tau\approx p/2$: the imperfect-dielectric row, where only the decay is new. $p\gg1$: $\theta\to90^\circ$, $(1+p^2)^{1/4}\approx\sqrt p$, so $\alpha\approx\beta\approx\omega\sqrt{\mu\epsilon}\,\sqrt p\,/\sqrt2 = \sqrt{\pi f\mu\sigma}$, $\lvert\eta\rvert\approx\sqrt{\mu/\epsilon}/\sqrt p = \sqrt{\omega\mu/\sigma}$, $\tau\to45^\circ$: the good-conductor row, $\epsilon$ gone.
+>
+> **The notes' route (Lecture 22).** $\sigma + j\omega\epsilon = j\omega\epsilon\,(1 - j\sigma/\omega\epsilon)$, so
+> $$
+> \begin{gathered}
+> \gamma = j\omega\sqrt{\mu\epsilon}\,\Big(1 - j\frac{\sigma}{\omega\epsilon}\Big)^{1/2},\\[6pt]
+> \eta = \sqrt{\frac\mu\epsilon}\,\Big(1 - j\frac{\sigma}{\omega\epsilon}\Big)^{-1/2} .
+> \end{gathered}
+> $$
+> *Imperfect dielectric* ($\sigma/\omega\epsilon\ll1$): $(1 + a)^n\approx1 + na$ for $\lvert a\rvert\ll1$, $n = \tfrac12$ for $\gamma$, $n = -\tfrac12$ for $\eta$:
+> $$
+> \begin{gathered}
+> \gamma\approx j\omega\sqrt{\mu\epsilon}\Big(1 - j\frac{\sigma}{2\omega\epsilon}\Big) = \frac\sigma2\sqrt{\frac\mu\epsilon} + j\omega\sqrt{\mu\epsilon},\\[6pt]
+> \eta\approx\sqrt{\frac\mu\epsilon}\Big(1 + j\frac{\sigma}{2\omega\epsilon}\Big)\approx\sqrt{\frac\mu\epsilon}\,e^{j\sigma/2\omega\epsilon} .
+> \end{gathered}
+> $$
+> Errors are of order $(\sigma/\omega\epsilon)^2$. *Good conductor* ($\sigma/\omega\epsilon\gg1$): drop the 1, so $\gamma^2\approx j\omega\mu\sigma$, $\eta^2\approx j\omega\mu/\sigma$, $\sqrt j = e^{j\pi/4} = (1 + j)/\sqrt2$:
+> $$
+> \begin{gathered}
+> \gamma\approx(1 + j)\sqrt{\frac{\omega\mu\sigma}{2}} = (1 + j)\sqrt{\pi f\mu\sigma},\\[6pt]
+> \eta\approx\sqrt{\frac{j\omega\mu}{\sigma}} = \sqrt{\frac{\omega\mu}{\sigma}}\,e^{j\pi/4} .
+> \end{gathered}
+> $$
+> *Perfect conductor:* $\delta\to0$, $\lvert\eta\rvert\to0$, so any finite surface $\mathbf{H}$ comes with $\mathbf{E} = \eta\mathbf{H}\to0$. The notes defer the proof that $\tilde E_x\to0$ to reflection from conductors.
+
+**How small is "small"?** At $p = 0.1$ the imperfect-dielectric formulas are within 0.3 % ($\alpha$, $\beta$ 0.12 %, $\lvert\eta\rvert$ 0.25 %, $\tau$ 0.33 %); at 0.3, $\alpha$ within 1.1 %. At $p = 10$ the good-conductor $\alpha$ is 5 % high, $\beta$ 5 % low, true $\tau$ 42.1°; at 3, $\alpha$ 18 % high. At $p = 1$ both fail ($\alpha$ 10 % and 55 % high; crossover example on [[concepts/propagation-constant|Propagation constant]]). Hence 0.1 and 10. The notes' Examples 1–3 and $\alpha$ against frequency: [[concepts/skin-depth|Skin depth]].
+
+**Examples.** Power in a lossy medium, and $\alpha = \sigma\lvert\eta\rvert/(2\cos\tau)$ as energy conservation: [[concepts/time-average-power|Time averages and average power]].
+
+> [!example] Example — seawater at four frequencies
+> $\sigma = 4$ S/m, $\epsilon = 81\epsilon_0$: $\sigma/\omega\epsilon = 8.9\times10^{5}$ at 1 kHz, 888 at 1 MHz, 0.89 at 1 GHz, 0.089 at 10 GHz: good conductor, good conductor, in between, imperfect dielectric. Calculator-free ($\epsilon_0\approx10^{-9}/36\pi$ F/m):
+> $$
+> \begin{gathered}
+> \frac{\sigma}{\omega\epsilon} = \frac{\sigma\cdot36\pi\times10^{9}}{2\pi f\,\epsilon_r} = \frac{18\times10^{9}\,\sigma}{f\,\epsilon_r},\\[4pt]
+> \text{at 1 kHz:}\quad \frac{18\times10^{9}\times4}{10^{3}\times81} = 8.9\times10^{5}.
+> \end{gathered}
+> $$
+
+> [!example] Example — classifying a medium from a measured wavelength and penetration depth (this site's numbers)
+> 200 MHz, non-magnetic, $\lambda = 0.5$ m, $\delta = 20$ m. Regime, $v_p$, $\epsilon_r$, $\lvert\eta\rvert$, $\sigma$?
+> - $\beta = 2\pi/\lambda = 4\pi = 12.6$ rad/m, $\alpha = 1/\delta = 0.05$ Np/m: $\alpha/\beta = \tan\tau = 0.004$, $\tau = 0.23^\circ$, $p = \tan2\tau = 0.008\ll1$, an **imperfect dielectric** (40 wavelengths to $1/e$; a good conductor has $\alpha = \beta$).
+> - $v_p = \lambda f = 0.5\times2\times10^{8} = 10^{8}$ m/s, so $\epsilon_r = (c/v_p)^2 = 9$ ($\beta\approx\omega\sqrt{\mu_0\epsilon}$); $\lvert\eta\rvert\approx\eta_0/3 = 40\pi\approx126\ \Omega$.
+> - $\sigma = 2\alpha/\lvert\eta\rvert = 0.1/(40\pi) = 8.0\times10^{-4}$ S/m. Check: $\sigma/\omega\epsilon = 8.0\times10^{-4}/(2\pi\cdot2\times10^{8}\cdot9\epsilon_0) = 0.008$ ✓.
+
+- Fresh water ($10^{-3}$ S/m, $\epsilon_r = 80$), 1 MHz: 0.22, in between; $f_c = 225$ kHz. Copper, 1 GHz: $1.0\times10^{9}$. A past exam's dry earth ($10^{-3}$ S/m, $\epsilon_0$): $1.8\times10^{4}$ at 1 kHz, $f_c = 18$ MHz. [[problems/a-radio-wave-into-moist-ground|Worked problem — A radio wave into moist ground]]: 180, then 1.8.
+
+> [!recipe] Damped plane waves, start to finish
+> 1. **Classify:** $p = \sigma/\omega\epsilon$, own $\epsilon$, stated $\omega$. Below 0.1, imperfect-dielectric row; above 10, good-conductor row; between, exact or polar forms.
+> 2. **Constants:** $\alpha$, $\beta$, $\lvert\eta\rvert$, $\tau$; $\delta = 1/\alpha$, $\lambda = 2\pi/\beta$, $v_p = \omega/\beta$; in a good conductor all follow from $\delta$ ([[concepts/skin-depth|Skin depth]]).
+> 3. **Fields:** $\tilde{\mathbf{H}} = \hat u\times\tilde{\mathbf{E}}/\eta$ ($-\tau$ in the phase), $\mathbf{E}\times\mathbf{H}$ along $\hat u$; time domain $\lvert E_0\rvert e^{-\alpha d}\cos(\omega t - \beta d + \angle E_0)$, $d$ the distance travelled.
+> 4. **Power:** $\langle\mathbf{S}\rangle = \hat u\,\lvert E_0\rvert^2\cos\tau\,e^{-2\alpha d}/(2\lvert\eta\rvert)$; between depths $e^{-2\alpha\,\Delta d}$, or $8.686\,\alpha\,\Delta d$ dB.
+> 5. **Inverse** (given $\lambda$ and $\delta$, or a field): $\beta = 2\pi/\lambda$, $\alpha = 1/\delta$; $\alpha/\beta = \tan\tau$ (regime), $\tan2\tau = \sigma/\omega\epsilon$; $\gamma\eta = j\omega\mu$, $\gamma/\eta = \sigma + j\omega\epsilon$ (material; [[concepts/propagation-constant|Propagation constant]]).
+
+> [!trap] Classifying a medium, and where damped-wave problems lose points
+> - The medium's own $\epsilon$: $\epsilon_0$ for $81\epsilon_0$ makes seawater's ratio 81 times too large, harmless at 1 kHz, decisive near crossover.
+> - $\omega = 2\pi f$, not $f$: dropping $2\pi$ shifts the ratio by 6.3.
+> - Never classify by name (seawater above; the table's dry earth is a good conductor at 100 Hz). Real $\sigma$, $\epsilon$ vary with frequency, so $f_c$ is a guide: water's permittivity falls in the microwave range (ITU-R P.527); copper on [[concepts/skin-depth|Skin depth]].
+> - $\angle\eta$ is *half* the loss angle; small $p$: $\sigma/2\omega\epsilon$. The δ in tan δ is an angle, not a skin depth.
+> - Power decays as $e^{-2\alpha d}$, $d$ the distance travelled, not the coordinate: toward $-z$, $z = -10$ m means 10 m gone, $e^{-2\alpha\cdot10}$.
+> - $\cos\tau$ in $\langle\mathbf{S}\rangle$ is $1/\sqrt2$ in a good conductor, whose $\lvert\eta\rvert$ is $\sqrt{\omega\mu/\sigma}$, not $\sqrt{\mu/\epsilon}$.
+
+> [!exam] On exams
+> On every third-exam paper on hand; SP17–SP19 print the regime table and test recognizing the regime.
+> 1. **Classify, then compute** (Summer 2018, 2019 HE3 #3b): toward $-z$ in $\epsilon = 81\epsilon_0$, $\sigma = 4$ S/m, 1 kHz; regime, calculator-free $\delta$, $\lambda$, $v_p$, power 10 m in (recipe; [[problems/a-radio-wave-into-moist-ground|worked problem]]); the 2019 conflict paper's 10 GHz version solves the regime condition for $\omega$.
+> 2. **From measured $\lambda$ and $\delta$** (Summer 2017 HE3 #2b): regime, $v$, $\epsilon_r$, $\lvert\eta\rvert$, $\sigma$ (example above).
+> 3. **"Possible or not possible"** (Summer 2020 HE3 #3: "dry earth", $\sigma = 10^{-3}$ S/m, $\epsilon = \epsilon_0$, 100 Hz): $\alpha$ against $\beta$, $\lambda$ against $2\pi\delta$; use $\alpha/\beta\le1$ and this medium's own $f_c$.
+> 4. **Concepts:** the loss tangent's meaning (FA23 #1(b)); a five-way scale (SP19 #1e); find it (SP19 #1d). **Power against depth** (FA23 #6): $2\alpha$ per metre; [[concepts/skin-depth|Skin depth]].
+>
+> Calculator-free: $\sigma/\omega\epsilon = 18\times10^{9}\,\sigma/(f\epsilon_r)$ (example above).
+
+**Where it appears.** [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors#1-when-does-a-medium-count-as-a-conductor|Lecture 23 §1]], [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors#2-the-notes-table-and-the-one-number-behind-it|§2]], [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors#3-imperfect-dielectrics-slow-decay-and-where-the-power-goes|§3]] (Example 1: [[concepts/skin-depth|Skin depth]]), [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors#7-reading-a-lossy-medium-problem|§7]]; [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves#6-four-regimes-at-a-glance|Lecture 22 §6]]; [[1-electrostatics/10-capacitance-and-conductance|Lecture 10]]; [[1-electrostatics/08-conductors-dielectrics-and-polarization|Lecture 8]]; [[problems/a-radio-wave-into-moist-ground|Worked problem — A radio wave into moist ground]].
+
+**Related.** [[concepts/skin-depth|Skin depth]] · [[concepts/propagation-constant|Propagation constant]] · [[concepts/intrinsic-impedance|Intrinsic impedance]] · [[concepts/time-average-power|Time averages and average power]] · [[concepts/conductors|Conductors in electrostatics]] · [[concepts/conductance|Conductance and the leaky capacitor]] · [[concepts/permittivity|Permittivity, susceptibility, and D = εE]] · [[concepts/conductivity-and-susceptibility-models|Lorentz–Drude models of σ and χe]].
 
 **Practice.** [[practice/topics#imperfect-dielectrics-good-conductors-and-skin-depth|Imperfect dielectrics, good conductors and skin depth]] (18 problems) — for example [[practice/23-imperfect-dielectrics-and-good-conductors#231-six-media-at-one-frequency|23.1 Six media at one frequency]] (easy), [[practice/23-imperfect-dielectrics-and-good-conductors#236-wavelength-and-depth-measured-underground|23.6 Wavelength and depth measured underground]] (medium), [[practice/23-imperfect-dielectrics-and-good-conductors#239-down-into-a-deep-lake|23.9 Down into a deep lake]] (hard).
-
-Related: [[concepts/skin-depth]] · [[concepts/propagation-constant]] · [[concepts/intrinsic-impedance]] · [[concepts/conductors]] · [[concepts/conductance]] · [[concepts/permittivity]] · [[concepts/conductivity-and-susceptibility-models]].

@@ -1,0 +1,210 @@
+---
+title: "Hard problems"
+description: "All 114 hard practice problems for Lectures 2–30, by lecture. Hard = exam length, in several parts; about 20–40 min each."
+tags: [practice]
+---
+
+*[[practice/index|Practice hub]] · by difficulty: [[practice/easy|easy]] · [[practice/medium|medium]] · <span class="diff hard">hard</span> · [[practice/topics|by topic]]*
+
+**Hard** (20–40 min): exam length, in several parts: superposition of several pieces, several regions with matching conditions, a non-trivial integral, a sign-heavy direction analysis, or two lectures combined. Budget the time, write the setup before computing, and do the *Check* at the end — that habit is worth points. Problems marked *modelled on* follow a past ECE 329 exam problem with the numbers and at least one detail changed.
+
+## Lecture 2 · Coulomb's law, superposition and Gauss
+
+- [[practice/02-coulombs-law-superposition-and-gauss#29-finite-line-charge-at-any-point|2.9 Finite line charge at any point]] — five-step program · finite line · Gauss's law
+- [[practice/02-coulombs-law-superposition-and-gauss#210-disk-and-annulus-on-axis|2.10 Disk and annulus on axis]] — five-step program · disk · limits
+- [[practice/02-coulombs-law-superposition-and-gauss#211-a-boron-mass-spectrometer|2.11 A boron mass spectrometer]] — Lorentz force · velocity selector · mass spectrometer
+- [[practice/02-coulombs-law-superposition-and-gauss#212-two-charges-one-given-field|2.12 Two charges, one given field]] — superposition · null point · Gauss's law · *modelled on Summer 2017 HE1 #1a*
+
+## Lecture 3 · Gauss's law at work
+
+- [[practice/03-gauss-law-at-work#39-two-slabs-and-a-sheet|3.9 Two slabs and a sheet]] — superposition · slabs · charge sheets · *modelled on Summer 2019 HE1 #1a*
+- [[practice/03-gauss-law-at-work#310-sphere-with-an-off-centre-cavity|3.10 Sphere with an off-centre cavity]] — superposition · spherical symmetry
+- [[practice/03-gauss-law-at-work#311-coaxial-cable-with-a-graded-core|3.11 Coaxial cable with a graded core]] — cylindrical symmetry · graded density
+- [[practice/03-gauss-law-at-work#312-flux-bookkeeping-line-and-sheet|3.12 Flux bookkeeping, line and sheet]] — flux · superposition · closed surfaces
+
+## Lecture 4 · Divergence and curl
+
+- [[practice/04-divergence-and-curl#49-electrostatic-or-not|4.9 Electrostatic or not]] — curl · path dependence · Stokes' theorem · *modelled on Summer 2018 HE1 #2a–b*
+- [[practice/04-divergence-and-curl#410-charge-layers-from-a-piecewise-d|4.10 Charge layers from a piecewise D]] — spherical coordinates · surface charge · Gauss's law
+- [[practice/04-divergence-and-curl#411-an-expanding-ion-cloud|4.11 An expanding ion cloud]] — continuity · displacement current
+- [[practice/04-divergence-and-curl#412-inside-a-current-carrying-rod|4.12 Inside a current-carrying rod]] — Ampère's law · Stokes' theorem · divergence of B
+
+## Lecture 5 · The electrostatic potential
+
+- [[practice/05-electrostatic-potential#59-circulation-and-two-voltmeters|5.9 Circulation and two voltmeters]] — circulation · Stokes' theorem · voltmeters
+- [[practice/05-electrostatic-potential#510-charged-slab-sheet-and-staircase|5.10 Charged slab, sheet and staircase]] — V from E · charge slabs · exact differentials · *modelled on FA26 Exam 1 #1(b)*
+- [[practice/05-electrostatic-potential#511-charged-washer-on-its-axis|5.11 Charged washer on its axis]] — scalar superposition · disk on axis · electron-volts
+- [[practice/05-electrostatic-potential#512-square-of-charges-zero-energy|5.12 Square of charges, zero energy]] — energy of charges · Coulomb force · scaling
+
+## Lecture 6 · Circulation and boundary conditions
+
+- [[practice/06-circulation-and-boundary-conditions#69-two-tilted-charged-planes|6.9 Two tilted charged planes]] — charged sheets · oblique interface · circulation
+- [[practice/06-circulation-and-boundary-conditions#610-plates-around-a-charged-sheet|6.10 Plates around a charged sheet]] — conductors · charged sheets · KVL
+- [[practice/06-circulation-and-boundary-conditions#611-charged-shell-in-a-dielectric|6.11 Charged shell in a dielectric]] — cylindrical interface · surface charge · refraction · *modelled on FA26 Exam 1 #3*
+- [[practice/06-circulation-and-boundary-conditions#612-a-tilted-current-sheet|6.12 A tilted current sheet]] — current sheet · magnetic boundary conditions · oblique interface
+
+## Lecture 7 · Poisson's and Laplace's equations
+
+- [[practice/07-poisson-and-laplace#79-junction-with-an-intrinsic-layer|7.9 Junction with an intrinsic layer]] — Poisson's equation · pn junction · matching conditions · *modelled on Summer 2019 HE1 #1a*
+- [[practice/07-poisson-and-laplace#710-space-charge-limited-vacuum-diode|7.10 Space-charge-limited vacuum diode]] — Poisson's equation · vacuum diode · space charge
+- [[practice/07-poisson-and-laplace#711-charged-ball-two-ways|7.11 Charged ball, two ways]] — Poisson's equation · spherical symmetry · uniqueness
+- [[practice/07-poisson-and-laplace#712-grounded-sphere-in-a-uniform-field|7.12 Grounded sphere in a uniform field]] — Laplace's equation · uniqueness · conductors
+
+## Lecture 8 · Conductors, dielectrics and polarization
+
+- [[practice/08-conductors-dielectrics-and-polarization#89-charge-in-a-conducting-shells-cavity|8.9 Charge in a conducting shell's cavity]] — conductors · induced charge · potential
+- [[practice/08-conductors-dielectrics-and-polarization#810-relaxation-of-a-charge-wave|8.10 Relaxation of a charge wave]] — relaxation time · continuity · Gauss's law · *modelled on Summer 2017 HE2 #2a*
+- [[practice/08-conductors-dielectrics-and-polarization#811-electret-rod-in-a-grounded-tube|8.11 Electret rod in a grounded tube]] — bound charge · conductors · cylindrical symmetry
+- [[practice/08-conductors-dielectrics-and-polarization#812-rod-polarized-across-its-axis|8.12 Rod polarized across its axis]] — bound charge · superposition · boundary conditions
+
+## Lecture 9 · Static fields in dielectric media
+
+- [[practice/09-static-fields-in-dielectric-media#99-glass-slab-in-an-oblique-field|9.9 Glass slab in an oblique field]] — refraction · bound charge · potential
+- [[practice/09-static-fields-in-dielectric-media#910-sphere-shell-and-two-dielectric-layers|9.10 Sphere, shell and two dielectric layers]] — spherical symmetry · conductors · bound charge · *modelled on Summer 2019 HE1 (conflict) #3a*
+- [[practice/09-static-fields-in-dielectric-media#911-graded-coax-with-uniform-field|9.11 Graded coax with uniform field]] — graded permittivity · coaxial cable · bound charge
+- [[practice/09-static-fields-in-dielectric-media#912-charged-sphere-floating-in-oil|9.12 Charged sphere floating in oil]] — side-by-side dielectrics · spherical geometry · uniqueness
+
+## Lecture 10 · Capacitance and conductance
+
+- [[practice/10-capacitance-and-conductance#109-leaky-spheres-one-lossy-half|10.9 Leaky spheres, one lossy half]] — conductance · spheres · relaxation time · *modelled on SP18 Exam 1 #5*
+- [[practice/10-capacitance-and-conductance#1010-pulling-capacitor-plates-apart|10.10 Pulling capacitor plates apart]] — energy · force · fixed charge vs fixed voltage
+- [[practice/10-capacitance-and-conductance#1011-two-lossy-layers-in-series|10.11 Two lossy layers in series]] — conductance · interface charge · transients
+- [[practice/10-capacitance-and-conductance#1012-lossy-coax-driven-through-a-resistor|10.12 Lossy coax driven through a resistor]] — conductance · RC transients · energy · *modelled on Summer 2019 HE2 #1*
+
+## Lecture 11 · Lorentz–Drude models
+
+- [[practice/11-lorentz-drude-models#117-conductor-like-or-dielectric-like|11.7 Conductor-like or dielectric-like]] — polarization current · Lorentz model · relaxation time
+- [[practice/11-lorentz-drude-models#118-relaxation-time-versus-collision-time|11.8 Relaxation time versus collision time]] — relaxation time · Drude model · plasma oscillation · *modelled on Summer 2017 HE2 #2a*
+
+## Lecture 12 · Magnetic force, Biot–Savart and Ampère
+
+- [[practice/12-magnetic-force-biot-savart-and-ampere#129-a-rectangular-loop-beside-a-wire|12.9 A rectangular loop beside a wire]] — magnetic force · nonuniform field · Newton's third law
+- [[practice/12-magnetic-force-biot-savart-and-ampere#1210-two-crossing-line-currents|12.10 Two crossing line currents]] — superposition · null points · Lorentz force · *modelled on Summer 2020 HE2 #2a*
+- [[practice/12-magnetic-force-biot-savart-and-ampere#1211-a-coax-with-unequal-currents|12.11 A coax with unequal currents]] — Ampère's law · coaxial cable · enclosed current
+- [[practice/12-magnetic-force-biot-savart-and-ampere#1212-a-wire-with-an-off-axis-hole|12.12 A wire with an off-axis hole]] — Ampère's law · superposition · uniform field
+
+## Lecture 13 · Current sheets, solenoids and the vector potential
+
+- [[practice/13-current-sheets-solenoids-and-vector-potential#139-two-opposite-slabs-and-a-sheet|13.9 Two opposite slabs and a sheet]] — current slabs · boundary conditions · vector potential · *modelled on Summer 2019 HE2 #2a–b*
+- [[practice/13-current-sheets-solenoids-and-vector-potential#1310-vector-potentials-of-wire-and-solenoid|13.10 Vector potentials of wire and solenoid]] — vector potential · Stokes' theorem · solenoid
+- [[practice/13-current-sheets-solenoids-and-vector-potential#1311-helmholtz-coils-and-the-far-field|13.11 Helmholtz coils and the far field]] — current loop · Helmholtz coils · magnetic dipole
+- [[practice/13-current-sheets-solenoids-and-vector-potential#1312-a-finite-solenoid-on-its-axis|13.12 A finite solenoid on its axis]] — finite solenoid · superposition · magnetic dipole
+
+## Lecture 14 · Faraday's law and induced emf
+
+- [[practice/14-faradays-law-and-induced-emf#149-loop-crossing-a-field-strip|14.9 Loop crossing a field strip]] — motional emf · Lenz · energy
+- [[practice/14-faradays-law-and-induced-emf#1410-voltmeters-around-a-ramping-solenoid|14.10 Voltmeters around a ramping solenoid]] — voltmeters · induced field · Faraday's law · *modelled on Summer 2017 HE2 #3*
+- [[practice/14-faradays-law-and-induced-emf#1411-magnetic-braking|14.11 Magnetic braking]] — motional emf · Lenz · energy
+- [[practice/14-faradays-law-and-induced-emf#1412-shrinking-ring-in-a-ramping-solenoid|14.12 Shrinking ring in a ramping solenoid]] — induced field · transformer emf · motional emf
+
+## Lecture 15 · Inductance, magnetic energy and the potentials
+
+- [[practice/15-inductance-and-magnetic-energy#159-toroid-with-a-two-layer-core|15.9 Toroid with a two-layer core]] — toroid · inductance · magnetic energy · *modelled on SP18 Exam 2 #2*
+- [[practice/15-inductance-and-magnetic-energy#1510-shorted-parallel-plate-line|15.10 Shorted parallel-plate line]] — parallel plates · current sheets · inductance · *modelled on SP18 Exam 2 #3*
+- [[practice/15-inductance-and-magnetic-energy#1511-wire-and-rectangular-loop|15.11 Wire and rectangular loop]] — mutual inductance · vector potential · RL circuit
+- [[practice/15-inductance-and-magnetic-energy#1512-coax-with-a-magnetic-sleeve|15.12 Coax with a magnetic sleeve]] — coax · magnetic energy · LC product
+
+## Lecture 16 · Charge conservation, displacement current and Maxwell's equations
+
+- [[practice/16-charge-conservation-and-displacement-current#169-a-leaky-capacitor-and-its-leads|16.9 A leaky capacitor and its leads]] — displacement current · relaxation time · conductance
+- [[practice/16-charge-conservation-and-displacement-current#1610-mmf-around-a-discharging-pair|16.10 MMF around a discharging pair]] — displacement current · solid angle · Biot–Savart
+- [[practice/16-charge-conservation-and-displacement-current#1611-a-region-with-no-conduction-current|16.11 A region with no conduction current]] — displacement current · divergence · Faraday's law · *modelled on SP18 Exam 2 #1(iv)*
+- [[practice/16-charge-conservation-and-displacement-current#1612-four-conditions-at-a-tilted-interface|16.12 Four conditions at a tilted interface]] — boundary conditions · oblique interface · current sheet · *modelled on SP18 Exam 2 #1(vi)*
+
+## Lecture 17 · Magnetization and Maxwell's equations in matter
+
+- [[practice/17-magnetization-and-maxwell-in-matter#179-electret-and-magnet-twins|17.9 Electret and magnet twins]] — bound charge · magnetization current · displacement current
+- [[practice/17-magnetization-and-maxwell-in-matter#1710-three-sheets-and-two-slabs|17.10 Three sheets and two slabs]] — current sheets · magnetic boundary conditions · magnetization current · *modelled on SP18 Exam 2 #1(vi)*
+- [[practice/17-magnetization-and-maxwell-in-matter#1711-a-toroid-with-an-air-gap|17.11 A toroid with an air gap]] — toroid · magnetic boundary conditions · permeability · *modelled on SP18 Exam 2 #2*
+- [[practice/17-magnetization-and-maxwell-in-matter#1712-a-short-bar-magnet|17.12 A short bar magnet]] — magnetization · finite solenoid · magnetic boundary conditions
+
+## Lecture 18 · The wave equation and plane TEM waves
+
+- [[practice/18-wave-equation-and-plane-waves#189-triangle-pulse-in-a-magnetic-medium|18.9 Triangle pulse in a magnetic medium]] — moving pulses · intrinsic impedance · *modelled on SP18 Exam 2 #4*
+- [[practice/18-wave-equation-and-plane-waves#1810-two-pulses-passing-through-each-other|18.10 Two pulses passing through each other]] — moving pulses · superposition
+- [[practice/18-wave-equation-and-plane-waves#1811-the-derivation-along-the-x-axis|18.11 The derivation along the x axis]] — wave equation · plane waves
+- [[practice/18-wave-equation-and-plane-waves#1812-a-wave-on-a-slant|18.12 A wave on a slant]] — plane waves · divergence · curl
+
+## Lecture 19 · d'Alembert solutions and radiation from current sheets
+
+- [[practice/19-radiation-from-current-sheets#199-a-sheet-launches-a-step-and-a-ramp|19.9 A sheet launches a step and a ramp]] — current sheet radiation · moving pulses · Poynting vector · *modelled on SP18 Exam 2 #5*
+- [[practice/19-radiation-from-current-sheets#1910-two-sheets-one-sided-radiation|19.10 Two sheets, one-sided radiation]] — current sheet radiation · superposition · moving pulses
+- [[practice/19-radiation-from-current-sheets#1911-a-sheet-on-a-diagonal-plane|19.11 A sheet on a diagonal plane]] — current sheet radiation · Poynting vector · plane waves
+- [[practice/19-radiation-from-current-sheets#1912-deriving-the-sheet-field-in-a-magnetic-medium|19.12 Deriving the sheet field in a magnetic medium]] — current sheet radiation · boundary conditions · intrinsic impedance
+
+## Lecture 20 · Poynting's theorem and monochromatic waves
+
+- [[practice/20-poynting-theorem-and-power#209-a-coax-with-a-resistive-core|20.9 A coax with a resistive core]] — Poynting vector · Joule heating · power flow
+- [[practice/20-poynting-theorem-and-power#2010-a-sheet-in-a-magnetic-medium|20.10 A sheet in a magnetic medium]] — current sheet radiation · energy balance · time-average power · *modelled on Summer 2020 HE3 #2c–d*
+- [[practice/20-poynting-theorem-and-power#2011-two-sheets-in-step|20.11 Two sheets in step]] — current sheet radiation · superposition · energy balance
+- [[practice/20-poynting-theorem-and-power#2012-charging-a-leaky-capacitor|20.12 Charging a leaky capacitor]] — Poynting's theorem · displacement current · conductance
+
+## Lecture 21 · Monochromatic waves and phasor notation
+
+- [[practice/21-phasors-and-monochromatic-waves#219-a-phasor-from-two-snapshots|21.9 A phasor from two snapshots]] — phasor fields · wave parameters · time-average power · *modelled on Summer 2019 HE3 #3a*
+- [[practice/21-phasors-and-monochromatic-waves#2110-two-sheets-two-current-directions|21.10 Two sheets, two current directions]] — current sheet radiation · phasor fields · energy balance · *modelled on Summer 2020 final #4a*
+- [[practice/21-phasors-and-monochromatic-waves#2111-two-waves-on-one-line|21.11 Two waves on one line]] — phasor fields · time average · energy density
+- [[practice/21-phasors-and-monochromatic-waves#2112-a-medium-from-phasor-readings|21.12 A medium from phasor readings]] — phasor fields · wave parameters · intrinsic impedance
+
+## Lecture 22 · Phasor Maxwell equations and damped waves
+
+- [[practice/22-damped-waves-in-conducting-media#229-decoding-a-wave-toward-minus-y|22.9 Decoding a wave toward minus y]] — damped waves · propagation constant · complex intrinsic impedance · *modelled on SP17 Exam 3 #3*
+- [[practice/22-damped-waves-in-conducting-media#2210-two-components-in-a-magnetic-medium|22.10 Two components in a magnetic medium]] — damped waves · phasor fields · regimes · *modelled on SP19 Exam 3 #1*
+- [[practice/22-damped-waves-in-conducting-media#2211-current-sheet-in-a-lossy-medium|22.11 Current sheet in a lossy medium]] — current sheet radiation · damped waves · time-average power
+- [[practice/22-damped-waves-in-conducting-media#2212-three-probes-identify-a-medium|22.12 Three probes identify a medium]] — lossy media · complex intrinsic impedance · damped waves
+
+## Lecture 23 · Imperfect dielectrics and good conductors
+
+- [[practice/23-imperfect-dielectrics-and-good-conductors#239-down-into-a-deep-lake|23.9 Down into a deep lake]] — good conductor · skin depth · decibels · *modelled on Summer 2018 HE3 #3b*
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2310-calling-a-submarine|23.10 Calling a submarine]] — seawater · skin depth · decibels
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2311-dry-earth-from-elf-to-vhf|23.11 Dry earth from ELF to VHF]] — regimes · imperfect dielectric · good conductor · *modelled on Summer 2020 HE3 #3*
+- [[practice/23-imperfect-dielectrics-and-good-conductors#2312-skin-effect-in-a-copper-wire|23.12 Skin effect in a copper wire]] — skin depth · Joule heating · resistance
+
+## Lecture 24 · Signal transmission and circular polarization
+
+- [[practice/24-group-velocity-and-polarization#249-building-a-right-circular-wave|24.9 Building a right-circular wave]] — circular polarization · phasor fields · time-average power · *modelled on Summer 2018 HE3 #3a*
+- [[practice/24-group-velocity-and-polarization#2410-a-wave-with-a-free-phase|24.10 A wave with a free phase]] — elliptical polarization · phasor fields · time-average power · *modelled on SP17 Exam 3 #4*
+- [[practice/24-group-velocity-and-polarization#2411-reading-the-ionosphere-from-two-delays|24.11 Reading the ionosphere from two delays]] — group velocity · signal transmission · plasma frequency
+- [[practice/24-group-velocity-and-polarization#2412-an-elliptically-rotating-sheet-current|24.12 An elliptically rotating sheet current]] — current sheet radiation · elliptical polarization · energy balance
+
+## Lecture 25 · Wave reflection and transmission
+
+- [[practice/25-reflection-and-transmission#259-out-of-the-glass|25.9 Out of the glass]] — transmission coefficient · phasors · power balance · *modelled on Summer 2017 HE3 #3c–f*
+- [[practice/25-reflection-and-transmission#2510-into-lossy-ground|25.10 Into lossy ground]] — lossy media · transmission · Joule heating · *modelled on SP19 Exam 3 #1*
+- [[practice/25-reflection-and-transmission#2511-a-circular-wave-on-a-mirror|25.11 A circular wave on a mirror]] — perfect conductor · circular polarization · handedness · *modelled on SP19 Exam 3 #3b*
+- [[practice/25-reflection-and-transmission#2512-identifying-a-material|25.12 Identifying a material]] — reflection coefficient · intrinsic impedance · power balance · *modelled on SP18 Exam 3 #2a*
+
+## Lecture 26 · Standing waves and radiation pressure
+
+- [[practice/26-standing-waves-and-radiation-pressure#269-is-it-a-standing-wave|26.9 Is it a standing wave]] — standing waves · nodes and antinodes · perfect conductor · *modelled on SP17 Exam 3 #1b*
+- [[practice/26-standing-waves-and-radiation-pressure#2610-a-good-conductor-mirror|26.10 A good-conductor mirror]] — good conductor · skin depth · radiation pressure
+- [[practice/26-standing-waves-and-radiation-pressure#2611-pushing-a-sail-with-a-laser|26.11 Pushing a sail with a laser]] — radiation pressure · intensity
+- [[practice/26-standing-waves-and-radiation-pressure#2612-trapped-between-two-mirrors|26.12 Trapped between two mirrors]] — standing waves · radiation pressure · perfect conductor
+
+## Lecture 27 · Guided TEM waves on transmission lines
+
+- [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax|27.9 A pulse on a coax]] — transmission lines · coax · Poynting vector · *modelled on SP19 Exam 3 #2*
+- [[practice/27-transmission-line-basics#2710-splitting-a-snapshot-into-two-waves|27.10 Splitting a snapshot into two waves]] — transmission lines · moving pulses · energy
+- [[practice/27-transmission-line-basics#2711-the-battery-and-the-front|27.11 The battery and the front]] — transmission lines · surface charge · telegrapher's equations
+- [[practice/27-transmission-line-basics#2712-telegraphers-equations-for-a-leaky-coax|27.12 Telegrapher's equations for a leaky coax]] — telegrapher's equations · coax · conductance
+
+## Lecture 28 · Distributed circuits and bounce diagrams
+
+- [[practice/28-bounce-diagrams#289-voltage-and-current-diagrams|28.9 Voltage and current diagrams]] — bounce diagram · generator reflection coefficient · steady state · *modelled on SP18 Exam 3 #3a*
+- [[practice/28-bounce-diagrams#2810-a-pulse-into-a-resistive-load|28.10 A pulse into a resistive load]] — bounce diagram · transients · steady state · *modelled on FA23 Exam 3 #5*
+- [[practice/28-bounce-diagrams#2811-impulse-response-at-a-third-point|28.11 Impulse response at a third point]] — impulse response · bounce diagram · steady state · *modelled on Summer 2020 final #5*
+- [[practice/28-bounce-diagrams#2812-open-line-charges-like-a-capacitor|28.12 Open line charges like a capacitor]] — bounce diagram · steady state · capacitance
+
+## Lecture 29 · Bounce diagram examples
+
+- [[practice/29-bounce-diagram-examples#299-one-sine-cycle-on-a-mismatched-line|29.9 One sine cycle on a mismatched line]] — bounce diagram · generator reflection coefficient · *modelled on SP17 Exam 3 #5c*
+- [[practice/29-bounce-diagram-examples#2910-a-ramp-into-an-open-line|29.10 A ramp into an open line]] — bounce diagram · transients · *modelled on FA23 Exam 3 #5(c)*
+- [[practice/29-bounce-diagram-examples#2911-a-ramped-step-off-centre|29.11 A ramped step off-centre]] — impulse response · steady state
+- [[practice/29-bounce-diagram-examples#2912-a-partial-standing-wave-builds-up|29.12 A partial standing wave builds up]] — standing waves · bounce diagram
+
+## Lecture 30 · Multi-line circuits
+
+- [[practice/30-multi-line-circuits#309-two-lines-and-a-mismatched-source|30.9 Two lines and a mismatched source]] — bounce diagram · line junction · steady state · *modelled on SP19 Exam 3 #4*
+- [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes|30.10 Locating a splice by its echoes]] — line junction · bounce diagram · load reflection coefficient · *modelled on FA23 Exam 3 #4*
+- [[practice/30-multi-line-circuits#3011-a-tap-resistor-and-an-open-stub|30.11 A tap resistor and an open stub]] — line junction · transients · steady state
+- [[practice/30-multi-line-circuits#3012-a-switched-on-sine-across-a-step-down|30.12 A switched-on sine across a step-down]] — impulse response · line junction · steady state

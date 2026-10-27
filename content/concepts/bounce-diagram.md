@@ -30,7 +30,7 @@ aliases: ["bounce diagrams", "injection coefficient", "load reflection coefficie
 
 **Examples.**
 - $Z_0 = 60\ \Omega$, $R_g = 180\ \Omega$, $R_L = 20\ \Omega$, 12 V step: weights 3, $-1.5$, $-0.75$, … V, settling to 1.2 V ([[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] §5).
-- [[problems/reading-a-line-from-two-pulses]]: two pulses at one point reveal $R_g = Z_0$ and $\Gamma_L = -\tfrac13$; with $R_g = 25\ \Omega$ instead, $\Gamma_g = -\tfrac12$.
+- [[problems/reading-a-line-from-two-pulses|Worked problem — Reading a line from two pulses]]: two pulses at one point reveal $R_g = Z_0$ and $\Gamma_L = -\tfrac13$; with $R_g = 25\ \Omega$ instead, $\Gamma_g = -\tfrac12$.
 
 > [!trap]
 > - $\Gamma_g$ uses $R_g$ only; the source voltage enters through $\tau_g$.
@@ -41,4 +41,4 @@ aliases: ["bounce diagrams", "injection coefficient", "load reflection coefficie
 
 **Practice.** [[practice/topics#transients-on-lines-and-bounce-diagrams|Transients on lines and bounce diagrams]] (36 problems) — for example [[practice/29-bounce-diagram-examples#291-which-way-round|29.1 Which way round]] (easy), [[practice/29-bounce-diagram-examples#296-both-ends-of-a-short-line|29.6 Both ends of a short line]] (medium), [[practice/29-bounce-diagram-examples#299-one-sine-cycle-on-a-mismatched-line|29.9 One sine cycle on a mismatched line]] (hard).
 
-Related: [[concepts/characteristic-impedance]] · [[concepts/reflection-and-transmission]] · [[concepts/telegraphers-equations]] · [[concepts/superposition]].
+Related: [[concepts/characteristic-impedance|Characteristic impedance]] · [[concepts/reflection-and-transmission|Reflection and transmission coefficients]] · [[concepts/telegraphers-equations|Telegrapher's equations]] · [[concepts/superposition|Superposition]].
