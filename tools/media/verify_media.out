@@ -1,0 +1,68 @@
+== 1. family tree: limits of gamma^2 = jw mu (sigma + jw eps)
+PASS lossless gamma = j w sqrt(mu eps): got 0.04191690042762345j, want 0.04191690042762345j
+PASS good conductor gamma ~ sqrt(j w mu sigma): got (15131.914026488965+15131.914026503478j), want (15131.914026496223+15131.914026496223j)
+PASS sqrt(j w mu sigma) = (1+j)/delta: got (15131.914026496223+15131.914026496223j), want (15131.91402649622+15131.91402649622j)
+PASS plasma gamma^2 = (wp^2 - w^2)/c^2 at 5 MHz: got (0.02459837158043018+0j), want 0.024598371580430177
+PASS plasma gamma^2 = (wp^2 - w^2)/c^2 at 20 MHz: got (-0.14012286668137908+0j), want -0.1401228666813791
+PASS ionosphere f_p for N = 1e12 m^-3 ~ 9 MHz (Kudeki ECE 458: sqrt(80.6 N)): got 8978662.821226671, want 8977750.274985377
+PASS   ... = 8.98 MHz: got 8.97866282122667, want 8.98
+PASS TL gamma with R=0, L=mu, C=eps, G=sigma equals plane-wave gamma: got (0.05626628858760347+0.07016353592061034j), want (0.05626628858760347+0.07016353592061034j)
+PASS TL Z0 with same map equals eta: got (68.48826893221961+54.92284067561777j), want (68.48826893221961+54.92284067561777j)
+== 2. angle bookkeeping, theta = 50 deg
+PASS angle of (sigma + j w eps) = 90 - theta: got 40.0, want 40
+PASS angle of gamma^2 = 180 - theta: got 130.0, want 130
+PASS angle of gamma = 90 - theta/2: got 65.0, want 65
+PASS angle of eta^2 = theta: got 50.0, want 50
+PASS tau = angle eta = theta/2: got 25.0, want 25
+PASS |gamma|/(w sqrt(mu eps)) = (1+p^2)^(1/4): got 1.2472865856972937, want 1.2472865856972937
+PASS   ... = 1.247: got 1.2472865856972937, want 1.247
+PASS |eta|/sqrt(mu/eps) = (1+p^2)^(-1/4) = 0.802: got 0.8017403630144484, want 0.802
+PASS alpha/beta = tan tau = 0.466: got 0.4663076581549985, want 0.466
+PASS p = tan 50 = 1.19: got 1.19175359259421, want 1.19
+== 3. snapshot rows
+PASS p=0.2: tau: got 5.6549662370101075, want 5.65
+PASS p=0.2: alpha/beta: got 0.09901951359278484, want 0.099
+PASS p=0.2: delta/lambda: got 1.6073088759698002, want 1.61
+PASS p=100: tau: got 44.71353065115826, want 44.71
+PASS p=100: alpha/beta: got 0.9900499987500626, want 0.99
+PASS p=100: delta/lambda: got 0.16075445007103514, want 0.161
+PASS p=0.2: dB per wavelength = 2 pi 8.686 tan(tau): got 5.403995316596657, want 5.4
+PASS p=100: dB per wavelength = 2 pi 8.686 tan(tau): got 54.032032296629204, want 54.0
+PASS plasma at fp/2: gamma real = kappa: got (0.16335495278201118+0j), want 0.16335495278201115
+PASS plasma at fp/2: eta purely imaginary (angle 90 deg): got 90.0, want 90
+PASS plasma at fp/2: 1/kappa = 6.12 m: got 6.121638695182074, want 6.12
+PASS time-avg S = 1/2 Re{E H*} = 0 for imaginary eta: got -0.0, want 0
+== 4. phase velocity across media (exact)
+     copper: fc = 1.04e+18 Hz
+     seawater: fc = 8.88e+08 Hz
+     moist soil: fc = 1.8e+07 Hz
+     fresh water: fc = 2.25e+05 Hz
+PASS seawater fc = 0.89 GHz: got 0.8876594362727084, want 0.888
+PASS moist soil fc = 18 MHz: got 17.975103584522344, want 18.0
+PASS fresh water fc = 225 kHz: got 224.6887948065293, want 225
+PASS copper vp at 60 Hz = sqrt(2w/mu sigma) = 3.22 m/s: got 3.2163376045133845, want 3.22
+PASS copper vp at 1 GHz = 13.1 km/s: got 13.130643279674922, want 13.1
+PASS seawater vp at 1 kHz = 5.0e4 m/s: got 49999.97183605341, want 50000.0
+PASS seawater vp at 100 GHz -> c/9: got 0.11111001678873061, want 0.1111111111111111
+PASS dielectric eps_r = 4: vp = c/2: got 0.5, want 0.5
+PASS plasma at 9.5 MHz: vp vg = c^2: got 8.987551792261171e+16, want 8.987551792261173e+16
+PASS plasma at 12 MHz: vp vg = c^2: got 8.987551792261173e+16, want 8.987551792261173e+16
+PASS plasma at 30 MHz: vp vg = c^2: got 8.987551792261173e+16, want 8.987551792261173e+16
+PASS plasma vp/c at 12 MHz = 1.51: got 1.5118578920369088, want 1.512
+== 4b. loss per wavelength depends only on p
+PASS p=0.01: 2*pi*8.686*tan(atan(p)/2) dB/lambda: got 0.27286844922767184, want 0.273
+PASS p=0.1: 2*pi*8.686*tan(atan(p)/2) dB/lambda: got 2.7219647236206965, want 2.72
+PASS p=1: 2*pi*8.686*tan(atan(p)/2) dB/lambda: got 22.60572759769774, want 22.6
+PASS p=10: 2*pi*8.686*tan(atan(p)/2) dB/lambda: got 49.38974521066836, want 49.4
+PASS p=10000.0: 2*pi*8.686*tan(atan(p)/2) dB/lambda: got 54.56959692113355, want 54.6
+PASS 8.686 dB per skin depth in every medium: got 8.685889638065037, want 8.686
+== 4c. material markers on the loss-per-wavelength panel
+PASS seawater 1 GHz: dB per lambda: got 20.727938257986885, want 20.7
+PASS seawater 1 GHz: same from exact gamma (8.686 * alpha * lambda): got 20.727938257986878, want 20.7
+PASS moist soil 100 kHz: dB per lambda: got 54.27228400422905, want 54.3
+PASS moist soil 100 kHz: same from exact gamma (8.686 * alpha * lambda): got 54.27228400422904, want 54.3
+PASS fresh water 100 MHz: dB per lambda: got 0.061311938338133976, want 0.0614
+PASS fresh water 100 MHz: same from exact gamma (8.686 * alpha * lambda): got 0.061311938338133976, want 0.0614
+== 5. TL analogy directions
+PASS x cross y = z (E along x, H along y travels +z): got [0 0 1], want [0, 0, 1]
+ALL PASS

@@ -35,6 +35,8 @@ aliases: ["transmission-line equations", "telegrapher equations", "distributed-c
 
 **Where it appears.** [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] (derivation from the fields, the ladder model); [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lectures 28]]–30 (bounce diagrams with sources and loads); Lecture 31 onward in phasor form.
 
+**Related.** [[0-toolkit/08-waves-in-media-figures|Waves in media — figures]]
+
 **Practice.** [[practice/topics#transmission-lines-telegraphers-equations-and-characteristic-impedance|Transmission lines: telegrapher's equations and characteristic impedance]] (14 problems) — for example [[practice/27-transmission-line-basics#271-strip-line-parameters|27.1 Strip-line parameters]] (easy), [[practice/27-transmission-line-basics#276-reading-a-line-from-v-and-i|27.6 Reading a line from V and I]] (medium), [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax|27.9 A pulse on a coax]] (hard).
 
 Related: [[concepts/inductance|Inductance]] · [[concepts/capacitance|Capacitance]] · [[concepts/wave-equation|Wave equation]] · [[concepts/faradays-law|Faraday's law]] · [[concepts/continuity-equation|Continuity equation (charge conservation)]].

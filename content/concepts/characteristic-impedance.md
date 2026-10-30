@@ -41,6 +41,8 @@ aliases: ["Z0", "geometrical factor", "GF"]
 
 **Where it appears.** [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] (definition, GF table); [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] onward. A load $R$ reflects with $(R-Z_0)/(R+Z_0)$, the wave $\Gamma$ of [[concepts/reflection-and-transmission|Reflection and transmission coefficients]] with $Z_0$ for $\eta_1$ and $R$ for $\eta_2$.
 
+**Related.** [[0-toolkit/08-waves-in-media-figures|Waves in media — figures]]
+
 **Practice.** [[practice/topics#transmission-lines-telegraphers-equations-and-characteristic-impedance|Transmission lines: telegrapher's equations and characteristic impedance]] (14 problems) — for example [[practice/27-transmission-line-basics#271-strip-line-parameters|27.1 Strip-line parameters]] (easy), [[practice/27-transmission-line-basics#276-reading-a-line-from-v-and-i|27.6 Reading a line from V and I]] (medium), [[practice/27-transmission-line-basics#279-a-pulse-on-a-coax|27.9 A pulse on a coax]] (hard).
 
 Related: [[concepts/intrinsic-impedance|Intrinsic impedance]] · [[concepts/telegraphers-equations|Telegrapher's equations]] · [[concepts/capacitance|Capacitance]] · [[concepts/inductance|Inductance]].

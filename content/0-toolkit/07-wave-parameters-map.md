@@ -5,7 +5,7 @@ tags: [toolkit, waves]
 aliases: ["wave parameter map", "alpha beta gamma eta", "loss tangent cheat sheet"]
 ---
 
-*Reference page for Lectures 18–26. Every symbol here has a topic page; this page only shows how they hang together.*
+*Reference page for Lectures 18–26. Every symbol here has a topic page; this page only shows how they hang together. Figures for the wave equations in each medium: [[0-toolkit/08-waves-in-media-figures|Waves in media — figures]].*
 
 > [!key] The whole thing in four lines
 > $$
