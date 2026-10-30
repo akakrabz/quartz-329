@@ -12,5 +12,6 @@ Reference pages, not lectures. Come here when a lecture says "recall from MATH 2
 - [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]] — every slip found in the slides, notes, exam key and homework solutions, with the correction and the page here that has it right.
 - [[0-toolkit/05-midterm-2-summary|Midterm 2 — equation summary]] — Lectures 11–20 and Homeworks 5–7 on one page: the equations, the canonical fields, the sign rules, the traps, what each homework problem drilled, a practice list and a weekend study plan for the October 19 exam.
 - [[0-toolkit/06-prairielearn-guide|PrairieLearn guide]] — the randomized practice questions on [pl.vops.ch](https://pl.vops.ch): signing in, how grading works, the seven assessments including a timed Midterm 2 practice exam, and how to approach each question.
+- [[0-toolkit/07-wave-parameters-map|Wave parameters on one page]] — α, β, γ, η, δ, τ and the loss tangent: what is given, what is computed, the identities that tie them together, the regime simplifications, and the symbols that collide (three τ's, two δ's).
 
 Phasors and the complex arithmetic they need are on the [[concepts/phasors]] page (Lecture 21). Planned addition as the course reaches it: the Smith chart as a coordinate transformation (Lecture 34).
