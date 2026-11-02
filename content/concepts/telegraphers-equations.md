@@ -33,7 +33,7 @@ aliases: ["transmission-line equations", "telegrapher equations", "distributed-c
 > - Series inductors and shunt capacitors, not the reverse.
 > - $\mathcal{L}$ and $\mathcal{C}$ are per metre; the line's length enters only through the ends.
 
-**Where it appears.** [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] (derivation from the fields, the ladder model); [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lectures 28]]–30 (bounce diagrams with sources and loads); Lecture 31 onward in phasor form.
+**Where it appears.** [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] (derivation from the fields, the ladder model; slides 12–19 run the same steps with $E_x = V/d$, $H_y = I/W$); [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lectures 28]]–30 (bounce diagrams with sources and loads); Lecture 31 onward in phasor form.
 
 **Related.** [[0-toolkit/08-waves-in-media-figures|Waves in media — figures]]
 

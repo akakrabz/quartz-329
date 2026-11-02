@@ -132,6 +132,16 @@ Exact for any medium ($\text{Re}\{\gamma/\eta\} = \sigma$ in disguise); with $\c
 - **The 200 MHz wave** $\tilde{\mathbf{E}} = 12e^{-j(8\pi/3)y}\,\hat z$ V/m, $\eta = 60\pi\ \Omega$ ([[concepts/monochromatic-waves|Monochromatic waves: ω, β, λ, v_p]]): $\langle\mathbf{S}\rangle = 144/(120\pi)\,\hat y = 0.382\,\hat y$ W/m².
 - **Two phases:** $3\cos(\omega t + 20^\circ)$, $2\cos(\omega t - 40^\circ)$: $\tfrac12\cdot3\cdot2\cos60^\circ = 1.5$.
 
+> [!example] Slides, Lecture 20 (slides 8–9) — the exam-flagged average, and power through 1 m²
+> Slide 8, "a question we may ask on an exam": $\mathbf{J}_s = -\hat x\,J_{s0}\cos\omega t$ in free space radiates $E_0 = \eta_0J_{s0}/2$, $H_0 = J_{s0}/2$ (ink), so for $z>0$
+> $$
+> \begin{gathered}
+> \langle S_z\rangle = \frac1T\int_0^TS_z\,dt = \frac{\eta_0J_{s0}^2}{4}\big\langle\cos^2(\omega t - \beta z)\big\rangle\\[4pt]
+> = \frac{\eta_0J_{s0}^2}{8} = \tfrac12\eta_0H_0^2\ \ \text{W/m}^2,
+> \end{gathered}
+> $$
+> the same at every $z$ (ink: "no $z$, no $t$"). Slide 9: $\mathbf{H} = \hat y\,H_0\cos(6\pi\times10^7t - 0.2\pi z)$ A/m (30 MHz, $\lambda = 10$ m, $v_p = c$; $\mathbf{E} = \hat x\,\eta_0H_0\cos(\ldots)$, $\mathbf{S}$ along $+\hat z$). Through 1 m² of the plane $z = 0$: (a) $t = 0$: $\eta_0H_0^2\approx377H_0^2$ W; (b) $t = \tfrac18$ µs: $\omega t = 7.5\pi$, $\cos^2 = 0$, **0 W**; (c) average $\tfrac12\eta_0H_0^2 = 60\pi H_0^2\approx188H_0^2$ W.
+
 > [!example] Example — J·E in sea water (the exam's question, new numbers)
 > Sea water ($\sigma\approx4$ S/m), low-frequency $\mathbf{E} = \hat y\,0.5\cos\omega t$ V/m: $\mathbf{J} = \hat y\,2\cos\omega t$ A/m², $\mathbf{J}\cdot\mathbf{E} = \sigma E^2 = \cos^2\omega t$ W/m³; peak 1, average 0.5 W/m³ of heat, half a milliwatt per litre. Summer 2019 HE3 #1b.
 
@@ -177,12 +187,12 @@ Exact for any medium ($\text{Re}\{\gamma/\eta\} = \sigma$ in disguise); with $\c
 > 1. **Average power of a wave:** $E_0^2/(2\eta)$ (Summer 2017/2018 HE3, SP17 #4b, Summer 2020 FE #4c); exact, $\eta_0 = 120\pi$; or $\tfrac12\text{Re}\{\tilde{\mathbf{E}}\times\tilde{\mathbf{H}}^*\}$ (SP19 #2c × plate cross-section, FA23 #6(a) damped). Often one component's power first, then the whole wave: component powers add.
 > 2. **Split, then add** for circular polarization.
 > 3. **J·E in a conductor:** peak $\sigma E_0^2$, average $\sigma E_0^2/2$, W/m³ (Summer 2019 HE3 #1b, and conflict version).
-> 4. **Radiating sheet:** $\langle\mathbf{J}_s\cdot\mathbf{E}\rangle<0$, then half its magnitude into one half-space (Summer 2020 HE3 #2c–d).
+> 4. **Radiating sheet:** $\langle\mathbf{J}_s\cdot\mathbf{E}\rangle<0$, then half its magnitude into one half-space (Summer 2020 HE3 #2c–d). The slides flag the per-side average (Lecture 20, slide 8): $\tfrac1T\int_0^TS_z\,dt = \eta_0J_{s0}^2/8 = \tfrac12\eta_0H_0^2$, $H_0 = J_{s0}/2$.
 > 5. **Standing-wave true/false** (SP17 #1c, FA23 #1(c)): write $\mathbf{S}$, $w$, average; watch "instantaneous"/"time-averaged", "at a point"/"in the region".
 > 6. **Power against depth** (Summer 2018/2019 HE3 #3b(v), FA23 #6(b)): $\propto E^2$, so $e^{-2\alpha z}$ when the field falls as $e^{-\alpha z}$.
 > 7. **Power through an area:** $\langle S\rangle$ × area (SP19 #2c, Unit 4).
 
-**Where it appears.** [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#7-time-averages|Lecture 20 §7]] (cosine route, sheet, sunlight, standing pair); [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation#7-time-averages-straight-from-phasors|Lecture 21 §7]] (phasor route); [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors|Lecture 23]] ($\cos\tau\,e^{-2\alpha z}$); [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization|Lecture 24]] (circular wave: twice a component's power); [[3-maxwell-and-waves/25-wave-reflection-and-transmission|Lecture 25]] (power balance); [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] ($\langle\mathbf{S}\rangle = 0$); [[problems/energy-bookkeeping-for-a-radiating-sheet|Worked problem — Energy bookkeeping for a radiating sheet]]; [[problems/phasors-e-and-power-from-a-given-h|Worked problem — Phasors, E and power from a given H]].
+**Where it appears.** [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#7-time-averages|Lecture 20 §7]] (cosine route, sheet, sunlight, standing pair; slides 8–9, 14); [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation#7-time-averages-straight-from-phasors|Lecture 21 §7]] (phasor route); [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors|Lecture 23]] ($\cos\tau\,e^{-2\alpha z}$); [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization|Lecture 24]] (circular wave: twice a component's power); [[3-maxwell-and-waves/25-wave-reflection-and-transmission|Lecture 25]] (power balance); [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] ($\langle\mathbf{S}\rangle = 0$); [[problems/energy-bookkeeping-for-a-radiating-sheet|Worked problem — Energy bookkeeping for a radiating sheet]]; [[problems/phasors-e-and-power-from-a-given-h|Worked problem — Phasors, E and power from a given H]].
 
 **Related.** [[concepts/poynting-vector|Poynting vector]] · [[concepts/poynting-theorem|Poynting's theorem]] · [[concepts/phasors|Phasors]] · [[concepts/current-sheet-radiation|Radiation from a current sheet]] · [[concepts/plane-waves|Plane waves]] · [[concepts/intrinsic-impedance|Intrinsic impedance]] · [[concepts/standing-waves|Standing waves]].
 

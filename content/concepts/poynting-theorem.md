@@ -76,7 +76,7 @@ aliases: ["Poynting theorem", "electromagnetic energy conservation", "energy con
 > &= -\frac{\partial}{\partial t}\Big(\tfrac12\mu H_y^2 + \tfrac12\epsilon E_x^2\Big) - J_xE_x ,
 > \end{aligned}
 > $$
-> the theorem.
+> the theorem. Slides (Lecture 20 slides 6–7) do it as a flux count on a box $\Delta x\Delta y\Delta z$ beside the sheet: $\oint\mathbf{S}\cdot d\mathbf{S} = [S_z(z + \Delta z) - S_z(z)]\,\Delta x\Delta y = (\partial S_z/\partial z)\,\Delta V$; with $J_x = 0$ off the sheet (ink) the coupled pair makes it $-\tfrac{\partial}{\partial t}\big[(\tfrac12\mu_0H_y^2 + \tfrac12\epsilon_0E_x^2)\,\Delta V\big]$: outflow = stored energy lost.
 >
 > **Integral form:** integrate over $V$; [[concepts/divergence-theorem|divergence theorem]] on $\nabla\cdot\mathbf{S}$.
 
@@ -182,6 +182,14 @@ per m² of sheet; for $\beta d = \pi/2$, $2\eta_0\cos2\omega t$: the slab fills 
 
 Sheet $-\hat z\,3u(t)\cos\omega t$ A/m, $\epsilon_r = 2.25$: injects $180\pi\approx565$ W/m², $90\pi\approx283$ W/m² each way; after 3 µs, 1.70 mJ/m² stored between the wavefronts ([[problems/energy-bookkeeping-for-a-radiating-sheet|Worked problem — Energy bookkeeping for a radiating sheet]]).
 
+> [!example] Slides, Lecture 20 (slide 13) — challenge: what is true for the slab $0<x<1$ m?
+> Free space, $\mathbf{H} = \hat y\,H_0\cos(ct + x)$ A/m, $\mathbf{E} = \hat z\,\eta_0H_0\cos(ct + x)$ V/m ($x$ in m: $\beta = 1$ rad/m, $\omega = c\beta$; ink: $\cos\omega(t + x/v_p)$, travel toward $-x$), $\mathbf{S} = -\hat x\,\eta_0H_0^2\cos^2(ct + x)$.
+> - (a) Net outward power zero at all times: **false**, $\eta_0H_0^2[\cos^2(ct) - \cos^2(ct + 1)]$ per m².
+> - (b) The fields do work and lose energy: **false**, $\sigma = 0$, $\mathbf{J}\cdot\mathbf{E} = 0$.
+> - (c) Total electric energy inside constant: **false**, $\int_0^1\cos^2(ct + x)\,dx$ oscillates (1 m is not a multiple of $\lambda/2 = \pi$ m).
+> - (d) Time-averaged electric energy density the same at every $x$: **true** (circled), $\langle\tfrac12\epsilon_0E^2\rangle = \tfrac14\epsilon_0\eta_0^2H_0^2 = \tfrac14\mu_0H_0^2$.
+> - (e) Total energy density at fixed $x$ constant: **false**, $w = \mu_0H_0^2\cos^2(ct + x)$.
+
 > [!trap]
 > - Outward flux plus $\int\mathbf{J}\cdot\mathbf{E}\,dV$ = rate of *decrease* of $W$.
 > - Exams call even a negative $\langle\mathbf{J}_s\cdot\mathbf{E}\rangle$ (a source) Joule heating; $\mathbf{J}_s\cdot\mathbf{E}$ is W/m², $\mathbf{J}\cdot\mathbf{E}$ W/m³.
@@ -189,9 +197,9 @@ Sheet $-\hat z\,3u(t)\cos\omega t$ A/m, $\epsilon_r = 2.25$: injects $180\pi\app
 > - Hysteresis ([[concepts/magnetic-materials|Dia-, para- and ferromagnetism]]): $\mathbf{H}\cdot\partial\mathbf{B}/\partial t$ is not a stored-energy rate; each cycle loses the loop area as heat.
 
 > [!exam] On exams
-> Closes a sheet or plane-wave problem ([[0-toolkit/05-midterm-2-summary#9-energy-and-power-poyntings-theorem-lecture-20|Midterm 2 summary §9]]): **J·E in a conductor** (W/m³), **the radiating sheet** ($\langle\mathbf{J}_s\cdot\mathbf{E}\rangle<0$, half per half-space; [[problems/energy-bookkeeping-for-a-radiating-sheet|worked problem]]), **power against depth** ($\propto E^2$, so $e^{-2\alpha z}$). Papers and methods: [[concepts/time-average-power|Time averages and average power]].
+> Closes a sheet or plane-wave problem ([[0-toolkit/05-midterm-2-summary#9-energy-and-power-poyntings-theorem-lecture-20|Midterm 2 summary §9]]): **J·E in a conductor** (W/m³), **the radiating sheet** ($\langle\mathbf{J}_s\cdot\mathbf{E}\rangle<0$, half per half-space; [[problems/energy-bookkeeping-for-a-radiating-sheet|worked problem]]), **power against depth** ($\propto E^2$, so $e^{-2\alpha z}$), **true/false on a region** (Lecture 20 slide 13: instantaneous outflow and stored energy oscillate, averages do not). Papers and methods: [[concepts/time-average-power|Time averages and average power]].
 
-**Where it appears.** [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#1-where-does-the-energy-go|Lecture 20 §1]] (the question), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#2-deriving-the-theorem-from-maxwells-equations|§2]] (derived), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#3-reading-the-three-terms|§3]] (three terms), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#4-the-integral-form-a-ledger-for-any-volume|§4]] (integral form), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#5-joule-heating-at-work-a-wire-is-heated-through-its-surface|§5]] (wire), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#6-the-notes-example-monochromatic-waves-from-a-cosine-sheet|§6]] (sheet balance); [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|Lecture 19]] ($\mathbf{E}$ opposing $\mathbf{J}_s$); [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors|Lecture 23]] ($\sigma E^2$ drains a wave, power $\propto e^{-2\alpha z}$); [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] (no average power in a standing wave); Unit 4; [[problems/energy-bookkeeping-for-a-radiating-sheet|Worked problem — Energy bookkeeping for a radiating sheet]].
+**Where it appears.** [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#1-where-does-the-energy-go|Lecture 20 §1]] (the question), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#2-deriving-the-theorem-from-maxwells-equations|§2]] (derived), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#3-reading-the-three-terms|§3]] (three terms), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#4-the-integral-form-a-ledger-for-any-volume|§4]] (integral form), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#5-joule-heating-at-work-a-wire-is-heated-through-its-surface|§5]] (wire), [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#6-the-notes-example-monochromatic-waves-from-a-cosine-sheet|§6]] (sheet balance); Lecture 20 slides 6–7, 10–14 (box route, identity route, challenge); [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|Lecture 19]] ($\mathbf{E}$ opposing $\mathbf{J}_s$); [[3-maxwell-and-waves/23-imperfect-dielectrics-and-good-conductors|Lecture 23]] ($\sigma E^2$ drains a wave, power $\propto e^{-2\alpha z}$); [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] (no average power in a standing wave); Unit 4; [[problems/energy-bookkeeping-for-a-radiating-sheet|Worked problem — Energy bookkeeping for a radiating sheet]].
 
 **Related.** [[concepts/poynting-vector|Poynting vector]] · [[concepts/time-average-power|Time averages and average power]] · [[concepts/continuity-equation|Continuity equation (charge conservation)]] · [[concepts/electrostatic-energy|Electrostatic energy]] · [[concepts/magnetic-energy|Magnetic energy]] · [[concepts/conductors|Conductors in electrostatics]] · [[concepts/current-sheet-radiation|Radiation from a current sheet]] · [[concepts/divergence-theorem|Divergence theorem]] · [[concepts/maxwells-equations|Maxwell's equations]].
 

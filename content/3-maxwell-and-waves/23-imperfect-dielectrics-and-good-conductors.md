@@ -1,18 +1,20 @@
 ---
 title: "Lecture 23 — Imperfect dielectrics and good conductors"
-description: "The loss tangent σ/ωε sorts media into imperfect dielectrics and good conductors, with the notes' regime table, skin depth, seawater and submarines, and metals; the content lives on the topic pages linked from each section."
+description: "The loss tangent σ/ωε sorts media into imperfect dielectrics and good conductors; regime table, skin depth, seawater, submarines, metals; content on the linked topic pages."
 tags: [lecture, waves]
 lecture: 23
 ---
 
-*Lecture 23 · course notes §23 · **slides: not yet available — this page is built from the course notes** · prev: [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] · next: [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization|Lecture 24]] · worked problem: [[problems/a-radio-wave-into-moist-ground|A radio wave into moist ground]] · practice: [[practice/23-imperfect-dielectrics-and-good-conductors|12 problems]]*
+*Lecture 23 · course notes §23 · slides "Lectures 22b–23" (annotated, Oct 16) · prev: [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] · next: [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization|Lecture 24]] · worked problem: [[problems/a-radio-wave-into-moist-ground|A radio wave into moist ground]] · practice: [[practice/23-imperfect-dielectrics-and-good-conductors|12 problems]]*
 
 > [!abstract] In one breath
-> The **loss tangent** $\sigma/\omega\epsilon$, conduction over displacement current, sorts the damped waves of [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]]. Small: an **imperfect dielectric**, $\alpha\approx(\sigma/2)\sqrt{\mu/\epsilon}$, the rate at which Joule heat drains the Poynting flux. Large: a **good conductor**, $\alpha = \beta = 1/\delta$ with **skin depth** $\delta = 1/\sqrt{\pi f\mu\sigma}$ and $\eta = (1+j)/(\sigma\delta)$, the field gone within a wavelength. Power falls as $e^{-2\alpha z}$. Seawater's $\delta$ is 7.96 m at 1 kHz but 1.3 cm at 1 GHz: hence slow very-low-frequency submarine links.
+> The **loss tangent** $\sigma/\omega\epsilon$, conduction over displacement current, sorts the damped waves of [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]]. Small: an **imperfect dielectric**, $\alpha\approx(\sigma/2)\sqrt{\mu/\epsilon}$. Large: a **good conductor**, $\alpha = \beta = 1/\delta$ with **skin depth** $\delta = 1/\sqrt{\pi f\mu\sigma}$ and $\eta = (1+j)/(\sigma\delta)$, the field gone within a wavelength. Power falls as $e^{-2\alpha z}$. Seawater's $\delta$ is 7.96 m at 1 kHz but 1.3 cm at 1 GHz: hence slow very-low-frequency submarine links.
 
 ## 1. When does a medium count as a conductor?
 
 Conduction current in phase and dissipating, displacement current 90° ahead and lossless; their ratio $\sigma/\omega\epsilon$ names four regimes (imperfect dielectric below 0.1, good conductor above 10), with the crossover $f_c = \sigma/2\pi\epsilon = 1/(2\pi\tau_r)$. A table of media (copper to mica); seawater at four frequencies ($8.9\times10^5$ at 1 kHz to 0.089 at 10 GHz).
+
+Slides 22b–23, slides 14–16, 19: $\sigma/\omega\epsilon\ll1$ and $\gg1$ as the "official" definitions; a textbook chart draws the regions at 0.01 and 100 → [[concepts/loss-tangent|Loss tangent]]
 
 → Full treatment: [[concepts/loss-tangent|Loss tangent]]
 
@@ -20,17 +22,19 @@ Conduction current in phase and dissipating, displacement current 90° ahead and
 
 The regime table; polar form $1 - jp = \sqrt{1 + p^2}e^{-j\theta}$ gives exact $\alpha$, $\beta$, $\lvert\eta\rvert$ and $\tau = \theta/2\le45^\circ$ at once; accuracy of the shortcuts at $p = 0.1$, 1, 10; the attenuation plateau above $10f_c$. Example: $\lambda = 0.5$ m, $\delta = 20$ m at 200 MHz: imperfect dielectric, $\epsilon_r = 9$, $\sigma = 8.0\times10^{-4}$ S/m.
 
-→ Full treatment: [[concepts/loss-tangent|Loss tangent]] · [[concepts/skin-depth|Skin depth]] ($\alpha$ against frequency)
+→ Full treatment: [[concepts/loss-tangent|Loss tangent]] · [[concepts/skin-depth|Skin depth]]
 
 ## 3. Imperfect dielectrics: slow decay, and where the power goes
 
 Notes' Example 1: 2 V/m at 1 GHz in $\epsilon_r = 4$, $\sigma = 10^{-3}$ S/m: $\alpha = 0.094$ Np/m, $\mathbf{H}$ lags 0.13°, $\langle S\rangle = 10.6$ mW/m² at $z = 0$, 15 % left at 10 m. $\langle\mathbf{S}\rangle\propto\cos\tau\,e^{-2\alpha z}$; the averaged Poynting theorem gives $\alpha = \sigma\lvert\eta\rvert/(2\cos\tau)$ exactly: the table's $\alpha$ is energy conservation.
 
-→ Full treatment: [[concepts/loss-tangent|Loss tangent]] (power in a lossy medium) · [[concepts/skin-depth|Skin depth]] (Example 1) · [[concepts/time-average-power|Time averages and average power]] (energy balance)
+→ Full treatment: [[concepts/loss-tangent|Loss tangent]] · [[concepts/skin-depth|Skin depth]] (Example 1) · [[concepts/time-average-power|Time averages and average power]]
 
 ## 4. Good conductors: skin depth, $\eta = (1+j)/(\sigma\delta)$ and the 45° lag
 
 $\delta = 1/\sqrt{\pi f\mu\sigma}$, $\gamma = (1 + j)/\delta$, $\lambda = 2\pi\delta$, $v_p = \omega\delta$; dead within a wavelength (54.6 dB), slow and dispersive, $\mathbf{H}$ large and 45° behind; $\text{Re}\{\eta\} = 1/(\sigma\delta)$ as a surface resistance. Notes' Example 2 (the same 2 V/m wave at 1 kHz in seawater: 45 A/m, 31.8 W/m²) and Example 3 ($\delta = 25/\pi = 7.96$ m).
+
+Slides 22b–23, slides 20–24: $\sqrt j = (1+j)/\sqrt2$, the 45° lag circled; perfect conductor, $\delta = 0$: no time-varying $\mathbf{E}$ or $\mathbf{H}$ inside → [[concepts/skin-depth|Skin depth]] · [[concepts/conductors|Conductors]]
 
 → Full treatment: [[concepts/skin-depth|Skin depth]]
 
@@ -43,6 +47,8 @@ Fixing the medium, $\alpha = \sqrt{\pi f\mu\sigma}$ falls with frequency: 0.30 d
 ## 6. Skin depth in metals
 
 Copper $\delta = 0.0661/\sqrt f$ m (8.5 mm at 60 Hz, 2.1 µm at 1 GHz), aluminium 1.29 times that; skin effect in wires, shielding, copper's milliohm $\lvert\eta\rvert$ as a near short; "good at all frequencies" fails in the infrared.
+
+Slides 22b–23, slides 22–23 (ink): $R = L/\sigma A$ with $A$ the $\delta$-thick rim of a wire or board trace → [[concepts/skin-depth|Skin depth]]
 
 → Full treatment: [[concepts/skin-depth|Skin depth]]
 
@@ -67,4 +73,4 @@ $p = \sigma/\omega\epsilon$: below 0.1 imperfect dielectric, above 10 good condu
 > [[practice/23-imperfect-dielectrics-and-good-conductors|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/23-imperfect-dielectrics-and-good-conductors#231-six-media-at-one-frequency|23.1 Six media at one frequency]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
-Kudeki notes, Lecture 23 (6 pp.): the regime table; Examples 1–3 (paraphrased, script-checked); the heating, microwave-oven and communication remarks; the low-frequency argument and its bandwidth cost. No slides were available. Rao (2009) §§5.3–5.4, Tables 5.1–5.3: "loss tangent", crossover and thresholds, copper figures, 54.6 dB per wavelength, the antenna remark, Problem 5.26, material values. ITU-R P.527-6: loam conductivity, water permittivity. Wikipedia, "Communication with submarines": VLF/ELF data. This site's own: polar forms and accuracy figures, the energy balance, the media, seawater and metal tables, the fair 1 GHz comparison, the inverse example, recipe, traps, figures. Slips in the course material: see [[0-toolkit/04-errata-in-the-course-materials|errata]].
+Kudeki notes, Lecture 23 (6 pp.): the regime table; Examples 1–3 (paraphrased, script-checked); the heating, microwave-oven and communication remarks; the low-frequency argument and its bandwidth cost. Shao slides "Lectures 22b–23" (25 slides, annotated Oct 16): slides 14–25 here (cases 2–4, chart, ink, summary); 3–13 on Lecture 22. Rao (2009) §§5.3–5.4, Tables 5.1–5.3: "loss tangent", crossover and thresholds, copper figures, 54.6 dB per wavelength, the antenna remark, Problem 5.26, material values. ITU-R P.527-6: loam conductivity, water permittivity. Wikipedia, "Communication with submarines": VLF/ELF data. This site's own: polar forms and accuracy figures, the energy balance, the media, seawater and metal tables, the fair 1 GHz comparison, the inverse example, recipe, traps, figures. Slips in the course material: see [[0-toolkit/04-errata-in-the-course-materials|errata]].

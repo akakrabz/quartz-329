@@ -5,7 +5,7 @@ tags: [lecture, transmission-lines]
 lecture: 29
 ---
 
-*Lecture 29 · course notes §29 (no slides) · prev: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · next: [[4-transmission-lines/30-multi-line-circuits|Lecture 30]] · worked problem: [[problems/a-ramp-pulse-meets-its-echo|A ramp pulse meets its echo]] · practice: [[practice/29-bounce-diagram-examples|12 problems]]*
+*Lecture 29 · course notes §29 · slides "Algebra of Bounce Diagram; Bounce Diagram Examples" (no ink, Oct 30) · prev: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · next: [[4-transmission-lines/30-multi-line-circuits|Lecture 30]] · worked problem: [[problems/a-ramp-pulse-meets-its-echo|A ramp pulse meets its echo]] · practice: [[practice/29-bounce-diagram-examples|12 problems]]*
 
 > [!abstract] In one breath
 > No new theory: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]]'s bounce diagram, used three times. Read the impulse response $h_z(t)$ off the diagram, then replace every $\delta(t-t_k)$ by $f_i(t-t_k)$. A vertical line through the diagram gives the waveform at one $z$; a horizontal line gives a snapshot along the line. Example 1: a 1 MHz burst with a matched generator, one echo, then a steady sinusoid. Example 2: a step watched at the midpoint, a staircase that settles to the DC value. Example 3: snapshots of a two-level pulse and its echo.
@@ -26,6 +26,16 @@ A **horizontal cut** at $t = t_p$ gives a snapshot $V(z,t_p)$ along the whole li
 > \end{gathered}
 > $$
 > with $w$ the segment's weight. Add the terms for $V$; subtract the backward ones for $Z_0I$. A term is non-zero only where its argument lies inside the pulse.
+
+> [!key] The slides' round-trip equation (slides 6–9, 15)
+> $$
+> \begin{gathered}
+> V^+(z,t) = \tau_g\sum_{n=0}^{\infty}(\Gamma_L\Gamma_g)^n f_i\Big(t-\frac zv-2nT\Big),\\[4pt]
+> V^-(z,t) = \tau_g\Gamma_L\sum_{n=0}^{\infty}(\Gamma_L\Gamma_g)^n f_i\Big(t+\frac zv-2(n+1)T\Big),\\[4pt]
+> V = V^+ + V^-,\qquad I = \frac{V^+-V^-}{Z_0}.
+> \end{gathered}
+> $$
+> Lecture 28's impulse response with $\delta$ replaced by $f_i$. For $f_i = \delta(t)$ the voltage is non-zero only on the bounce lines (slide 8); a longer $f_i$ also fills the space between them (slide 9). The slides' $f(t)$ here is the source voltage, this site's $f_i$; their $V^+$ is the site's $f(t-z/v)$.
 
 > [!intuition] Which way round a pulse lies
 > A pulse's leading edge points the way it travels. A forward pulse therefore lies on the $z$ axis in reverse order compared with $f_i(t)$ on the $t$ axis: the part sent first is furthest right. An echo lies in the same order as $f_i(t)$: the part sent first is furthest left. Its length is $v$ times its duration.
@@ -96,6 +106,10 @@ The vertical line at $z = 1200$ m is crossed every 8 μs from $t = 4$ μs, alter
 
 - $\Gamma_g = -1$ launches each forward segment as the negative of the backward one that arrived. Once both have passed, they cancel, so every second level is exactly 1 V.
 - The current (this site's addition) flips the backward steps: $Z_0I(1200,t) = u(t-4) - \tfrac13u(t-12) - \tfrac13u(t-20) + \tfrac19u(t-28) + \tfrac19u(t-36) - \cdots$. In mA: 20, 13.3, 6.7, 8.9, 11.1, 10.4, 9.6, …
+- Slides 10–13 use this circuit for their Examples 1–2: $\delta(t)$ gives $h_{1200}$ above, $u(t)$ this staircase. Their LTspice run (slide 13) adds the ends: $V(0,t) = 1$ V throughout ($R_g = 0$); the load at $\tfrac43$, $\tfrac89$, $\tfrac{28}{27}$ V from 8, 24, 40 μs; $I(0,t)$ at 20, 6.7, 11.1, 9.6 mA, stepping at 16, 32, 48 μs.
+
+> [!example] Slides, Lecture 29 (slide 14) — their Example 3, a 4 μs pulse at the midpoint
+> Same circuit, $f_i(t) = u(t-4) - u(t)$ ($t$ in μs). As written this is a −1 V pulse on $0<t<4$; for $u(t)-u(t-4)$ flip every sign. Each impulse of $h_{1200}$ becomes a 4 μs copy: $V(1200,t) = -1$ V on 4–8 μs, $-\tfrac13$ V on 12–16, $+\tfrac13$ on 20–24, $+\tfrac19$ on 28–32, $-\tfrac19$ on 36–40, …, and 0 in between. The copies are 4 μs long and 8 μs apart, so they never overlap; the input ends at 0, so the line settles to 0.
 
 ## 4. The DC limit
 
@@ -105,8 +119,16 @@ The notes' reasons and limits:
 - DC means $\omega = 0$ and $\lambda\to\infty$. Then $\ell\ll\lambda$ always holds, and the line is an ordinary pair of wires.
 - Only inputs that settle to a constant, such as $u(t)$ and its delayed copies, reach a DC limit. $\sin(\omega t)\,u(t)$ never does; Example 1 keeps oscillating.
 
+> [!example] Slides, Lecture 29 (slides 2–5) — steady state of the Lecture 28 slides' circuit
+> 100 V, $R_g = 40\ \Omega$, $Z_0 = 60\ \Omega$, $R_L = 120\ \Omega$ ([[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams#5-step-inputs-and-the-dc-limit|Lecture 28 §5]]): $\Gamma_L\Gamma_g = -\tfrac1{15}$, so each total is a geometric series summing to $\tfrac{15}{16}$ of its first term.
+> - All forward waves: $60\cdot\tfrac{15}{16} = 56.25$ V and $0.9375$ A. All backward waves: $18.75$ V and $-0.3125$ A.
+> - $V_{ss} = 75$ V $= 100\cdot\tfrac{120}{160}$ and $I_{ss} = 0.625$ A $= \tfrac{100}{160}$: in steady state "the line looks like a wire" (slide 4). Both waves remain; only their sum is the lumped answer, $V/I = R_L$.
+>
+> Challenge (slide 5): Lecture 28's 30 V, 20 Ω, 10 Ω, 30 Ω circuit has $I(L,\infty) = 30/(20+30) = 0.6$ A, answer (c).
+
 > [!trap] Reading a step response
 > - The staircase converges as $(\Gamma_L\Gamma_g)^n$. Here $\Gamma_L\Gamma_g = -\tfrac13$: the error shrinks threefold per round trip and alternates in sign.
+> - The condition is $\lvert\Gamma_L\Gamma_g\rvert<1$, not the slides' "$\Gamma_g\Gamma_L<1$" (slide 3): an ideal source on an open line has $\Gamma_L\Gamma_g = -1$ and never settles.
 > - Once an echo has arrived, the total $I$ is not $V/Z_0$: on 12–20 μs, $V = \tfrac43$ V but $I = 13.3$ mA, not 26.7 mA.
 
 ## 5. Example 3: a two-level pulse, snapshots in z
@@ -161,3 +183,5 @@ Concept pages: [[concepts/bounce-diagram]] · [[concepts/characteristic-impedanc
 
 ### Sources for this page
 Kudeki notes, Lecture 29 (4 pages): Examples 1–3 with their margin diagrams and plots, and the DC-limit remarks. Rao (2009) §7.4, Examples 7.4–7.5 (voltage versus $t$ and versus $z$ for a pulse), for cross-checks. This site's own: the horizontal-cut rule and pulse order, the load voltage and steady state in Example 1, all currents, the 9 μs snapshot, the traps and the figures; numbers checked against two time-steppings of the line. Slips in the notes (two wrong example references, a plot label) are on the errata page.
+
+Slides "Algebra of Bounce Diagram; Bounce Diagram Examples" (15 slides, no ink): the round-trip equation (6–9, 15), steady state and a challenge (2–5), three inputs on the notes' Example 2 circuit with LTspice (10–14). Slips (slides 3, 10–14) are on the errata page.

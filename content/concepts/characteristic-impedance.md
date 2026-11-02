@@ -32,14 +32,15 @@ aliases: ["Z0", "geometrical factor", "GF"]
 - Polyethylene coax ($\eta = 251\ \Omega$): $b/a = 3.5$ gives 50 Ω, $b/a = 6.5$ gives 75 Ω.
 - Twin-lead in air with $D/2a = 6.14$: 300 Ω.
 - Air plates with $d/W = 0.2$: 75.3 Ω.
-- [[problems/a-backward-pulse-on-a-parallel-plate-line|Worked problem — A backward pulse on a parallel-plate line]]: $\epsilon_r = 2.25$ and $d/W = 0.05$ give $4\pi = 12.6\ \Omega$.
+- [[problems/a-backward-pulse-on-a-parallel-plate-line|Worked problem — A backward pulse on a parallel-plate line]]: $\epsilon_r = 2.25$ and $d/W = 0.05$ give $4\pi = 12.6\ \Omega$. The same line is the Lecture 27 slides' example (slide 9): a forward $V = 4\pi$ V carries $I = 1$ A and $4\pi = 12.6$ W.
 
 > [!trap]
-> - $V/I = Z_0$ holds for a single forward wave only. For $f+g$ the ratio varies with $z$ and $t$.
+> - $V/I = Z_0$ holds for a single forward wave only. For $f+g$ the ratio varies with $z$ and $t$. The slides write $Z_0 = \lvert V/I\rvert$ (Lecture 27 slide 20).
+> - $Z_0$ is not $\eta_0$: $Z_0 = \eta/\text{GF}$. That is the false statement in the slides' challenge (Lecture 27 slide 21).
 > - $Z_0 = \sqrt{\mathcal{L}/\mathcal{C}}$; $\sqrt{\mathcal{L}\mathcal{C}}$ is $1/v$.
 > - A wider gap or a thinner inner conductor raises $Z_0$; a larger $\epsilon_r$ lowers it.
 
-**Where it appears.** [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] (definition, GF table); [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] onward. A load $R$ reflects with $(R-Z_0)/(R+Z_0)$, the wave $\Gamma$ of [[concepts/reflection-and-transmission|Reflection and transmission coefficients]] with $Z_0$ for $\eta_1$ and $R$ for $\eta_2$.
+**Where it appears.** [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] (definition, GF table; slides 9, 20–21); [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] onward. A load $R$ reflects with $(R-Z_0)/(R+Z_0)$, the wave $\Gamma$ of [[concepts/reflection-and-transmission|Reflection and transmission coefficients]] with $Z_0$ for $\eta_1$ and $R$ for $\eta_2$.
 
 **Related.** [[0-toolkit/08-waves-in-media-figures|Waves in media — figures]]
 

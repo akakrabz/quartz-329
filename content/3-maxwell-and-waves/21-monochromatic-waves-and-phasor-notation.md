@@ -5,7 +5,7 @@ tags: [lecture, waves]
 lecture: 21
 ---
 
-*Lecture 21 · course notes §21 · **slides: not yet available — this page is built from the course notes** · prev: [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves|Lecture 20]] · next: [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] · worked problem: [[problems/phasors-e-and-power-from-a-given-h|Phasors, E and power from a given H]] · practice: [[practice/21-phasors-and-monochromatic-waves|12 problems]]*
+*Lecture 21 · course notes §21 · slides "Lectures 21–22a: Plane Waves in Materials" (annotated, Oct 14) · prev: [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves|Lecture 20]] · next: [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] · worked problem: [[problems/phasors-e-and-power-from-a-given-h|Phasors, E and power from a given H]] · practice: [[practice/21-phasors-and-monochromatic-waves|12 problems]]*
 
 > [!abstract] In one breath
 > [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|Lecture 19]]'s sheet radiates the **monochromatic** wave $\cos(\omega t\mp\beta z)$: $T = 2\pi/\omega$, $\lambda = 2\pi/\beta$, $v_p = \omega/\beta = \lambda f$; its **dispersion relation** $\beta(\omega)$ holds the physics. **Phasors**, $a(t) = \text{Re}\{\tilde Ae^{j\omega t}\}$, make calculus algebra: sine → $-j$, $d/dt\to j\omega$, $+z$ travel is $e^{-j\beta z}$, $\tilde{\mathbf{H}}$ is $\tilde{\mathbf{E}}/\eta$ rotated, $\langle\mathbf{S}\rangle = \tfrac12\text{Re}\{\tilde{\mathbf{E}}\times\tilde{\mathbf{H}}^*\}$.
@@ -22,11 +22,15 @@ The notes' three: TEM in a dielectric ($\beta = \omega\sqrt{\mu\epsilon}$), soun
 
 → Full treatment: [[concepts/dispersion-relation|Dispersion relation and phase velocity]]
 
+Slides 21–22a, slide 24: $v_p = \omega/\beta$ still holds in matter; dispersion when $\beta(\omega)$ is not proportional to $\omega$ (the prism) → [[concepts/dispersion-relation|Dispersion relation and phase velocity]]
+
 ## 3. Phasors: a rotating arrow and its shadow
 
 $\tilde A = Ae^{j\theta}$ for $A\cos(\omega t + \theta)$; sine → $-j$; the time-function → phasor table; $d/dt\to j\omega$, delay → $e^{-j\omega\tau}$; no phasor for products; vector phasors $\tilde{\mathbf{E}} = E_0e^{\mp j\beta z}\hat x$. Trap: no $t$ in a phasor, nothing complex in a field.
 
 → Full treatment: [[concepts/phasors|Phasors]]
+
+Slides 21–22a, slides 10–11: phasor review, $\partial/\partial t\equiv j\omega$ boxed; complex constants wear an overbar ($\bar\gamma$, $\bar\eta$, $\bar A$) → [[concepts/phasors|Phasors]]
 
 ## 4. Plane-wave phasors and the direction-of-travel trap
 
@@ -45,6 +49,8 @@ $\tilde{\mathbf{H}} = \hat u\times\tilde{\mathbf{E}}/\eta$, $\tilde{\mathbf{S}} 
 $\tilde{\mathbf{E}} = -\tfrac\eta2\tilde{\mathbf{J}}_se^{-j\beta d}$, $\tilde{\mathbf{H}} = \tfrac12\tilde{\mathbf{J}}_s\times\hat n\,e^{-j\beta d}$; the notes' $2\hat x$ A/m sheet gives $\tilde{\mathbf{E}}^\pm = -\eta e^{\mp j\beta z}\hat x$, $\tilde{\mathbf{H}}^\pm = \mp e^{\mp j\beta z}\hat y$; a sine sheet picks up $j$.
 
 → Full treatment: [[concepts/phasors|Phasors]] · [[concepts/current-sheet-radiation|Radiation from a current sheet]]
+
+Slides 21–22a, slides 6, 18: the slides' sheet $-\hat x\,J_{s0}\cos\omega t$ gives $\tilde E_x = \tfrac12\bar\eta J_{s0}e^{\mp\bar\gamma z}$, $\tilde H_y = \pm\tfrac12J_{s0}e^{\mp\bar\gamma z}$, $\tilde H$ in phase with the source; $\bar\gamma = j\beta$ is the notes' case, the lossy one is Lecture 22 §7 → [[concepts/current-sheet-radiation|Radiation from a current sheet]]
 
 ## 7. Time averages straight from phasors
 
@@ -69,4 +75,5 @@ Concept pages: [[concepts/monochromatic-waves]] · [[concepts/phasors]] · [[con
 > [[practice/21-phasors-and-monochromatic-waves|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/21-phasors-and-monochromatic-waves#211-reading-two-waves|21.1 Reading two waves]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
-Kudeki notes, Lecture 21 (8 pages); no slides. Notes: §§1–2, spectrum chart, Examples 1–3, $\tilde{\mathbf{E}}\leftrightarrow\tilde{\mathbf{H}}$ rules, time averages. Rao (2009) §1.4, §4.5, §8.1, §8.3, §10.1. This site's own: derivations, Example 2's power, the sine current, numbered examples, figures (script-checked). Slips in the course material: see [[0-toolkit/04-errata-in-the-course-materials|errata]].
+Kudeki notes, Lecture 21 (8 pages). Notes: §§1–2, spectrum chart, Examples 1–3, $\tilde{\mathbf{E}}\leftrightarrow\tilde{\mathbf{H}}$ rules, time averages. Rao (2009) §1.4, §4.5, §8.1, §8.3, §10.1. This site's own: derivations, Example 2's power, the sine current, numbered examples, figures (script-checked). Slips in the course material: see [[0-toolkit/04-errata-in-the-course-materials|errata]].
+Shao, Lectures 21–22a slides (26, annotated Oct 14): phasor review (10–11), the sheet in phasors (6, 18), dispersion (24) here; materials, $\bar\gamma$, $\bar\eta$ and the lossy sheet (2–5, 8–25) on Lecture 22's topics.

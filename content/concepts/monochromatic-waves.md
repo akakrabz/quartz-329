@@ -36,6 +36,7 @@ aliases: ["monochromatic wave", "time-harmonic wave", "co-sinusoidal wave", "wav
 > - Partner field: $\mathbf{H} = 63.7\cos\big(4\pi\times10^8t - \tfrac{8\pi}{3}y\big)\,\hat x$ mA/m; power $0.382$ W/m² ([[concepts/time-average-power|Time averages and average power]]).
 
 - Notes' sheet $\hat x\,2\cos\omega t$ A/m in vacuum: $\cos(\omega t\mp\beta z)$ with $\beta = \omega/c$, $\lambda = 2\pi/\beta$; the delay $z/c$ became the phase $\beta z$.
+- Slides (Lecture 20 slide 9): $H_0\cos(6\pi\times10^7t - 0.2\pi z)$ has $f = 30$ MHz, $\lambda = 10$ m, $v_p = 3\times10^8$ m/s: free space ([[concepts/time-average-power|its power]]). In matter (Lectures 21–22a slide 20) the source's $\omega$ is still the wave's; $\beta$ changes.
 
 **The spectrum (notes p. 4).** The chart's frequency bar is schematic; compute $f = c/\lambda$:
 
@@ -60,7 +61,7 @@ Memorize: 1 MHz ↔ 300 m, 100 MHz ↔ 3 m, 1 GHz ↔ 30 cm, 10 GHz ↔ 3 cm; vi
 > [!exam] On exams
 > **Numbers off an expression** (SP17 #3c, Su20 HE3 #2a, #2f, Su20 FE #3a): $\omega$ from the $t$ coefficient, $\beta$ from the position coefficient, then $f$, $T$, $\lambda$, $v_p$, $\epsilon_r$ (non-magnetic), $\eta$, direction. Lossy media add $\alpha$ ([[concepts/propagation-constant|Propagation constant]]). No-calculator: $c = 3\times10^8$ m/s, $\eta_0 = 120\pi\ \Omega$.
 
-**Where it appears.** [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation#1-monochromatic-waves-one-frequency-two-periodicities|Lecture 21 §1]] (defined; spectrum); [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#6-the-notes-example-monochromatic-waves-from-a-cosine-sheet|Lecture 20 §6]] (the sheet's cosine waves); [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|Lecture 19]] ($\beta$, $\lambda$ from a phase); [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] (every field at one $\omega$).
+**Where it appears.** [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation#1-monochromatic-waves-one-frequency-two-periodicities|Lecture 21 §1]] (defined; spectrum); [[3-maxwell-and-waves/20-poynting-theorem-and-monochromatic-waves#6-the-notes-example-monochromatic-waves-from-a-cosine-sheet|Lecture 20 §6]] (the sheet's cosine waves; slide 9); [[3-maxwell-and-waves/19-dalembert-solutions-and-radiation-from-current-sheets|Lecture 19]] ($\beta$, $\lambda$ from a phase); [[3-maxwell-and-waves/22-phasor-maxwell-equations-and-damped-waves|Lecture 22]] (every field at one $\omega$).
 
 **Related.** [[concepts/plane-waves|Plane waves]] · [[concepts/dispersion-relation|Dispersion relation and phase velocity]] · [[concepts/phasors|Phasors]] · [[concepts/wave-equation|Wave equation]] · [[concepts/intrinsic-impedance|Intrinsic impedance]] · [[concepts/group-velocity|Group velocity]].
 

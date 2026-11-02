@@ -5,7 +5,7 @@ tags: [lecture, transmission-lines]
 lecture: 27
 ---
 
-*Lecture 27 · course notes §27 (no slides) · prev: [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] · next: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · worked problem: [[problems/a-backward-pulse-on-a-parallel-plate-line|A backward pulse on a parallel-plate line]] · practice: [[practice/27-transmission-line-basics|12 problems]]*
+*Lecture 27 · course notes §27 · slides "Guided Wave on Transmission Lines" (no ink, Oct 21) · prev: [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] · next: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · worked problem: [[problems/a-backward-pulse-on-a-parallel-plate-line|A backward pulse on a parallel-plate line]] · practice: [[practice/27-transmission-line-basics|12 problems]]*
 
 > [!abstract] In one breath
 > Two conducting plates at $x = 0$ and $x = d$ can hold an $\hat x$-polarized plane wave between them; charges and currents on their facing surfaces end the fields there. With $V = E_xd$ and $I = H_yW$, Faraday's and Ampère's laws become the **telegrapher's equations** $-\partial V/\partial z = \mathcal{L}\,\partial I/\partial t$ and $-\partial I/\partial z = \mathcal{C}\,\partial V/\partial t$. Their solutions are d'Alembert waves, $V = f(t\mp z/v)$ and $I = \pm f/Z_0$, with $v = 1/\sqrt{\mathcal{L}\mathcal{C}} = 1/\sqrt{\mu\epsilon}$ and **characteristic impedance** $Z_0 = \sqrt{\mathcal{L}/\mathcal{C}}$. The power carried is $VI$.
@@ -117,7 +117,7 @@ The line copies the plane wave of [[3-maxwell-and-waves/18-the-wave-equation-and
 For the plates, $Z_0 = E_xd/(H_yW) = \eta\,d/W$.
 
 > [!trap] V/I and the sign of Z₀
-> - $V/I = +Z_0$ only for a wave toward $+z$. Toward $-z$ it is $-Z_0$; for a sum $f + g$ it is neither.
+> - $V/I = +Z_0$ only for a wave toward $+z$. Toward $-z$ it is $-Z_0$; for a sum $f + g$ it is neither. The slides write $Z_0 = \lvert V/I\rvert$, "the ratio for the forward wave" (slide 20).
 > - $I$ is the current along $+z$ on conductor 2, the one at higher potential when $V>0$. A backward wave with $V>0$ has $I<0$.
 > - $Z_0$ is not a resistance: a lossless line dissipates nothing.
 
@@ -158,7 +158,7 @@ Any two-conductor line filled with one homogeneous medium carries the same TEM s
 
 ## 5. Launching a wave: the battery example (notes)
 
-A 3 V battery is connected at $t = 0$ to an uncharged line ($V = I = 0$ for $t<0$), wire 2 to its $+$ terminal. Wire 2 plays plate 2's role; circuit drawings, here and in Lecture 28, put it on top.
+A 3 V battery is connected at $t = 0$ to an uncharged line ($V = I = 0$ for $t<0$), wire 2 to its $+$ terminal. Wire 2 plays plate 2's role; circuit drawings, here and in Lecture 28, put it on top. The slides do the same: they ground the $x = d$ plate ($V = 0$) and flip the drawing so the $x = 0$ plate, with $I$ along $+z$, is on top (slides 8, 17).
 
 - Electrons leave the $-$ terminal onto wire 1. As many leave wire 2 into the $+$ terminal. So $I$ flows along $+z$ on wire 2 and back toward the battery on wire 1.
 - At $t = 0^+$ this current exists only at $z = 0^+$. The rest of the line carries none.
@@ -200,6 +200,9 @@ So each $\Delta z$ is a series inductor $\Delta z\,\mathcal{L}$ followed by a sh
 > - Power grid, 60 Hz: $\lambda = c/f = 5000$ km. House wiring is lumped; a 1000 km transmission line is not.
 > - A 3 GHz signal on polyethylene coax: $\lambda = 6.7$ cm. A 10 cm cable is already a distributed circuit.
 
+> [!example] Slides, Lecture 27 (slide 10) — the λ/4 rule of thumb
+> Treat a circuit as a line once its largest dimension exceeds $\lambda/4$. At 300 MHz, $\lambda = 1$ m, so a 25 cm line with an open end is already a quarter wave: its current falls from a maximum at the source to zero at the open end.
+
 ## 7. Power on the line
 
 The Poynting vector $\mathbf{E}\times\mathbf{H} = \hat zE_xH_y$ is uniform over the cross-section $Wd$, so the power carried along $+z$ is
@@ -222,6 +225,15 @@ This site's additions:
 - Both: $VI = (f^2-g^2)/Z_0$. The cross terms cancel, so each wave carries its own power.
 - One phasor wave $\tilde V = V^+e^{-j\beta z}$: $\langle P\rangle = \lvert V^+\rvert^2/2Z_0$.
 
+> [!example] Slides, Lecture 27 (slide 9) — power through a filled parallel-plate line
+> Plates $d = 1$ cm apart and $W = 20$ cm wide, $\epsilon_r = 2.25$, $\mu_0$: $\eta = 80\pi\ \Omega$ and $Z_0 = \eta d/W = 4\pi = 12.6\ \Omega$ (the worked problem's line). For one forward wave, convert to $V = E_xd$ and $I = H_yW = V/Z_0$, then $p = VI$:
+> - (a) $E_x = 300\pi$ V/m: $V = 3\pi$ V, $I = 0.75$ A, $p = 2.25\pi = 7.07$ W.
+> - (b) $H_y = 7.5$ A/m: $V = 6\pi$ V, $I = 1.5$ A, $p = 9\pi = 28.3$ W.
+> - (c) $V = 4\pi$ V: $I = 1$ A, $p = 4\pi = 12.6$ W.
+> - (d) $I = 0.5$ A: $V = 2\pi$ V, $p = \pi = 3.14$ W.
+>
+> If the values are sinusoid amplitudes, the time averages are half these.
+
 ## 8. Summary
 
 - Plates at $x = 0$ and $d$ guide a TEM wave. The facing surfaces carry $\rho_s = \pm\epsilon E_x$ and $\mathbf{J}_s = \pm\hat zH_y$.
@@ -242,9 +254,12 @@ Concept pages: [[concepts/telegraphers-equations]] · [[concepts/characteristic-
 > - **SP18 Exam 3 #1(ii)**: check each statement against §2 (origin), §3 (solutions) and §6 (which element is in series).
 > - **SP18 #1(v)**, $V/I$ with polarity: §3 trap.
 > - **FA23 Exam 3 #4(d)**: $\epsilon_r = (c/v)^2$ from a delay.
+> - **Slides' challenge** (slide 21), which statement is false? (a) "$Z_0$ and $\eta_0$ are equal": $Z_0 = \eta/\text{GF}$. The others hold: (b) $v\le c$; (c) equal $Z_0$ with different $v$ (50 Ω air plates, 50 Ω polyethylene coax); (d) the energy sits in the $\mathcal{L}$ and $\mathcal{C}$ cells.
 
 > [!tip] Practice this lecture
 > [[practice/27-transmission-line-basics|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/27-transmission-line-basics#271-strip-line-parameters|27.1 Strip-line parameters]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 27 (8 pages): plates in a plane wave; $V$, $I$ and the telegrapher's equations with $\mathcal{G}$ and the missing $\mathcal{R}$; the wave equation, $Z_0$ and the GF table; the battery example; the ladder model; power and the non-TEM note. Rao (2009) §6.5–6.6 with Table 6.1, and the "Time domain" opening of Ch. 7 before §7.4 (eqs. 7.39–7.47), for cross-checks. This site's own: figures, the plate-source table, the circuit reading, all examples, the power split; numbers checked by script. Slips in the notes ("close-up method", "T-network") are on the errata page.
+
+Slides "Guided Wave on Transmission Lines" (22 slides, no ink): conventions (slides 8, 17, 20), the power example (9), the $\lambda/4$ rule (10), the challenge (21); the rest matches §§1–7. Slide 6's slip is on the errata page.

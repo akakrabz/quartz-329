@@ -5,7 +5,7 @@ tags: [lecture, waves]
 lecture: 25
 ---
 
-*Lecture 25 · course notes §25 (no slides) · prev: [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization|Lecture 24]] · next: [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] · worked problem: [[problems/working-back-from-a-transmitted-wave|Working back from a transmitted wave]] · practice: [[practice/25-reflection-and-transmission|12 problems]]*
+*Lecture 25 · course notes §25 · slides "Lectures 25–26" (annotated, Oct 26) · prev: [[3-maxwell-and-waves/24-signal-transmission-and-circular-polarization|Lecture 24]] · next: [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] · worked problem: [[problems/working-back-from-a-transmitted-wave|Working back from a transmitted wave]] · practice: [[practice/25-reflection-and-transmission|12 problems]]*
 
 > [!abstract] In one breath
 > A plane wave hits the plane $z = 0$ head-on. On its own it would violate the boundary conditions there, so a reflected wave travels back into region 1 and a transmitted wave continues into region 2. Continuity of tangential $\tilde{\mathbf{E}}$ and $\tilde{\mathbf{H}}$ fixes their amplitudes: $\Gamma = (\eta_2-\eta_1)/(\eta_2+\eta_1)$ and $\tau = 1+\Gamma$. Equal impedances transmit everything. A perfect conductor ($\eta_2 = 0$) reflects everything, with $\Gamma = -1$. The fraction of the power reflected is $\lvert\Gamma\rvert^2$; the rest enters region 2.
@@ -14,11 +14,15 @@ lecture: 25
 
 The notes' setup (lossless region 1, general region 2, no surface current for finite $\sigma_2$) and the three postulated phasor pairs: incident $E_0e^{-j\beta_1z}$, reflected $\Gamma E_0e^{j\beta_1z}$ with $\tilde{\mathbf{H}}_r$ carrying $-\Gamma$, transmitted $\tau E_0e^{-\gamma_2z}$. Notation: $\tau$ is the transmission coefficient here, $\angle\eta$ the phase of $\eta$.
 
+Slides 25–26, slides 2–5: the same three waves and reference directions, overbars for complex amplitudes; slide 3's ink flips $\mathbf{E}_r$ and $\mathbf{H}_r$ for $\Gamma<0$ → [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
+
 → Full treatment: [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
 
 ## 2. Matching tangential E and H: Γ and τ
 
 Continuity at $z = 0$ gives $1 + \Gamma = \tau$ and $(1 - \Gamma)/\eta_1 = \tau/\eta_2$, hence $\Gamma = (\eta_2 - \eta_1)/(\eta_2 + \eta_1)$, $\tau = 2\eta_2/(\eta_2 + \eta_1)$; signs for real $\eta$'s, complex values for a lossy region 2, the $n$-form $\Gamma = (n_1 - n_2)/(n_1 + n_2)$; traps and a six-step recipe.
+
+Slides 25–26, slides 6–7: the same $\Gamma$ and $\tau$; the ink says to remember $\tau = 1+\Gamma$ rather than $2\eta_2/(\eta_1+\eta_2)$ → [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
 
 → Full treatment: [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
 
@@ -26,11 +30,15 @@ Continuity at $z = 0$ gives $1 + \Gamma = \tau$ and $(1 - \Gamma)/\eta_1 = \tau/
 
 Perfect conductor ($\Gamma = -1$, $\tau = 0$, surface current $\hat x\,2E_0/\eta_1$); matched impedances ($\Gamma = 0$); lossless region 2 with partial reflection and the quarter-wave anti-glare coating of impedance $\sqrt{\eta_1\eta_2}$ (glass: $n_c = 1.22$, 112 nm for green light).
 
+Slides 25–26, slides 8–10: two challenge questions, vacuum against $3\epsilon_0$, $3\mu_0$ ($\Gamma = 0$, wavelength $\lambda_0/3$ inside) and a perfect conductor ($\Gamma = -1$, a mirror) → [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
+
 → Full treatment: [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
 
 ## 4. Power balance
 
 $1 = \lvert\Gamma\rvert^2 + \lvert\tau\rvert^2\eta_1\text{Re}\{1/\eta_2\}$ (proof folded, lossy case included). Example 1 (notes): vacuum onto $\epsilon_r = 9/4$, $\Gamma = -1/5$, $\tau = 4/5$, $0.02 + 0.48 = 0.5$ W/m². Air onto seawater at 1 kHz: 0.033 % enters.
+
+Slides 25–26, slide 11 (two inked pages): Example 1 with the same numbers → [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
 
 → Full treatment: [[concepts/reflection-and-transmission|Reflection and transmission coefficients]]
 
@@ -52,3 +60,4 @@ Concept pages: [[concepts/reflection-and-transmission]] · [[concepts/boundary-c
 
 ### Sources for this page
 Kudeki notes, Lecture 25 (6 pages): the setup with the boundary conditions in the margin, the three postulated waves, the two matching conditions with the boxed $\Gamma$ and $\tau$, the three special cases with the quarter-wave footnote, and Example 1 with its power check. Rao (2009) §5.6, eqs. 5.101–5.105, for cross-checks. This site's own: the figures, the recipe, the lossy-case power proof, the $n$-form of $\Gamma$, the surface current (derived in the notes' Lecture 26), the coating and seawater examples; numbers checked by script. Slips in the notes (typos, a margin figure drawn for $\Gamma>0$) are on the errata page.
+Shao slides "Lectures 25–26" (19 slides, annotated Oct 26, slide 11 inked twice): slides 2–11 and 19 here (setup, $\Gamma$ and $\tau$, challenge questions, Example 1); slides 12–18 on Lecture 26.

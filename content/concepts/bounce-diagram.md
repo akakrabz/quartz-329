@@ -30,14 +30,15 @@ aliases: ["bounce diagrams", "injection coefficient", "load reflection coefficie
 
 **Examples.**
 - $Z_0 = 60\ \Omega$, $R_g = 180\ \Omega$, $R_L = 20\ \Omega$, 12 V step: weights 3, $-1.5$, $-0.75$, … V, settling to 1.2 V ([[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] §5).
+- Slides, Lecture 28 (slides 11–21; [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams#5-step-inputs-and-the-dc-limit|Lecture 28 §5]]): 100 V behind 40 Ω, $Z_0 = 60\ \Omega$, $R_L = 120\ \Omega$, $T = 1$ μs. Weights 60, 20, −4 V; at $\ell/4$, $V$ = 60, 80, 76 V and $I$ = 1, $\tfrac23$, $\tfrac35$ A from 0.25, 1.75, 2.25 μs; steady state 75 V, 0.625 A (Lecture 29 slides 3–4).
 - [[problems/reading-a-line-from-two-pulses|Worked problem — Reading a line from two pulses]]: two pulses at one point reveal $R_g = Z_0$ and $\Gamma_L = -\tfrac13$; with $R_g = 25\ \Omega$ instead, $\Gamma_g = -\tfrac12$.
 
 > [!trap]
 > - $\Gamma_g$ uses $R_g$ only; the source voltage enters through $\tau_g$.
-> - Current weights flip sign on backward segments.
+> - Current weights flip sign on backward segments. The slides label a current diagram's ends with the current coefficients under the same symbols ($\Gamma_g = \tfrac15$, $\Gamma_L = -\tfrac13$ for voltage coefficients $-\tfrac15$, $\tfrac13$).
 > - $\tau_g = (1-\Gamma_g)/2$, not $1+\Gamma_g$.
 
-**Where it appears.** [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] (derivation, reading rules, DC limit); [[4-transmission-lines/29-bounce-diagram-examples|Lecture 29]] (the notes' examples); [[4-transmission-lines/30-multi-line-circuits|Lecture 30]] (junctions between lines). Every spring/fall Exam 3 on hand and the Summer 2020 final has a bounce-diagram problem.
+**Where it appears.** [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] (derivation, reading rules, DC limit; slides 11–23); [[4-transmission-lines/29-bounce-diagram-examples|Lecture 29]] (the notes' examples; slides' round-trip equation, steady state, pulse at the midpoint); [[4-transmission-lines/30-multi-line-circuits|Lecture 30]] (junctions between lines). Every spring/fall Exam 3 on hand and the Summer 2020 final has a bounce-diagram problem.
 
 **Practice.** [[practice/topics#transients-on-lines-and-bounce-diagrams|Transients on lines and bounce diagrams]] (36 problems) — for example [[practice/29-bounce-diagram-examples#291-which-way-round|29.1 Which way round]] (easy), [[practice/29-bounce-diagram-examples#296-both-ends-of-a-short-line|29.6 Both ends of a short line]] (medium), [[practice/29-bounce-diagram-examples#299-one-sine-cycle-on-a-mismatched-line|29.9 One sine cycle on a mismatched line]] (hard).
 

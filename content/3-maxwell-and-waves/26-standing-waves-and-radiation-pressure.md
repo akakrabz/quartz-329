@@ -5,7 +5,7 @@ tags: [lecture, waves]
 lecture: 26
 ---
 
-*Lecture 26 · course notes §26 (no slides) · prev: [[3-maxwell-and-waves/25-wave-reflection-and-transmission|Lecture 25]] · next: [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] · worked problem: [[problems/a-circular-wave-meets-a-mirror|A circular wave meets a mirror]] · practice: [[practice/26-standing-waves-and-radiation-pressure|12 problems]]*
+*Lecture 26 · course notes §26 · slides "Lectures 25–26" (annotated, Oct 26) · prev: [[3-maxwell-and-waves/25-wave-reflection-and-transmission|Lecture 25]] · next: [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Lecture 27]] · worked problem: [[problems/a-circular-wave-meets-a-mirror|A circular wave meets a mirror]] · practice: [[practice/26-standing-waves-and-radiation-pressure|12 problems]]*
 
 > [!abstract] In one breath
 > A perfect mirror reflects with $\Gamma = -1$. Incident plus reflected wave make a **standing wave**: $\mathbf{E}\propto\sin\beta z\,\sin\omega t$ and $\mathbf{H}\propto\cos\beta z\,\cos\omega t$. The pattern does not travel; it oscillates in place. $\mathbf{E}$ has nodes at the mirror and every $\lambda/2$, and $\mathbf{H}$ has nodes halfway between. No power flows on average; the energy sloshes between electric and magnetic form. The mirror carries a surface current $2E_0/\eta_1$, the depth integral of a good conductor's skin current. $\mathbf{J}\times\mathbf{B}$ on that current pushes the mirror with the **radiation pressure** $2\langle S_i\rangle/c$: waves carry momentum.
@@ -14,11 +14,15 @@ lecture: 26
 
 $\Gamma = -1$: $\tilde{\mathbf{E}} = -j\hat x\,2E_0\sin\beta_1z$, $\tilde{\mathbf{H}} = \hat y\,(2E_0/\eta_1)\cos\beta_1z$; in time $\sin\beta_1z\sin\omega t$ and $\cos\beta_1z\cos\omega t$, a function of $z$ times a function of $t$, or two equal waves travelling opposite ways.
 
+Slides 25–26, slides 12–15: the same $\Gamma = -1$ standing wave with the phase of $\bar E_1^+$ kept; the ink asks why $E(z=0) = 0$ → [[concepts/standing-waves|Standing waves]]
+
 → Full treatment: [[concepts/standing-waves|Standing waves]]
 
 ## 2. Nodes, antinodes and time quadrature
 
 $\mathbf{E}$ nodes at the mirror and every $\lambda/2$, $\mathbf{H}$ nodes $\lambda/4$ away; $\mathbf{E}$ and $\mathbf{H}$ a quarter period apart; nodes as shorts and opens. Partial reflection ($\lvert\Gamma\rvert<1$): travelling plus standing, $\lvert\tilde E\rvert$ between $(1\pm\lvert\Gamma\rvert)E_0$.
+
+Slides 25–26, slide 16 (ink): $\mathbf{E}$ maxima $\lambda/4$, $3\lambda/4$, … from the mirror, $\mathbf{H}$ maxima at the mirror and every $\lambda/2$ → [[concepts/standing-waves|Standing waves]]
 
 → Full treatment: [[concepts/standing-waves|Standing waves]]
 
@@ -26,11 +30,15 @@ $\mathbf{E}$ nodes at the mirror and every $\lambda/2$, $\mathbf{H}$ nodes $\lam
 
 $\langle\mathbf{S}\rangle = 0$ from $\text{Re}\{-j\} = 0$; instantaneous $\mathbf{S}\propto\sin2\beta_1z\sin2\omega t$ moves energy between $\mathbf{H}$ and $\mathbf{E}$ antinodes; $\langle w\rangle = \epsilon_1E_0^2$ everywhere, each $\lambda/4$ cell keeping its energy.
 
+Slides 25–26, slide 17: $\langle\mathbf{S}\rangle = 0$ from the real-time fields, $\mathbf{S}\propto\sin2\beta_1z\,\sin2(\omega t+\angle\bar E_1^+)$ → [[concepts/standing-waves|Standing waves]]
+
 → Full treatment: [[concepts/standing-waves|Standing waves]]
 
 ## 4. The mirror's surface current
 
 $\mathbf{J}_s = \hat n\times\mathbf{H}_1 = \hat x\,(2E_0/\eta_1)\cos\omega t$, along the incident $\mathbf{E}$; as a radiating sheet it cancels the incident wave behind the mirror and produces the reflected wave in front.
+
+Slides 25–26, slide 18: the induced $\mathbf{J}_s$ as the source of the reflected wave (its $J_s(t-z/v_p)$ should read $t+z/v_p$) → [[concepts/standing-waves|Standing waves]]
 
 → Full treatment: [[concepts/standing-waves|Standing waves]] · [[concepts/current-sheet-radiation|Radiation from a current sheet]]
 
@@ -66,3 +74,4 @@ Concept pages: [[concepts/standing-waves]] · [[concepts/radiation-pressure]] ·
 
 ### Sources for this page
 Kudeki notes, Lecture 26 (6 pages): the standing-wave phasors and real forms, the node figures and short/open margin notes, the $\langle\mathbf{S}\rangle = 0$ check, the surface current, the effective-surface-current and surface-resistance boxes, and the radiation-pressure box with its momentum notes. Rao (2009) §5.6, §7.1–7.2 (complete and partial standing waves). This site's own: the figures, the partial-reflection paragraph, §3's $\mathbf{S}$ and $w$, the sheet check, $R_s = 1/\sigma\delta = \text{Re}\{\eta_2\}$, the instantaneous pressure, and the examples; numbers checked by script. Slips in the notes (a missing conjugate, a citation year, a $\Gamma>0$ margin figure) are on the errata page.
+Shao slides "Lectures 25–26" (19 slides, annotated Oct 26): slides 12–18 here (standing wave, node positions, $\langle\mathbf{S}\rangle = 0$ in real time, the induced surface current); no good-conductor or radiation-pressure material.

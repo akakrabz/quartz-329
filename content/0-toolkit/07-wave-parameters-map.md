@@ -71,7 +71,7 @@ Two directions through the map, and exams ask both.
 
 > [!recipe] Given the medium and $f$, find the wave (Lecture 23 §7)
 > 1. $p = \sigma/\omega\epsilon$ with the medium's own $\epsilon = \epsilon_r\epsilon_0$ — not $\epsilon_0$.
-> 2. $p < 0.1$: imperfect dielectric formulas. $p > 10$: good-conductor formulas. Between: exact $\gamma$, $\eta$ (polar form, [[concepts/loss-tangent|Loss tangent]]).
+> 2. $p < 0.1$: imperfect dielectric formulas. $p > 10$: good-conductor formulas. Between: exact $\gamma$, $\eta$ (polar form, [[concepts/loss-tangent|Loss tangent]]). The slides' regime chart draws the lines at 0.01 and 100 (stricter; the shortcuts are then good to well under 1 %).
 > 3. Write $\gamma$, then $\delta = 1/\alpha$, $\lambda = 2\pi/\beta$, $v_p = \omega/\beta$, then $\eta$ for $\mathbf{H}$ and $\langle\mathbf{S}\rangle$.
 > 4. Power questions: $e^{-2\alpha z}$, never $e^{-\alpha z}$; in dB, $20\log_{10}e^{\alpha z} = 8.69\,\alpha z$.
 
@@ -82,9 +82,9 @@ Two directions through the map, and exams ask both.
 | $\tau$ | $\angle\eta$, half the loss angle, 0–45° | relaxation time $\tau_r = \epsilon/\sigma$ (Lecture 8); collision time in the Drude model (Lecture 11); $\tau = 1+\Gamma$ transmission coefficient (Lecture 25) | an angle in a wave problem; a time in a charge-decay or conductivity problem; a dimensionless ratio next to $\Gamma$ |
 | $\theta$ | loss angle, $\tan\theta = \sigma/\omega\epsilon$ (Rao's and the exams' name) | polar angle in spherical coordinates; angle of incidence | — |
 | $\delta$ | penetration/skin depth $1/\alpha$ [m] | $\delta(x)$ the delta function (Lecture 3); Rao writes the loss tangent as $\tan\delta$ | the notes never write $\tan\delta$; on this site the loss angle is $\theta$ |
-| $\gamma$ | $\alpha + j\beta$ [1/m] | — (the notes keep $\gamma$ for this alone) | — |
+| $\gamma$ | $\alpha + j\beta$ [1/m] | — (the notes keep $\gamma$ for this alone) | the slides write $\bar\gamma$, $\bar\eta$ with an overbar for these complex constants |
 | $\beta$ | phase constant [rad/m] | some texts write $k$; $k = \omega\sqrt{\mu\epsilon}$ is the *lossless* $\beta$ | $\hat k$ with a hat is the travel direction, $k$ without one is $\beta$ |
-| $\alpha$ | attenuation [Np/m] | — | a Neper is dimensionless: $\alpha z$ is a pure number; $1\ \text{Np} = 8.69\ \text{dB}$ |
+| $\alpha$ | attenuation [Np/m] | the tilt angle of a linear wave (Lecture 24 slides) | a Neper is dimensionless: $\alpha z$ is a pure number; $1\ \text{Np} = 8.69\ \text{dB}$ |
 | $\eta$ | intrinsic impedance of a *medium* [Ω] | $Z_0$ is the characteristic impedance of a *line* (Lecture 27) — same role, different object | $\eta$ from $\sqrt{\mu/\epsilon}$; $Z_0$ from $\sqrt{\mathcal{L}/\mathcal{C}}$ |
 | $v_p$ vs $v_g$ | crest speed $\omega/\beta$ vs envelope speed $d\omega/d\beta$ | — | equal only when $\beta\propto\omega$ (no dispersion); plasma: $v_pv_g = c^2$ |
 | $\epsilon$ in $p$ | the medium's $\epsilon_r\epsilon_0$ | — | seawater: $\epsilon_r = 81$, so $p = \sigma/(81\omega\epsilon_0)$ |
@@ -103,6 +103,9 @@ Two directions through the map, and exams ask both.
 | what controls loss | — | $\sigma$ alone | $f$ and $\sigma$ together |
 
 What each limit *drops*: the imperfect dielectric keeps $j\omega\epsilon$ and treats $\sigma$ as a small correction (binomial expansion); the good conductor drops $j\omega\epsilon$ entirely, which is why $\epsilon$ never appears in its formulas. Derivations: [[concepts/loss-tangent|Loss tangent]]; the conductor side: [[concepts/skin-depth|Skin depth]].
+
+> [!exam] What the formula sheet gives you, and what it does not
+> The Midterm 2 sheet (FA25 version, `Lecture/329_mid2_formula.pdf`) prints, for waves, only the free-space results: a sheet $-J_s(t)\hat x$ at $z = 0$ radiates $E_x = \tfrac{\eta}{2}J_s(t\mp z/v_p)$ and $H_y = \pm\tfrac12J_s(t\mp z/v_p)$ for $z\gtrless0$, with $v_p = 1/\sqrt{\mu\epsilon}$, $\eta = \sqrt{\mu/\epsilon}$, $\eta_0 = 120\pi$, $v_p = \omega/\beta = \lambda f$, $\beta = 2\pi/\lambda$, $\omega = 2\pi f$; plus Maxwell's equations, the boundary conditions ($\hat n$ from the $-$ side to the $+$ side, $\mathbf{H}^+ - \mathbf{H}^- = \mathbf{J}_s\times\hat n$), the static fields of charges and currents, and the material relations. Not on it: Poynting's theorem and $\langle\mathbf{S}\rangle$ (Lecture 20, on Midterm 2), and nothing from Lectures 21–26 (phasors, $\gamma$, $\alpha$, complex $\eta$, $\tau$, the loss tangent, $\delta$, $\Gamma$). Whether an Exam 3 sheet adds them is not known; plan to carry the [[0-toolkit/07-wave-parameters-map#1-one-row-per-symbol|table above]] in your head.
 
 ## 6. Where each symbol is taught
 

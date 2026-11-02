@@ -21,7 +21,7 @@ A transmission line is Maxwell's equations reduced to two wires — voltages and
 | 38 | Distribution networks | *coming* | — |
 
 > [!note] Lectures 27–30 follow the course notes
-> Written from the course notes (Kudeki) without the slides; every bounce-diagram number was checked against an independent simulation of the line.
+> Written from the course notes (Kudeki); build 13 added the Lecture 27–29 slides (Shao; Lecture 28 with the in-class ink). Every bounce-diagram number was checked against an independent simulation of the line.
 
 **Worked problems:** [[problems/a-backward-pulse-on-a-parallel-plate-line]] (Lecture 27) · [[problems/reading-a-line-from-two-pulses]] (Lecture 28) · [[problems/a-ramp-pulse-meets-its-echo]] (Lecture 29) · [[problems/echoes-trapped-on-the-second-line]] (Lecture 30)
 

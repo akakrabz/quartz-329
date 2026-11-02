@@ -7,8 +7,8 @@ tags: [waves]
 > [!tip] Studying for Midterm 2?
 > The [[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]] has Lectures 11–20 on one page, with what Homeworks 5–7 drilled and a practice list.
 
-> [!note] Lectures 20–26 follow the course notes
-> They were written from the course notes (Kudeki) without the slides; their examples are the notes' own and the site's, all checked numerically.
+> [!note] Lectures 20–26: course notes first, slides added
+> They were written from the course notes (Kudeki) before the slides were available; build 13 added the slides (Shao, decks "Lecture 20" to "Lectures 25–26", with the in-class ink): their examples, challenge questions and exam emphasis sit on the topic pages as **Slides, Lecture …** callouts. All numbers checked numerically.
 
 Time variation couples $\mathbf{E}$ and $\mathbf{B}$, and the coupled equations support waves travelling at $c$. Lecture 16 finishes the equations: charge conservation forces a second term into Ampère's law, and with it the four Maxwell equations and the four boundary conditions are complete for time-varying fields. Lecture 17 carries them into magnetic matter — the magnetic twin of what Lectures 8–9 did for dielectrics — and Lecture 18 finds that, with no sources at all, the two curl equations sustain each other as a wave. The rest of the unit studies what those equations predict — waves, their energy (Poynting), their description by phasors, what lossy and conducting media do to them, and what happens at an interface.
 
