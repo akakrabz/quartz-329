@@ -115,6 +115,8 @@ In a good conductor $\eta_2\approx\sqrt{j\omega\mu_2/\sigma_2}$ and $\gamma_2\ap
 **Examples.**
 - 1.5 GHz in air ($\lambda = 20$ cm): $\mathbf{E}$ nodes at 0, 10, 20 cm from the mirror, $\mathbf{H}$ nodes at 5, 15, 25 cm.
 - Vacuum onto $\epsilon_r = 9$ ($\Gamma = -1/2$): $\lvert\tilde E\rvert$ between $0.5E_0$ and $1.5E_0$, minimum at the interface.
+- **Standing-wave ratio** $s = \lvert\tilde E\rvert_{\max}/\lvert\tilde E\rvert_{\min} = (1+\lvert\Gamma\rvert)/(1-\lvert\Gamma\rvert)$: 3 in the line above, $\infty$ at a mirror, 1 for no reflection. It depends on $\lvert\Gamma\rvert$ only; the sign of $\Gamma$ only places the extrema ($\Gamma>0$: maximum at the interface; $\Gamma<0$: minimum). Lines reuse it as VSWR later in Unit 4 ([Ravaioli, ECE 329 FA21 Lecture 25](https://ursemiconductors.web.illinois.edu/Lecture25.pdf); [MIT 6.013 §9.1](https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/318e025511f2c95bb95b6322b30f9c06_MIT6_013S09_chap09.pdf)).
+- **Nulls as shorts and opens.** An $E$ null acts like a short ($V = 0$) and an $H$ null like an open ($I = 0$), every $\lambda/2$, a quarter-wave apart ([Kudeki, FA09 Lecture 26 notes](https://remote2.ece.illinois.edu/~erhan/FieldsWaves/secure/notes/ECE329Fall09/329lect26.pdf)). So a thin metal sheet slid into an $E$ null changes nothing on the source side: the transmission-line picture of Unit 4.
 - [[problems/a-circular-wave-meets-a-mirror|Worked problem — A circular wave meets a mirror]]: a circular wave on a mirror. The two components' standing waves are 90° apart in time, so $\mathbf{S} = 0$ at every instant and $w = 2\epsilon_0E_0^2$ is constant.
 
 > [!example] Example — a copper mirror at 10 GHz (this site's numbers)

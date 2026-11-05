@@ -31,7 +31,7 @@ What the formulas say:
 - Speeds do not enter $\Gamma$ or $\tau$; they only set the timing.
 - Going back through the same junction: $\Gamma_{kj} = -\Gamma_{jk}$ and $\tau_{kj} = 1+\Gamma_{kj} = 1-\Gamma_{jk}$.
 - Current ratios: reflected over incident current is $-\Gamma_{jk}$; transmitted over incident is $1-\Gamma_{jk} = \tau_{jk}Z_j/Z_k$.
-- Power ratios: $\Gamma_{jk}^2$ reflects and $\tau_{jk}^2Z_j/Z_k = 1-\Gamma_{jk}^2$ is transmitted. So $\tau>1$ (for $Z_k>Z_j$) is not a gain.
+- Power ratios: $\Gamma_{jk}^2$ reflects and $\tau_{jk}^2Z_j/Z_k = 1-\Gamma_{jk}^2$ is transmitted. So $\tau>1$ (for $Z_k>Z_j$) is not a gain. Example: 50 Ω into a matched 75 Ω line, $\Gamma = 0.2$, $\tau = 1.2$: 4 % reflected, $1.2^2\cdot50/75 = 96$ % transmitted; from the 75 Ω side $\Gamma = -0.2$, $\tau = 0.8$, the same 96 % ([rfengineer.net](https://rfengineer.net/basic-concepts/reflection-and-transmission-coefficients/)).
 - $Z_k = Z_j$: no reflection, whatever the speeds.
 
 > [!trap] Junction coefficients
