@@ -118,5 +118,8 @@ The lectures tell the story in order; the **topic pages** are where the content 
 - [[concepts/telegraphers-equations|Telegrapher's equations]] — V and I on a line obey Faraday and Ampère in circuit form
 - [[concepts/characteristic-impedance|Characteristic impedance]] — Z₀ = √(𝓛/𝓒): the V/I ratio of one travelling wave
 - [[concepts/bounce-diagram|Bounce diagram]] — tracking reflections at both ends of a line in the z–t plane
+- [[concepts/line-resonances|Resonances of a line segment]] — like ends hold half wavelengths, unlike ends odd quarter wavelengths
+- [[concepts/stub-input-impedance|Input impedance of a stub]] — jZ₀ tan βℓ and −jZ₀ cot βℓ; series and parallel resonance
+- [[concepts/quarter-wave-transformer|Quarter- and half-wave transformers]] — Z_in Z_L = Z₀², current forcing; a half wave repeats the load
 
 The electrostatic ↔ magnetostatic pairs (Coulomb ↔ Biot–Savart, Gauss ↔ Ampère, $V$ ↔ $\mathbf{A}$, $C$ ↔ $L$, …) are collected in the [[2-magnetostatics/index#the-dictionary-electrostatics--magnetostatics|dictionary]] on the Unit 2 page; the polarization ↔ magnetization pairs are on [[concepts/magnetization|Magnetization M and magnetization current]]. Following the course week by week? Use the [[index#by-lecture|lecture map]] on the home page.

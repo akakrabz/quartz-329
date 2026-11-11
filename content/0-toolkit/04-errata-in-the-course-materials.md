@@ -1,14 +1,14 @@
 ---
 title: "Errata in the course materials"
-description: "Slips found in the lecture slides (Lectures 1–29), the course notes (Lectures 1–30), the FA26 Exam 1 key and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
+description: "Slips found in the lecture slides (Lectures 1–32), the course notes (Lectures 1–33), the FA26 Exam 1 key, two past Exam 3 keys and the homework solutions while writing these notes — each with the correct statement. None of them is propagated into this site; several are the exact mistakes students make."
 tags: [toolkit, exam-1]
 aliases: ["errata", "known errors in the slides", "errors in the exam key"]
 ---
 
-Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–30 (the Lecture 20–29 slides were added in build 13; Lecture 30 has none), so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
+Course materials are written fast and by hand, and every set has a few slips. This page lists the ones found while digesting the sources for Lectures 1–33 (the Lecture 20–29 slides were added in build 13; the Lecture 30–32 decks and the annotated Lecture 27 and 29 decks in build 14), so that you (a) do not copy them onto your notecard and (b) recognize them for what they are when a formula on a slide looks wrong. Only substantive items are listed — things that would change an answer or a sign — not spelling. Each entry gives the source, what it says, and what it should say.
 
 > [!tip] How to read this page
-> "Slide" means the annotated lecture decks (Shao, after Goddard and Cunningham); "notes" means Prof. Kudeki's lecture notes; "key" means the FA26 Exam 1 solutions; "HW sol." means the FA26 homework solution sets. Nothing here is a criticism of the materials — most of these are momentary hand slips that the authors corrected verbally or on the next line. They are listed because they are copied verbatim into notecards every semester.
+> "Slide" means the annotated lecture decks (Shao, after Goddard and Cunningham); "notes" means Prof. Kudeki's lecture notes; "key" means the FA26 Exam 1 solutions (and, in their own section, two past Exam 3 keys); "HW sol." means the FA26 homework solution sets. Nothing here is a criticism of the materials — most of these are momentary hand slips that the authors corrected verbally or on the next line. They are listed because they are copied verbatim into notecards every semester.
 
 ## Lecture slides
 
@@ -81,7 +81,8 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L29 slide 3 | "If $\Gamma_g\Gamma_L<1$, … the voltage and current reach constant, steady state values" | $\lvert\Gamma_g\Gamma_L\rvert<1$ | an ideal source on an open line has $\Gamma_g\Gamma_L = -1<1$, yet $V(\ell/2,t)$ steps 1, 2, 1, 0, 1, … V forever |
 | L29 slide 13, LTspice plots | third (green) traces labelled $V(z = 1200,t)$ and $I(z = 1200,t)$ | $V(z = 2400,t)$, $I(z = 2400,t)$: the load (LTspice nodes V(vl), I(R2)) | the green traces first step at 8 μs, the arrival time at 2400 m, and their levels 4/3, 8/9, 28/27 V are the load's |
 | L29 slides 10–14 | bounce-diagram axis "$l = 0$ m, $l = 1200$ m, $l = 2400$ m"; slide 12 "at $l = 1200$ m" | $z = 0$, $1200$, $2400$ m | $l$ is the line's length (2400 m); positions are $z$ |
-| L29 slide 14 | $f_i(t) = u(t-4) - u(t)$ | probably $u(t) - u(t-4)$, a +1 V pulse 4 μs long | as written it is a −1 V pulse, so every level of $V(1200,t)$ changes sign (the site works it as written and says so) |
+| L29 slide 14 | $f_i(t) = u(t-4) - u(t)$ | $u(t) - u(t-4)$, a +1 V pulse 4 μs long: corrected in class (struck out and rewritten in the annotated deck) | as printed it is a −1 V pulse, so every level of $V(1200,t)$ changes sign; the site now works the corrected version |
+| L30 slide 8 (in-class ink) | "$\tfrac89$" written beside "what is the power transmitted down each line?" | $\tfrac89$ of the incident power is transmitted in total; each of the two lines carries $\tfrac49$ | junction voltage $\tfrac23V^+$ on each $Z_0$: $(\tfrac23)^2 = \tfrac49$ per line, and $\tfrac19+\tfrac49+\tfrac49 = 1$ |
 
 ## Course notes (Kudeki)
 
@@ -152,6 +153,7 @@ Course materials are written fast and by hand, and every set has a few slips. Th
 | L29 pp. 2–3, margin plot | vertical axis "v(4,t)" | the curve is $V(1200,t)$ |
 | L30 p. 1 | "$Z_2 = 2Z_2$" | $Z_2 = 2Z_1$ |
 | L30 p. 4, margin plot | labelled "$V(z, 3\,\mu\text{s})$" | at 3 µs the front is only at 450 m; the curve is a late snapshot |
+| L31 p. 8, Example 1(c) | voltage-mode amplitude written "$300\mathcal{L}$" | a mixed-unit shorthand ($v = 300$ m/µs times $\mathcal{L}$): the amplitude is $v\mathcal{L} = Z_0 = 50$ V per ampere of current mode ([[4-transmission-lines/31-periodic-oscillations-in-lossless-tl-circuits#5-example-1-notes-a-600-m-segment-open-at-z--0-and-shorted-at-z--ℓ\|Lecture 31 §5]]) |
 
 ## FA26 Exam 1 solution key
 
@@ -164,6 +166,15 @@ None of these changes a boxed answer; all of them are exactly the slips graders 
 | 3(a) | a stray "$4\epsilon$" in $E_{2z}$ (struck out) | $E_{2z} = D_{2z}/\epsilon_2 = -4$, no $\epsilon$ left over |
 | 4(e) | $\mathcal C = Q/V$ evaluated with $V = V(b)-V(a)<0$, giving a negative $\mathcal C$ in the intermediate line; the box adds the minus sign silently | $\mathcal C = \lambda/[V(a)-V(b)]$: the drop from the positive conductor to the negative one ([[problems/two-layer-coaxial-capacitor]]) |
 
+## Past Exam 3 solution keys
+
+Found while re-solving the Exam 3 papers for the [[exams/index|Midterm 3 review]] (`tools/build14/checks/exam3_keys.py`). Every other value that was re-solved, in the four Spring and Fall keys and the four Summer keys, agrees.
+
+| paper, part | as written | should be |
+|---|---|---|
+| SP18 Exam 3 #3(d) | load-end voltage drawn at $\tfrac{25}{4}$ V for $0.75<t<2$ ns, with the note "only the first wave reaches" | the first wave **and its reflection** are both at the load from $t = T$: $V_L = (1+\Gamma_L)\tfrac{25}{4} = \tfrac32\cdot\tfrac{25}{4} = \tfrac{75}{8} = 9.375$ V. The key's own part (c) uses the $\tfrac{25}{8}$ V reflected wave. A load voltage is never the incident wave alone unless $\Gamma_L = 0$ ([[exams/e3-sp18#3-voltage-and-current-bounce-diagrams-30-points\|SP18 guide]]) |
+| SP19 Exam 3 #1(d) | $\dfrac{\gamma}{\eta} = \dfrac{2e^{j60^\circ}}{4\pi^2e^{j30^\circ}}$ | $\lvert\eta\rvert = 8\pi^2\ \Omega$ from the key's own part (b), so $\gamma/\eta = \dfrac{1}{4\pi^2}e^{j30^\circ}$ S/m. The factor cancels in $\sigma/\omega\epsilon = \text{Re}/\text{Im}$, and the boxed $\sqrt3$ is right ([[exams/e3-sp19#1-decoding-a-damped-wave-in-a-magnetic-medium-25-points\|SP19 guide]]) |
+
 ## Homework solution sets (FA26)
 
 | where | as written | should be |
@@ -174,6 +185,12 @@ None of these changes a boxed answer; all of them are exactly the slips graders 
 | HW3 #7(f) | bound surface charges left as functions of $r$ | evaluate at $r=a$ (inner face) and $r=b$ (outer face) |
 | HW4 #4(e) | general solution "$a_1e^{-Gt/C}+a_2$" | $a_2 = 0$ is forced by the ODE itself, not by a boundary condition |
 | HW4 #6 | a stray label $\vec P_4$; only *free* surface charges reported | the four surfaces also carry bound charge (listed in [[1-electrostatics/09-static-fields-in-dielectric-media\|Lecture 9]]'s pattern: $\rho_{sb} = \vec P\cdot\hat n$) |
+| HW9 #2(c) | general line "$\tilde{\mathbf{H}} = \pm jE_oe^{\mp j\beta z}\hat y$" | $\pm jH_oe^{\mp j\beta z}\hat y$ with $H_o = E_o/\eta_0$; the explicit lines under it ($0.103j$ A/m) are right |
+| HW9 #3(f) | power lost in the unit cube "$\approx3.7441$ kW" | $250\sqrt3\pi^2(1-e^{-2}) = 4273.7\times0.8647 = 3.695$ kW; the same value comes from integrating $\tfrac12\sigma\lvert\tilde E\rvert^2$ over the cube |
+| HW9 #4(a) | "$\lvert\eta\rvert = 0.4215$", then "$\eta = 0.243\angle45^\circ\ \Omega$" | $\eta = 0.4215\angle45^\circ\ \Omega = 0.298(1+j)\ \Omega$; the second line contradicts the first |
+| HW9 #4(d) | loss tangent at 900 Hz computed with $2\pi\times300$: "$2.96\times10^6$" | $\sigma/\omega\epsilon = 9.86\times10^5$ at 900 Hz (conclusion unchanged: a good conductor) |
+| HW9 #4(d) | "$\lambda = 2\pi/\beta = 57.71$ m" | $2\pi/0.1192 = 52.70$ m |
+| HW9 #5(g) | $\langle\mathbf{J}\cdot\mathbf{E}\rangle$ of the sheet given in W/m³ | a surface current: $\langle\mathbf{J}_s\cdot\mathbf{E}\rangle = -\eta = -80\pi$ W/**m²**, minus the sum of the two sides' $\langle S\rangle$ |
 
 ## Notation that varies between sources (not errors, but easy to trip on)
 

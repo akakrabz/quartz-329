@@ -1,0 +1,60 @@
+== Lecture 31: modes satisfy the telegrapher's equations and the end conditions
+PASS  open-open n=1: residuals (scaled), I(0), I(l); f = n v/2l [MHz]: [0.      0.      0.      0.      3.33333]
+PASS  short-short n=1: residuals (scaled), V(0), V(l): [ 0. -0.  0.  0.]
+PASS  open-open n=2: residuals (scaled), I(0), I(l); f = n v/2l [MHz]: [-0.      -0.       0.      -0.       6.66667]
+PASS  short-short n=2: residuals (scaled), V(0), V(l): [ 0. -0.  0. -0.]
+PASS  open-open n=3: residuals (scaled), I(0), I(l); f = n v/2l [MHz]: [ 0. -0.  0.  0. 10.]
+PASS  short-short n=3: residuals (scaled), V(0), V(l): [0. 0. 0. 0.]
+PASS  open(z=0)-short(z=l) n=0: residuals, I(0), V(l); w/(pi v/l): [ 0.  -0.   0.   0.   0.5]
+PASS  open(z=0)-short(z=l) n=1: residuals, I(0), V(l); w/(pi v/l): [ 0.   0.   0.  -0.   1.5]
+PASS  open(z=0)-short(z=l) n=2: residuals, I(0), V(l); w/(pi v/l): [-0.   0.   0.   0.   2.5]
+PASS identities: cos(a-b)-cos(a+b) = 2 sin a sin b; cos(a-b)+cos(a+b) = 2 cos a cos b: [1.08418 0.82649]
+== Lecture 31 Example 1: 600 m, open at z=0, short at z=l, v = c, Z0 = 50
+PASS f_n [MHz], n = 0,1,2: [0.125 0.375 0.625]
+PASS omega_n [rad/us] / pi, beta_n [rad/m] * 1200/pi for n = 1: [0.75 3.  ]
+PASS voltage amplitude per ampere = v L = Z0 [V]; '300 L' with L in uH/m: [50. 50.]
+PASS same line, both ends open: n c/2l [MHz]: [0.25 0.5  0.75]
+== Lecture 31 battery: 3 V on a 600 m line (v = c) for 1 us, then both ends open (characteristics)
+PASS mean voltage along the line stays 1.5 V (min, max over time): [1.5 1.5]
+PASS snapshot at 5 us equals the snapshot at 1 us (period 4 us): max difference: 0.0
+PASS at t = 2.5 us near z = l: V = 6 V and I = 0 (pulse folding on the open end): [6. 0.]
+PASS record at z = 450 m repeats after 4 us: max |V(t+4us) - V(t)|: 0.0
+== Lecture 32: stub impedance from the phasor waves
+PASS  beta l = 0.3: short (V, I from e^(+-jbl)), Z; open (V, I), Z: [-0.     +5.9104000e-01j  0.03821+0.0000000e+00j  0.     +1.5466810e+01j
+  1.91067+0.0000000e+00j -0.     +1.1820000e-02j  0.     -1.6163641e+02j]
+PASS  beta l = 1.1: short (V, I from e^(+-jbl)), Z; open (V, I), Z: [0.     +1.782410e+00j 0.01814+0.000000e+00j 0.     +9.823798e+01j
+ 0.90719+0.000000e+00j 0.     +3.565000e-02j 0.     -2.544841e+01j]
+PASS  beta l = 2.0: short (V, I from e^(+-jbl)), Z; open (V, I), Z: [ 0.     +1.8185900e+00j -0.01665+0.0000000e+00j -0.     -1.0925199e+02j
+ -0.83229+0.0000000e+00j  0.     +3.6370000e-02j  0.     +2.2882880e+01j]
+PASS  beta l = 2.9: short (V, I from e^(+-jbl)), Z; open (V, I), Z: [-0.     +4.7850000e-01j -0.03884+0.0000000e+00j -0.     -1.2320270e+01j
+ -1.94192+0.0000000e+00j -0.     +9.5700000e-03j  0.     +2.0291764e+02j]
+PASS sign of X: shorted inductive below pi/2, capacitive above; open the reverse: [1. 1. 1. 1.]
+PASS short stubs (beta l = 0.0157): shorted ~ j w L l, open ~ 1/(j w C l) (ratio): [1.00008+0.j 0.99992+0.j]
+PASS lambda/8 stub on 50 ohm: shorted, open [ohm]: [0.+50.j 0.-50.j]
+== Lecture 32 Example 1: 3 m shorted air stub, Z0 = 50, in series with 50 ohm
+PASS |H| = |cos(w l/c)| at 7, 33, 61, 140 MHz: [0.90483 0.48175 0.77051 0.80902]
+PASS series resonances n c/2l [MHz]; parallel (2n+1) c/4l [MHz]: [  0.  50. 100.  25.  75. 125.]
+PASS |H| at 50, 100 MHz (=1) and at 25, 75 MHz (-> 0): [1. 1. 0. 0.]
+PASS  tlsim at 10 MHz: |V_R/F| = 50 |I|: 0.81016
+PASS  tlsim at 40 MHz: |V_R/F| = 50 |I|: 0.80902
+== Lecture 32 Example 3: add C = 10 pF in series
+PASS shifted series resonances [MHz] (page: 23.8, 71.5, 119.3): [ 23.81163  71.48413 119.29319]
+PASS |H| there = 1; nulls still at 25, 75 MHz; |H| -> 0 at DC: [1. 1. 0. 0. 0.]
+== Lecture 32 Example 2: inductor with a stub, series and parallel
+PASS zero of the series impedance is a zero of the parallel admittance (|Y| there), and it moved off 50 MHz: [1. 1.]
+PASS poles of the series impedance stay at the stub's parallel resonances: |1/Zs| at 25, 75 MHz: [0. 0.]
+== Lecture 32 Example 4: 2 A source, 50 ohm, open-ended line
+PASS I_R at l = lambda/2 and lambda (-> 2 A); at lambda/4 and 3 lambda/4 (-> 0): [2.+0.j 2.+0.j 0.-0.j 0.-0.j]
+== Lecture 33: the two rules from the phasor waves, random load
+PASS half wave: V_in/V_L, I_in/I_L, Z_in/Z_L: [-1.+0.j -1.+0.j  1.-0.j]
+PASS quarter wave: V_in/(j Z0 I_L), I_in/(j V_L/Z0), Z_in Z_L/Z0^2, I_L/(-j V_in/Z0), V_L/(-j Z0 I_in): [1.-0.j 1.-0.j 1.+0.j 1.+0.j 1.+0.j]
+PASS 3 lambda/4 inverts, lambda repeats: Z_in Z_L/Z0^2, Z_in/Z_L; power in = power out: [1.+0.j 1.-0.j 1.+0.j]
+== Lecture 33 examples
+PASS Ex 1: Z_in [ohm]: (25-25j)
+PASS Ex 2: I_L [A], V_L [V], P_L [W] three ways: [  0.  -2.j 100.-100.j 100.  +0.j 100.  +0.j 100.  +0.j]
+PASS Ex 3: Z_in, V_in, V(0.25 lambda), I_L, V_L, P_in, P_L: [ 25. +0.j   0. +5.j  -0. -5.j  -0.1+0.j -10. +0.j   0.5+0.j   0.5+0.j]
+PASS  tlsim: V_in, V_L, I_L = V_L/100: [  0. +5.j -10. +0.j  -0.1+0.j]
+PASS Ex 4: I_L1 = I_L2 [A], V_L1, V_L2 [V], P total [W], also from the two input impedances: [0.   -0.1j 0.   -5.j  0.  -10.j  0.75 +0.j  0.75 +0.j ]
+PASS matching: Gamma of 200 on 50; Z_q = sqrt(50*200); its input [ohm]: [  0.6 100.   50. ]
+
+SUMMARY: 44 PASS, 0 FAIL

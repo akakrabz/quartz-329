@@ -1,0 +1,30 @@
+== 32.1
+PASS five stubs [ohm]: [ 0.+50.j      -0.-50.j       0.-50.j       0.-28.86751j -0. -0.j     ]
+== 32.2
+PASS (e) current a quarter wave from the input of a lambda/4 shorted stub, per V+ (Z0 = 1): 2 cos(0): 2.0
+== 32.3
+PASS lambda [m], quarter wave [m], beta l of the 0.5 m stub / pi, its Z [ohm]: [ 1.33333 +0.j  0.33333 +0.j  0.75    +0.j -0.     -75.j]
+== 32.4
+PASS X [ohm], tan, beta l [rad], beta/pi, l [cm], L per metre [uH/m], estimate [cm], ratio: [31.41593  0.31416  0.3044   1.       9.68922  0.5     10.       1.03207]
+== 32.5
+PASS  H at 20 MHz vs 1/(2 - j cot); |H| vs 1/sqrt(4+cot^2): [0.44171+0.16046j 0.46995+0.j     ]
+PASS  H at 50 MHz vs 1/(2 - j cot); |H| vs 1/sqrt(4+cot^2): [0.4    -0.2j 0.44721+0.j ]
+PASS  H at 90 MHz vs 1/(2 - j cot); |H| vs 1/sqrt(4+cot^2): [0.46953+0.11962j 0.48452+0.j     ]
+PASS nulls n v/2l [MHz]; peaks (2n+1) v/4l [MHz]; |H| at a peak; |H| at 50 MHz: [ 66.66667 133.33333  33.33333 100.      166.66667   0.5       0.44721]
+PASS  |H| at 66.67 MHz -> 0; 1/sqrt5: [0.      0.44721]
+== 32.6
+PASS V+, V(l), I(l), I(0), V at lambda/4, lambda/2, power at input: [ -0.+5.j   10.-0.j   -0.-0.j    0.+0.2j -10.+0.j   -0.+0.j    0.+0.j ]
+PASS  V(d) = -10 sin(bd), I(d) = j0.2 cos(bd) at bd = 0.7: [-6.44218+0.j       0.     +0.15297j]
+== 32.7
+PASS lambda [m]; lengths [m]: [2.  0.5 1.5 2.5]
+PASS V+, I through the short [A], V(d) at bd = 0.4 vs 9 sin: [0.     -4.5j  0.     -0.18j 3.50477+0.j  ]
+PASS (d) l = 3 lambda/4 = 1.5 m: cos(beta l/3) = 0 and 1/tan(beta l) = 0; null at d [m]; next length [m]: [0.  0.  0.5 4.5]
+PASS     lengths lambda/4, 5 lambda/4, 7 lambda/4 do not work (|cos| > 0): [1. 1. 1.]
+PASS (e) lambda at 250 MHz [m], Z(l), I_R [A]: [ 1.  +0.j -0.  -0.j  0.12+0.j]
+== 32.8
+PASS (a) v/2l, v/4l [MHz]: [250. 125.]
+PASS (b) beta l/pi, stub X [ohm], C [pF]: [ 0.25    50.      50.92958]
+PASS (c) |H| at 62.5 MHz (=1), 125 MHz, 1 Hz; (d) stub X, cap X, net, |H| at 31.25 MHz: [   1.         0.         0.        20.71068 -100.       -79.28932
+    0.5334 ]
+
+SUMMARY: 19 PASS, 0 FAIL

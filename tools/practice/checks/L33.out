@@ -1,0 +1,31 @@
+== 33.1
+PASS five inputs [ohm]: [225.  +0.j   25.  -0.j   -0. -75.j   37.5 -0.j   37.5-37.5j]
+== 33.2
+PASS (f) matched quarter wave: V_L/V_in: -1j
+PASS (e) half wave: V_L/V_in: (-1-0j)
+PASS (b) quarter wave of a capacitive load -j40 on 50 ohm: 62.5j
+PASS (c) 100 ohm on 50 ohm at l = lambda/8 is not Z0^2/ZL = 25: 1.0
+== 33.3
+PASS Z_in, V_in, I_L, V_L, P_L, P_in; the student's wrong value: [25.  -0.j    4.  -0.j    0.  -0.08j  0.  -8.j    0.32+0.j    0.32+0.j
+  0.  -0.24j]
+== 33.4
+PASS Gamma, Gamma^2, Z_q, lambda [m], l [cm], check Z_q^2/R_L: [ 0.38462  0.14793 75.       0.66667 16.66667 50.     ]
+== 33.5
+PASS Z_in, I_in, V_in, I_L, V_L, P_L, available power, P_in: [30. -40.j   1.  +0.j  30. -40.j  -0.8 -0.6j  0. -50.j  15.  +0.j
+ 15.  +0.j  15.  +0.j ]
+== 33.6
+PASS I_L1, V_L1, I_L2, V_L2, P1, P2, Z_in1, Z_in2, I_in, P_in: [  0.  -0.2j   0.  -5.j    0.  -0.1j   0. -20.j    0.5 +0.j    1.  +0.j
+ 100.  +0.j   50.  -0.j    0.3 +0.j    1.5 +0.j ]
+PASS (d) with Z02 = 50: I_L2 = I_L1: -0.2j
+== 33.7
+PASS  at 1 f0: Z_in, V_in, I_L, V_L, P_L: [50.   -0.j    5.   -0.j    0.   -0.05j  0.  -10.j    0.25 +0.j  ]
+PASS  at 2 f0: Z_in, V_in, I_L, V_L, P_L: [ 2.0e+02+0.j  8.0e+00+0.j -4.0e-02-0.j -8.0e+00-0.j  1.6e-01+0.j]
+PASS  at 3 f0: Z_in, V_in, I_L, V_L, P_L: [50.   -0.j    5.   -0.j   -0.   +0.05j -0.  +10.j    0.25 +0.j  ]
+PASS available power [W]; direct connection V_L, P_L; gain: [0.25   8.     0.16   1.5625]
+== 33.8
+PASS stub Z, Y_L, Z_in, I_in, V_in, V_L, |V_L|^2, P in the resistor, P_in, total load current two ways: [ 0.0e+00+5.0e+01j  1.0e-02-2.0e-02j  2.5e+01-5.0e+01j  1.0e-01+1.0e-01j
+  7.5e+00-2.5e+00j  5.0e+00-5.0e+00j  5.0e+01+0.0e+00j  2.5e-01+0.0e+00j
+  2.5e-01+0.0e+00j -5.0e-02-1.5e-01j -5.0e-02-1.5e-01j]
+PASS  V_L = -j Z0 I_in: (5-5j)
+
+SUMMARY: 16 PASS, 0 FAIL

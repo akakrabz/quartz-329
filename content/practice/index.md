@@ -1,10 +1,10 @@
 ---
 title: "Practice problems"
-description: "344 practice problems for Lectures 2–30 — 144 easy, 86 medium, 114 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
+description: "368 practice problems for Lectures 2–33 — 156 easy, 92 medium, 120 hard — each with a folded hint and a worked solution, and every answer checked numerically twice. Browse by lecture, by difficulty or by topic."
 tags: [practice]
 ---
 
-Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **344 problems for Lectures 2–30**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 79 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
+Understanding a lecture and being able to *do* its problems are different skills, and only the second one is tested. This bank has **368 problems for Lectures 2–33**: short drills that build confidence, standard exam sub-problems, and full exam-length problems. 82 of them are modelled on past ECE 329 exams, with the numbers and a detail changed.
 
 > [!recipe] How to use the bank
 > 1. Pick a lecture you have read and do its **easy** problems first — a few minutes each, one idea per problem.
@@ -29,7 +29,7 @@ Every problem's title bar carries one **difficulty tag** and one to three **topi
 | <span class="diff medium">medium</span> | a standard exam sub-problem: one modelling decision (which surface, path, coordinates or region), a real integral, or a three- or four-step chain | 8–15 min |
 | <span class="diff hard">hard</span> | exam length, in several parts: superposition of several pieces, several regions with matching conditions, a non-trivial integral, a sign-heavy direction analysis, or two lectures combined | 20–40 min |
 
-Browse: [[practice/easy|all 144 easy]] · [[practice/medium|all 86 medium]] · [[practice/hard|all 114 hard]] · [[practice/topics|by topic]] — 40 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
+Browse: [[practice/easy|all 156 easy]] · [[practice/medium|all 92 medium]] · [[practice/hard|all 120 hard]] · [[practice/topics|by topic]] — 43 topics that cut across lectures, plus the quick multiple-choice checks and the find-the-error items.
 
 ## By lecture
 
@@ -64,7 +64,10 @@ Browse: [[practice/easy|all 144 easy]] · [[practice/medium|all 86 medium]] · [
 | 28 | [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams\|Distributed circuits and bounce diagrams]] | [[practice/28-bounce-diagrams\|12 problems]] | [[practice/easy#lecture-28--distributed-circuits-and-bounce-diagrams\|5]] | [[practice/medium#lecture-28--distributed-circuits-and-bounce-diagrams\|3]] | [[practice/hard#lecture-28--distributed-circuits-and-bounce-diagrams\|4]] |
 | 29 | [[4-transmission-lines/29-bounce-diagram-examples\|Bounce diagram examples]] | [[practice/29-bounce-diagram-examples\|12 problems]] | [[practice/easy#lecture-29--bounce-diagram-examples\|5]] | [[practice/medium#lecture-29--bounce-diagram-examples\|3]] | [[practice/hard#lecture-29--bounce-diagram-examples\|4]] |
 | 30 | [[4-transmission-lines/30-multi-line-circuits\|Multi-line circuits]] | [[practice/30-multi-line-circuits\|12 problems]] | [[practice/easy#lecture-30--multi-line-circuits\|5]] | [[practice/medium#lecture-30--multi-line-circuits\|3]] | [[practice/hard#lecture-30--multi-line-circuits\|4]] |
-| | **total** | **344** | **144** | **86** | **114** |
+| 31 | [[4-transmission-lines/31-periodic-oscillations-in-lossless-tl-circuits\|Periodic oscillations in lossless TL circuits]] | [[practice/31-resonances-of-line-segments\|8 problems]] | [[practice/easy#lecture-31--periodic-oscillations-in-lossless-tl-circuits\|4]] | [[practice/medium#lecture-31--periodic-oscillations-in-lossless-tl-circuits\|2]] | [[practice/hard#lecture-31--periodic-oscillations-in-lossless-tl-circuits\|2]] |
+| 32 | [[4-transmission-lines/32-input-impedance-and-microwave-resonators\|Input impedance and microwave resonators]] | [[practice/32-stubs-and-input-impedance\|8 problems]] | [[practice/easy#lecture-32--input-impedance-and-microwave-resonators\|4]] | [[practice/medium#lecture-32--input-impedance-and-microwave-resonators\|2]] | [[practice/hard#lecture-32--input-impedance-and-microwave-resonators\|2]] |
+| 33 | [[4-transmission-lines/33-half-wave-and-quarter-wave-transformers\|TL circuits with half- and quarter-wave transformers]] | [[practice/33-half-and-quarter-wave-transformers\|8 problems]] | [[practice/easy#lecture-33--tl-circuits-with-half--and-quarter-wave-transformers\|4]] | [[practice/medium#lecture-33--tl-circuits-with-half--and-quarter-wave-transformers\|2]] | [[practice/hard#lecture-33--tl-circuits-with-half--and-quarter-wave-transformers\|2]] |
+| | **total** | **368** | **156** | **92** | **120** |
 
 Exam 1 covered Lectures 1–10. Lecture 1 has no practice page: its content (fields defined by force, the Maxwell roadmap) is exercised from Lecture 2 on.
 
@@ -153,6 +156,9 @@ These follow a past ECE 329 exam problem (Spring 2018 midterms, Summer 2017–20
 | [[practice/30-multi-line-circuits#308-three-sections-and-the-first-echoes\|30.8 Three sections and the first echoes]] | <span class="diff medium">medium</span> | FA23 Exam 3 #3(a) |
 | [[practice/30-multi-line-circuits#309-two-lines-and-a-mismatched-source\|30.9 Two lines and a mismatched source]] | <span class="diff hard">hard</span> | SP19 Exam 3 #4 |
 | [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes\|30.10 Locating a splice by its echoes]] | <span class="diff hard">hard</span> | FA23 Exam 3 #4 |
+| [[practice/31-resonances-of-line-segments#317-a-resonator-from-two-zero-readings\|31.7 A resonator from two zero readings]] | <span class="diff hard">hard</span> | SP19 Exam 3 #5 |
+| [[practice/32-stubs-and-input-impedance#327-a-shorted-line-that-stops-the-current\|32.7 A shorted line that stops the current]] | <span class="diff hard">hard</span> | SP17 Exam 3 #6 |
+| [[practice/33-half-and-quarter-wave-transformers#337-one-line-at-three-frequencies\|33.7 One line at three frequencies]] | <span class="diff hard">hard</span> | SP18 Exam 3 #4(b) |
 
 ## How the answers were checked
 

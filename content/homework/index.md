@@ -10,4 +10,4 @@ Graded homework is not solved here before its deadline. Each companion page give
 |---|---|---|
 | HW8 | [[homework/hw8-waves-in-free-space\|Waves in free space: methods, parallel examples, infographics]] | 18–22 |
 
-Earlier sets (HW5–HW7) are mapped problem by problem in [[0-toolkit/05-midterm-2-summary#12-what-homeworks-57-drilled|the Midterm 2 summary, §12]].
+Earlier sets (HW5–HW7) are mapped problem by problem in [[0-toolkit/05-midterm-2-summary#12-what-homeworks-57-drilled|the Midterm 2 summary, §12]]. For Midterm 3, HW8–HW10 (the sets since Midterm 2) are mapped problem by problem in [[0-toolkit/09-midterm-3-summary#12-what-the-homeworks-drilled|the Midterm 3 summary, §12]], with HW1–HW4 by set in a folded box there. HW11 is not in the course folder yet.

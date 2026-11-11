@@ -1,0 +1,36 @@
+== L30 slides 3-6: coefficients and power, Z01 = 50, Z02 = 100
+PASS Gamma, tau from the two boundary equations vs (Z02-Z01)/(Z02+Z01), 1+Gamma: [0.33333 1.33333]
+PASS current: Gamma_c = -Gamma, tau_c = 1 - Gamma (I++/I+): [-0.33333  0.66667]
+PASS power: reflected/incident = Gamma^2, transmitted/incident = 1 - Gamma^2: [0.11111 0.88889]
+== L30 slide 8: one line into two equal lines
+PASS Gamma, reflected fraction, total transmitted, per line: [-0.33333  0.11111  0.88889  0.44444]
+== L30 slides 9-16: Example 1, impulse through 50 / 100 / 50 ohm lines, 2 us each, 50 ohm ends
+PASS load (z = end): weights at 6, 10, 14 us: [0.44444 0.04938 0.00549]
+PASS generator end: 0, 4, 8, 12 us: [ 0.5      0.16667 -0.14815 -0.01646]
+PASS junction 1 at 2 us (= tau 0.5 = 2/3), junction 2 at 4 us (= 4/9), junction 1 at 6 us (= -2/9 + 2/27 = -4/27), junction 2 at 8 us (= 4/81): [ 0.66667  0.44444 -0.14815  0.04938]
+PASS slide decimals: 1/6, 2/3, -2/9, 4/9, -4/27, 2/27, -2/81, 4/81: [ 0.16667  0.66667 -0.22222  0.44444 -0.14815  0.07407 -0.02469  0.04938]
+PASS sum of the load weights = DC divider 1/2; I+ = 0.5/50 [A]: [0.5  0.01]
+== L30 slides 17-19: Example 2 with this site's numbers Z01 = Z02 = 50, R1 = 100 (shunt), R2 = 50 (series)
+PASS R_eq, Gamma, V_trans/V+ (formulas) vs nodal solve (Vn - 1, V on line 2); power into line 2: [50.    0.    0.5   0.    0.5   0.25]
+== L30 slides 20-23: Example 3, reflectometry
+PASS record at z = 0: t = 0, 2 ns, 5 ns, 8 ns [V]: [ 0.5     0.25   -0.375  -0.1875]
+PASS Z02 from Gamma = 1/2; tau12, tau21; far-end Gamma; T02 [ns]; line-2 length and fault position [m]: [150.     1.5    0.5   -1.     1.5    0.15   0.25]
+== L29 slide 14 as corrected in class: f_i = u(t) - u(t - 4 us); Z0 = 50, Rg = 0, RL = 100, l = 2400 m, v = c
+PASS V(1200 m, t) at 6, 10, 14, 18, 22, 26, 30, 34, 38 us: [ 1.       0.       0.33333  0.      -0.33333  0.      -0.11111  0.
+  0.11111]
+PASS L29 slide 5 challenge: I(L, inf) = 30/(20+30) [A]; slide 12: steady V and I for u(t) with Rg = 0, RL = 100: [0.6  1.   0.01]
+== L27 slide 9 (ink): d = 1 cm, w = 20 cm, eps_r = 2.25
+PASS eta/pi, Z0/pi; (a) H, P/pi; (b) E/pi, P/pi; (c) I, P/pi; (d) V/pi, P/pi: [ 80.     4.     3.75   2.25 600.     9.     1.     4.     2.     1.  ]
+== L31 slides: power on a shorted line; the resonance example
+PASS P(d,t) = V I = -Y0 |V+|^2 sin(2 beta d) sin(2(wt + theta)): 0.17815
+PASS V(d,t) = Re{2j V+ sin(bd) e^{j(wt+th)}} = -2|V+| sin(bd) sin(wt+th): -3.30168
+PASS open-short stub: lambda_n = 4l/(2n+1), f_n = (2n+1) v/4l for n = 0, 1, 2 [m, MHz]: [  4.        1.33333   0.8      50.      150.      250.     ]
+== L32 slides: Examples 1 and 4, and the fault-finding example
+PASS Ex 1a: shorted load, v = c, l = 3 m: parallel resonances [MHz]: [ 25.  75. 125.]
+PASS Ex 1b: 10 m, open-open, v = 2c/3: n v/2l [MHz]: [10. 20. 30.]
+PASS Ex 4: lambda [m]; l = lambda/2 = 1 m: I_R [A], V(l) [V], V(l/2) [V], I(l/2) [A]: [  2.+0.j   2.+0.j 100.+0.j  -0.+0.j   0.-2.j]
+PASS  l = lambda = 2 m: I_R [A], I(l/2) [A]: [2.+0.j 0.+0.j]
+PASS  l = lambda/4 = 0.5 m: Z(l) -> 0, so I_R = 0: [0. 0.]
+PASS fault finding: shorted line 37.5 m, v = 2e8: lowest zero-current frequency [MHz], spacing of the zeros [MHz], l recovered [m]: [ 1.33333  2.66667 37.5    ]
+
+SUMMARY: 24 PASS, 0 FAIL

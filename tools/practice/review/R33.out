@@ -1,0 +1,34 @@
+== 33.1
+PASS five inputs [ohm]: computed [225.  -0.j   25.  +0.j   -0. -75.j   37.5 +0.j   37.5-37.5j], page [225, 25, (-0-75j), 37.5, (37.5-37.5j)]
+== 33.2
+PASS (e) half wave |V_L/V_in|: computed 1.0, page 1
+PASS (f) matched quarter wave |V_L/V_in|: computed 1.0, page 1
+PASS (d) quarter wave: I_L for two very different loads, same V_in: computed [-0.-0.02j -0.-0.02j], page [(-0-0.02j), (-0-0.02j)]
+PASS (b) quarter wave of -j40 on 50 ohm; (c) 100 ohm at lambda/8 on 50 ohm is not 25: computed [0.+62.5j 1. +0.j ], page [62.5j, 1]
+== 33.3
+PASS Z_in, V_in, I_L, V_L, P_L: computed [25.  +0.j    4.  +0.j   -0.  -0.08j -0.  -8.j    0.32+0.j  ], page [25, 4, (-0-0.08j), (-0-8j), 0.32]
+PASS  tlsim: V_in, V_L [V]: computed [ 4.0027+0.j -0.    -8.j], page [4, (-0-8j)]
+== 33.4
+PASS 75 ohm quarter wave in front of 112.5 ohm [ohm]; reflected fraction without it: computed [50.    +0.j  0.1479+0.j], page [50, 0.148]
+PASS  tlsim: Gamma from a step (source end after the echo, per launched volt, minus 1): computed 0.3846, page 0.3846
+== 33.5
+PASS Z_in, V_in, I_in, I_L, V_L, P_L, P_in: computed [30. -40.j  30. -40.j   1.  -0.j  -0.8 -0.6j -0. -50.j  15.  +0.j
+ 15.  +0.j ], page [(30-40j), (30-40j), 1, (-0.8-0.6j), (-0-50j), 15, 15]
+PASS  largest power this source gives any load (grid search) [W]: computed 15.0, page 15
+== 33.6
+PASS I_L1, V_L1, I_L2, V_L2, P1, P2, I_in total, P_in: computed [-0.  -0.2j -0.  -5.j  -0.  -0.1j -0. -20.j   0.5 +0.j   1.  +0.j
+  0.3 -0.j   1.5 +0.j ], page [(-0-0.2j), (-0-5j), (-0-0.1j), (-0-20j), 0.5, 1, 0.3, 1.5]
+PASS (d) with Z02 = 50: I_L2: computed (-0-0.2j), page (-0-0.2j)
+== 33.7
+PASS  1 f0 (ladder): Z_in, V_in, I_L, V_L, P_L: computed [50.   +0.j    5.   +0.j   -0.   -0.05j -0.  -10.j    0.25 +0.j  ], page [50, 5, (-0-0.05j), (-0-10j), 0.25]
+PASS  1 f0 (tlsim): V_in, V_L [V]: computed [5. -0.j 0.-10.j], page [5, (-0-10j)]
+PASS  2 f0 (ladder): Z_in, V_in, I_L, V_L, P_L: computed [ 2.0e+02-0.j  8.0e+00-0.j -4.0e-02+0.j -8.0e+00+0.j  1.6e-01+0.j], page [200, 8, -0.04, -8, 0.16]
+PASS  2 f0 (tlsim): V_in, V_L [V]: computed [ 8.-0.j -8.+0.j], page [8, -8]
+PASS  3 f0 (ladder): Z_in, V_in, I_L, V_L, P_L: computed [50.   +0.j    5.   +0.j    0.   +0.05j  0.  +10.j    0.25 +0.j  ], page [50, 5, 0.05j, 10j, 0.25]
+PASS  3 f0 (tlsim): V_in, V_L [V]: computed [5. -0.j 0.+10.j], page [5, 10j]
+PASS  direct connection: V_L [V], P_L [W]: computed [8.   0.16], page [8, 0.16]
+== 33.8 (stub: its own ladder, shorted; then the quarter-wave ladder)
+PASS stub Z, Y_L, Z_in, I_in, V_in, V_L, P in the 100 ohm, P_in: computed [0.0e+00+5.0e+01j 1.0e-02-2.0e-02j 2.5e+01-5.0e+01j 1.0e-01+1.0e-01j
+ 7.5e+00-2.5e+00j 5.0e+00-5.0e+00j 2.5e-01+0.0e+00j 2.5e-01+0.0e+00j], page [50j, (0.01-0.02j), (25-50j), (0.1+0.1j), (7.5-2.5j), (5-5j), 0.25, 0.25]
+
+SUMMARY: 21 PASS, 0 FAIL

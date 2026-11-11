@@ -67,11 +67,16 @@ LECTURES = {
     28: ("4-transmission-lines/28-distributed-circuits-and-bounce-diagrams", "Distributed circuits and bounce diagrams"),
     29: ("4-transmission-lines/29-bounce-diagram-examples", "Bounce diagram examples"),
     30: ("4-transmission-lines/30-multi-line-circuits", "Multi-line circuits"),
+    31: ("4-transmission-lines/31-periodic-oscillations-in-lossless-tl-circuits", "Periodic oscillations in lossless TL circuits"),
+    32: ("4-transmission-lines/32-input-impedance-and-microwave-resonators", "Input impedance and microwave resonators"),
+    33: ("4-transmission-lines/33-half-wave-and-quarter-wave-transformers", "TL circuits with half- and quarter-wave transformers"),
 }
 UNIT_INDEXES = ["1-electrostatics/index.md", "2-magnetostatics/index.md", "3-maxwell-and-waves/index.md", "4-transmission-lines/index.md"]
 LEVELS = ["easy", "medium", "hard"]
 EXPECT = {L: (5, 3, 4) for L in LECTURES}
 EXPECT[11] = (4, 2, 2)
+for _L in (31, 32, 33):          # build 14: eight problems each, written in the week of Midterm 3
+    EXPECT[_L] = (4, 2, 2)
 
 # ------------------------------------------------------------------ topics
 TYPES = [("mc", "Quick checks: multiple choice and true or false"), ("fte", "Find the error")]
@@ -116,6 +121,9 @@ TOPICS = [
     ("standing", "Standing waves and radiation pressure"),
     ("tlines", "Transmission lines: telegrapher's equations and characteristic impedance"),
     ("bounce", "Transients on lines and bounce diagrams"),
+    ("resonances", "Resonances of line segments"),
+    ("stubs", "Stubs and input impedance"),
+    ("transformers", "Half- and quarter-wave transformers"),
 ]
 TOPIC_TITLE = dict(TYPES + TOPICS)
 
@@ -219,6 +227,12 @@ RULES = {
     "bounce diagram": ["bounce"], "transients": ["bounce"], "load reflection coefficient": ["bounce"],
     "generator reflection coefficient": ["bounce"], "steady state": ["bounce"], "impulse response": ["bounce"],
     "multi-line circuits": ["bounce"], "line junction": ["bounce"],
+    "line resonances": ["resonances"], "resonant modes": ["resonances"], "standing waves on lines": ["resonances"],
+    "source-free oscillations": ["resonances"],
+    "stub input impedance": ["stubs"], "lumped equivalents": ["stubs"], "stub filters": ["stubs"],
+    "series and parallel resonance": ["stubs"],
+    "quarter-wave transformer": ["transformers"], "half-wave transformer": ["transformers"],
+    "current forcing": ["transformers"], "impedance matching": ["transformers"],
     "multiple choice": ["mc"], "true or false": ["mc"], "find the error": ["fte"],
 }
 # geometry words that carry no topic of their own (the problem's other tags place it)
@@ -252,6 +266,7 @@ CONCEPT_TOPICS = {
     "magnetic-materials": ["magmedia"], "time-average-power": ["poynting"], "monochromatic-waves": ["phasors", "waves"],
     "phasor-maxwell-equations": ["lossy"],
     "telegraphers-equations": ["tlines"], "characteristic-impedance": ["tlines"], "bounce-diagram": ["bounce"],
+    "line-resonances": ["resonances"], "stub-input-impedance": ["stubs"], "quarter-wave-transformer": ["transformers"],
 }
 
 # lecture to draw a concept page's example problems from (default: where its topic has most problems)

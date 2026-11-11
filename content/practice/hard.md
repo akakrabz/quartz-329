@@ -1,6 +1,6 @@
 ---
 title: "Hard problems"
-description: "All 114 hard practice problems for Lectures 2–30, by lecture. Hard = exam length, in several parts; about 20–40 min each."
+description: "All 120 hard practice problems for Lectures 2–33, by lecture. Hard = exam length, in several parts; about 20–40 min each."
 tags: [practice]
 ---
 
@@ -208,3 +208,18 @@ tags: [practice]
 - [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes|30.10 Locating a splice by its echoes]] — line junction · bounce diagram · load reflection coefficient · *modelled on FA23 Exam 3 #4*
 - [[practice/30-multi-line-circuits#3011-a-tap-resistor-and-an-open-stub|30.11 A tap resistor and an open stub]] — line junction · transients · steady state
 - [[practice/30-multi-line-circuits#3012-a-switched-on-sine-across-a-step-down|30.12 A switched-on sine across a step-down]] — impulse response · line junction · steady state
+
+## Lecture 31 · Periodic oscillations in lossless TL circuits
+
+- [[practice/31-resonances-of-line-segments#317-a-resonator-from-two-zero-readings|31.7 A resonator from two zero readings]] — line resonances · standing waves on lines · *modelled on SP19 Exam 3 #5*
+- [[practice/31-resonances-of-line-segments#318-a-pulse-trapped-on-a-line|31.8 A pulse trapped on a line]] — source-free oscillations · line resonances
+
+## Lecture 32 · Input impedance and microwave resonators
+
+- [[practice/32-stubs-and-input-impedance#327-a-shorted-line-that-stops-the-current|32.7 A shorted line that stops the current]] — stub input impedance · series and parallel resonance · *modelled on SP17 Exam 3 #6*
+- [[practice/32-stubs-and-input-impedance#328-tuning-a-stub-with-a-capacitor|32.8 Tuning a stub with a capacitor]] — stub filters · series and parallel resonance
+
+## Lecture 33 · TL circuits with half- and quarter-wave transformers
+
+- [[practice/33-half-and-quarter-wave-transformers#337-one-line-at-three-frequencies|33.7 One line at three frequencies]] — quarter-wave transformer · half-wave transformer · impedance matching · *modelled on SP18 Exam 3 #4(b)*
+- [[practice/33-half-and-quarter-wave-transformers#338-a-quarter-wave-line-with-a-stub-across-its-load|33.8 A quarter-wave line with a stub across its load]] — quarter-wave transformer · stub input impedance

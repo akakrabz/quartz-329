@@ -1,0 +1,75 @@
+/sessions/rcw-01ln5dhw21ubsfhgbd1veejk/mnt/sites/quartz-329/tools/build14/checks/summary3.py:103: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  rr = np.linspace(a1, b1, 200001); Vc = np.trapz(1 / (2 * pi * eps * rr), rr)       # volts per (C/m)
+/sessions/rcw-01ln5dhw21ubsfhgbd1veejk/mnt/sites/quartz-329/tools/build14/checks/summary3.py:105: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  Vs = np.trapz(1 / (4 * pi * eps * rr ** 2), rr)
+/sessions/rcw-01ln5dhw21ubsfhgbd1veejk/mnt/sites/quartz-329/tools/build14/checks/summary3.py:113: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  chk("point charge: V = Q/(4 pi eps0 R) is -integral of E from infinity (R = 2 m, Q = 1 nC) [V]", np.trapz(1e-9 / (4 * pi * eps0 * np.linspace(2, 2e4, 2000001) ** 2), np.linspace(2, 2e4, 2000001)), 1e-9 / (4 * pi * eps0 * 2), tol=2e-4)
+/sessions/rcw-01ln5dhw21ubsfhgbd1veejk/mnt/sites/quartz-329/tools/build14/checks/summary3.py:119: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  chk("<J.E> = sigma E0^2/2 for E0 cos(wt); conduction/displacement amplitude ratio = sigma/(w eps)", [np.trapz(sg * (E0 * np.cos(2 * pi * tt)) ** 2, tt), sg * E0 / (2 * pi * 1e6 * eps * E0)], [sg * E0 ** 2 / 2, sg / (2 * pi * 1e6 * eps)], tol=1e-6)
+== S1 no-calculator triangles
+PASS 3-4-5 angles [deg] round to 37 and 53: [37. 53.]
+== S3 decode identities, random media
+PASS  medium 0: gamma*eta/(j w mu), (gamma/eta)/(sigma + j w eps), tan(2 tau)/(sigma/(w eps)), angle(gamma)+tau [deg]: [ 1.+0.j  1.-0.j  1.+0.j 90.+0.j]
+PASS  medium 0: 0 <= tau <= 45 deg and alpha <= beta: [1. 1.]
+PASS  medium 0: (1/2)Re(E H*) vs formula: 0.57128
+PASS  medium 1: gamma*eta/(j w mu), (gamma/eta)/(sigma + j w eps), tan(2 tau)/(sigma/(w eps)), angle(gamma)+tau [deg]: [ 1.+0.j  1.-0.j  1.+0.j 90.+0.j]
+PASS  medium 1: 0 <= tau <= 45 deg and alpha <= beta: [1. 1.]
+PASS  medium 1: (1/2)Re(E H*) vs formula: 0.04465
+PASS  medium 2: gamma*eta/(j w mu), (gamma/eta)/(sigma + j w eps), tan(2 tau)/(sigma/(w eps)), angle(gamma)+tau [deg]: [ 1.+0.j  1.+0.j  1.+0.j 90.+0.j]
+PASS  medium 2: 0 <= tau <= 45 deg and alpha <= beta: [1. 1.]
+PASS  medium 2: (1/2)Re(E H*) vs formula: 0.02806
+PASS tau = 30 deg gives sigma/(w eps) = sqrt 3: 1.73205
+== S4 regime table against the exact gamma, eta
+PASS imperfect dielectric (loss tangent 0.01): beta, alpha, |eta|, tau [rad] (approx/exact): [0.99999 1.00001 1.00002 1.00003]
+PASS  delta = (2/sigma) sqrt(eps/mu) vs 1/alpha: 0.99999
+PASS good conductor (loss tangent 1e4): alpha, beta, |eta|, tau [deg], lambda/(2 pi delta) (approx/exact): [1.00005 0.99995 1.      0.99994 0.9999 ]
+PASS after one delta: field, power: [0.36788 0.13534]
+PASS dB per metre per Np/m: field 20 log10 e, power 10 log10 e^2: [8.68589 8.68589]
+PASS sigma/(w eps) = 18e9 sigma/(f eps_r) with eps0 = 1e-9/36 pi (sample): 888888.88889
+PASS seawater: crossover [MHz]; delta at 1 kHz [m] = 25/pi; lambda [m]; loss tangent at 1 GHz: [888.88889   7.95775  50.        0.88889]
+PASS copper at 60 Hz, sigma = 5.8e7: delta [mm]: 8.5316
+== S5 polarization
+PASS toward +z: x - jy right, x + jy left (1 = as stated): [1. 1.]
+PASS sin(wt + th) has phasor -j e^{j th}: Re{-j e^{j0.4} e^{j1.3}} vs sin(1.7): 0.99166
+PASS circular (E0 each) vs linear (peak E0): <S> eta: [4. 2.]
+PASS x = (x - jy)/2 + (x + jy)/2: [1.+0.j 0.+0.j]
+PASS plasma: v_p v_g / c^2, and v_g = dw/db numerically: [1. 1.]
+== S6 reflection, standing wave, pressure
+PASS air -> eps_r = 4: Gamma, tau, 2 eta2/(eta1+eta2), |G|^2, tau^2 eta1/eta2, sum: [-0.33333  0.66667  0.66667  0.11111  0.88889  1.     ]
+PASS  boundary: tangential E and H continuous (E_i + E_r - E_t, H_i + H_r - H_t): [0. 0.]
+PASS mirror standing wave: Faraday and Ampere residuals (relative), E at the mirror: [-0. -0.  0.]
+PASS  phasor sum: e^{-jbz} - e^{+jbz} = -2j sin(bz); e^{-jbz} + e^{+jbz} = 2 cos(bz): [0.     -1.28844j 1.52968+0.j     ]
+PASS partial reflection |Gamma| = 0.4: max, min of |E|/E0: [1.4 0.6]
+PASS radiation pressure, 1 kW/m^2: absorber, mirror [uPa]: [3.33333 6.66667]
+== S7 lines
+PASS plates: sqrt(L/C) vs eta d/W; 1/sqrt(LC) vs 1/sqrt(mu eps): [1. 1.]
+PASS  power: <S> W d vs |V|^2/(2 Z0), with E = V/d: [0.44762 0.44762]
+PASS coax: sqrt(L/C) vs (eta/2 pi) ln(b/a): 50.11052
+== S8 bounce example and junction
+PASS tau_g, Gamma_L, Gamma_g, launched, load at T, source end at 2T, steady V, steady I [A]: [ 0.66667  0.33333 -0.33333  6.       8.       7.33333  7.2      0.072  ]
+PASS  bounce series sums to the DC divider: 7.2
+PASS junction: tau = 1 + Gamma = 2Zk/(Zk+Zj); back: -Gamma, 1 - Gamma; current refl, trans: [ 1.2 -0.2  0.8 -0.2  0.8]
+PASS  shunt R: junction voltage (1+Gamma) V+ is the voltage on line k (KCL residual): -0.0
+PASS  series R: tau = (1+Gamma) Zk/(R+Zk) = 2Zk/(R+Zj+Zk); KVL/KCL residual: [ 0.96774 -0.     ]
+== S9 steady state
+PASS short: j Z0 tan; open (ZL -> 1e12): -j Z0 cot: [0.+63.00791j 0.-39.67756j]
+PASS quarter wave: Zin ZL / Z0^2, I_L / (-j V_in/Z0); half wave: Zin/ZL, V_in/V_L, I_in/I_L: [ 1.+0.j  1.-0.j  1.+0.j -1.+0.j -1.-0.j]
+PASS resonances l = 100 m, v = 2e8: like ends n v/2l; unlike (2n-1) v/4l [MHz]: [1.  2.  3.  0.5 1.5 2.5]
+== S12 homework rows
+PASS HW9 #5: <S> per side = eta J^2/8; <Js.E> = -eta J^2/4 [W/m^2]: [ 125.66371 -251.32741]
+PASS HW8 #1 relations: mu_r eps_r = (c/v)^2, mu_r/eps_r = (eta/eta0)^2 for mu_r = 1.5, eps_r = 6: [9.   0.25]
+PASS HW10 #2: seawater loss tangent at 1 kHz and 1 GHz: [8.88888889e+05 8.88890000e-01]
+== S9 Lectures 1-10 table
+PASS uniform sphere: D_r inside = rho r/3 (Q_enc/4 pi r^2); outside from the total charge: [0.26667 0.13531]
+PASS uniform cylinder: D_r inside = rho r/2; slab from the mid-plane: D_x = rho x (per unit area): [0.4 0.6]
+PASS coax: C per metre from integrating E vs 2 pi eps/ln(b/a): 0.0
+PASS concentric spheres: C from integrating E vs 4 pi eps a b/(b-a): 0.0
+PASS Laplace: ln r in a coax and 1/r between spheres (1 + residual): [1. 1.]
+PASS G = (sigma/eps) C gives RC = eps/sigma [s]; relaxation exponent sigma/eps [1/s]: [      0.      3534291.73529]
+PASS point charge: V = Q/(4 pi eps0 R) is -integral of E from infinity (R = 2 m, Q = 1 nC) [V]: 4.49957
+== S9 tools table (earlier lectures)
+PASS line parameters: L C/(mu eps) for coax and plates; sqrt(L/C) vs (eta/2pi) ln(b/a) and eta d/W: [1. 1. 1. 1.]
+PASS <J.E> = sigma E0^2/2 for E0 cos(wt); conduction/displacement amplitude ratio = sigma/(w eps): [9.0000000e-02 1.5652174e+02]
+PASS sheet: E = -(eta/2) Js, H = (1/2) Js x n above the sheet; E x H along n; |E|/|H| = eta: [1. 1. 0. 0. 0.]
+
+SUMMARY: 54 PASS, 0 FAIL

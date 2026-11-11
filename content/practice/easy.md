@@ -1,6 +1,6 @@
 ---
 title: "Easy problems"
-description: "All 144 easy practice problems for Lectures 2–30, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
+description: "All 156 easy practice problems for Lectures 2–33, by lecture. Easy = one law or definition and at most two steps; about 2–5 min each."
 tags: [practice]
 ---
 
@@ -238,3 +238,24 @@ tags: [practice]
 - [[practice/30-multi-line-circuits#303-no-echo-toward-the-source|30.3 No echo toward the source]] — multiple choice · line junction · *modelled on SP18 Exam 3 #1(vii)*
 - [[practice/30-multi-line-circuits#304-line-parameters-of-a-splice|30.4 Line parameters of a splice]] — line parameters · line junction
 - [[practice/30-multi-line-circuits#305-the-returning-echo|30.5 The returning echo]] — find the error · line junction
+
+## Lecture 31 · Periodic oscillations in lossless TL circuits
+
+- [[practice/31-resonances-of-line-segments#311-the-three-lowest-three-ways|31.1 The three lowest, three ways]] — line resonances
+- [[practice/31-resonances-of-line-segments#312-modes-true-or-false|31.2 Modes, true or false]] — true or false · resonant modes
+- [[practice/31-resonances-of-line-segments#313-the-lowest-resonance-of-a-cable|31.3 The lowest resonance of a cable]] — find the error · line resonances
+- [[practice/31-resonances-of-line-segments#314-where-the-nulls-are|31.4 Where the nulls are]] — resonant modes · standing waves on lines
+
+## Lecture 32 · Input impedance and microwave resonators
+
+- [[practice/32-stubs-and-input-impedance#321-five-stubs|32.1 Five stubs]] — stub input impedance
+- [[practice/32-stubs-and-input-impedance#322-stub-facts-true-or-false|32.2 Stub facts, true or false]] — true or false · stub input impedance
+- [[practice/32-stubs-and-input-impedance#323-the-stub-that-should-have-blocked|32.3 The stub that should have blocked]] — find the error · stub input impedance
+- [[practice/32-stubs-and-input-impedance#324-a-stub-as-an-inductor|32.4 A stub as an inductor]] — stub input impedance · lumped equivalents
+
+## Lecture 33 · TL circuits with half- and quarter-wave transformers
+
+- [[practice/33-half-and-quarter-wave-transformers#331-five-inputs|33.1 Five inputs]] — quarter-wave transformer · half-wave transformer
+- [[practice/33-half-and-quarter-wave-transformers#332-transformer-facts-true-or-false|33.2 Transformer facts, true or false]] — true or false · quarter-wave transformer
+- [[practice/33-half-and-quarter-wave-transformers#333-the-forgotten-divider|33.3 The forgotten divider]] — find the error · current forcing
+- [[practice/33-half-and-quarter-wave-transformers#334-choosing-a-matching-section|33.4 Choosing a matching section]] — quarter-wave transformer · impedance matching

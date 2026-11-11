@@ -5,7 +5,7 @@ tags: [lecture, transmission-lines]
 lecture: 27
 ---
 
-*Lecture 27 · course notes §27 · slides "Guided Wave on Transmission Lines" (no ink, Oct 21) · prev: [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] · next: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · worked problem: [[problems/a-backward-pulse-on-a-parallel-plate-line|A backward pulse on a parallel-plate line]] · practice: [[practice/27-transmission-line-basics|12 problems]]*
+*Lecture 27 · course notes §27 · slides "Guided Wave on Transmission Lines" (annotated deck, Nov 9) · prev: [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Lecture 26]] · next: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · worked problem: [[problems/a-backward-pulse-on-a-parallel-plate-line|A backward pulse on a parallel-plate line]] · practice: [[practice/27-transmission-line-basics|12 problems]]*
 
 > [!abstract] In one breath
 > Two conducting plates at $x = 0$ and $x = d$ can hold an $\hat x$-polarized plane wave between them; charges and currents on their facing surfaces end the fields there. With $V = E_xd$ and $I = H_yW$, Faraday's and Ampère's laws become the **telegrapher's equations** $-\partial V/\partial z = \mathcal{L}\,\partial I/\partial t$ and $-\partial I/\partial z = \mathcal{C}\,\partial V/\partial t$. Their solutions are d'Alembert waves, $V = f(t\mp z/v)$ and $I = \pm f/Z_0$, with $v = 1/\sqrt{\mathcal{L}\mathcal{C}} = 1/\sqrt{\mu\epsilon}$ and **characteristic impedance** $Z_0 = \sqrt{\mathcal{L}/\mathcal{C}}$. The power carried is $VI$.
@@ -233,6 +233,8 @@ This site's additions:
 > - (d) $I = 0.5$ A: $V = 2\pi$ V, $p = \pi = 3.14$ W.
 >
 > If the values are sinusoid amplitudes, the time averages are half these.
+>
+> The in-class ink gets the same four answers: (a) and (b) by the field route, $P = E_xH_y\times(\text{area } Wd)$, with (b) $= 4P_a$; (c) and (d) by the circuit route, $P = VI = I^2Z_0 = V^2/Z_0$ for one wave, with (d) $= \tfrac14P_c$. Its margin note: $\mathbf{S}$ in W/m² involves the fields only; $P = VI$ in W already contains the geometry.
 
 ## 8. Summary
 
@@ -254,7 +256,7 @@ Concept pages: [[concepts/telegraphers-equations]] · [[concepts/characteristic-
 > - **SP18 Exam 3 #1(ii)**: check each statement against §2 (origin), §3 (solutions) and §6 (which element is in series).
 > - **SP18 #1(v)**, $V/I$ with polarity: §3 trap.
 > - **FA23 Exam 3 #4(d)**: $\epsilon_r = (c/v)^2$ from a delay.
-> - **Slides' challenge** (slide 21), which statement is false? (a) "$Z_0$ and $\eta_0$ are equal": $Z_0 = \eta/\text{GF}$. The others hold: (b) $v\le c$; (c) equal $Z_0$ with different $v$ (50 Ω air plates, 50 Ω polyethylene coax); (d) the energy sits in the $\mathcal{L}$ and $\mathcal{C}$ cells.
+> - **Slides' challenge** (slide 21), which statement is false? (a) "$Z_0$ and $\eta_0$ are equal": $Z_0 = \eta/\text{GF}$ (circled in class: $Z_0$ carries a geometry factor, $\eta_0$ is the material alone). The others hold: (b) $v\le c$; (c) equal $Z_0$ with different $v$ (50 Ω air plates, 50 Ω polyethylene coax); (d) the energy sits in the $\mathcal{L}$ and $\mathcal{C}$ cells.
 
 > [!tip] Practice this lecture
 > [[practice/27-transmission-line-basics|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/27-transmission-line-basics#271-strip-line-parameters|27.1 Strip-line parameters]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
@@ -262,4 +264,4 @@ Concept pages: [[concepts/telegraphers-equations]] · [[concepts/characteristic-
 ### Sources for this page
 Kudeki notes, Lecture 27 (8 pages): plates in a plane wave; $V$, $I$ and the telegrapher's equations with $\mathcal{G}$ and the missing $\mathcal{R}$; the wave equation, $Z_0$ and the GF table; the battery example; the ladder model; power and the non-TEM note. Rao (2009) §6.5–6.6 with Table 6.1, and the "Time domain" opening of Ch. 7 before §7.4 (eqs. 7.39–7.47), for cross-checks. This site's own: figures, the plate-source table, the circuit reading, all examples, the power split; numbers checked by script. Slips in the notes ("close-up method", "T-network") are on the errata page.
 
-Slides "Guided Wave on Transmission Lines" (22 slides, no ink): conventions (slides 8, 17, 20), the power example (9), the $\lambda/4$ rule (10), the challenge (21); the rest matches §§1–7. Slide 6's slip is on the errata page.
+Slides "Guided Wave on Transmission Lines" (22 slides; the annotated deck of Nov 9 has in-class ink on slides 5–9, 12–15, 18 and 20–21, which works the power example and the challenge and otherwise underlines what the page already says): conventions (slides 8, 17, 20), the power example (9), the $\lambda/4$ rule (10), the challenge (21); the rest matches §§1–7. Slide 6's slip is on the errata page.

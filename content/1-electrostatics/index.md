@@ -6,6 +6,9 @@ tags: [electrostatics]
 
 Static charge → static electric field. The unit builds one idea at a time: force defines the field (L1–2); symmetry plus Gauss's law computes it (L3); divergence and curl describe it locally (L4); zero curl gives a potential (L5–7); materials respond to it (L8–9); and the whole thing packages into a circuit element, the capacitor (L10). Lecture 11 then explains, from Newton's law for one charge, where the two material constants $\sigma$ and $\chi_e$ come from. Exam 1 covers Lectures 1–10.
 
+> [!tip] Studying for Midterm 3?
+> Expect mostly Lectures 21–30; start at the [[exams/index|Midterm 3 review]] page. This unit is background for it. If you want a refresh, Lectures 1–10 are on one screen in a folded box of the [[0-toolkit/09-midterm-3-summary#9-tools-from-earlier-lectures-that-these-problems-use|Midterm 3 summary, §9]].
+
 > [!key] Topics in this unit
 > Three themes of the [[concepts/index|topic index]]. Each topic page carries the full treatment; the lecture pages below map onto them.
 >

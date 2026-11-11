@@ -4,8 +4,8 @@ description: "Lectures 16–26: the displacement current completes Maxwell's equ
 tags: [waves]
 ---
 
-> [!tip] Studying for Midterm 2?
-> The [[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]] has Lectures 11–20 on one page, with what Homeworks 5–7 drilled and a practice list.
+> [!tip] Studying for Midterm 3?
+> Expect mostly Lectures 21–30. The [[0-toolkit/09-midterm-3-summary|Midterm 3 equation summary]] has them on one page, with the traps, the index card, what Homeworks 8–10 drilled and a plan for the days left. The [[exams/index|Midterm 3 review]] page has the past papers, problem by problem, with worked twins. (Lectures 16–20 are background for it: the [[0-toolkit/05-midterm-2-summary|Midterm 2 summary]].)
 
 > [!note] Lectures 20–26: course notes first, slides added
 > They were written from the course notes (Kudeki) before the slides were available; build 13 added the slides (Shao, decks "Lecture 20" to "Lectures 25–26", with the in-class ink): their examples, challenge questions and exam emphasis sit on the topic pages as **Slides, Lecture …** callouts. All numbers checked numerically.

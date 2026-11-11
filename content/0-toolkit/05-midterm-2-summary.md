@@ -7,6 +7,9 @@ aliases: ["Midterm 2", "Exam 2 summary", "Exam 2 formula sheet"]
 
 *Scope: **Lectures 11–20 and Homeworks 5–7**, for the exam on Monday, October 19. Lecture numbers on this site are the course notes'; from Lecture 13 on they match the slide files (the slides combine 11 and 12). Lecture 20 is Poynting's theorem ([[#9-energy-and-power-poyntings-theorem-lecture-20|§9]]). Phasors start in Lecture 21, after the cut-off; if your class reached them before the exam, read the [[3-maxwell-and-waves/21-monochromatic-waves-and-phasor-notation#9-summary|Lecture 21 summary]] too. Exam 1 tools (Gauss, potential, boundary conditions, capacitance) are still needed and are summarized in [[#10-what-you-still-need-from-unit-1|§10]]. What each homework problem practised is in [[#12-what-homeworks-57-drilled|§12]], and a weekend plan with a practice list in [[#13-how-to-study-for-it-exam-monday-october-19|§13]]. Each section links to the lecture that derives it; this page only collects.*
 
+> [!tip] Looking for Midterm 3 (November 16)?
+> Midterm 3 is expected to be mostly Lectures 21–30: start at the [[exams/index|Midterm 3 review]] page and the [[0-toolkit/09-midterm-3-summary|Midterm 3 summary]]. This page is unchanged and is background for it; the parts the new problems lean on are §6 (boundary conditions), §8 (plane waves and current sheets) and §9 (power). The dates in §13 below are October's.
+
 > [!recipe] How to use this page
 > Read a section, close the page, and rewrite its equations from memory on scrap paper — then check. The gaps you find are your study list. Every equation here has a sign or direction rule next to it; the rule is the part that costs points.
 

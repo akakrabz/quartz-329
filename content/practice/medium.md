@@ -1,6 +1,6 @@
 ---
 title: "Medium problems"
-description: "All 86 medium practice problems for Lectures 2–30, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
+description: "All 92 medium practice problems for Lectures 2–33, by lecture. Medium = a standard exam sub-problem; about 8–15 min each."
 tags: [practice]
 ---
 
@@ -180,3 +180,18 @@ tags: [practice]
 - [[practice/30-multi-line-circuits#306-a-shunt-resistor-that-matches|30.6 A shunt resistor that matches]] — line junction · power balance
 - [[practice/30-multi-line-circuits#307-a-series-resistor-in-the-splice|30.7 A series resistor in the splice]] — line junction · transmission coefficient · power balance
 - [[practice/30-multi-line-circuits#308-three-sections-and-the-first-echoes|30.8 Three sections and the first echoes]] — line junction · bounce diagram · impulse response · *modelled on FA23 Exam 3 #3(a)*
+
+## Lecture 31 · Periodic oscillations in lossless TL circuits
+
+- [[practice/31-resonances-of-line-segments#315-a-mode-on-a-shortopen-line|31.5 A mode on a short–open line]] — resonant modes · telegrapher's equations
+- [[practice/31-resonances-of-line-segments#316-resonances-tell-you-the-ends|31.6 Resonances tell you the ends]] — line resonances
+
+## Lecture 32 · Input impedance and microwave resonators
+
+- [[practice/32-stubs-and-input-impedance#325-a-stub-across-the-load|32.5 A stub across the load]] — stub filters · series and parallel resonance
+- [[practice/32-stubs-and-input-impedance#326-inside-a-resonant-stub|32.6 Inside a resonant stub]] — stub input impedance · standing waves on lines
+
+## Lecture 33 · TL circuits with half- and quarter-wave transformers
+
+- [[practice/33-half-and-quarter-wave-transformers#335-five-quarter-waves-and-a-complex-load|33.5 Five quarter waves and a complex load]] — quarter-wave transformer · half-wave transformer
+- [[practice/33-half-and-quarter-wave-transformers#336-two-loads-from-one-point|33.6 Two loads from one point]] — current forcing · quarter-wave transformer

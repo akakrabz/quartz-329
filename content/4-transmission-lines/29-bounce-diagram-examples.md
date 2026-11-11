@@ -5,7 +5,7 @@ tags: [lecture, transmission-lines]
 lecture: 29
 ---
 
-*Lecture 29 · course notes §29 · slides "Algebra of Bounce Diagram; Bounce Diagram Examples" (no ink, Oct 30) · prev: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · next: [[4-transmission-lines/30-multi-line-circuits|Lecture 30]] · worked problem: [[problems/a-ramp-pulse-meets-its-echo|A ramp pulse meets its echo]] · practice: [[practice/29-bounce-diagram-examples|12 problems]]*
+*Lecture 29 · course notes §29 · slides "Algebra of Bounce Diagram; Bounce Diagram Examples" (annotated deck, Nov 2) · prev: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]] · next: [[4-transmission-lines/30-multi-line-circuits|Lecture 30]] · worked problem: [[problems/a-ramp-pulse-meets-its-echo|A ramp pulse meets its echo]] · practice: [[practice/29-bounce-diagram-examples|12 problems]]*
 
 > [!abstract] In one breath
 > No new theory: [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Lecture 28]]'s bounce diagram, used three times. Read the impulse response $h_z(t)$ off the diagram, then replace every $\delta(t-t_k)$ by $f_i(t-t_k)$. A vertical line through the diagram gives the waveform at one $z$; a horizontal line gives a snapshot along the line. Example 1: a 1 MHz burst with a matched generator, one echo, then a steady sinusoid. Example 2: a step watched at the midpoint, a staircase that settles to the DC value. Example 3: snapshots of a two-level pulse and its echo.
@@ -109,7 +109,7 @@ The vertical line at $z = 1200$ m is crossed every 8 μs from $t = 4$ μs, alter
 - Slides 10–13 use this circuit for their Examples 1–2: $\delta(t)$ gives $h_{1200}$ above, $u(t)$ this staircase. Their LTspice run (slide 13) adds the ends: $V(0,t) = 1$ V throughout ($R_g = 0$); the load at $\tfrac43$, $\tfrac89$, $\tfrac{28}{27}$ V from 8, 24, 40 μs; $I(0,t)$ at 20, 6.7, 11.1, 9.6 mA, stepping at 16, 32, 48 μs.
 
 > [!example] Slides, Lecture 29 (slide 14) — their Example 3, a 4 μs pulse at the midpoint
-> Same circuit, $f_i(t) = u(t-4) - u(t)$ ($t$ in μs). As written this is a −1 V pulse on $0<t<4$; for $u(t)-u(t-4)$ flip every sign. Each impulse of $h_{1200}$ becomes a 4 μs copy: $V(1200,t) = -1$ V on 4–8 μs, $-\tfrac13$ V on 12–16, $+\tfrac13$ on 20–24, $+\tfrac19$ on 28–32, $-\tfrac19$ on 36–40, …, and 0 in between. The copies are 4 μs long and 8 μs apart, so they never overlap; the input ends at 0, so the line settles to 0.
+> Same circuit, $f_i(t) = u(t)-u(t-4)$ ($t$ in μs): a +1 V pulse lasting 4 μs. Each impulse of $h_{1200}$ becomes a 4 μs copy: $V(1200,t) = +1$ V on 4–8 μs, $+\tfrac13$ V on 12–16, $-\tfrac13$ on 20–24, $-\tfrac19$ on 28–32, $+\tfrac19$ on 36–40, …, and 0 in between. The copies are 4 μs long and 8 μs apart, so they never overlap; the input ends at 0, so the line settles to 0. In class it was built as the step response minus the same response delayed by 4 μs. The printed slide has $u(t-4)-u(t)$, which would flip every sign; the annotated deck strikes it out and writes $u(t)-u(t-4)$.
 
 ## 4. The DC limit
 
@@ -184,4 +184,4 @@ Concept pages: [[concepts/bounce-diagram]] · [[concepts/characteristic-impedanc
 ### Sources for this page
 Kudeki notes, Lecture 29 (4 pages): Examples 1–3 with their margin diagrams and plots, and the DC-limit remarks. Rao (2009) §7.4, Examples 7.4–7.5 (voltage versus $t$ and versus $z$ for a pulse), for cross-checks. This site's own: the horizontal-cut rule and pulse order, the load voltage and steady state in Example 1, all currents, the 9 μs snapshot, the traps and the figures; numbers checked against two time-steppings of the line. Slips in the notes (two wrong example references, a plot label) are on the errata page.
 
-Slides "Algebra of Bounce Diagram; Bounce Diagram Examples" (15 slides, no ink): the round-trip equation (6–9, 15), steady state and a challenge (2–5), three inputs on the notes' Example 2 circuit with LTspice (10–14). Slips (slides 3, 10–14) are on the errata page.
+Slides "Algebra of Bounce Diagram; Bounce Diagram Examples" (15 slides; the annotated deck of Nov 2 has in-class ink on slides 3–6 and 9–14: the three coefficients and the diagram of Examples 1–2, the staircase 1, $\tfrac43$, 1, $\tfrac89$, 1, the challenge answer and the corrected Example 3, all matching this page): the round-trip equation (6–9, 15), steady state and a challenge (2–5), three inputs on the notes' Example 2 circuit with LTspice (10–14). Slips (slides 3, 10–14) are on the errata page.

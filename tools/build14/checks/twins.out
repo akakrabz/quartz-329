@@ -1,0 +1,42 @@
+== S1 open stub in series with R: Z0 = 75, v = 2.4e8, f = 60 MHz, R = 150, F = 6 V
+PASS lambda [m]: 4.0
+PASS 1/Z(l) at l = lambda/2 (open stub) -> 0: (-0+0j)
+PASS lengths with I_R = 0: n lambda/2 [m]: [2. 4. 6.]
+PASS open-end voltage V(0) = 2V+ [V]; voltage null at d [m]; max |I| [mA]: [-6.  1. 80.]
+PASS at 30 MHz: Z(l) [ohm], I_R [mA]: [ 0.-0.j 40.+0.j]
+== S2 quarter-wave section: Z0 = 60, ZL = 20, Vg = 12 V, Rg = 60
+PASS Z_in, V_in, I_in [A], I_L [A], V_L [V]: [1.8e+02+0.j   9.0e+00+0.j   5.0e-02-0.j   0.0e+00-0.15j 0.0e+00-3.j  ]
+PASS V_L = -j Z0 I_in; P_in, P_L [W]: [-0.   -3.j  0.225+0.j  0.225+0.j]
+PASS half-wave instead: Z_in, V_in, V_L, P [W]; matched maximum [W]: [20.   -0.j  3.   -0.j -3.   +0.j  0.225+0.j  0.3  +0.j]
+== S3 resonances: l = 60 m, v = 1.5e8
+PASS open-open f_n [MHz]: [1.25 2.5  3.75]
+PASS short-open f_n [MHz]: [0.625 1.875 3.125]
+PASS second open-open resonance: lambda [m], voltage nulls [m], current nulls [m]: [60. 15. 45.  0. 30. 60.]
+PASS Z(d) of the open-ended line at d = lambda/4 -> 0: -0j
+== S4 open stub, lowest series resonance at w0 (beta l = pi/2 there)
+PASS Z_in/Z0 at 0.5 w0: -1j
+PASS Z_in/Z0 at 1.5 w0: (-0+1j)
+PASS Z_in/Z0 at 3.0 w0: -0j
+PASS 1/Z_in at 2 w0 -> 0 (parallel resonance): -0j
+PASS open load: V(d)/V+ = 2cos(bd), I(d) Z0/V+ = 2j sin(bd): [1.52968+0.j      0.     +1.28844j]
+== S5 generalized reflection coefficient: Z0 = 50, ZL = 150
+PASS Gamma_L, Gamma(lambda/8), Gamma(lambda/4), Gamma(lambda/2): [ 0.5+0.j   0. -0.5j -0.5-0.j   0.5+0.j ]
+PASS Z(lambda/4) = Z0 (1+G)/(1-G) = Z0^2/ZL [ohm]; VSWR: [16.66667-0.j  3.     +0.j]
+== T6 sheet on x = 0, Js = -z 3 u(t) sin(2 pi f t), f = 1.5 MHz, eps_r = 4
+PASS v [m/us], eta/pi, T [us], lambda [m], E amplitude/pi [V/m], H amplitude [A/m]: [150.       60.        0.66667 100.       90.        1.5    ]
+PASS E = -(eta/2) Js is along +z; H(x>0) along Js x x_hat = -y; H(x<0) along +y; E x H (x>0) along +x: [ 0.  0.  1.  0. -1.  0.  0.  1.  0.  1.  0.  0.]
+PASS arrival at 300 m [us]; front at 3 us [m]; wavelengths behind the front: [  2.  450.    4.5]
+PASS H_y(x, 3 us) = -1.5 sin(2 pi x/100): samples at 25, 75, 440 m: [-1.5      1.5     -0.88168]
+PASS E_z(300 m, t) just after arrival is positive: sample at 2.1 us [V/m]: 228.74417
+PASS <S> per side [W/m^2] = 67.5 pi; <Js.E> [W/m^2] = -135 pi: [ 212.0575  -424.11501]
+      E amplitude = 282.7 V/m, <S> = 212.1 W/m^2, <Js.E> = -424.1 W/m^2
+== numbers quoted on the Midterm 3 summary
+PASS dB per neper (field) 20 log10(e): 8.68589
+PASS power after one delta e^-2: 0.13534
+PASS seawater crossover sigma/(2 pi eps) [MHz], sigma = 4, eps_r = 81: 888.88889
+PASS copper delta at 60 Hz [mm], sigma = 5.8e7: 8.5316
+PASS glass eps_r = 4 from air: Gamma, tau, reflected and transmitted power fractions: [-0.33333  0.66667  0.11111  0.88889]
+PASS radiation pressure of 1 kW/m^2 on a perfect mirror [uPa] = 2<S>/c: 6.66667
+PASS bounce example Z0 = 50, Rg = 25, RL = 100, 9 V step: tau_g, Gamma_L, Gamma_g, V1+, steady V [V]: [ 0.66667  0.33333 -0.33333  6.       7.2    ]
+
+SUMMARY: 32 PASS, 0 FAIL

@@ -1,0 +1,34 @@
+== 31.1
+PASS open-open [MHz]: computed [2. 4. 6.], page [2, 4, 6]
+PASS short-short [MHz]: computed [2. 4. 6.], page [2, 4, 6]
+PASS open-short [MHz]: computed [1. 3. 5.], page [1, 3, 5]
+== 31.2
+PASS (b) |V| at the midpoint for n = 1, 2: computed [0. 1.], page [0, 1]
+== 31.3
+PASS short-open 12 m [MHz]: computed [ 5.     15.     24.9999], page [5, 15, 25]
+== 31.4
+PASS f3 [MHz]: computed 5.0, page 5
+PASS voltage nulls [m]: computed [15. 45. 75.], page [15, 45, 75]
+PASS current nulls [m] (zeros of dV/dz, interior) plus the two open ends: computed [ 0. 30. 60. 90.], page [0, 30, 60, 90]
+PASS peak current [A] = peak |dV/dz| v/(w Z0) with 12 V peak: computed 0.16, page 0.16
+== 31.5
+PASS f_n [MHz]: computed [0.5 1.5 2.5], page [0.5, 1.5, 2.5]
+PASS (b) V(50 m, 0.2 us) [V] vs 20 sin(pi/2) cos(0.6 pi): computed -6.1803, page -6.180339887498947
+PASS     I(50.025 m, t - dt/2) [A] vs -0.2 cos(pi z/100) sin(3 pi t): sign and size: computed 0.0001, page 0.00014942967023798536
+PASS     I at 10 m [A] (cos = 0.951): negative at 0.2 us: computed -0.1809, page -0.1809015760674651
+== 31.6
+PASS with v = 2e8: unlike ends give [MHz]: computed [2.5 7.5], page [2.5, 7.5]
+PASS like ends [MHz]: computed [ 5.     10.     14.9999], page [5, 10, 15]
+PASS eps_r: computed 2.25, page 2.25
+== 31.7 (z from the input: short at z=0, open at z=l; d = l - z)
+PASS omega / (pi 1e6) [rad/s]: computed [ 2.5  7.5 12.5], page [2.5, 7.5, 12.5]
+PASS second mode: voltage nulls d [m]: computed [16.6667 50.    ], page [16.667, 50]
+PASS second mode: current nulls d [m] (load included): computed [ 0.     33.3333], page [0, 33.333]
+PASS (e) both ends shorted, lowest [MHz]: computed [2.5], page [2.5]
+== 31.8 leapfrog: open at z = 0, short at z = 900 m, pulse 5 V / 0.1 A on 0..600 m at t = 2 us
+PASS (c) (V, I) at 450 m at t = 3, 4, 5.5, 7, 8.5, 10, 11.5, 13, 13.8 us: computed [ 5.   0.1  0.   0.  -5.   0.1  0.   0.  -5.  -0.1  0.   0.   5.  -0.1
+  0.   0.   5.   0.1], page [5, 0.1, 0, 0, -5, 0.1, 0, 0, -5, -0.1, 0, 0, 5, -0.1, 0, 0, 5, 0.1]
+PASS (d) at 4 us: electric, magnetic energy [uJ]; V, I at z = 750 m: computed [8.000e-04 9.983e-01 0.000e+00 2.000e-01], page [0, 1, 0, 0.2]
+PASS     period: state at 14 us equals state at 2 us (max |dV|): computed 0.0, page 0
+
+SUMMARY: 23 PASS, 0 FAIL

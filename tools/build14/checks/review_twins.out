@@ -1,0 +1,29 @@
+== S1 open stub (2 m, 75 ohm, v = 2.4e8) in series with 150 ohm, 6 V source
+PASS 60 MHz: resistor current phasor [A], stub input voltage [V]: simulated/independent [-0.-0.j  6.+0.j] vs page [0.0, 6.0]
+PASS 60 MHz: open-end voltage [V] (opposite phase), |V| at d = 1 m, |I| at d = 1 m [A]: simulated/independent [-6.    -0.j  0.0942+0.j  0.08  +0.j] vs page [-6, 0, 0.08]
+PASS 30 MHz: resistor current phasor [A], stub input voltage [V]: simulated/independent [ 0.04+0.j -0.  -0.j] vs page [0.04, 0.0]
+== S2 quarter-wave 60 ohm section, 20 ohm load, 12 V behind 60 ohm
+PASS V_in, I_in, V_L, I_L phasors: simulated/independent [9.  -0.j   0.05-0.j   0.  -3.j   0.  -0.15j] vs page [9, 0.05, (-0-3j), (-0-0.15j)]
+PASS time-averaged power into the line and into the load [W]: simulated/independent [0.225 0.225] vs page [0.225, 0.225]
+PASS half-wave section instead: V_in, V_L [V], load power [W]: simulated/independent [ 3.   -0.j -3.   -0.j  0.225+0.j] vs page [3, -3, 0.225]
+== S3 free oscillations of a 60 m line, v = 1.5e8 (spectrum of the ringing after a current kick)
+PASS open-open: three lowest spectral peaks [MHz]: simulated/independent [1.2512 2.4994 3.7506] vs page [1.25, 2.5, 3.75]
+PASS short at load, open at input: three lowest spectral peaks [MHz]: simulated/independent [0.6256 1.8738 3.125 ] vs page [0.625, 1.875, 3.125]
+PASS open-ended line seen from d = 15 m at 2.5 MHz (ladder): |Z| -> 0 [ohm]: simulated/independent 0.0 vs page 0
+== S4 open stub: Z_in/Z0 at 0.5, 1.5, 3 w0 and Y_in at 2 w0 (lumped ladder, l = 1 m, v = 2e8, Z0 = 1)
+PASS Z_in/Z0 at 0.5 w0, 1.5 w0, 3 w0: simulated/independent [0.-1.j 0.+1.j 0.+0.j] vs page [(-0-1j), 1j, 0]
+PASS Y_in Z0 at 2 w0: simulated/independent (-0+0j) vs page 0
+== S5 Z0 = 50, ZL = 150 (ladder): Gamma(d) = (Z(d) - Z0)/(Z(d) + Z0)
+PASS Gamma at d = lambda/8, lambda/4, lambda/2; Z(lambda/4) [ohm]: simulated/independent [-0.    -0.5j -0.5   +0.j   0.5   -0.j  16.6667+0.j ] vs page [(-0-0.5j), -0.5, 0.5, 16.667]
+== T6 sheet on x = 0, Js = -z 3 u(t) sin(2 pi f t), eps = 4 eps0
+PASS Faraday and Ampere-Maxwell residuals at (120 m, 2.37 us), relative: simulated/independent [0. 0.] vs page [0, 0]
+PASS Faraday residual on the other side (-120 m): simulated/independent -0.0 vs page 0
+PASS jump condition n x (H1 - H2) = Js at t = 0.4 us [A/m, z component]: simulated/independent 1.7634 vs page 1.7633557568774192
+PASS <S_x> at +200 m and -200 m [W/m^2]: simulated/independent [ 212.0575 -212.0575] vs page [212.06, -212.06]
+PASS <Js . E> at the sheet [W/m^2]: simulated/independent -424.115 vs page -424.1
+PASS record at 300 m: zero at 1.9 us, positive at 2.1 us; snapshot at 3 us: zero at 460 m, H_y(25 m), H_y(440 m): simulated/independent [-0.      1.      0.     -1.5    -0.8817] vs page [0, 1, 0, -1.5, np.float64(-0.8816778784387067)]
+== summary page: bounce example (50 ohm, Rg = 25, RL = 100, 9 V step, T = 1 us) and the glass interface
+PASS launched 6 V; load after first arrival 8 V; source end after 2T: 6+2-2/3; steady 7.2 V: simulated/independent [6.     8.     7.3333 7.2   ] vs page [6, 8, 7.333333333333333, 7.2]
+PASS air -> eps_r = 4: Gamma, tau, reflected and transmitted power fractions: simulated/independent [-0.3333  0.6667  0.1111  0.8889] vs page [-0.3333333333333333, 0.6666666666666666, 0.1111111111111111, 0.8888888888888888]
+
+SUMMARY: 20 PASS, 0 FAIL

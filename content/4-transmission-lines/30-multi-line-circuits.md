@@ -5,7 +5,7 @@ tags: [lecture, transmission-lines]
 lecture: 30
 ---
 
-*Lecture 30 · course notes §30 (no slides) · prev: [[4-transmission-lines/29-bounce-diagram-examples|Lecture 29]] · next: Lecture 31, periodic oscillations in lossless TL circuits (coming) · worked problem: [[problems/echoes-trapped-on-the-second-line|Echoes trapped on the second line]] · practice: [[practice/30-multi-line-circuits|12 problems]]*
+*Lecture 30 · course notes §30 · slides "Multi-line Circuits; TL Discontinuities" (in-class ink on slides 2–11, Nov 2) · prev: [[4-transmission-lines/29-bounce-diagram-examples|Lecture 29]] · next: [[4-transmission-lines/31-periodic-oscillations-in-lossless-tl-circuits|Lecture 31]] · worked problem: [[problems/echoes-trapped-on-the-second-line|Echoes trapped on the second line]] · practice: [[practice/30-multi-line-circuits|12 problems]]*
 
 > [!abstract] In one breath
 > Two lines joined end to end form a junction. A wave arriving on line $j$ sees line $k$ as a resistor $Z_k$, until an echo comes back from beyond it. Continuity of $V$ and $I$ splits the wave: $\Gamma_{jk} = (Z_k-Z_j)/(Z_k+Z_j)$ travels back and $\tau_{jk} = 1+\Gamma_{jk}$ travels on. A bounce diagram now spans several lines, each with its own slope, and every arrival at a junction spawns two impulses. Resistors at a junction enter through the impedance the wave sees; a series resistor breaks $\tau = 1+\Gamma$.
@@ -33,6 +33,8 @@ What the formulas say:
 - Current ratios: reflected over incident current is $-\Gamma_{jk}$; transmitted over incident is $1-\Gamma_{jk} = \tau_{jk}Z_j/Z_k$.
 - Power ratios: $\Gamma_{jk}^2$ reflects and $\tau_{jk}^2Z_j/Z_k = 1-\Gamma_{jk}^2$ is transmitted. So $\tau>1$ (for $Z_k>Z_j$) is not a gain. Example: 50 Ω into a matched 75 Ω line, $\Gamma = 0.2$, $\tau = 1.2$: 4 % reflected, $1.2^2\cdot50/75 = 96$ % transmitted; from the 75 Ω side $\Gamma = -0.2$, $\tau = 0.8$, the same 96 % ([rfengineer.net](https://rfengineer.net/basic-concepts/reflection-and-transmission-coefficients/)).
 - $Z_k = Z_j$: no reflection, whatever the speeds.
+
+**Slides 2–7.** The same derivation, with $\Gamma\equiv V^-/V^+$ and $\tau\equiv V^{++}/V^+$ put into the two boundary equations. They write $Z_{01}$, $Z_{02}$ for the two lines, $\tau_v = 1+\Gamma$ for voltage, and $\Gamma_c = -\Gamma_v$, $\tau_c = 1-\Gamma$ for current. In-class ink: the $Z_{02}$ that comes first in the numerator is "the impedance being bumped into"; $P_{\text{reflected}} = V^-I^- = -\Gamma^2P_{\text{incident}}$, the minus sign being its direction, and $P_{\text{transmitted}} = (1-\Gamma^2)P_{\text{incident}}$. A junction reflects exactly like a load resistor $R = Z_{02}$, but the power travels on down line 2 instead of being dissipated (slide 7).
 
 > [!trap] Junction coefficients
 > - $\Gamma_{jk}$ is "far side minus arriving side": the subscripts follow the wave.
@@ -77,6 +79,24 @@ DC check with $f_i = u(t)$: the weights reaching line 2 sum to $\tfrac49/(1-\tfr
 > 5. Impulses that meet at the same place and time add.
 > 6. $V(z,t)$: a segment of weight $w$ crossing $z$ at $t_k$ adds $w\,f_i(t-t_k)$; for a step, add the weights crossed by time $t$. For $I$, divide each weight by its own line's $Z_0$, with a minus for leftward segments.
 > 7. For a step source, check $t\to\infty$ against the lumped circuit.
+
+> [!example] Slides, Lecture 30 (slides 9–16) — Example 1, three lines in cascade
+> A unit impulse behind 50 Ω drives lines of 50 Ω, 100 Ω and 50 Ω, 2 μs each, into a 50 Ω load. Coefficients (slides 10–11, inked): the generator and the load are matched, $\Gamma = 0$. First junction: $\Gamma = \tfrac13$, $\tau = \tfrac43$ going right; $-\tfrac13$, $\tfrac23$ going left. Second junction: $-\tfrac13$, $\tfrac23$ going right; $\tfrac13$, $\tfrac43$ going left. Launched: $V^+ = 0.5\delta$, $I^+ = 0.01\delta$.
+> - 2 μs, first junction: $\tfrac16\delta$ back, $\tfrac23\delta$ on.
+> - 4 μs, second junction: $-\tfrac29\delta$ back, $\tfrac49\delta$ on toward the load.
+> - 6 μs, first junction from the right: $+\tfrac2{27}\delta$ back into line 2, $-\tfrac4{27}\delta$ through toward the generator.
+> - 8 μs, second junction: $-\tfrac2{81}\delta$ back, $\tfrac4{81}\delta$ on.
+>
+> The load receives $\tfrac49\delta$ at 6 μs and $\tfrac4{81}\delta$ at 10 μs, each later pulse $\tfrac19$ of the one before (one round trip on the middle line). The generator end sees $\tfrac16\delta$ at 4 μs and $-\tfrac4{27}\delta$ at 8 μs. The slides print the weights as decimals: 0.17, 0.67, −0.22, 0.444, −0.15, 0.074, −0.025, 0.049. Check (this site's): the load weights sum to $\tfrac49/(1-\tfrac19) = \tfrac12$, the DC divider.
+
+> [!example] Slides, Lecture 30 (slides 20–23) — Example 3, time-domain reflectometry
+> Send a narrow pulse down a known line and read the unknown from its echoes: a bounce diagram run backward. A 1 V pulse behind 50 Ω drives a 50 Ω line ($T_{01} = 1$ ns, $v = 10^8$ m/s) that continues into an unknown device. At $z = 0$ the record shows 0.5 V at $t = 0$, 0.25 V at 2 ns and −0.375 V at 5 ns.
+> 1. 0.5 V is the launched pulse ($\tau_g = \tfrac12$). The generator is matched, so returning echoes are not re-launched.
+> 2. The echo at $2T_{01}$ gives the junction: $\Gamma_{12} = 0.25/0.5 = \tfrac12$, so $Z_{02} = Z_{01}\dfrac{1+\Gamma_{12}}{1-\Gamma_{12}} = 150\ \Omega$. Into line 2 goes $\tau_{12}(0.5) = 0.75$ V.
+> 3. The second echo left the junction at 4 ns, 3 ns after the pulse entered line 2: $T_{02} = 1.5$ ns. On its way out it was multiplied by $\tau_{21} = 1-\tfrac12 = \tfrac12$, so the wave coming back along line 2 was $-0.375/0.5 = -0.75$ V. The far end has $\Gamma = -0.75/0.75 = -1$: a **short**.
+> 4. With the same speed on line 2, its length is $(1.5\ \text{ns})(10^8\ \text{m/s}) = 0.15$ m: the short is at $z = 0.25$ m.
+>
+> The record goes on (the next echo is −0.19 V at 8 ns), but three numbers were enough. This is the inverse problem of FA23 Exam 3 #4; [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes|30.10]] is a twin.
 
 ## 3. The impulse response and a sinusoidal burst
 
@@ -135,6 +155,12 @@ $$
 - $R\to\infty$ recovers §1; $R\to0$ shorts the junction, $\Gamma_{12} = -1$ and $\tau_{12} = 0$.
 - Any lines and resistors in parallel at one node: $Z_{eq}$ is their parallel combination, each outgoing line counted as its $Z_0$. Three equal lines meeting give $Z_{eq} = Z_0/2$, $\Gamma = -\tfrac13$ and $\tau = \tfrac23$ into each branch.
 
+> [!example] Slides, Lecture 30 (slide 8) — the splitter challenge
+> One line $Z_0$ feeds two lines $Z_0$ in parallel. The arriving wave sees $Z_0\parallel Z_0 = \tfrac12Z_0$, so $\Gamma = -\tfrac13$ and $\Gamma^2 = \tfrac19$ of the power reflects: answer (a). The other $\tfrac89$ is transmitted, $\tfrac49$ down each line (each sees the junction voltage $\tfrac23V^+$ across its own $Z_0$). The ink writes $\tfrac89$ beside "down each line"; that is the two lines together.
+
+> [!example] Slides, Lecture 30 (slides 17–19) — Example 2, a shunt and a series resistor together
+> A shunt $R_1$ at the end of line 1, then a series $R_2$, then line 2. The arriving wave sees $R_{eq} = R_1\parallel(R_2+Z_{02})$, so $\Gamma = (R_{eq}-Z_{01})/(R_{eq}+Z_{01})$. The junction voltage is $(1+\Gamma)V^+$ (the slides call this node voltage $V^{++}$), and line 2 gets the divider's share: $V_{\text{trans}} = (1+\Gamma)V^+\dfrac{Z_{02}}{R_2+Z_{02}}$. With this site's numbers $Z_{01} = Z_{02} = 50\ \Omega$, $R_1 = 100\ \Omega$, $R_2 = 50\ \Omega$: $R_{eq} = 50\ \Omega$, $\Gamma = 0$ and $V_{\text{trans}} = \tfrac12V^+$. No echo, and a quarter of the power goes on: a matched attenuator.
+
 **Series resistor (the notes' exercise).** With $R$ in one wire between the lines, the arriving wave sees $R+Z_2$. The junction voltage $(1+\Gamma_{12})V^+$ then divides between $R$ and line 2.
 
 > [!key] Series resistor at a junction
@@ -163,15 +189,18 @@ The rule behind all three: $\Gamma$ uses the resistance the arriving wave sees; 
 - Notes' circuit: $\tau_g = \Gamma_g = \Gamma_{12} = \tfrac13$, $\tau_{12} = \tfrac43$, $\Gamma_L = 0$; each line-1 round trip multiplies by $\tfrac19$; DC limit $\tfrac12$.
 - Example 1: $\mathcal{L}_2 = \mathcal{L}_1$, $\mathcal{C}_2 = \mathcal{C}_1/4$. Example 2: the wavelength doubles on line 2, where the late amplitude is $\tfrac12$.
 - Shunt $R$: $Z_{eq} = R\parallel Z_2$ and $\tau = 1+\Gamma$. Series $R$: $Z_{eq} = R+Z_2$ and $\tau = (1+\Gamma)Z_2/(R+Z_2)$.
-- Next, Lecture 31: source-free oscillations and periodic steady state on lossless lines.
+- Slides: a three-line cascade under an impulse (load pulses $\tfrac49$, $\tfrac4{81}$, …); reflectometry reads $Z_{02}$, the delay and the far-end load off three echoes.
+- Next, [[4-transmission-lines/31-periodic-oscillations-in-lossless-tl-circuits|Lecture 31]]: source-free oscillations and periodic steady state on lossless lines.
 
 Concept pages: [[concepts/bounce-diagram]] · [[concepts/characteristic-impedance]] · [[concepts/reflection-and-transmission]] · [[concepts/telegraphers-equations]].
 
 > [!exam] On exams
-> Three Exam 3 papers have junction items. SP19 Exam 3 #4 is the notes' two-line circuit with numbers. It asks for $\Gamma_{12}$ and $\tau_{12}$ for voltage and current, the voltage bounce diagram to a given time, $V$ at one $(z,t)$ read off it, and the DC load voltage. FA23 Exam 3 #3(a) cascades three sections. It asks for $\tau_g$, a voltage and a current reflection coefficient, and the earliest return of the far junction's echo: add the one-way times out and back. SP18 Exam 3 #1(vii) asks what removes every echo toward the source: check each discontinuity downstream, the load included. No calculators; the fractions are simple.
+> Three Exam 3 papers have junction items. SP19 Exam 3 #4 is the notes' two-line circuit with numbers. It asks for $\Gamma_{12}$ and $\tau_{12}$ for voltage and current, the voltage bounce diagram to a given time, $V$ at one $(z,t)$ read off it, and the DC load voltage. FA23 Exam 3 #3(a) cascades three sections. It asks for $\tau_g$, a voltage and a current reflection coefficient, and the earliest return of the far junction's echo: add the one-way times out and back. SP18 Exam 3 #1(vii) asks what removes every echo toward the source: check each discontinuity downstream, the load included. The slides' Example 1 is FA23 #3(a)'s circuit type driven by an impulse, and their Example 3 (reflectometry) is the inverse problem of FA23 #4. No calculators; the fractions are simple.
 
 > [!tip] Practice this lecture
 > [[practice/30-multi-line-circuits|12 practice problems]] — 5 easy, 3 medium, 4 hard — each with a folded hint and a worked solution. Start with [[practice/30-multi-line-circuits#301-coefficients-both-ways|30.1 Coefficients both ways]]; the [[practice/index|practice hub]] has the whole bank by difficulty and by topic.
 
 ### Sources for this page
 Kudeki notes, Lecture 30 (6 pages): the two-line circuit and bounce diagram, $\Gamma_{jk}$ and $\tau_{jk}$ with their verification, Examples 1–3, the series-resistor exercise and its hint. Rao (2009) §7.2, eqs. 7.20–7.26, for cross-checks, including the current coefficients. This site's own: the figures, the recipe, the DC and late-time sums, the $T_1$-form of the impulse response, the power ratios, the dielectric realization, the shunt-matching example; numbers checked by script. Slips in the notes (a $Z_2 = 2Z_2$ typo, a mislabelled plot) are on the errata page.
+
+Slides "Multi-line Circuits; TL Discontinuities" (24 slides; in-class ink on slides 2–11): the coefficient derivation and the power split (2–7), the splitter challenge (8), Example 1 (9–16), Example 2 (17–19), time-domain reflectometry (20–23). Numbers checked in `tools/build14/checks/slides27_32.py`, the bounce diagrams by line simulation. The ink's $\tfrac89$ on slide 8 is on the errata page.

@@ -1,0 +1,7 @@
+PASS SP17: total 100; A, B, C, D = (60, 3, 26, 11); page says (60, 3, 26, 11)
+PASS SP18: total 100; A, B, C, D = (29, 6, 33, 32); page says (29, 6, 33, 32)
+PASS SP19: total 100; A, B, C, D = (40, 20, 25, 15); page says (40, 20, 25, 15)
+PASS FA23: total 100; A, B, C, D = (30, 0, 54, 16); page says (30, 0, 54, 16)
+bounce-diagram share: 25 to 54 points (a quarter to a half); Lectures 31-34 (not on FA26 Midterm 3): 11 to 32 points
+SP18 without its Lecture 31-34 parts: 68 points (page: 68)
+SUMMARY: all PASS

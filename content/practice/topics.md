@@ -1,6 +1,6 @@
 ---
 title: "Problems by topic"
-description: "The 344 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
+description: "The 368 practice problems grouped by topic across lectures: follow one idea from its first appearance to exam level. Also the quick multiple-choice and true-or-false checks, and the find-the-error items."
 tags: [practice]
 ---
 
@@ -72,6 +72,9 @@ Two-minute concept checks — every wrong option is explained in the solution. G
 - [[practice/29-bounce-diagram-examples#292-four-statements|29.2 Four statements]] <span class="diff easy">easy</span>
 - [[practice/30-multi-line-circuits#302-junction-facts|30.2 Junction facts]] <span class="diff easy">easy</span>
 - [[practice/30-multi-line-circuits#303-no-echo-toward-the-source|30.3 No echo toward the source]] <span class="diff easy">easy</span>
+- [[practice/31-resonances-of-line-segments#312-modes-true-or-false|31.2 Modes, true or false]] <span class="diff easy">easy</span>
+- [[practice/32-stubs-and-input-impedance#322-stub-facts-true-or-false|32.2 Stub facts, true or false]] <span class="diff easy">easy</span>
+- [[practice/33-half-and-quarter-wave-transformers#332-transformer-facts-true-or-false|33.2 Transformer facts, true or false]] <span class="diff easy">easy</span>
 
 ## Find the error
 
@@ -106,6 +109,9 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/28-bounce-diagrams#285-a-launched-wave-too-big|28.5 A launched wave too big]] <span class="diff easy">easy</span>
 - [[practice/29-bounce-diagram-examples#294-the-echos-current|29.4 The echo's current]] <span class="diff easy">easy</span>
 - [[practice/30-multi-line-circuits#305-the-returning-echo|30.5 The returning echo]] <span class="diff easy">easy</span>
+- [[practice/31-resonances-of-line-segments#313-the-lowest-resonance-of-a-cable|31.3 The lowest resonance of a cable]] <span class="diff easy">easy</span>
+- [[practice/32-stubs-and-input-impedance#323-the-stub-that-should-have-blocked|32.3 The stub that should have blocked]] <span class="diff easy">easy</span>
+- [[practice/33-half-and-quarter-wave-transformers#333-the-forgotten-divider|33.3 The forgotten divider]] <span class="diff easy">easy</span>
 
 ## Coulomb's law and point charges
 
@@ -786,6 +792,7 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/27-transmission-line-basics#2712-telegraphers-equations-for-a-leaky-coax|27.12 Telegrapher's equations for a leaky coax]] <span class="diff hard">hard</span>
 - [[practice/28-bounce-diagrams#282-line-conventions|28.2 Line conventions]] <span class="diff easy">easy</span>
 - [[practice/30-multi-line-circuits#304-line-parameters-of-a-splice|30.4 Line parameters of a splice]] <span class="diff easy">easy</span>
+- [[practice/31-resonances-of-line-segments#315-a-mode-on-a-shortopen-line|31.5 A mode on a short–open line]] <span class="diff medium">medium</span>
 
 ## Transients on lines and bounce diagrams
 
@@ -825,3 +832,38 @@ A short student solution with one classic slip (a sign, a missing ε, a wrong no
 - [[practice/30-multi-line-circuits#3010-locating-a-splice-by-its-echoes|30.10 Locating a splice by its echoes]] <span class="diff hard">hard</span>
 - [[practice/30-multi-line-circuits#3011-a-tap-resistor-and-an-open-stub|30.11 A tap resistor and an open stub]] <span class="diff hard">hard</span>
 - [[practice/30-multi-line-circuits#3012-a-switched-on-sine-across-a-step-down|30.12 A switched-on sine across a step-down]] <span class="diff hard">hard</span>
+
+## Resonances of line segments
+
+- [[practice/31-resonances-of-line-segments#311-the-three-lowest-three-ways|31.1 The three lowest, three ways]] <span class="diff easy">easy</span>
+- [[practice/31-resonances-of-line-segments#312-modes-true-or-false|31.2 Modes, true or false]] <span class="diff easy">easy</span>
+- [[practice/31-resonances-of-line-segments#313-the-lowest-resonance-of-a-cable|31.3 The lowest resonance of a cable]] <span class="diff easy">easy</span>
+- [[practice/31-resonances-of-line-segments#314-where-the-nulls-are|31.4 Where the nulls are]] <span class="diff easy">easy</span>
+- [[practice/31-resonances-of-line-segments#315-a-mode-on-a-shortopen-line|31.5 A mode on a short–open line]] <span class="diff medium">medium</span>
+- [[practice/31-resonances-of-line-segments#316-resonances-tell-you-the-ends|31.6 Resonances tell you the ends]] <span class="diff medium">medium</span>
+- [[practice/31-resonances-of-line-segments#317-a-resonator-from-two-zero-readings|31.7 A resonator from two zero readings]] <span class="diff hard">hard</span>
+- [[practice/31-resonances-of-line-segments#318-a-pulse-trapped-on-a-line|31.8 A pulse trapped on a line]] <span class="diff hard">hard</span>
+- [[practice/32-stubs-and-input-impedance#326-inside-a-resonant-stub|32.6 Inside a resonant stub]] <span class="diff medium">medium</span>
+
+## Stubs and input impedance
+
+- [[practice/32-stubs-and-input-impedance#321-five-stubs|32.1 Five stubs]] <span class="diff easy">easy</span>
+- [[practice/32-stubs-and-input-impedance#322-stub-facts-true-or-false|32.2 Stub facts, true or false]] <span class="diff easy">easy</span>
+- [[practice/32-stubs-and-input-impedance#323-the-stub-that-should-have-blocked|32.3 The stub that should have blocked]] <span class="diff easy">easy</span>
+- [[practice/32-stubs-and-input-impedance#324-a-stub-as-an-inductor|32.4 A stub as an inductor]] <span class="diff easy">easy</span>
+- [[practice/32-stubs-and-input-impedance#325-a-stub-across-the-load|32.5 A stub across the load]] <span class="diff medium">medium</span>
+- [[practice/32-stubs-and-input-impedance#326-inside-a-resonant-stub|32.6 Inside a resonant stub]] <span class="diff medium">medium</span>
+- [[practice/32-stubs-and-input-impedance#327-a-shorted-line-that-stops-the-current|32.7 A shorted line that stops the current]] <span class="diff hard">hard</span>
+- [[practice/32-stubs-and-input-impedance#328-tuning-a-stub-with-a-capacitor|32.8 Tuning a stub with a capacitor]] <span class="diff hard">hard</span>
+- [[practice/33-half-and-quarter-wave-transformers#338-a-quarter-wave-line-with-a-stub-across-its-load|33.8 A quarter-wave line with a stub across its load]] <span class="diff hard">hard</span>
+
+## Half- and quarter-wave transformers
+
+- [[practice/33-half-and-quarter-wave-transformers#331-five-inputs|33.1 Five inputs]] <span class="diff easy">easy</span>
+- [[practice/33-half-and-quarter-wave-transformers#332-transformer-facts-true-or-false|33.2 Transformer facts, true or false]] <span class="diff easy">easy</span>
+- [[practice/33-half-and-quarter-wave-transformers#333-the-forgotten-divider|33.3 The forgotten divider]] <span class="diff easy">easy</span>
+- [[practice/33-half-and-quarter-wave-transformers#334-choosing-a-matching-section|33.4 Choosing a matching section]] <span class="diff easy">easy</span>
+- [[practice/33-half-and-quarter-wave-transformers#335-five-quarter-waves-and-a-complex-load|33.5 Five quarter waves and a complex load]] <span class="diff medium">medium</span>
+- [[practice/33-half-and-quarter-wave-transformers#336-two-loads-from-one-point|33.6 Two loads from one point]] <span class="diff medium">medium</span>
+- [[practice/33-half-and-quarter-wave-transformers#337-one-line-at-three-frequencies|33.7 One line at three frequencies]] <span class="diff hard">hard</span>
+- [[practice/33-half-and-quarter-wave-transformers#338-a-quarter-wave-line-with-a-stub-across-its-load|33.8 A quarter-wave line with a stub across its load]] <span class="diff hard">hard</span>

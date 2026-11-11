@@ -1,6 +1,6 @@
 ---
 title: "ECE 329 · Fields and Waves"
-description: "Teaching notes for ECE 329 (Fields and Waves I): 72 topic pages in 10 themes that carry the content, lecture pages that map onto them, worked exam-style problems, a bank of practice problems tagged easy, medium and hard, and interactive demos."
+description: "Teaching notes for ECE 329 (Fields and Waves I): 75 topic pages in 10 themes that carry the content, lecture pages that map onto them, worked exam-style problems, a bank of practice problems tagged easy, medium and hard, and interactive demos."
 ---
 
 Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written to *teach* the material rather than to summarize it. The source material is the course itself — Prof. Kudeki's lecture notes, the lecture slides with their in-class annotations, the homework and exams — digested and rewritten in one consistent notation, with the connections made explicit.
@@ -9,7 +9,8 @@ Notes for **ECE 329 — Fields and Waves I** (University of Illinois), written t
 > - **Topics** carry the content: one page per idea (Gauss's law, boundary conditions, skin depth, …) with the key equation, the derivation folded, the course's examples with their numbers, the traps, what exams do with it, and links to every lecture and practice problem that uses it. Grouped by theme below.
 > - **Lectures** (in course order) are maps: each keeps the lecture's section headings and says, section by section, what the lecture does and where the full treatment lives.
 > - **Problems** and **demos** are where the ideas get exercised — exam-style problems worked in full (with the numbers changed), and interactive pages you can drag things around in.
-> - **Practice** is where you do the exercising yourself: 344 problems for Lectures 2–30, tagged easy, medium or hard, each with a folded hint and a worked solution.
+> - **[[exams/index|Midterm 3 review]]** (exam Monday, November 16; expect mostly Lectures 21–30, the material since Midterm 2): the past Exam 3 papers problem by problem, the ten problem types that recur, the earlier tools they use, and the [[0-toolkit/09-midterm-3-summary|Midterm 3 equation summary]] with a plan for the days left.
+> - **Practice** is where you do the exercising yourself: 368 problems for Lectures 2–33, tagged easy, medium or hard, each with a folded hint and a worked solution.
 >
 > Every page links to its neighbours; hover a link for a preview, and use the **graph view** at the top right of any page to see what connects to what. Fields and Waves is a web of ideas, not a list — the site is built the same way.
 
@@ -37,20 +38,23 @@ The site is organized by **topic**. Each theme below groups the [[concepts/index
 
 **[[concepts/index#polarization-reflection-standing-waves|Polarization, reflection, standing waves]]** — [[concepts/group-velocity|Group velocity]] · [[concepts/wave-polarization|Wave polarization]] · [[concepts/reflection-and-transmission|Reflection and transmission]] · [[concepts/standing-waves|Standing waves]] · [[concepts/radiation-pressure|Radiation pressure]]
 
-**[[concepts/index#transmission-lines|Transmission lines]]** — [[concepts/telegraphers-equations|Telegrapher's equations]] · [[concepts/characteristic-impedance|Characteristic impedance]] · [[concepts/bounce-diagram|Bounce diagram]]
+**[[concepts/index#transmission-lines|Transmission lines]]** — [[concepts/telegraphers-equations|Telegrapher's equations]] · [[concepts/characteristic-impedance|Characteristic impedance]] · [[concepts/bounce-diagram|Bounce diagram]] · [[concepts/line-resonances|Line resonances]] · [[concepts/stub-input-impedance|Stub input impedance]] · [[concepts/quarter-wave-transformer|Quarter- and half-wave transformers]]
 
 ### [[0-toolkit/index|Toolkit]] — the mathematics assumed
-[[0-toolkit/01-coordinates-and-differential-elements|Coordinates and differential elements]] · [[0-toolkit/02-vector-calculus-cheatsheet|Vector calculus cheat sheet]] · [[0-toolkit/03-units-and-constants|Units and constants]] · [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]] · **[[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]]** · [[0-toolkit/06-prairielearn-guide|PrairieLearn guide (pl.vops.ch)]] · **[[0-toolkit/07-wave-parameters-map|Wave parameters on one page]]** · **[[0-toolkit/08-waves-in-media-figures|Waves in media — figures]]**
+[[0-toolkit/01-coordinates-and-differential-elements|Coordinates and differential elements]] · [[0-toolkit/02-vector-calculus-cheatsheet|Vector calculus cheat sheet]] · [[0-toolkit/03-units-and-constants|Units and constants]] · [[0-toolkit/04-errata-in-the-course-materials|Errata in the course materials]] · **[[0-toolkit/05-midterm-2-summary|Midterm 2 equation summary]]** · [[0-toolkit/06-prairielearn-guide|PrairieLearn guide (pl.vops.ch)]] · **[[0-toolkit/07-wave-parameters-map|Wave parameters on one page]]** · **[[0-toolkit/08-waves-in-media-figures|Waves in media — figures]]** · **[[0-toolkit/09-midterm-3-summary|Midterm 3 equation summary]]**
 
-### [[practice/index|Practice problems]] — Lectures 2–30
-Twelve problems per lecture (eight for Lecture 11), from two-minute checks to exam length, each with a folded hint and a worked solution: by difficulty — [[practice/easy|easy]] · [[practice/medium|medium]] · [[practice/hard|hard]] — or [[practice/topics|by topic]] across lectures. Every lecture page links to its own set.
+### [[practice/index|Practice problems]] — Lectures 2–33
+Twelve problems per lecture (eight for Lectures 11 and 31–33), from two-minute checks to exam length, each with a folded hint and a worked solution: by difficulty — [[practice/easy|easy]] · [[practice/medium|medium]] · [[practice/hard|hard]] — or [[practice/topics|by topic]] across lectures. Every lecture page links to its own set.
+
+### [[exams/index|Midterm 3 review]] — past Exam 3 papers
+Guides to [[exams/e3-fa23|FA23]] · [[exams/e3-sp19|SP19]] · [[exams/e3-sp18|SP18]] · [[exams/e3-sp17|SP17]] Exam 3 and the [[exams/e3-summer-hour-exams|Summer 2017–2020 hour exams]]: what each problem asks, the method, the traps, and a worked twin with new numbers. Plus [[exams/e3-steady-state-lines|lines in sinusoidal steady state]], the Lecture 31–33 problem type on one page (not on FA26 Midterm 3, which stops at Lecture 30).
 
 ### Cross-cutting
 [[concepts/index|Topics]] · [[problems/index|Worked problems]] · [[practice/index|Practice problems]] · [[demos/index|Interactive demos]] · [[homework/index|Homework companions]] · [[2-magnetostatics/index#the-dictionary-electrostatics--magnetostatics|electrostatics ↔ magnetostatics dictionary]]
 
 ## By lecture
 
-Each lecture page keeps the lecture's section headings, says in a few lines what happens in each section and which example it uses, and points to the topic page that carries the full treatment. Lectures 27–30 (transmission lines) are still full lecture pages.
+Each lecture page keeps the lecture's section headings, says in a few lines what happens in each section and which example it uses, and points to the topic page that carries the full treatment. Lectures 27–33 (transmission lines) are still full lecture pages.
 
 ### [[1-electrostatics/index|Unit 1 · Electrostatics]] — Lectures 1–11 (Exam 1: L1–10)
 1. [[1-electrostatics/01-fields-forces-and-the-maxwell-roadmap|Fields, forces, and the Maxwell roadmap]]
@@ -86,15 +90,18 @@ The unit page carries the **[[2-magnetostatics/index#the-dictionary-electrostati
 25. [[3-maxwell-and-waves/25-wave-reflection-and-transmission|Wave reflection and transmission]]
 26. [[3-maxwell-and-waves/26-standing-waves-and-radiation-pressure|Standing waves and radiation pressure]]
 
-Lectures 20–26 follow the course notes (no slides).
+Lectures 20–26 were written from the course notes; their slides were added afterwards (build 13).
 
 ### [[4-transmission-lines/index|Unit 4 · Transmission lines]] — Lectures 27–38
 27. [[4-transmission-lines/27-guided-tem-waves-on-transmission-lines|Guided TEM waves on transmission lines]]
 28. [[4-transmission-lines/28-distributed-circuits-and-bounce-diagrams|Distributed circuits and bounce diagrams]]
 29. [[4-transmission-lines/29-bounce-diagram-examples|Bounce diagram examples]]
 30. [[4-transmission-lines/30-multi-line-circuits|Multi-line circuits]]
+31. [[4-transmission-lines/31-periodic-oscillations-in-lossless-tl-circuits|Periodic oscillations in lossless TL circuits]]
+32. [[4-transmission-lines/32-input-impedance-and-microwave-resonators|Input impedance and microwave resonators]]
+33. [[4-transmission-lines/33-half-wave-and-quarter-wave-transformers|TL circuits with half- and quarter-wave transformers]]
 
-Then: sinusoidal steady state and input impedance · quarter-wave transformers · the Smith chart · impedance matching — *planned*
+Lectures 31–33 come after the Midterm 3 scope (Lectures 1–30). Then: the generalized reflection coefficient and the Smith chart · VSWR · impedance matching — *planned*
 
 ## Conventions used throughout
 
@@ -135,4 +142,4 @@ The notes use a few recurring boxes, so you can skim for what you need:
 
 The [[practice/index|practice pages]] add their own five: the problem statement sits in an **easy**, **medium** or **hard** box (the difficulty tag, followed by topic tags), and the **hint** and **solution** below it are folded until you click them.
 
-*Status: Lectures 1–30 are written (Toolkit, Units 1–3, Lectures 27–30 of Unit 4 — 20–30 from the course notes, with the Lecture 20–29 slides and their in-class ink added in build 13); Lectures 1–26 are maps onto 72 topic pages in 10 themes, with 24 worked problems and 344 practice problems; Lectures 31–38 are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*
+*Status: Lectures 1–33 are written (Toolkit, Units 1–3, Lectures 27–33 of Unit 4 — 20–33 from the course notes, with the Lecture 20–29 slides and their in-class ink added in build 13, and Lectures 31–33, the Lecture 30–32 slides and the Midterm 3 review added in build 14); Lectures 1–26 are maps onto the topic pages (75 in 10 themes), with 24 worked problems and 368 practice problems; Lectures 34–38 are outlined. Sources: E. Kudeki, ECE 329 Lecture Notes (2026); lecture slides (Shao, adapted from Goddard and Cunningham); FA26 homework and Exam 1; past Exam 3 papers (2017–2023); N. N. Rao, Fundamentals of Electromagnetics for Electrical and Computer Engineering.*

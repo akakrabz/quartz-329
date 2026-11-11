@@ -1,0 +1,23 @@
+== 32.1 (50 ohm line, lengths in wavelengths at 100 MHz, v = 2e8)
+PASS five stubs [ohm]: computed [ 0.+50.j     -0.-50.j      0.-50.j      0.-28.8675j -0. +0.j    ], page [50j, (-0-50j), (-0-50j), (-0-28.87j), 0]
+== 32.2
+PASS (c) quarter-wave open stub -> 0; (d) adding lambda/2: Z(0.1 lam) vs Z(0.6 lam), shorted: computed [ 0. +0.j     -0.+36.3271j], page [0, np.complex128(36.327126397760246j)]
+== 32.3
+PASS Y of a 0.3333 m shorted stub at 150 MHz (-> 0), Z of the 0.5 m stub [ohm]: computed [-0. +0.j -0.-75.j], page [0, (-0-75j)]
+== 32.4
+PASS reactance of a 9.69 cm shorted stub (100 ohm, 2e8) at 100 MHz vs w L of 50 nH [ohm]; of a 10 cm stub (3 % more L): computed [31.4186  1.0342], page [31.416, 1.035]
+== 32.5 (stub across the load: node equation with the ladder's admittance)
+PASS |H| at 50 MHz; at 33.33, 100 MHz (peaks 0.5); at 66.67, 133.33 MHz (nulls); at 1 kHz (DC null): computed [0.4472 0.5    0.5    0.     0.     0.    ], page [0.4472, 0.5, 0.5, 0, 0, 0]
+== 32.6 (3 lambda/4 shorted stub, 10 V at the input; ladder from the short back to the input)
+PASS current through the short [A]; input current [A]; V at lambda/4 and lambda/2 [V]; input power [W]: computed [ -0.+0.2j  -0.+0.j  -10.+0.j    0.+0.j    0.+0.j ], page [0.2j, 0, -10, 0, 0]
+== 32.7 (tlsim: 9 V source behind 75 ohm, 50 ohm line, shorted; v = 2.5e8)
+PASS  f = 125 MHz, l = 0.5 m: resistor current [A]: computed (-0+0j), page 0
+PASS    input voltage [V], current through the short [A]: computed [ 9.0075+1.0e-04j -0.    -1.8e-01j], page [9, (-0-0.18j)]
+PASS  f = 125 MHz, l = 1.5 m: resistor current [A]: computed (-0+0j), page 0
+PASS    l = 1.5 m: |I| at d = l/3 (null), |I| through the short [A]: computed [0.0007 0.18  ], page [0, 0.18]
+PASS  f = 250 MHz, l = 0.5 m: resistor current [A]: computed (0.12-0j), page 0.12
+== 32.8 (0.6 m shorted air stub, 50 ohm load, series capacitor 50.9 pF)
+PASS no capacitor: |H| at 250 MHz (1) and 125 MHz (0): computed [1. 0.], page [1, 0]
+PASS with 50.93 pF: frequency of the peak below 125 MHz [MHz]; |H| there; at 125 MHz; at 1 kHz; at 31.25 MHz: computed [62.5     1.      0.      0.      0.5334], page [62.5, 1, 0, 0, 0.5334]
+
+SUMMARY: 13 PASS, 0 FAIL

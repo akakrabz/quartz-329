@@ -460,4 +460,4 @@ The page runs on four rules, with [[4-transmission-lines/28-distributed-circuits
 ### Sources for this page
 Kudeki notes, Lecture 30: the junction coefficients, Example 1 (line parameters, 30.4), Example 2 (impulse response and switched-on sine, 30.12), Example 3 (shunt resistor, 30.6, 30.11) and the series-resistor exercise (30.7), all with new numbers. Past exams, re-parameterized: SP18 Exam 3 #1(vii) (30.3), FA23 Exam 3 #3(a) (30.8), SP19 Exam 3 #4 (30.9), FA23 Exam 3 #4 (30.10). The rest is original. Every number is checked by `practice/checks/L30.py`: junction coefficients and power splits by solving KVL/KCL directly, and every bounce diagram by an independent FDTD simulation of the telegrapher's equations with lumped resistors.
 
-*Previous: [[practice/29-bounce-diagram-examples|Lecture 29 practice]] · [[practice/index|all practice]]*
+*Previous: [[practice/29-bounce-diagram-examples|Lecture 29 practice]] · next: [[practice/31-resonances-of-line-segments|Lecture 31 practice]] · [[practice/index|all practice]]*
